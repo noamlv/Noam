@@ -1,0 +1,36 @@
+{
+  "name": "noam-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "dev:open": "sh -c '(sleep 2; open http://localhost:3000) & next dev'",
+    "dev:fresh": "rm -rf .next && npm run dev:open",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "gray-matter": "^4.0.3",
+    "next": "^15.5.6",
+    "next-mdx-remote": "^5.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "rehype-slug": "^6.0.0",
+    "remark-gfm": "^4.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.4",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.6",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.9.3"
+  }
+}
