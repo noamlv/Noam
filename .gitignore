@@ -24,6 +24,9 @@ pnpm-debug.log*
 # vercel
 .vercel
 
+# quarto artifacts
+.quarto/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
