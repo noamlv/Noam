@@ -1,7 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import matter from "gray-matter";
-import { CONTENT_TYPES, type ContentFrontmatter, type ContentItem, type ContentType, type Topic } from "@/types/content";
+import { CONTENT_TYPES, type ContentFrontmatter, type ContentItem, type ContentType, type Topic } from "../types/content.ts";
 
 const contentRoot = path.join(process.cwd(), "content");
 
@@ -71,6 +71,17 @@ export async function getTopicBundle(topic: Topic) {
     CONTENT_TYPES.map(async (type) => {
       const items = await getAllContent(type);
       return items.filter((item) => item.topic === topic).slice(0, 4);
+    })
+  );
+
+  return bundles.flat().sort((a, b) => +new Date(b.date) - +new Date(a.date));
+}
+
+export async function getContentForTopic(topic: Topic) {
+  const bundles = await Promise.all(
+    CONTENT_TYPES.map(async (type) => {
+      const items = await getAllContent(type);
+      return items.filter((item) => item.topic === topic);
     })
   );
 

@@ -1,0 +1,4 @@
+caso_uso,proceso,usuario,problema_actual,resultado_esperado,volumen_mensual,tiempo_base,error_base,datos_disponibles,dato_sensible,decision_automatizada,supervision_humana,riesgo_1_5,viabilidad_1_5,valor_1_5,metrica_calidad,metrica_tiempo,criterio_rechazo,responsable,piloto_4_8_semanas,notas
+Caso-001,,,,,,,,,,,,,,,,,,,,
+Caso-002,,,,,,,,,,,,,,,,,,,,
+Caso-003,,,,,,,,,,,,,,,,,,,,

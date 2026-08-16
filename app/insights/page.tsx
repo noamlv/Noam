@@ -4,8 +4,8 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getAllContent } from "@/lib/content";
 
 export const metadata = buildMetadata({
-  title: "Insights",
-  description: "Analisis ejecutivos sobre gobierno, inversion e IA.",
+  title: "Estudios y análisis",
+  description: "Análisis aplicados sobre gobierno, territorio, datos e inteligencia artificial.",
   path: "/insights"
 });
 
@@ -18,14 +18,14 @@ export default async function InsightsPage() {
         data={
           breadcrumbJsonLd([
             { name: "Inicio", path: "/" },
-            { name: "Insights", path: "/insights" }
+            { name: "Estudios", path: "/insights" }
           ])
         }
       />
       <ResourceIndex
-        eyebrow="Insights"
-        title="Analisis para equipos que operan con alto nivel de incertidumbre."
-        description="Cada insight condensa contexto, datos y criterio de ejecucion para tomar mejores decisiones."
+        eyebrow="Estudios y análisis"
+        title="Preguntas públicas examinadas con método y contexto."
+        description="Notas, estudios y marcos de decisión para comprender problemas institucionales, territoriales y tecnológicos."
         items={items}
       />
     </>

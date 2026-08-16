@@ -1,0 +1,48 @@
+---
+title: "Planómetro 2026: comparar 36 planes de gobierno con trazabilidad"
+description: "Del documento público a un sistema reproducible de propuestas, temas, concreción, similitud y seguimiento."
+date: "2026-07-16"
+tags:
+  - electoral
+  - análisis de texto
+  - reproducibilidad
+topic: "gobierno"
+featured: true
+readingTime: "9 min"
+ogImage: "/og-default.png"
+outcome: "36 planes completos convertidos en 4,084 enunciados detectados y 2,742 propuestas operativas explorables."
+---
+
+<Problem>
+Los planes de gobierno son extensos, heterogéneos y difíciles de comparar con un marco común. El costo de lectura impide que ciudadanía, medios y equipos técnicos examinen en conjunto qué se propone, con qué nivel de definición y para qué grupos o territorios.
+</Problem>
+
+<DataSources>
+El corpus final reúne **36 planes completos** presentados para la elección presidencial peruana de 2026. La fuente documental se procesa localmente, excluyendo resúmenes para evitar duplicaciones y conservando fragmentos que permiten regresar al texto de origen.
+</DataSources>
+
+<Method>
+El pipeline reproducible en R y Quarto segmenta documentos, detecta enunciados programáticos, clasifica ejes e instrumentos y construye métricas de concreción, cobertura, similitud y respaldo visible. También vincula propuestas con un catálogo de 21 indicadores oficiales.
+
+La extracción produjo dos universos. El amplio contiene **4,084 enunciados detectados** y prioriza no perder propuestas. El estricto contiene **2,742 propuestas operativas** con longitud mínima y señales de intervención, meta o plazo.
+
+Una muestra de **404 casos** fue anotada manualmente. El extractor amplio alcanzó recall de 0.990 y precisión de 0.446: encuentra casi todas las propuestas reales, pero incorpora ruido. Esa limitación es la razón para mantener ambos universos y no presentar una cifra única como verdad definitiva.
+</Method>
+
+<Findings>
+La principal contribución no es resumir automáticamente. Es reducir el costo de comparar documentos sin perder trazabilidad, separar cobertura de precisión y hacer visibles diferencias entre cantidad, concreción, atención territorial y posibilidad de seguimiento.
+</Findings>
+
+<Implications>
+La misma arquitectura puede utilizarse después de la elección para convertir compromisos en indicadores, agendas de transición y tableros de seguimiento. También demuestra cómo NOAM combina análisis de texto, validación humana y diseño editorial para públicos no técnicos.
+</Implications>
+
+<Downloads>
+- [Explorar Planómetro 2026](/electoral/planometro-2026).
+- Consultar metodología, visualizaciones y planes de origen dentro del producto.
+- Revisar el [caso DataPerú](/cases/dataperu-platform-case) como aplicación territorial complementaria.
+</Downloads>
+
+<CTA>
+Explora [Planómetro 2026](/electoral/planometro-2026) o solicita un análisis programático, territorial o de transición en [/contact?interest=planometro](/contact?interest=planometro).
+</CTA>

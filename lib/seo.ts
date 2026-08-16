@@ -7,9 +7,15 @@ interface MetadataInput {
   path?: string;
   image?: string;
   type?: "website" | "article";
+  locale?: string;
+  languages?: Record<string, string>;
 }
 
-export function buildMetadata({ title, description, path = "/", image = "/og-default.svg", type = "website" }: MetadataInput): Metadata {
+export function ogImagePath(category: string, slug: string) {
+  return `/og/${encodeURIComponent(category)}/${encodeURIComponent(slug)}`;
+}
+
+export function buildMetadata({ title, description, path = "/", image = "/og-default.png", type = "website", locale = "es_PE", languages }: MetadataInput): Metadata {
   const canonical = new URL(path, siteConfig.url).toString();
   const imageUrl = new URL(image, siteConfig.url).toString();
 
@@ -18,10 +24,7 @@ export function buildMetadata({ title, description, path = "/", image = "/og-def
     description,
     alternates: {
       canonical,
-      languages: {
-        es: canonical,
-        en: new URL(`/en${path === "/" ? "" : path}`, siteConfig.url).toString()
-      }
+      languages: languages ?? { es: canonical }
     },
     openGraph: {
       type,
@@ -29,7 +32,7 @@ export function buildMetadata({ title, description, path = "/", image = "/og-def
       title,
       description,
       siteName: siteConfig.name,
-      locale: "es_ES",
+      locale,
       images: [
         {
           url: imageUrl,
@@ -55,13 +58,13 @@ export function organizationJsonLd() {
     name: siteConfig.legalName,
     url: siteConfig.url,
     logo: `${siteConfig.url}/wordmark.svg`,
-    sameAs: [siteConfig.social.x, siteConfig.social.linkedin],
+    sameAs: [siteConfig.social.linkedin, siteConfig.social.github],
     contactPoint: [
       {
         "@type": "ContactPoint",
         contactType: "sales",
         email: siteConfig.email,
-        areaServed: "Global"
+        areaServed: "PE"
       }
     ]
   };
@@ -71,13 +74,36 @@ export function personJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Noam Lopez",
-    jobTitle: "Founder",
+    name: "Noam Lopez Villanes",
+    jobTitle: "Fundador y director de NOAM",
+    description: "Doctor en Ciencia Política y Gobierno especializado en investigación aplicada, gestión pública, datos y análisis territorial.",
     worksFor: {
       "@type": "Organization",
-      name: siteConfig.legalName
+      name: siteConfig.legalName,
+      url: siteConfig.url
     },
-    url: `${siteConfig.url}/about`
+    url: `${siteConfig.url}/about`,
+    sameAs: ["https://www.linkedin.com/in/noamlv", "https://github.com/noamlv"],
+    alumniOf: [
+      { "@type": "CollegeOrUniversity", name: "Pontificia Universidad Católica del Perú" },
+      { "@type": "CollegeOrUniversity", name: "Universidad Nacional de Ingeniería" }
+    ],
+    hasCredential: [
+      {
+        "@type": "EducationalOccupationalCredential",
+        credentialCategory: "Doctorado",
+        name: "Doctor en Ciencia Política y Gobierno",
+        recognizedBy: { "@type": "CollegeOrUniversity", name: "Pontificia Universidad Católica del Perú" }
+      }
+    ],
+    knowsAbout: [
+      "Gestión pública",
+      "Ciencia política",
+      "Evaluación",
+      "Análisis territorial",
+      "Seguridad y justicia",
+      "Inteligencia artificial aplicada"
+    ]
   };
 }
 
@@ -97,7 +123,7 @@ export function articleJsonLd(input: {
     datePublished: input.datePublished,
     dateModified: input.dateModified ?? input.datePublished,
     mainEntityOfPage: input.url,
-    image: input.image ?? `${siteConfig.url}/og-default.svg`,
+    image: input.image ?? `${siteConfig.url}/og-default.png`,
     author: {
       "@type": "Organization",
       name: siteConfig.legalName
@@ -144,8 +170,23 @@ export function serviceJsonLd(input: {
       name: siteConfig.legalName,
       url: siteConfig.url
     },
-    areaServed: "Global",
+    areaServed: "PE",
     url: input.url
+  };
+}
+
+export function faqJsonLd(items: Array<{ title: string; content: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: items.map((item) => ({
+      "@type": "Question",
+      name: item.title,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.content
+      }
+    }))
   };
 }
 

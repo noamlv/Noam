@@ -1,0 +1,89 @@
+import type { PlatformResource } from "../types/platform.ts";
+
+export const platformResourceCatalog: PlatformResource[] = [
+  {
+    slug: "planometro-organizaciones-2026",
+    title: "Planómetro 2026: organizaciones",
+    description: "Agregados por organización política del snapshot presidencial 2026 publicado por NOAM.",
+    kind: "dataset",
+    url: "/downloads/planometro-2026-partidos.csv",
+    productSlug: "planometro-electoral",
+    sourceLabel: "Planómetro NOAM",
+    period: "Elecciones generales 2026",
+    format: "CSV"
+  },
+  {
+    slug: "planometro-ejes-2026",
+    title: "Planómetro 2026: ejes temáticos",
+    description: "Agregados comparables por eje del corpus de planes de gobierno procesado por NOAM.",
+    kind: "dataset",
+    url: "/downloads/planometro-2026-ejes.csv",
+    productSlug: "planometro-electoral",
+    sourceLabel: "Planómetro NOAM",
+    period: "Elecciones generales 2026",
+    format: "CSV"
+  },
+  {
+    slug: "limites-departamentales-referencia-2025",
+    title: "Límites departamentales referenciales",
+    description: "Geometrías simplificadas utilizadas por el visor departamental de DataPerú, con atribución y metadatos de origen.",
+    kind: "dataset",
+    url: "/downloads/peru-departments-reference-2025.geojson",
+    productSlug: "mapa-gestion-territorial",
+    sourceLabel: "INEI · procesamiento NOAM",
+    period: "Referencia 2025",
+    format: "GeoJSON"
+  },
+  {
+    slug: "panorama-municipal-departamentos-2025",
+    title: "Panorama municipal 2025: tabla departamental",
+    description: "Tabla detrás del estudio insignia con población, recursos, ejecución e inversión municipal por departamento.",
+    kind: "dataset",
+    url: "/dataperu/panorama-municipal-2025/data.csv",
+    productSlug: "dataperu",
+    sourceLabel: "RENAMU · INEI · MEF · NOAM",
+    period: "2025",
+    format: "CSV"
+  },
+  {
+    slug: "perfiles-municipales-dataperu",
+    title: "Buscador nacional de perfiles municipales",
+    description: "Acceso a 1,891 perfiles territoriales con capacidad declarada, población, presupuesto y cartera visible de proyectos.",
+    kind: "explorer",
+    url: "/dataperu/municipios",
+    productSlug: "observatorio-territorial",
+    sourceLabel: "DataPerú",
+    period: "Fuentes 2025",
+    format: "Web"
+  },
+  {
+    slug: "guia-gobernanza-ia",
+    title: "Guía de gobernanza de IA para equipos directivos",
+    description: "Marco inicial para priorizar valor, riesgos, supervisión, pruebas y escalamiento institucional.",
+    kind: "toolkit",
+    url: "/toolkits/ai-governance-playbook",
+    productSlug: "ai-governance-lab",
+    sourceLabel: "NOAM",
+    format: "Guía web"
+  },
+  {
+    slug: "ficha-priorizacion-caso-uso-ia",
+    title: "Ficha para priorizar un caso de uso de IA",
+    description: "Plantilla para comparar oportunidad, datos, exposición, controles y condiciones de una prueba acotada.",
+    kind: "template",
+    url: "/toolkits/ficha-priorizacion-caso-uso-ia",
+    productSlug: "ai-governance-lab",
+    sourceLabel: "NOAM",
+    format: "Plantilla web + CSV"
+  },
+  {
+    slug: "diseno-encuesta-decision",
+    title: "Guía para diseñar una encuesta que sirva para decidir",
+    description: "Preguntas y controles mínimos para conectar muestra, cuestionario, análisis y decisión.",
+    kind: "methodology",
+    url: "/toolkits/diseno-encuesta-para-decidir",
+    productSlug: "barometro-electoral-enero-2026",
+    sourceLabel: "NOAM",
+    format: "Guía web"
+  }
+];

@@ -22,10 +22,10 @@ export function ResourceIndex({ eyebrow, title, description, items }: ResourceIn
 
         <div className="mt-12">
           <CtaBlock
-            title="Llevemos esto a tu contexto"
-            description="Si necesitas un sprint de evidencia, senales de mercado o una hoja de ruta de IA, podemos disenarlo para tu equipo."
+            title="Llevemos esta capacidad a tu contexto"
+            description="Podemos convertir una pregunta, una fuente de datos o una necesidad de gestión en un alcance concreto para tu equipo."
             href="/contact"
-            buttonLabel="Hablar con NOAM"
+            buttonLabel="Plantear un desafío"
           />
         </div>
       </Container>

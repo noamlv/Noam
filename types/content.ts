@@ -17,6 +17,14 @@ export interface ContentFrontmatter {
   ogImage?: string;
   outcome?: string;
   draft?: boolean;
+  caseType?: "institutional" | "product" | "demonstration";
+  client?: string;
+  period?: string;
+  engagement?: string;
+  evidence?: string;
+  disclosure?: string;
+  logo?: string;
+  logoAlt?: string;
 }
 
 export interface ContentItem extends ContentFrontmatter {

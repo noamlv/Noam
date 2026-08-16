@@ -1,16 +1,23 @@
 import NextLink from "next/link";
-import { DataSources, Downloads, Findings, Implications, Method, Problem, ArticleCta } from "@/components/mdx/content-blocks";
+import { ArticleCta, DataSources, Deliverables, Disclosure, Downloads, Findings, Implications, Method, Problem, Scope } from "@/components/mdx/content-blocks";
 import { Badge } from "@/components/ui/badge";
 
 export const mdxComponents = {
   Problem,
   DataSources,
   Method,
+  Scope,
+  Deliverables,
   Findings,
   Implications,
   Downloads,
+  Disclosure,
   CTA: ArticleCta,
-  a: ({ href = "", children }: { href?: string; children: React.ReactNode }) => (
+  a: ({ href = "", children }: { href?: string; children: React.ReactNode }) => href.startsWith("/downloads/") ? (
+    <a href={href} download className="underline decoration-border underline-offset-4 transition-colors duration-180 hover:text-accent">
+      {children}
+    </a>
+  ) : (
     <NextLink href={href} className="underline decoration-border underline-offset-4 transition-colors duration-180 hover:text-accent">
       {children}
     </NextLink>

@@ -1,6 +1,7 @@
 import NextLink from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { formatDate } from "@/lib/utils";
+import { ResourceThumb } from "@/components/content/resource-thumb";
+import { contentTypeLabel, formatDate } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import type { ContentItem } from "@/types/content";
 
@@ -18,11 +19,11 @@ export function ResourceRow({ item, className }: ResourceRowProps) {
         className
       )}
     >
-      <div className="relative h-[72px] w-[72px] overflow-hidden rounded-sm border border-border bg-[linear-gradient(130deg,rgba(19,26,35,0.08),rgba(19,26,35,0.02))] md:h-[96px] md:w-[96px]" />
+      <ResourceThumb item={item} compact className="h-[72px] w-[72px] rounded-sm border border-border md:h-[96px] md:w-[96px]" />
 
       <div className="min-w-0">
         <div className="mb-2 flex flex-wrap items-center gap-2">
-          <Badge className="text-[10px]">{item.type.slice(0, -1)}</Badge>
+          <Badge className="text-[10px]">{contentTypeLabel(item.type)}</Badge>
           <time className="text-xs text-muted" dateTime={item.date}>
             {formatDate(item.date)}
           </time>

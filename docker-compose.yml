@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: noam-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: noam
+      POSTGRES_USER: noam
+      POSTGRES_PASSWORD: noam
+    ports:
+      - "${NOAM_DB_PORT:-5433}:5432"
+    volumes:
+      - noam_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U noam -d noam"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  noam_postgres_data:

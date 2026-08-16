@@ -18,11 +18,39 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# env
-.env*.local
+# env and production secrets
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# local dynamic fallback data
+.data/
+
+# reproducible source extracts and local render artifacts
+/data/raw/
+/tmp/
+/backups/
+
+# private working material and generated document intermediates
+/Compra de dominio/
+/Insumos/
+/public/docs/generated/
+
+# cloud-sync duplicate files
+/app/admin/security/actions 2.ts
+/app/admin/security/page 2.tsx
 
 # vercel
 .vercel
+
+# local authentication and account-recovery material
+**/*[Rr]ecovery*[Cc]ode*
+**/*[Bb]ackup*[Cc]ode*
+**/*[Rr]ecuperaci[oó]n*
+**/*[Aa]uthenticator*[Ss]ecret*
+**/*[Tt][Oo][Tt][Pp]*
+/Insumos/*[Vv]ercel*.txt
 
 # quarto artifacts
 .quarto/

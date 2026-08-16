@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
+import { SiteAnalytics } from "@/components/analytics/site-analytics";
+import { WhatsAppLauncher } from "@/components/commercial/whatsapp-link";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -14,29 +16,49 @@ const sans = Manrope({
 });
 
 export const metadata: Metadata = {
+  applicationName: "NOAM",
+  creator: "NOAM",
+  publisher: "NOAM",
+  category: "consulting",
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "NOAM | Gobierno, Inversion e IA",
+    default: "NOAM | Inteligencia pública y territorial",
     template: "%s | NOAM"
   },
   description: siteConfig.description,
+  manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+    shortcut: "/icon.svg"
+  },
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false
+  },
   alternates: {
     canonical: "/",
     languages: {
       es: "/",
       en: "/en"
+    },
+    types: {
+      "application/rss+xml": [
+        { url: "/insights/rss.xml", title: "NOAM Insights" },
+        { url: "/brief/rss.xml", title: "Brief NOAM" }
+      ]
     }
   },
   openGraph: {
     type: "website",
     siteName: siteConfig.name,
-    locale: "es_ES",
+    locale: "es_PE",
     url: siteConfig.url,
-    title: "NOAM | Gobierno, Inversion e IA",
+    title: "NOAM | Inteligencia pública y territorial",
     description: siteConfig.description,
     images: [
       {
-        url: "/og-default.svg",
+        url: "/og-default.png",
         width: 1200,
         height: 630,
         alt: "NOAM"
@@ -45,22 +67,29 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NOAM | Gobierno, Inversion e IA",
+    title: "NOAM | Inteligencia pública y territorial",
     description: siteConfig.description,
-    images: ["/og-default.svg"]
+    images: ["/og-default.png"]
   }
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  colorScheme: "light"
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${sans.variable} font-sans antialiased`}>
+        <SiteAnalytics />
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={personJsonLd()} />
         <div className="relative flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <WhatsAppLauncher />
         </div>
       </body>
     </html>

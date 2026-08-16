@@ -1,0 +1,11 @@
+noam.pe, www.noam.pe {
+  @www host www.noam.pe
+  redir @www https://noam.pe{uri} permanent
+
+  encode zstd gzip
+  reverse_proxy app:3000
+
+  header {
+    -Server
+  }
+}

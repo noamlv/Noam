@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ResourceDetail } from "@/components/content/resource-detail";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getAllSlugs, getContentBySlug } from "@/lib/content";
-import { articleJsonLd, breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { articleJsonLd, breadcrumbJsonLd, buildMetadata, ogImagePath } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 interface CasePageProps {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: CasePageProps): Promise<Metad
     title: content.item.title,
     description: content.item.description,
     path: content.item.url,
-    image: content.item.ogImage,
+    image: content.item.ogImage && content.item.ogImage !== "/og-default.png" ? content.item.ogImage : ogImagePath("cases", slug),
     type: "article"
   });
 }
@@ -60,7 +60,7 @@ export default async function CaseDetailPage({ params }: CasePageProps) {
             description: content.item.description,
             datePublished: content.item.date,
             url: canonical,
-            image: content.item.ogImage ? new URL(content.item.ogImage, siteConfig.url).toString() : undefined
+            image: new URL(content.item.ogImage && content.item.ogImage !== "/og-default.png" ? content.item.ogImage : ogImagePath("cases", slug), siteConfig.url).toString()
           })
         }
       />

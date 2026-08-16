@@ -4,8 +4,8 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getAllContent } from "@/lib/content";
 
 export const metadata = buildMetadata({
-  title: "Toolkits",
-  description: "Playbooks, templates y activos para implementacion.",
+  title: "Métodos y guías",
+  description: "Guías, checklists y herramientas metodológicas para equipos públicos y organizacionales.",
   path: "/toolkits"
 });
 
@@ -18,14 +18,14 @@ export default async function ToolkitsPage() {
         data={
           breadcrumbJsonLd([
             { name: "Inicio", path: "/" },
-            { name: "Toolkits", path: "/toolkits" }
+            { name: "Métodos y guías", path: "/toolkits" }
           ])
         }
       />
       <ResourceIndex
-        eyebrow="Toolkits"
-        title="Activos listos para acelerar ejecucion en equipos reales."
-        description="Frameworks y guias en formato operativo para implementar sin friccion."
+        eyebrow="Métodos y guías"
+        title="Herramientas para pasar de la pregunta al trabajo."
+        description="Checklists, marcos y plantillas que hacen visibles nuestros criterios y facilitan una mejor implementación."
         items={items}
       />
     </>

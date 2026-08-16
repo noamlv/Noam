@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ResourceDetail } from "@/components/content/resource-detail";
 import { JsonLd } from "@/components/seo/json-ld";
 import { getAllSlugs, getContentBySlug } from "@/lib/content";
-import { breadcrumbJsonLd, buildMetadata, datasetJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata, datasetJsonLd, ogImagePath } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 interface IndicatorPageProps {
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: IndicatorPageProps): Promise<
     title: content.item.title,
     description: content.item.description,
     path: content.item.url,
-    image: content.item.ogImage,
+    image: content.item.ogImage && content.item.ogImage !== "/og-default.png" ? content.item.ogImage : ogImagePath("indicators", slug),
     type: "article"
   });
 }

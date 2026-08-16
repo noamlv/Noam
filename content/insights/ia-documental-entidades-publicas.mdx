@@ -1,0 +1,56 @@
+---
+title: "IA documental en entidades públicas: la arquitectura mínima"
+description: "Fuentes, permisos, recuperación, citas, supervisión y métricas para un asistente institucional controlable."
+date: "2026-07-16"
+tags:
+  - inteligencia artificial
+  - documentos
+  - gobierno digital
+topic: "ia"
+featured: true
+readingTime: "9 min"
+ogImage: "/og-default.png"
+---
+
+<Problem>
+Un asistente puede redactar respuestas convincentes y aun así citar una versión derogada, revelar información restringida o inventar un antecedente. En un entorno institucional, la experiencia conversacional es solo la superficie de un sistema documental.
+</Problem>
+
+<DataSources>
+El punto de partida es un inventario de colecciones: normas, directivas, informes, expedientes, manuales y preguntas frecuentes. Para cada colección se documentan propietario, vigencia, nivel de acceso, formato, frecuencia de actualización y tratamiento de datos sensibles.
+
+No todo documento disponible debe ingresar. La calidad del corpus y la gobernanza de acceso suelen importar más que el volumen.
+</DataSources>
+
+<Method>
+La arquitectura mínima contiene seis capas:
+
+1. **Fuente controlada:** documentos identificados, versionados y con metadatos.
+2. **Acceso:** permisos aplicados antes de recuperar contenido.
+3. **Búsqueda:** recuperación de fragmentos pertinentes, no envío indiscriminado del repositorio.
+4. **Respuesta:** instrucciones que exigen citar evidencia y reconocer insuficiencia.
+5. **Supervisión:** revisión humana para usos de mayor consecuencia.
+6. **Evaluación:** conjunto de preguntas y respuestas esperadas para medir calidad.
+
+El sistema debe poder abstenerse. Una respuesta incompleta con fuentes es preferible a una conclusión segura sin respaldo.
+</Method>
+
+<Findings>
+La primera métrica no debería ser cuántas personas usaron el asistente. Conviene medir recuperación de la fuente correcta, fidelidad de la cita, tasa de respuestas no respaldadas, tiempo ahorrado y proporción de casos que requieren revisión.
+</Findings>
+
+<Implications>
+Un piloto puede limitarse a una colección, un grupo de usuarios y un proceso. Ese alcance permite medir utilidad, descubrir problemas de permisos y construir un protocolo antes de ampliar la exposición.
+
+La IA no elimina la responsabilidad institucional sobre la respuesta. Cambia la interfaz y parte del trabajo, pero requiere propietarios, controles y trazabilidad.
+</Implications>
+
+<Downloads>
+- [Descargar ficha para priorizar casos de uso](/downloads/ficha-caso-uso-ia.csv).
+- Revisar los [cinco casos viables para gobiernos locales](/insights/ia-gobiernos-locales-casos-viables).
+- Consultar el [playbook de gobernanza](/toolkits/ai-governance-playbook).
+</Downloads>
+
+<CTA>
+Podemos seleccionar una colección documental, diseñar controles y construir un piloto medible en cuatro a ocho semanas. [Conversemos](/contact?interest=ia-procesos-publicos).
+</CTA>

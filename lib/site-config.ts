@@ -1,28 +1,31 @@
 export const siteConfig = {
   name: "NOAM",
-  legalName: "NOAM Global Intelligence",
+  legalName: "NOAM.PE",
   description:
-    "Gobierno, inversion e IA con evidencia aplicada para acelerar decisiones de alto impacto.",
-  url: "https://www.noam.global",
+    "Consultora de inteligencia pública y territorial. Estudios, sistemas de decisión e IA para gobiernos, empresas y organizaciones.",
+  url: "https://noam.pe",
   locale: "es",
-  email: "hola@noam.global",
+  email: "hola@noam.pe",
+  phone: "+51 996 358 492",
+  phoneE164: "+51996358492",
+  whatsappNumber: "51996358492",
   social: {
-    x: "https://x.com/noamglobal",
-    linkedin: "https://linkedin.com/company/noamglobal"
+    linkedin: "https://www.linkedin.com/in/noamlv",
+    github: "https://github.com/noamlv"
   },
   nav: [
     { href: "/", label: "Inicio" },
-    { href: "/insights", label: "Insights" },
-    { href: "/indicators", label: "Indicators" },
-    { href: "/toolkits", label: "Toolkits" },
-    { href: "/services", label: "Servicios" },
-    { href: "/cases", label: "Casos" },
-    { href: "/about", label: "Sobre NOAM" }
+    { href: "/solutions", label: "Soluciones" },
+    { href: "/sectors", label: "Sectores" },
+    { href: "/dataperu", label: "DataPerú" },
+    { href: "/electoral", label: "Electoral" },
+    { href: "/evidence", label: "Evidencia" },
+    { href: "/about", label: "NOAM" }
   ]
 } as const;
 
 export const topicLabels = {
   gobierno: "Gobierno",
-  inversion: "Inversion",
+  inversion: "Inversión",
   ia: "IA"
 } as const;

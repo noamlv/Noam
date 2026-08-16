@@ -1,5 +1,6 @@
 import NextLink from "next/link";
 import { cn } from "@/lib/utils";
+import type { AnalyticsEventName } from "@/types/analytics";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 
@@ -12,6 +13,8 @@ interface ButtonProps {
   rel?: string;
   type?: "button" | "submit" | "reset";
   onClick?: () => void;
+  analyticsEvent?: AnalyticsEventName;
+  analyticsTarget?: string;
 }
 
 const styles: Record<ButtonVariant, string> = {
@@ -27,14 +30,21 @@ export function Button(props: ButtonProps) {
 
   if (props.href) {
     return (
-      <NextLink href={props.href} className={className} target={props.target} rel={props.rel}>
+      <NextLink
+        href={props.href}
+        className={className}
+        target={props.target}
+        rel={props.rel}
+        data-analytics-event={props.analyticsEvent}
+        data-analytics-target={props.analyticsTarget}
+      >
         {props.children}
       </NextLink>
     );
   }
 
   return (
-    <button type={props.type ?? "button"} onClick={props.onClick} className={className}>
+    <button type={props.type ?? "button"} onClick={props.onClick} className={className} data-analytics-event={props.analyticsEvent} data-analytics-target={props.analyticsTarget}>
       {props.children}
     </button>
   );

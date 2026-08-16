@@ -1,0 +1,245 @@
+import type { SolutionSlug } from "@/lib/solutions";
+
+export type DeliverableSample = {
+  slug: string;
+  number: string;
+  market: "Gobiernos" | "Empresas" | "Gobiernos y empresas";
+  eyebrow: string;
+  title: string;
+  shortTitle: string;
+  promise: string;
+  description: string;
+  accent: string;
+  image: string;
+  imageAlt: string;
+  duration: string;
+  decision: string;
+  solutionSlug: SolutionSlug;
+  questions: string[];
+  modules: Array<{ title: string; purpose: string; output: string }>;
+  preview: {
+    title: string;
+    columns: [string, string, string];
+    rows: Array<[string, string, string]>;
+  };
+  timeline: Array<{ period: string; title: string; description: string }>;
+  clientInputs: string[];
+  qualityControls: string[];
+  deliverables: string[];
+  related: Array<{ type: string; label: string; href: string }>;
+};
+
+export const deliverableSamples: DeliverableSample[] = [
+  {
+    slug: "diagnostico-agenda-territorial",
+    number: "01",
+    market: "Gobiernos",
+    eyebrow: "Muestra · Estudios y diagnóstico",
+    title: "Diagnóstico territorial y agenda priorizada",
+    shortTitle: "Diagnóstico territorial",
+    promise: "Del problema disperso a una agenda que la autoridad y el equipo pueden conducir.",
+    description: "Esta muestra enseña cómo combinar fuentes públicas, instrumentos, entrevistas y conocimiento territorial sin confundir una línea de base con una explicación completa.",
+    accent: "#b95337",
+    image: "/images/noam-public-sector.jpg",
+    imageAlt: "Equipo técnico municipal trabajando sobre mapas y documentos",
+    duration: "4 a 8 semanas",
+    decision: "Qué problemas deben priorizarse, con qué criterios y qué acciones pueden comenzar dentro de la capacidad institucional disponible.",
+    solutionSlug: "diagnostico-agenda-territorial",
+    questions: ["¿Dónde se concentra el problema y a quién afecta?", "¿Qué causas están sustentadas y cuáles siguen siendo hipótesis?", "¿Qué competencias, recursos y actores condicionan la respuesta?", "¿Qué acciones combinan urgencia, impacto y viabilidad?"],
+    modules: [
+      { title: "Línea de base", purpose: "Ordenar magnitud, distribución y evolución con fuentes trazables.", output: "Perfil territorial y nota de calidad" },
+      { title: "Explicación", purpose: "Contrastar causas, actores, procesos y restricciones institucionales.", output: "Mapa de problemas e hipótesis" },
+      { title: "Priorización", purpose: "Aplicar criterios explícitos y revisar sensibilidad de la decisión.", output: "Matriz multicriterio" },
+      { title: "Activación", purpose: "Asignar responsables, hitos, evidencia y primeras acciones.", output: "Agenda y brief ejecutivo" }
+    ],
+    preview: { title: "Matriz de prioridades · Estructura demostrativa", columns: ["Pregunta", "Evidencia mínima", "Decisión"], rows: [["Brecha territorial", "Indicadores + cobertura", "Focalizar"], ["Causa operativa", "Proceso + entrevistas", "Corregir"], ["Cartera disponible", "Madurez + costo", "Secuenciar"], ["Capacidad institucional", "Roles + recursos", "Asignar"]] },
+    timeline: [
+      { period: "Semana 1", title: "Alineamiento", description: "Decisión, territorio, usuarios, fuentes y criterios de éxito." },
+      { period: "Semanas 2–3", title: "Integración", description: "Fuentes, instrumentos, entrevistas y contraste de calidad." },
+      { period: "Semanas 4–5", title: "Diagnóstico", description: "Patrones, causas, restricciones, actores y escenarios." },
+      { period: "Semanas 6–8", title: "Agenda", description: "Priorización, validación, responsables y transferencia." }
+    ],
+    clientInputs: ["Instrumentos de gestión y cartera vigente", "Acceso a responsables y equipos técnicos", "Restricciones políticas, presupuestales y temporales", "Criterios internos de prioridad y decisión"],
+    qualityControls: ["Fuentes, periodos y cobertura visibles", "Separación entre dato, inferencia e hipótesis", "Criterios de priorización reproducibles", "Validación ejecutiva y técnica documentada"],
+    deliverables: ["Informe técnico navegable", "Matriz editable de prioridades", "Brief de conducción para autoridad", "Sesión de trabajo y transferencia"],
+    related: [{ type: "Producto", label: "Perfiles municipales DataPerú", href: "/dataperu/municipios" }, { type: "Toolkit", label: "Checklist de diagnóstico municipal", href: "/toolkits/checklist-diagnostico-municipal" }, { type: "Solución", label: "Diagnóstico y agenda territorial", href: "/solutions/diagnostico-agenda-territorial" }]
+  },
+  {
+    slug: "observatorio-gestion-inversiones",
+    number: "02",
+    market: "Gobiernos",
+    eyebrow: "Muestra · Sistema de decisión",
+    title: "Observatorio de gestión e inversiones",
+    shortTitle: "Observatorio de gestión",
+    promise: "Un sistema que conecta indicadores, alertas, responsables y reuniones de decisión.",
+    description: "La muestra evita presentar un dashboard como solución completa. Expone la arquitectura de decisiones, datos, producto y operación necesaria para sostenerlo.",
+    accent: "#2f5c52",
+    image: "/images/noam-public-sector.jpg",
+    imageAlt: "Equipo regional revisando información de gestión e inversiones",
+    duration: "6 a 12 semanas",
+    decision: "Qué requiere atención ejecutiva, quién debe actuar y qué evidencia confirmará que una alerta fue atendida.",
+    solutionSlug: "observatorio-gestion-inversiones",
+    questions: ["¿Qué reunión o decisión utilizará cada indicador?", "¿Quién produce, valida y corrige cada dato?", "¿Qué umbral activa una alerta y qué acción sigue?", "¿Cómo se conserva la trazabilidad de cambios y compromisos?"],
+    modules: [
+      { title: "Decisiones", purpose: "Mapear preguntas, usuarios, reuniones y acciones esperadas.", output: "Arquitectura de uso" },
+      { title: "Datos", purpose: "Definir métricas, fuentes, responsables y reglas de calidad.", output: "Catálogo de indicadores" },
+      { title: "Producto", purpose: "Diseñar vistas ejecutivas, operativas y territoriales.", output: "Dashboard o visor" },
+      { title: "Operación", purpose: "Instalar actualización, alertas, soporte y gobierno del sistema.", output: "Protocolo operativo" }
+    ],
+    preview: { title: "Registro de alertas · Estructura demostrativa", columns: ["Señal", "Regla", "Acción"], rows: [["Hito crítico", "Fecha vencida", "Escalar responsable"], ["Ejecución", "Desviación sostenida", "Revisar cuello de botella"], ["Calidad de dato", "Fuente incompleta", "Suspender indicador"], ["Compromiso", "Sin evidencia", "Solicitar validación"]] },
+    timeline: [
+      { period: "Semanas 1–2", title: "Decisiones", description: "Usuarios, preguntas, reuniones y responsabilidades." },
+      { period: "Semanas 3–4", title: "Datos", description: "Auditoría, definiciones, fuentes, llaves y calidad mínima." },
+      { period: "Semanas 5–8", title: "Prototipo", description: "Vistas, filtros, alertas y pruebas con usuarios." },
+      { period: "Semanas 9–12", title: "Operación", description: "Despliegue, documentación, rutinas y transferencia." }
+    ],
+    clientInputs: ["Reportes y tableros existentes", "Acceso a responsables de fuentes", "Calendario de reuniones y decisiones", "Infraestructura y restricciones de seguridad"],
+    qualityControls: ["Definición y denominador por indicador", "Linaje entre fuente, transformación y vista", "Alertas probadas con escenarios", "Roles de actualización y corrección"],
+    deliverables: ["Mapa de decisiones y usuarios", "Diccionario de indicadores", "Producto digital funcional", "Manual de operación y gobernanza"],
+    related: [{ type: "Demo", label: "Observatorio de inversiones DataPerú", href: "/dataperu/inversiones" }, { type: "Insight", label: "Un sistema no es solo un dashboard", href: "/insights/sistema-seguimiento-municipal-no-es-dashboard" }, { type: "Solución", label: "Observatorio de gestión", href: "/solutions/observatorio-gestion-inversiones" }]
+  },
+  {
+    slug: "encuesta-escucha-territorial",
+    number: "03",
+    market: "Gobiernos y empresas",
+    eyebrow: "Muestra · Estudio de opinión",
+    title: "Encuesta y escucha territorial",
+    shortTitle: "Encuesta y escucha",
+    promise: "Preguntas, muestra y análisis diseñados desde la decisión, no desde el gráfico final.",
+    description: "Esta muestra recorre el diseño de un estudio de experiencia, percepción o prioridades y hace visibles población, incertidumbre, segmentación y límites de inferencia.",
+    accent: "#8a623d",
+    image: "/images/noam-private-sector.jpg",
+    imageAlt: "Trabajo analítico sobre experiencia y percepción en territorios",
+    duration: "4 a 10 semanas",
+    decision: "Qué experiencia o percepción requiere intervención, en qué segmentos y con qué evidencia adicional debe validarse.",
+    solutionSlug: "encuestas-escucha-ciudadana",
+    questions: ["¿Qué decisión cambiaría con una respuesta diferente?", "¿Cuál es la población y cómo será representada?", "¿Qué conceptos requieren una medición válida y comprensible?", "¿Qué diferencias son sustantivas y cuáles pueden ser ruido muestral?"],
+    modules: [
+      { title: "Diseño", purpose: "Traducir decisión e hipótesis en población, variables e instrumento.", output: "Ficha metodológica" },
+      { title: "Campo", purpose: "Controlar cobertura, selección, supervisión y no respuesta.", output: "Base y reporte de campo" },
+      { title: "Análisis", purpose: "Estimar patrones, diferencias, segmentos e incertidumbre.", output: "Tabulados y modelos" },
+      { title: "Implicancias", purpose: "Conectar resultados con decisiones y nueva evidencia.", output: "Informe y brief" }
+    ],
+    preview: { title: "Plan de análisis · Estructura demostrativa", columns: ["Hipótesis", "Medición", "Uso"], rows: [["Experiencia desigual", "Índice + segmentos", "Focalizar mejora"], ["Barrera de acceso", "Pregunta + conducta", "Rediseñar canal"], ["Confianza", "Escala + contexto", "Priorizar comunicación"], ["Cambio temporal", "Serie comparable", "Evaluar intervención"]] },
+    timeline: [
+      { period: "Semana 1", title: "Preguntas", description: "Decisión, población, hipótesis y plan de análisis." },
+      { period: "Semanas 2–3", title: "Instrumento", description: "Cuestionario, piloto, muestra y protocolos." },
+      { period: "Semanas 3–6", title: "Campo", description: "Levantamiento, supervisión y control de calidad." },
+      { period: "Semanas 6–10", title: "Análisis", description: "Ponderación, segmentos, incertidumbre e implicancias." }
+    ],
+    clientInputs: ["Decisiones e hipótesis prioritarias", "Definición de población y cobertura", "Bases auxiliares o marco muestral", "Restricciones éticas, territoriales y operativas"],
+    qualityControls: ["Ficha técnica y cuestionario publicados", "Trazabilidad de cambios del instrumento", "Supervisión y reglas de exclusión", "Incertidumbre y limitaciones visibles"],
+    deliverables: ["Diseño metodológico e instrumento", "Base anonimizada y diccionario", "Informe analítico y visualizaciones", "Brief ejecutivo y sesión de implicancias"],
+    related: [{ type: "Caso", label: "Barómetro electoral 2026", href: "/electoral/barometro-enero-2026" }, { type: "Toolkit", label: "Diseñar una encuesta para decidir", href: "/toolkits/diseno-encuesta-para-decidir" }, { type: "Solución", label: "Encuestas y escucha territorial", href: "/solutions/encuestas-escucha-ciudadana" }]
+  },
+  {
+    slug: "piloto-ia-documental",
+    number: "04",
+    market: "Gobiernos",
+    eyebrow: "Muestra · IA responsable",
+    title: "Piloto de IA para documentos y conocimiento",
+    shortTitle: "Piloto de IA documental",
+    promise: "Una prueba acotada con línea de base, control humano, errores visibles y criterio de detención.",
+    description: "La muestra parte de un proceso documental concreto. Separa demostración de producción y exige evidencia antes de recomendar una escala mayor.",
+    accent: "#475c63",
+    image: "/images/noam-public-sector.jpg",
+    imageAlt: "Equipo público revisando documentos y una herramienta de inteligencia artificial",
+    duration: "4 a 8 semanas",
+    decision: "Si el caso de uso produce utilidad suficiente bajo controles aceptables para detener, ajustar o escalar el piloto.",
+    solutionSlug: "ia-procesos-publicos",
+    questions: ["¿Qué cuello de botella medible busca resolver?", "¿Qué documentos pueden utilizarse y bajo qué permisos?", "¿Qué errores son tolerables y cuáles obligan a detener?", "¿Quién revisa, corrige y responde por el resultado?"],
+    modules: [
+      { title: "Caso de uso", purpose: "Definir tarea, volumen, usuario, línea de base y alternativa simple.", output: "Ficha de decisión" },
+      { title: "Riesgos", purpose: "Clasificar datos, exposición, errores y supervisión necesaria.", output: "Matriz de controles" },
+      { title: "Piloto", purpose: "Construir recuperación, respuesta y evaluación sobre un corpus acotado.", output: "Prototipo funcional" },
+      { title: "Evidencia", purpose: "Medir calidad, tiempo, utilidad y condiciones de escalamiento.", output: "Informe de evaluación" }
+    ],
+    preview: { title: "Registro de evaluación · Estructura demostrativa", columns: ["Prueba", "Criterio", "Decisión"], rows: [["Recuperación", "Fuente pertinente", "Aceptar / revisar"], ["Respuesta", "Sustento verificable", "Aceptar / rechazar"], ["Dato restringido", "No exposición", "Detener"], ["Tiempo de tarea", "Mejora vs. línea base", "Escalar / ajustar"]] },
+    timeline: [
+      { period: "Semana 1", title: "Preparación", description: "Proceso, línea de base, corpus, permisos y riesgos." },
+      { period: "Semanas 2–3", title: "Diseño", description: "Arquitectura, controles, casos de prueba y métricas." },
+      { period: "Semanas 4–6", title: "Piloto", description: "Construcción, pruebas, revisión humana y correcciones." },
+      { period: "Semanas 7–8", title: "Decisión", description: "Evaluación, documentación y recomendación de escala." }
+    ],
+    clientInputs: ["Proceso y línea de base actual", "Corpus autorizado y clasificación de datos", "Usuarios expertos para evaluación", "Políticas de seguridad y responsables"],
+    qualityControls: ["Casos de prueba antes del desarrollo", "Citas y trazabilidad por respuesta", "Pruebas de exposición y rechazo", "Criterios explícitos para detener o escalar"],
+    deliverables: ["Ficha del caso de uso", "Matriz de riesgos y controles", "Piloto evaluable", "Informe y plan de adopción"],
+    related: [{ type: "Laboratorio", label: "Evaluar un caso de uso de IA", href: "/products/ai-governance-lab" }, { type: "Toolkit", label: "Playbook de gobernanza de IA", href: "/toolkits/ai-governance-playbook" }, { type: "Solución", label: "IA para procesos públicos", href: "/solutions/ia-procesos-publicos" }]
+  },
+  {
+    slug: "inteligencia-territorial-inversion",
+    number: "05",
+    market: "Empresas",
+    eyebrow: "Muestra · Inversión y expansión",
+    title: "Screening territorial para una decisión de inversión",
+    shortTitle: "Screening territorial",
+    promise: "Comparar oportunidades sin esconder supuestos, vacíos ni sensibilidad de la recomendación.",
+    description: "La muestra organiza demanda, infraestructura, Estado, entorno y riesgo para reducir alternativas y definir qué debe validarse antes de comprometer capital.",
+    accent: "#a17a24",
+    image: "/images/noam-private-sector.jpg",
+    imageAlt: "Profesionales evaluando infraestructura y territorio para una inversión",
+    duration: "4 a 10 semanas",
+    decision: "Qué territorios pasan a diligencia profunda y qué supuestos deben verificarse antes de una recomendación final.",
+    solutionSlug: "inteligencia-territorial-inversion",
+    questions: ["¿Qué criterios hacen viable la inversión?", "¿Qué unidad geográfica representa la decisión real?", "¿Qué fuentes permiten comparar y cuáles requieren campo?", "¿Cuánto cambia el resultado cuando cambian los supuestos?"],
+    modules: [
+      { title: "Criterios", purpose: "Acordar variables, exclusiones, ponderaciones y umbrales.", output: "Marco de decisión" },
+      { title: "Territorios", purpose: "Integrar mercado, infraestructura, instituciones y entorno.", output: "Base y perfiles" },
+      { title: "Escenarios", purpose: "Comparar alternativas y probar sensibilidad a supuestos.", output: "Modelo multicriterio" },
+      { title: "Diligencias", purpose: "Priorizar información primaria y validaciones pendientes.", output: "Brief para comité" }
+    ],
+    preview: { title: "Matriz de screening · Estructura demostrativa", columns: ["Dimensión", "Evidencia", "Tratamiento"], rows: [["Demanda", "Mercado + población", "Escenarios"], ["Accesibilidad", "Redes + tiempos", "Área de influencia"], ["Entorno", "Actores + regulación", "Riesgo"], ["Incertidumbre", "Vacíos + supuestos", "Diligencia"]] },
+    timeline: [
+      { period: "Semana 1", title: "Marco", description: "Decisión, criterios, geografía y restricciones." },
+      { period: "Semanas 2–4", title: "Datos", description: "Integración, calidad y construcción de perfiles." },
+      { period: "Semanas 5–7", title: "Escenarios", description: "Comparación, sensibilidad y revisión con negocio." },
+      { period: "Semanas 8–10", title: "Validación", description: "Diligencias, recomendación y próximos pasos." }
+    ],
+    clientInputs: ["Objetivo y restricciones de inversión", "Variables comerciales disponibles", "Supuestos de operación y costos", "Criterios de comité y tolerancia al riesgo"],
+    qualityControls: ["Variables y ponderaciones documentadas", "Comparabilidad geográfica revisada", "Sensibilidad a supuestos críticos", "Vacíos de información convertidos en diligencias"],
+    deliverables: ["Base territorial integrada", "Perfiles y comparador", "Modelo de escenarios", "Recomendación y plan de validación"],
+    related: [{ type: "Datos", label: "Explorar DataPerú", href: "/dataperu" }, { type: "Toolkit", label: "Ficha de decisión territorial", href: "/toolkits/ficha-decision-territorial-empresas" }, { type: "Solución", label: "Inteligencia territorial para inversión", href: "/solutions/inteligencia-territorial-inversion" }]
+  },
+  {
+    slug: "monitoreo-entorno-impacto",
+    number: "06",
+    market: "Empresas",
+    eyebrow: "Muestra · Entorno e impacto",
+    title: "Sistema de monitoreo de entorno e impacto",
+    shortTitle: "Monitoreo de entorno",
+    promise: "Señales verificables conectadas con responsables, protocolos y decisiones de dirección.",
+    description: "La muestra organiza fuentes públicas e internas, actores, compromisos y eventos sin convertir todo cambio de contexto en una alerta crítica.",
+    accent: "#62724d",
+    image: "/images/noam-private-sector.jpg",
+    imageAlt: "Equipo empresarial revisando contexto territorial, compromisos e impacto",
+    duration: "6 a 12 semanas",
+    decision: "Qué señales requieren observación, validación o escalamiento y quién debe responder dentro de la organización.",
+    solutionSlug: "monitoreo-entorno-impacto",
+    questions: ["¿Qué cambios externos pueden afectar una decisión u operación?", "¿Qué fuente y evidencia confirman cada señal?", "¿Qué umbral justifica escalar y a quién?", "¿Cómo se vinculan compromisos, actores, territorios y resultados?"],
+    modules: [
+      { title: "Taxonomía", purpose: "Definir temas, actores, eventos, riesgos y compromisos.", output: "Modelo de información" },
+      { title: "Detección", purpose: "Integrar fuentes, frecuencia, relevancia y reglas de alerta.", output: "Motor de señales" },
+      { title: "Contexto", purpose: "Relacionar evidencia, territorio, historial y responsables.", output: "Fichas y dashboard" },
+      { title: "Respuesta", purpose: "Instalar protocolos, reuniones y trazabilidad de decisiones.", output: "Rutina ejecutiva" }
+    ],
+    preview: { title: "Bitácora de señales · Estructura demostrativa", columns: ["Evento", "Validación", "Respuesta"], rows: [["Cambio normativo", "Fuente oficial", "Evaluar exposición"], ["Compromiso vencido", "Evidencia interna", "Escalar responsable"], ["Señal territorial", "Dos fuentes", "Monitorear"], ["Indicador de impacto", "Serie comparable", "Revisar intervención"]] },
+    timeline: [
+      { period: "Semanas 1–2", title: "Exposición", description: "Decisiones, temas, actores, territorios y riesgos." },
+      { period: "Semanas 3–4", title: "Fuentes", description: "Taxonomía, captura, validación y reglas de relevancia." },
+      { period: "Semanas 5–8", title: "Producto", description: "Fichas, visualizaciones, alertas y pruebas." },
+      { period: "Semanas 9–12", title: "Operación", description: "Protocolos, responsables, reuniones y transferencia." }
+    ],
+    clientInputs: ["Mapa inicial de riesgos y actores", "Compromisos e indicadores vigentes", "Fuentes internas y proveedores actuales", "Protocolos de escalamiento y responsables"],
+    qualityControls: ["Fuente y fecha por señal", "Separación entre evento, interpretación y riesgo", "Reglas de relevancia probadas", "Trazabilidad de respuesta y cierre"],
+    deliverables: ["Taxonomía y mapa de información", "Dashboard y fichas territoriales", "Alertas y bitácora", "Protocolo ejecutivo y gobernanza"],
+    related: [{ type: "Insight", label: "Diseñar sistemas que sirvan para decidir", href: "/insights/ocho-preguntas-observatorio-gestion" }, { type: "Servicio", label: "Observatorios y sistemas de decisión", href: "/services/observatorios-sistemas-decision" }, { type: "Solución", label: "Monitoreo de entorno e impacto", href: "/solutions/monitoreo-entorno-impacto" }]
+  }
+];
+
+export function getDeliverableSample(slug: string) {
+  return deliverableSamples.find((sample) => sample.slug === slug);
+}
+
+export function getDeliverableSampleBySolution(solutionSlug: SolutionSlug) {
+  return deliverableSamples.find((sample) => sample.solutionSlug === solutionSlug);
+}

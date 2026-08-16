@@ -4,8 +4,8 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getAllContent } from "@/lib/content";
 
 export const metadata = buildMetadata({
-  title: "Indicators",
-  description: "Senales e indicadores de contexto para decision estrategica.",
+  title: "Indicadores",
+  description: "Indicadores y fichas metodológicas para comprender territorio, capacidades y gestión.",
   path: "/indicators"
 });
 
@@ -18,14 +18,14 @@ export default async function IndicatorsPage() {
         data={
           breadcrumbJsonLd([
             { name: "Inicio", path: "/" },
-            { name: "Indicators", path: "/indicators" }
+            { name: "Indicadores", path: "/indicators" }
           ])
         }
       />
       <ResourceIndex
-        eyebrow="Indicators"
-        title="Indicadores accionables para anticipar cambios relevantes."
-        description="Monitoreos con enfoque en riesgo, oportunidad y timing de ejecucion."
+        eyebrow="Indicadores"
+        title="Medir mejor para interpretar con cuidado."
+        description="Arquitecturas de indicadores, definiciones y criterios de lectura para comparar sin perder contexto."
         items={items}
       />
     </>

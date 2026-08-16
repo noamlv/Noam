@@ -17,7 +17,9 @@ const config: Config = {
         border: "var(--color-border)",
         "border-strong": "var(--color-border-strong)",
         accent: "var(--color-accent)",
-        "accent-ink": "var(--color-accent-ink)"
+        "accent-ink": "var(--color-accent-ink)",
+        rust: "var(--color-rust)",
+        moss: "var(--color-moss)"
       },
       borderRadius: {
         sm: "var(--radius-sm)",
@@ -25,7 +27,8 @@ const config: Config = {
         lg: "var(--radius-lg)"
       },
       boxShadow: {
-        subtle: "var(--shadow-subtle)"
+        subtle: "var(--shadow-subtle)",
+        visual: "var(--shadow-visual)"
       },
       maxWidth: {
         "site-sm": "var(--max-width-sm)",
