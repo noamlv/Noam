@@ -7,7 +7,7 @@
     "dev:open": "sh -c '(sleep 2; open http://localhost:3000) & next dev'",
     "dev:fresh": "rm -rf .next && npm run dev:open",
     "build": "next build",
-    "build:verified": "NOAM_SKIP_BUILD_TYPES=true NODE_OPTIONS=--max-old-space-size=768 next build --no-lint",
+    "build:verified": "NOAM_SKIP_BUILD_TYPES=true NODE_OPTIONS=--max-old-space-size=768 next build",
     "check": "npm run lint && npm run typecheck && npm run test:data && npm run test:department-research && npm run test:planometro && npm run test:ai && npm run test:analytics && npm run test:scope && npm run test:samples && npm run test:profile && npm run test:readiness && npm run test:visual && npm run test:editorial && npm run test:brief && npm run test:search && npm run test:resources && npm run test:institutional-cases && npm run test:whatsapp && npm run test:db && npm run test:products:db && npm run test:resources:db && npm run test:newsletter:db && npm run test:campaigns:db && npm run test:admin:db && npm run build:verified",
     "data:renamu": "node scripts/build-renamu-profiles.mjs",
     "data:sectors": "node scripts/build-renamu-sectors.mjs",
@@ -61,7 +61,7 @@
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^1.11.0",
-    "next": "^15.5.20",
+    "next": "16.3.1",
     "next-mdx-remote": "^6.0.0",
     "postgres": "^3.4.9",
     "react": "^19.2.0",
@@ -79,11 +79,11 @@
     "autoprefixer": "^10.4.27",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.5.6",
-    "postcss": "8.5.19",
+    "postcss": "8.5.26",
     "tailwindcss": "^3.4.19",
     "typescript": "^5.9.3"
   },
   "overrides": {
-    "postcss": "8.5.19"
+    "postcss": "8.5.26"
   }
 }
