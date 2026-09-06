@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/seo/json-ld";
 import { DepartmentResearchBrief } from "@/components/dataperu/department-research-brief";
 import { Badge, Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
-import { dataperuSources, formatCurrency, formatMetric, formatPercent, renamuSource, titleCase } from "@/lib/dataperu";
+import { dataperuSources, formatCurrency, formatMetric, formatPercent, projectSource, renamuSource, titleCase } from "@/lib/dataperu";
 import { departmentProfiles, departmentSummary, getDepartmentProfile, getDepartmentSignals } from "@/lib/dataperu-departments";
 import { getDepartmentResearch } from "@/lib/department-research";
 import { radarMunicipalities } from "@/lib/dataperu-radar";
@@ -46,6 +46,12 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
   const signals = getDepartmentSignals(department);
   const topMunicipalities = radarMunicipalities.filter((item) => item.department === department.name).sort((left, right) => right.pim - left.pim).slice(0, 8);
   const contactHref = `/contact?interest=dataperu&territory=${encodeURIComponent(name)}&from=${path}`;
+  const sourceLinks = [
+    { label: "Población proyectada", period: "INEI · referencia 2025", href: dataperuSources.population.pageUrl },
+    { label: "Presupuesto y ejecución", period: "MEF · año fiscal 2025", href: dataperuSources.budget.datasetUrl },
+    { label: "Proyectos municipales", period: "MEF · año fiscal 2025", href: projectSource.datasetUrl },
+    { label: "Capacidades municipales", period: "RENAMU 2025", href: renamuSource.datasetUrl }
+  ];
 
   const metrics = [
     { label: "Población proyectada", value: formatMetric(department.population2025), note: "INEI · 2025" },
@@ -85,7 +91,38 @@ export default async function DepartmentPage({ params }: DepartmentPageProps) {
         [Landmark, "Diagnóstico regional", "Brechas, prioridades, actores, servicios y cartera para orientar una agenda verificable."],
         [Building2, "Observatorio de gestión", "Indicadores propios, responsables, alertas y seguimiento de inversiones o compromisos."],
         [Database, "Infraestructura de datos", "Fuentes integradas, definiciones, procesos de actualización y productos reutilizables."]
-      ].map(([Icon, title, text]) => { const Component = Icon as typeof Landmark; return <article key={String(title)} className="rounded-md border border-border bg-panel p-6"><Component className="h-5 w-5 text-rust" aria-hidden /><h2 className="mt-10 text-xl font-medium tracking-[-0.025em] text-ink">{String(title)}</h2><p className="mt-3 text-sm leading-6 text-ink/62">{String(text)}</p></article>; })}</div></div><div className="mt-12 flex flex-wrap items-center justify-between gap-5 border-t border-border pt-7"><p className="max-w-2xl text-xs leading-5 text-muted">Fuentes: {dataperuSources.population.publisher}, {dataperuSources.budget.publisher} y {renamuSource.publisher}. Los datos publicados corresponden a referencias 2025 y conservan sus límites de cobertura y declaración.</p><Button href={contactHref} className="rounded-full px-6">Plantear un análisis de {name}</Button></div></Container></Section>
+      ].map(([Icon, title, text]) => { const Component = Icon as typeof Landmark; return <article key={String(title)} className="rounded-md border border-border bg-panel p-6"><Component className="h-5 w-5 text-rust" aria-hidden /><h2 className="mt-10 text-xl font-medium tracking-[-0.025em] text-ink">{String(title)}</h2><p className="mt-3 text-sm leading-6 text-ink/62">{String(text)}</p></article>; })}</div></div>
+
+        <div className="mt-14 border-t border-border pt-8">
+          <div className="grid gap-8 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
+            <div>
+              <Eyebrow>Fuentes y vigencia</Eyebrow>
+              <h2 className="mt-3 text-2xl font-medium tracking-[-0.035em] text-ink">Qué sustenta esta ficha.</h2>
+              <p className="mt-4 text-xs leading-5 text-ink/60">Los indicadores conservan el periodo, universo y limitaciones de la fuente original. No constituyen un ranking ni una evaluación causal.</p>
+            </div>
+            <div>
+              <div className="grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2">
+                {sourceLinks.map((source) => (
+                  <a key={source.label} href={source.href} target="_blank" rel="noreferrer" className="group bg-panel p-5 transition-colors hover:bg-canvas">
+                    <span className="text-sm font-medium text-ink group-hover:text-rust">{source.label}</span>
+                    <span className="mt-2 block text-[10px] uppercase tracking-[0.12em] text-muted">{source.period}</span>
+                  </a>
+                ))}
+              </div>
+              {research ? (
+                <p className="mt-5 text-xs leading-5 text-ink/58">
+                  La agenda territorial fue revisada el {new Intl.DateTimeFormat("es-PE", { dateStyle: "long", timeZone: "UTC" }).format(new Date(research.researchDate))}, tiene confianza {research.confidence}
+                  {research.evidenceBase?.sourceCount ? ` y sintetiza ${research.evidenceBase.sourceCount} fuentes` : ""}. Los vacíos de información permanecen visibles para evitar recomendaciones sin sustento.
+                </p>
+              ) : null}
+              <div className="mt-6 flex flex-wrap items-center gap-5">
+                <NextLink href="/transparency" className="text-xs font-medium text-ink underline decoration-border underline-offset-4">Revisar estándar de transparencia</NextLink>
+                <Button href={contactHref} className="rounded-full px-6">Plantear un análisis de {name}</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Container></Section>
     </>
   );
 }

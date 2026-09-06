@@ -1,0 +1,2 @@
+dominio,dataset_o_sistema,decision_o_servicio,unidad_responsable,propietario_dato,usuarios,fuente,frecuencia,fecha_ultima_actualizacion,datos_personales,nivel_sensibilidad,regla_calidad,acceso,integracion,problema_principal,prioridad
+ejemplo_presupuesto,Reporte de ejecucion,Seguimiento de metas,Oficina de planeamiento,Responsable por definir,Alta direccion,SIAF,mensual,,no,interna,Conciliacion con fuente oficial,restringido,manual,Versiones distintas,alta

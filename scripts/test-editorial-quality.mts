@@ -62,6 +62,13 @@ for (const [collection, minimum] of Object.entries(contentMinimums)) {
     assert.ok(topics.has(String(data.topic)), `${relativePath} usa un tema no permitido`);
     assert.ok(String(data.ogImage).startsWith("/"), `${relativePath} requiere una ruta OG estable`);
     assert.ok(parsed.content.trim().length >= 350, `${relativePath} necesita suficiente desarrollo editorial`);
+    if (data.author || data.reviewedAt || data.sourceCount) {
+      assert.ok(String(data.author ?? "").length >= 5, `${relativePath} debe identificar una autoría visible`);
+      assert.ok(!Number.isNaN(Date.parse(String(data.reviewedAt ?? ""))), `${relativePath} requiere una fecha de revisión válida`);
+      assert.ok(Number.isInteger(data.sourceCount) && Number(data.sourceCount) >= 1, `${relativePath} requiere un número válido de fuentes principales`);
+      const officialLinks = parsed.content.match(/https:\/\/(?:www\.)?(?:gob\.pe|inei\.gob\.pe|mef\.gob\.pe)[^)\s]+/g) ?? [];
+      assert.ok(officialLinks.length >= Number(data.sourceCount), `${relativePath} debe enlazar al menos tantas fuentes oficiales como declara`);
+    }
     if (collection === "services") assert.ok(String(data.outcome ?? "").length >= 40, `${relativePath} debe declarar el resultado ofrecido`);
     if (collection === "cases" && data.caseType === "institutional") {
       for (const field of ["client", "engagement", "evidence", "disclosure"]) {

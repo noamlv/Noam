@@ -59,8 +59,10 @@ export default async function InsightDetailPage({ params }: InsightPageProps) {
             title: content.item.title,
             description: content.item.description,
             datePublished: content.item.date,
+            dateModified: content.item.reviewedAt,
             url: canonical,
-            image: new URL(content.item.ogImage && content.item.ogImage !== "/og-default.png" ? content.item.ogImage : ogImagePath("insights", slug), siteConfig.url).toString()
+            image: new URL(content.item.ogImage && content.item.ogImage !== "/og-default.png" ? content.item.ogImage : ogImagePath("insights", slug), siteConfig.url).toString(),
+            author: content.item.author
           })
         }
       />

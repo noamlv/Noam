@@ -114,6 +114,7 @@ export function articleJsonLd(input: {
   dateModified?: string;
   url: string;
   image?: string;
+  author?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -125,8 +126,9 @@ export function articleJsonLd(input: {
     mainEntityOfPage: input.url,
     image: input.image ?? `${siteConfig.url}/og-default.png`,
     author: {
-      "@type": "Organization",
-      name: siteConfig.legalName
+      "@type": input.author ? "Person" : "Organization",
+      name: input.author ?? siteConfig.legalName,
+      ...(input.author ? { url: `${siteConfig.url}/about` } : {})
     },
     publisher: {
       "@type": "Organization",

@@ -40,6 +40,13 @@ export async function ResourceDetail({ item, body, parentLabel, parentHref }: Re
               </div>
               <h1 className="mt-7 max-w-[18ch] text-4xl font-medium leading-[1.04] tracking-[-0.05em] text-white md:text-6xl">{item.title}</h1>
               <p className="mt-6 max-w-3xl text-base leading-8 text-white/68 md:text-lg">{item.description}</p>
+              {item.author || item.reviewedAt || item.sourceCount ? (
+                <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/14 pt-5 text-[10px] font-medium uppercase tracking-[0.13em] text-white/52">
+                  {item.author ? <span>Por {item.author}</span> : null}
+                  {item.reviewedAt ? <span>Revisado {formatDate(item.reviewedAt)}</span> : null}
+                  {item.sourceCount ? <span>{item.sourceCount} fuentes principales</span> : null}
+                </div>
+              ) : null}
               {item.outcome ? <p className="mt-7 max-w-2xl border-l border-[#d9a48f] pl-4 text-sm font-medium leading-6 text-white/78">{item.outcome}</p> : null}
               {isInstitutionalCase ? (
                 <dl className="mt-9 grid gap-px overflow-hidden rounded-md border border-white/12 bg-white/12 sm:grid-cols-2">

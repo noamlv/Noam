@@ -15,6 +15,9 @@ export interface ContentFrontmatter {
   featured?: boolean;
   readingTime?: string;
   ogImage?: string;
+  author?: string;
+  reviewedAt?: string;
+  sourceCount?: number;
   outcome?: string;
   draft?: boolean;
   caseType?: "institutional" | "product" | "demonstration";

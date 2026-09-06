@@ -13,15 +13,12 @@ export const mdxComponents = {
   Downloads,
   Disclosure,
   CTA: ArticleCta,
-  a: ({ href = "", children }: { href?: string; children: React.ReactNode }) => href.startsWith("/downloads/") ? (
-    <a href={href} download className="underline decoration-border underline-offset-4 transition-colors duration-180 hover:text-accent">
-      {children}
-    </a>
-  ) : (
-    <NextLink href={href} className="underline decoration-border underline-offset-4 transition-colors duration-180 hover:text-accent">
-      {children}
-    </NextLink>
-  ),
+  a: ({ href = "", children }: { href?: string; children: React.ReactNode }) => {
+    const className = "underline decoration-border underline-offset-4 transition-colors duration-180 hover:text-accent";
+    if (href.startsWith("/downloads/")) return <a href={href} download className={className}>{children}</a>;
+    if (href.startsWith("http://") || href.startsWith("https://")) return <a href={href} target="_blank" rel="noreferrer" className={className}>{children}</a>;
+    return <NextLink href={href} className={className}>{children}</NextLink>;
+  },
   blockquote: ({ children }: { children: React.ReactNode }) => (
     <blockquote className="border-l border-accent pl-4 text-ink/85">{children}</blockquote>
   ),

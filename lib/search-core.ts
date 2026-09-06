@@ -43,7 +43,9 @@ function scoreEntry(entry: SearchEntry, query: string) {
   const title = normalizeSearchText(entry.title);
   const description = normalizeSearchText(entry.description);
   const keywords = normalizeSearchText(entry.keywords.join(" "));
+  const phraseMatch = title.includes(normalizedQuery) || keywords.includes(normalizedQuery) || description.includes(normalizedQuery);
   let score = 0;
+  let matchedTokens = 0;
 
   if (title === normalizedQuery) score += 50;
   else if (title.startsWith(normalizedQuery)) score += 32;
@@ -52,10 +54,15 @@ function scoreEntry(entry: SearchEntry, query: string) {
   if (description.includes(normalizedQuery)) score += 8;
 
   for (const token of tokens) {
+    const tokenMatches = title.includes(token) || keywords.includes(token) || description.includes(token);
+    if (tokenMatches) matchedTokens += 1;
     if (title.includes(token)) score += 7;
     if (keywords.includes(token)) score += 4;
     if (description.includes(token)) score += 2;
   }
+
+  const minimumTokenMatches = tokens.length <= 2 ? tokens.length : Math.ceil(tokens.length * 0.6);
+  if (!phraseMatch && matchedTokens < minimumTokenMatches) return 0;
 
   return score > 0 && entry.featured ? score + 2 : score;
 }

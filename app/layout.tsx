@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
+import { NoamNavigator } from "@/components/assistant/noam-navigator";
 import { SiteAnalytics } from "@/components/analytics/site-analytics";
-import { WhatsAppLauncher } from "@/components/commercial/whatsapp-link";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -89,7 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
-          <WhatsAppLauncher />
+          <NoamNavigator />
         </div>
       </body>
     </html>

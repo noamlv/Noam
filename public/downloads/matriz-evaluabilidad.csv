@@ -1,0 +1,9 @@
+dimension,pregunta,evidencia_disponible,brecha,riesgo,accion_requerida,responsable,fecha_limite
+decision,Que decision cambiara con la evaluacion?,,,,,,
+intervencion,Puede describirse y verificarse lo que recibio cada unidad?,,,,,,
+teoria_cambio,Existe una cadena causal explicita y plausible?,,,,,,
+resultado,El resultado puede medirse en el plazo disponible?,,,,,,
+comparacion,Existe una estrategia de comparacion defendible?,,,,,,
+datos,Hay identificadores fechas cobertura y calidad suficientes?,,,,,,
+etica,Estan definidos permisos privacidad consentimiento y riesgos?,,,,,,
+factibilidad,Existen tiempo presupuesto capacidades y acceso?,,,,,,
