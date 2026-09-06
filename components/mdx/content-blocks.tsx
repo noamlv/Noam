@@ -43,7 +43,7 @@ export function Implications({ children }: { children: React.ReactNode }) {
 }
 
 export function Downloads({ children }: { children: React.ReactNode }) {
-  return <BaseBlock title="Descargas y Recursos">{children}</BaseBlock>;
+  return <BaseBlock title="Aplicación y recursos">{children}</BaseBlock>;
 }
 
 export function Disclosure({ children }: { children: React.ReactNode }) {

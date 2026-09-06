@@ -62,6 +62,10 @@ for (const [collection, minimum] of Object.entries(contentMinimums)) {
     assert.ok(topics.has(String(data.topic)), `${relativePath} usa un tema no permitido`);
     assert.ok(String(data.ogImage).startsWith("/"), `${relativePath} requiere una ruta OG estable`);
     assert.ok(parsed.content.trim().length >= 350, `${relativePath} necesita suficiente desarrollo editorial`);
+    if (["insights", "toolkits", "indicators"].includes(collection) && parsed.content.includes("<Downloads>")) {
+      const resourceBlock = parsed.content.match(/<Downloads>([\s\S]*?)<\/Downloads>/)?.[1] ?? "";
+      assert.match(resourceBlock, /\]\([^)]+\)/, `${relativePath} debe ofrecer al menos un recurso o enlace accionable`);
+    }
     if (data.author || data.reviewedAt || data.sourceCount) {
       assert.ok(String(data.author ?? "").length >= 5, `${relativePath} debe identificar una autoría visible`);
       assert.ok(!Number.isNaN(Date.parse(String(data.reviewedAt ?? ""))), `${relativePath} requiere una fecha de revisión válida`);
