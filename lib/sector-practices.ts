@@ -89,7 +89,7 @@ export const publicPractices: SectorPractice[] = [
     ],
     outcomes: ["Prioridades regionales diferenciadas por territorio", "Alertas para proyectos y compromisos críticos", "Reuniones ejecutivas con información común", "Capacidad de comunicar avances y restricciones"],
     deliverables: ["Diagnóstico y agenda regional", "Observatorio de inversiones", "Tablero por provincia y sector", "Sistema de alertas", "Brief periódico para alta dirección"],
-    solutionSlugs: ["diagnostico-agenda-territorial", "observatorio-gestion-inversiones", "ia-procesos-publicos"],
+    solutionSlugs: ["diagnostico-agenda-territorial", "linea-base-evaluacion-programas", "observatorio-gestion-inversiones", "ia-procesos-publicos"],
     evidence: [
       { label: "DataPerú: perfiles y temas municipales", href: "/dataperu", type: "Producto abierto" },
       { label: "Ocho preguntas antes de construir un observatorio", href: "/insights/ocho-preguntas-observatorio-gestion", type: "Insight" },
@@ -114,7 +114,7 @@ export const publicPractices: SectorPractice[] = [
     ],
     outcomes: ["Definiciones e indicadores compartidos", "Segmentación territorial de implementación", "Alertas conectadas con asistencia y responsables", "Evaluación útil para rediseñar operación"],
     deliverables: ["Mapa de implementación", "Catálogo y auditoría de indicadores", "Dashboard nacional con vistas territoriales", "Evaluación de procesos o resultados", "Protocolo de actualización y gobernanza"],
-    solutionSlugs: ["observatorio-gestion-inversiones", "encuestas-escucha-ciudadana", "ia-procesos-publicos"],
+    solutionSlugs: ["linea-base-evaluacion-programas", "observatorio-gestion-inversiones", "encuestas-escucha-ciudadana", "ia-procesos-publicos"],
     evidence: [
       { label: "Arquitectura de decisión para IA pública", href: "/insights/decision-architecture-gov-ai", type: "Insight" },
       { label: "Playbook de gobernanza de IA", href: "/toolkits/ai-governance-playbook", type: "Toolkit" },
@@ -267,7 +267,7 @@ export const privatePractices: SectorPractice[] = [
     ],
     outcomes: ["Problema y población objetivo mejor definidos", "Indicadores medibles y pertinentes", "Evidencia para adaptar implementación", "Aprendizajes comunicables a aliados y financiadores"],
     deliverables: ["Diagnóstico y teoría de cambio", "Línea de base", "Sistema de monitoreo", "Evaluación de proceso o resultados", "Dashboard e informe de aprendizaje"],
-    solutionSlugs: ["encuestas-escucha-ciudadana", "diagnostico-agenda-territorial", "monitoreo-entorno-impacto"],
+    solutionSlugs: ["linea-base-evaluacion-programas", "encuestas-escucha-ciudadana", "diagnostico-agenda-territorial", "monitoreo-entorno-impacto"],
     evidence: [
       { label: "Estudios, diagnósticos y evaluación", href: "/services/estudios-diagnosticos-evaluacion", type: "Capacidad" },
       { label: "Guía de encuesta para decidir", href: "/toolkits/diseno-encuesta-para-decidir", type: "Toolkit" },

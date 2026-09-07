@@ -9,7 +9,7 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Muestras de entregables",
-  description: "Seis muestras demostrativas para examinar cómo NOAM estructura diagnósticos, observatorios, estudios, IA e inteligencia territorial.",
+  description: "Siete muestras demostrativas para examinar cómo NOAM estructura diagnósticos, evaluaciones, observatorios, IA e inteligencia territorial.",
   path: "/muestras",
   image: "/og/muestras/diagnostico-agenda-territorial"
 });
@@ -33,7 +33,7 @@ export default function SamplesPage() {
               <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[13ch] text-white">Mira la forma del trabajo antes de contratarlo.</Heading>
             </div>
             <div className="reveal reveal-delay-2">
-              <p className="text-base leading-8 text-white/68">Seis muestras enseñan cómo una pregunta se convierte en evidencia, un artefacto de decisión y una capacidad transferible.</p>
+              <p className="text-base leading-8 text-white/68">Siete muestras enseñan cómo una pregunta se convierte en evidencia, un artefacto de decisión y una capacidad transferible.</p>
               <p className="mt-5 border-l border-[#d9a48f]/50 pl-4 text-xs leading-6 text-white/48">Muestras demostrativas. No corresponden a clientes ni encargos reales.</p>
             </div>
           </div>
@@ -52,13 +52,13 @@ export default function SamplesPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.5fr_1fr] md:items-end">
-            <div><Eyebrow>Seis puntos de partida</Eyebrow><Heading size="xl">Del diagnóstico a la operación.</Heading></div>
+            <div><Eyebrow>Siete puntos de partida</Eyebrow><Heading size="xl">Del diagnóstico a la operación.</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Cada ficha expone preguntas, módulos, cronograma, insumos, controles y entregables. El alcance contractual se diseña después de entender el contexto.</p>
           </div>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-2">
-            {deliverableSamples.map((sample) => (
-              <NextLink key={sample.slug} href={`/muestras/${sample.slug}`} className="group overflow-hidden rounded-md border border-border bg-panel transition-all duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle">
+            {deliverableSamples.map((sample, index) => (
+              <NextLink key={sample.slug} href={`/muestras/${sample.slug}`} className={`group overflow-hidden rounded-md border border-border bg-panel transition-all duration-200 hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle ${index === deliverableSamples.length - 1 && deliverableSamples.length % 2 === 1 ? "lg:col-span-2 lg:grid lg:grid-cols-2" : ""}`}>
                 <DeliverablePreview sample={sample} compact className="rounded-none border-0 shadow-none" />
                 <div className="p-6 md:p-8">
                   <div className="flex items-center justify-between gap-4"><span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-rust">{sample.market}</span><span className="font-mono text-[10px] text-muted">{sample.duration}</span></div>

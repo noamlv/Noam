@@ -4,7 +4,8 @@ export const solutionSlugs = [
   "encuestas-escucha-ciudadana",
   "ia-procesos-publicos",
   "inteligencia-territorial-inversion",
-  "monitoreo-entorno-impacto"
+  "monitoreo-entorno-impacto",
+  "linea-base-evaluacion-programas"
 ] as const;
 
 export type SolutionSlug = (typeof solutionSlugs)[number];
@@ -280,6 +281,49 @@ export const solutions: Solution[] = [
       { label: "Un sistema de seguimiento no es solo un dashboard", href: "/insights/sistema-seguimiento-municipal-no-es-dashboard" },
       { label: "Observatorios y sistemas de decisión", href: "/services/observatorios-sistemas-decision" },
       { label: "Biblioteca de evidencia", href: "/evidence" }
+    ]
+  },
+  {
+    slug: "linea-base-evaluacion-programas",
+    number: "07",
+    market: "Gobiernos y empresas",
+    title: "Línea de base y evaluación de programas",
+    shortTitle: "Línea de base y evaluación",
+    promise: "Medir el punto de partida, comprender la implementación y decidir qué debe cambiar.",
+    description: "Diseñamos líneas de base y evaluaciones para programas, proyectos, políticas e iniciativas de impacto. Definimos preguntas, indicadores y comparaciones que la evidencia disponible puede sostener.",
+    duration: "6 a 14 semanas",
+    serviceSlug: "estudios-diagnosticos-evaluacion",
+    accent: "#7c523f",
+    situations: [
+      "Un programa comienza y necesita una medición inicial útil",
+      "La dirección necesita saber qué resultados están cambiando y para quién",
+      "La implementación presenta diferencias entre territorios o unidades",
+      "Una decisión de continuidad, rediseño o escala requiere evidencia defendible"
+    ],
+    outcomes: [
+      "Preguntas de evaluación conectadas con decisiones reales",
+      "Indicadores con definiciones, fuentes y limitaciones visibles",
+      "Una estrategia de comparación proporcional a los datos disponibles",
+      "Recomendaciones que distinguen resultados, implementación e incertidumbre"
+    ],
+    deliverables: [
+      "Teoría de cambio y matriz de preguntas",
+      "Línea de base, indicadores y ficha metodológica",
+      "Diseño de evaluación y plan de análisis",
+      "Informe de resultados e implementación",
+      "Brief ejecutivo con decisiones y agenda de aprendizaje"
+    ],
+    phases: [
+      { title: "Enmarcar", description: "Acordamos la decisión, la teoría de cambio, la población y las preguntas evaluables." },
+      { title: "Medir", description: "Definimos indicadores, fuentes, instrumentos, calidad y línea de base." },
+      { title: "Comparar", description: "Seleccionamos una estrategia de análisis viable y hacemos explícitos sus supuestos." },
+      { title: "Aprender", description: "Conectamos resultados e implementación con decisiones de corrección, continuidad o escala." }
+    ],
+    evidence: [
+      { label: "Cómo diseñar la línea de base de un programa público", href: "/insights/como-disenar-linea-base-programa-publico" },
+      { label: "Cuándo una evaluación de impacto es viable", href: "/insights/cuando-evaluacion-impacto-es-viable" },
+      { label: "Matriz editable de línea de base", href: "/downloads/matriz-linea-base.csv" },
+      { label: "Estudios, diagnósticos y evaluación", href: "/services/estudios-diagnosticos-evaluacion" }
     ]
   }
 ];

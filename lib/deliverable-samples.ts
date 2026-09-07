@@ -233,6 +233,73 @@ export const deliverableSamples: DeliverableSample[] = [
     qualityControls: ["Fuente y fecha por señal", "Separación entre evento, interpretación y riesgo", "Reglas de relevancia probadas", "Trazabilidad de respuesta y cierre"],
     deliverables: ["Taxonomía y mapa de información", "Dashboard y fichas territoriales", "Alertas y bitácora", "Protocolo ejecutivo y gobernanza"],
     related: [{ type: "Insight", label: "Diseñar sistemas que sirvan para decidir", href: "/insights/ocho-preguntas-observatorio-gestion" }, { type: "Servicio", label: "Observatorios y sistemas de decisión", href: "/services/observatorios-sistemas-decision" }, { type: "Solución", label: "Monitoreo de entorno e impacto", href: "/solutions/monitoreo-entorno-impacto" }]
+  },
+  {
+    slug: "linea-base-evaluacion-programa",
+    number: "07",
+    market: "Gobiernos y empresas",
+    eyebrow: "Muestra · Medición y aprendizaje",
+    title: "Línea de base y evaluación de un programa",
+    shortTitle: "Línea de base y evaluación",
+    promise: "Una medición diseñada para decidir, no una colección de indicadores sin uso.",
+    description: "La muestra conecta teoría de cambio, preguntas, indicadores, comparación e implementación. El diseño final depende del programa, la madurez de sus datos y la decisión que deberá sustentar.",
+    accent: "#7c523f",
+    image: "/images/noam-field-research.jpg",
+    imageAlt: "Equipo de evaluación revisando evidencia de un programa y su implementación territorial",
+    duration: "6 a 14 semanas",
+    decision: "Qué evidencia permitirá sostener, corregir, rediseñar o escalar el programa sin atribuirle efectos que el diseño no puede demostrar.",
+    solutionSlug: "linea-base-evaluacion-programas",
+    questions: [
+      "¿Qué decisión concreta debe sustentar la evaluación?",
+      "¿Qué resultados deberían observarse y en qué horizonte?",
+      "¿Qué comparación es viable con los datos y la implementación disponibles?",
+      "¿Qué diferencias territoriales o poblacionales deben explicarse?"
+    ],
+    modules: [
+      { title: "Teoría de cambio", purpose: "Conectar problema, intervención, mecanismos, resultados y supuestos.", output: "Mapa causal y preguntas" },
+      { title: "Línea de base", purpose: "Definir población, indicadores, fuentes, instrumentos y punto de partida.", output: "Matriz y ficha técnica" },
+      { title: "Evaluación", purpose: "Seleccionar comparación, análisis y límites de inferencia proporcionales.", output: "Diseño evaluativo" },
+      { title: "Aprendizaje", purpose: "Interpretar resultados junto con implementación, contexto y decisiones.", output: "Informe y agenda de mejora" }
+    ],
+    preview: {
+      title: "Matriz de evaluabilidad · Estructura demostrativa",
+      columns: ["Pregunta", "Evidencia", "Decisión"],
+      rows: [
+        ["Cobertura", "Registro + población", "Corregir acceso"],
+        ["Implementación", "Proceso + hitos", "Ajustar operación"],
+        ["Resultado", "Indicador + comparación", "Sostener / revisar"],
+        ["Heterogeneidad", "Segmentos + contexto", "Focalizar"]
+      ]
+    },
+    timeline: [
+      { period: "Semanas 1–2", title: "Evaluabilidad", description: "Decisiones, teoría de cambio, preguntas, datos y comparación posible." },
+      { period: "Semanas 3–5", title: "Diseño", description: "Indicadores, instrumentos, muestra, protocolos y plan de análisis." },
+      { period: "Semanas 6–10", title: "Medición", description: "Integración o levantamiento, calidad, análisis e implementación." },
+      { period: "Semanas 11–14", title: "Aprendizaje", description: "Interpretación, contraste, decisiones y transferencia al equipo." }
+    ],
+    clientInputs: [
+      "Diseño, reglas y documentos operativos del programa",
+      "Acceso a responsables, registros y población pertinente",
+      "Decisiones próximas de continuidad, rediseño o escala",
+      "Restricciones éticas, territoriales, presupuestales y de calendario"
+    ],
+    qualityControls: [
+      "Indicadores vinculados con preguntas y decisiones",
+      "Población, cobertura, periodos y faltantes documentados",
+      "Supuestos y límites de atribución explícitos",
+      "Separación entre resultados, implementación y contexto"
+    ],
+    deliverables: [
+      "Teoría de cambio y matriz de evaluación",
+      "Línea de base y fichas de indicadores",
+      "Base analítica, código y nota metodológica",
+      "Informe, brief ejecutivo y agenda de aprendizaje"
+    ],
+    related: [
+      { type: "Insight", label: "Cómo diseñar una línea de base", href: "/insights/como-disenar-linea-base-programa-publico" },
+      { type: "Insight", label: "Cuándo evaluar impacto", href: "/insights/cuando-evaluacion-impacto-es-viable" },
+      { type: "Solución", label: "Línea de base y evaluación de programas", href: "/solutions/linea-base-evaluacion-programas" }
+    ]
   }
 ];
 

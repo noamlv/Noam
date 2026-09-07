@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { deliverableSamples, getDeliverableSample, getDeliverableSampleBySolution } from "../lib/deliverable-samples.ts";
 
-assert.equal(deliverableSamples.length, 6, "La biblioteca comercial debe publicar seis muestras");
+assert.equal(deliverableSamples.length, 7, "La biblioteca comercial debe publicar siete muestras");
 assert.equal(new Set(deliverableSamples.map((sample) => sample.slug)).size, deliverableSamples.length, "Los slugs deben ser únicos");
 assert.equal(new Set(deliverableSamples.map((sample) => sample.solutionSlug)).size, deliverableSamples.length, "Cada solución debe tener una muestra propia");
 
@@ -20,4 +20,4 @@ for (const sample of deliverableSamples) {
 }
 
 assert.equal(getDeliverableSample("no-existe"), undefined);
-console.log("Muestras OK: seis arquitecturas comerciales completas y diferenciadas");
+console.log("Muestras OK: siete arquitecturas comerciales completas y diferenciadas");

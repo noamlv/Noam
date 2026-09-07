@@ -50,7 +50,7 @@ for (const organization of scopeOrganizationOptions) {
 }
 
 assert.equal(combinations, 400);
-assert.equal(mappedSampleSlugs.size, deliverableSamples.length, "Las 400 combinaciones deben poder recomendar las seis muestras");
+assert.equal(mappedSampleSlugs.size, deliverableSamples.length, "Las 400 combinaciones deben poder recomendar las siete muestras");
 assert.equal(parseScopeBuilderInput({ org: "invalid", challenge: "understand", evidence: "public", horizon: "medium" }), null);
 
 console.log(`Scope Builder OK: ${combinations} combinaciones y briefs verificados`);

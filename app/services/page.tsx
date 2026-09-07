@@ -76,7 +76,7 @@ export default function ServicesPage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Cómo empezar</Eyebrow><Heading size="xl">Soluciones que vuelven concreto el primer encargo.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Las capacidades describen cómo trabajamos. Estas soluciones muestran dónde puede comenzar una institución.</p><Button href="/solutions" variant="ghost" className="mt-6 gap-2">Explorar las seis soluciones <ArrowRight className="h-4 w-4" /></Button></div>
+            <div><Eyebrow>Cómo empezar</Eyebrow><Heading size="xl">Soluciones que vuelven concreto el primer encargo.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Las capacidades describen cómo trabajamos. Estas soluciones muestran dónde puede comenzar una institución.</p><Button href="/solutions" variant="ghost" className="mt-6 gap-2">Explorar las soluciones <ArrowRight className="h-4 w-4" /></Button></div>
             <div className="grid gap-4 sm:grid-cols-2">{solutions.slice(0, 4).map((solution) => <SolutionCard key={solution.slug} solution={solution} />)}</div>
           </div>
         </Container>

@@ -61,7 +61,7 @@ const challengeDesigns: Record<ScopeChallenge, ChallengeDesign> = {
   evaluate: {
     title: "Evaluación útil para rediseñar",
     promise: "Medir resultados y explicar la implementación para decidir qué sostener, corregir o escalar.",
-    interest: "diagnostico-agenda-territorial",
+    interest: "linea-base-evaluacion-programas",
     firstDecision: "Acordar qué resultado debe evaluarse y qué comparación puede sostener la evidencia disponible.",
     phases: ["Reconstruir teoría de cambio y preguntas", "Diseñar medición y estrategia de análisis", "Interpretar resultados y acordar mejoras"],
     deliverables: ["Marco de evaluación e indicadores", "Análisis de resultados e implementación", "Recomendaciones priorizadas y trazables"]
@@ -146,7 +146,7 @@ export function buildScopeRecommendation(input: ScopeBuilderInput) {
 export function buildScopeSampleSlug(input: ScopeBuilderInput) {
   if (input.challenge === "transform") return "piloto-ia-documental";
   if (input.challenge === "monitor") return input.organization === "company" ? "monitoreo-entorno-impacto" : "observatorio-gestion-inversiones";
-  if (input.challenge === "evaluate" && input.evidence === "fieldwork") return "encuesta-escucha-territorial";
+  if (input.challenge === "evaluate") return input.evidence === "fieldwork" ? "encuesta-escucha-territorial" : "linea-base-evaluacion-programa";
   if (input.challenge === "understand" && input.organization === "company") return "inteligencia-territorial-inversion";
   return "diagnostico-agenda-territorial";
 }

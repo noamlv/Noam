@@ -23,7 +23,7 @@ export const editorialPillars: Record<Topic, EditorialPillar> = {
     thesis: "Una institución no necesita más indicadores aislados. Necesita una arquitectura que conecte problemas, responsables, recursos, señales y decisiones.",
     accent: "#b95337",
     questions: ["¿Qué debe priorizar una nueva gestión?", "¿Cómo seguir inversión y servicios?", "¿Qué cambia entre territorios?"],
-    solutionSlugs: ["diagnostico-agenda-territorial", "observatorio-gestion-inversiones", "encuestas-escucha-ciudadana"],
+    solutionSlugs: ["diagnostico-agenda-territorial", "linea-base-evaluacion-programas", "observatorio-gestion-inversiones", "encuestas-escucha-ciudadana"],
     primaryHref: "/sectors/public-sector",
     primaryLabel: "Soluciones para gobiernos"
   },
