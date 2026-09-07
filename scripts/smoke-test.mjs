@@ -71,6 +71,8 @@ const publicPages = [
   ["/diagnostico", "Convierte una necesidad en un punto de partida."],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
+  ["/toolkits/tdr-encuesta-estudio-territorial", "Cómo elaborar TDR para una encuesta o estudio territorial"],
+  ["/toolkits/tdr-observatorio-dashboard-visor", "Cómo elaborar TDR para un observatorio, dashboard o visor"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -310,6 +312,20 @@ const tdrTemplateBody = await tdrTemplateCsv.text();
 assert.ok(tdrTemplateBody.includes("criterio_de_aceptacion"), "La matriz TDR debe incluir criterios de aceptación");
 assert.equal(tdrTemplateBody.trim().split("\n").length, 17, "La matriz TDR debe incluir encabezado y dieciséis bloques");
 
+const surveyTdrCsv = await get("/downloads/plantilla-tdr-encuesta-estudio-territorial.csv");
+assert.equal(surveyTdrCsv.status, 200, "La plantilla TDR de encuestas debe ser descargable");
+assert.match(surveyTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const surveyTdrBody = await surveyTdrCsv.text();
+assert.ok(surveyTdrBody.startsWith("bloque,pregunta_guia"), "La plantilla TDR de encuestas debe conservar su encabezado");
+assert.equal(surveyTdrBody.trim().split("\n").length, 19, "La plantilla TDR de encuestas debe incluir encabezado y dieciocho bloques");
+
+const observatoryTdrCsv = await get("/downloads/plantilla-tdr-observatorio-dashboard-visor.csv");
+assert.equal(observatoryTdrCsv.status, 200, "La plantilla TDR de observatorios debe ser descargable");
+assert.match(observatoryTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const observatoryTdrBody = await observatoryTdrCsv.text();
+assert.ok(observatoryTdrBody.startsWith("bloque,pregunta_guia"), "La plantilla TDR de observatorios debe conservar su encabezado");
+assert.equal(observatoryTdrBody.trim().split("\n").length, 19, "La plantilla TDR de observatorios debe incluir encabezado y dieciocho bloques");
+
 const sitemap = await get("/sitemap.xml");
 const sitemapBody = await sitemap.text();
 assert.equal(sitemap.status, 200);
@@ -339,6 +355,8 @@ assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-terr
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/monitoreo-entorno-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/linea-base-evaluacion-programas"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-estudio-analisis-datos"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-encuesta-estudio-territorial"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-observatorio-dashboard-visor"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));

@@ -96,5 +96,27 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · marco OECE",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-encuesta-estudio-territorial",
+    title: "TDR para encuestas y estudios territoriales",
+    description: "Matriz para definir población, muestra, instrumento, campo, privacidad, análisis y criterios verificables de aceptación.",
+    kind: "template",
+    url: "/toolkits/tdr-encuesta-estudio-territorial",
+    productSlug: "barometro-electoral-enero-2026",
+    sourceLabel: "NOAM · INEI · marco OECE",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-observatorio-dashboard-visor",
+    title: "TDR para observatorios, dashboards y visores",
+    description: "Matriz para contratar indicadores, datos, seguridad, pruebas, transferencia y operación de un sistema de decisión.",
+    kind: "template",
+    url: "/toolkits/tdr-observatorio-dashboard-visor",
+    productSlug: "observatorio-territorial",
+    sourceLabel: "NOAM · CEPLAN · PCM · marco OECE",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

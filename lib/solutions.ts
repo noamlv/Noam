@@ -111,6 +111,7 @@ export const solutions: Solution[] = [
     ],
     evidence: [
       { label: "Un sistema municipal no es solo un dashboard", href: "/insights/sistema-seguimiento-municipal-no-es-dashboard" },
+      { label: "TDR para observatorios, dashboards y visores", href: "/toolkits/tdr-observatorio-dashboard-visor" },
       { label: "DataPerú: proyectos y ejecución municipal", href: "/dataperu/municipios" },
       { label: "Ver productos y demostraciones", href: "/products" }
     ]
@@ -154,6 +155,7 @@ export const solutions: Solution[] = [
     evidence: [
       { label: "Barómetro electoral: demostración", href: "/electoral/barometro-enero-2026" },
       { label: "Guía para diseñar una encuesta que sirva para decidir", href: "/toolkits/diseno-encuesta-para-decidir" },
+      { label: "TDR para encuestas y estudios territoriales", href: "/toolkits/tdr-encuesta-estudio-territorial" },
       { label: "Estudios, diagnósticos y evaluación", href: "/services/estudios-diagnosticos-evaluacion" }
     ]
   },

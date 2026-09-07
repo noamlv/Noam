@@ -1,0 +1,96 @@
+---
+title: "Cómo elaborar TDR para un observatorio, dashboard o visor"
+description: "Guía y matriz editable para contratar un sistema de decisión con indicadores, datos, seguridad, pruebas, transferencia y operación."
+date: "2026-09-07"
+reviewedAt: "2026-09-07"
+author: "Noam López Villanes"
+sourceCount: 4
+tags:
+  - términos de referencia
+  - observatorios
+  - dashboards
+  - gobierno de datos
+topic: "gobierno"
+featured: true
+readingTime: "10 min"
+ogImage: "/og-default.png"
+---
+
+<Problem>
+Un dashboard puede verse terminado y seguir siendo inservible: indicadores sin definición, datos que nadie actualiza, accesos inseguros o vistas que no conducen a ninguna acción. El requerimiento debe contratar una capacidad de decisión, no solo pantallas.
+
+Dashboard, observatorio y visor tampoco son sinónimos. El dashboard presenta métricas; el visor explora información geográfica; el observatorio añade reglas, responsables, análisis y una rutina institucional de seguimiento.
+</Problem>
+
+<DataSources>
+El requerimiento debe contrastarse con la [Ley N.° 32069 y su Reglamento actualizados](https://www.gob.pe/institucion/oece/informes-publicaciones/6444155-ley-). Para indicadores, CEPLAN publica una [guía actualizada en 2024](https://www.gob.pe/institucion/ceplan/informes-publicaciones/5614517-guia-para-la-elaboracion-de-indicadores-de-politicas-nacionales-y-planes-estrategicos-actualizada-2024).
+
+La PCM aprobó la [Estrategia Nacional de Gobierno de Datos 2026–2030](https://www.gob.pe/99097-estrategia-nacional-de-gobierno-de-datos-2026-2030) y orienta a las entidades sobre su [Plan de Acción de Gobierno de Datos](https://www.gob.pe/112167-plan-de-accion-de-gobierno-de-datos). Estos instrumentos refuerzan la necesidad de articular resultados, calidad, privacidad, responsables e iniciativas sostenibles.
+</DataSources>
+
+<Method>
+## Quince bloques para contratar capacidad operativa
+
+| Bloque | Pregunta central | Prueba de aceptación |
+| --- | --- | --- |
+| 1. Decisiones | ¿Qué reunión, alerta o acción apoyará el sistema? | Casos de uso priorizados. |
+| 2. Usuarios | ¿Quién consulta, actualiza, valida y administra? | Matriz de roles y permisos. |
+| 3. Alcance | ¿Qué territorio, periodo, entidades y procesos cubre? | Inclusiones y exclusiones aprobadas. |
+| 4. Fuentes | ¿Qué sistemas, archivos o servicios entregan datos? | Inventario con responsables y acceso. |
+| 5. Modelo | ¿Cómo se relacionan entidades, periodos y territorios? | Diccionario y modelo de datos. |
+| 6. Indicadores | ¿Qué mide cada indicador y cómo se calcula? | Fichas técnicas verificadas. |
+| 7. Calidad | ¿Qué valida completitud, vigencia y consistencia? | Reglas, alertas y bitácora. |
+| 8. Actualización | ¿Con qué frecuencia y mediante qué proceso? | Ejecución demostrada con datos nuevos. |
+| 9. Producto | ¿Qué vistas, filtros, mapas y exportaciones se requieren? | Prototipo probado con usuarios. |
+| 10. Flujo | ¿Qué sucede cuando aparece una desviación? | Responsable, plazo y evidencia de cierre. |
+| 11. Seguridad | ¿Qué información es pública, interna o restringida? | Pruebas de acceso y registro de actividad. |
+| 12. Arquitectura | ¿Dónde opera y cómo se integra, respalda y recupera? | Diagrama, configuración y prueba de restauración. |
+| 13. Desempeño | ¿Qué tiempos, volumen y disponibilidad necesita? | Pruebas con carga representativa. |
+| 14. Transferencia | ¿Qué recibirá el equipo para administrar y modificar? | Código, documentación y capacitación. |
+| 15. Continuidad | ¿Quién mantiene datos, software y soporte después? | Plan, costos y condiciones de salida. |
+
+## Definir primero la rutina de decisión
+
+Una especificación útil describe el ciclo completo: dato que cambia, regla que lo valida, indicador que se actualiza, usuario que recibe la señal y acción que debe registrar. Si el requerimiento solo enumera gráficos, todavía no define un sistema de seguimiento.
+
+## Criterios mínimos de conformidad
+
+- cálculo reproducido desde la fuente para una muestra de indicadores;
+- actualización completa con un periodo de datos no usado durante el desarrollo;
+- permisos probados por perfil y protección de datos restringidos;
+- navegación, filtros, exportación y lectura móvil verificadas;
+- registro de errores y alertas frente a datos incompletos o atrasados;
+- documentación de fuentes, transformaciones, despliegue y respaldo;
+- repositorio, código, credenciales institucionales y plan de transferencia;
+- sesión de uso con responsables y evidencia de correcciones.
+
+Los términos de aceptación deben distinguir defectos del producto, problemas de la fuente y cambios de alcance. Esa separación evita que el sistema oculte datos defectuosos y que toda nueva necesidad se trate como corrección.
+</Method>
+
+<Findings>
+## Señales de un TDR incompleto
+
+1. Solicita “un dashboard interactivo” sin preguntas de gestión.
+2. Define colores y gráficos, pero no fichas de indicadores.
+3. Supone acceso a bases que todavía no tienen responsable ni autorización.
+4. Omite perfiles, trazabilidad, respaldo o recuperación.
+5. No exige código, documentación ni condiciones de salida.
+6. Concluye con la entrega técnica y no instala una rutina de uso.
+</Findings>
+
+<Implications>
+Antes de convocar, valida el alcance con área usuaria, planeamiento, tecnología, seguridad, responsables de datos, contrataciones y asesoría jurídica. Un primer producto acotado, con fuentes disponibles y decisiones reales, suele ser más sostenible que una plataforma amplia sin operación definida.
+
+Esta guía orienta el diseño técnico y funcional. No reemplaza una evaluación de seguridad, asesoría legal ni los documentos estándar aplicables al proceso concreto.
+</Implications>
+
+<Downloads>
+- [Descargar matriz editable para TDR de observatorios y dashboards (CSV)](/downloads/plantilla-tdr-observatorio-dashboard-visor.csv).
+- [Revisar por qué un sistema de seguimiento no es solo un dashboard](/insights/sistema-seguimiento-municipal-no-es-dashboard).
+- [Descargar una ficha técnica de indicador (CSV)](/downloads/ficha-tecnica-indicador.csv).
+- [Explorar perfiles municipales en DataPerú](/dataperu/municipios).
+</Downloads>
+
+<CTA>
+Si necesitas pasar de reportes dispersos a una rutina de conducción, revisa la solución de [observatorio de gestión e inversiones](/solutions/observatorio-gestion-inversiones) o [plantea el encargo](/contact?interest=observatorio-gestion-inversiones&from=/toolkits/tdr-observatorio-dashboard-visor).
+</CTA>
