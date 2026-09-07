@@ -85,5 +85,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     productSlug: "barometro-electoral-enero-2026",
     sourceLabel: "NOAM",
     format: "Guía web"
+  },
+  {
+    slug: "tdr-estudio-analisis-datos",
+    title: "Guía y matriz para TDR de estudios y análisis de datos",
+    description: "Estructura editable para definir necesidad, objetivos, datos, productos, aceptación, roles y transferencia antes de contratar un servicio.",
+    kind: "template",
+    url: "/toolkits/tdr-estudio-analisis-datos",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · marco OECE",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

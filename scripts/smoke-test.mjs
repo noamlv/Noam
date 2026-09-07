@@ -70,6 +70,7 @@ const publicPages = [
   ["/contact", "Comencemos por la decisión"],
   ["/diagnostico", "Convierte una necesidad en un punto de partida."],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
+  ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -302,6 +303,13 @@ assert.equal(planometroAxesCsv.status, 200, "El agregado temático debe ser desc
 assert.match(planometroAxesCsv.headers.get("content-type") ?? "", /^text\/csv/);
 assert.equal((await planometroAxesCsv.text()).trim().split("\n").length, 12);
 
+const tdrTemplateCsv = await get("/downloads/plantilla-tdr-estudio-analisis-datos.csv");
+assert.equal(tdrTemplateCsv.status, 200, "La matriz para TDR debe ser descargable");
+assert.match(tdrTemplateCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const tdrTemplateBody = await tdrTemplateCsv.text();
+assert.ok(tdrTemplateBody.includes("criterio_de_aceptacion"), "La matriz TDR debe incluir criterios de aceptación");
+assert.equal(tdrTemplateBody.trim().split("\n").length, 17, "La matriz TDR debe incluir encabezado y dieciséis bloques");
+
 const sitemap = await get("/sitemap.xml");
 const sitemapBody = await sitemap.text();
 assert.equal(sitemap.status, 200);
@@ -330,6 +338,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/monitoreo-entorno-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/linea-base-evaluacion-programas"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-estudio-analisis-datos"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));

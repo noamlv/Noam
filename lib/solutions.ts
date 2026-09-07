@@ -323,6 +323,7 @@ export const solutions: Solution[] = [
     evidence: [
       { label: "Cómo diseñar la línea de base de un programa público", href: "/insights/como-disenar-linea-base-programa-publico" },
       { label: "Cuándo una evaluación de impacto es viable", href: "/insights/cuando-evaluacion-impacto-es-viable" },
+      { label: "Guía para elaborar TDR de estudios y análisis de datos", href: "/toolkits/tdr-estudio-analisis-datos" },
       { label: "Matriz editable de línea de base", href: "/downloads/matriz-linea-base.csv" },
       { label: "Estudios, diagnósticos y evaluación", href: "/services/estudios-diagnosticos-evaluacion" }
     ]
