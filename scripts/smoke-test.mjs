@@ -19,8 +19,8 @@ async function get(path, options) {
   return fetch(new URL(path, baseUrl), { redirect: "manual", ...options });
 }
 
-async function expectHtml(path, text) {
-  const response = await get(path);
+async function expectHtml(path, text, options) {
+  const response = await get(path, options);
   assert.equal(response.status, 200, `${path} debe responder 200`);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html/, `${path} debe ser HTML`);
   const body = await response.text();
@@ -31,7 +31,7 @@ async function expectHtml(path, text) {
 await waitForServer();
 
 const publicPages = [
-  ["/", "Decisiones más claras"],
+  ["/", "Análisis de datos para decisiones públicas y territoriales"],
   ["/solutions", "Una decisión concreta"],
   ["/solutions/diagnostico-agenda-territorial", "Una lectura compartida del territorio"],
   ["/solutions/observatorio-gestion-inversiones", "Indicadores, proyectos y alertas reunidos"],
@@ -97,9 +97,10 @@ await expectHtml("/resources?type=dataset&product=planometro-electoral", "Planó
 await expectHtml("/buscar?q=limites+departamentales&type=evidence", "Límites departamentales referenciales");
 await expectHtml("/buscar?q=boletin", "Brief NOAM");
 
-const visualHome = await expectHtml("/", "Imagen editorial");
-assert.ok(visualHome.body.includes("/images/noam-public-sector.jpg"));
-assert.ok(visualHome.body.includes("/images/noam-private-sector.jpg"));
+const visualHome = await expectHtml("/", "Amazonía | Conectividad y servicios", {
+  headers: { cookie: "noam_hero_index=0" }
+});
+assert.ok(visualHome.body.includes("/images/editorial/hero-amazonia-conectividad.jpg"));
 
 const fieldSolution = await expectHtml("/solutions/diagnostico-agenda-territorial", "Escena editorial representativa");
 assert.ok(fieldSolution.body.includes("/images/noam-field-research.jpg"));
@@ -299,6 +300,10 @@ const sitemap = await get("/sitemap.xml");
 const sitemapBody = await sitemap.text();
 assert.equal(sitemap.status, 200);
 assert.ok((sitemapBody.match(/<loc>/g) ?? []).length >= 1900, "Sitemap debe incluir los perfiles municipales");
+const sitemapLocations = [...sitemapBody.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+assert.equal(new Set(sitemapLocations).size, sitemapLocations.length, "Sitemap no debe contener URLs duplicadas");
+const sitemapDates = [...sitemapBody.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map((match) => Date.parse(match[1]));
+assert.ok(sitemapDates.every((date) => Number.isFinite(date) && date <= Date.now()), "Sitemap solo debe publicar fechas válidas y no futuras");
 assert.ok(sitemapBody.includes("https://noam.pe/como-trabajamos"));
 assert.ok(sitemapBody.includes("https://noam.pe/electoral/erm-2026"));
 assert.ok(sitemapBody.includes("https://noam.pe/electoral/barometro-enero-2026"));

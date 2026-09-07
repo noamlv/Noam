@@ -63,21 +63,19 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
   const contentPages = contentCollections.flat().map((item) => ({
     url: `${siteConfig.url}${item.url}`,
-    lastModified: new Date(item.date),
+    lastModified: new Date(item.reviewedAt ?? item.date),
     changeFrequency: "weekly" as const,
     priority: 0.7
   }));
 
   const staticPages = staticRoutes.map((route): MetadataRoute.Sitemap[number] => ({
     url: `${siteConfig.url}${route}`,
-    lastModified: new Date(),
     changeFrequency: route === "" ? "daily" : "weekly",
     priority: route === "" ? 1 : 0.8
   }));
 
   const productPages = managedProducts.filter((product) => product.href.startsWith("/products/")).map((product): MetadataRoute.Sitemap[number] => ({
     url: `${siteConfig.url}${product.href}`,
-    lastModified: new Date(),
     changeFrequency: "weekly",
     priority: product.demoHref ? 0.8 : 0.7
   }));
@@ -105,14 +103,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const solutionPages = solutionSlugs.map((slug): MetadataRoute.Sitemap[number] => ({
     url: `${siteConfig.url}/solutions/${slug}`,
-    lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.8
   }));
 
   const samplePages = deliverableSamples.map((sample): MetadataRoute.Sitemap[number] => ({
     url: `${siteConfig.url}/muestras/${sample.slug}`,
-    lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.74
   }));
@@ -126,7 +122,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const practicePages = sectorPractices.map((practice): MetadataRoute.Sitemap[number] => ({
     url: `${siteConfig.url}/sectors/${practice.market === "public" ? "public-sector" : "companies"}/${practice.slug}`,
-    lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.8
   }));

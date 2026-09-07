@@ -108,5 +108,7 @@ for (const service of serviceLines) {
 
 const sitemap = read("app/sitemap.ts");
 assert.ok(sitemap.includes('"/en"'), "El sitemap debe publicar la portada internacional");
+assert.doesNotMatch(sitemap, /lastModified:\s*new Date\(\)/, "El sitemap no debe declarar como nueva una página sin fecha verificable");
+assert.match(sitemap, /item\.reviewedAt \?\? item\.date/, "El sitemap debe preferir la fecha de revisión editorial");
 
 console.log(`Editorial OK: ${Object.values(contentMinimums).reduce((total, value) => total + value, 0)}+ contenidos y portada internacional verificadas`);
