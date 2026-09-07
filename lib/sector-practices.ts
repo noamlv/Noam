@@ -39,7 +39,7 @@ export const publicPractices: SectorPractice[] = [
     ],
     outcomes: ["Agenda breve de prioridades con responsables", "Lectura territorial común para autoridad y equipo", "Seguimiento simple de inversión y servicios", "Evidencia lista para comunicar decisiones"],
     deliverables: ["Perfil distrital y línea de base", "Matriz de prioridades", "Tablero ejecutivo modular", "Cartera de proyectos con alertas", "Brief para alcaldía y concejo"],
-    solutionSlugs: ["diagnostico-agenda-territorial", "observatorio-gestion-inversiones", "ia-procesos-publicos"],
+    solutionSlugs: ["diagnostico-agenda-territorial", "transferencia-gestion-100-dias", "observatorio-gestion-inversiones", "ia-procesos-publicos"],
     evidence: [
       { label: "Explorar los perfiles municipales de DataPerú", href: "/dataperu/municipios", type: "Producto abierto" },
       { label: "Checklist para un diagnóstico municipal", href: "/toolkits/checklist-diagnostico-municipal", type: "Toolkit" },
@@ -64,7 +64,7 @@ export const publicPractices: SectorPractice[] = [
     ],
     outcomes: ["Mapa provincial de brechas y flujos", "Criterios transparentes de priorización", "Cartera coordinada entre distritos", "Rutina ejecutiva de seguimiento"],
     deliverables: ["Diagnóstico provincial", "Visor de brechas y proyectos", "Matriz multicriterio", "Observatorio de servicios", "Agenda de coordinación intergubernamental"],
-    solutionSlugs: ["diagnostico-agenda-territorial", "observatorio-gestion-inversiones", "encuestas-escucha-ciudadana"],
+    solutionSlugs: ["diagnostico-agenda-territorial", "transferencia-gestion-100-dias", "observatorio-gestion-inversiones", "encuestas-escucha-ciudadana"],
     evidence: [
       { label: "Perfiles municipales por provincia", href: "/dataperu/municipios", type: "DataPerú" },
       { label: "Matriz para priorizar una agenda de 100 días", href: "/toolkits/matriz-prioridades-100-dias", type: "Toolkit" },
@@ -89,7 +89,7 @@ export const publicPractices: SectorPractice[] = [
     ],
     outcomes: ["Prioridades regionales diferenciadas por territorio", "Alertas para proyectos y compromisos críticos", "Reuniones ejecutivas con información común", "Capacidad de comunicar avances y restricciones"],
     deliverables: ["Diagnóstico y agenda regional", "Observatorio de inversiones", "Tablero por provincia y sector", "Sistema de alertas", "Brief periódico para alta dirección"],
-    solutionSlugs: ["diagnostico-agenda-territorial", "linea-base-evaluacion-programas", "observatorio-gestion-inversiones", "ia-procesos-publicos"],
+    solutionSlugs: ["diagnostico-agenda-territorial", "transferencia-gestion-100-dias", "linea-base-evaluacion-programas", "observatorio-gestion-inversiones"],
     evidence: [
       { label: "DataPerú: perfiles y temas municipales", href: "/dataperu", type: "Producto abierto" },
       { label: "Ocho preguntas antes de construir un observatorio", href: "/insights/ocho-preguntas-observatorio-gestion", type: "Insight" },

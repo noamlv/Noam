@@ -32,7 +32,7 @@ export const budgetRangeOptions = [
 
 export const generalInterestOptions = [
   { value: "dataperu", label: "DataPerú o módulo territorial" },
-  { value: "electoral", label: "Análisis electoral, opinión o transición" },
+  { value: "electoral", label: "Análisis electoral u opinión pública" },
   { value: "general-public", label: "Otra necesidad del sector público" },
   { value: "general-private", label: "Otra necesidad empresarial" },
   { value: "other", label: "Otro desafío" }
@@ -60,7 +60,10 @@ export const interestAliases: Record<string, string> = {
   "ai-governance": "ia-procesos-publicos",
   planometro: "electoral",
   "planometro-electoral": "electoral",
-  transicion: "electoral",
+  transicion: "transferencia-gestion-100-dias",
+  "transferencia-gestion": "transferencia-gestion-100-dias",
+  "nueva-gestion": "transferencia-gestion-100-dias",
+  "primeros-100-dias": "transferencia-gestion-100-dias",
   "sector-publico": "general-public",
   empresas: "general-private"
 };

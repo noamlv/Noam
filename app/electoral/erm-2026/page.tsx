@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Accordion, Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import { breadcrumbJsonLd, buildMetadata, faqJsonLd, ogImagePath, serviceJsonLd } from "@/lib/seo";
 
-const contactHref = "/contact?interest=electoral&from=/electoral/erm-2026";
+const contactHref = "/contact?interest=transferencia-gestion-100-dias&from=/electoral/erm-2026";
 
 const modules = [
   {
@@ -14,7 +14,7 @@ const modules = [
     title: "Agenda territorial y primeros 100 días",
     promise: "Convertir problemas, compromisos y evidencia en una cartera priorizada.",
     deliverables: ["Perfil territorial", "Matriz de prioridades", "Hitos de 30, 60 y 100 días"],
-    href: "/solutions/diagnostico-agenda-territorial"
+    href: "/solutions/transferencia-gestion-100-dias"
   },
   {
     icon: FileStack,
@@ -179,9 +179,10 @@ export default function Erm2026Page() {
               <p className="mt-5 text-sm leading-7 text-ink/65">Las fechas y disposiciones pueden actualizarse. Para hitos legales consulta siempre el JNE y la normativa vigente.</p>
             </div>
             <div className="grid gap-3">
-              <a href="https://portal.jne.gob.pe/portal/Pagina/Ver/1229/page/Elecciones-Regionales-y-Municipales-2026" target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-5 rounded-md border border-border bg-panel p-5 text-sm font-medium text-ink transition-colors hover:border-rust/45">Portal oficial ERM 2026 del JNE <ExternalLink className="h-4 w-4 text-muted group-hover:text-rust" aria-hidden /></a>
+              <a href="https://portal.jne.gob.pe/portal/Pagina/PlataformaErm" target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-5 rounded-md border border-border bg-panel p-5 text-sm font-medium text-ink transition-colors hover:border-rust/45">Portal oficial ERM 2026 del JNE <ExternalLink className="h-4 w-4 text-muted group-hover:text-rust" aria-hidden /></a>
               <a href="https://www.gob.pe/institucion/jne/informes-publicaciones/8055863-cronograma-electoral-de-las-elecciones-regionales-y-municipales-2026" target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-5 rounded-md border border-border bg-panel p-5 text-sm font-medium text-ink transition-colors hover:border-rust/45">Cronograma electoral publicado por el JNE <ExternalLink className="h-4 w-4 text-muted group-hover:text-rust" aria-hidden /></a>
               <a href="https://www.gob.pe/institucion/pcm/normas-legales/7634472-001-2026-pcm" target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-5 rounded-md border border-border bg-panel p-5 text-sm font-medium text-ink transition-colors hover:border-rust/45">Decreto Supremo de convocatoria <ExternalLink className="h-4 w-4 text-muted group-hover:text-rust" aria-hidden /></a>
+              <a href="https://www.gob.pe/institucion/contraloria/informes-publicaciones/8350527-orientacion-n-001-2026-cg-prev-rct-tg" target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-5 rounded-md border border-border bg-panel p-5 text-sm font-medium text-ink transition-colors hover:border-rust/45">Orientación de Contraloría para la transferencia ERM 2026 <ExternalLink className="h-4 w-4 text-muted group-hover:text-rust" aria-hidden /></a>
             </div>
           </div>
         </Container>

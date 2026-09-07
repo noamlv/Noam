@@ -85,7 +85,7 @@ const challengeDesigns: Record<ScopeChallenge, ChallengeDesign> = {
   transition: {
     title: "Agenda de transición y 100 días",
     promise: "Pasar de compromisos y evidencia territorial a prioridades, responsables, hitos y seguimiento.",
-    interest: "electoral",
+    interest: "transferencia-gestion-100-dias",
     firstDecision: "Distinguir urgencias, compromisos y capacidades críticas para el inicio de la gestión.",
     phases: ["Ordenar transferencia, riesgos y cartera", "Priorizar agenda política y operativa", "Diseñar hitos, responsables y seguimiento"],
     deliverables: ["Diagnóstico rápido de inicio", "Matriz de prioridades de 100 días", "Tablero de compromisos y alertas"]
@@ -147,6 +147,7 @@ export function buildScopeSampleSlug(input: ScopeBuilderInput) {
   if (input.challenge === "transform") return "piloto-ia-documental";
   if (input.challenge === "monitor") return input.organization === "company" ? "monitoreo-entorno-impacto" : "observatorio-gestion-inversiones";
   if (input.challenge === "evaluate") return input.evidence === "fieldwork" ? "encuesta-escucha-territorial" : "linea-base-evaluacion-programa";
+  if (input.challenge === "transition") return "transferencia-gestion-100-dias";
   if (input.challenge === "understand" && input.organization === "company") return "inteligencia-territorial-inversion";
   return "diagnostico-agenda-territorial";
 }

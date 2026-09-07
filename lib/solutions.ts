@@ -5,7 +5,8 @@ export const solutionSlugs = [
   "ia-procesos-publicos",
   "inteligencia-territorial-inversion",
   "monitoreo-entorno-impacto",
-  "linea-base-evaluacion-programas"
+  "linea-base-evaluacion-programas",
+  "transferencia-gestion-100-dias"
 ] as const;
 
 export type SolutionSlug = (typeof solutionSlugs)[number];
@@ -324,6 +325,49 @@ export const solutions: Solution[] = [
       { label: "Cuándo una evaluación de impacto es viable", href: "/insights/cuando-evaluacion-impacto-es-viable" },
       { label: "Matriz editable de línea de base", href: "/downloads/matriz-linea-base.csv" },
       { label: "Estudios, diagnósticos y evaluación", href: "/services/estudios-diagnosticos-evaluacion" }
+    ]
+  },
+  {
+    slug: "transferencia-gestion-100-dias",
+    number: "08",
+    market: "Gobiernos",
+    title: "Transferencia de gestión y primeros 100 días",
+    shortTitle: "Transferencia y 100 días",
+    promise: "Convertir información, riesgos y compromisos en una agenda operable desde el primer día.",
+    description: "Acompañamos a gobiernos regionales y municipalidades a ordenar la transferencia, verificar asuntos críticos y diseñar prioridades, responsables e hitos para el inicio de una nueva gestión.",
+    duration: "3 a 8 semanas",
+    serviceSlug: "estudios-diagnosticos-evaluacion",
+    accent: "#a65038",
+    situations: [
+      "Preparación de una nueva gestión regional, provincial o distrital",
+      "Documentación de transferencia extensa y difícil de convertir en decisiones",
+      "Servicios, contratos o proyectos que no pueden perder continuidad",
+      "Compromisos políticos que requieren prioridad, responsables y una ruta realista"
+    ],
+    outcomes: [
+      "Riesgos y decisiones críticas diferenciados por horizonte",
+      "Continuidades, pendientes y responsabilidades trazables",
+      "Agenda de 30, 60 y 100 días con evidencia y dependencias",
+      "Rutina ejecutiva para revisar avances y corregir desvíos"
+    ],
+    deliverables: [
+      "Diagnóstico ejecutivo de transferencia",
+      "Inventario de asuntos críticos y mapa de riesgos",
+      "Matriz priorizada de compromisos y proyectos",
+      "Agenda operativa de 30, 60 y 100 días",
+      "Tablero inicial y protocolo de seguimiento"
+    ],
+    phases: [
+      { title: "Preparar", description: "Acordamos alcance, responsables, decisiones críticas y estructura de evidencia." },
+      { title: "Verificar", description: "Ordenamos documentos, contrastamos fuentes y separamos hechos, pendientes y riesgos." },
+      { title: "Priorizar", description: "Aplicamos criterios explícitos a compromisos, servicios, contratos y proyectos." },
+      { title: "Instalar", description: "Convertimos prioridades en hitos, responsables, alertas y una rutina de conducción." }
+    ],
+    evidence: [
+      { label: "Especial ERM 2026: territorio, transición y gestión", href: "/electoral/erm-2026" },
+      { label: "Transferencia municipal: de inventario a capacidad", href: "/insights/transferencia-gestion-municipal-capacidad" },
+      { label: "Protocolo mínimo de transferencia", href: "/toolkits/protocolo-transferencia-gestion" },
+      { label: "Matriz para priorizar una agenda de 100 días", href: "/toolkits/matriz-prioridades-100-dias" }
     ]
   }
 ];

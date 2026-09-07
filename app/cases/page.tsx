@@ -96,7 +96,7 @@ export default async function CasesPage() {
         <Container>
           <NextLink href="/muestras" className="group grid gap-10 rounded-md border border-border bg-panel p-6 transition-all hover:border-border-strong hover:shadow-subtle md:grid-cols-[0.42fr_1fr] md:p-10">
             <div><Eyebrow>Muestras demostrativas</Eyebrow><Heading size="xl">La forma de un entregable, sin fingir un cliente.</Heading></div>
-            <div className="flex flex-col justify-between gap-10"><p className="max-w-2xl text-sm leading-7 text-ink/65">Además de productos propios, publicamos siete arquitecturas de trabajo para que puedas examinar preguntas, módulos, cronogramas y controles antes de contratar.</p><span className="inline-flex items-center gap-2 text-sm font-medium text-rust">Ver muestras <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></span></div>
+            <div className="flex flex-col justify-between gap-10"><p className="max-w-2xl text-sm leading-7 text-ink/65">Además de productos propios, publicamos ocho arquitecturas de trabajo para que puedas examinar preguntas, módulos, cronogramas y controles antes de contratar.</p><span className="inline-flex items-center gap-2 text-sm font-medium text-rust">Ver muestras <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></span></div>
           </NextLink>
         </Container>
       </Section>

@@ -37,6 +37,7 @@ const publicPages = [
   ["/solutions/observatorio-gestion-inversiones", "Indicadores, proyectos y alertas reunidos"],
   ["/solutions/ia-procesos-publicos", "Un proceso concreto, un piloto controlado"],
   ["/solutions/linea-base-evaluacion-programas", "Medir el punto de partida"],
+  ["/solutions/transferencia-gestion-100-dias", "Convertir información, riesgos y compromisos"],
   ["/sectors", "Decisiones distintas"],
   ["/services", "capacidad que funciona"],
   ["/como-trabajamos", "Un encargo claro"],
@@ -73,6 +74,7 @@ const publicPages = [
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
   ["/muestras/linea-base-evaluacion-programa", "Línea de base y evaluación de un programa"],
+  ["/muestras/transferencia-gestion-100-dias", "Diagnóstico de transferencia y agenda de 100 días"],
   ["/about", "Inteligencia para instituciones que mueven el territorio"],
   ["/cv", "Noam López Villanes"],
   ["/privacy", "Datos personales"],
@@ -95,6 +97,7 @@ const searchPage = await expectHtml("/buscar?q=municipalidades", "Perfiles munic
 assert.ok(searchPage.body.includes('name="robots" content="noindex, follow"') || searchPage.body.includes('name="robots" content="noindex"'), "Los resultados de búsqueda no deben indexarse");
 await expectHtml("/buscar?q=automatizacion&type=solution&topic=ia", "IA para procesos públicos");
 await expectHtml("/buscar?q=linea+base+evaluacion", "Línea de base y evaluación de programas");
+await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
 await expectHtml("/resources?type=dataset&product=planometro-electoral", "Planómetro 2026: organizaciones");
 await expectHtml("/buscar?q=limites+departamentales&type=evidence", "Límites departamentales referenciales");
@@ -328,6 +331,8 @@ assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-terr
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/monitoreo-entorno-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/linea-base-evaluacion-programas"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
+assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
+assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/privacy"));
 assert.ok(sitemapBody.includes("https://noam.pe/terms"));
 assert.ok(sitemapBody.includes("https://noam.pe/transparency"));

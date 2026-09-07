@@ -34,10 +34,8 @@ for (const organization of scopeOrganizationOptions) {
         assert.equal(url.searchParams.get("from"), "/diagnostico");
         assert.ok(recommendation.title.length > 10);
         assert.ok(availableSampleSlugs.has(sampleSlug), `La recomendación debe apuntar a una muestra existente: ${sampleSlug}`);
-        if (input.challenge !== "transition") {
-          const sample = deliverableSamples.find((item) => item.slug === sampleSlug);
-          assert.equal(url.searchParams.get("interest"), sample?.solutionSlug, "Muestra, solución y clasificación comercial deben conservar el mismo contexto");
-        }
+        const sample = deliverableSamples.find((item) => item.slug === sampleSlug);
+        assert.equal(url.searchParams.get("interest"), sample?.solutionSlug, "Muestra, solución y clasificación comercial deben conservar el mismo contexto");
         mappedSampleSlugs.add(sampleSlug);
         assert.equal(recommendation.phases.length, 3);
         assert.equal(recommendation.deliverables.length, 4);
@@ -50,7 +48,7 @@ for (const organization of scopeOrganizationOptions) {
 }
 
 assert.equal(combinations, 400);
-assert.equal(mappedSampleSlugs.size, deliverableSamples.length, "Las 400 combinaciones deben poder recomendar las siete muestras");
+assert.equal(mappedSampleSlugs.size, deliverableSamples.length, "Las 400 combinaciones deben poder recomendar las ocho muestras");
 assert.equal(parseScopeBuilderInput({ org: "invalid", challenge: "understand", evidence: "public", horizon: "medium" }), null);
 
 console.log(`Scope Builder OK: ${combinations} combinaciones y briefs verificados`);

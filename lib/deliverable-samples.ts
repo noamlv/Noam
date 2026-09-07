@@ -300,6 +300,73 @@ export const deliverableSamples: DeliverableSample[] = [
       { type: "Insight", label: "Cuándo evaluar impacto", href: "/insights/cuando-evaluacion-impacto-es-viable" },
       { type: "Solución", label: "Línea de base y evaluación de programas", href: "/solutions/linea-base-evaluacion-programas" }
     ]
+  },
+  {
+    slug: "transferencia-gestion-100-dias",
+    number: "08",
+    market: "Gobiernos",
+    eyebrow: "Muestra · Inicio de gestión",
+    title: "Diagnóstico de transferencia y agenda de 100 días",
+    shortTitle: "Transferencia y 100 días",
+    promise: "De expedientes dispersos a decisiones críticas, responsables e hitos verificables.",
+    description: "La muestra enseña cómo complementar el proceso formal de transferencia con una capa ejecutiva para proteger continuidad, ordenar riesgos y conducir las primeras decisiones de una nueva gestión.",
+    accent: "#a65038",
+    image: "/images/noam-decision-room.jpg",
+    imageAlt: "Equipo de una nueva gestión revisando prioridades, riesgos y evidencia institucional",
+    duration: "3 a 8 semanas",
+    decision: "Qué debe atender la nueva autoridad en 72 horas, 30, 60 y 100 días, quién responde y qué evidencia permitirá verificar el avance.",
+    solutionSlug: "transferencia-gestion-100-dias",
+    questions: [
+      "¿Qué servicios, contratos y decisiones no pueden perder continuidad?",
+      "¿Qué asuntos requieren verificación antes de aceptar una conclusión?",
+      "¿Qué compromisos son viables dentro de las competencias y recursos disponibles?",
+      "¿Qué información debe revisar periódicamente la autoridad y su equipo?"
+    ],
+    modules: [
+      { title: "Continuidad", purpose: "Identificar servicios, contratos, sistemas y funciones críticas.", output: "Mapa de continuidad" },
+      { title: "Riesgos", purpose: "Separar hechos, pendientes, controversias, plazos y decisiones urgentes.", output: "Registro ejecutivo" },
+      { title: "Prioridades", purpose: "Comparar compromisos y proyectos con criterios explícitos de valor y viabilidad.", output: "Agenda 30–60–100" },
+      { title: "Conducción", purpose: "Asignar responsables, alertas, evidencias y una cadencia de revisión.", output: "Tablero inicial" }
+    ],
+    preview: {
+      title: "Registro de transición · Estructura demostrativa",
+      columns: ["Asunto", "Evidencia mínima", "Primera decisión"],
+      rows: [
+        ["Servicio crítico", "Operación + responsable", "Proteger continuidad"],
+        ["Contrato o plazo", "Expediente + vencimiento", "Escalar revisión"],
+        ["Proyecto prioritario", "Hito + restricción", "Destrabar / secuenciar"],
+        ["Compromiso", "Competencia + recursos", "Priorizar / reformular"]
+      ]
+    },
+    timeline: [
+      { period: "Semana 1", title: "Preparación", description: "Equipo, decisiones críticas, accesos, fuentes y reglas de trabajo." },
+      { period: "Semanas 2–3", title: "Lectura", description: "Documentos, riesgos, continuidad, cartera y preguntas pendientes." },
+      { period: "Semanas 4–5", title: "Priorización", description: "Criterios, escenarios, responsables y agenda 30–60–100." },
+      { period: "Semanas 6–8", title: "Instalación", description: "Tablero, reuniones, alertas, documentación y transferencia al equipo." }
+    ],
+    clientInputs: [
+      "Informes, actas y repositorios del proceso formal de transferencia",
+      "Cartera de inversiones, contratos, servicios y compromisos vigentes",
+      "Acceso a responsables técnicos, administrativos y de alta dirección",
+      "Restricciones legales, presupuestales, políticas y de calendario"
+    ],
+    qualityControls: [
+      "Fuente, fecha de corte y responsable por cada asunto",
+      "Separación entre hecho verificado, declaración y asunto pendiente",
+      "Criterios reproducibles para prioridad y escalamiento",
+      "Complementariedad explícita con las obligaciones formales de transferencia"
+    ],
+    deliverables: [
+      "Diagnóstico ejecutivo de transferencia",
+      "Registro de riesgos y asuntos críticos",
+      "Matriz y agenda operativa de 100 días",
+      "Tablero inicial y protocolo de reuniones"
+    ],
+    related: [
+      { type: "Especial", label: "ERM 2026: territorio, transición y gestión", href: "/electoral/erm-2026" },
+      { type: "Toolkit", label: "Protocolo mínimo de transferencia", href: "/toolkits/protocolo-transferencia-gestion" },
+      { type: "Solución", label: "Transferencia de gestión y primeros 100 días", href: "/solutions/transferencia-gestion-100-dias" }
+    ]
   }
 ];
 
