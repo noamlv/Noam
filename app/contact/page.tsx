@@ -1,4 +1,4 @@
-import { ArrowDown, Check, Clock3, LockKeyhole } from "lucide-react";
+import { ArrowDown, Check, Clock3, LockKeyhole, Mail } from "lucide-react";
 import NextLink from "next/link";
 import { submitLead } from "@/app/contact/actions";
 import { WhatsAppLink } from "@/components/commercial/whatsapp-link";
@@ -16,6 +16,7 @@ import { getSolution } from "@/lib/solutions";
 import { aiUseCases } from "@/lib/ai-lab";
 import { buildScopeContactMessage, buildScopeRecommendation, parseScopeBuilderInput } from "@/lib/scope-builder";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { runtimeCapabilities } from "@/lib/runtime-capabilities";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildMetadata({
@@ -43,6 +44,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   const defaultOrganizationType = scopeRecommendation?.organizationType ?? "";
   const defaultTimeline = scopeRecommendation?.timeline ?? "to-define";
   const originPath = safeFrom ?? (selectedSolution ? `/solutions/${selectedSolution.slug}` : params.interest === "dataperu" ? "/dataperu" : params.interest === "electoral" ? "/electoral" : "/contact");
+  const emailSubject = encodeURIComponent(selectedSolution ? `Consulta: ${selectedSolution.title}` : "Consulta para NOAM");
+  const emailBody = encodeURIComponent(`Hola, quisiera conversar sobre ${selectedSolution?.title ?? "un posible encargo"}${defaultTerritory ? ` en ${defaultTerritory}` : ""}.\n\nOrganización:\nDecisión o problema:\nPlazo aproximado:\n`);
 
   return (
     <>
@@ -59,7 +62,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 <div className="mt-8 rounded-md border border-rust/25 bg-rust/[0.045] p-5">
                   <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-rust">Solución seleccionada</p>
                   <p className="mt-3 text-lg font-medium tracking-[-0.02em] text-ink">{selectedSolution.title}</p>
-                  <p className="mt-2 text-xs leading-5 text-ink/60">Puedes cambiarla dentro del formulario si el desafío es distinto.</p>
+                  <p className="mt-2 text-xs leading-5 text-ink/60">{runtimeCapabilities.leadIntake ? "Puedes cambiarla dentro del formulario si el desafío es distinto." : "La incluiremos como contexto inicial en el canal que elijas."}</p>
                 </div>
               ) : null}
 
@@ -76,17 +79,45 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 </ol>
               </div>
 
-              <div className="mt-8 rounded-[1rem] border border-[#15211d]/12 bg-[#15211d] p-5 text-white shadow-subtle">
+              {runtimeCapabilities.leadIntake ? <div className="mt-8 rounded-[1rem] border border-[#15211d]/12 bg-[#15211d] p-5 text-white shadow-subtle">
                 <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f]">Respuesta directa</p>
                 <p className="mt-3 text-lg font-medium tracking-[-0.025em]">¿Prefieres WhatsApp?</p>
                 <p className="mt-2 text-xs leading-5 text-white/58">Escríbenos con un mensaje prellenado según la página desde la que llegaste.</p>
                 <WhatsAppLink context="una posible consultoría" analyticsTarget="contact:whatsapp" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-ink transition-transform hover:-translate-y-px">
                   {siteConfig.phone}
                 </WhatsAppLink>
-              </div>
+              </div> : null}
             </div>
 
             <div>
+              {!runtimeCapabilities.leadIntake ? (
+                <div className="rounded-[1.25rem] border border-border bg-panel p-6 shadow-subtle md:p-8">
+                  <Eyebrow>Canales disponibles</Eyebrow>
+                  <Heading size="lg" className="max-w-[18ch]">Contacto directo y trazable.</Heading>
+                  <p className="mt-5 max-w-2xl text-sm leading-7 text-ink/65">
+                    Para no solicitar información que el sitio todavía no puede almacenar de forma persistente, atendemos las consultas por email y WhatsApp. Elige el canal que prefieras.
+                  </p>
+                  <div className="mt-7 grid gap-3 sm:grid-cols-2">
+                    <a href={`mailto:${siteConfig.email}?subject=${emailSubject}&body=${emailBody}`} className="group rounded-md border border-border bg-canvas p-5 transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle">
+                      <Mail className="h-4 w-4 text-rust" aria-hidden />
+                      <span className="mt-5 block text-lg font-medium tracking-[-0.025em] text-ink">Escribir por email</span>
+                      <span className="mt-2 block text-xs text-muted">{siteConfig.email}</span>
+                    </a>
+                    <WhatsAppLink context={selectedSolution ? `una consulta sobre ${selectedSolution.title}` : "una posible consultoría"} analyticsTarget="contact:direct-whatsapp" className="group rounded-md border border-border bg-canvas p-5 transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle">
+                      <span className="mt-5 block text-lg font-medium tracking-[-0.025em] text-ink">Abrir WhatsApp</span>
+                      <span className="mt-2 block text-xs text-muted">{siteConfig.phone}</span>
+                    </WhatsAppLink>
+                  </div>
+                  <div className="mt-7 rounded-sm border border-border bg-canvas p-5">
+                    <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted">Para responder mejor</p>
+                    <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink/68 sm:grid-cols-2">
+                      {["La decisión o problema principal", "La entidad, empresa o territorio", "La evidencia que ya existe", "El plazo o hito más importante"].map((item) => <li key={item} className="flex items-start gap-2"><Check className="mt-1 h-3.5 w-3.5 shrink-0 text-rust" aria-hidden />{item}</li>)}
+                    </ul>
+                  </div>
+                  <p className="mt-5 text-xs leading-5 text-muted">El formulario seguro se habilitará automáticamente cuando la infraestructura persistente esté operativa.</p>
+                </div>
+              ) : (
+                <>
               {params.error === "validation" ? <p role="alert" className="mb-5 rounded-sm border border-rust/30 bg-rust/5 px-4 py-3 text-sm text-ink">Revisa los campos obligatorios y confirma el uso de tus datos.</p> : null}
               {params.error === "rate" ? <p role="alert" className="mb-5 rounded-sm border border-rust/30 bg-rust/5 px-4 py-3 text-sm text-ink">Recibimos varias solicitudes seguidas. Espera unos minutos o escribe a hola@noam.pe.</p> : null}
               {params.error === "unavailable" ? <p role="alert" className="mb-5 rounded-sm border border-rust/30 bg-rust/5 px-4 py-3 text-sm leading-6 text-ink">No pudimos guardar la consulta en este momento. No la reenvíes todavía; escríbenos directamente a <a href="mailto:hola@noam.pe" className="font-medium underline underline-offset-4">hola@noam.pe</a>.</p> : null}
@@ -141,6 +172,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 <p className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-rust" aria-hidden />También puedes escribir directamente a <a href="mailto:hola@noam.pe" className="font-medium text-ink underline decoration-border underline-offset-4">hola@noam.pe</a>.</p>
                 <NextLink href="/como-trabajamos" className="font-medium text-ink underline decoration-border underline-offset-4">Cómo comienza un encargo</NextLink>
               </div>
+                </>
+              )}
             </div>
           </div>
         </Container>

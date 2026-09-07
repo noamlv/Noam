@@ -102,7 +102,7 @@ La primera capa dinamica ya esta preparada:
 - `/demos/observatorio`: redirección histórica al módulo municipal real de DataPerú.
 - `/about`: tesis de la firma, principios y fundador.
 
-En desarrollo, si no hay `DATABASE_URL` o Postgres no responde, los leads se guardan en `.data/leads.json`. En producción los errores de Postgres no se ocultan con fallback local.
+En desarrollo, si no hay `DATABASE_URL` o Postgres no responde, los leads se guardan en `.data/leads.json`. En producción no existe fallback local: sin `DATABASE_URL`, contacto muestra únicamente email y WhatsApp, el Brief conserva su archivo abierto sin formulario y la analítica propia no envía eventos. Los formularios se habilitan automáticamente después de configurar la infraestructura y volver a desplegar.
 
 Para activar Postgres local:
 
@@ -113,7 +113,7 @@ Para activar Postgres local:
 5. Ejecuta `npm run test:db`, `npm run test:products:db`, `npm run test:resources:db`, `npm run test:newsletter:db` y `npm run test:campaigns:db` para validar los flujos sin dejar registros.
 6. Reinicia `npm run dev:open`.
 
-El Postgres de Docker se publica en `localhost:5433` para no interferir con instalaciones nativas en `5432`. Mientras Docker esté cerrado, la web pública funciona, pero contacto, admin, portal y analítica persistente no tendrán base local disponible.
+El Postgres de Docker se publica en `localhost:5433` para no interferir con instalaciones nativas en `5432`. Mientras Docker esté cerrado, la web pública y el contacto directo funcionan, pero los formularios persistentes, admin, portal y analítica propia no tendrán base local disponible.
 
 Para usar un VPS o proveedor administrado, cambia `DATABASE_URL` y ejecuta las mismas migraciones. Ver `docs/postgres-setup.md`.
 

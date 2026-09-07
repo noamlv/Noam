@@ -13,7 +13,7 @@ NOAM mantiene una sola aplicación Next.js y una sola base Postgres estándar. V
 5. No agregar secretos ficticios ni habilitar el admin sin Postgres.
 6. Probar Home, casos, servicios, sectores, DataPerú, Electoral, búsqueda, OG, sitemap, RSS y responsive desde la URL de preview.
 
-Sin `DATABASE_URL`, el preview sirve para validación pública. Contacto, newsletter, admin, portal y analítica persistente fallan de forma cerrada en producción y no deben considerarse operativos.
+Sin `DATABASE_URL`, el preview sirve para validación pública. Contacto cambia a email y WhatsApp, newsletter muestra el archivo sin captar direcciones y la analítica propia no se carga. Admin, portal y los flujos persistentes permanecen inactivos hasta conectar Postgres; no deben considerarse operativos.
 
 ## Etapa 2: preparar el VPS
 

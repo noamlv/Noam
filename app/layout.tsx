@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
 import { organizationJsonLd, personJsonLd } from "@/lib/seo";
+import { runtimeCapabilities } from "@/lib/runtime-capabilities";
 import { siteConfig } from "@/lib/site-config";
 import "@/app/globals.css";
 
@@ -82,7 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" suppressHydrationWarning>
       <body className={`${sans.variable} font-sans antialiased`}>
-        <SiteAnalytics />
+        {runtimeCapabilities.analytics ? <SiteAnalytics /> : null}
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={personJsonLd()} />
         <div className="relative flex min-h-screen flex-col">

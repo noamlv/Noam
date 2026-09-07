@@ -2,6 +2,8 @@ import { ArrowRight } from "lucide-react";
 import NextLink from "next/link";
 import { Button } from "@/components/ui";
 import { subscribeNewsletterAction } from "@/app/newsletter/actions";
+import { runtimeCapabilities } from "@/lib/runtime-capabilities";
+import { siteConfig } from "@/lib/site-config";
 
 const interests = [
   ["gestion-publica", "Gestión pública y territorio"],
@@ -10,6 +12,26 @@ const interests = [
 ] as const;
 
 export function NewsletterSignup({ sourcePath = "/newsletter" }: { sourcePath?: string }) {
+  if (!runtimeCapabilities.newsletter) {
+    const subject = encodeURIComponent("Quiero recibir el Brief NOAM");
+
+    return (
+      <div className="rounded-[1.25rem] border border-border bg-panel p-6 text-ink shadow-subtle md:p-8">
+        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-rust">Archivo abierto</p>
+        <h3 className="mt-4 text-2xl font-medium tracking-[-0.035em]">Lee el Brief mientras activamos la suscripción segura.</h3>
+        <p className="mt-4 max-w-2xl text-sm leading-7 text-ink/65">
+          No solicitaremos tu email hasta que la confirmación y la baja automática estén operativas. Si deseas que te avisemos, puedes escribirnos directamente.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-4">
+          <Button href="/brief" variant="secondary" className="min-h-11 rounded-full">Ver ediciones</Button>
+          <a href={`mailto:${siteConfig.email}?subject=${subject}`} className="inline-flex min-h-11 items-center text-sm font-medium text-ink underline decoration-border underline-offset-4 transition-colors hover:text-rust">
+            Solicitar aviso por email
+          </a>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <form action={subscribeNewsletterAction} className="rounded-[1.25rem] border border-border bg-panel p-5 text-ink shadow-subtle md:p-7">
       <input type="hidden" name="sourcePath" value={sourcePath} />
