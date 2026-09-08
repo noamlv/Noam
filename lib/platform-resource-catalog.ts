@@ -118,5 +118,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · CEPLAN · PCM · marco OECE",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-linea-base-evaluacion-programa",
+    title: "TDR para línea de base y evaluación de programas",
+    description: "Matriz para definir evaluabilidad, preguntas, indicadores, datos, comparación, productos, uso y criterios verificables de aceptación.",
+    kind: "template",
+    url: "/toolkits/tdr-linea-base-evaluacion-programa",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · CEPLAN · MEF · marco OECE",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

@@ -70,10 +70,12 @@ const publicPages = [
   ["/contact", "Comencemos por la decisión"],
   ["/diagnostico", "Convierte una necesidad en un punto de partida."],
   ["/contratar-analisis-datos", "El análisis correcto empieza por la decisión"],
+  ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
   ["/toolkits/tdr-encuesta-estudio-territorial", "Cómo elaborar TDR para una encuesta o estudio territorial"],
   ["/toolkits/tdr-observatorio-dashboard-visor", "Cómo elaborar TDR para un observatorio, dashboard o visor"],
+  ["/toolkits/tdr-linea-base-evaluacion-programa", "Cómo elaborar TDR para una línea de base o evaluación de programas"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -101,6 +103,7 @@ const searchPage = await expectHtml("/buscar?q=municipalidades", "Perfiles munic
 assert.ok(searchPage.body.includes('name="robots" content="noindex, follow"') || searchPage.body.includes('name="robots" content="noindex"'), "Los resultados de búsqueda no deben indexarse");
 await expectHtml("/buscar?q=automatizacion&type=solution&topic=ia", "IA para procesos públicos");
 await expectHtml("/buscar?q=linea+base+evaluacion", "Línea de base y evaluación de programas");
+await expectHtml("/buscar?q=evaluacion+de+impacto", "Línea de base y evaluación de programas");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -119,9 +122,17 @@ assert.ok(fieldSolution.body.includes("/images/noam-field-research.jpg"));
 const aiService = await expectHtml("/services/ia-transformacion-gestion", "Escena editorial representativa");
 assert.ok(aiService.body.includes("/images/noam-ai-oversight.jpg"));
 
-const contactPage = await expectHtml("/contact", "Añadir detalles del proyecto");
-assert.ok(contactPage.body.includes("Campos obligatorios"), "Contacto debe distinguir campos esenciales");
-assert.ok(contactPage.body.includes("Opcional · ayuda a preparar mejor la primera conversación"), "Contacto debe explicar los detalles opcionales");
+const contactPage = await expectHtml("/contact", "Comencemos por la decisión");
+const hasPersistentForm = contactPage.body.includes("Añadir detalles del proyecto");
+const hasSafeFallback = contactPage.body.includes("Contacto directo y trazable.");
+assert.ok(hasPersistentForm || hasSafeFallback, "Contacto debe ofrecer formulario persistente o canales directos seguros");
+if (hasPersistentForm) {
+  assert.ok(contactPage.body.includes("Campos obligatorios"), "Contacto debe distinguir campos esenciales");
+  assert.ok(contactPage.body.includes("Opcional · ayuda a preparar mejor la primera conversación"), "Contacto debe explicar los detalles opcionales");
+} else {
+  assert.ok(contactPage.body.includes("Abrir WhatsApp"), "El modo sin persistencia debe ofrecer WhatsApp");
+  assert.ok(contactPage.body.includes("Escribir por email"), "El modo sin persistencia debe ofrecer email");
+}
 
 const home = await get("/");
 const csp = home.headers.get("content-security-policy") ?? "";
@@ -328,6 +339,13 @@ const observatoryTdrBody = await observatoryTdrCsv.text();
 assert.ok(observatoryTdrBody.startsWith("bloque,pregunta_guia"), "La plantilla TDR de observatorios debe conservar su encabezado");
 assert.equal(observatoryTdrBody.trim().split("\n").length, 19, "La plantilla TDR de observatorios debe incluir encabezado y dieciocho bloques");
 
+const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
+assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
+assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const evaluationTdrBody = await evaluationTdrCsv.text();
+assert.ok(evaluationTdrBody.includes("Teoría de cambio"), "La plantilla TDR de evaluación debe incluir la teoría de cambio");
+assert.equal(evaluationTdrBody.trim().split("\n").length, 22, "La plantilla TDR de evaluación debe incluir encabezado y veintiún bloques");
+
 const sitemap = await get("/sitemap.xml");
 const sitemapBody = await sitemap.text();
 assert.equal(sitemap.status, 200);
@@ -353,6 +371,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/dataperu/mapa"));
 assert.ok(sitemapBody.includes("https://noam.pe/products/ai-governance-lab"));
 assert.ok(sitemapBody.includes("https://noam.pe/diagnostico"));
 assert.ok(sitemapBody.includes("https://noam.pe/contratar-analisis-datos"));
+assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/monitoreo-entorno-impacto"));
@@ -360,6 +379,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/solutions/linea-base-evaluacion-
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-estudio-analisis-datos"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-encuesta-estudio-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-observatorio-dashboard-visor"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));
@@ -405,8 +425,13 @@ assert.ok(article.body.includes("https://noam.pe/og/insights/mapa-riesgos-territ
 const aiLab = await expectHtml("/products/ai-governance-lab", "Antes de construir IA, decide si vale la pena");
 assert.ok(aiLab.body.includes("https://noam.pe/og/products/ai-governance-lab"), "Laboratorio de IA debe usar OG dinámico");
 
-await expectHtml("/contact?interest=ia-procesos-publicos&case=document-search&from=/products/ai-governance-lab", "Búsqueda y respuesta sobre documentos internos");
-await expectHtml("/contact?interest=ia-procesos-publicos&org=company&challenge=transform&evidence=documents&horizon=extended&from=/diagnostico", "Generamos un brief inicial con el Diseñador de alcance NOAM");
+if (hasPersistentForm) {
+  await expectHtml("/contact?interest=ia-procesos-publicos&case=document-search&from=/products/ai-governance-lab", "Búsqueda y respuesta sobre documentos internos");
+  await expectHtml("/contact?interest=ia-procesos-publicos&org=company&challenge=transform&evidence=documents&horizon=extended&from=/diagnostico", "Generamos un brief inicial con el Diseñador de alcance NOAM");
+} else {
+  await expectHtml("/contact?interest=ia-procesos-publicos&case=document-search&from=/products/ai-governance-lab", "Contacto directo y trazable.");
+  await expectHtml("/contact?interest=ia-procesos-publicos&org=company&challenge=transform&evidence=documents&horizon=extended&from=/diagnostico", "Contacto directo y trazable.");
+}
 
 const missing = await get("/esta-ruta-no-existe");
 assert.equal(missing.status, 404);

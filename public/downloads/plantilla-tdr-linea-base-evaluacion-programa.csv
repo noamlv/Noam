@@ -1,0 +1,22 @@
+bloque,pregunta_guia,contenido_minimo,criterio_de_aceptacion
+Decisión,¿Qué decisión debe sostener la evaluación?,Usuario momento alternativas y uso previsto,La decisión y sus responsables están identificados
+Intervención,¿Qué hace realmente el programa o proyecto?,Objetivos componentes actividades recursos y documentos,La descripción coincide con documentos y operación
+Elegibilidad,¿Quién recibe la intervención y bajo qué reglas?,Criterios excepciones fechas y registros,Las reglas pueden verificarse en fuentes trazables
+Actores,¿Quién diseña ejecuta registra financia y decide?,Roles responsabilidades y custodios,Existe un mapa validado de actores y responsabilidades
+Teoría de cambio,¿Cómo se espera producir resultados?,Cadena causal supuestos riesgos y contexto,Productos resultados y supuestos están diferenciados
+Tipo de evaluación,¿Qué alcance responde a la decisión?,Evaluabilidad línea de base seguimiento diseño proceso resultados o impacto,La elección se justifica y declara sus límites
+Preguntas,¿Qué debe responderse y qué queda fuera?,Preguntas priorizadas subpreguntas y exclusiones,Cada pregunta se vincula con una decisión
+Población y territorio,¿Qué unidades grupos lugares y periodos cubre?,Población objetivo unidades de análisis cobertura y desagregación,Inclusiones y exclusiones son verificables
+Indicadores,¿Cómo se medirán productos resultados y contexto?,Nombre definición fórmula fuente frecuencia y responsable,Cada indicador cuenta con ficha técnica
+Línea de base,¿Qué medición inicial existe o debe levantarse?,Fecha cobertura instrumentos base y comparabilidad,La medición inicial puede reproducirse
+Implementación,¿Cómo se comprobará lo que se ejecutó?,Cobertura intensidad hitos desvíos y registros,La exposición real a la intervención queda documentada
+Comparación,¿Contra qué se interpretará el cambio?,Diseño contrafactual supuestos amenazas y sensibilidad,La estrategia es compatible con datos y calendario
+Fuentes,¿Qué información existe y quién la custodia?,Inventario periodo acceso formato calidad y restricciones,Cada fuente tiene custodio y condición de acceso
+Datos primarios,¿Qué información debe levantarse?,Diseño muestral instrumentos campo supervisión y calidad,El protocolo permite auditar cobertura y errores
+Ética y privacidad,¿Qué riesgos existen para personas y datos?,Consentimiento minimización seguridad anonimización y retención,Los controles y responsables están definidos
+Análisis,¿Qué procedimientos deben ejecutarse?,Plan analítico limpieza estimación robustez código y bitácora,Los resultados pueden trazarse a datos y procedimientos
+Heterogeneidad,¿Qué diferencias deben examinarse?,Grupos predefinidos territorio género edad u otras dimensiones,Las comparaciones son pertinentes y estadísticamente responsables
+Productos,¿Qué recibe cada usuario?,Informe brief base diccionario código anexos y presentaciones,Formato contenido y versión editable están definidos
+Conformidad,¿Cómo se aceptará cada producto?,Criterios observables rondas plazos y responsables,La revisión no depende de una fórmula ambigua
+Uso,¿Cómo se convertirán hallazgos en decisiones?,Taller matriz de recomendaciones responsables y horizonte,Existe una ruta de decisión posterior a la entrega
+Transferencia,¿Qué debe quedar para continuar el trabajo?,Repositorio documentación respaldo capacitación y propiedad,La entidad puede custodiar reproducir y actualizar los activos

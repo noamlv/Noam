@@ -7,7 +7,7 @@ export const noamProfile = {
   bio: [
     "Noam López Villanes es doctor en Ciencia Política y Gobierno por la PUCP y fundador de NOAM. Integra investigación social, analítica de datos y producto digital para convertir evidencia compleja en decisiones públicas y estratégicas.",
     "Durante más de quince años ha trabajado entre el Estado, la academia y la consultoría. Ha dirigido unidades de investigación socioeconómica, gestión del conocimiento y análisis estratégico en el Ministerio de Trabajo, el Ministerio del Interior y el Ministerio Público.",
-    "Su trabajo reciente comprende análisis electoral para la Misión de Observación Electoral de la Unión Europea en Perú, prioridades de ciencia y tecnología para CONCYTEC, evaluación de impacto para el Gobierno Regional del Cusco y análisis estadístico para el IPD. También ha desarrollado investigación y docencia con la PUCP, John Jay College y centros académicos de Alemania y México."
+    "Su trabajo reciente comprende análisis electoral para la Misión de Observación Electoral de la Unión Europea en Perú, prioridades de ciencia y tecnología para CONCYTEC, evaluación de resultados para el Gobierno Regional del Cusco y análisis estadístico para el IPD. También ha desarrollado investigación y docencia con la PUCP, John Jay College y centros académicos de Alemania y México."
   ],
   credentials: [
     "Doctor en Ciencia Política y Gobierno, PUCP (2026)",

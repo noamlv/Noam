@@ -49,7 +49,7 @@ const decisionPaths = [
     question: "¿Cuál era el punto de partida, cómo se implementó y qué cambió?",
     suitableFor: "Líneas de base, evaluaciones de diseño, proceso, resultados o impacto.",
     expected: "Teoría de cambio, indicadores, diseño evaluativo, evidencia y aprendizaje.",
-    guide: { label: "Cuándo es viable evaluar impacto", href: "/insights/cuando-evaluacion-impacto-es-viable" },
+    guide: { label: "Elegir línea de base o evaluación", href: "/linea-base-evaluacion-impacto" },
     sample: { label: "Ver muestra de evaluación", href: "/muestras/linea-base-evaluacion-programa" },
     solution: { label: "Línea de base y evaluación", href: "/solutions/linea-base-evaluacion-programas" }
   },
