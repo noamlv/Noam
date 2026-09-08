@@ -8,6 +8,7 @@ const explore = siteConfig.nav.filter((item) => item.href !== "/");
 
 const capabilities = [
   { label: "Diseñar un alcance", href: "/diagnostico" },
+  { label: "Contratar análisis de datos", href: "/contratar-analisis-datos" },
   { label: "Muestras de entregables", href: "/muestras" },
   { label: "Recursos y datos abiertos", href: "/resources" },
   { label: "Brief NOAM", href: "/brief" },

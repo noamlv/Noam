@@ -50,7 +50,7 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
         <Container>
           <div className="grid gap-10 md:grid-cols-[1.25fr_0.75fr] md:items-end">
             <div><Eyebrow className="text-rust">Bienes públicos digitales</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Datos, métodos y herramientas para trabajar mejor.</Heading></div>
-            <p className="max-w-md text-base leading-8 text-ink/68">Cada recurso declara formato, periodo y procedencia. Publicamos sólo materiales que pueden revisarse, reutilizarse o llevar a una conversación concreta.</p>
+            <div className="max-w-md"><p className="text-base leading-8 text-ink/68">Cada recurso declara formato, periodo y procedencia. Publicamos sólo materiales que pueden revisarse, reutilizarse o llevar a una conversación concreta.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Cómo elegir y contratar el análisis correcto <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span></NextLink></div>
           </div>
         </Container>
       </Section>

@@ -69,6 +69,7 @@ const publicPages = [
   ["/dataperu/municipios/150101", "Lima"],
   ["/contact", "Comencemos por la decisión"],
   ["/diagnostico", "Convierte una necesidad en un punto de partida."],
+  ["/contratar-analisis-datos", "El análisis correcto empieza por la decisión"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
   ["/toolkits/tdr-encuesta-estudio-territorial", "Cómo elaborar TDR para una encuesta o estudio territorial"],
@@ -100,6 +101,7 @@ const searchPage = await expectHtml("/buscar?q=municipalidades", "Perfiles munic
 assert.ok(searchPage.body.includes('name="robots" content="noindex, follow"') || searchPage.body.includes('name="robots" content="noindex"'), "Los resultados de búsqueda no deben indexarse");
 await expectHtml("/buscar?q=automatizacion&type=solution&topic=ia", "IA para procesos públicos");
 await expectHtml("/buscar?q=linea+base+evaluacion", "Línea de base y evaluación de programas");
+await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
 await expectHtml("/resources?type=dataset&product=planometro-electoral", "Planómetro 2026: organizaciones");
@@ -350,6 +352,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/dataperu/inversiones"));
 assert.ok(sitemapBody.includes("https://noam.pe/dataperu/mapa"));
 assert.ok(sitemapBody.includes("https://noam.pe/products/ai-governance-lab"));
 assert.ok(sitemapBody.includes("https://noam.pe/diagnostico"));
+assert.ok(sitemapBody.includes("https://noam.pe/contratar-analisis-datos"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/monitoreo-entorno-impacto"));

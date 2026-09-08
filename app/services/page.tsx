@@ -25,9 +25,7 @@ export default function ServicesPage() {
               <Eyebrow className="text-rust">Servicios</Eyebrow>
               <Heading as="h1" size="display" className="max-w-[14ch]">De la evidencia a una capacidad que funciona.</Heading>
             </div>
-            <p className="text-sm leading-7 text-ink/68 md:text-base">
-              Combinamos investigación, estrategia, datos y producto digital. Cada proyecto comienza por la decisión que debe mejorar y termina con un entregable que el equipo puede usar.
-            </p>
+            <div><p className="text-sm leading-7 text-ink/68 md:text-base">Combinamos investigación, estrategia, datos y producto digital. Cada proyecto comienza por la decisión que debe mejorar y termina con un entregable que el equipo puede usar.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Guía para elegir y contratar un análisis <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></NextLink></div>
           </div>
         </Container>
       </Section>

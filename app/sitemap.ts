@@ -48,6 +48,7 @@ const staticRoutes = [
   "/como-trabajamos",
   "/contact",
   "/diagnostico",
+  "/contratar-analisis-datos",
   "/muestras",
   "/privacy",
   "/terms",
