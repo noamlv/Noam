@@ -130,7 +130,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Decisiones e hipótesis prioritarias", "Definición de población y cobertura", "Bases auxiliares o marco muestral", "Restricciones éticas, territoriales y operativas"],
     qualityControls: ["Ficha técnica y cuestionario publicados", "Trazabilidad de cambios del instrumento", "Supervisión y reglas de exclusión", "Incertidumbre y limitaciones visibles"],
     deliverables: ["Diseño metodológico e instrumento", "Base anonimizada y diccionario", "Informe analítico y visualizaciones", "Brief ejecutivo y sesión de implicancias"],
-    related: [{ type: "Caso", label: "Barómetro electoral 2026", href: "/electoral/barometro-enero-2026" }, { type: "Toolkit", label: "Diseñar una encuesta para decidir", href: "/toolkits/diseno-encuesta-para-decidir" }, { type: "Solución", label: "Encuestas y escucha territorial", href: "/solutions/encuestas-escucha-ciudadana" }]
+    related: [{ type: "Guía", label: "Elegir una encuesta o estudio", href: "/encuestas-estudios-opinion" }, { type: "Caso", label: "Barómetro electoral 2026", href: "/electoral/barometro-enero-2026" }, { type: "TDR", label: "TDR para encuestas", href: "/toolkits/tdr-encuesta-estudio-territorial" }, { type: "Solución", label: "Encuestas y escucha territorial", href: "/solutions/encuestas-escucha-ciudadana" }]
   },
   {
     slug: "piloto-ia-documental",

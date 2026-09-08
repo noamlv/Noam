@@ -50,6 +50,7 @@ const staticRoutes = [
   "/diagnostico",
   "/contratar-analisis-datos",
   "/diagnostico-territorial",
+  "/encuestas-estudios-opinion",
   "/linea-base-evaluacion-impacto",
   "/muestras",
   "/privacy",

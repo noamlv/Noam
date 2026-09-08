@@ -71,6 +71,7 @@ const publicPages = [
   ["/diagnostico", "Convierte una necesidad en un punto de partida."],
   ["/contratar-analisis-datos", "El análisis correcto empieza por la decisión"],
   ["/diagnostico-territorial", "Un territorio no se diagnostica con una tabla"],
+  ["/encuestas-estudios-opinion", "Una encuesta útil no empieza con preguntas"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
@@ -107,6 +108,7 @@ await expectHtml("/buscar?q=automatizacion&type=solution&topic=ia", "IA para pro
 await expectHtml("/buscar?q=linea+base+evaluacion", "Línea de base y evaluación de programas");
 await expectHtml("/buscar?q=evaluacion+de+impacto", "Línea de base y evaluación de programas");
 await expectHtml("/buscar?q=diagnostico+territorial+municipal", "Diagnóstico territorial para gobiernos y empresas");
+await expectHtml("/buscar?q=encuesta+satisfaccion+ciudadana", "Encuestas y estudios de opinión para gobiernos y empresas");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -382,6 +384,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/products/ai-governance-lab"));
 assert.ok(sitemapBody.includes("https://noam.pe/diagnostico"));
 assert.ok(sitemapBody.includes("https://noam.pe/contratar-analisis-datos"));
 assert.ok(sitemapBody.includes("https://noam.pe/diagnostico-territorial"));
+assert.ok(sitemapBody.includes("https://noam.pe/encuestas-estudios-opinion"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));

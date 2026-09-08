@@ -38,7 +38,7 @@ const decisionPaths = [
     question: "¿Qué perciben, necesitan, experimentan o prefieren distintos grupos?",
     suitableFor: "Encuestas, estudios de satisfacción, escucha territorial y segmentación.",
     expected: "Diseño, muestra, instrumento, base trazable, análisis e implicancias.",
-    guide: { label: "TDR para encuestas", href: "/toolkits/tdr-encuesta-estudio-territorial" },
+    guide: { label: "Elegir una encuesta o estudio", href: "/encuestas-estudios-opinion" },
     sample: { label: "Ver muestra de encuesta", href: "/muestras/encuesta-escucha-territorial" },
     solution: { label: "Encuestas y escucha territorial", href: "/solutions/encuestas-escucha-ciudadana" }
   },

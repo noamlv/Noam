@@ -156,6 +156,7 @@ export const solutions: Solution[] = [
     ],
     evidence: [
       { label: "Barómetro electoral: demostración", href: "/electoral/barometro-enero-2026" },
+      { label: "Elegir una encuesta o estudio de opinión", href: "/encuestas-estudios-opinion" },
       { label: "Guía para diseñar una encuesta que sirva para decidir", href: "/toolkits/diseno-encuesta-para-decidir" },
       { label: "TDR para encuestas y estudios territoriales", href: "/toolkits/tdr-encuesta-estudio-territorial" },
       { label: "Estudios, diagnósticos y evaluación", href: "/services/estudios-diagnosticos-evaluacion" }
