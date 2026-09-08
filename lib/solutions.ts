@@ -112,6 +112,7 @@ export const solutions: Solution[] = [
       { title: "Operación", description: "Instalamos rutinas, documentación y capacidades de mantenimiento." }
     ],
     evidence: [
+      { label: "Cómo elegir entre observatorio, dashboard y visor", href: "/observatorios-dashboards-visores" },
       { label: "Un sistema municipal no es solo un dashboard", href: "/insights/sistema-seguimiento-municipal-no-es-dashboard" },
       { label: "TDR para observatorios, dashboards y visores", href: "/toolkits/tdr-observatorio-dashboard-visor" },
       { label: "DataPerú: proyectos y ejecución municipal", href: "/dataperu/municipios" },

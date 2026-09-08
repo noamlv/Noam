@@ -60,7 +60,7 @@ const decisionPaths = [
     question: "¿Qué requiere atención, quién responde y qué evidencia confirma el avance?",
     suitableFor: "Observatorios, dashboards, visores, alertas y salas de seguimiento.",
     expected: "Indicadores, fuentes, vistas, responsables y rutina de actualización.",
-    guide: { label: "TDR para observatorios", href: "/toolkits/tdr-observatorio-dashboard-visor" },
+    guide: { label: "Elegir el sistema adecuado", href: "/observatorios-dashboards-visores" },
     sample: { label: "Ver muestra de observatorio", href: "/muestras/observatorio-gestion-inversiones" },
     solution: { label: "Observatorio de gestión", href: "/solutions/observatorio-gestion-inversiones" }
   },
