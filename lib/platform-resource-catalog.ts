@@ -129,5 +129,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · CEPLAN · MEF · marco OECE",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-diagnostico-territorial-institucional",
+    title: "TDR para diagnóstico territorial e institucional",
+    description: "Matriz para conectar población, servicios, brechas, economía, territorio, capacidad institucional y prioridades con productos verificables.",
+    kind: "template",
+    url: "/toolkits/tdr-diagnostico-territorial-institucional",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · CEPLAN · MEF · MINAM · marco OECE",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

@@ -62,7 +62,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Instrumentos de gestión y cartera vigente", "Acceso a responsables y equipos técnicos", "Restricciones políticas, presupuestales y temporales", "Criterios internos de prioridad y decisión"],
     qualityControls: ["Fuentes, periodos y cobertura visibles", "Separación entre dato, inferencia e hipótesis", "Criterios de priorización reproducibles", "Validación ejecutiva y técnica documentada"],
     deliverables: ["Informe técnico navegable", "Matriz editable de prioridades", "Brief de conducción para autoridad", "Sesión de trabajo y transferencia"],
-    related: [{ type: "Producto", label: "Perfiles municipales DataPerú", href: "/dataperu/municipios" }, { type: "Toolkit", label: "Checklist de diagnóstico municipal", href: "/toolkits/checklist-diagnostico-municipal" }, { type: "Solución", label: "Diagnóstico y agenda territorial", href: "/solutions/diagnostico-agenda-territorial" }]
+    related: [{ type: "Guía", label: "Elegir un diagnóstico territorial", href: "/diagnostico-territorial" }, { type: "Producto", label: "Perfiles municipales DataPerú", href: "/dataperu/municipios" }, { type: "TDR", label: "TDR para diagnóstico territorial", href: "/toolkits/tdr-diagnostico-territorial-institucional" }, { type: "Solución", label: "Diagnóstico y agenda territorial", href: "/solutions/diagnostico-agenda-territorial" }]
   },
   {
     slug: "observatorio-gestion-inversiones",

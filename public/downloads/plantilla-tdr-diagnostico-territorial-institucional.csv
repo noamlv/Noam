@@ -1,0 +1,21 @@
+bloque,pregunta_guia,contenido_minimo,criterio_de_aceptacion
+Decisión,¿Qué decisión debe sostener el diagnóstico?,Usuario fecha alternativas y uso previsto,La decisión y sus responsables están identificados
+Finalidad,¿Qué instrumento proceso o necesidad atiende?,PDLC programación de inversiones DIT agenda institucional u otra finalidad,El uso y los límites están declarados
+Ámbito,¿Qué unidades territoriales cubre?,Distrito provincia región cuenca zona escala e inclusiones,El ámbito puede representarse y verificarse
+Población,¿A quiénes afecta el problema?,Grupos ubicación desagregaciones y vulnerabilidades,Las poblaciones y diferencias relevantes están definidas
+Preguntas,¿Qué debe explicar el diagnóstico?,Preguntas priorizadas subpreguntas y exclusiones,Cada pregunta se vincula con una decisión
+Marco institucional,¿Qué competencias planes y reglas condicionan la respuesta?,Mandatos instrumentos actores y documentos vigentes,Las responsabilidades están sustentadas
+Dimensiones,¿Qué capas son necesarias para entender el problema?,Población servicios economía ambiente riesgos inversión y capacidad,La selección responde a preguntas explícitas
+Fuentes,¿Qué registros estadísticas y documentos existen?,Custodio periodo cobertura formato acceso y calidad,Cada fuente tiene metadatos y limitaciones
+Datos geográficos,¿Qué requiere ubicación distancia o superposición?,Capas proyección escala metadatos y licencia,Los mapas pueden reproducirse y atribuirse
+Trabajo de campo,¿Qué vacíos requieren levantamiento primario?,Método participantes instrumentos ética supervisión y calidad,El protocolo permite auditar cobertura y errores
+Actores,¿Quién interviene influye conoce o resulta afectado?,Rol interés capacidad relación y evidencia,El mapa distingue funciones y perspectivas
+Brechas,¿Qué distancia existe frente a una referencia?,Indicador denominador estándar comparación y población afectada,La brecha está definida y puede recalcularse
+Causas,¿Qué explica el problema y con qué evidencia?,Mecanismos relaciones evidencia alternativa e incertidumbre,Se separan datos inferencias e hipótesis
+Tendencias y riesgos,¿Qué puede cambiar la situación?,Horizonte señales exposición sensibilidad y supuestos,Los riesgos se conectan con decisiones
+Oportunidades,¿Qué activos o capacidades pueden movilizarse?,Recurso actor mercado viabilidad y condición habilitante,La oportunidad está vinculada con evidencia
+Comparación,¿Con qué periodos o territorios se contrastará?,Criterios de selección compatibilidad y cautelas,La comparación es pertinente y transparente
+Priorización,¿Cómo se ordenarán problemas y alternativas?,Criterios pesos evidencia sensibilidad y validación,La prioridad puede reproducirse y discutirse
+Productos,¿Qué recibe cada usuario?,Informe brief matrices base diccionario mapas editables y taller,Formato contenido y propósito están definidos
+Conformidad,¿Cómo se aceptará cada producto?,Criterios observables rondas plazos y responsables,La revisión no depende de una fórmula ambigua
+Uso y transferencia,¿Cómo se convierte el análisis en acción?,Agenda responsables repositorio documentación capacitación y respaldo,La organización puede usar custodiar y actualizar los activos

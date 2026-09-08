@@ -27,7 +27,7 @@ const decisionPaths = [
     question: "¿Qué ocurre, a quién afecta, por qué y qué debería priorizarse?",
     suitableFor: "Diagnósticos, agendas territoriales, caracterización y línea de base.",
     expected: "Perfil de situación, brechas, causas, prioridades y agenda de decisión.",
-    guide: { label: "TDR para estudios y análisis", href: "/toolkits/tdr-estudio-analisis-datos" },
+    guide: { label: "Elegir un diagnóstico territorial", href: "/diagnostico-territorial" },
     sample: { label: "Ver muestra de diagnóstico", href: "/muestras/diagnostico-agenda-territorial" },
     solution: { label: "Diagnóstico y agenda territorial", href: "/solutions/diagnostico-agenda-territorial" }
   },

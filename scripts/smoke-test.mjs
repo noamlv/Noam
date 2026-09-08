@@ -70,12 +70,14 @@ const publicPages = [
   ["/contact", "Comencemos por la decisión"],
   ["/diagnostico", "Convierte una necesidad en un punto de partida."],
   ["/contratar-analisis-datos", "El análisis correcto empieza por la decisión"],
+  ["/diagnostico-territorial", "Un territorio no se diagnostica con una tabla"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
   ["/toolkits/tdr-encuesta-estudio-territorial", "Cómo elaborar TDR para una encuesta o estudio territorial"],
   ["/toolkits/tdr-observatorio-dashboard-visor", "Cómo elaborar TDR para un observatorio, dashboard o visor"],
   ["/toolkits/tdr-linea-base-evaluacion-programa", "Cómo elaborar TDR para una línea de base o evaluación de programas"],
+  ["/toolkits/tdr-diagnostico-territorial-institucional", "Cómo elaborar TDR para un diagnóstico territorial e institucional"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -104,6 +106,7 @@ assert.ok(searchPage.body.includes('name="robots" content="noindex, follow"') ||
 await expectHtml("/buscar?q=automatizacion&type=solution&topic=ia", "IA para procesos públicos");
 await expectHtml("/buscar?q=linea+base+evaluacion", "Línea de base y evaluación de programas");
 await expectHtml("/buscar?q=evaluacion+de+impacto", "Línea de base y evaluación de programas");
+await expectHtml("/buscar?q=diagnostico+territorial+municipal", "Diagnóstico territorial para gobiernos y empresas");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -346,6 +349,13 @@ const evaluationTdrBody = await evaluationTdrCsv.text();
 assert.ok(evaluationTdrBody.includes("Teoría de cambio"), "La plantilla TDR de evaluación debe incluir la teoría de cambio");
 assert.equal(evaluationTdrBody.trim().split("\n").length, 22, "La plantilla TDR de evaluación debe incluir encabezado y veintiún bloques");
 
+const diagnosisTdrCsv = await get("/downloads/plantilla-tdr-diagnostico-territorial-institucional.csv");
+assert.equal(diagnosisTdrCsv.status, 200, "La plantilla TDR de diagnóstico territorial debe ser descargable");
+assert.match(diagnosisTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const diagnosisTdrBody = await diagnosisTdrCsv.text();
+assert.ok(diagnosisTdrBody.includes("Datos geográficos"), "La plantilla TDR territorial debe incluir datos geográficos");
+assert.equal(diagnosisTdrBody.trim().split("\n").length, 21, "La plantilla TDR territorial debe incluir encabezado y veinte bloques");
+
 const sitemap = await get("/sitemap.xml");
 const sitemapBody = await sitemap.text();
 assert.equal(sitemap.status, 200);
@@ -371,6 +381,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/dataperu/mapa"));
 assert.ok(sitemapBody.includes("https://noam.pe/products/ai-governance-lab"));
 assert.ok(sitemapBody.includes("https://noam.pe/diagnostico"));
 assert.ok(sitemapBody.includes("https://noam.pe/contratar-analisis-datos"));
+assert.ok(sitemapBody.includes("https://noam.pe/diagnostico-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
@@ -380,6 +391,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-estudio-analisis-da
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-encuesta-estudio-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-observatorio-dashboard-visor"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-linea-base-evaluacion-programa"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-diagnostico-territorial-institucional"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));

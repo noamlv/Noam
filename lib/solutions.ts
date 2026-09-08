@@ -68,7 +68,9 @@ export const solutions: Solution[] = [
       { title: "Activar", description: "Entregamos una agenda usable y transferimos el método al equipo." }
     ],
     evidence: [
+      { label: "Cómo elegir el alcance de un diagnóstico territorial", href: "/diagnostico-territorial" },
       { label: "Qué debe entregar un diagnóstico territorial", href: "/insights/diagnostico-territorial-que-debe-entregar" },
+      { label: "TDR para diagnóstico territorial e institucional", href: "/toolkits/tdr-diagnostico-territorial-institucional" },
       { label: "Matriz para priorizar una agenda de 100 días", href: "/toolkits/matriz-prioridades-100-dias" },
       { label: "Explorar perfiles municipales", href: "/dataperu/municipios" }
     ]
