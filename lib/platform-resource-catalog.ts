@@ -151,5 +151,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · INEI · PRODUCE · PROMPERÚ · MEF",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-seguridad-ciudadana",
+    title: "TDR para análisis de seguridad ciudadana",
+    description: "Matriz para contratar diagnósticos, encuestas, mapas, observatorios o evaluaciones con fuentes, privacidad y aceptación verificable.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-seguridad-ciudadana",
+    productSlug: "visor-riesgo-georreferenciado",
+    sourceLabel: "NOAM · MININTER · INEI · RENAMU",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

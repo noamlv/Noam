@@ -115,6 +115,7 @@ export const solutions: Solution[] = [
       { label: "Cómo elegir entre observatorio, dashboard y visor", href: "/observatorios-dashboards-visores" },
       { label: "Un sistema municipal no es solo un dashboard", href: "/insights/sistema-seguimiento-municipal-no-es-dashboard" },
       { label: "TDR para observatorios, dashboards y visores", href: "/toolkits/tdr-observatorio-dashboard-visor" },
+      { label: "Análisis y observatorios de seguridad ciudadana", href: "/analisis-datos-seguridad-ciudadana" },
       { label: "DataPerú: proyectos y ejecución municipal", href: "/dataperu/municipios" },
       { label: "Ver productos y demostraciones", href: "/products" }
     ]

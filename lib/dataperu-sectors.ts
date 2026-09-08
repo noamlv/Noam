@@ -180,8 +180,8 @@ export const sectorTopics: SectorTopic[] = [
       "¿Cómo se distribuyen personal, patrullaje y acciones conjuntas en el territorio?",
       "¿Qué indicadores permitirían evaluar prevención y respuesta sin confundir actividad con resultado?"
     ],
-    serviceHref: "/services/observatorios-sistemas-decision",
-    serviceLabel: "Diseñar un observatorio de seguridad",
+    serviceHref: "/analisis-datos-seguridad-ciudadana",
+    serviceLabel: "Explorar soluciones para seguridad",
     accent: "#2f5c52"
   },
   {
