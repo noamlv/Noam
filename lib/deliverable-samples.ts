@@ -198,7 +198,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Objetivo y restricciones de inversión", "Variables comerciales disponibles", "Supuestos de operación y costos", "Criterios de comité y tolerancia al riesgo"],
     qualityControls: ["Variables y ponderaciones documentadas", "Comparabilidad geográfica revisada", "Sensibilidad a supuestos críticos", "Vacíos de información convertidos en diligencias"],
     deliverables: ["Base territorial integrada", "Perfiles y comparador", "Modelo de escenarios", "Recomendación y plan de validación"],
-    related: [{ type: "Datos", label: "Explorar DataPerú", href: "/dataperu" }, { type: "Toolkit", label: "Ficha de decisión territorial", href: "/toolkits/ficha-decision-territorial-empresas" }, { type: "Solución", label: "Inteligencia territorial para inversión", href: "/solutions/inteligencia-territorial-inversion" }]
+    related: [{ type: "Guía", label: "Elegir un estudio de mercado", href: "/estudios-mercado-inteligencia-territorial" }, { type: "Datos", label: "Explorar DataPerú", href: "/dataperu" }, { type: "TDR", label: "TDR para inteligencia territorial", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" }, { type: "Solución", label: "Inteligencia territorial para inversión", href: "/solutions/inteligencia-territorial-inversion" }]
   },
   {
     slug: "monitoreo-entorno-impacto",

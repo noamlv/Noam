@@ -140,5 +140,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · CEPLAN · MEF · MINAM · marco OECE",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-estudio-mercado-inteligencia-territorial",
+    title: "TDR para estudios de mercado e inteligencia territorial",
+    description: "Matriz para contratar demanda, segmentación, localización, análisis sectorial, escenarios y validación con fuentes y supuestos trazables.",
+    kind: "template",
+    url: "/toolkits/tdr-estudio-mercado-inteligencia-territorial",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · INEI · PRODUCE · PROMPERÚ · MEF",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

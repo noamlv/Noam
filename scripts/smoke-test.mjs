@@ -74,6 +74,7 @@ const publicPages = [
   ["/encuestas-estudios-opinion", "Una encuesta útil no empieza con preguntas"],
   ["/observatorios-dashboards-visores", "Un dashboard muestra datos"],
   ["/ia-automatizacion-gobiernos-empresas", "La IA no es el servicio"],
+  ["/estudios-mercado-inteligencia-territorial", "Un estudio útil no describe todo"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
@@ -81,6 +82,7 @@ const publicPages = [
   ["/toolkits/tdr-observatorio-dashboard-visor", "Cómo elaborar TDR para un observatorio, dashboard o visor"],
   ["/toolkits/tdr-linea-base-evaluacion-programa", "Cómo elaborar TDR para una línea de base o evaluación de programas"],
   ["/toolkits/tdr-diagnostico-territorial-institucional", "Cómo elaborar TDR para un diagnóstico territorial e institucional"],
+  ["/toolkits/tdr-estudio-mercado-inteligencia-territorial", "Cómo elaborar TDR para un estudio de mercado e inteligencia territorial"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -113,6 +115,7 @@ await expectHtml("/buscar?q=diagnostico+territorial+municipal", "Diagnóstico te
 await expectHtml("/buscar?q=encuesta+satisfaccion+ciudadana", "Encuestas y estudios de opinión para gobiernos y empresas");
 await expectHtml("/buscar?q=dashboard+visor+geografico", "Observatorios, dashboards y visores para gobiernos y empresas");
 await expectHtml("/buscar?q=chatbot+automatizacion+gobierno", "IA y automatización para gobiernos y empresas");
+await expectHtml("/buscar?q=estudio+mercado+localizacion", "Estudios de mercado e inteligencia territorial en Perú");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -348,6 +351,13 @@ const observatoryTdrBody = await observatoryTdrCsv.text();
 assert.ok(observatoryTdrBody.startsWith("bloque,pregunta_guia"), "La plantilla TDR de observatorios debe conservar su encabezado");
 assert.equal(observatoryTdrBody.trim().split("\n").length, 19, "La plantilla TDR de observatorios debe incluir encabezado y dieciocho bloques");
 
+const marketTdrCsv = await get("/downloads/plantilla-tdr-estudio-mercado-inteligencia-territorial.csv");
+assert.equal(marketTdrCsv.status, 200, "La plantilla TDR de estudios de mercado debe ser descargable");
+assert.match(marketTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const marketTdrBody = await marketTdrCsv.text();
+assert.ok(marketTdrBody.startsWith("bloque,pregunta_guia"), "La plantilla TDR de mercado debe conservar su encabezado");
+assert.equal(marketTdrBody.trim().split("\n").length, 19, "La plantilla TDR de mercado debe incluir encabezado y dieciocho bloques");
+
 const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
 assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
 assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
@@ -391,6 +401,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/diagnostico-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/encuestas-estudios-opinion"));
 assert.ok(sitemapBody.includes("https://noam.pe/observatorios-dashboards-visores"));
 assert.ok(sitemapBody.includes("https://noam.pe/ia-automatizacion-gobiernos-empresas"));
+assert.ok(sitemapBody.includes("https://noam.pe/estudios-mercado-inteligencia-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
@@ -401,6 +412,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-encuesta-estudio-te
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-observatorio-dashboard-visor"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-diagnostico-territorial-institucional"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-estudio-mercado-inteligencia-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));

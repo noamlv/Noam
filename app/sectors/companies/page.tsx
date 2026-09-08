@@ -29,7 +29,10 @@ export default function CompaniesPage() {
               <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">
                 Combinamos datos públicos, investigación y conocimiento institucional para decisiones donde el mercado, el Estado y el territorio se encuentran.
               </p>
-              <Button href="/contact?interest=empresas" className="mt-8 rounded-full">Conversar sobre un proyecto</Button>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button href="/estudios-mercado-inteligencia-territorial" className="rounded-full">Explorar estudios de mercado</Button>
+                <Button href="/contact?interest=empresas" variant="ghost">Conversar sobre un proyecto</Button>
+              </div>
             </div>
             <div className="relative min-h-[380px] overflow-hidden rounded-[1.25rem] border border-border shadow-visual">
               <Image src="/images/noam-private-sector.jpg" alt="Equipo técnico observando infraestructura y actividad productiva en un valle peruano" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 46vw" priority />

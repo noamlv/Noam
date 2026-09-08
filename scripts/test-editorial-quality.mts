@@ -70,7 +70,7 @@ for (const [collection, minimum] of Object.entries(contentMinimums)) {
       assert.ok(String(data.author ?? "").length >= 5, `${relativePath} debe identificar una autoría visible`);
       assert.ok(!Number.isNaN(Date.parse(String(data.reviewedAt ?? ""))), `${relativePath} requiere una fecha de revisión válida`);
       assert.ok(Number.isInteger(data.sourceCount) && Number(data.sourceCount) >= 1, `${relativePath} requiere un número válido de fuentes principales`);
-      const officialLinks = parsed.content.match(/https:\/\/(?:www\.)?(?:gob\.pe|inei\.gob\.pe|mef\.gob\.pe)[^)\s]+/g) ?? [];
+      const officialLinks = parsed.content.match(/https:\/\/(?:[a-z0-9-]+\.)*gob\.pe[^)\s]+/g) ?? [];
       assert.ok(officialLinks.length >= Number(data.sourceCount), `${relativePath} debe enlazar al menos tantas fuentes oficiales como declara`);
     }
     if (collection === "services") assert.ok(String(data.outcome ?? "").length >= 40, `${relativePath} debe declarar el resultado ofrecido`);

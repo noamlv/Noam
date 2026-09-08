@@ -5,7 +5,8 @@ import {
   ClipboardCheck,
   MapPinned,
   MessageSquareText,
-  Sparkles
+  Sparkles,
+  Store
 } from "lucide-react";
 import NextLink from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -74,6 +75,17 @@ const decisionPaths = [
     guide: { label: "Elegir un caso y un piloto", href: "/ia-automatizacion-gobiernos-empresas" },
     sample: { label: "Ver muestra de piloto", href: "/muestras/piloto-ia-documental" },
     solution: { label: "IA para procesos públicos", href: "/solutions/ia-procesos-publicos" }
+  },
+  {
+    number: "06",
+    icon: Store,
+    title: "Evaluar un mercado, localización o inversión",
+    question: "¿Dónde existe una oportunidad, qué la sostiene y qué debe validarse antes de decidir?",
+    suitableFor: "Estudios de mercado, demanda, segmentación, localización, cadenas y escenarios.",
+    expected: "Base integrada, perfiles, estimaciones, mapas, escenarios y plan de diligencia.",
+    guide: { label: "Elegir un estudio de mercado", href: "/estudios-mercado-inteligencia-territorial" },
+    sample: { label: "Ver muestra de screening", href: "/muestras/inteligencia-territorial-inversion" },
+    solution: { label: "Inteligencia territorial", href: "/solutions/inteligencia-territorial-inversion" }
   }
 ];
 
