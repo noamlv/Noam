@@ -164,7 +164,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Proceso y línea de base actual", "Corpus autorizado y clasificación de datos", "Usuarios expertos para evaluación", "Políticas de seguridad y responsables"],
     qualityControls: ["Casos de prueba antes del desarrollo", "Citas y trazabilidad por respuesta", "Pruebas de exposición y rechazo", "Criterios explícitos para detener o escalar"],
     deliverables: ["Ficha del caso de uso", "Matriz de riesgos y controles", "Piloto evaluable", "Informe y plan de adopción"],
-    related: [{ type: "Laboratorio", label: "Evaluar un caso de uso de IA", href: "/products/ai-governance-lab" }, { type: "Toolkit", label: "Playbook de gobernanza de IA", href: "/toolkits/ai-governance-playbook" }, { type: "Solución", label: "IA para procesos públicos", href: "/solutions/ia-procesos-publicos" }]
+    related: [{ type: "Guía", label: "Elegir y probar IA o automatización", href: "/ia-automatizacion-gobiernos-empresas" }, { type: "Laboratorio", label: "Evaluar un caso de uso de IA", href: "/products/ai-governance-lab" }, { type: "Toolkit", label: "Playbook de gobernanza de IA", href: "/toolkits/ai-governance-playbook" }, { type: "Solución", label: "IA para procesos públicos", href: "/solutions/ia-procesos-publicos" }]
   },
   {
     slug: "inteligencia-territorial-inversion",

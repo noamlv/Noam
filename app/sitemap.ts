@@ -52,6 +52,7 @@ const staticRoutes = [
   "/diagnostico-territorial",
   "/encuestas-estudios-opinion",
   "/observatorios-dashboards-visores",
+  "/ia-automatizacion-gobiernos-empresas",
   "/linea-base-evaluacion-impacto",
   "/muestras",
   "/privacy",

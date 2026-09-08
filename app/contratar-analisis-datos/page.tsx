@@ -71,7 +71,7 @@ const decisionPaths = [
     question: "¿Qué tarea consume tiempo y puede probarse sin perder control humano?",
     suitableFor: "Búsqueda documental, clasificación, atención, alertas y apoyo analítico.",
     expected: "Caso priorizado, línea de base, piloto, controles y decisión de escala.",
-    guide: { label: "Priorizar un caso de uso", href: "/toolkits/ficha-priorizacion-caso-uso-ia" },
+    guide: { label: "Elegir un caso y un piloto", href: "/ia-automatizacion-gobiernos-empresas" },
     sample: { label: "Ver muestra de piloto", href: "/muestras/piloto-ia-documental" },
     solution: { label: "IA para procesos públicos", href: "/solutions/ia-procesos-publicos" }
   }

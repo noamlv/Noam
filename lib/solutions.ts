@@ -200,6 +200,7 @@ export const solutions: Solution[] = [
       { title: "Escalar", description: "Documentamos arquitectura, gobernanza y condiciones de adopción." }
     ],
     evidence: [
+      { label: "Cómo elegir y probar IA o automatización", href: "/ia-automatizacion-gobiernos-empresas" },
       { label: "Laboratorio de casos de uso de IA", href: "/products/ai-governance-lab" },
       { label: "IA en gobiernos locales: cinco casos viables", href: "/insights/ia-gobiernos-locales-casos-viables" },
       { label: "Playbook de gobernanza de IA", href: "/toolkits/ai-governance-playbook" },

@@ -128,6 +128,7 @@ export default function AiGovernanceLabPage() {
             <div><Eyebrow>Continuar</Eyebrow><Heading size="xl">Método, evidencia y siguientes pasos.</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {[
+                ["Guía", "IA y automatización para gobiernos y empresas", "/ia-automatizacion-gobiernos-empresas"],
                 ["Guía", "Gobernanza de IA para equipos directivos", "/toolkits/ai-governance-playbook"],
                 ["Estudio", "Cómo medir un piloto de IA antes de escalar", "/insights/como-medir-piloto-ia-publica"],
                 ["Arquitectura", "IA documental en entidades públicas", "/insights/ia-documental-entidades-publicas"],
