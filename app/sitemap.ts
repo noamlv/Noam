@@ -56,6 +56,7 @@ const staticRoutes = [
   "/estudios-mercado-inteligencia-territorial",
   "/analisis-datos-seguridad-ciudadana",
   "/analisis-datos-residuos-limpieza-publica",
+  "/analisis-datos-gestion-riesgo-desastres",
   "/linea-base-evaluacion-impacto",
   "/muestras",
   "/privacy",

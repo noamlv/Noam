@@ -196,8 +196,8 @@ export const sectorTopics: SectorTopic[] = [
       "¿El COEL cuenta con datos, responsables y continuidad operativa suficiente?",
       "¿Qué brechas existen entre documentos, equipamiento y capacidad efectiva de respuesta?"
     ],
-    serviceHref: "/services/estudios-diagnosticos-evaluacion",
-    serviceLabel: "Evaluar preparación territorial",
+    serviceHref: "/analisis-datos-gestion-riesgo-desastres",
+    serviceLabel: "Explorar soluciones para gestión del riesgo",
     accent: "#8a623d"
   },
   {

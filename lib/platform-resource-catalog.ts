@@ -173,5 +173,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MINAM · SIGERSOL · INEI",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-gestion-riesgo-desastres",
+    title: "TDR para análisis y gestión del riesgo de desastres",
+    description: "Matriz para contratar diagnósticos, escenarios, mapas, PPRRD, COEL o sistemas de seguimiento con criterios verificables.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-gestion-riesgo-desastres",
+    productSlug: "visor-riesgo-georreferenciado",
+    sourceLabel: "NOAM · PCM · CENEPRED · INDECI · INEI",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];
