@@ -162,5 +162,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MININTER · INEI · RENAMU",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-residuos-limpieza-publica",
+    title: "TDR para análisis de residuos y limpieza pública",
+    description: "Matriz para contratar diagnósticos, optimización de rutas, balances, tableros o evaluaciones del servicio municipal.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-residuos-limpieza-publica",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · MINAM · SIGERSOL · INEI",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

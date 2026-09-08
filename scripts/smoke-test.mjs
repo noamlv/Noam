@@ -76,6 +76,7 @@ const publicPages = [
   ["/ia-automatizacion-gobiernos-empresas", "La IA no es el servicio"],
   ["/estudios-mercado-inteligencia-territorial", "Un estudio útil no describe todo"],
   ["/analisis-datos-seguridad-ciudadana", "La seguridad no se gestiona con un solo mapa"],
+  ["/analisis-datos-residuos-limpieza-publica", "La cobertura declarada no muestra cómo funciona cada ruta"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
@@ -85,6 +86,7 @@ const publicPages = [
   ["/toolkits/tdr-diagnostico-territorial-institucional", "Cómo elaborar TDR para un diagnóstico territorial e institucional"],
   ["/toolkits/tdr-estudio-mercado-inteligencia-territorial", "Cómo elaborar TDR para un estudio de mercado e inteligencia territorial"],
   ["/toolkits/tdr-analisis-seguridad-ciudadana", "Cómo elaborar TDR para un diagnóstico u observatorio de seguridad ciudadana"],
+  ["/toolkits/tdr-analisis-residuos-limpieza-publica", "Cómo elaborar TDR para analizar residuos sólidos y limpieza pública"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -119,6 +121,7 @@ await expectHtml("/buscar?q=dashboard+visor+geografico", "Observatorios, dashboa
 await expectHtml("/buscar?q=chatbot+automatizacion+gobierno", "IA y automatización para gobiernos y empresas");
 await expectHtml("/buscar?q=estudio+mercado+localizacion", "Estudios de mercado e inteligencia territorial en Perú");
 await expectHtml("/buscar?q=mapa+del+delito+CODISEC", "Análisis de datos para seguridad ciudadana municipal y regional");
+await expectHtml("/buscar?q=optimizar+rutas+recoleccion+SIGERSOL", "Análisis de datos para residuos sólidos y limpieza pública");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -368,6 +371,13 @@ const securityTdrBody = await securityTdrCsv.text();
 assert.ok(securityTdrBody.includes("Privacidad y ética"), "La plantilla de seguridad debe exigir protección de datos");
 assert.equal(securityTdrBody.trim().split("\n").length, 21, "La plantilla de seguridad debe incluir encabezado y veinte bloques");
 
+const wasteTdrCsv = await get("/downloads/plantilla-tdr-analisis-residuos-limpieza-publica.csv");
+assert.equal(wasteTdrCsv.status, 200, "La plantilla TDR de residuos debe ser descargable");
+assert.match(wasteTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const wasteTdrBody = await wasteTdrCsv.text();
+assert.ok(wasteTdrBody.includes("Rutas y turnos"), "La plantilla de residuos debe exigir una línea base operativa");
+assert.equal(wasteTdrBody.trim().split("\n").length, 21, "La plantilla de residuos debe incluir encabezado y veinte bloques");
+
 const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
 assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
 assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
@@ -413,6 +423,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/observatorios-dashboards-visores
 assert.ok(sitemapBody.includes("https://noam.pe/ia-automatizacion-gobiernos-empresas"));
 assert.ok(sitemapBody.includes("https://noam.pe/estudios-mercado-inteligencia-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-seguridad-ciudadana"));
+assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-residuos-limpieza-publica"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
@@ -425,6 +436,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-linea-base-evaluaci
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-diagnostico-territorial-institucional"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-estudio-mercado-inteligencia-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-seguridad-ciudadana"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-residuos-limpieza-publica"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));

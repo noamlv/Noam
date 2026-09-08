@@ -164,8 +164,8 @@ export const sectorTopics: SectorTopic[] = [
       "¿El destino declarado de los residuos es consistente con la infraestructura disponible?",
       "¿Qué decisiones permitirían pasar de recolección a valorización y disposición adecuada?"
     ],
-    serviceHref: "/services/estudios-diagnosticos-evaluacion",
-    serviceLabel: "Solicitar diagnóstico de residuos",
+    serviceHref: "/analisis-datos-residuos-limpieza-publica",
+    serviceLabel: "Explorar soluciones para residuos",
     accent: "#b95337"
   },
   {
