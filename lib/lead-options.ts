@@ -36,6 +36,7 @@ export const generalInterestOptions = [
   { value: "agua-saneamiento", label: "Agua, saneamiento y prestación de servicios" },
   { value: "movilidad-transporte", label: "Movilidad, transporte y seguridad vial" },
   { value: "politicas-sociales", label: "Políticas, programas y servicios sociales" },
+  { value: "salud-territorial", label: "Salud pública, servicios y análisis territorial" },
   { value: "desarrollo-economico-local", label: "Desarrollo económico local, empleo y MYPE" },
   { value: "gestion-ambiental", label: "Gestión, monitoreo y fiscalización ambiental" },
   { value: "general-public", label: "Otra necesidad del sector público" },

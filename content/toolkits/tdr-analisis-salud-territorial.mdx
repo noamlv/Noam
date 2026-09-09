@@ -1,0 +1,99 @@
+---
+title: "Cómo elaborar TDR para analizar salud territorial"
+description: "Guía y matriz editable para contratar diagnósticos, salas de situación, análisis de acceso, capacidad, calidad y evaluación de intervenciones de salud."
+date: "2026-09-09"
+reviewedAt: "2026-09-09"
+author: "Noam López Villanes"
+sourceCount: 5
+tags:
+  - términos de referencia
+  - salud pública
+  - servicios de salud
+  - datos sanitarios
+topic: "gobierno"
+featured: true
+readingTime: "12 min"
+ogImage: "/og-default.png"
+---
+
+<Problem>
+Un TDR de salud puede pedir una sala, base o diagnóstico sin precisar población, necesidad, acceso, atención y decisión. El requerimiento debe distinguir afiliación, demanda, prestación, continuidad, calidad y resultado.
+
+Más registros o atenciones no demuestran por sí solos mejor acceso o salud. También pueden reflejar mayor necesidad, repetición, cambios de registro o sustitución entre servicios.
+</Problem>
+
+<DataSources>
+[REUNIS](https://www.minsa.gob.pe/reunis/?op=0) integra estadísticas y tableros del sector. El CDC publica la [Sala de situación de salud](https://www.dge.gob.pe/portalnuevo/sala-de-situacion/) para analizar magnitud, distribución, tendencia y riesgo. [SUSALUD](https://www.gob.pe/institucion/susalud/noticias/306179-susalud-pone-a-disposicion-plataforma-de-datos-abiertos) ofrece datos abiertos protegidos sobre prestaciones y establecimientos.
+
+La Plataforma Nacional de Datos Abiertos publica el [directorio de establecimientos](https://www.datosabiertos.gob.pe/dataset/directorio-de-establecimientos-de-salud/resource/e396181b-457d-470d-a8a6-98d6c8650f47), y MINSA reúne normas de [gestión de datos para la salud](https://www.gob.pe/institucion/minsa/colecciones/85430-gestion-de-datos-para-la-salud).
+
+Cada fuente debe conservar población, establecimiento, periodo, unidad, definición, cobertura y método. Los datos personales o clínicos requieren finalidad, base legal, minimización, seguridad y acceso restringido.
+</DataSources>
+
+<Method>
+## Veinte bloques para contratar un análisis defendible
+
+| Bloque | Pregunta central | Prueba de aceptación |
+| --- | --- | --- |
+| 1. Decisión | ¿Qué intervención, asignación o mejora apoyará? | Usuario, acción, plazo y responsable definidos. |
+| 2. Competencias | ¿Qué rol corresponde a autoridad, red y prestador? | Roles, validación y límites acordados. |
+| 3. Población | ¿Quién está expuesto, necesita o utiliza el servicio? | Denominador, territorio y desagregaciones definidos. |
+| 4. Problema y riesgo | ¿Qué evento o condición se analizará? | Definición de caso, severidad, periodo y fuente explícitas. |
+| 5. Territorio | ¿Qué área, red, establecimiento y referencia cubre? | Escala y relaciones espaciales reproducibles. |
+| 6. Demanda | ¿Quién requiere atención y quién no llega? | Necesidad, solicitud, espera y abandono diferenciados. |
+| 7. Acceso | ¿Qué afiliación, distancia, costo o trámite limita la atención? | Barreras medibles por población y territorio. |
+| 8. Oferta y capacidad | ¿Qué servicio, personal, equipo e insumo están operativos? | Capacidad efectiva y periodo documentados. |
+| 9. Prestación | ¿Qué atención se brindó, cuándo y con qué intensidad? | Evento, persona, servicio y establecimiento conciliados. |
+| 10. Oportunidad | ¿Cuánto tiempo transcurre entre necesidad y atención? | Hitos, espera y urgencia medidos. |
+| 11. Continuidad | ¿Cómo se siguen referencia, tratamiento y resolución? | Transiciones y pérdidas trazables. |
+| 12. Calidad y seguridad | ¿La atención cumplió estándar y evitó daño? | Proceso, resultado, incidente y revisión definidos. |
+| 13. Experiencia | ¿Qué barrera, trato o resultado reporta el usuario? | Método, muestra, protección y devolución documentados. |
+| 14. Vigilancia y alertas | ¿Qué cambio exige investigar o responder? | Umbral, validación, responsable y protocolo acordados. |
+| 15. Datos y privacidad | ¿Qué información es necesaria y quién puede verla? | Finalidad, acceso, retención, auditoría y anonimización aprobados. |
+| 16. Indicadores | ¿Qué capacidad, proceso, resultado y equidad se seguirán? | Fichas con fórmula, fuente, frecuencia y uso. |
+| 17. Intervención | ¿Cómo produciría la acción el resultado esperado? | Teoría de cambio, supuestos y riesgos explícitos. |
+| 18. Evaluación | ¿Qué diseño responde la pregunta y con qué comparación? | Muestra, periodo, análisis y límites definidos. |
+| 19. Productos y conformidad | ¿Qué recibe cada usuario y cómo se acepta? | Pruebas observables por producto. |
+| 20. Transferencia | ¿Cómo se operarán y protegerán los activos? | Datos, código, manuales, capacitación y salida entregados. |
+
+## Criterios mínimos de conformidad
+
+- persona, atención, prestación y establecimiento diferenciados;
+- población de referencia y denominador explícitos;
+- afiliación separada de acceso efectivo;
+- capacidad registrada separada de capacidad operativa;
+- oportunidad, continuidad, calidad y experiencia incluidas;
+- definiciones de caso y cambios normativos versionados;
+- datos personales minimizados, protegidos y auditables;
+- inferencia compatible con la fuente y el diseño;
+- base, diccionario, código y documentación transferidos.
+</Method>
+
+<Findings>
+## Señales de un TDR incompleto
+
+1. Usa atenciones como sinónimo de personas atendidas.
+2. Calcula cobertura con denominadores de otro periodo o territorio.
+3. Publica tasas pequeñas que permiten reidentificar personas.
+4. Confunde establecimiento registrado con servicio disponible.
+5. Evalúa resultados sin seguimiento, comparación o implementación.
+6. Propone alertas sin validación clínica ni responsable de respuesta.
+</Findings>
+
+<Implications>
+Antes de contratar, valida el alcance con salud pública, servicios, epidemiología, estadística, aseguramiento, planeamiento, presupuesto, tecnología, seguridad de la información, protección de datos y asesoría jurídica. Incorpora usuarios con protocolos éticos.
+
+La guía orienta integración y análisis. No sustituye diagnóstico o atención clínica, vigilancia epidemiológica oficial, investigación en salud, evaluación ética, ingeniería biomédica ni competencias de autoridades y prestadores.
+</Implications>
+
+<Downloads>
+- [Descargar matriz editable para TDR de salud territorial (CSV)](/downloads/plantilla-tdr-analisis-salud-territorial.csv).
+- [Comparar diagnósticos, salas, acceso y evaluación](/analisis-datos-salud-territorial).
+- [Explorar agendas departamentales](/dataperu/departamentos).
+- [Revisar cómo contratar una línea de base o evaluación](/toolkits/tdr-linea-base-evaluacion-programa).
+- [Revisar cómo contratar un observatorio o visor](/toolkits/tdr-observatorio-dashboard-visor).
+</Downloads>
+
+<CTA>
+Si necesitas convertir información sanitaria en una decisión verificable y segura, revisa [la guía sectorial](/analisis-datos-salud-territorial), diseña [un alcance inicial](/diagnostico?from=/toolkits/tdr-analisis-salud-territorial) o [plantea el encargo](/contact?interest=salud-territorial&from=/toolkits/tdr-analisis-salud-territorial).
+</CTA>

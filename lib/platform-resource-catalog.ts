@@ -239,5 +239,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MIDIS · INEI · Datos Abiertos Perú",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-salud-territorial",
+    title: "TDR para análisis de salud territorial",
+    description: "Matriz para contratar diagnósticos, salas de situación, análisis de acceso, capacidad, calidad o evaluación de intervenciones de salud.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-salud-territorial",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · MINSA · CDC Perú · SUSALUD",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];
