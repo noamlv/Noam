@@ -228,8 +228,8 @@ export const sectorTopics: SectorTopic[] = [
       "¿Los instrumentos locales forman una secuencia coherente entre diagnóstico, política y acción?",
       "¿Qué indicadores y evidencia necesita la gestión para orientar inversión y fiscalización?"
     ],
-    serviceHref: "/services/observatorios-sistemas-decision",
-    serviceLabel: "Diseñar seguimiento ambiental",
+    serviceHref: "/analisis-datos-gestion-ambiental",
+    serviceLabel: "Explorar soluciones para gestión ambiental",
     accent: "#62724d"
   }
 ];

@@ -195,5 +195,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · PCM · INEI · PRODUCE · MTPE · PROMPERÚ",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-gestion-ambiental",
+    title: "TDR para análisis de gestión ambiental",
+    description: "Matriz para contratar diagnósticos, líneas de base, monitoreo, observatorios o seguimiento de fiscalización ambiental.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-gestion-ambiental",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · MINAM · OEFA · RENAMU",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

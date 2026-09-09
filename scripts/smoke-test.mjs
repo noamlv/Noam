@@ -79,6 +79,7 @@ const publicPages = [
   ["/analisis-datos-residuos-limpieza-publica", "La cobertura declarada no muestra cómo funciona cada ruta"],
   ["/analisis-datos-gestion-riesgo-desastres", "Un mapa de peligros no decide qué proteger primero"],
   ["/analisis-datos-desarrollo-economico-local", "Una feria o una licencia emitida no demuestran desarrollo económico"],
+  ["/analisis-datos-gestion-ambiental", "Tener una política y un plan no demuestra mejora ambiental"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
@@ -91,6 +92,7 @@ const publicPages = [
   ["/toolkits/tdr-analisis-residuos-limpieza-publica", "Cómo elaborar TDR para analizar residuos sólidos y limpieza pública"],
   ["/toolkits/tdr-analisis-gestion-riesgo-desastres", "Cómo elaborar TDR para analizar y gestionar el riesgo de desastres"],
   ["/toolkits/tdr-analisis-desarrollo-economico-local", "Cómo elaborar TDR para analizar el desarrollo económico local"],
+  ["/toolkits/tdr-analisis-gestion-ambiental", "Cómo elaborar TDR para analizar la gestión ambiental"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -128,6 +130,7 @@ await expectHtml("/buscar?q=mapa+del+delito+CODISEC", "Análisis de datos para s
 await expectHtml("/buscar?q=optimizar+rutas+recoleccion+SIGERSOL", "Análisis de datos para residuos sólidos y limpieza pública");
 await expectHtml("/buscar?q=PPRRD+COEL+SIGRID", "Análisis de datos para la gestión del riesgo de desastres");
 await expectHtml("/buscar?q=MYPE+empleo+local+cadenas+de+valor", "Análisis de datos para desarrollo económico local");
+await expectHtml("/buscar?q=PLANEFA+monitoreo+fiscalizacion+ambiental", "Análisis de datos para la gestión ambiental");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -402,6 +405,14 @@ assert.ok(localEconomyTdrBody.includes("Demanda y mercados"), "La plantilla econ
 assert.ok(localEconomyTdrBody.includes("Licencias y formalización"), "La plantilla económica debe distinguir trámite y resultado");
 assert.equal(localEconomyTdrBody.trim().split("\n").length, 21, "La plantilla económica debe incluir encabezado y veinte bloques");
 
+const environmentalTdrCsv = await get("/downloads/plantilla-tdr-analisis-gestion-ambiental.csv");
+assert.equal(environmentalTdrCsv.status, 200, "La plantilla TDR ambiental debe ser descargable");
+assert.match(environmentalTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const environmentalTdrBody = await environmentalTdrCsv.text();
+assert.ok(environmentalTdrBody.includes("Calidad y custodia"), "La plantilla ambiental debe exigir control de calidad");
+assert.ok(environmentalTdrBody.includes("Fiscalización"), "La plantilla ambiental debe cubrir fiscalización");
+assert.equal(environmentalTdrBody.trim().split("\n").length, 21, "La plantilla ambiental debe incluir encabezado y veinte bloques");
+
 const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
 assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
 assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
@@ -450,6 +461,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-seguridad-ciudada
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-residuos-limpieza-publica"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-gestion-riesgo-desastres"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-desarrollo-economico-local"));
+assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-gestion-ambiental"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
@@ -465,6 +477,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-seguridad-
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-residuos-limpieza-publica"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-gestion-riesgo-desastres"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-desarrollo-economico-local"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-gestion-ambiental"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));
