@@ -228,5 +228,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MTC · Promovilidad · ONSV",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-politicas-sociales",
+    title: "TDR para análisis de políticas y programas sociales",
+    description: "Matriz para contratar diagnósticos, focalización, líneas de base, seguimiento o evaluación de políticas, programas y servicios sociales.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-politicas-sociales",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · MIDIS · INEI · Datos Abiertos Perú",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

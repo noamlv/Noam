@@ -296,6 +296,7 @@ export const solutions: Solution[] = [
       { label: "Análisis y seguimiento de gestión ambiental", href: "/analisis-datos-gestion-ambiental" },
       { label: "Análisis de agua y saneamiento", href: "/analisis-datos-agua-saneamiento" },
       { label: "Análisis de movilidad y transporte", href: "/analisis-datos-movilidad-transporte" },
+      { label: "Análisis de políticas y programas sociales", href: "/analisis-datos-politicas-sociales" },
       { label: "Observatorios y sistemas de decisión", href: "/services/observatorios-sistemas-decision" },
       { label: "Biblioteca de evidencia", href: "/evidence" }
     ]

@@ -61,6 +61,7 @@ const staticRoutes = [
   "/analisis-datos-gestion-ambiental",
   "/analisis-datos-agua-saneamiento",
   "/analisis-datos-movilidad-transporte",
+  "/analisis-datos-politicas-sociales",
   "/linea-base-evaluacion-impacto",
   "/muestras",
   "/privacy",

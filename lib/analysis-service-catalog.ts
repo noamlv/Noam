@@ -18,6 +18,7 @@ export const analysisNeedPaths: AnalysisServiceEntry[] = [
 export const sectorAnalysisPaths: AnalysisServiceEntry[] = [
   { slug: "agua-saneamiento", title: "Agua y saneamiento", description: "Acceso, calidad, continuidad, prestación rural, inversiones y sostenibilidad.", href: "/analisis-datos-agua-saneamiento", label: "Servicios básicos" },
   { slug: "movilidad-transporte", title: "Movilidad y transporte", description: "Viajes, transporte público, seguridad vial, accesibilidad e inversiones urbanas.", href: "/analisis-datos-movilidad-transporte", label: "Ciudades" },
+  { slug: "politicas-sociales", title: "Políticas y programas sociales", description: "Necesidades, focalización, acceso, prestación, articulación y resultados.", href: "/analisis-datos-politicas-sociales", label: "Inclusión" },
   { slug: "seguridad-ciudadana", title: "Seguridad ciudadana", description: "Diagnóstico, victimización, percepción, focalización, observatorios y evaluación.", href: "/analisis-datos-seguridad-ciudadana", label: "Convivencia" },
   { slug: "residuos", title: "Residuos y limpieza pública", description: "Cobertura, rutas, costos, valorización, infraestructura y desempeño del servicio.", href: "/analisis-datos-residuos-limpieza-publica", label: "Servicios locales" },
   { slug: "riesgo", title: "Gestión del riesgo de desastres", description: "Escenarios, PPRRD, continuidad, COEL, alertas y evaluación de respuesta.", href: "/analisis-datos-gestion-riesgo-desastres", label: "Resiliencia" },
