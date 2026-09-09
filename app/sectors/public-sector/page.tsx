@@ -5,7 +5,8 @@ import { InstitutionalCaseCard } from "@/components/brand/institutional-case-car
 import { SolutionCard } from "@/components/content/solution-card";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
-import { publicInstitutionTypes, publicManagementAreas, serviceLines } from "@/lib/brand-content";
+import { publicInstitutionTypes, serviceLines } from "@/lib/brand-content";
+import { publicAnalysisAgenda } from "@/lib/analysis-service-catalog";
 import { getSolutionsForMarket } from "@/lib/solutions";
 import { getInstitutionalCases } from "@/lib/institutional-cases";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
@@ -57,7 +58,7 @@ export default async function PublicSectorPage() {
             <div className="divide-y divide-border border-y border-border">
               {publicInstitutionTypes.map((client, index) => (
                 <NextLink key={client.slug} href={`/sectors/public-sector/${client.slug}`} className="group grid gap-4 py-7 md:grid-cols-[42px_0.55fr_1fr_auto]">
-                  <span className="font-mono text-[10px] text-rust">0{index + 1}</span>
+                  <span className="font-mono text-[10px] text-rust">{String(index + 1).padStart(2, "0")}</span>
                   <h2 className="text-xl font-medium tracking-[-0.03em] text-ink">{client.label}</h2>
                   <div>
                     <p className="text-sm leading-6 text-ink/65">{client.description}</p>
@@ -76,16 +77,17 @@ export default async function PublicSectorPage() {
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Ámbitos de gestión</Eyebrow>
-              <Heading size="xl">El repertorio de una región o municipalidad.</Heading>
-              <p className="mt-5 text-sm leading-7 text-ink/65">No ofrecemos un dashboard aislado. Construimos respuestas para los temas que una institución debe conducir todos los días.</p>
+              <Heading size="xl">Diez puertas para una necesidad pública.</Heading>
+              <p className="mt-5 text-sm leading-7 text-ink/65">Busca por ámbito de gestión. Cada ruta reúne método, evidencia, productos y una forma concreta de comenzar.</p>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
-              {publicManagementAreas.map((area, index) => (
-                <article key={area.title} className="min-h-[190px] bg-canvas p-6">
-                  <span className="font-mono text-[10px] text-rust">0{index + 1}</span>
+              {publicAnalysisAgenda.map((area, index) => (
+                <NextLink key={area.slug} href={area.href} data-analytics-event="cta_click" data-analytics-target={`public-sector:agenda:${area.slug}`} className="group min-h-[210px] bg-canvas p-6 transition-colors hover:bg-panel">
+                  <span className="font-mono text-[10px] text-rust">{String(index + 1).padStart(2, "0")}</span>
                   <h2 className="mt-7 text-xl font-medium tracking-[-0.03em] text-ink">{area.title}</h2>
                   <p className="mt-3 text-sm leading-6 text-ink/62">{area.description}</p>
-                </article>
+                  <span className="mt-5 inline-flex items-center gap-2 text-xs font-medium text-rust">Explorar <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span>
+                </NextLink>
               ))}
             </div>
           </div>

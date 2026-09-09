@@ -1,15 +1,18 @@
 import { ArrowRight, Check } from "lucide-react";
 import NextLink from "next/link";
 import { SolutionCard } from "@/components/content/solution-card";
+import { AnalysisServiceDirectory } from "@/components/content/analysis-service-directory";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
+import { analysisNeedPaths, sectorAnalysisPaths } from "@/lib/analysis-service-catalog";
 import { deliverySteps, serviceLines } from "@/lib/brand-content";
 import { solutions } from "@/lib/solutions";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildMetadata({
-  title: "Servicios",
-  description: "Estudios, sistemas de decisión e inteligencia artificial para gobiernos, empresas y organizaciones.",
+  title: "Servicios de análisis de datos para gobiernos y empresas",
+  description: "Diagnósticos, líneas de base, evaluaciones, encuestas, observatorios, dashboards, estudios de mercado e IA aplicada en todo el Perú.",
   path: "/services"
 });
 
@@ -17,6 +20,22 @@ export default function ServicesPage() {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Servicios", path: "/services" }])} />
+      <JsonLd data={{
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Servicios de análisis de datos para gobiernos y empresas",
+        description: "Directorio de diagnósticos, evaluaciones, encuestas, sistemas de decisión, inteligencia de mercado e IA aplicada.",
+        url: `${siteConfig.url}/services`,
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: [...analysisNeedPaths, ...sectorAnalysisPaths].map((entry, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: entry.title,
+            url: `${siteConfig.url}${entry.href}`
+          }))
+        }
+      }} />
 
       <Section className="pb-16 pt-14 md:pb-24 md:pt-20">
         <Container>
@@ -26,6 +45,20 @@ export default function ServicesPage() {
               <Heading as="h1" size="display" className="max-w-[14ch]">De la evidencia a una capacidad que funciona.</Heading>
             </div>
             <div><p className="text-sm leading-7 text-ink/68 md:text-base">Combinamos investigación, estrategia, datos y producto digital. Cada proyecto comienza por la decisión que debe mejorar y termina con un entregable que el equipo puede usar.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Guía para elegir y contratar un análisis <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></NextLink></div>
+          </div>
+        </Container>
+      </Section>
+
+      <Section className="border-y border-border bg-panel/45">
+        <Container>
+          <div className="grid gap-8 pb-12 md:grid-cols-[0.55fr_1fr] md:items-end">
+            <div><Eyebrow>Encuentra el punto de partida</Eyebrow><Heading size="xl">Busca por decisión o por problema.</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">No necesitas llegar con la metodología resuelta. Revisa una ruta, examina evidencia y utiliza su TDR; si tu tema no aparece, podemos delimitarlo desde cero.</p>
+          </div>
+          <AnalysisServiceDirectory />
+          <div className="mt-12 flex flex-col gap-5 border-t border-border pt-7 sm:flex-row sm:items-center sm:justify-between">
+            <p className="max-w-2xl text-sm leading-6 text-ink/62">¿Tu sector o problema no está listado? La ausencia de una etiqueta no limita el alcance de un estudio.</p>
+            <Button href="/contact?interest=other&from=/services" analyticsEvent="cta_click" analyticsTarget="services:unlisted-need" variant="ghost" className="justify-start gap-2">Plantear otro tema <ArrowRight className="h-4 w-4" /></Button>
           </div>
         </Container>
       </Section>

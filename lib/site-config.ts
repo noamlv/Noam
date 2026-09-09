@@ -15,7 +15,7 @@ export const siteConfig = {
   },
   nav: [
     { href: "/", label: "Inicio" },
-    { href: "/solutions", label: "Soluciones" },
+    { href: "/services", label: "Servicios" },
     { href: "/sectors", label: "Sectores" },
     { href: "/dataperu", label: "DataPerú" },
     { href: "/electoral", label: "Electoral" },

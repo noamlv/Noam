@@ -110,6 +110,15 @@ const publicPages = [
 
 for (const [path, text] of publicPages) await expectHtml(path, text);
 
+const servicesDirectory = await expectHtml("/services", "Encuentra el punto de partida");
+assert.ok(servicesDirectory.body.includes("Por tipo de encargo"), "Servicios debe permitir buscar por tipo de encargo");
+assert.ok(servicesDirectory.body.includes("Por tema de gestión"), "Servicios debe permitir buscar por tema de gestión");
+assert.ok(servicesDirectory.body.includes('data-analytics-target="services:sector:gestion-ambiental"'), "El directorio debe medir la selección sectorial");
+
+const publicSectorDirectory = await expectHtml("/sectors/public-sector", "Diez puertas para una necesidad pública");
+assert.ok(publicSectorDirectory.body.includes('data-analytics-target="public-sector:agenda:desarrollo-economico"'), "Sector público debe enlazar la agenda económica");
+assert.ok(publicSectorDirectory.body.includes("Gestión ambiental"), "Sector público debe incluir la agenda ambiental");
+
 const englishPage = await expectHtml("/en", "English overview");
 assert.ok(englishPage.body.includes('lang="en"'), "La portada internacional debe declarar su idioma");
 assert.ok(englishPage.body.includes('hrefLang="en"'), "La portada internacional debe publicar su alternante EN");
@@ -118,6 +127,7 @@ assert.ok(!englishPage.body.includes("queued for V2"), "La portada internacional
 
 const searchPage = await expectHtml("/buscar?q=municipalidades", "Perfiles municipales de DataPerú");
 assert.ok(searchPage.body.includes('name="robots" content="noindex, follow"') || searchPage.body.includes('name="robots" content="noindex"'), "Los resultados de búsqueda no deben indexarse");
+await expectHtml("/buscar?q=servicios+analisis+datos+gobierno", "Servicios de análisis de datos para gobiernos y empresas");
 await expectHtml("/buscar?q=automatizacion&type=solution&topic=ia", "IA para procesos públicos");
 await expectHtml("/buscar?q=linea+base+evaluacion", "Línea de base y evaluación de programas");
 await expectHtml("/buscar?q=evaluacion+de+impacto", "Línea de base y evaluación de programas");
@@ -534,4 +544,4 @@ if (hasPersistentForm) {
 const missing = await get("/esta-ruta-no-existe");
 assert.equal(missing.status, 404);
 
-console.log(`Smoke OK: ${publicPages.length + 38} controles en ${baseUrl}`);
+console.log(`Smoke OK: ${publicPages.length + 41} controles en ${baseUrl}`);
