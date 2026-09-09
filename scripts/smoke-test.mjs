@@ -81,6 +81,7 @@ const publicPages = [
   ["/analisis-datos-desarrollo-economico-local", "Una feria o una licencia emitida no demuestran desarrollo económico"],
   ["/analisis-datos-gestion-ambiental", "Tener una política y un plan no demuestra mejora ambiental"],
   ["/analisis-datos-agua-saneamiento", "Una conexión registrada no demuestra agua segura ni servicio continuo"],
+  ["/analisis-datos-movilidad-transporte", "Contar vehículos no explica cómo se mueve una ciudad"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
@@ -95,6 +96,7 @@ const publicPages = [
   ["/toolkits/tdr-analisis-desarrollo-economico-local", "Cómo elaborar TDR para analizar el desarrollo económico local"],
   ["/toolkits/tdr-analisis-gestion-ambiental", "Cómo elaborar TDR para analizar la gestión ambiental"],
   ["/toolkits/tdr-analisis-agua-saneamiento", "Cómo elaborar TDR para analizar agua y saneamiento"],
+  ["/toolkits/tdr-analisis-movilidad-transporte", "Cómo elaborar TDR para analizar movilidad y transporte"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -121,6 +123,7 @@ const publicSectorDirectory = await expectHtml("/sectors/public-sector", "Rutas 
 assert.ok(publicSectorDirectory.body.includes('data-analytics-target="public-sector:agenda:desarrollo-economico"'), "Sector público debe enlazar la agenda económica");
 assert.ok(publicSectorDirectory.body.includes("Gestión ambiental"), "Sector público debe incluir la agenda ambiental");
 assert.ok(publicSectorDirectory.body.includes("Agua y saneamiento"), "Sector público debe incluir agua y saneamiento");
+assert.ok(publicSectorDirectory.body.includes("Movilidad y transporte"), "Sector público debe incluir movilidad y transporte");
 
 const englishPage = await expectHtml("/en", "English overview");
 assert.ok(englishPage.body.includes('lang="en"'), "La portada internacional debe declarar su idioma");
@@ -145,6 +148,7 @@ await expectHtml("/buscar?q=PPRRD+COEL+SIGRID", "Análisis de datos para la gest
 await expectHtml("/buscar?q=MYPE+empleo+local+cadenas+de+valor", "Análisis de datos para desarrollo económico local");
 await expectHtml("/buscar?q=PLANEFA+monitoreo+fiscalizacion+ambiental", "Análisis de datos para la gestión ambiental");
 await expectHtml("/buscar?q=DATASS+continuidad+agua+JASS", "Análisis de datos para agua y saneamiento");
+await expectHtml("/buscar?q=PMUS+aforo+seguridad+vial", "Análisis de datos para movilidad y transporte");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -172,6 +176,8 @@ if (hasPersistentForm) {
   assert.ok(localEconomyContact.body.includes('value="desarrollo-economico-local" selected'), "Contacto debe conservar el interés económico seleccionado");
   const waterContact = await expectHtml("/contact?interest=agua-saneamiento&from=/analisis-datos-agua-saneamiento", "Agua, saneamiento y prestación de servicios");
   assert.ok(waterContact.body.includes('value="agua-saneamiento" selected'), "Contacto debe conservar el interés de agua y saneamiento");
+  const mobilityContact = await expectHtml("/contact?interest=movilidad-transporte&from=/analisis-datos-movilidad-transporte", "Movilidad, transporte y seguridad vial");
+  assert.ok(mobilityContact.body.includes('value="movilidad-transporte" selected'), "Contacto debe conservar el interés de movilidad");
   assert.ok(contactPage.body.includes("Campos obligatorios"), "Contacto debe distinguir campos esenciales");
   assert.ok(contactPage.body.includes("Opcional · ayuda a preparar mejor la primera conversación"), "Contacto debe explicar los detalles opcionales");
 } else {
@@ -437,6 +443,14 @@ assert.ok(waterTdrBody.includes("Continuidad y presión"), "La plantilla de agua
 assert.ok(waterTdrBody.includes("Gestión rural"), "La plantilla de agua debe cubrir prestadores rurales");
 assert.equal(waterTdrBody.trim().split("\n").length, 21, "La plantilla de agua debe incluir encabezado y veinte bloques");
 
+const mobilityTdrCsv = await get("/downloads/plantilla-tdr-analisis-movilidad-transporte.csv");
+assert.equal(mobilityTdrCsv.status, 200, "La plantilla TDR de movilidad debe ser descargable");
+assert.match(mobilityTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const mobilityTdrBody = await mobilityTdrCsv.text();
+assert.ok(mobilityTdrBody.includes("Movilidad activa"), "La plantilla de movilidad debe incluir caminar y pedalear");
+assert.ok(mobilityTdrBody.includes("Accesibilidad y cuidados"), "La plantilla de movilidad debe cubrir acceso y equidad");
+assert.equal(mobilityTdrBody.trim().split("\n").length, 21, "La plantilla de movilidad debe incluir encabezado y veinte bloques");
+
 const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
 assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
 assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
@@ -487,6 +501,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-gestion-riesgo-de
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-desarrollo-economico-local"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-gestion-ambiental"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-agua-saneamiento"));
+assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-movilidad-transporte"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
@@ -504,6 +519,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-gestion-ri
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-desarrollo-economico-local"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-gestion-ambiental"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-agua-saneamiento"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-movilidad-transporte"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));
@@ -560,4 +576,4 @@ if (hasPersistentForm) {
 const missing = await get("/esta-ruta-no-existe");
 assert.equal(missing.status, 404);
 
-console.log(`Smoke OK: ${publicPages.length + 42} controles en ${baseUrl}`);
+console.log(`Smoke OK: ${publicPages.length + 43} controles en ${baseUrl}`);

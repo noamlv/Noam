@@ -217,5 +217,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MVCS · SUNASS · ANA · INEI",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-movilidad-transporte",
+    title: "TDR para análisis de movilidad y transporte",
+    description: "Matriz para contratar diagnósticos, encuestas, planes, observatorios, seguridad vial o evaluación de movilidad y transporte urbano.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-movilidad-transporte",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · MTC · Promovilidad · ONSV",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];
