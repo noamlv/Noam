@@ -249,6 +249,7 @@ export const solutions: Solution[] = [
     evidence: [
       { label: "Elegir un estudio de mercado e inteligencia territorial", href: "/estudios-mercado-inteligencia-territorial" },
       { label: "TDR para estudios de mercado e inteligencia territorial", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" },
+      { label: "Análisis de datos para desarrollo económico local", href: "/analisis-datos-desarrollo-economico-local" },
       { label: "Cómo evaluar un territorio antes de invertir", href: "/insights/evaluar-territorio-antes-invertir" },
       { label: "Ficha de decisión territorial para empresas", href: "/toolkits/ficha-decision-territorial-empresas" },
       { label: "Caso DataPerú", href: "/cases/dataperu-platform-case" }

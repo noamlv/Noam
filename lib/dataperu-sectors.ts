@@ -212,8 +212,8 @@ export const sectorTopics: SectorTopic[] = [
       "¿Dónde están las fricciones para formalizar, invertir, contratar o acceder a mercados?",
       "¿Qué cartera de acciones puede generar resultados verificables en el corto plazo?"
     ],
-    serviceHref: "/services/estudios-diagnosticos-evaluacion",
-    serviceLabel: "Construir una agenda económica local",
+    serviceHref: "/analisis-datos-desarrollo-economico-local",
+    serviceLabel: "Explorar soluciones para desarrollo económico",
     accent: "#a17a24"
   },
   {

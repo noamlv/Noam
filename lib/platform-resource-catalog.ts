@@ -184,5 +184,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · PCM · CENEPRED · INDECI · INEI",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-desarrollo-economico-local",
+    title: "TDR para análisis de desarrollo económico local",
+    description: "Matriz para contratar diagnósticos productivos, empleo, cadenas de valor, mercados o sistemas de seguimiento con resultados verificables.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-desarrollo-economico-local",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · PCM · INEI · PRODUCE · MTPE · PROMPERÚ",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];
