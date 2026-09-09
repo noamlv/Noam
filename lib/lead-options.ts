@@ -33,6 +33,7 @@ export const budgetRangeOptions = [
 export const generalInterestOptions = [
   { value: "dataperu", label: "DataPerú o módulo territorial" },
   { value: "electoral", label: "Análisis electoral u opinión pública" },
+  { value: "agua-saneamiento", label: "Agua, saneamiento y prestación de servicios" },
   { value: "desarrollo-economico-local", label: "Desarrollo económico local, empleo y MYPE" },
   { value: "gestion-ambiental", label: "Gestión, monitoreo y fiscalización ambiental" },
   { value: "general-public", label: "Otra necesidad del sector público" },

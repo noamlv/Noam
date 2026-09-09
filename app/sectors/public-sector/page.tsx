@@ -77,7 +77,7 @@ export default async function PublicSectorPage() {
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Ámbitos de gestión</Eyebrow>
-              <Heading size="xl">Diez puertas para una necesidad pública.</Heading>
+              <Heading size="xl">Rutas para una necesidad pública.</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Busca por ámbito de gestión. Cada ruta reúne método, evidencia, productos y una forma concreta de comenzar.</p>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">

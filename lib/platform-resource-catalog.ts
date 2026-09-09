@@ -206,5 +206,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MINAM · OEFA · RENAMU",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-agua-saneamiento",
+    title: "TDR para análisis de agua y saneamiento",
+    description: "Matriz para contratar diagnósticos, líneas de base, observatorios, priorización de inversiones o evaluación de servicios de agua y saneamiento.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-agua-saneamiento",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · MVCS · SUNASS · ANA · INEI",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];
