@@ -1,13 +1,12 @@
 import assert from "node:assert/strict";
 import { deliverableSamples, getDeliverableSample, getDeliverableSampleBySolution } from "../lib/deliverable-samples.ts";
 
-assert.equal(deliverableSamples.length, 8, "La biblioteca comercial debe publicar ocho muestras");
+assert.equal(deliverableSamples.length, 9, "La biblioteca comercial debe publicar nueve muestras");
 assert.equal(new Set(deliverableSamples.map((sample) => sample.slug)).size, deliverableSamples.length, "Los slugs deben ser únicos");
-assert.equal(new Set(deliverableSamples.map((sample) => sample.solutionSlug)).size, deliverableSamples.length, "Cada solución debe tener una muestra propia");
 
 for (const sample of deliverableSamples) {
   assert.equal(getDeliverableSample(sample.slug), sample, `Debe resolver ${sample.slug}`);
-  assert.equal(getDeliverableSampleBySolution(sample.solutionSlug), sample, `Debe vincular la solución ${sample.solutionSlug}`);
+  assert.equal(getDeliverableSampleBySolution(sample.solutionSlug)?.solutionSlug, sample.solutionSlug, `Debe vincular la solución ${sample.solutionSlug}`);
   assert.equal(sample.questions.length, 4, `${sample.slug} debe exponer cuatro preguntas`);
   assert.equal(sample.modules.length, 4, `${sample.slug} debe exponer cuatro módulos`);
   assert.equal(sample.timeline.length, 4, `${sample.slug} debe exponer cuatro fases`);
@@ -20,4 +19,4 @@ for (const sample of deliverableSamples) {
 }
 
 assert.equal(getDeliverableSample("no-existe"), undefined);
-console.log("Muestras OK: ocho arquitecturas comerciales completas y diferenciadas");
+console.log("Muestras OK: nueve arquitecturas comerciales completas y diferenciadas");

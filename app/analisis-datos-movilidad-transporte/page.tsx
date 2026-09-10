@@ -34,7 +34,7 @@ const evidence = [
   { label: "Marco nacional", title: "Política de transporte urbano", text: "Objetivos sobre sistemas eficaces, gobernanza, infraestructura y necesidades de movilidad.", href: "https://www.gob.pe/institucion/mtc/informes-publicaciones/366455-politica-nacional-de-transporte-urbano-2019" },
   { label: "TDR + plantilla", title: "Contratar el análisis", text: "Veinte bloques para demanda, oferta, seguridad, accesibilidad, intervención y conformidad.", href: "/toolkits/tdr-analisis-movilidad-transporte" },
   { label: "Seguridad vial", title: "Observatorio nacional", text: "Información intersectorial, georreferenciada y estandarizada sobre siniestros y víctimas.", href: "https://www.gob.pe/institucion/mtc/noticias/776354-observatorio-nacional-de-seguridad-vial-del-mtc-consolida-informacion-para-proteger-la-vida-de-los-ciudadanos" },
-  { label: "Territorio", title: "Perfiles municipales", text: "Población, contexto, inversión y capacidades para delimitar la pregunta local.", href: "/dataperu/municipios" },
+  { label: "Muestra", title: "Diagnóstico de un servicio", text: "Arquitectura demostrativa para separar demanda, acceso, operación y resultado.", href: "/muestras/diagnostico-desempeno-servicio-publico" },
   { label: "Sistema", title: "Observatorios y visores", text: "Indicadores, capas, alertas, protocolos y operación sostenible.", href: "/observatorios-dashboards-visores" },
   { label: "Evaluación", title: "Línea de base y resultados", text: "Diseños para medir cambios de tiempo, seguridad, acceso, demanda o experiencia.", href: "/linea-base-evaluacion-impacto" }
 ];

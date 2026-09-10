@@ -33,7 +33,7 @@ const evidenceChain = [
 const evidence = [
   { label: "Fuente oficial", title: "DATASS rural", text: "Diagnóstico de sistemas y prestadores rurales con actualización a cargo de gobiernos regionales y locales.", href: "https://datass.vivienda.gob.pe/" },
   { label: "TDR + plantilla", title: "Contratar el análisis", text: "Veinte bloques para definir brecha, servicio, calidad, operación, inversión y aceptación.", href: "/toolkits/tdr-analisis-agua-saneamiento" },
-  { label: "Territorio", title: "Perfiles municipales", text: "Contexto, población, capacidad, proyectos e indicadores para delimitar el encargo.", href: "/dataperu/municipios" },
+  { label: "Muestra", title: "Diagnóstico de un servicio", text: "Arquitectura demostrativa para separar acceso, operación, calidad y resultado.", href: "/muestras/diagnostico-desempeno-servicio-publico" },
   { label: "Sistema", title: "Observatorios y tableros", text: "Indicadores, alertas, responsables, actualización y transferencia institucional.", href: "/observatorios-dashboards-visores" },
   { label: "Riesgo", title: "Gestión del riesgo", text: "Escenarios, activos críticos, continuidad, respuesta y recuperación del servicio.", href: "/analisis-datos-gestion-riesgo-desastres" },
   { label: "Evaluación", title: "Línea de base y resultados", text: "Diseños para saber si una intervención mejoró acceso, calidad o sostenibilidad.", href: "/linea-base-evaluacion-impacto" }

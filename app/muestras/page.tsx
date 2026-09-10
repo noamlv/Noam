@@ -9,7 +9,7 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Muestras de entregables",
-  description: "Ocho muestras demostrativas para examinar cómo NOAM estructura diagnósticos, evaluaciones, observatorios, IA e inteligencia territorial.",
+  description: "Nueve muestras demostrativas para examinar cómo NOAM estructura diagnósticos, evaluaciones, observatorios, IA e inteligencia territorial.",
   path: "/muestras",
   image: "/og/muestras/diagnostico-agenda-territorial"
 });
@@ -33,7 +33,7 @@ export default function SamplesPage() {
               <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[13ch] text-white">Mira la forma del trabajo antes de contratarlo.</Heading>
             </div>
             <div className="reveal reveal-delay-2">
-              <p className="text-base leading-8 text-white/68">Ocho muestras enseñan cómo una pregunta se convierte en evidencia, un artefacto de decisión y una capacidad transferible.</p>
+              <p className="text-base leading-8 text-white/68">Nueve muestras enseñan cómo una pregunta se convierte en evidencia, un artefacto de decisión y una capacidad transferible.</p>
               <p className="mt-5 border-l border-[#d9a48f]/50 pl-4 text-xs leading-6 text-white/48">Muestras demostrativas. No corresponden a clientes ni encargos reales.</p>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function SamplesPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.5fr_1fr] md:items-end">
-            <div><Eyebrow>Ocho puntos de partida</Eyebrow><Heading size="xl">Del diagnóstico a la operación.</Heading></div>
+            <div><Eyebrow>Nueve puntos de partida</Eyebrow><Heading size="xl">Del diagnóstico a la operación.</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Cada ficha expone preguntas, módulos, cronograma, insumos, controles y entregables. El alcance contractual se diseña después de entender el contexto.</p>
           </div>
 

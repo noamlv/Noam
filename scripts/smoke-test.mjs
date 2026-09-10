@@ -108,6 +108,7 @@ const publicPages = [
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
   ["/muestras/linea-base-evaluacion-programa", "Línea de base y evaluación de un programa"],
   ["/muestras/transferencia-gestion-100-dias", "Diagnóstico de transferencia y agenda de 100 días"],
+  ["/muestras/diagnostico-desempeno-servicio-publico", "Diagnóstico de acceso y desempeño de un servicio público"],
   ["/about", "Inteligencia para instituciones que mueven el territorio"],
   ["/cv", "Noam López Villanes"],
   ["/privacy", "Datos personales"],
@@ -570,6 +571,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-educacion-
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));
+assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-desempeno-servicio-publico"));
 assert.ok(sitemapBody.includes("https://noam.pe/privacy"));
 assert.ok(sitemapBody.includes("https://noam.pe/terms"));
 assert.ok(sitemapBody.includes("https://noam.pe/transparency"));

@@ -34,7 +34,7 @@ const evidence = [
   { label: "Estadística educativa", title: "ESCALE", text: "Censo Educativo, padrón de servicios e indicadores para describir oferta, matrícula y condiciones.", href: "https://escale.minedu.gob.pe/" },
   { label: "TDR + plantilla", title: "Contratar el análisis", text: "Veinte bloques para acceso, trayectorias, aprendizaje, servicio, evaluación y privacidad.", href: "/toolkits/tdr-analisis-educacion-territorial" },
   { label: "Aprendizajes", title: "Resultados ENLA 2025", text: "Resultados nacionales y regionales, factores asociados e información pedagógica.", href: "https://umc.minedu.gob.pe/resultadosenla2025/" },
-  { label: "Territorio", title: "Agendas departamentales", text: "Problemas, poblaciones desatendidas, oportunidades y vacíos de evidencia.", href: "/dataperu/departamentos" },
+  { label: "Muestra", title: "Diagnóstico de un servicio", text: "Arquitectura demostrativa para separar acceso, participación, aprendizaje y trayectoria.", href: "/muestras/diagnostico-desempeno-servicio-publico" },
   { label: "Evaluación", title: "Línea de base y resultados", text: "Diseños para programas, servicios, infraestructura e innovaciones educativas.", href: "/linea-base-evaluacion-impacto" },
   { label: "Sistema", title: "Observatorio educativo", text: "Indicadores, alertas, responsables y rutinas de decisión sin convertir el tablero en un fin.", href: "/observatorios-dashboards-visores" }
 ];

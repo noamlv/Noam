@@ -35,7 +35,7 @@ const evidence = [
   { label: "TDR + plantilla", title: "Contratar el análisis", text: "Veinte bloques para necesidad, acceso, red, calidad, evaluación y protección.", href: "/toolkits/tdr-analisis-salud-territorial" },
   { label: "Vigilancia", title: "Sala de situación CDC", text: "Magnitud, distribución, tendencia y riesgo para focalizar intervenciones sanitarias.", href: "https://www.dge.gob.pe/portalnuevo/sala-de-situacion/" },
   { label: "Escucha", title: "Encuestas y experiencia", text: "Acceso, barreras, satisfacción y experiencia con inferencia y ética explícitas.", href: "/encuestas-estudios-opinion" },
-  { label: "Territorio", title: "Agendas departamentales", text: "Problemas, poblaciones desatendidas, oportunidades y vacíos de evidencia.", href: "/dataperu/departamentos" },
+  { label: "Muestra", title: "Diagnóstico de un servicio", text: "Arquitectura demostrativa para separar necesidad, acceso, atención y resultado.", href: "/muestras/diagnostico-desempeno-servicio-publico" },
   { label: "Evaluación", title: "Línea de base y resultados", text: "Diseños para programas, servicios, campañas y pilotos de salud.", href: "/linea-base-evaluacion-impacto" }
 ];
 

@@ -35,7 +35,7 @@ const evidence = [
   { label: "TDR + plantilla", title: "Contratar el análisis", text: "Veinte bloques para necesidades, focalización, prestación, articulación y evaluación.", href: "/toolkits/tdr-analisis-politicas-sociales" },
   { label: "Evaluación", title: "Línea de base y resultados", text: "Métodos para programas, proyectos y políticas con preguntas e inferencias defendibles.", href: "/linea-base-evaluacion-impacto" },
   { label: "Escucha", title: "Encuestas y experiencia", text: "Necesidades, barreras, satisfacción y voz de usuarios con diseño muestral explícito.", href: "/encuestas-estudios-opinion" },
-  { label: "Territorio", title: "Agendas departamentales", text: "Problemas, poblaciones desatendidas, oportunidades y vacíos de evidencia.", href: "/dataperu/departamentos" },
+  { label: "Muestra", title: "Diagnóstico de un servicio", text: "Arquitectura demostrativa para separar necesidad, acceso, prestación y resultado.", href: "/muestras/diagnostico-desempeno-servicio-publico" },
   { label: "Sistema", title: "Observatorios y alertas", text: "Indicadores, protocolos, responsables, actualización y operación institucional.", href: "/observatorios-dashboards-visores" }
 ];
 

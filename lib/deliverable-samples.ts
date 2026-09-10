@@ -367,6 +367,77 @@ export const deliverableSamples: DeliverableSample[] = [
       { type: "Toolkit", label: "Protocolo mínimo de transferencia", href: "/toolkits/protocolo-transferencia-gestion" },
       { type: "Solución", label: "Transferencia de gestión y primeros 100 días", href: "/solutions/transferencia-gestion-100-dias" }
     ]
+  },
+  {
+    slug: "diagnostico-desempeno-servicio-publico",
+    number: "09",
+    market: "Gobiernos",
+    eyebrow: "Muestra · Gestión sectorial",
+    title: "Diagnóstico de acceso y desempeño de un servicio público",
+    shortTitle: "Diagnóstico de servicio público",
+    promise: "De la cobertura declarada a una lectura de acceso, operación, calidad y resultado que permita actuar.",
+    description: "Esta muestra presenta una arquitectura adaptable a educación, salud, agua, saneamiento y programas sociales. Separa registros administrativos, experiencia de usuarios, condiciones operativas y resultados antes de recomendar una intervención.",
+    accent: "#6f6a3d",
+    image: "/images/noam-public-sector.jpg",
+    imageAlt: "Equipo público contrastando registros, territorio y condiciones de un servicio",
+    duration: "5 a 9 semanas",
+    decision: "Qué brecha del servicio debe corregirse primero, en qué población y territorio, mediante qué intervención y con qué evidencia se verificará el cambio.",
+    solutionSlug: "diagnostico-agenda-territorial",
+    questions: [
+      "¿Quién necesita el servicio, quién accede y quién queda fuera?",
+      "¿Qué capacidad y proceso explican la diferencia entre cobertura y prestación efectiva?",
+      "¿Cómo varían oportunidad, continuidad, calidad y experiencia entre territorios y grupos?",
+      "¿Qué intervención es viable y qué indicador permitirá revisar su resultado?"
+    ],
+    modules: [
+      { title: "Población y acceso", purpose: "Definir necesidad, denominadores, cobertura efectiva, barreras y demanda no atendida.", output: "Mapa de acceso y exclusión" },
+      { title: "Operación", purpose: "Contrastar capacidad registrada, recursos, procesos, continuidad e incidencias.", output: "Diagnóstico operativo" },
+      { title: "Calidad y resultado", purpose: "Integrar estándares, experiencia, equidad y resultados sin confundir actividad con mejora.", output: "Matriz de desempeño" },
+      { title: "Decisión", purpose: "Priorizar intervenciones, responsables, indicadores, riesgos y validaciones necesarias.", output: "Agenda sectorial" }
+    ],
+    preview: {
+      title: "Cadena del servicio · Estructura demostrativa",
+      columns: ["Capa", "Evidencia mínima", "Decisión"],
+      rows: [
+        ["Necesidad", "Población + territorio", "Dimensionar"],
+        ["Acceso", "Cobertura + barreras", "Focalizar"],
+        ["Operación", "Capacidad + proceso", "Corregir"],
+        ["Resultado", "Calidad + cambio", "Sostener / rediseñar"]
+      ]
+    },
+    timeline: [
+      { period: "Semana 1", title: "Decisión", description: "Población, servicio, territorio, competencias, pregunta y criterios de uso." },
+      { period: "Semanas 2–3", title: "Evidencia", description: "Registros, fuentes públicas, instrumentos, calidad, denominadores y brechas." },
+      { period: "Semanas 4–6", title: "Diagnóstico", description: "Acceso, operación, experiencia, desigualdades, causas y restricciones." },
+      { period: "Semanas 7–9", title: "Agenda", description: "Priorización, validación, indicadores, responsables y transferencia." }
+    ],
+    clientInputs: [
+      "Definición del servicio, población y decisión que debe mejorar",
+      "Registros, reportes, instrumentos de gestión y cartera vigente",
+      "Acceso a responsables, prestadores y usuarios con protocolos adecuados",
+      "Competencias, estándares, restricciones y calendario institucional"
+    ],
+    qualityControls: [
+      "Población, atención, prestación y resultado diferenciados",
+      "Fuentes, periodos, denominadores y cobertura documentados",
+      "Datos personales minimizados y productos públicos protegidos",
+      "Hallazgos, hipótesis, límites y criterios de prioridad trazables"
+    ],
+    deliverables: [
+      "Informe navegable de acceso y desempeño",
+      "Base analítica, diccionario y nota de calidad",
+      "Mapa o tablero de brechas y prioridades",
+      "Agenda de intervención, indicadores y transferencia"
+    ],
+    related: [
+      { type: "Directorio", label: "Servicios por tema de gestión", href: "/services" },
+      { type: "Agua", label: "Análisis de agua y saneamiento", href: "/analisis-datos-agua-saneamiento" },
+      { type: "Movilidad", label: "Análisis de movilidad y transporte", href: "/analisis-datos-movilidad-transporte" },
+      { type: "Salud", label: "Análisis de salud territorial", href: "/analisis-datos-salud-territorial" },
+      { type: "Educación", label: "Análisis de educación territorial", href: "/analisis-datos-educacion-territorial" },
+      { type: "Social", label: "Análisis de políticas y programas sociales", href: "/analisis-datos-politicas-sociales" },
+      { type: "TDR", label: "TDR general para estudios y análisis", href: "/toolkits/tdr-estudio-analisis-datos" }
+    ]
   }
 ];
 
