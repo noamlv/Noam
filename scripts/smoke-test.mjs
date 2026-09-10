@@ -84,6 +84,7 @@ const publicPages = [
   ["/analisis-datos-movilidad-transporte", "Contar vehículos no explica cómo se mueve una ciudad"],
   ["/analisis-datos-politicas-sociales", "Estar en un padrón no demuestra que una necesidad fue atendida"],
   ["/analisis-datos-salud-territorial", "Registrar atenciones no demuestra que la población recibió cuidado oportuno"],
+  ["/analisis-datos-educacion-territorial", "Una matrícula registrada no demuestra que un estudiante aprende ni permanece"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
@@ -101,6 +102,7 @@ const publicPages = [
   ["/toolkits/tdr-analisis-movilidad-transporte", "Cómo elaborar TDR para analizar movilidad y transporte"],
   ["/toolkits/tdr-analisis-politicas-sociales", "Cómo elaborar TDR para analizar políticas y programas sociales"],
   ["/toolkits/tdr-analisis-salud-territorial", "Cómo elaborar TDR para analizar salud territorial"],
+  ["/toolkits/tdr-analisis-educacion-territorial", "Cómo elaborar TDR para analizar educación territorial"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -157,6 +159,7 @@ await expectHtml("/buscar?q=DATASS+continuidad+agua+JASS", "Análisis de datos p
 await expectHtml("/buscar?q=PMUS+aforo+seguridad+vial", "Análisis de datos para movilidad y transporte");
 await expectHtml("/buscar?q=SISFOH+brecha+cobertura+programa+social", "Análisis de datos para políticas y programas sociales");
 await expectHtml("/buscar?q=REUNIS+IPRESS+sala+situacion", "Análisis de datos para salud territorial");
+await expectHtml("/buscar?q=ENLA+ESCALE+trayectoria+aprendizaje", "Análisis de datos para educación territorial");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -190,6 +193,8 @@ if (hasPersistentForm) {
   assert.ok(socialPolicyContact.body.includes('value="politicas-sociales" selected'), "Contacto debe conservar el interés de políticas sociales");
   const healthContact = await expectHtml("/contact?interest=salud-territorial&from=/analisis-datos-salud-territorial", "Salud pública, servicios y análisis territorial");
   assert.ok(healthContact.body.includes('value="salud-territorial" selected'), "Contacto debe conservar el interés de salud");
+  const educationContact = await expectHtml("/contact?interest=educacion-territorial&from=/analisis-datos-educacion-territorial", "Educación, aprendizaje y trayectorias");
+  assert.ok(educationContact.body.includes('value="educacion-territorial" selected'), "Contacto debe conservar el interés de educación");
   assert.ok(contactPage.body.includes("Campos obligatorios"), "Contacto debe distinguir campos esenciales");
   assert.ok(contactPage.body.includes("Opcional · ayuda a preparar mejor la primera conversación"), "Contacto debe explicar los detalles opcionales");
 } else {
@@ -479,6 +484,14 @@ assert.ok(healthTdrBody.includes("Datos y privacidad"), "La plantilla de salud d
 assert.ok(healthTdrBody.includes("Continuidad"), "La plantilla de salud debe seguir la continuidad asistencial");
 assert.equal(healthTdrBody.trim().split("\n").length, 21, "La plantilla de salud debe incluir encabezado y veinte bloques");
 
+const educationTdrCsv = await get("/downloads/plantilla-tdr-analisis-educacion-territorial.csv");
+assert.equal(educationTdrCsv.status, 200, "La plantilla TDR de educación debe ser descargable");
+assert.match(educationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const educationTdrBody = await educationTdrCsv.text();
+assert.ok(educationTdrBody.includes("Aprendizajes"), "La plantilla educativa debe distinguir resultados de aprendizaje");
+assert.ok(educationTdrBody.includes("Datos y privacidad"), "La plantilla educativa debe proteger información de estudiantes");
+assert.equal(educationTdrBody.trim().split("\n").length, 21, "La plantilla educativa debe incluir encabezado y veinte bloques");
+
 const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
 assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
 assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
@@ -532,6 +545,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-agua-saneamiento"
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-movilidad-transporte"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-politicas-sociales"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-salud-territorial"));
+assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-educacion-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
@@ -552,6 +566,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-agua-sanea
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-movilidad-transporte"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-politicas-sociales"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-salud-territorial"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-educacion-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));
@@ -608,4 +623,4 @@ if (hasPersistentForm) {
 const missing = await get("/esta-ruta-no-existe");
 assert.equal(missing.status, 404);
 
-console.log(`Smoke OK: ${publicPages.length + 45} controles en ${baseUrl}`);
+console.log(`Smoke OK: ${publicPages.length + 46} controles en ${baseUrl}`);

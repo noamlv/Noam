@@ -37,6 +37,7 @@ export const generalInterestOptions = [
   { value: "movilidad-transporte", label: "Movilidad, transporte y seguridad vial" },
   { value: "politicas-sociales", label: "Políticas, programas y servicios sociales" },
   { value: "salud-territorial", label: "Salud pública, servicios y análisis territorial" },
+  { value: "educacion-territorial", label: "Educación, aprendizaje y trayectorias" },
   { value: "desarrollo-economico-local", label: "Desarrollo económico local, empleo y MYPE" },
   { value: "gestion-ambiental", label: "Gestión, monitoreo y fiscalización ambiental" },
   { value: "general-public", label: "Otra necesidad del sector público" },

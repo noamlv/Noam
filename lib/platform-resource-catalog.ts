@@ -250,5 +250,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MINSA · CDC Perú · SUSALUD",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-educacion-territorial",
+    title: "TDR para análisis de educación territorial",
+    description: "Matriz para contratar diagnósticos de acceso, trayectorias, aprendizajes, condiciones del servicio, infraestructura o evaluación educativa.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-educacion-territorial",
+    productSlug: "dataperu",
+    sourceLabel: "NOAM · MINEDU · ESCALE · UMC",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

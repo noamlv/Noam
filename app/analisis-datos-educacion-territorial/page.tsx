@@ -1,0 +1,73 @@
+import { ArrowRight, BookOpenCheck, Building2, GraduationCap, MapPinned, Users } from "lucide-react";
+import NextLink from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
+import { Accordion, Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
+import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
+
+const path = "/analisis-datos-educacion-territorial";
+
+export const metadata = buildMetadata({
+  title: "Análisis de datos para educación territorial",
+  description: "Diagnósticos de acceso, trayectorias, aprendizajes, condiciones del servicio, infraestructura y evaluación educativa en el Perú.",
+  path
+});
+
+const decisions = [
+  { icon: MapPinned, title: "Identificar brechas de acceso", question: "¿Quién queda fuera, dónde y por qué barrera territorial, económica o institucional?", use: "Oferta, cobertura, matrícula, transición, accesibilidad, demanda potencial e inclusión territorial." },
+  { icon: Users, title: "Seguir trayectorias", question: "¿Quién asiste, permanece, transita, retorna o abandona el sistema educativo?", use: "Asistencia, continuidad, rezago, repitencia, transición, interrupción, reinserción y conclusión." },
+  { icon: GraduationCap, title: "Comprender aprendizajes", question: "¿Qué aprenden los estudiantes, cómo varía y qué factores deben investigarse?", use: "Resultados ENLA, brechas, factores asociados, habilidades, contexto y seguimiento pedagógico." },
+  { icon: Building2, title: "Gestionar condiciones del servicio", question: "¿Qué capacidad, docente, recurso, conectividad o infraestructura limita la experiencia educativa?", use: "Locales, servicios básicos, equipamiento, docentes, secciones, capacidad, conectividad y mantenimiento." },
+  { icon: BookOpenCheck, title: "Priorizar y evaluar intervenciones", question: "¿Qué acción puede mejorar acceso, trayectoria o aprendizaje y cómo se comprobará?", use: "Programas, tutoría, formación, infraestructura, innovación, implementación, resultados e impacto." }
+];
+
+const evidenceChain = [
+  { number: "01", title: "Estudiante", text: "Población, edad, contexto, lengua, discapacidad, territorio y condiciones de vida." },
+  { number: "02", title: "Acceso", text: "Oferta, vacante, distancia, matrícula, barreras y demanda no atendida." },
+  { number: "03", title: "Participación", text: "Asistencia, interacción, apoyo, bienestar, convivencia y alerta temprana." },
+  { number: "04", title: "Aprendizaje", text: "Competencias, nivel de logro, progreso, factores asociados y desigualdad." },
+  { number: "05", title: "Trayectoria", text: "Permanencia, transición, rezago, abandono, retorno y conclusión." },
+  { number: "06", title: "Oportunidad", text: "Continuidad educativa, estudios posteriores, empleabilidad, ciudadanía y bienestar." }
+];
+
+const evidence = [
+  { label: "Estadística educativa", title: "ESCALE", text: "Censo Educativo, padrón de servicios e indicadores para describir oferta, matrícula y condiciones.", href: "https://escale.minedu.gob.pe/" },
+  { label: "TDR + plantilla", title: "Contratar el análisis", text: "Veinte bloques para acceso, trayectorias, aprendizaje, servicio, evaluación y privacidad.", href: "/toolkits/tdr-analisis-educacion-territorial" },
+  { label: "Aprendizajes", title: "Resultados ENLA 2025", text: "Resultados nacionales y regionales, factores asociados e información pedagógica.", href: "https://umc.minedu.gob.pe/resultadosenla2025/" },
+  { label: "Territorio", title: "Agendas departamentales", text: "Problemas, poblaciones desatendidas, oportunidades y vacíos de evidencia.", href: "/dataperu/departamentos" },
+  { label: "Evaluación", title: "Línea de base y resultados", text: "Diseños para programas, servicios, infraestructura e innovaciones educativas.", href: "/linea-base-evaluacion-impacto" },
+  { label: "Sistema", title: "Observatorio educativo", text: "Indicadores, alertas, responsables y rutinas de decisión sin convertir el tablero en un fin.", href: "/observatorios-dashboards-visores" }
+];
+
+const faq = [
+  { title: "¿Pueden preparar un diagnóstico educativo regional o local?", content: "Sí. Delimitamos población, niveles, territorio, competencias, acceso, trayectoria, aprendizaje, condiciones del servicio y fuentes. El alcance puede servir a un gobierno regional, DRE/GRE, UGEL, municipalidad, programa, universidad u organización." },
+  { title: "¿Matrícula significa asistencia o aprendizaje?", content: "No. La matrícula registra una vinculación administrativa; no demuestra asistencia regular, permanencia, progresión ni logro. Cada dimensión necesita definición, periodo, denominador y fuente propios." },
+  { title: "¿Pueden crear un dashboard u observatorio educativo?", content: "Sí. Primero definimos decisiones, usuarios, indicadores, alertas y protocolos. El sistema puede integrar oferta, trayectoria, resultados, infraestructura e inversión, con acceso diferenciado y trazabilidad." },
+  { title: "¿Pueden priorizar infraestructura educativa?", content: "Sí. Combinamos brechas, demanda, riesgo, capacidad, condición del local, accesibilidad, costos y cartera. Una brecha registrada no sustituye inspección técnica, formulación de inversiones ni competencias sectoriales." },
+  { title: "¿Pueden evaluar un programa o innovación educativa?", content: "Sí. Revisamos teoría de cambio, implementación, cobertura, comparación, resultados y heterogeneidad. El diseño debe respetar la operación escolar y no atribuir causalidad cuando la evidencia no lo permite." },
+  { title: "¿Trabajan con datos individuales de estudiantes?", content: "Solo con finalidad, base legal, minimización, acceso restringido y controles proporcionales al riesgo. No publicamos registros nominales ni celdas pequeñas que puedan reidentificar menores; cualquier alerta o modelo requiere revisión humana y protocolos de protección." }
+];
+
+export default function TerritorialEducationDataPage() {
+  return (
+    <>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Análisis de datos para educación territorial", path }])} />
+      <JsonLd data={faqJsonLd(faq)} />
+      <JsonLd data={{ "@context": "https://schema.org", "@type": "Service", name: "Análisis de datos para educación territorial", description: "Diagnósticos de acceso, trayectorias, aprendizajes, condiciones del servicio y evaluación educativa.", url: `${siteConfig.url}${path}`, provider: { "@type": "Organization", name: "NOAM", url: siteConfig.url }, areaServed: { "@type": "Country", name: "Perú" } }} />
+
+      <section className="overflow-hidden bg-[#30372f] pb-16 pt-14 text-white md:pb-24 md:pt-20"><Container><div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20"><div><Eyebrow className="text-[#d6c99d]">Educación, aprendizaje y territorio</Eyebrow><Heading as="h1" size="display" className="max-w-[15ch] text-white">Una matrícula registrada no demuestra que un estudiante aprende ni permanece.</Heading></div><div><p className="text-base leading-8 text-white/68">Conectamos acceso, participación, aprendizajes, trayectorias y condiciones del servicio para orientar decisiones educativas responsables.</p><div className="mt-7 flex flex-wrap gap-3"><Button href="#decisiones" variant="secondary" className="rounded-full border-white bg-white text-ink">Definir la necesidad</Button><Button href="/toolkits/tdr-analisis-educacion-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Abrir TDR y plantilla</Button></div></div></div><div className="mt-16 grid gap-px overflow-hidden rounded-md border border-white/12 bg-white/12 sm:grid-cols-3">{["Gobiernos, DRE y UGEL", "Acceso, trayectorias y aprendizaje", "Datos protegidos y decisiones verificables"].map((item, index) => <div key={item} className="bg-[#41493e] p-6 md:p-8"><span className="font-mono text-[10px] text-[#d6c99d]">0{index + 1}</span><p className="mt-9 max-w-[27ch] text-lg font-medium leading-6 tracking-[-0.02em] text-white/86">{item}</p></div>)}</div></Container></section>
+
+      <Section id="decisiones"><Container><div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end"><div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Cinco decisiones que una cifra de matrícula no resuelve.</Heading></div><p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">La evidencia es útil cuando distingue acceso administrativo, participación efectiva, aprendizaje y trayectoria para una población concreta.</p></div><div className="mt-12 divide-y divide-border border-y border-border">{decisions.map(({ icon: Icon, title, question, use }, index) => <article key={title} className="grid gap-6 py-9 md:grid-cols-[64px_0.75fr_1fr] md:gap-10 md:py-11"><div className="flex items-center gap-4 md:block"><span className="font-mono text-[10px] text-[#7e7142]">0{index + 1}</span><Icon className="h-5 w-5 text-[#7e7142] md:mt-8" aria-hidden /></div><div><h2 className="text-2xl font-medium tracking-[-0.035em] text-ink">{title}</h2><p className="mt-4 text-sm leading-7 text-ink/72">{question}</p></div><div><span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted">Aplicaciones</span><p className="mt-3 text-sm leading-7 text-ink/62">{use}</p></div></article>)}</div></Container></Section>
+
+      <Section className="border-y border-border bg-panel/45"><Container><div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20"><div><GraduationCap className="h-5 w-5 text-[#7e7142]" aria-hidden /><Eyebrow className="mt-6">Cadena de evidencia</Eyebrow><Heading size="xl">Del acceso a una oportunidad educativa.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Cada eslabón evita confundir inscripción, presencia, aprendizaje, permanencia y resultado.</p></div><div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">{evidenceChain.map((item) => <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8"><span className="font-mono text-[10px] text-[#7e7142]">{item.number}</span><h2 className="mt-9 text-xl font-medium tracking-[-0.025em] text-ink">{item.title}</h2><p className="mt-3 text-sm leading-6 text-ink/62">{item.text}</p></article>)}</div></div></Container></Section>
+
+      <Section className="border-b border-border bg-[#eee9d8]"><Container><div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20"><div><Eyebrow>Marco y fuentes</Eyebrow><Heading size="xl">Un sistema educativo produce registros distintos para preguntas distintas.</Heading></div><div className="max-w-3xl space-y-5 text-base leading-8 text-ink/72"><p>ESCALE publica información del Censo Educativo y del padrón de servicios; la UMC reporta resultados y documentación técnica de la ENLA; el MINEDU define indicadores de brechas de infraestructura y acceso. Sus unidades, periodos y alcances no son intercambiables.</p><p>Los registros de niñas, niños y adolescentes requieren una protección reforzada. Un análisis debe minimizar datos, restringir accesos, evitar celdas pequeñas y documentar cualquier alerta o modelo que pueda afectar su trayectoria.</p><div className="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#74683d]"><a href="https://escale.minedu.gob.pe/" target="_blank" rel="noreferrer">ESCALE</a><a href="https://umc.minedu.gob.pe/resultadosenla2025/" target="_blank" rel="noreferrer">ENLA 2025</a><a href="https://umc.minedu.gob.pe/reportestecnicos/" target="_blank" rel="noreferrer">Reportes técnicos UMC</a><a href="https://www.gob.pe/institucion/minedu/colecciones/94682-indicadores-de-brecha-de-infraestructura-o-acceso-a-servicios-pu-blicos" target="_blank" rel="noreferrer">Indicadores de brecha</a><a href="https://www.gob.pe/institucion/minedu/informes-publicaciones/7818183-brechas-asociadas-al-gobierno-nacional-regional-y-local-pmi-2024-2026" target="_blank" rel="noreferrer">Brechas por nivel de gobierno</a></div></div></div></Container></Section>
+
+      <Section><Container><div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end"><div><Eyebrow>Evidencia y servicios</Eyebrow><Heading size="xl">Explora antes de plantear el encargo.</Heading></div><p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Combina estadística, aprendizaje, territorio, evaluación y sistemas según la decisión educativa.</p></div><div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">{evidence.map((item) => <NextLink key={item.href} href={item.href} className="group min-h-[225px] bg-canvas p-6 transition-colors hover:bg-panel md:p-8" {...(item.href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {})}><span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#7e7142]">{item.label}</span><h2 className="mt-10 text-2xl font-medium tracking-[-0.035em] text-ink">{item.title}</h2><p className="mt-3 text-sm leading-6 text-ink/62">{item.text}</p><span className="mt-6 inline-flex items-center gap-2 text-xs font-medium text-ink">Abrir <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span></NextLink>)}</div></Container></Section>
+
+      <Section className="border-y border-border bg-panel/45"><Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de interpretar un registro educativo.</Heading><Accordion items={faq} className="mt-8" /></Container></Section>
+
+      <Section className="pb-0"><Container><div className="relative overflow-hidden rounded-[1.5rem] bg-[#74683d] px-7 py-12 text-white md:px-12 md:py-16"><div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" /><div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><Eyebrow className="text-white/55">Primera definición</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué población, trayectoria o resultado educativo debe comprenderse.</h2></div><div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/analisis-datos-educacion-territorial" analyticsEvent="cta_click" analyticsTarget="education-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=educacion-territorial&from=/analisis-datos-educacion-territorial" analyticsEvent="cta_click" analyticsTarget="education-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear el encargo</Button></div></div></div></Container></Section>
+    </>
+  );
+}
