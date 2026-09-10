@@ -96,7 +96,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Reportes y tableros existentes", "Acceso a responsables de fuentes", "Calendario de reuniones y decisiones", "Infraestructura y restricciones de seguridad"],
     qualityControls: ["Definición y denominador por indicador", "Linaje entre fuente, transformación y vista", "Alertas probadas con escenarios", "Roles de actualización y corrección"],
     deliverables: ["Mapa de decisiones y usuarios", "Diccionario de indicadores", "Producto digital funcional", "Manual de operación y gobernanza"],
-    related: [{ type: "Guía", label: "Elegir observatorio, dashboard o visor", href: "/observatorios-dashboards-visores" }, { type: "Demo", label: "Observatorio de inversiones DataPerú", href: "/dataperu/inversiones" }, { type: "TDR", label: "TDR para observatorios y dashboards", href: "/toolkits/tdr-observatorio-dashboard-visor" }, { type: "Solución", label: "Observatorio de gestión", href: "/solutions/observatorio-gestion-inversiones" }]
+    related: [{ type: "Guía", label: "Analizar inversión pública y proyectos", href: "/analisis-inversion-publica-proyectos" }, { type: "Demo", label: "Observatorio de inversiones DataPerú", href: "/dataperu/inversiones" }, { type: "TDR", label: "TDR para análisis de inversión pública", href: "/toolkits/tdr-analisis-inversion-publica" }, { type: "Solución", label: "Observatorio de gestión", href: "/solutions/observatorio-gestion-inversiones" }]
   },
   {
     slug: "encuesta-escucha-territorial",

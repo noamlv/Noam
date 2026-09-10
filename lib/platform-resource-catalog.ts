@@ -261,5 +261,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MINEDU · ESCALE · UMC",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-inversion-publica",
+    title: "TDR para análisis de inversión pública y proyectos",
+    description: "Matriz para contratar priorización y seguimiento de carteras con presupuesto, avance físico, hitos, contratos, riesgos y operación.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-inversion-publica",
+    productSlug: "observatorio-territorial",
+    sourceLabel: "NOAM · MEF · Invierte.pe · InfObras",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

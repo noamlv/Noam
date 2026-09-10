@@ -299,6 +299,7 @@ export const solutions: Solution[] = [
       { label: "Análisis de políticas y programas sociales", href: "/analisis-datos-politicas-sociales" },
       { label: "Análisis de salud territorial", href: "/analisis-datos-salud-territorial" },
       { label: "Análisis de educación territorial", href: "/analisis-datos-educacion-territorial" },
+      { label: "Análisis de inversión pública y proyectos", href: "/analisis-inversion-publica-proyectos" },
       { label: "Observatorios y sistemas de decisión", href: "/services/observatorios-sistemas-decision" },
       { label: "Biblioteca de evidencia", href: "/evidence" }
     ]

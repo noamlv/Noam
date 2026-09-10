@@ -7,6 +7,7 @@ import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import {
   budgetRangeOptions,
   generalInterestOptions,
+  interestOptions,
   organizationTypeOptions,
   resolveInterest,
   solutionInterestOptions,
@@ -35,6 +36,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   const params = await searchParams;
   const defaultInterest = resolveInterest(params.interest);
   const selectedSolution = getSolution(defaultInterest);
+  const selectedInterest = params.interest ? interestOptions.find((option) => option.value === defaultInterest) : null;
+  const selectedInterestTitle = selectedSolution?.title ?? selectedInterest?.label;
   const safeFrom = params.from?.startsWith("/") && !params.from.startsWith("//") ? params.from.slice(0, 300) : null;
   const defaultTerritory = params.territory?.trim().slice(0, 180) ?? "";
   const selectedAiCase = aiUseCases.find((item) => item.id === params.case);
@@ -44,8 +47,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   const defaultOrganizationType = scopeRecommendation?.organizationType ?? "";
   const defaultTimeline = scopeRecommendation?.timeline ?? "to-define";
   const originPath = safeFrom ?? (selectedSolution ? `/solutions/${selectedSolution.slug}` : params.interest === "dataperu" ? "/dataperu" : params.interest === "electoral" ? "/electoral" : "/contact");
-  const emailSubject = encodeURIComponent(selectedSolution ? `Consulta: ${selectedSolution.title}` : "Consulta para NOAM");
-  const emailBody = encodeURIComponent(`Hola, quisiera conversar sobre ${selectedSolution?.title ?? "un posible encargo"}${defaultTerritory ? ` en ${defaultTerritory}` : ""}.\n\nOrganización:\nDecisión o problema:\nPlazo aproximado:\n`);
+  const emailSubject = encodeURIComponent(selectedInterestTitle ? `Consulta: ${selectedInterestTitle}` : "Consulta para NOAM");
+  const emailBody = encodeURIComponent(`Hola, quisiera conversar sobre ${selectedInterestTitle ?? "un posible encargo"}${defaultTerritory ? ` en ${defaultTerritory}` : ""}.\n\nOrganización:\nDecisión o problema:\nPlazo aproximado:\n`);
 
   return (
     <>
@@ -58,10 +61,10 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               <Heading as="h1" size="display" className="max-w-[11ch]">Comencemos por la decisión.</Heading>
               <p className="mt-6 max-w-xl text-base leading-8 text-ink/68">Describe el problema, el territorio o el resultado que necesitas. Usaremos esta información para preparar una conversación concreta.</p>
 
-              {selectedSolution && params.interest ? (
+              {selectedInterestTitle && params.interest ? (
                 <div className="mt-8 rounded-md border border-rust/25 bg-rust/[0.045] p-5">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-rust">Solución seleccionada</p>
-                  <p className="mt-3 text-lg font-medium tracking-[-0.02em] text-ink">{selectedSolution.title}</p>
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-rust">Tema seleccionado</p>
+                  <p className="mt-3 text-lg font-medium tracking-[-0.02em] text-ink">{selectedInterestTitle}</p>
                   <p className="mt-2 text-xs leading-5 text-ink/60">{runtimeCapabilities.leadIntake ? "Puedes cambiarla dentro del formulario si el desafío es distinto." : "La incluiremos como contexto inicial en el canal que elijas."}</p>
                 </div>
               ) : null}
@@ -83,7 +86,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f]">Respuesta directa</p>
                 <p className="mt-3 text-lg font-medium tracking-[-0.025em]">¿Prefieres WhatsApp?</p>
                 <p className="mt-2 text-xs leading-5 text-white/58">Escríbenos con un mensaje prellenado según la página desde la que llegaste.</p>
-                <WhatsAppLink context="una posible consultoría" analyticsTarget="contact:whatsapp" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-ink transition-transform hover:-translate-y-px">
+                <WhatsAppLink context={selectedInterestTitle ?? "una posible consultoría"} analyticsTarget="contact:whatsapp" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-ink transition-transform hover:-translate-y-px">
                   {siteConfig.phone}
                 </WhatsAppLink>
               </div> : null}
@@ -103,7 +106,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                       <span className="mt-5 block text-lg font-medium tracking-[-0.025em] text-ink">Escribir por email</span>
                       <span className="mt-2 block text-xs text-muted">{siteConfig.email}</span>
                     </a>
-                    <WhatsAppLink context={selectedSolution ? `una consulta sobre ${selectedSolution.title}` : "una posible consultoría"} analyticsTarget="contact:direct-whatsapp" className="group rounded-md border border-border bg-canvas p-5 transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle">
+                    <WhatsAppLink context={selectedInterestTitle ?? "una posible consultoría"} analyticsTarget="contact:direct-whatsapp" className="group rounded-md border border-border bg-canvas p-5 transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle">
                       <span className="mt-5 block text-lg font-medium tracking-[-0.025em] text-ink">Abrir WhatsApp</span>
                       <span className="mt-2 block text-xs text-muted">{siteConfig.phone}</span>
                     </WhatsAppLink>

@@ -86,6 +86,7 @@ const publicPages = [
   ["/analisis-datos-politicas-sociales", "Estar en un padrón no demuestra que una necesidad fue atendida"],
   ["/analisis-datos-salud-territorial", "Registrar atenciones no demuestra que la población recibió cuidado oportuno"],
   ["/analisis-datos-educacion-territorial", "Una matrícula registrada no demuestra que un estudiante aprende ni permanece"],
+  ["/analisis-inversion-publica-proyectos", "La ejecución presupuestal no demuestra avance físico ni un servicio operativo"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
@@ -104,6 +105,7 @@ const publicPages = [
   ["/toolkits/tdr-analisis-politicas-sociales", "Cómo elaborar TDR para analizar políticas y programas sociales"],
   ["/toolkits/tdr-analisis-salud-territorial", "Cómo elaborar TDR para analizar salud territorial"],
   ["/toolkits/tdr-analisis-educacion-territorial", "Cómo elaborar TDR para analizar educación territorial"],
+  ["/toolkits/tdr-analisis-inversion-publica", "Cómo elaborar TDR para analizar inversión pública y proyectos"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -134,6 +136,7 @@ assert.ok(publicSectorDirectory.body.includes("Agua y saneamiento"), "Sector pú
 assert.ok(publicSectorDirectory.body.includes("Movilidad y transporte"), "Sector público debe incluir movilidad y transporte");
 assert.ok(publicSectorDirectory.body.includes("Políticas y programas sociales"), "Sector público debe incluir políticas sociales");
 assert.ok(publicSectorDirectory.body.includes("Salud territorial"), "Sector público debe incluir salud territorial");
+assert.ok(publicSectorDirectory.body.includes("Inversión pública y proyectos"), "Sector público debe incluir inversión pública y proyectos");
 
 const englishPage = await expectHtml("/en", "English overview");
 assert.ok(englishPage.body.includes('lang="en"'), "La portada internacional debe declarar su idioma");
@@ -162,6 +165,7 @@ await expectHtml("/buscar?q=PMUS+aforo+seguridad+vial", "Análisis de datos para
 await expectHtml("/buscar?q=SISFOH+brecha+cobertura+programa+social", "Análisis de datos para políticas y programas sociales");
 await expectHtml("/buscar?q=REUNIS+IPRESS+sala+situacion", "Análisis de datos para salud territorial");
 await expectHtml("/buscar?q=ENLA+ESCALE+trayectoria+aprendizaje", "Análisis de datos para educación territorial");
+await expectHtml("/buscar?q=Invierte.pe+avance+fisico+cartera+proyectos", "Análisis de inversión pública, presupuesto y proyectos");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
@@ -199,6 +203,8 @@ if (hasPersistentForm) {
   assert.ok(healthContact.body.includes('value="salud-territorial" selected'), "Contacto debe conservar el interés de salud");
   const educationContact = await expectHtml("/contact?interest=educacion-territorial&from=/analisis-datos-educacion-territorial", "Educación, aprendizaje y trayectorias");
   assert.ok(educationContact.body.includes('value="educacion-territorial" selected'), "Contacto debe conservar el interés de educación");
+  const investmentContact = await expectHtml("/contact?interest=inversion-publica-proyectos&from=/analisis-inversion-publica-proyectos", "Inversión pública, presupuesto y proyectos");
+  assert.ok(investmentContact.body.includes('value="inversion-publica-proyectos" selected'), "Contacto debe conservar el interés de inversión pública");
   assert.ok(contactPage.body.includes("Campos obligatorios"), "Contacto debe distinguir campos esenciales");
   assert.ok(contactPage.body.includes("Opcional · ayuda a preparar mejor la primera conversación"), "Contacto debe explicar los detalles opcionales");
 } else {
@@ -496,6 +502,14 @@ assert.ok(educationTdrBody.includes("Aprendizajes"), "La plantilla educativa deb
 assert.ok(educationTdrBody.includes("Datos y privacidad"), "La plantilla educativa debe proteger información de estudiantes");
 assert.equal(educationTdrBody.trim().split("\n").length, 21, "La plantilla educativa debe incluir encabezado y veinte bloques");
 
+const investmentTdrCsv = await get("/downloads/plantilla-tdr-analisis-inversion-publica.csv");
+assert.equal(investmentTdrCsv.status, 200, "La plantilla TDR de inversión pública debe ser descargable");
+assert.match(investmentTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const investmentTdrBody = await investmentTdrCsv.text();
+assert.ok(investmentTdrBody.includes("Avance físico"), "La plantilla de inversión debe separar el avance físico");
+assert.ok(investmentTdrBody.includes("Operación y mantenimiento"), "La plantilla de inversión debe cubrir la sostenibilidad operativa");
+assert.equal(investmentTdrBody.trim().split("\n").length, 21, "La plantilla de inversión debe incluir encabezado y veinte bloques");
+
 const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
 assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
 assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
@@ -550,6 +564,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-movilidad-transpo
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-politicas-sociales"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-salud-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-educacion-territorial"));
+assert.ok(sitemapBody.includes("https://noam.pe/analisis-inversion-publica-proyectos"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
@@ -571,6 +586,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-movilidad-
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-politicas-sociales"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-salud-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-educacion-territorial"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-inversion-publica"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));
