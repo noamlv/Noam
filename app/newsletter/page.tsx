@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { getLatestBriefEdition } from "@/lib/brief";
 
 export const metadata = buildMetadata({
-  title: "Brief NOAM",
+  title: "Suscripción al Brief NOAM",
   description: "Una selección editorial sobre gestión pública, territorio, elecciones, datos e inteligencia artificial aplicada.",
   path: "/newsletter"
 });

@@ -5,7 +5,7 @@ import { SiteAnalytics } from "@/components/analytics/site-analytics";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { JsonLd } from "@/components/seo/json-ld";
-import { organizationJsonLd, personJsonLd } from "@/lib/seo";
+import { organizationJsonLd, personJsonLd, websiteJsonLd } from "@/lib/seo";
 import { runtimeCapabilities } from "@/lib/runtime-capabilities";
 import { siteConfig } from "@/lib/site-config";
 import "@/app/globals.css";
@@ -71,6 +71,10 @@ export const metadata: Metadata = {
     title: "NOAM | Inteligencia pública y territorial",
     description: siteConfig.description,
     images: ["/og-default.png"]
+  },
+  verification: {
+    ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } : {}),
+    ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION ? { other: { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION } } : {})
   }
 };
 
@@ -86,6 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {runtimeCapabilities.analytics ? <SiteAnalytics /> : null}
         <JsonLd data={organizationJsonLd()} />
         <JsonLd data={personJsonLd()} />
+        <JsonLd data={websiteJsonLd()} />
         <div className="relative flex min-h-screen flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

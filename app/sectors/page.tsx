@@ -48,7 +48,7 @@ export default function SectorsPage() {
             </div>
             <div className="reveal reveal-delay-2">
               <p className="text-base leading-8 text-ink/68">Trabajamos donde se cruzan territorio, instituciones y datos. Adaptamos el alcance a una municipalidad pequeña, una región o una operación nacional.</p>
-              <Button href="/contact?interest=soluciones" variant="ghost" className="mt-7 gap-2">Cuéntanos tu contexto <ArrowRight className="h-4 w-4" /></Button>
+              <Button href="/diagnostico?from=/sectors" analyticsEvent="cta_click" analyticsTarget="sectors:scope" variant="ghost" className="mt-7 gap-2">Cuéntanos tu contexto <ArrowRight className="h-4 w-4" /></Button>
             </div>
           </div>
         </Container>

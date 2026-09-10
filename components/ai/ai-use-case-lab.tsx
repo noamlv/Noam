@@ -184,7 +184,7 @@ export function AiUseCaseLab() {
           <div className="text-right"><p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#b95337]">Evaluación inicial</p><p className="mt-1 text-[9px] text-[#777]">Metodología v1.0 · noam.pe</p></div>
         </header>
         <div className="mt-8 grid grid-cols-[1fr_130px] gap-8">
-          <div><p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#b95337]">Caso de uso</p><h1 className="mt-2 text-3xl font-medium leading-tight tracking-[-0.035em]">{selectedCase.name}</h1><p className="mt-3 text-xs leading-5 text-[#58605b]">{selectedCase.task}</p></div>
+          <div><p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-[#b95337]">Caso de uso</p><h2 className="mt-2 text-3xl font-medium leading-tight tracking-[-0.035em]">{selectedCase.name}</h2><p className="mt-3 text-xs leading-5 text-[#58605b]">{selectedCase.task}</p></div>
           <div className="border-l border-[#d7d5ce] pl-5"><p className="text-[9px] uppercase tracking-[0.12em] text-[#777]">Orientación</p><p className="mt-2 text-lg font-medium leading-tight">{result.label}</p></div>
         </div>
         <div className="mt-8 grid grid-cols-3 gap-3">

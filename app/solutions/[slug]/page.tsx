@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: SolutionPageProps): Promise<M
   const { slug } = await params;
   const solution = getSolution(slug);
   if (!solution) return {};
-  return buildMetadata({ title: solution.title, description: solution.description, path: `/solutions/${solution.slug}`, image: ogImagePath("solutions", solution.slug) });
+  return buildMetadata({ title: `${solution.title} · Solución`, description: solution.description, path: `/solutions/${solution.slug}`, image: ogImagePath("solutions", solution.slug) });
 }
 
 export default async function SolutionPage({ params }: SolutionPageProps) {

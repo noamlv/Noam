@@ -13,7 +13,7 @@ export function ResourceIndex({ eyebrow, title, description, items }: ResourceIn
     <Section className="pt-14 md:pt-20">
       <Container>
         <Eyebrow>{eyebrow}</Eyebrow>
-        <Heading className="max-w-3xl">{title}</Heading>
+        <Heading as="h1" className="max-w-3xl">{title}</Heading>
         <p className="mt-4 max-w-2xl text-sm leading-relaxed text-ink/80">{description}</p>
 
         <div className="mt-10">

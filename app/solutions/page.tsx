@@ -34,7 +34,7 @@ export default function SolutionsPage() {
               <p className="text-base leading-8 text-white/68">
                 Organizamos cada encargo en tres capacidades: comprender, conducir y transformar. El alcance cambia según la institución; el rigor no.
               </p>
-              <Button href="/contact?interest=soluciones" variant="secondary" className="mt-7 rounded-full border-white bg-white text-ink">
+              <Button href="/diagnostico?from=/solutions" analyticsEvent="cta_click" analyticsTarget="solutions:scope" variant="secondary" className="mt-7 rounded-full border-white bg-white text-ink">
                 Plantear un desafío
               </Button>
             </div>
@@ -145,7 +145,7 @@ export default function SolutionsPage() {
                 <Eyebrow className="text-white/55">Primer paso</Eyebrow>
                 <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">No necesitas llegar con la solución. Empieza por la decisión.</h2>
               </div>
-              <Button href="/contact?interest=soluciones" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Conversemos</Button>
+              <Button href="/diagnostico?from=/solutions" analyticsEvent="cta_click" analyticsTarget="solutions:scope-final" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Diseñar un alcance</Button>
             </div>
           </div>
         </Container>

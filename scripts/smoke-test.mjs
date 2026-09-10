@@ -25,6 +25,7 @@ async function expectHtml(path, text, options) {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html/, `${path} debe ser HTML`);
   const body = await response.text();
   assert.ok(body.includes(text), `${path} debe contener ${text}`);
+  assert.equal((body.match(/<h1\b/g) ?? []).length, 1, `${path} debe contener un único h1`);
   return { response, body };
 }
 
@@ -172,6 +173,8 @@ const visualHome = await expectHtml("/", "Amazonía | Conectividad y servicios",
   headers: { cookie: "noam_hero_index=0" }
 });
 assert.ok(visualHome.body.includes("/images/editorial/hero-amazonia-conectividad.jpg"));
+assert.ok(visualHome.body.includes("navigator:toggle"), "El Orientador debe medir aperturas cuando la analítica esté disponible");
+assert.ok(visualHome.body.includes('"@type":"WebSite"'), "La portada debe identificar el sitio en datos estructurados");
 
 const fieldSolution = await expectHtml("/solutions/diagnostico-agenda-territorial", "Escena editorial representativa");
 assert.ok(fieldSolution.body.includes("/images/noam-field-research.jpg"));
@@ -579,6 +582,14 @@ assert.ok(sitemapBody.includes("https://noam.pe/newsletter"));
 assert.ok(sitemapBody.includes("https://noam.pe/brief"));
 assert.ok(sitemapBody.includes("https://noam.pe/brief/municipios-distintos-decisiones-distintas"));
 assert.ok(sitemapBody.includes("https://noam.pe/en"));
+
+const robots = await get("/robots.txt");
+const robotsBody = await robots.text();
+assert.equal(robots.status, 200);
+assert.ok(robotsBody.includes("Disallow: /admin"));
+assert.ok(!robotsBody.includes("Disallow: /admin/"), "Robots debe cubrir /admin con y sin barra final");
+assert.ok(robotsBody.includes("Disallow: /api"));
+assert.ok(robotsBody.includes("Disallow: /portal"));
 
 const rss = await get("/insights/rss.xml");
 const rssBody = await rss.text();

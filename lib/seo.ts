@@ -55,7 +55,9 @@ export function organizationJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: siteConfig.legalName,
+    "@id": `${siteConfig.url}/#organization`,
+    name: siteConfig.name,
+    alternateName: siteConfig.legalName,
     url: siteConfig.url,
     logo: `${siteConfig.url}/wordmark.svg`,
     sameAs: [siteConfig.social.linkedin, siteConfig.social.github],
@@ -64,9 +66,26 @@ export function organizationJsonLd() {
         "@type": "ContactPoint",
         contactType: "sales",
         email: siteConfig.email,
-        areaServed: "PE"
+        telephone: siteConfig.phoneE164,
+        areaServed: { "@type": "Country", name: "Perú" },
+        availableLanguage: ["es"]
       }
-    ]
+    ],
+    founder: { "@id": `${siteConfig.url}/#founder` },
+    knowsAbout: ["Análisis de datos", "Gestión pública", "Evaluación", "Inteligencia territorial", "Inteligencia artificial aplicada"]
+  };
+}
+
+export function websiteJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": `${siteConfig.url}/#website`,
+    name: siteConfig.name,
+    alternateName: siteConfig.legalName,
+    url: siteConfig.url,
+    inLanguage: "es-PE",
+    publisher: { "@id": `${siteConfig.url}/#organization` }
   };
 }
 
@@ -74,14 +93,11 @@ export function personJsonLd() {
   return {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Noam Lopez Villanes",
+    "@id": `${siteConfig.url}/#founder`,
+    name: "Noam López Villanes",
     jobTitle: "Fundador y director de NOAM",
     description: "Doctor en Ciencia Política y Gobierno especializado en investigación aplicada, gestión pública, datos y análisis territorial.",
-    worksFor: {
-      "@type": "Organization",
-      name: siteConfig.legalName,
-      url: siteConfig.url
-    },
+    worksFor: { "@id": `${siteConfig.url}/#organization` },
     url: `${siteConfig.url}/about`,
     sameAs: ["https://www.linkedin.com/in/noamlv", "https://github.com/noamlv"],
     alumniOf: [

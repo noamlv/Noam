@@ -109,7 +109,7 @@ export function NoamNavigator() {
               <legend className="text-xs font-medium text-white/72">1. ¿Desde dónde nos visitas?</legend>
               <div className="mt-3 grid gap-2">
                 {audiences.map((option) => (
-                  <button key={option.value} type="button" onClick={() => setAudience(option.value)} className="rounded-sm border border-white/12 px-4 py-3 text-left text-sm text-white/62 transition-colors hover:border-white/28 hover:text-white">
+                  <button key={option.value} type="button" onClick={() => setAudience(option.value)} data-analytics-event="cta_click" data-analytics-target={`navigator:audience:${option.value}`} className="rounded-sm border border-white/12 px-4 py-3 text-left text-sm text-white/62 transition-colors hover:border-white/28 hover:text-white">
                     {option.label}
                   </button>
                 ))}
@@ -127,7 +127,7 @@ export function NoamNavigator() {
               <legend className="text-xs font-medium text-white/72">2. ¿Qué necesitas resolver?</legend>
               <div className="mt-3 grid gap-2">
                 {needs.map((option) => (
-                  <button key={option.value} type="button" onClick={() => setNeed(option.value)} className="rounded-sm border border-white/12 px-4 py-3 text-left text-sm text-white/62 transition-colors hover:border-white/28 hover:text-white">
+                  <button key={option.value} type="button" onClick={() => setNeed(option.value)} data-analytics-event="cta_click" data-analytics-target={`navigator:need:${option.value}`} className="rounded-sm border border-white/12 px-4 py-3 text-left text-sm text-white/62 transition-colors hover:border-white/28 hover:text-white">
                     {option.label}
                   </button>
                 ))}
@@ -157,12 +157,12 @@ export function NoamNavigator() {
               <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-rust">Recomendación</p>
               <h3 className="mt-3 text-xl font-medium tracking-[-0.03em]">{result.title}</h3>
               <p className="mt-3 text-xs leading-5 text-ink/64">{result.description}</p>
-              <NextLink href={result.href} onClick={() => setOpen(false)} className="mt-5 inline-flex min-h-10 items-center gap-2 rounded-full bg-ink px-4 text-xs font-medium text-white">
+              <NextLink href={result.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:recommendation:${need}`} className="mt-5 inline-flex min-h-10 items-center gap-2 rounded-full bg-ink px-4 text-xs font-medium text-white">
                 Abrir recomendación <ArrowRight className="h-3.5 w-3.5" aria-hidden />
               </NextLink>
               <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3 border-t border-border pt-4 text-xs">
-                <NextLink href={contactHref} onClick={() => setOpen(false)} className="font-medium text-ink hover:text-rust">Plantear el encargo</NextLink>
-                <a href={buildWhatsAppUrl(pathname, `un posible encargo sobre ${result.title.toLowerCase()}`)} target="_blank" rel="noreferrer" className="text-ink/58 hover:text-ink">Hablar por WhatsApp</a>
+                <NextLink href={contactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:contact:${need}`} className="font-medium text-ink hover:text-rust">Plantear el encargo</NextLink>
+                <a href={buildWhatsAppUrl(pathname, `un posible encargo sobre ${result.title.toLowerCase()}`)} target="_blank" rel="noreferrer" data-analytics-event="cta_click" data-analytics-target={`navigator:whatsapp:${need}`} className="text-ink/58 hover:text-ink">Hablar por WhatsApp</a>
               </div>
             </div>
           ) : null}
@@ -177,6 +177,8 @@ export function NoamNavigator() {
       <button
         type="button"
         onClick={() => setOpen((value) => !value)}
+        data-analytics-event="cta_click"
+        data-analytics-target="navigator:toggle"
         aria-expanded={open}
         className="ml-auto inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-[#15211d] px-4 text-sm font-medium text-white shadow-visual transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#20372f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust"
       >
