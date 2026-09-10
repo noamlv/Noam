@@ -65,6 +65,7 @@ const staticRoutes = [
   "/analisis-datos-salud-territorial",
   "/analisis-datos-educacion-territorial",
   "/analisis-inversion-publica-proyectos",
+  "/analisis-contrataciones-publicas-proveedores",
   "/linea-base-evaluacion-impacto",
   "/muestras",
   "/privacy",

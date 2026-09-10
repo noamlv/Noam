@@ -272,5 +272,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · MEF · Invierte.pe · InfObras",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-contrataciones-publicas",
+    title: "TDR para análisis de contrataciones públicas y proveedores",
+    description: "Matriz para contratar analítica de demanda, procedimientos, competencia, mercado proveedor, plazos y ejecución contractual.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-contrataciones-publicas",
+    productSlug: "observatorio-territorial",
+    sourceLabel: "NOAM · OECE · SEACE · Perú Compras",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];

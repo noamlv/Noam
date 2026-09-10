@@ -87,6 +87,7 @@ const publicPages = [
   ["/analisis-datos-salud-territorial", "Registrar atenciones no demuestra que la población recibió cuidado oportuno"],
   ["/analisis-datos-educacion-territorial", "Una matrícula registrada no demuestra que un estudiante aprende ni permanece"],
   ["/analisis-inversion-publica-proyectos", "La ejecución presupuestal no demuestra avance físico ni un servicio operativo"],
+  ["/analisis-contrataciones-publicas-proveedores", "Comprar mejor exige mirar más que el procedimiento"],
   ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
@@ -106,6 +107,7 @@ const publicPages = [
   ["/toolkits/tdr-analisis-salud-territorial", "Cómo elaborar TDR para analizar salud territorial"],
   ["/toolkits/tdr-analisis-educacion-territorial", "Cómo elaborar TDR para analizar educación territorial"],
   ["/toolkits/tdr-analisis-inversion-publica", "Cómo elaborar TDR para analizar inversión pública y proyectos"],
+  ["/toolkits/tdr-analisis-contrataciones-publicas", "Cómo elaborar TDR para analizar contrataciones públicas y proveedores"],
   ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
@@ -205,6 +207,8 @@ if (hasPersistentForm) {
   assert.ok(educationContact.body.includes('value="educacion-territorial" selected'), "Contacto debe conservar el interés de educación");
   const investmentContact = await expectHtml("/contact?interest=inversion-publica-proyectos&from=/analisis-inversion-publica-proyectos", "Inversión pública, presupuesto y proyectos");
   assert.ok(investmentContact.body.includes('value="inversion-publica-proyectos" selected'), "Contacto debe conservar el interés de inversión pública");
+  const procurementContact = await expectHtml("/contact?interest=contrataciones-publicas&from=/analisis-contrataciones-publicas-proveedores", "Contrataciones públicas y análisis de proveedores");
+  assert.ok(procurementContact.body.includes('value="contrataciones-publicas" selected'), "Contacto debe conservar el interés de contrataciones públicas");
   assert.ok(contactPage.body.includes("Campos obligatorios"), "Contacto debe distinguir campos esenciales");
   assert.ok(contactPage.body.includes("Opcional · ayuda a preparar mejor la primera conversación"), "Contacto debe explicar los detalles opcionales");
 } else {
@@ -510,6 +514,14 @@ assert.ok(investmentTdrBody.includes("Avance físico"), "La plantilla de inversi
 assert.ok(investmentTdrBody.includes("Operación y mantenimiento"), "La plantilla de inversión debe cubrir la sostenibilidad operativa");
 assert.equal(investmentTdrBody.trim().split("\n").length, 21, "La plantilla de inversión debe incluir encabezado y veinte bloques");
 
+const procurementTdrCsv = await get("/downloads/plantilla-tdr-analisis-contrataciones-publicas.csv");
+assert.equal(procurementTdrCsv.status, 200, "La plantilla TDR de contrataciones públicas debe ser descargable");
+assert.match(procurementTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const procurementTdrBody = await procurementTdrCsv.text();
+assert.ok(procurementTdrBody.includes("Mercado proveedor"), "La plantilla de contrataciones debe analizar el mercado proveedor");
+assert.ok(procurementTdrBody.includes("Ninguna alerta produce acusaciones automáticas"), "La plantilla de contrataciones debe limitar la lectura de señales");
+assert.equal(procurementTdrBody.trim().split("\n").length, 21, "La plantilla de contrataciones debe incluir encabezado y veinte bloques");
+
 const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
 assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
 assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
@@ -565,6 +577,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-politicas-sociale
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-salud-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-educacion-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-inversion-publica-proyectos"));
+assert.ok(sitemapBody.includes("https://noam.pe/analisis-contrataciones-publicas-proveedores"));
 assert.ok(sitemapBody.includes("https://noam.pe/linea-base-evaluacion-impacto"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/diagnostico-agenda-territorial"));
@@ -587,6 +600,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-politicas-
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-salud-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-educacion-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-inversion-publica"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-contrataciones-publicas"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/linea-base-evaluacion-programa"));
 assert.ok(sitemapBody.includes("https://noam.pe/solutions/transferencia-gestion-100-dias"));
 assert.ok(sitemapBody.includes("https://noam.pe/muestras/transferencia-gestion-100-dias"));

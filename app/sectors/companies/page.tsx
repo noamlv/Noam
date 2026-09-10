@@ -61,6 +61,15 @@ export default function CompaniesPage() {
         </Container>
       </Section>
 
+      <Section className="border-b border-border bg-[#e8ebe3]">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:items-end lg:gap-20">
+            <div><Eyebrow>Mercado público</Eyebrow><Heading size="xl">Comprender la demanda antes de competir.</Heading></div>
+            <div><p className="max-w-2xl text-sm leading-7 text-ink/68">Analizamos entidades compradoras, categorías, estacionalidad, participación y condiciones observables para que una empresa evalúe oportunidades compatibles con sus capacidades. No prometemos adjudicaciones ni sustituimos los canales oficiales.</p><Button href="/analisis-contrataciones-publicas-proveedores" analyticsEvent="cta_click" analyticsTarget="companies:public-procurement" variant="ghost" className="mt-6 gap-2">Explorar contrataciones y proveedores <ArrowRight className="h-4 w-4" /></Button></div>
+          </div>
+        </Container>
+      </Section>
+
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.55fr_1fr] lg:gap-20">

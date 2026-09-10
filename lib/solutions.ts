@@ -300,6 +300,7 @@ export const solutions: Solution[] = [
       { label: "Análisis de salud territorial", href: "/analisis-datos-salud-territorial" },
       { label: "Análisis de educación territorial", href: "/analisis-datos-educacion-territorial" },
       { label: "Análisis de inversión pública y proyectos", href: "/analisis-inversion-publica-proyectos" },
+      { label: "Análisis de contrataciones públicas y proveedores", href: "/analisis-contrataciones-publicas-proveedores" },
       { label: "Observatorios y sistemas de decisión", href: "/services/observatorios-sistemas-decision" },
       { label: "Biblioteca de evidencia", href: "/evidence" }
     ]

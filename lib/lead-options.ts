@@ -39,6 +39,7 @@ export const generalInterestOptions = [
   { value: "salud-territorial", label: "Salud pública, servicios y análisis territorial" },
   { value: "educacion-territorial", label: "Educación, aprendizaje y trayectorias" },
   { value: "inversion-publica-proyectos", label: "Inversión pública, presupuesto y proyectos" },
+  { value: "contrataciones-publicas", label: "Contrataciones públicas y análisis de proveedores" },
   { value: "desarrollo-economico-local", label: "Desarrollo económico local, empleo y MYPE" },
   { value: "gestion-ambiental", label: "Gestión, monitoreo y fiscalización ambiental" },
   { value: "general-public", label: "Otra necesidad del sector público" },
