@@ -8,6 +8,11 @@ if (uniqueCodes.size !== codes.length) throw new Error("Hay códigos departament
 if (expectedCodes.some((code) => !uniqueCodes.has(code))) throw new Error("La agenda territorial no cubre los 25 departamentos.");
 if (codes.length !== expectedCodes.length) throw new Error(`Se esperaban 25 perfiles y se encontraron ${codes.length}.`);
 
+const problemCount = departmentResearch.reduce((total, item) => total + item.problems.length, 0);
+const opportunityCount = departmentResearch.reduce((total, item) => total + item.opportunities.length, 0);
+if (problemCount !== 100) throw new Error(`Se esperaban 100 problemas territoriales y se encontraron ${problemCount}.`);
+if (opportunityCount !== 75) throw new Error(`Se esperaban 75 oportunidades territoriales y se encontraron ${opportunityCount}.`);
+
 const forbiddenDraftPatterns = [/%/, /\bCONFIRMAR\b/, /\bPOR CONFIRMAR\b/, /\bplaceholder\b/i, /\bX%\b/, /\{\{/];
 
 for (const research of departmentResearch) {
@@ -27,4 +32,4 @@ for (const research of departmentResearch) {
 const macroregionalCodes = departmentResearch.filter((item) => item.evidenceBase?.scope === "macroregional").map((item) => item.code).sort();
 if (macroregionalCodes.join(",") !== "04,05") throw new Error("Solo Arequipa y Ayacucho deben permanecer con base macroregional preliminar.");
 
-console.log(`Agendas departamentales OK: ${departmentResearch.length} perfiles curados y sin cifras no verificadas.`);
+console.log(`Agendas departamentales OK: ${departmentResearch.length} perfiles, ${problemCount} problemas y ${opportunityCount} oportunidades curadas.`);

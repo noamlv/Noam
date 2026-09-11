@@ -54,6 +54,7 @@ const publicPages = [
   ["/electoral/planometro-2026/ejes/institucionalidad", "Institucionalidad"],
   ["/electoral/erm-2026/territorios/150122", "Brief territorial de preparación de gestión"],
   ["/dataperu", "DataPerú"],
+  ["/dataperu/agendas-territoriales", "El mismo problema no se resuelve igual en todo el Perú"],
   ["/dataperu/departamentos", "El país cambia cuando cambia la escala"],
   ["/dataperu/panorama-municipal-2025", "El Perú municipal no cabe en un promedio."],
   ["/dataperu/departamentos/08", "Una lectura inicial de recursos"],
@@ -151,6 +152,7 @@ assert.ok(!englishPage.body.includes("queued for V2"), "La portada internacional
 
 const searchPage = await expectHtml("/buscar?q=municipalidades", "Perfiles municipales de DataPerú");
 assert.ok(searchPage.body.includes('name="robots" content="noindex, follow"') || searchPage.body.includes('name="robots" content="noindex"'), "Los resultados de búsqueda no deben indexarse");
+await expectHtml("/buscar?q=problemas+oportunidades+departamentos", "Problemas y oportunidades por departamento del Perú");
 await expectHtml("/buscar?q=servicios+analisis+datos+gobierno", "Servicios de análisis de datos para gobiernos y empresas");
 await expectHtml("/buscar?q=automatizacion&type=solution&topic=ia", "IA para procesos públicos");
 await expectHtml("/buscar?q=linea+base+evaluacion", "Línea de base y evaluación de programas");
@@ -566,6 +568,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/electoral/planometro-2026/organi
 assert.ok(sitemapBody.includes("https://noam.pe/electoral/planometro-2026/ejes/institucionalidad"));
 assert.ok(!sitemapBody.includes("https://noam.pe/demos/planometro"));
 assert.ok(sitemapBody.includes("https://noam.pe/dataperu/radar"));
+assert.ok(sitemapBody.includes("https://noam.pe/dataperu/agendas-territoriales"));
 assert.ok(sitemapBody.includes("https://noam.pe/dataperu/departamentos"));
 assert.ok(sitemapBody.includes("https://noam.pe/dataperu/panorama-municipal-2025"));
 assert.ok(sitemapBody.includes("https://noam.pe/dataperu/departamentos/08"));

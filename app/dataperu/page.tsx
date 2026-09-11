@@ -15,6 +15,13 @@ export const metadata = buildMetadata({
 
 const decisionPaths = [
   {
+    icon: MapPinned,
+    title: "Explorar una agenda territorial",
+    description: "Busca problemas, poblaciones y oportunidades en los 25 departamentos antes de definir un estudio.",
+    href: "/dataperu/agendas-territoriales",
+    action: "Buscar una señal"
+  },
+  {
     icon: Search,
     title: "Conocer un municipio",
     description: "Revisa población, presupuesto, inversión, proyectos y capacidades declaradas en una sola ficha.",
@@ -29,13 +36,6 @@ const decisionPaths = [
     action: "Abrir observatorio"
   },
   {
-    icon: Radar,
-    title: "Comparar capacidades",
-    description: "Ubica pares y distribuciones responsables sin reducir la gestión a un ranking opaco.",
-    href: "/dataperu/radar",
-    action: "Usar el radar"
-  },
-  {
     icon: BriefcaseBusiness,
     title: "Diseñar una solución",
     description: "Convierte una pregunta institucional en un diagnóstico, observatorio o sistema de seguimiento.",
@@ -45,6 +45,7 @@ const decisionPaths = [
 ];
 
 const modules = [
+  { icon: Search, title: "Agendas territoriales", description: "100 problemas y 75 oportunidades en validación para los 25 departamentos.", href: "/dataperu/agendas-territoriales", status: "Disponible" },
   { icon: MapPinned, title: "Mapa de gestión e inversión", description: "Cinco capas comparables sobre límites departamentales referenciales.", href: "/dataperu/mapa", status: "Disponible" },
   { icon: MapPinned, title: "Atlas departamental", description: "Presupuesto, inversión y capacidades municipales agregadas en 25 departamentos.", href: "/dataperu/departamentos", status: "Disponible" },
   { icon: Layers3, title: "Observatorio de inversiones", description: "9,429 proyectos municipales visibles por función, territorio y ejecución financiera.", href: "/dataperu/inversiones", status: "Disponible" },
@@ -209,6 +210,7 @@ export default function DataPeruPage() {
             </div>
             <div className="divide-y divide-border border-y border-border">
               {[
+                { title: "Agendas territoriales del Perú", label: "Disponible", href: "/dataperu/agendas-territoriales", text: "Busca problemas públicos, poblaciones afectadas y oportunidades por validar en los 25 departamentos." },
                 { title: "Mapa de gestión e inversión municipal", label: "Disponible", href: "/dataperu/mapa", text: "Visor departamental con capas de ejecución, recursos, transparencia y cartera visible." },
                 { title: "Observatorio de inversiones municipales", label: "Disponible", href: "/dataperu/inversiones", text: "Cartera visible, composición funcional y explorador financiero por departamento y municipalidad." },
                 { title: "Atlas departamental DataPerú 2025", label: "Disponible", href: "/dataperu/departamentos", text: "Seis lecturas comparables sobre recursos y capacidades municipales agregadas en 25 departamentos." },
