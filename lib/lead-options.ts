@@ -35,6 +35,7 @@ export const generalInterestOptions = [
   { value: "electoral", label: "Análisis electoral u opinión pública" },
   { value: "agua-saneamiento", label: "Agua, saneamiento y prestación de servicios" },
   { value: "movilidad-transporte", label: "Movilidad, transporte y seguridad vial" },
+  { value: "catastro-desarrollo-urbano", label: "Catastro, desarrollo urbano y gestión territorial" },
   { value: "politicas-sociales", label: "Políticas, programas y servicios sociales" },
   { value: "salud-territorial", label: "Salud pública, servicios y análisis territorial" },
   { value: "educacion-territorial", label: "Educación, aprendizaje y trayectorias" },

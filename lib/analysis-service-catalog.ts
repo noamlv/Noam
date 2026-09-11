@@ -18,6 +18,7 @@ export const analysisNeedPaths: AnalysisServiceEntry[] = [
 export const sectorAnalysisPaths: AnalysisServiceEntry[] = [
   { slug: "agua-saneamiento", title: "Agua y saneamiento", description: "Acceso, calidad, continuidad, prestación rural, inversiones y sostenibilidad.", href: "/analisis-datos-agua-saneamiento", label: "Servicios básicos" },
   { slug: "movilidad-transporte", title: "Movilidad y transporte", description: "Viajes, transporte público, seguridad vial, accesibilidad e inversiones urbanas.", href: "/analisis-datos-movilidad-transporte", label: "Ciudades" },
+  { slug: "catastro-desarrollo-urbano", title: "Catastro y desarrollo urbano", description: "Catastro municipal, crecimiento, suelo, zonificación, servicios, riesgo y sistemas territoriales.", href: "/analisis-catastro-desarrollo-urbano-territorial", label: "Territorio urbano" },
   { slug: "politicas-sociales", title: "Políticas y programas sociales", description: "Necesidades, focalización, acceso, prestación, articulación y resultados.", href: "/analisis-datos-politicas-sociales", label: "Inclusión" },
   { slug: "salud-territorial", title: "Salud territorial", description: "Necesidades, acceso, redes, capacidad, vigilancia, calidad y evaluación.", href: "/analisis-datos-salud-territorial", label: "Salud" },
   { slug: "educacion-territorial", title: "Educación territorial", description: "Acceso, asistencia, trayectorias, aprendizajes, condiciones del servicio y evaluación.", href: "/analisis-datos-educacion-territorial", label: "Educación" },

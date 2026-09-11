@@ -146,6 +146,7 @@ export const privatePractices: SectorPractice[] = [
     evidence: [
       { label: "Cómo evaluar un territorio antes de invertir", href: "/insights/evaluar-territorio-antes-invertir", type: "Insight" },
       { label: "Ficha de decisión territorial", href: "/toolkits/ficha-decision-territorial-empresas", type: "Toolkit" },
+      { label: "Catastro y desarrollo urbano", href: "/analisis-catastro-desarrollo-urbano-territorial", type: "Guía territorial" },
       { label: "Explorar DataPerú", href: "/dataperu", type: "Producto abierto" }
     ]
   },
@@ -221,6 +222,7 @@ export const privatePractices: SectorPractice[] = [
     evidence: [
       { label: "Cómo evaluar un territorio antes de invertir", href: "/insights/evaluar-territorio-antes-invertir", type: "Insight" },
       { label: "Ficha de decisión territorial", href: "/toolkits/ficha-decision-territorial-empresas", type: "Toolkit" },
+      { label: "Catastro y desarrollo urbano", href: "/analisis-catastro-desarrollo-urbano-territorial", type: "Guía territorial" },
       { label: "Perfiles municipales DataPerú", href: "/dataperu/municipios", type: "Datos abiertos" }
     ]
   },

@@ -1,0 +1,88 @@
+---
+title: "Cómo elaborar TDR para analizar catastro y desarrollo urbano"
+description: "Guía y matriz editable para contratar catastro, análisis geoespacial, planificación urbana, gestión del suelo, riesgo y sistemas territoriales."
+date: "2026-09-10"
+reviewedAt: "2026-09-10"
+author: "Noam López Villanes"
+sourceCount: 6
+tags:
+  - términos de referencia
+  - catastro municipal
+  - desarrollo urbano
+  - análisis geoespacial
+topic: "gobierno"
+featured: true
+readingTime: "13 min"
+ogImage: "/og-default.png"
+---
+
+<Problem>
+Un TDR territorial puede pedir un catastro, mapa o visor sin precisar qué decisión apoyará, qué unidad espacial utilizará, qué precisión necesita ni cómo se mantendrá actualizado. El requerimiento debe conectar geometría, personas, servicios, riesgos, reglas, proyectos y operación.
+
+Una capa catastral no acredita por sí sola propiedad, derecho, lindero legal, compatibilidad de uso ni condición física actual. Cada conclusión debe respetar la competencia, la escala, la fecha y el método de la fuente.
+</Problem>
+
+<DataSources>
+El MVCS aprobó en 2022 el [Reglamento de Acondicionamiento Territorial y Planificación Urbana](https://www.gob.pe/institucion/vivienda/normas-legales/3588833-012-2022-vivienda). En mayo de 2026 publicó para consulta un [proyecto de nuevo reglamento urbano y rural](https://www.gob.pe/institucion/vivienda/normas-legales/8101186-189-2026-vivienda). La entidad debe verificar qué versión e instrumento se encuentran vigentes al contratar.
+
+El [Observatorio Urbano Nacional](https://www.gob.pe/institucion/vivienda/noticias/1142107-ministerio-de-vivienda-lanza-la-plataforma-del-observatorio-urbano-nacional), [GeoPerú](https://www.gob.pe/geoperu), el proyecto de [Catastro Urbano Nacional de COFOPRI](https://www.gob.pe/institucion/cofopri/noticias/1125539-municipios-recibieron-equipos-y-herramientas-para-implementar-catastro-urbano) y el servicio oficial de [SIGRID](https://www.gob.pe/institucion/cenepred/pages/13122-acceder-al-sistema-de-informacion-para-la-gestion-del-riesgo-de-desastres-sigrid) ofrecen información y herramientas con coberturas diferentes. Cada capa debe conservar entidad responsable, fecha, escala, sistema de referencia, precisión, licencia, cobertura y limitación.
+</DataSources>
+
+<Method>
+## Veinte bloques para contratar un análisis defendible
+
+| Bloque | Pregunta central | Prueba de aceptación |
+| --- | --- | --- |
+| 1. Decisión | ¿Qué instrumento, servicio, inversión o proceso utilizará el análisis? | Usuario, acción, plazo, frecuencia y responsable definidos. |
+| 2. Competencias | ¿Qué corresponde a municipalidad distrital, provincial, región y sector? | Roles, validadores, coordinaciones y límites acordados. |
+| 3. Ámbito territorial | ¿Qué ciudad, centro poblado, sector o área funcional está incluida? | Polígono, periodo, escala y reglas de inclusión reproducibles. |
+| 4. Referencia cartográfica | ¿Con qué sistema, precisión y cartografía base se trabajará? | Datum, proyección, escala, tolerancia y fuente documentados. |
+| 5. Unidades e identificadores | ¿Cómo se distinguen lote, predio, unidad, manzana, vía y contribuyente? | Diccionario, llaves, correspondencias y excepciones auditables. |
+| 6. Levantamiento | ¿Qué debe observarse en campo y con qué método? | Instrumento, muestra o barrido, evidencia, supervisión y control definidos. |
+| 7. Catastro multifinalitario | ¿Qué atributos físicos, fiscales, urbanos y de servicio son necesarios? | Modelo de datos mínimo vinculado con usos institucionales reales. |
+| 8. Población y vivienda | ¿Quién reside, trabaja o utiliza el territorio? | Fuentes, unidad, población, desagregación y límites visibles. |
+| 9. Clasificación y zonificación | ¿Qué regla aplica, qué uso se observa y dónde hay discrepancias? | Norma, geometría, vigencia, uso, diferencia y validación documentados. |
+| 10. Crecimiento y ocupación | ¿Cómo cambian huella, densidad, vacancia y periferias? | Fechas comparables, método de cambio y error explícitos. |
+| 11. Servicios e infraestructura | ¿Qué cobertura y capacidad sostienen la ocupación? | Red, acceso, continuidad, déficit, operador y fecha diferenciados. |
+| 12. Accesibilidad y equipamientos | ¿Quién alcanza servicios, empleo y espacio público? | Tiempos, modos, barreras, capacidad y población conectados. |
+| 13. Riesgo y clima | ¿Qué peligros, exposición y vulnerabilidad condicionan el uso? | Escenario, fuente, escala, incertidumbre y medida trazables. |
+| 14. Ambiente y patrimonio | ¿Qué ecosistemas, calidad, paisaje o bienes requieren protección? | Restricción, autoridad, evidencia, impacto y respuesta visibles. |
+| 15. Suelo y finanzas urbanas | ¿Qué valores, cargas, beneficios o ingresos pueden analizarse? | Definición, fuente, base, periodo y límites legales explícitos. |
+| 16. Datos e interoperabilidad | ¿Cómo se integrarán registros, capas y servicios institucionales? | Esquema, API o intercambio, metadatos, linaje y validaciones probados. |
+| 17. Escenarios y priorización | ¿Qué cambia bajo cada alternativa y quién recibe costos o beneficios? | Supuestos, criterios, sensibilidad, equidad y viabilidad reproducibles. |
+| 18. Participación y validación | ¿Qué actores deben observar, corregir o deliberar? | Plan, evidencia, respuesta, devolución y trazabilidad definidos. |
+| 19. Productos y conformidad | ¿Qué recibe cada usuario y cómo se acepta? | Base, cartografía, fichas, informe, visor y pruebas observables definidos. |
+| 20. Transferencia y mantenimiento | ¿Cómo se actualizarán, protegerán y recuperarán los activos? | Código, editables, accesos, respaldo, capacitación, seguridad y salida entregados. |
+
+## Criterios mínimos de conformidad
+
+- unidades territoriales e identificadores definidos sin equivalencias falsas;
+- sistema de referencia, escala, precisión, fecha y cobertura visibles;
+- fuentes legales, registrales, físicas y administrativas diferenciadas;
+- trabajo de campo con protocolo, evidencia y control de calidad;
+- discrepancias y datos faltantes conservados como hallazgos;
+- escenarios con supuestos, incertidumbre y población afectada;
+- productos interoperables, accesibles y transferidos al cliente;
+- actualización, seguridad, respaldo y responsabilidades instalados.
+</Method>
+
+<Findings>
+El producto puede combinar una base catastral, diagnóstico urbano, atlas de servicios y riesgos, escenarios de crecimiento, fichas por sector, visor institucional y tablero de actualización. No todos los encargos requieren un levantamiento integral ni la misma precisión.
+
+El valor aparece cuando distintas áreas utilizan una base común sin perder la procedencia de cada dato. La interoperabilidad no significa fusionar registros incompatibles ni publicar información restringida.
+</Findings>
+
+<Implications>
+La guía orienta el diseño analítico y contractual. No sustituye levantamiento topográfico especializado, saneamiento físico-legal, registro de predios, tasación, ingeniería, certificación de riesgos, evaluación ambiental, compatibilidad de uso, habilitación urbana ni licencia de edificación.
+</Implications>
+
+<Downloads>
+- [Descargar la matriz editable de TDR](/downloads/plantilla-tdr-analisis-catastro-desarrollo-urbano.csv).
+- Revisar la [guía de catastro y desarrollo urbano](/analisis-catastro-desarrollo-urbano-territorial).
+- Explorar el [mapa territorial de DataPerú](/dataperu/mapa).
+- Consultar los [perfiles de 1,891 municipalidades](/dataperu/municipios).
+</Downloads>
+
+<CTA>
+Podemos adaptar esta matriz a un catastro, instrumento urbano, diagnóstico, visor o sistema de actualización. [Diseña un alcance](/diagnostico?from=/toolkits/tdr-analisis-catastro-desarrollo-urbano) o [plantea el encargo](/contact?interest=catastro-desarrollo-urbano&from=/toolkits/tdr-analisis-catastro-desarrollo-urbano).
+</CTA>

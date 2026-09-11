@@ -83,6 +83,7 @@ const publicPages = [
   ["/analisis-datos-gestion-ambiental", "Tener una política y un plan no demuestra mejora ambiental"],
   ["/analisis-datos-agua-saneamiento", "Una conexión registrada no demuestra agua segura ni servicio continuo"],
   ["/analisis-datos-movilidad-transporte", "Contar vehículos no explica cómo se mueve una ciudad"],
+  ["/analisis-catastro-desarrollo-urbano-territorial", "Un mapa de predios no basta para gobernar la ciudad"],
   ["/analisis-datos-politicas-sociales", "Estar en un padrón no demuestra que una necesidad fue atendida"],
   ["/analisis-datos-salud-territorial", "Registrar atenciones no demuestra que la población recibió cuidado oportuno"],
   ["/analisis-datos-educacion-territorial", "Una matrícula registrada no demuestra que un estudiante aprende ni permanece"],
@@ -103,6 +104,7 @@ const publicPages = [
   ["/toolkits/tdr-analisis-gestion-ambiental", "Cómo elaborar TDR para analizar la gestión ambiental"],
   ["/toolkits/tdr-analisis-agua-saneamiento", "Cómo elaborar TDR para analizar agua y saneamiento"],
   ["/toolkits/tdr-analisis-movilidad-transporte", "Cómo elaborar TDR para analizar movilidad y transporte"],
+  ["/toolkits/tdr-analisis-catastro-desarrollo-urbano", "Cómo elaborar TDR para analizar catastro y desarrollo urbano"],
   ["/toolkits/tdr-analisis-politicas-sociales", "Cómo elaborar TDR para analizar políticas y programas sociales"],
   ["/toolkits/tdr-analisis-salud-territorial", "Cómo elaborar TDR para analizar salud territorial"],
   ["/toolkits/tdr-analisis-educacion-territorial", "Cómo elaborar TDR para analizar educación territorial"],
@@ -136,6 +138,7 @@ assert.ok(publicSectorDirectory.body.includes('data-analytics-target="public-sec
 assert.ok(publicSectorDirectory.body.includes("Gestión ambiental"), "Sector público debe incluir la agenda ambiental");
 assert.ok(publicSectorDirectory.body.includes("Agua y saneamiento"), "Sector público debe incluir agua y saneamiento");
 assert.ok(publicSectorDirectory.body.includes("Movilidad y transporte"), "Sector público debe incluir movilidad y transporte");
+assert.ok(publicSectorDirectory.body.includes("Catastro y desarrollo urbano"), "Sector público debe incluir catastro y desarrollo urbano");
 assert.ok(publicSectorDirectory.body.includes("Políticas y programas sociales"), "Sector público debe incluir políticas sociales");
 assert.ok(publicSectorDirectory.body.includes("Salud territorial"), "Sector público debe incluir salud territorial");
 assert.ok(publicSectorDirectory.body.includes("Inversión pública y proyectos"), "Sector público debe incluir inversión pública y proyectos");
@@ -199,6 +202,8 @@ if (hasPersistentForm) {
   assert.ok(waterContact.body.includes('value="agua-saneamiento" selected'), "Contacto debe conservar el interés de agua y saneamiento");
   const mobilityContact = await expectHtml("/contact?interest=movilidad-transporte&from=/analisis-datos-movilidad-transporte", "Movilidad, transporte y seguridad vial");
   assert.ok(mobilityContact.body.includes('value="movilidad-transporte" selected'), "Contacto debe conservar el interés de movilidad");
+  const urbanContact = await expectHtml("/contact?interest=catastro-desarrollo-urbano&from=/analisis-catastro-desarrollo-urbano-territorial", "Catastro, desarrollo urbano y gestión territorial");
+  assert.ok(urbanContact.body.includes('value="catastro-desarrollo-urbano" selected'), "Contacto debe conservar el interés de catastro y desarrollo urbano");
   const socialPolicyContact = await expectHtml("/contact?interest=politicas-sociales&from=/analisis-datos-politicas-sociales", "Políticas, programas y servicios sociales");
   assert.ok(socialPolicyContact.body.includes('value="politicas-sociales" selected'), "Contacto debe conservar el interés de políticas sociales");
   const healthContact = await expectHtml("/contact?interest=salud-territorial&from=/analisis-datos-salud-territorial", "Salud pública, servicios y análisis territorial");
@@ -522,6 +527,14 @@ assert.ok(procurementTdrBody.includes("Mercado proveedor"), "La plantilla de con
 assert.ok(procurementTdrBody.includes("Ninguna alerta produce acusaciones automáticas"), "La plantilla de contrataciones debe limitar la lectura de señales");
 assert.equal(procurementTdrBody.trim().split("\n").length, 21, "La plantilla de contrataciones debe incluir encabezado y veinte bloques");
 
+const urbanTdrCsv = await get("/downloads/plantilla-tdr-analisis-catastro-desarrollo-urbano.csv");
+assert.equal(urbanTdrCsv.status, 200, "La plantilla TDR de catastro y desarrollo urbano debe ser descargable");
+assert.match(urbanTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const urbanTdrBody = await urbanTdrCsv.text();
+assert.ok(urbanTdrBody.includes("Catastro multifinalitario"), "La plantilla urbana debe incluir el catastro multifinalitario");
+assert.ok(urbanTdrBody.includes("Referencia cartográfica"), "La plantilla urbana debe definir la referencia cartográfica");
+assert.equal(urbanTdrBody.trim().split("\n").length, 21, "La plantilla urbana debe incluir encabezado y veinte bloques");
+
 const evaluationTdrCsv = await get("/downloads/plantilla-tdr-linea-base-evaluacion-programa.csv");
 assert.equal(evaluationTdrCsv.status, 200, "La plantilla TDR de evaluación debe ser descargable");
 assert.match(evaluationTdrCsv.headers.get("content-type") ?? "", /^text\/csv/);
@@ -573,6 +586,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-desarrollo-econom
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-gestion-ambiental"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-agua-saneamiento"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-movilidad-transporte"));
+assert.ok(sitemapBody.includes("https://noam.pe/analisis-catastro-desarrollo-urbano-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-politicas-sociales"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-salud-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-educacion-territorial"));
@@ -596,6 +610,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-desarrollo
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-gestion-ambiental"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-agua-saneamiento"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-movilidad-transporte"));
+assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-catastro-desarrollo-urbano"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-politicas-sociales"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-salud-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/toolkits/tdr-analisis-educacion-territorial"));

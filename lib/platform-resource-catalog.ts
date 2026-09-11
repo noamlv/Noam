@@ -283,5 +283,16 @@ export const platformResourceCatalog: PlatformResource[] = [
     sourceLabel: "NOAM · OECE · SEACE · Perú Compras",
     period: "Revisión septiembre 2026",
     format: "Guía web + CSV"
+  },
+  {
+    slug: "tdr-analisis-catastro-desarrollo-urbano",
+    title: "TDR para análisis de catastro y desarrollo urbano",
+    description: "Matriz para contratar diagnóstico, levantamiento, integración geoespacial, planificación, priorización y actualización catastral y urbana.",
+    kind: "template",
+    url: "/toolkits/tdr-analisis-catastro-desarrollo-urbano",
+    productSlug: "mapa-gestion-territorial",
+    sourceLabel: "NOAM · MVCS · GeoPerú · COFOPRI · CENEPRED",
+    period: "Revisión septiembre 2026",
+    format: "Guía web + CSV"
   }
 ];
