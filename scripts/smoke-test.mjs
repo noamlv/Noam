@@ -54,6 +54,7 @@ const publicPages = [
   ["/electoral/planometro-2026/ejes/institucionalidad", "Institucionalidad"],
   ["/electoral/erm-2026/territorios/150122", "Brief territorial de preparación de gestión"],
   ["/dataperu", "DataPerú"],
+  ["/dataperu/agua-saneamiento", "Agua y saneamiento, distrito por distrito."],
   ["/dataperu/agendas-territoriales", "El mismo problema no se resuelve igual en todo el Perú"],
   ["/dataperu/departamentos", "El país cambia cuando cambia la escala"],
   ["/dataperu/panorama-municipal-2025", "El Perú municipal no cabe en un promedio."],
@@ -129,6 +130,26 @@ const publicPages = [
 
 for (const [path, text] of publicPages) await expectHtml(path, text);
 
+const waterSanitationPage = await expectHtml("/dataperu/agua-saneamiento", "1,892 distritos");
+assert.ok(waterSanitationPage.body.includes('"@type":"Dataset"'), "Agua y saneamiento debe publicar schema Dataset");
+assert.ok(waterSanitationPage.body.includes("continuidad, presión, potabilidad"), "La capa debe explicar sus límites de interpretación");
+assert.ok(waterSanitationPage.body.includes("/dataperu/agua-saneamiento/data.csv"), "La capa debe ofrecer el dataset nacional");
+const waterSanitationCsv = await get("/dataperu/agua-saneamiento/data.csv");
+assert.equal(waterSanitationCsv.status, 200, "El dataset nacional debe ser descargable");
+assert.match(waterSanitationCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const waterSanitationCsvBody = await waterSanitationCsv.text();
+assert.equal(waterSanitationCsvBody.trim().split(/\r?\n/).length, 1_893, "El CSV debe contener cabecera y 1,892 distritos");
+assert.ok(waterSanitationCsvBody.includes("160405,Loreto,Mariscal Ramón Castilla,Santa Rosa de Loreto"), "El CSV debe conservar el distrito censal adicional");
+const filteredWaterPage = await expectHtml("/dataperu/agua-saneamiento?q=150101", "Agua y saneamiento, distrito por distrito.");
+assert.ok(filteredWaterPage.body.includes('value="150101"'), "El explorador debe admitir una consulta precargada por ubigeo");
+const limaMunicipalProfile = await expectHtml("/dataperu/municipios/150101", "Agua por red pública");
+assert.ok(limaMunicipalProfile.body.includes("Saneamiento por red pública"), "La ficha municipal debe integrar ambos indicadores censales");
+const limaMunicipalCsv = await get("/dataperu/municipios/150101/data.csv");
+assert.equal(limaMunicipalCsv.status, 200, "El CSV municipal debe continuar disponible");
+const limaMunicipalCsvBody = await limaMunicipalCsv.text();
+assert.ok(limaMunicipalCsvBody.includes("agua_red_publica_porcentaje"), "El CSV municipal debe incluir agua por red pública");
+assert.ok(limaMunicipalCsvBody.includes("saneamiento_red_publica_porcentaje"), "El CSV municipal debe incluir saneamiento por red pública");
+
 const servicesDirectory = await expectHtml("/services", "Encuentra el punto de partida");
 assert.ok(servicesDirectory.body.includes("Por tipo de encargo"), "Servicios debe permitir buscar por tipo de encargo");
 assert.ok(servicesDirectory.body.includes("Por tema de gestión"), "Servicios debe permitir buscar por tema de gestión");
@@ -168,6 +189,7 @@ await expectHtml("/buscar?q=PPRRD+COEL+SIGRID", "Análisis de datos para la gest
 await expectHtml("/buscar?q=MYPE+empleo+local+cadenas+de+valor", "Análisis de datos para desarrollo económico local");
 await expectHtml("/buscar?q=PLANEFA+monitoreo+fiscalizacion+ambiental", "Análisis de datos para la gestión ambiental");
 await expectHtml("/buscar?q=DATASS+continuidad+agua+JASS", "Análisis de datos para agua y saneamiento");
+await expectHtml("/buscar?q=censo+2025+agua+red+publica+distrito", "Agua y saneamiento por distrito en Perú");
 await expectHtml("/buscar?q=PMUS+aforo+seguridad+vial", "Análisis de datos para movilidad y transporte");
 await expectHtml("/buscar?q=SISFOH+brecha+cobertura+programa+social", "Análisis de datos para políticas y programas sociales");
 await expectHtml("/buscar?q=REUNIS+IPRESS+sala+situacion", "Análisis de datos para salud territorial");
@@ -588,6 +610,7 @@ assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-gestion-riesgo-de
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-desarrollo-economico-local"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-gestion-ambiental"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-agua-saneamiento"));
+assert.ok(sitemapBody.includes("https://noam.pe/dataperu/agua-saneamiento"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-movilidad-transporte"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-catastro-desarrollo-urbano-territorial"));
 assert.ok(sitemapBody.includes("https://noam.pe/analisis-datos-politicas-sociales"));

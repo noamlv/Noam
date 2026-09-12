@@ -1,14 +1,15 @@
-import { ArrowRight, Building2, Database, Leaf, Recycle, ShieldCheck, Siren, Store } from "lucide-react";
+import { ArrowRight, Building2, Database, Droplets, Leaf, Recycle, ShieldCheck, Siren, Store } from "lucide-react";
 import NextLink from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import { getNationalSectorMetrics, sectorSource, sectorTopics } from "@/lib/dataperu-sectors";
+import { waterSanitationSource, waterSanitationSummary } from "@/lib/dataperu-water-sanitation";
 import { breadcrumbJsonLd, buildMetadata, datasetJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildMetadata({
   title: "Temas de gestión municipal",
-  description: "Explora residuos, seguridad ciudadana, gestión del riesgo, desarrollo económico y gestión ambiental en 1,891 municipalidades del Perú.",
+  description: "Explora agua y saneamiento por distrito y lecturas de residuos, seguridad, riesgos, economía local y ambiente en municipalidades del Perú.",
   path: "/dataperu/temas"
 });
 
@@ -60,7 +61,26 @@ export default function SectorTopicsPage() {
               <Heading size="xl">Del dato a una pregunta de gestión.</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Estas vistas no califican municipalidades ni sustituyen un estudio. Organizan señales comparables para orientar una conversación.</p>
             </div>
-            <div className="grid gap-4 sm:grid-cols-2">
+            <div>
+              <NextLink
+                href="/dataperu/agua-saneamiento"
+                className="group relative block overflow-hidden rounded-md border border-border bg-[#15211d] p-7 text-white transition-all duration-220 hover:-translate-y-0.5 hover:border-border-strong"
+              >
+                <span className="absolute inset-x-0 top-0 h-1 bg-[#6d9f91]" />
+                <div className="flex items-start justify-between gap-5">
+                  <Droplets className="h-5 w-5 text-[#d9a48f]" aria-hidden />
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-white/48">Censos Nacionales 2025</span>
+                </div>
+                <h2 className="mt-10 text-2xl font-medium tracking-[-0.035em]">Agua y saneamiento</h2>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-white/62">Cobertura de agua y servicio higiénico por red pública para los 1,892 distritos censales del Perú.</p>
+                <div className="mt-8 grid gap-5 border-t border-white/14 pt-5 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+                  <span><span className="block text-2xl font-medium tracking-[-0.04em]">{waterSanitationSummary.waterNetwork.percent}%</span><span className="mt-1 block text-[11px] text-white/48">agua por red pública</span></span>
+                  <span><span className="block text-2xl font-medium tracking-[-0.04em]">{waterSanitationSummary.sanitationNetwork.percent}%</span><span className="mt-1 block text-[11px] text-white/48">saneamiento por red pública</span></span>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-[#d9a48f]">Explorar distritos <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span>
+                </div>
+              </NextLink>
+              <p className="mt-3 text-[11px] leading-5 text-muted">Fuente: {waterSanitationSource.publisher}. Las conexiones no acreditan continuidad, potabilidad ni tratamiento.</p>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {sectorTopics.map((topic, index) => {
                 const Icon = icons[topic.slug];
                 const metrics = getNationalSectorMetrics(topic.slug);
@@ -84,6 +104,7 @@ export default function SectorTopicsPage() {
                   </NextLink>
                 );
               })}
+              </div>
             </div>
           </div>
         </Container>

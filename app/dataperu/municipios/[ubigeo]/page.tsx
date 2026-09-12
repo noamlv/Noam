@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowRight, CalendarRange, Check, Database, ExternalLink, FileDown, Landmark, Minus, Monitor, ShieldCheck, TrendingUp, Users, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarRange, Check, Database, Droplets, ExternalLink, FileDown, Landmark, Minus, Monitor, ShieldCheck, TrendingUp, Users, X } from "lucide-react";
 import NextLink from "next/link";
 import { notFound } from "next/navigation";
 import { ShareActions } from "@/components/content/share-actions";
@@ -23,6 +23,7 @@ import {
   yesNoLabel
 } from "@/lib/dataperu";
 import { getMunicipalitySectorMetrics, getSectorMunicipality, sectorTopics } from "@/lib/dataperu-sectors";
+import { getCoverageGap, getWaterSanitationDistrict, waterSanitationSource } from "@/lib/dataperu-water-sanitation";
 import { breadcrumbJsonLd, buildMetadata, ogImagePath } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -46,7 +47,7 @@ export async function generateMetadata({ params }: MunicipalityPageProps): Promi
   const district = titleCase(municipality.district);
   return buildMetadata({
     title: `Perfil municipal de ${district}`,
-    description: `Población, presupuesto, inversión y capacidades institucionales de la Municipalidad ${municipality.municipalityType} de ${district}, con fuentes INEI, MEF y RENAMU 2025.`,
+    description: `Población, agua y saneamiento, presupuesto, inversión y capacidades institucionales de la Municipalidad ${municipality.municipalityType} de ${district}, con fuentes oficiales 2025.`,
     path: `/dataperu/municipios/${ubigeo}`,
     image: ogImagePath("municipios", ubigeo)
   });
@@ -83,6 +84,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
   const projects = getMunicipalityProjects(municipality.ubigeo);
   const signals = getMunicipalitySignals(municipality, context, projects);
   const sectorMunicipality = getSectorMunicipality(municipality.ubigeo);
+  const waterSanitation = getWaterSanitationDistrict(municipality.ubigeo);
   const sectorReadings = sectorMunicipality
     ? sectorTopics.map((topic) => ({
         ...topic,
@@ -110,11 +112,11 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
         "@context": "https://schema.org",
         "@type": "Dataset",
         name: `Perfil municipal de ${district} — DataPerú 2025`,
-        description: "Población proyectada, presupuesto, inversión y capacidades institucionales de una municipalidad del Perú.",
+        description: "Población, agua y saneamiento, presupuesto, inversión y capacidades institucionales de una municipalidad del Perú.",
         url: profileUrl,
         datePublished: renamuSource.releaseDate,
         creator: { "@type": "Organization", name: siteConfig.legalName },
-        isBasedOn: [renamuSource.datasetUrl, dataperuSources.population.pageUrl, dataperuSources.budget.datasetUrl, projectSource.resourceUrl],
+        isBasedOn: [renamuSource.datasetUrl, dataperuSources.population.pageUrl, dataperuSources.budget.datasetUrl, projectSource.resourceUrl, waterSanitationSource.datasetUrl],
         license: renamuSource.license,
         spatialCoverage: `${district}, ${department}, Perú`,
         distribution: [{ "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${profileUrl}/data.csv` }]
@@ -297,6 +299,39 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
           </div>
         </Container>
       </Section>
+
+      {waterSanitation ? (
+        <Section className="border-y border-border bg-panel/45">
+          <Container>
+            <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
+              <div>
+                <Droplets className="h-5 w-5 text-rust" aria-hidden />
+                <Eyebrow className="mt-6">Agua y saneamiento</Eyebrow>
+                <Heading size="xl">Conexión a red pública en viviendas.</Heading>
+                <p className="mt-5 text-sm leading-7 text-ink/65">Resultados de los Censos Nacionales 2025. No demuestran continuidad, potabilidad, presión ni tratamiento de aguas residuales.</p>
+              </div>
+              <div>
+                <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-3">
+                  {[
+                    { label: "Agua por red pública", value: formatPercent(waterSanitation.waterNetwork.percent), note: `${formatMetric(waterSanitation.waterNetwork.value)} viviendas` },
+                    { label: "Saneamiento por red pública", value: formatPercent(waterSanitation.sanitationNetwork.percent), note: `${formatMetric(waterSanitation.sanitationNetwork.value)} viviendas` },
+                    { label: "Viviendas del universo", value: formatMetric(waterSanitation.occupiedHousing), note: "ocupadas con personas presentes" }
+                  ].map((metric) => (
+                    <div key={metric.label} className="bg-panel p-5">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">{metric.label}</p>
+                      <p className="mt-3 text-2xl font-medium tracking-[-0.035em] text-ink">{metric.value}</p>
+                      <p className="mt-1 text-xs leading-5 text-muted">{metric.note}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-4 text-xs leading-5 text-muted">Brecha descriptiva: {formatMetric(getCoverageGap(waterSanitation, "waterNetwork"))} viviendas sin agua por red y {formatMetric(getCoverageGap(waterSanitation, "sanitationNetwork"))} sin saneamiento por red dentro del universo censal.</p>
+                <NextLink href={`/dataperu/agua-saneamiento?q=${municipality.ubigeo}`} className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust hover:text-ink">Comparar con otros distritos <ArrowRight className="h-3.5 w-3.5" aria-hidden /></NextLink>
+                <p className="mt-3 text-[11px] leading-5 text-muted">Fuente: {waterSanitationSource.publisher}.</p>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      ) : null}
 
       {sectorReadings.length > 0 ? (
         <Section id="gestion-sectorial" className="border-y border-border bg-panel/45">

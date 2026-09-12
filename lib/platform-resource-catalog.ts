@@ -46,6 +46,17 @@ export const platformResourceCatalog: PlatformResource[] = [
     format: "CSV"
   },
   {
+    slug: "agua-saneamiento-distritos-censos-2025",
+    title: "Agua y saneamiento por distrito, Censos 2025",
+    description: "Tabla nacional con viviendas del universo censal y cobertura de agua y servicio higiénico por red pública para 1,892 distritos.",
+    kind: "dataset",
+    url: "/dataperu/agua-saneamiento/data.csv",
+    productSlug: "dataperu",
+    sourceLabel: "INEI · Censos Nacionales 2025 · procesamiento NOAM",
+    period: "2025",
+    format: "CSV"
+  },
+  {
     slug: "perfiles-municipales-dataperu",
     title: "Buscador nacional de perfiles municipales",
     description: "Acceso a 1,891 perfiles territoriales con capacidad declarada, población, presupuesto y cartera visible de proyectos.",

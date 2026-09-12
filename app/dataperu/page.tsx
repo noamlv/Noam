@@ -1,10 +1,11 @@
-import { ArrowRight, BriefcaseBusiness, Check, Database, FileChartColumn, Layers3, MapPinned, Radar, Search, ShieldAlert } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Check, Database, Droplets, FileChartColumn, Layers3, MapPinned, Radar, Search, ShieldAlert } from "lucide-react";
 import NextLink from "next/link";
 import { DataVisual } from "@/components/brand/data-visual";
 import { TerritoryMap } from "@/components/brand/territory-map";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Badge, Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import { dataperuSummary, formatCurrency, formatMetric, formatPercent, projectSummary, renamuSummary } from "@/lib/dataperu";
+import { waterSanitationSummary } from "@/lib/dataperu-water-sanitation";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
@@ -45,6 +46,7 @@ const decisionPaths = [
 ];
 
 const modules = [
+  { icon: Droplets, title: "Agua y saneamiento", description: `Cobertura por red pública en ${formatMetric(waterSanitationSummary.districts)} distritos según los Censos Nacionales 2025.`, href: "/dataperu/agua-saneamiento", status: "Disponible" },
   { icon: Search, title: "Agendas territoriales", description: "100 problemas y 75 oportunidades en validación para los 25 departamentos.", href: "/dataperu/agendas-territoriales", status: "Disponible" },
   { icon: MapPinned, title: "Mapa de gestión e inversión", description: "Cinco capas comparables sobre límites departamentales referenciales.", href: "/dataperu/mapa", status: "Disponible" },
   { icon: MapPinned, title: "Atlas departamental", description: "Presupuesto, inversión y capacidades municipales agregadas en 25 departamentos.", href: "/dataperu/departamentos", status: "Disponible" },
@@ -66,7 +68,7 @@ const applications = [
 
 const coverageRoadmap = [
   { title: "Gestión e inversión", state: "Disponible", description: "Presupuesto, ejecución financiera, proyectos y capacidades municipales." },
-  { title: "Servicios y bienestar", state: "Evaluación de fuentes", description: "Salud, educación, agua y acceso a servicios con cobertura territorial comparable." },
+  { title: "Servicios y bienestar", state: "Primera capa disponible", description: "Agua y saneamiento por red pública con Censos 2025; salud y educación continúan en evaluación de fuentes." },
   { title: "Seguridad y riesgos", state: "Evaluación de fuentes", description: "Victimización, capacidades preventivas, emergencias y exposición territorial." },
   { title: "Empleo y economía local", state: "Evaluación de fuentes", description: "Estructura productiva, actividad empresarial, empleo y condiciones para invertir." }
 ];
@@ -210,6 +212,7 @@ export default function DataPeruPage() {
             </div>
             <div className="divide-y divide-border border-y border-border">
               {[
+                { title: "Agua y saneamiento por distrito", label: "Disponible", href: "/dataperu/agua-saneamiento", text: "Cobertura censal de agua y servicio higiénico por red pública para 1,892 distritos." },
                 { title: "Agendas territoriales del Perú", label: "Disponible", href: "/dataperu/agendas-territoriales", text: "Busca problemas públicos, poblaciones afectadas y oportunidades por validar en los 25 departamentos." },
                 { title: "Mapa de gestión e inversión municipal", label: "Disponible", href: "/dataperu/mapa", text: "Visor departamental con capas de ejecución, recursos, transparencia y cartera visible." },
                 { title: "Observatorio de inversiones municipales", label: "Disponible", href: "/dataperu/inversiones", text: "Cartera visible, composición funcional y explorador financiero por departamento y municipalidad." },

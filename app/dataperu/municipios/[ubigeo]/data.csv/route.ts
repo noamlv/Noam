@@ -6,6 +6,7 @@ import {
   projectSource,
   renamuSource
 } from "@/lib/dataperu";
+import { getWaterSanitationDistrict, waterSanitationSource } from "@/lib/dataperu-water-sanitation";
 
 export const revalidate = 86400;
 
@@ -30,6 +31,7 @@ function sourceUrl(source: string) {
   if (source === dataperuSources.population.name) return dataperuSources.population.pageUrl;
   if (source === dataperuSources.budget.name) return dataperuSources.budget.datasetUrl;
   if (source === projectSource.name) return projectSource.resourceUrl;
+  if (source === waterSanitationSource.name) return waterSanitationSource.datasetUrl;
   return "";
 }
 
@@ -37,6 +39,7 @@ export async function GET(_request: Request, context: { params: Promise<{ ubigeo
   const { ubigeo } = await context.params;
   const municipality = getMunicipality(ubigeo);
   const municipalContext = getMunicipalityContext(ubigeo);
+  const waterSanitation = getWaterSanitationDistrict(ubigeo);
   if (!municipality || !municipalContext) return new Response("Municipalidad no encontrada", { status: 404 });
 
   const rows: CsvRow[] = [
@@ -46,6 +49,13 @@ export async function GET(_request: Request, context: { params: Promise<{ ubigeo
     { section: "territorio", key: "distrito", label: "Distrito", value: municipality.district, unit: "texto", period: "2025", source: renamuSource.name },
     { section: "poblacion", key: "poblacion_proyectada_2025", label: "Población proyectada", value: municipalContext.population.projected2025, unit: "personas", period: "30-06-2025", source: dataperuSources.population.name, notes: dataperuSources.population.notes },
     { section: "poblacion", key: "variacion_poblacion_2018_2025", label: "Variación poblacional proyectada 2018-2025", value: municipalContext.population.change2018To2025Percent, unit: "porcentaje", period: "2018-2025", source: dataperuSources.population.name },
+    ...(waterSanitation ? [
+      { section: "agua_saneamiento", key: "viviendas_universo", label: "Viviendas particulares ocupadas con personas presentes", value: waterSanitation.occupiedHousing, unit: "viviendas", period: "2025", source: waterSanitationSource.name, notes: "Universo utilizado para los indicadores de conexión a red pública." },
+      { section: "agua_saneamiento", key: "agua_red_publica_viviendas", label: "Viviendas con abastecimiento de agua por red pública", value: waterSanitation.waterNetwork.value, unit: "viviendas", period: "2025", source: waterSanitationSource.name, notes: "No acredita continuidad, potabilidad, presión ni calidad." },
+      { section: "agua_saneamiento", key: "agua_red_publica_porcentaje", label: "Viviendas con abastecimiento de agua por red pública", value: waterSanitation.waterNetwork.percent, unit: "porcentaje", period: "2025", source: waterSanitationSource.name, notes: "No acredita continuidad, potabilidad, presión ni calidad." },
+      { section: "agua_saneamiento", key: "saneamiento_red_publica_viviendas", label: "Viviendas con servicio higiénico conectado a red pública", value: waterSanitation.sanitationNetwork.value, unit: "viviendas", period: "2025", source: waterSanitationSource.name, notes: "No acredita tratamiento ni disposición final segura de aguas residuales." },
+      { section: "agua_saneamiento", key: "saneamiento_red_publica_porcentaje", label: "Viviendas con servicio higiénico conectado a red pública", value: waterSanitation.sanitationNetwork.percent, unit: "porcentaje", period: "2025", source: waterSanitationSource.name, notes: "No acredita tratamiento ni disposición final segura de aguas residuales." }
+    ] satisfies CsvRow[] : []),
     { section: "presupuesto", key: "pia", label: "Presupuesto institucional de apertura", value: municipalContext.budget.pia, unit: "PEN", period: "2025", source: dataperuSources.budget.name },
     { section: "presupuesto", key: "pim", label: "Presupuesto institucional modificado", value: municipalContext.budget.pim, unit: "PEN", period: "2025", source: dataperuSources.budget.name },
     { section: "presupuesto", key: "devengado", label: "Devengado", value: municipalContext.budget.accrued, unit: "PEN", period: "2025", source: dataperuSources.budget.name },
