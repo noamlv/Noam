@@ -52,7 +52,7 @@ export function buildTerritorySearchEntries(
     const type = municipality.municipalityType.toLocaleLowerCase("es-PE");
     return {
       id: `territory:municipality:${municipality.ubigeo}`,
-      title: `${district}: perfil municipal`,
+      title: `${district}, ${province}: perfil municipal`,
       description: `Datos oficiales de población, educación, agua, saneamiento, presupuesto, inversión y capacidad institucional de la municipalidad ${type} de ${district}, ${province}, ${department}.`,
       href: `/dataperu/municipios/${municipality.ubigeo}`,
       kind: "territory",

@@ -220,10 +220,10 @@ await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una 
 await expectHtml("/resources?type=dataset&product=planometro-electoral", "Planómetro 2026: organizaciones");
 await expectHtml("/buscar?q=limites+departamentales&type=evidence", "Límites departamentales referenciales");
 await expectHtml("/buscar?q=boletin", "Brief NOAM");
-await expectHtml("/buscar?q=150101&type=territory", "Lima: perfil municipal");
+await expectHtml("/buscar?q=150101&type=territory", "Lima, Lima: perfil municipal");
 await expectHtml("/buscar?q=gobierno+regional+de+Cusco&type=territory", "Cusco: perfil departamental");
-const mirafloresSearch = await expectHtml("/buscar?q=municipalidad+distrital+de+Miraflores&type=territory", "Miraflores: perfil municipal");
-assert.ok(!mirafloresSearch.body.includes("Aguas Verdes: perfil municipal"), "La búsqueda nominal no debe mezclar distritos ajenos por términos institucionales genéricos");
+const mirafloresSearch = await expectHtml("/buscar?q=municipalidad+distrital+de+Miraflores&type=territory", "Miraflores, Lima: perfil municipal");
+assert.ok(!mirafloresSearch.body.includes("Aguas Verdes, Zarumilla: perfil municipal"), "La búsqueda nominal no debe mezclar distritos ajenos por términos institucionales genéricos");
 
 const companiesPage = await expectHtml("/sectors/companies", "Consultoría para empresas");
 assert.ok(companiesPage.body.includes('"@type":"Service"'), "Empresas debe declarar su oferta como Service");

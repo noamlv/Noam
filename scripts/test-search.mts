@@ -28,6 +28,7 @@ const { municipalityEntries, departmentEntries } = buildTerritorySearchEntries(
 const territorialEntries = [...departmentEntries, ...municipalityEntries];
 
 assert.equal(municipalityEntries[0]?.href, "/dataperu/municipios/150122", "El ubigeo debe generar una ruta municipal estable");
+assert.equal(municipalityEntries[0]?.title, "Miraflores, Lima: perfil municipal", "El título debe distinguir municipios homónimos mediante su provincia");
 assert.equal(departmentEntries[0]?.title, "Cusco: perfil departamental", "El perfil debe conservar el nombre territorial canónico");
 assert.equal(searchEntries(territorialEntries, { query: "gobierno regional de Cusco", kind: "territory" })[0]?.href, "/dataperu/departamentos/08", "Una búsqueda institucional debe encontrar su departamento");
 assert.equal(searchEntries(territorialEntries, { query: "municipalidad distrital de Miraflores", kind: "territory" })[0]?.href, "/dataperu/municipios/150122", "Una búsqueda municipal nominal debe encontrar el distrito correcto");

@@ -46,9 +46,11 @@ export async function generateMetadata({ params }: MunicipalityPageProps): Promi
   if (!municipality) return {};
 
   const district = titleCase(municipality.district);
+  const province = titleCase(municipality.province);
+  const department = titleCase(municipality.department);
   return buildMetadata({
-    title: `Perfil municipal de ${district}`,
-    description: `Población, educación, agua y saneamiento, presupuesto, inversión y capacidades institucionales de la Municipalidad ${municipality.municipalityType} de ${district}, con fuentes oficiales 2025.`,
+    title: `Perfil municipal de ${district}, ${province}`,
+    description: `Datos oficiales 2025 de población, educación, servicios, presupuesto, inversión y capacidades de la Municipalidad ${municipality.municipalityType} de ${district}, ${province}, ${department}.`,
     path: `/dataperu/municipios/${ubigeo}`,
     image: ogImagePath("municipios", ubigeo)
   });
@@ -96,7 +98,9 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
   const district = titleCase(municipality.district);
   const province = titleCase(municipality.province);
   const department = titleCase(municipality.department);
-  const profileUrl = `${siteConfig.url}/dataperu/municipios/${municipality.ubigeo}`;
+  const profilePath = `/dataperu/municipios/${municipality.ubigeo}`;
+  const profileUrl = `${siteConfig.url}${profilePath}`;
+  const contactHref = `/contact?interest=dataperu&territory=${encodeURIComponent(`${district}, ${province}, ${department}`)}&from=${encodeURIComponent(profilePath)}`;
   const relatedMunicipalities = municipalities
     .filter((item) => item.ubigeo !== municipality.ubigeo && item.department === municipality.department)
     .sort((left, right) => Number(left.province !== municipality.province) - Number(right.province !== municipality.province))
@@ -113,14 +117,14 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "Dataset",
-        name: `Perfil municipal de ${district} — DataPerú 2025`,
+        name: `Perfil municipal de ${district}, ${province}, ${department} — DataPerú 2025`,
         description: "Población, educación, agua y saneamiento, presupuesto, inversión y capacidades institucionales de una municipalidad del Perú.",
         url: profileUrl,
         datePublished: renamuSource.releaseDate,
         creator: { "@type": "Organization", name: siteConfig.legalName },
         isBasedOn: [renamuSource.datasetUrl, dataperuSources.population.pageUrl, dataperuSources.budget.datasetUrl, projectSource.resourceUrl, waterSanitationSource.datasetUrl, educationSource.datasetUrl],
         license: renamuSource.license,
-        spatialCoverage: `${district}, ${department}, Perú`,
+        spatialCoverage: `${district}, ${province}, ${department}, Perú`,
         distribution: [{ "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${profileUrl}/data.csv` }]
       }} />
 
@@ -436,7 +440,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
             <div>
               <p className="text-base leading-8 text-ink/68">NOAM puede ampliar esta línea de base con servicios, encuestas, trabajo territorial, cartera de inversiones y datos internos para construir un diagnóstico o sistema de seguimiento útil para la gestión.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button href={`/contact?interest=ficha-municipal`} analyticsEvent="cta_click" analyticsTarget={`municipality:${municipality.ubigeo}:contact`}>Solicitar diagnóstico</Button>
+                <Button href={contactHref} analyticsEvent="cta_click" analyticsTarget={`municipality:${municipality.ubigeo}:contact`}>Solicitar diagnóstico</Button>
                 <Button href="/services/observatorios-sistemas-decision" variant="secondary">Explorar observatorios</Button>
               </div>
             </div>
