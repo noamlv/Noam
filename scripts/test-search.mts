@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import { normalizeSearchText, searchEntries, type SearchEntry } from "../lib/search-core.ts";
+import { buildTerritorySearchEntries } from "../lib/territory-search.ts";
 
 const entries: SearchEntry[] = [
   { id: "municipal", title: "Observatorio de inversión municipal", description: "Seguimiento de proyectos y presupuesto para gobiernos locales.", href: "/municipal", kind: "product", label: "Dashboard", topic: "gobierno", featured: true, keywords: ["MEF", "alcaldías"] },
@@ -16,4 +17,20 @@ assert.equal(searchEntries(entries, { query: "acuicultura" }).length, 0, "Una co
 assert.equal(searchEntries(entries, { query: "consulta sin coincidencia xyz" }).length, 0, "Las palabras vacías no deben producir falsos positivos");
 assert.deepEqual(searchEntries(entries, { query: "plan accion gobierno datos" }).map((entry) => entry.id), ["data-government"], "Las consultas largas deben exigir coincidencia con la mayoría de sus términos");
 
-console.log("Search OK: normalización, relevancia, filtros y ausencia de resultados verificados");
+const { municipalityEntries, departmentEntries } = buildTerritorySearchEntries(
+  [
+    { ubigeo: "150122", department: "LIMA", province: "LIMA", district: "MIRAFLORES", municipalityType: "Distrital" },
+    { ubigeo: "240102", department: "TUMBES", province: "ZARUMILLA", district: "AGUAS VERDES", municipalityType: "Distrital" }
+  ],
+  [{ code: "08", name: "CUSCO" }],
+  [{ code: "08", name: "Cusco" }, { code: "15", name: "Lima" }]
+);
+const territorialEntries = [...departmentEntries, ...municipalityEntries];
+
+assert.equal(municipalityEntries[0]?.href, "/dataperu/municipios/150122", "El ubigeo debe generar una ruta municipal estable");
+assert.equal(departmentEntries[0]?.title, "Cusco: perfil departamental", "El perfil debe conservar el nombre territorial canónico");
+assert.equal(searchEntries(territorialEntries, { query: "gobierno regional de Cusco", kind: "territory" })[0]?.href, "/dataperu/departamentos/08", "Una búsqueda institucional debe encontrar su departamento");
+assert.equal(searchEntries(territorialEntries, { query: "municipalidad distrital de Miraflores", kind: "territory" })[0]?.href, "/dataperu/municipios/150122", "Una búsqueda municipal nominal debe encontrar el distrito correcto");
+assert.ok(!searchEntries(territorialEntries, { query: "municipalidad distrital de Miraflores", kind: "territory" }).some((entry) => entry.href === "/dataperu/municipios/240102"), "Los términos institucionales genéricos no deben introducir territorios ajenos");
+
+console.log("Search OK: relevancia, normalización y rutas territoriales verificadas.");

@@ -172,6 +172,9 @@ assert.ok(servicesDirectory.body.includes("Por tema de gestión"), "Servicios de
 assert.ok(servicesDirectory.body.includes('data-analytics-target="services:sector:gestion-ambiental"'), "El directorio debe medir la selección sectorial");
 
 const publicSectorDirectory = await expectHtml("/sectors/public-sector", "Rutas para una necesidad pública");
+assert.ok(publicSectorDirectory.body.includes('"@type":"Service"'), "Sector público debe declarar su oferta como Service");
+assert.ok(publicSectorDirectory.body.includes('"@type":"FAQPage"'), "Sector público debe publicar las preguntas frecuentes estructuradas");
+assert.ok(publicSectorDirectory.body.includes("municipalidades distritales y provinciales"), "Sector público debe explicitar todas las escalas subnacionales");
 assert.ok(publicSectorDirectory.body.includes('data-analytics-target="public-sector:agenda:desarrollo-economico"'), "Sector público debe enlazar la agenda económica");
 assert.ok(publicSectorDirectory.body.includes("Gestión ambiental"), "Sector público debe incluir la agenda ambiental");
 assert.ok(publicSectorDirectory.body.includes("Agua y saneamiento"), "Sector público debe incluir agua y saneamiento");
@@ -217,6 +220,13 @@ await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una 
 await expectHtml("/resources?type=dataset&product=planometro-electoral", "Planómetro 2026: organizaciones");
 await expectHtml("/buscar?q=limites+departamentales&type=evidence", "Límites departamentales referenciales");
 await expectHtml("/buscar?q=boletin", "Brief NOAM");
+await expectHtml("/buscar?q=150101&type=territory", "Lima: perfil municipal");
+await expectHtml("/buscar?q=gobierno+regional+de+Cusco&type=territory", "Cusco: perfil departamental");
+const mirafloresSearch = await expectHtml("/buscar?q=municipalidad+distrital+de+Miraflores&type=territory", "Miraflores: perfil municipal");
+assert.ok(!mirafloresSearch.body.includes("Aguas Verdes: perfil municipal"), "La búsqueda nominal no debe mezclar distritos ajenos por términos institucionales genéricos");
+
+const companiesPage = await expectHtml("/sectors/companies", "Consultoría para empresas");
+assert.ok(companiesPage.body.includes('"@type":"Service"'), "Empresas debe declarar su oferta como Service");
 
 const visualHome = await expectHtml("/", "Amazonía | Conectividad y servicios", {
   headers: { cookie: "noam_hero_index=0" }

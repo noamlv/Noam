@@ -4,16 +4,38 @@ import NextLink from "next/link";
 import { InstitutionalCaseCard } from "@/components/brand/institutional-case-card";
 import { SolutionCard } from "@/components/content/solution-card";
 import { JsonLd } from "@/components/seo/json-ld";
-import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
+import { Accordion, Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import { publicInstitutionTypes, serviceLines } from "@/lib/brand-content";
 import { publicAnalysisAgenda } from "@/lib/analysis-service-catalog";
 import { getSolutionsForMarket } from "@/lib/solutions";
 import { getInstitutionalCases } from "@/lib/institutional-cases";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata, faqJsonLd, serviceJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
+
+const publicSectorDescription = "Estudios, diagnósticos, evaluaciones, encuestas, observatorios e IA para municipalidades, gobiernos regionales y entidades nacionales del Perú.";
+
+const publicSectorFaq = [
+  {
+    title: "¿Trabajan con municipalidades distritales pequeñas?",
+    content: "Sí. Podemos comenzar con una pregunta prioritaria y un alcance acotado, usando información pública y los registros que la entidad ya tenga disponibles."
+  },
+  {
+    title: "¿El alcance puede ser provincial, regional o nacional?",
+    content: "Sí. El método, las fuentes y el equipo se ajustan a la escala territorial, la decisión institucional y el plazo del encargo."
+  },
+  {
+    title: "¿Pueden ayudar a preparar términos de referencia?",
+    content: "Sí. Podemos convertir una necesidad en objetivos, productos, metodología, criterios de calidad y un cronograma verificable antes de contratar."
+  },
+  {
+    title: "¿Pueden integrar datos internos y confidenciales?",
+    content: "Sí, después de acordar permisos, minimización de datos, controles de acceso, trazabilidad y condiciones de uso apropiadas para la institución."
+  }
+];
 
 export const metadata = buildMetadata({
-  title: "Soluciones para el sector público",
-  description: "Estudios, observatorios e IA para municipalidades, gobiernos regionales y entidades nacionales.",
+  title: "Consultoría de análisis de datos para el sector público",
+  description: publicSectorDescription,
   path: "/sectors/public-sector"
 });
 
@@ -24,13 +46,15 @@ export default async function PublicSectorPage() {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Sectores", path: "/sectors" }, { name: "Sector público", path: "/sectors/public-sector" }])} />
+      <JsonLd data={serviceJsonLd({ name: "Consultoría de análisis de datos para el sector público", description: publicSectorDescription, url: `${siteConfig.url}/sectors/public-sector` })} />
+      <JsonLd data={faqJsonLd(publicSectorFaq)} />
       <Section className="pb-16 pt-14 md:pb-24 md:pt-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-center lg:gap-16">
             <div>
-              <Eyebrow className="text-rust">Sector público</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[13ch]">Más capacidad para gestionar cada territorio.</Heading>
-              <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">Ayudamos a autoridades y equipos públicos a comprender problemas, priorizar recursos, monitorear ejecución y comunicar resultados con evidencia útil para la gestión.</p>
+              <Eyebrow className="text-rust">Consultoría para el sector público</Eyebrow>
+              <Heading as="h1" size="display" className="max-w-[14ch]">Análisis de datos para gestionar cada territorio.</Heading>
+              <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">Ayudamos a municipalidades distritales y provinciales, gobiernos regionales y entidades nacionales a comprender problemas, priorizar recursos, monitorear ejecución y evaluar resultados.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/contact?interest=sector-publico" className="rounded-full">Plantear una necesidad</Button>
                 <Button href="/dataperu" variant="ghost" className="gap-2">Explorar DataPerú <ArrowRight className="h-4 w-4" /></Button>
@@ -127,7 +151,7 @@ export default async function PublicSectorPage() {
           <div className="grid gap-10 lg:grid-cols-[0.44fr_1fr] lg:gap-20">
             <div><Eyebrow>Demostración abierta</Eyebrow><Heading size="xl">Datos públicos antes de pedir una reunión.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">DataPerú permite evaluar nuestra forma de integrar, documentar y presentar evidencia territorial.</p><Button href="/dataperu/municipios" variant="ghost" className="mt-7 gap-2">Explorar perfiles <ArrowRight className="h-4 w-4" /></Button></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-ink/15 bg-ink/15 sm:grid-cols-3">
-              {[{ value: "1,891", label: "municipalidades" }, { value: "25", label: "departamentos" }, { value: "3", label: "familias de fuentes públicas" }].map((metric) => (
+              {[{ value: "1,891", label: "municipalidades" }, { value: "25", label: "departamentos" }, { value: "2", label: "capas sectoriales distritales" }].map((metric) => (
                 <div key={metric.label} className="bg-[#ded9cc] p-6 md:p-8"><p className="text-4xl font-medium tracking-[-0.05em] text-ink md:text-5xl">{metric.value}</p><p className="mt-4 text-xs leading-5 text-ink/60">{metric.label}</p></div>
               ))}
             </div>
@@ -147,6 +171,26 @@ export default async function PublicSectorPage() {
                 <span className="mt-6 inline-flex items-center gap-2 text-xs text-white/70">Ver servicio <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
               </NextLink>
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
+            <div>
+              <Eyebrow>Antes de comenzar</Eyebrow>
+              <Heading size="xl">Una necesidad clara basta para la primera conversación.</Heading>
+              <p className="mt-5 text-sm leading-7 text-ink/65">No es necesario llegar con una solución definida. Podemos ordenar la decisión, el territorio, la evidencia disponible y el resultado esperado.</p>
+            </div>
+            <Accordion items={publicSectorFaq} />
+          </div>
+          <div className="mt-16 flex flex-col justify-between gap-6 border-t border-border pt-8 md:flex-row md:items-center">
+            <p className="max-w-2xl text-2xl font-medium leading-tight tracking-[-0.035em] text-ink md:text-3xl">Describe la decisión, el territorio y el plazo.</p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/contact?interest=sector-publico" className="rounded-full">Plantear una necesidad</Button>
+              <Button href="/diagnostico" variant="ghost">Preparar un brief</Button>
+            </div>
           </div>
         </Container>
       </Section>

@@ -6,11 +6,14 @@ import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import { privateIndustries, serviceLines } from "@/lib/brand-content";
 import { getSolutionsForMarket } from "@/lib/solutions";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, buildMetadata, serviceJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/lib/site-config";
+
+const companiesDescription = "Estudios de mercado, inteligencia territorial, evaluación, observatorios e IA para empresas que invierten, operan o crecen en el Perú.";
 
 export const metadata = buildMetadata({
-  title: "Soluciones para empresas",
-  description: "Inteligencia territorial, estudios, evaluación, sistemas de decisión e IA para empresas y organizaciones.",
+  title: "Consultoría de datos e inteligencia territorial para empresas",
+  description: companiesDescription,
   path: "/sectors/companies"
 });
 
@@ -20,11 +23,12 @@ export default function CompaniesPage() {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Sectores", path: "/sectors" }, { name: "Empresas", path: "/sectors/companies" }])} />
+      <JsonLd data={serviceJsonLd({ name: "Consultoría de datos e inteligencia territorial para empresas", description: companiesDescription, url: `${siteConfig.url}/sectors/companies` })} />
       <Section className="pb-16 pt-14 md:pb-24 md:pt-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-center lg:gap-16">
             <div>
-              <Eyebrow className="text-rust">Empresas y organizaciones</Eyebrow>
+              <Eyebrow className="text-rust">Consultoría para empresas</Eyebrow>
               <Heading as="h1" size="display" className="max-w-[14ch]">Inteligencia para invertir, operar y crecer en el territorio.</Heading>
               <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">
                 Combinamos datos públicos, investigación y conocimiento institucional para decisiones donde el mercado, el Estado y el territorio se encuentran.
@@ -119,6 +123,13 @@ export default function CompaniesPage() {
                 <span className="mt-6 inline-flex items-center gap-2 text-xs text-white/70">Ver servicio <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
               </NextLink>
             ))}
+          </div>
+          <div className="mt-16 flex flex-col justify-between gap-6 border-t border-white/20 pt-8 md:flex-row md:items-center">
+            <p className="max-w-2xl text-2xl font-medium leading-tight tracking-[-0.035em] text-white md:text-3xl">Convierte una pregunta de mercado o territorio en un encargo verificable.</p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/contact?interest=empresas" className="rounded-full">Conversar sobre un proyecto</Button>
+              <Button href="/diagnostico" variant="ghost" className="text-white/75 hover:text-white">Preparar un brief</Button>
+            </div>
           </div>
         </Container>
       </Section>

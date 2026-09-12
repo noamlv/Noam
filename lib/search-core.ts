@@ -1,4 +1,4 @@
-export type SearchKind = "evidence" | "solution" | "product" | "sector";
+export type SearchKind = "evidence" | "solution" | "product" | "sector" | "territory";
 
 export type SearchEntry = {
   id: string;
@@ -21,7 +21,7 @@ export type SearchFilters = {
 };
 
 const SEARCH_STOPWORDS = new Set([
-  "con", "del", "desde", "el", "en", "la", "las", "los", "para", "por", "que", "sin", "una", "uno", "unos", "unas"
+  "con", "del", "desde", "distrital", "distritales", "el", "en", "gobierno", "gobiernos", "la", "las", "los", "municipalidad", "municipalidades", "para", "por", "provincial", "provinciales", "que", "regional", "regionales", "sin", "una", "uno", "unos", "unas"
 ]);
 
 export function normalizeSearchText(value: string) {

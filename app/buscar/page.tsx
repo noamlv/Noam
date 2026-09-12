@@ -8,7 +8,7 @@ import type { SearchKind } from "@/lib/search-core";
 export const metadata = {
   ...buildMetadata({
     title: "Buscar en NOAM",
-    description: "Encuentra estudios, indicadores, guías, soluciones, productos de datos y prácticas sectoriales de NOAM.",
+    description: "Encuentra territorios, estudios, indicadores, guías, soluciones, productos de datos y prácticas sectoriales de NOAM.",
     path: "/buscar"
   }),
   robots: { index: false, follow: true }
@@ -19,7 +19,8 @@ const kindOptions: Array<{ value: SearchKind | "all"; label: string }> = [
   { value: "evidence", label: "Evidencia" },
   { value: "solution", label: "Soluciones" },
   { value: "product", label: "Productos" },
-  { value: "sector", label: "Sectores" }
+  { value: "sector", label: "Sectores" },
+  { value: "territory", label: "Territorios" }
 ];
 const topicOptions = [
   { value: "all", label: "Todos los temas" },
@@ -27,7 +28,7 @@ const topicOptions = [
   { value: "inversion", label: "Inversión" },
   { value: "ia", label: "IA" }
 ] as const;
-const suggestedSearches = ["municipalidades", "inversión pública", "encuestas", "elecciones 2026", "dashboard", "inteligencia artificial"];
+const suggestedSearches = ["Cajamarca", "municipalidades", "agua y saneamiento", "inversión pública", "encuestas", "dashboard", "inteligencia artificial"];
 
 interface SearchPageProps {
   searchParams: Promise<{ q?: string; type?: string; topic?: string }>;
@@ -47,7 +48,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.42fr] lg:items-end">
             <div><Eyebrow className="text-rust">Índice NOAM</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Encuentra una respuesta, una herramienta o un punto de partida.</Heading></div>
-            <p className="text-sm leading-7 text-ink/68 md:text-base">Busca en {index.length} estudios, soluciones, productos y prácticas. Los resultados se ordenan por relevancia, no por popularidad.</p>
+            <p className="text-sm leading-7 text-ink/68 md:text-base">Busca en {index.length} territorios, estudios, soluciones, productos y prácticas. Los resultados se ordenan por relevancia, no por popularidad.</p>
           </div>
 
           <form action="/buscar" method="get" role="search" className="mt-12 grid gap-3 rounded-[1.25rem] border border-ink/15 bg-panel p-4 shadow-subtle md:grid-cols-[1fr_190px_190px_auto] md:items-end md:p-5">

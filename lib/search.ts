@@ -1,10 +1,14 @@
 import { getAllContent } from "@/lib/content";
 import { getManagedPlatformCatalog } from "@/lib/platform-products";
 import { getManagedPlatformResources } from "@/lib/platform-resources";
+import { municipalities } from "@/lib/dataperu";
+import { departmentProfiles } from "@/lib/dataperu-departments";
+import { peruTerritories } from "@/lib/peru-territories";
 import { sectorPractices } from "@/lib/sector-practices";
 import { solutions } from "@/lib/solutions";
 import { searchEntries, type SearchEntry, type SearchFilters } from "@/lib/search-core";
 import { briefEditions } from "@/lib/brief";
+import { buildTerritorySearchEntries } from "@/lib/territory-search";
 
 const curatedEntries: SearchEntry[] = [
   { id: "study:panorama", title: "Panorama municipal del Perú 2025", description: "Estudio insignia sobre 1,891 municipalidades, capacidades, recursos e inversión.", href: "/dataperu/panorama-municipal-2025", kind: "evidence", label: "Estudio insignia", topic: "gobierno", featured: true, keywords: ["municipalidades", "gobierno local", "RENAMU", "MEF", "Perú"], date: "2026-07-16" },
@@ -155,8 +159,10 @@ export async function getSearchIndex(): Promise<SearchEntry[]> {
     keywords: ["brief NOAM", ...edition.signals.flatMap((signal) => [signal.label, signal.title]), ...edition.actions.map((action) => action.title)]
   }));
 
+  const { departmentEntries, municipalityEntries } = buildTerritorySearchEntries(municipalities, departmentProfiles, peruTerritories);
+
   const unique = new Map<string, SearchEntry>();
-  for (const entry of [...curatedEntries, ...briefEntries, ...contentEntries, ...resourceEntries, ...solutionEntries, ...productEntries, ...sectorEntries]) {
+  for (const entry of [...curatedEntries, ...briefEntries, ...contentEntries, ...resourceEntries, ...solutionEntries, ...productEntries, ...sectorEntries, ...departmentEntries, ...municipalityEntries]) {
     if (!unique.has(entry.href)) unique.set(entry.href, entry);
   }
   return [...unique.values()];
