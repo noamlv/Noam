@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowRight, CalendarRange, Check, Database, Droplets, ExternalLink, FileDown, Landmark, Minus, Monitor, ShieldCheck, TrendingUp, Users, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, CalendarRange, Check, Database, Droplets, ExternalLink, FileDown, GraduationCap, Landmark, Minus, Monitor, ShieldCheck, TrendingUp, Users, X } from "lucide-react";
 import NextLink from "next/link";
 import { notFound } from "next/navigation";
 import { ShareActions } from "@/components/content/share-actions";
@@ -23,6 +23,7 @@ import {
   yesNoLabel
 } from "@/lib/dataperu";
 import { getMunicipalitySectorMetrics, getSectorMunicipality, sectorTopics } from "@/lib/dataperu-sectors";
+import { educationRate, educationSource, getEducationDistrict } from "@/lib/dataperu-education";
 import { getCoverageGap, getWaterSanitationDistrict, waterSanitationSource } from "@/lib/dataperu-water-sanitation";
 import { breadcrumbJsonLd, buildMetadata, ogImagePath } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
@@ -47,7 +48,7 @@ export async function generateMetadata({ params }: MunicipalityPageProps): Promi
   const district = titleCase(municipality.district);
   return buildMetadata({
     title: `Perfil municipal de ${district}`,
-    description: `Población, agua y saneamiento, presupuesto, inversión y capacidades institucionales de la Municipalidad ${municipality.municipalityType} de ${district}, con fuentes oficiales 2025.`,
+    description: `Población, educación, agua y saneamiento, presupuesto, inversión y capacidades institucionales de la Municipalidad ${municipality.municipalityType} de ${district}, con fuentes oficiales 2025.`,
     path: `/dataperu/municipios/${ubigeo}`,
     image: ogImagePath("municipios", ubigeo)
   });
@@ -85,6 +86,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
   const signals = getMunicipalitySignals(municipality, context, projects);
   const sectorMunicipality = getSectorMunicipality(municipality.ubigeo);
   const waterSanitation = getWaterSanitationDistrict(municipality.ubigeo);
+  const education = getEducationDistrict(municipality.ubigeo);
   const sectorReadings = sectorMunicipality
     ? sectorTopics.map((topic) => ({
         ...topic,
@@ -112,11 +114,11 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
         "@context": "https://schema.org",
         "@type": "Dataset",
         name: `Perfil municipal de ${district} — DataPerú 2025`,
-        description: "Población, agua y saneamiento, presupuesto, inversión y capacidades institucionales de una municipalidad del Perú.",
+        description: "Población, educación, agua y saneamiento, presupuesto, inversión y capacidades institucionales de una municipalidad del Perú.",
         url: profileUrl,
         datePublished: renamuSource.releaseDate,
         creator: { "@type": "Organization", name: siteConfig.legalName },
-        isBasedOn: [renamuSource.datasetUrl, dataperuSources.population.pageUrl, dataperuSources.budget.datasetUrl, projectSource.resourceUrl, waterSanitationSource.datasetUrl],
+        isBasedOn: [renamuSource.datasetUrl, dataperuSources.population.pageUrl, dataperuSources.budget.datasetUrl, projectSource.resourceUrl, waterSanitationSource.datasetUrl, educationSource.datasetUrl],
         license: renamuSource.license,
         spatialCoverage: `${district}, ${department}, Perú`,
         distribution: [{ "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: `${profileUrl}/data.csv` }]
@@ -333,6 +335,44 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
         </Section>
       ) : null}
 
+      {education ? (
+        <Section>
+          <Container>
+            <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
+              <div>
+                <GraduationCap className="h-5 w-5 text-rust" aria-hidden />
+                <Eyebrow className="mt-6">Educación</Eyebrow>
+                <Heading size="xl">Matrícula de Educación Básica Regular.</Heading>
+                <p className="mt-5 text-sm leading-7 text-ink/65">Censo Educativo 2025. La matrícula registrada no demuestra asistencia, permanencia, aprendizaje ni calidad del servicio.</p>
+              </div>
+              <div>
+                <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-4">
+                  {[
+                    { label: "Matrícula EBR", value: formatMetric(education.enrollment.total), note: `${formatMetric(education.servicePrograms.total)} servicios o programas` },
+                    { label: "Ámbito rural", value: formatPercent(educationRate(education.enrollment.rural, education.enrollment.total)), note: `${formatMetric(education.enrollment.rural)} estudiantes` },
+                    { label: "Gestión pública", value: formatPercent(educationRate(education.enrollment.publicManagement, education.enrollment.total)), note: `${formatMetric(education.enrollment.publicManagement)} estudiantes` },
+                    { label: "Datos de informante", value: formatPercent(educationRate(education.provenance.informantRecords, education.servicePrograms.total)), note: `${formatMetric(education.provenance.informantRecords)} registros` }
+                  ].map((metric) => (
+                    <div key={metric.label} className="bg-panel p-5">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">{metric.label}</p>
+                      <p className="mt-3 text-2xl font-medium tracking-[-0.035em] text-ink">{metric.value}</p>
+                      <p className="mt-1 text-xs leading-5 text-muted">{metric.note}</p>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-5 grid gap-4 border-y border-border py-4 text-xs sm:grid-cols-3">
+                  <p><span className="text-muted">Inicial</span><strong className="mt-1 block font-medium text-ink">{formatMetric(education.enrollment.initial)}</strong></p>
+                  <p><span className="text-muted">Primaria</span><strong className="mt-1 block font-medium text-ink">{formatMetric(education.enrollment.primary)}</strong></p>
+                  <p><span className="text-muted">Secundaria</span><strong className="mt-1 block font-medium text-ink">{formatMetric(education.enrollment.secondary)}</strong></p>
+                </div>
+                <NextLink href={`/dataperu/educacion?q=${municipality.ubigeo}`} className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust hover:text-ink">Comparar con otros distritos <ArrowRight className="h-3.5 w-3.5" aria-hidden /></NextLink>
+                <p className="mt-3 text-[11px] leading-5 text-muted">Fuente: {educationSource.publisher}. Los registros con imputación parcial o total se identifican en el explorador nacional.</p>
+              </div>
+            </div>
+          </Container>
+        </Section>
+      ) : null}
+
       {sectorReadings.length > 0 ? (
         <Section id="gestion-sectorial" className="border-y border-border bg-panel/45">
           <Container>
@@ -424,11 +464,13 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
               <p><strong className="font-medium text-ink">Presupuesto:</strong> {dataperuSources.budget.name}, {dataperuSources.budget.publisher}.</p>
               <p><strong className="font-medium text-ink">Proyectos:</strong> {projectSource.name}, {projectSource.publisher}. {projectSource.notes}</p>
               <p><strong className="font-medium text-ink">Capacidades:</strong> {renamuSource.name}, {renamuSource.publisher}. {renamuSource.notes}</p>
+              <p><strong className="font-medium text-ink">Educación:</strong> {educationSource.name}, {educationSource.publisher}. Matrícula no equivale a asistencia ni aprendizaje.</p>
               <p>La ejecución financiera describe avance del gasto, no su calidad, pertinencia, avance físico ni impacto.</p>
               <div className="flex flex-wrap gap-5">
                 <a href={dataperuSources.population.pageUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Fuente INEI <ExternalLink className="h-3.5 w-3.5" /></a>
                 <a href={dataperuSources.budget.pageUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Fuente MEF <ExternalLink className="h-3.5 w-3.5" /></a>
                 <a href={renamuSource.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Fuente RENAMU <ExternalLink className="h-3.5 w-3.5" /></a>
+                <a href={educationSource.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Fuente Minedu <ExternalLink className="h-3.5 w-3.5" /></a>
               </div>
             </div>
           </div>

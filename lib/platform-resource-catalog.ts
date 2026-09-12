@@ -57,6 +57,17 @@ export const platformResourceCatalog: PlatformResource[] = [
     format: "CSV"
   },
   {
+    slug: "matricula-ebr-distritos-2025",
+    title: "Matrícula escolar por distrito 2025",
+    description: "Tabla nacional con matrícula EBR por sexo, nivel, ámbito, gestión y procedencia del registro para 1,892 distritos.",
+    kind: "dataset",
+    url: "/dataperu/educacion/data.csv",
+    productSlug: "dataperu",
+    sourceLabel: "Minedu · Censo Educativo 2025 · procesamiento NOAM",
+    period: "2025",
+    format: "CSV"
+  },
+  {
     slug: "perfiles-municipales-dataperu",
     title: "Buscador nacional de perfiles municipales",
     description: "Acceso a 1,891 perfiles territoriales con capacidad declarada, población, presupuesto y cartera visible de proyectos.",

@@ -6,6 +6,7 @@ import {
   projectSource,
   renamuSource
 } from "@/lib/dataperu";
+import { educationRate, educationSource, getEducationDistrict } from "@/lib/dataperu-education";
 import { getWaterSanitationDistrict, waterSanitationSource } from "@/lib/dataperu-water-sanitation";
 
 export const revalidate = 86400;
@@ -32,6 +33,7 @@ function sourceUrl(source: string) {
   if (source === dataperuSources.budget.name) return dataperuSources.budget.datasetUrl;
   if (source === projectSource.name) return projectSource.resourceUrl;
   if (source === waterSanitationSource.name) return waterSanitationSource.datasetUrl;
+  if (source === educationSource.name) return educationSource.datasetUrl;
   return "";
 }
 
@@ -40,6 +42,7 @@ export async function GET(_request: Request, context: { params: Promise<{ ubigeo
   const municipality = getMunicipality(ubigeo);
   const municipalContext = getMunicipalityContext(ubigeo);
   const waterSanitation = getWaterSanitationDistrict(ubigeo);
+  const education = getEducationDistrict(ubigeo);
   if (!municipality || !municipalContext) return new Response("Municipalidad no encontrada", { status: 404 });
 
   const rows: CsvRow[] = [
@@ -55,6 +58,19 @@ export async function GET(_request: Request, context: { params: Promise<{ ubigeo
       { section: "agua_saneamiento", key: "agua_red_publica_porcentaje", label: "Viviendas con abastecimiento de agua por red pública", value: waterSanitation.waterNetwork.percent, unit: "porcentaje", period: "2025", source: waterSanitationSource.name, notes: "No acredita continuidad, potabilidad, presión ni calidad." },
       { section: "agua_saneamiento", key: "saneamiento_red_publica_viviendas", label: "Viviendas con servicio higiénico conectado a red pública", value: waterSanitation.sanitationNetwork.value, unit: "viviendas", period: "2025", source: waterSanitationSource.name, notes: "No acredita tratamiento ni disposición final segura de aguas residuales." },
       { section: "agua_saneamiento", key: "saneamiento_red_publica_porcentaje", label: "Viviendas con servicio higiénico conectado a red pública", value: waterSanitation.sanitationNetwork.percent, unit: "porcentaje", period: "2025", source: waterSanitationSource.name, notes: "No acredita tratamiento ni disposición final segura de aguas residuales." }
+    ] satisfies CsvRow[] : []),
+    ...(education ? [
+      { section: "educacion", key: "matricula_ebr", label: "Matrícula de Educación Básica Regular", value: education.enrollment.total, unit: "estudiantes", period: "2025", source: educationSource.name, notes: "Matrícula registrada; no mide asistencia, permanencia ni aprendizaje." },
+      { section: "educacion", key: "servicios_programas_ebr", label: "Servicios o programas de EBR con matrícula", value: education.servicePrograms.total, unit: "códigos modulares", period: "2025", source: educationSource.name, notes: "Un código modular no equivale automáticamente a un local físico distinto." },
+      { section: "educacion", key: "matricula_rural", label: "Matrícula EBR en ámbito rural", value: education.enrollment.rural, unit: "estudiantes", period: "2025", source: educationSource.name, notes: "Ámbito del centro poblado asignado por la UE-Minedu." },
+      { section: "educacion", key: "matricula_rural_porcentaje", label: "Matrícula EBR en ámbito rural", value: educationRate(education.enrollment.rural, education.enrollment.total), unit: "porcentaje", period: "2025", source: educationSource.name },
+      { section: "educacion", key: "matricula_gestion_publica", label: "Matrícula EBR en gestión pública", value: education.enrollment.publicManagement, unit: "estudiantes", period: "2025", source: educationSource.name, notes: "Incluye gestión pública directa y pública de gestión privada." },
+      { section: "educacion", key: "matricula_gestion_publica_porcentaje", label: "Matrícula EBR en gestión pública", value: educationRate(education.enrollment.publicManagement, education.enrollment.total), unit: "porcentaje", period: "2025", source: educationSource.name },
+      { section: "educacion", key: "matricula_inicial", label: "Matrícula EBR en nivel inicial", value: education.enrollment.initial, unit: "estudiantes", period: "2025", source: educationSource.name },
+      { section: "educacion", key: "matricula_primaria", label: "Matrícula EBR en primaria", value: education.enrollment.primary, unit: "estudiantes", period: "2025", source: educationSource.name },
+      { section: "educacion", key: "matricula_secundaria", label: "Matrícula EBR en secundaria", value: education.enrollment.secondary, unit: "estudiantes", period: "2025", source: educationSource.name },
+      { section: "educacion", key: "registros_imputacion_parcial", label: "Registros con imputación parcial", value: education.provenance.partialImputationRecords, unit: "registros", period: "2025", source: educationSource.name },
+      { section: "educacion", key: "registros_imputacion_total", label: "Registros con imputación total", value: education.provenance.totalImputationRecords, unit: "registros", period: "2025", source: educationSource.name }
     ] satisfies CsvRow[] : []),
     { section: "presupuesto", key: "pia", label: "Presupuesto institucional de apertura", value: municipalContext.budget.pia, unit: "PEN", period: "2025", source: dataperuSources.budget.name },
     { section: "presupuesto", key: "pim", label: "Presupuesto institucional modificado", value: municipalContext.budget.pim, unit: "PEN", period: "2025", source: dataperuSources.budget.name },

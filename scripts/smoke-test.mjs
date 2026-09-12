@@ -55,6 +55,7 @@ const publicPages = [
   ["/electoral/erm-2026/territorios/150122", "Brief territorial de preparación de gestión"],
   ["/dataperu", "DataPerú"],
   ["/dataperu/agua-saneamiento", "Agua y saneamiento, distrito por distrito."],
+  ["/dataperu/educacion", "Matrícula escolar, distrito por distrito."],
   ["/dataperu/agendas-territoriales", "El mismo problema no se resuelve igual en todo el Perú"],
   ["/dataperu/departamentos", "El país cambia cuando cambia la escala"],
   ["/dataperu/panorama-municipal-2025", "El Perú municipal no cabe en un promedio."],
@@ -149,6 +150,21 @@ assert.equal(limaMunicipalCsv.status, 200, "El CSV municipal debe continuar disp
 const limaMunicipalCsvBody = await limaMunicipalCsv.text();
 assert.ok(limaMunicipalCsvBody.includes("agua_red_publica_porcentaje"), "El CSV municipal debe incluir agua por red pública");
 assert.ok(limaMunicipalCsvBody.includes("saneamiento_red_publica_porcentaje"), "El CSV municipal debe incluir saneamiento por red pública");
+
+const educationPage = await expectHtml("/dataperu/educacion", "Matrícula no equivale a aprendizaje.");
+assert.ok(educationPage.body.includes('"@type":"Dataset"'), "Educación debe publicar schema Dataset");
+assert.ok(educationPage.body.includes("Matrícula no equivale a aprendizaje"), "La capa educativa debe explicar sus límites de interpretación");
+assert.ok(educationPage.body.includes("/dataperu/educacion/data.csv"), "La capa educativa debe ofrecer el dataset nacional");
+const educationCsv = await get("/dataperu/educacion/data.csv");
+assert.equal(educationCsv.status, 200, "El dataset educativo nacional debe ser descargable");
+assert.match(educationCsv.headers.get("content-type") ?? "", /^text\/csv/);
+const educationCsvBody = await educationCsv.text();
+assert.equal(educationCsvBody.trim().split(/\r?\n/).length, 1_893, "El CSV educativo debe contener cabecera y 1,892 distritos");
+assert.ok(educationCsvBody.includes("160405,Loreto,Mariscal Ramón Castilla,Santa Rosa de Loreto"), "El CSV educativo debe conservar el distrito adicional del Minedu");
+const filteredEducationPage = await expectHtml("/dataperu/educacion?q=150101", "Matrícula escolar, distrito por distrito.");
+assert.ok(filteredEducationPage.body.includes('value="150101"'), "El explorador educativo debe admitir una consulta precargada por ubigeo");
+assert.ok(limaMunicipalProfile.body.includes("Matrícula de Educación Básica Regular"), "La ficha municipal debe integrar la capa educativa");
+assert.ok(limaMunicipalCsvBody.includes("matricula_gestion_publica_porcentaje"), "El CSV municipal debe incluir matrícula por gestión pública");
 
 const servicesDirectory = await expectHtml("/services", "Encuentra el punto de partida");
 assert.ok(servicesDirectory.body.includes("Por tipo de encargo"), "Servicios debe permitir buscar por tipo de encargo");

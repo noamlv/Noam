@@ -3,12 +3,14 @@ import { MunicipalityExplorer } from "@/components/dataperu/municipality-explore
 import { JsonLd } from "@/components/seo/json-ld";
 import { Container, Eyebrow, Heading, Section } from "@/components/ui";
 import { dataperuSources, getMunicipalityContext, municipalities, renamuSource, renamuSummary } from "@/lib/dataperu";
+import { educationSource } from "@/lib/dataperu-education";
+import { waterSanitationSource } from "@/lib/dataperu-water-sanitation";
 import { breadcrumbJsonLd, buildMetadata, datasetJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildMetadata({
   title: "Perfiles municipales",
-  description: "Explora población, presupuesto, inversión y capacidades institucionales de 1,891 municipalidades del Perú.",
+  description: "Explora población, educación, agua y saneamiento, presupuesto, inversión y capacidades institucionales de 1,891 municipalidades del Perú.",
   path: "/dataperu/municipios"
 });
 
@@ -32,7 +34,7 @@ export default function MunicipalityIndexPage() {
       <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "DataPerú", path: "/dataperu" }, { name: "Perfiles municipales", path: "/dataperu/municipios" }])} />
       <JsonLd data={datasetJsonLd({
         name: "Perfiles municipales DataPerú 2025",
-        description: "Población, presupuesto, inversión y capacidades institucionales de municipalidades provinciales y distritales del Perú.",
+        description: "Población, educación, agua y saneamiento, presupuesto, inversión y capacidades institucionales de municipalidades provinciales y distritales del Perú.",
         url: `${siteConfig.url}/dataperu/municipios`,
         datePublished: renamuSource.releaseDate
       })} />
@@ -43,7 +45,7 @@ export default function MunicipalityIndexPage() {
           <div className="mt-5 grid gap-10 lg:grid-cols-[1fr_0.56fr] lg:items-end">
             <div>
               <Heading as="h1" size="display" className="max-w-[13ch] text-white">Perfiles municipales</Heading>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-white/68">Una línea de base abierta para entender población, recursos, ejecución y capacidades antes de diseñar un estudio, sistema o intervención.</p>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-white/68">Una línea de base abierta para entender población, servicios, recursos, ejecución y capacidades antes de diseñar un estudio, sistema o intervención.</p>
             </div>
             <div className="grid grid-cols-2 gap-px overflow-hidden rounded-md border border-white/12 bg-white/12">
               <div className="bg-[#192822] p-5"><p className="text-3xl font-medium">{renamuSummary.municipalities.toLocaleString("es-PE")}</p><p className="mt-2 text-xs text-white/52">municipalidades</p></div>
@@ -75,12 +77,14 @@ export default function MunicipalityIndexPage() {
               <Heading size="lg">Trazabilidad antes que apariencia de precisión.</Heading>
             </div>
             <div className="space-y-5 text-sm leading-7 text-ink/68">
-              <p><strong className="font-medium text-ink">Fuentes:</strong> INEI para población proyectada, MEF para presupuesto y ejecución, y RENAMU para capacidades institucionales.</p>
+              <p><strong className="font-medium text-ink">Fuentes:</strong> INEI para población, agua y saneamiento; Minedu para matrícula EBR; MEF para presupuesto y ejecución; y RENAMU para capacidades institucionales.</p>
               <p>{dataperuSources.population.notes} {renamuSource.notes}</p>
               <div className="flex flex-wrap gap-5 pt-2">
                 <a href={dataperuSources.budget.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Datos del MEF <ExternalLink className="h-3.5 w-3.5" /></a>
                 <a href={dataperuSources.population.pageUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Población del INEI <ExternalLink className="h-3.5 w-3.5" /></a>
                 <a href={renamuSource.technicalSheetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Ficha técnica <ExternalLink className="h-3.5 w-3.5" /></a>
+                <a href={waterSanitationSource.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Censos 2025 <ExternalLink className="h-3.5 w-3.5" /></a>
+                <a href={educationSource.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Matrícula Minedu <ExternalLink className="h-3.5 w-3.5" /></a>
               </div>
             </div>
           </div>

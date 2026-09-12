@@ -1,15 +1,16 @@
-import { ArrowRight, Building2, Database, Droplets, Leaf, Recycle, ShieldCheck, Siren, Store } from "lucide-react";
+import { ArrowRight, Building2, Database, Droplets, GraduationCap, Leaf, Recycle, ShieldCheck, Siren, Store } from "lucide-react";
 import NextLink from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import { getNationalSectorMetrics, sectorSource, sectorTopics } from "@/lib/dataperu-sectors";
+import { educationSource, educationSummary } from "@/lib/dataperu-education";
 import { waterSanitationSource, waterSanitationSummary } from "@/lib/dataperu-water-sanitation";
 import { breadcrumbJsonLd, buildMetadata, datasetJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildMetadata({
   title: "Temas de gestión municipal",
-  description: "Explora agua y saneamiento por distrito y lecturas de residuos, seguridad, riesgos, economía local y ambiente en municipalidades del Perú.",
+  description: "Explora educación, agua y saneamiento por distrito y lecturas de residuos, seguridad, riesgos, economía local y ambiente en municipalidades del Perú.",
   path: "/dataperu/temas"
 });
 
@@ -80,6 +81,24 @@ export default function SectorTopicsPage() {
                 </div>
               </NextLink>
               <p className="mt-3 text-[11px] leading-5 text-muted">Fuente: {waterSanitationSource.publisher}. Las conexiones no acreditan continuidad, potabilidad ni tratamiento.</p>
+              <NextLink
+                href="/dataperu/educacion"
+                className="group relative mt-6 block overflow-hidden rounded-md border border-border bg-panel p-7 transition-all duration-220 hover:-translate-y-0.5 hover:border-border-strong"
+              >
+                <span className="absolute inset-x-0 top-0 h-1 bg-rust" />
+                <div className="flex items-start justify-between gap-5">
+                  <GraduationCap className="h-5 w-5 text-rust" aria-hidden />
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-muted">Censo Educativo 2025</span>
+                </div>
+                <h2 className="mt-10 text-2xl font-medium tracking-[-0.035em] text-ink">Educación</h2>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-ink/64">Matrícula de Educación Básica Regular por nivel, ámbito, gestión y procedencia del dato en 1,892 distritos.</p>
+                <div className="mt-8 grid gap-5 border-t border-border pt-5 sm:grid-cols-[1fr_1fr_auto] sm:items-end">
+                  <span><span className="block text-2xl font-medium tracking-[-0.04em] text-ink">{educationSummary.enrollment.total.toLocaleString("es-PE")}</span><span className="mt-1 block text-[11px] text-muted">estudiantes matriculados</span></span>
+                  <span><span className="block text-2xl font-medium tracking-[-0.04em] text-ink">{educationSummary.rates.ruralEnrollmentPercent}%</span><span className="mt-1 block text-[11px] text-muted">matrícula rural</span></span>
+                  <span className="inline-flex items-center gap-2 text-xs font-medium text-rust">Explorar distritos <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span>
+                </div>
+              </NextLink>
+              <p className="mt-3 text-[11px] leading-5 text-muted">Fuente: {educationSource.publisher}. Matrícula no equivale a asistencia, permanencia ni aprendizaje.</p>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
               {sectorTopics.map((topic, index) => {
                 const Icon = icons[topic.slug];

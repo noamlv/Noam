@@ -25,6 +25,7 @@ const staticRoutes = [
   "/brief",
   "/dataperu",
   "/dataperu/agua-saneamiento",
+  "/dataperu/educacion",
   "/dataperu/agendas-territoriales",
   "/dataperu/departamentos",
   "/dataperu/panorama-municipal-2025",
