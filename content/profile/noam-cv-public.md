@@ -4,7 +4,7 @@
 
 Doctor en Ciencia Política y Gobierno. Investigación, datos y tecnología para decisiones públicas.
 
-Email: hola@noam.pe | Web: noam.pe | LinkedIn: linkedin.com/in/noamlv | GitHub: github.com/noamlv
+Email: contacto@noam.pe | Web: noam.pe | LinkedIn: linkedin.com/in/noamlv | GitHub: github.com/noamlv
 
 ## Perfil
 

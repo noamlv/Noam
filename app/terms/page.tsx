@@ -50,7 +50,7 @@ const terms = [
   },
   {
     title: "Contacto y ley aplicable",
-    body: "Estos términos se interpretan conforme al marco aplicable en el Perú. Para consultas sobre uso, atribución o correcciones escribe a hola@noam.pe. La contraparte legal de cada servicio será identificada expresamente en su documentación contractual."
+    body: "Estos términos se interpretan conforme al marco aplicable en el Perú. Para consultas sobre uso, atribución o correcciones escribe a contacto@noam.pe. La contraparte legal de cada servicio será identificada expresamente en su documentación contractual."
   }
 ];
 

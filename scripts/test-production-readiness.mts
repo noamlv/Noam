@@ -10,7 +10,7 @@ const valid = {
   NOAM_ALLOW_LEGACY_ADMIN: "false",
   RESEND_API_KEY: "re_production_example_key",
   LEAD_NOTIFY_TO: "oportunidades@noam.pe",
-  LEAD_NOTIFY_FROM: "NOAM <hola@noam.pe>"
+  LEAD_NOTIFY_FROM: "NOAM <contacto@noam.pe>"
 };
 
 assert.equal(isProductionReady(valid), true);

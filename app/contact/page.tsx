@@ -122,8 +122,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               ) : (
                 <>
               {params.error === "validation" ? <p role="alert" className="mb-5 rounded-sm border border-rust/30 bg-rust/5 px-4 py-3 text-sm text-ink">Revisa los campos obligatorios y confirma el uso de tus datos.</p> : null}
-              {params.error === "rate" ? <p role="alert" className="mb-5 rounded-sm border border-rust/30 bg-rust/5 px-4 py-3 text-sm text-ink">Recibimos varias solicitudes seguidas. Espera unos minutos o escribe a hola@noam.pe.</p> : null}
-              {params.error === "unavailable" ? <p role="alert" className="mb-5 rounded-sm border border-rust/30 bg-rust/5 px-4 py-3 text-sm leading-6 text-ink">No pudimos guardar la consulta en este momento. No la reenvíes todavía; escríbenos directamente a <a href="mailto:hola@noam.pe" className="font-medium underline underline-offset-4">hola@noam.pe</a>.</p> : null}
+              {params.error === "rate" ? <p role="alert" className="mb-5 rounded-sm border border-rust/30 bg-rust/5 px-4 py-3 text-sm text-ink">Recibimos varias solicitudes seguidas. Espera unos minutos o escribe a contacto@noam.pe.</p> : null}
+              {params.error === "unavailable" ? <p role="alert" className="mb-5 rounded-sm border border-rust/30 bg-rust/5 px-4 py-3 text-sm leading-6 text-ink">No pudimos guardar la consulta en este momento. No la reenvíes todavía; escríbenos directamente a <a href="mailto:contacto@noam.pe" className="font-medium underline underline-offset-4">contacto@noam.pe</a>.</p> : null}
               <form action={submitLead} className="rounded-[1.25rem] border border-border bg-panel p-6 shadow-subtle md:p-8">
                 <input type="hidden" name="originPath" value={originPath} />
                 <div className="absolute left-[-10000px] top-auto h-px w-px overflow-hidden" aria-hidden="true"><label htmlFor="website">Sitio web</label><input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" /></div>
@@ -172,7 +172,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               </form>
 
               <div className="mt-5 flex flex-wrap items-center justify-between gap-3 text-xs text-muted">
-                <p className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-rust" aria-hidden />También puedes escribir directamente a <a href="mailto:hola@noam.pe" className="font-medium text-ink underline decoration-border underline-offset-4">hola@noam.pe</a>.</p>
+                <p className="flex items-center gap-2"><Check className="h-3.5 w-3.5 text-rust" aria-hidden />También puedes escribir directamente a <a href="mailto:contacto@noam.pe" className="font-medium text-ink underline decoration-border underline-offset-4">contacto@noam.pe</a>.</p>
                 <NextLink href="/como-trabajamos" className="font-medium text-ink underline decoration-border underline-offset-4">Cómo comienza un encargo</NextLink>
               </div>
                 </>

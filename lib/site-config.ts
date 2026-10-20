@@ -5,7 +5,7 @@ export const siteConfig = {
     "Consultora de inteligencia pública y territorial. Estudios, sistemas de decisión e IA para gobiernos, empresas y organizaciones.",
   url: "https://noam.pe",
   locale: "es",
-  email: "hola@noam.pe",
+  email: "contacto@noam.pe",
   phone: "+51 996 358 492",
   phoneE164: "+51996358492",
   whatsappNumber: "51996358492",

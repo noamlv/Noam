@@ -45,4 +45,4 @@ La forma mas limpia es enviar cambios en uno de estos formatos:
 - Imagen de perfil.
 - Enlaces sociales nuevos.
 
-Regla de seguridad: datos como DNI, pasaporte, dirección personal y códigos internos no deben entrar en el CV público. El contacto público institucional es `hola@noam.pe`.
+Regla de seguridad: datos como DNI, pasaporte, dirección personal y códigos internos no deben entrar en el CV público. El contacto público institucional es `contacto@noam.pe`.

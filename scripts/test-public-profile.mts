@@ -23,11 +23,11 @@ for (const pattern of forbidden) assert.doesNotMatch(source, pattern, `El CV pú
 
 assert.ok(fs.existsSync(pdfPath), "El CV público generado debe existir");
 assert.ok(fs.statSync(pdfPath).size < 2_000_000, "El CV público debe pesar menos de 2 MB");
-assert.match(source, /hola@noam\.pe/);
+assert.match(source, /contacto@noam\.pe/);
 assert.match(source, /Web: noam\.pe/);
 assert.match(source, /Doctor en Ciencia Política y Gobierno/);
 assert.doesNotMatch(source, /Candidato a Doctor/i);
-assert.equal(noamProfile.email, "hola@noam.pe");
+assert.equal(noamProfile.email, "contacto@noam.pe");
 assert.match(noamProfile.headline, /Doctor en Ciencia Política y Gobierno/);
 assert.doesNotMatch(noamProfile.bio.join(" "), /candidato a doctor/i);
 assert.equal(noamProfile.credentials.length, 4);

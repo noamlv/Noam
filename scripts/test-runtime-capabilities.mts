@@ -17,7 +17,7 @@ assert.deepEqual(evaluateRuntimeCapabilities({
   NODE_ENV: "production",
   DATABASE_URL: "postgres://db/noam",
   RESEND_API_KEY: "re_example",
-  LEAD_NOTIFY_FROM: "NOAM <hola@noam.pe>"
+  LEAD_NOTIFY_FROM: "NOAM <contacto@noam.pe>"
 }), {
   analytics: true,
   leadIntake: true,
