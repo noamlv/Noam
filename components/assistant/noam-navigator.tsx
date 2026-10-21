@@ -4,7 +4,7 @@ import { ArrowRight, MessageCircle, RotateCcw, X } from "lucide-react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { type FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { type AssistantAnswer, answerNavigatorQuestion, buildAssistantEmailUrl } from "@/lib/assistant-routing";
+import { type AssistantAnswer, answerNavigatorQuestion, buildAssistantEmailUrl, refineNavigatorAnswer } from "@/lib/assistant-routing";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { peruTerritories } from "@/lib/peru-territories";
 
@@ -70,6 +70,8 @@ export function NoamNavigator() {
   const [territoryCode, setTerritoryCode] = useState("");
   const [question, setQuestion] = useState("");
   const [askedQuestion, setAskedQuestion] = useState("");
+  const [followUp, setFollowUp] = useState("");
+  const [submittedFollowUp, setSubmittedFollowUp] = useState("");
   const [answer, setAnswer] = useState<AssistantAnswer | "unknown" | null>(null);
 
   useEffect(() => {
@@ -96,6 +98,7 @@ export function NoamNavigator() {
 
   const result = useMemo(() => audience && need ? recommendation(audience, need, territoryCode) : null, [audience, need, territoryCode]);
   const selectedTerritory = peruTerritories.find((territory) => territory.code === territoryCode);
+  const answerTerritory = answer && answer !== "unknown" ? peruTerritories.find((territory) => territory.name === answer.territory) : undefined;
   const audienceLabel = audiences.find((option) => option.value === audience)?.label;
   const needLabel = needs.find((option) => option.value === need)?.label;
   const contactHref = result
@@ -112,6 +115,17 @@ export function NoamNavigator() {
     setAskedQuestion(text);
     setAnswer(answerNavigatorQuestion(text) ?? "unknown");
     setQuestion("");
+    setFollowUp("");
+    setSubmittedFollowUp("");
+  }
+
+  function clarify(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const detail = followUp.trim().slice(0, 160);
+    if (detail.length < 5) return;
+    setSubmittedFollowUp(detail);
+    setAnswer(refineNavigatorAnswer(askedQuestion, detail) ?? "unknown");
+    setFollowUp("");
   }
 
   function reset() {
@@ -119,6 +133,8 @@ export function NoamNavigator() {
     setNeed("");
     setAnswer(null);
     setAskedQuestion("");
+    setFollowUp("");
+    setSubmittedFollowUp("");
   }
 
   return (
@@ -157,7 +173,7 @@ export function NoamNavigator() {
                   <h3 className="mt-4 text-lg font-medium tracking-[-0.025em]">Necesito un poco más de contexto.</h3>
                   <p className="mt-2 text-xs leading-6 text-ink/65">¿Qué decisión quieren tomar, en qué territorio o sector y qué evidencia ya tienen? Puedes reformular la pregunta o explorar nuestras capacidades sin comprometerte a contratar.</p>
                   <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium"><NextLink href="/services" onClick={() => setOpen(false)} className="text-rust">Ver capacidades</NextLink><NextLink href="/cases" onClick={() => setOpen(false)} className="text-ink/65">Ver trabajos</NextLink></div>
-                  <a href={buildAssistantEmailUrl(askedQuestion, null, pathname)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Enviar mi pregunta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
+                  <a href={buildAssistantEmailUrl(askedQuestion, null, pathname, submittedFollowUp)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Enviar mi pregunta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
                 </>
               ) : (
                 <>
@@ -167,14 +183,24 @@ export function NoamNavigator() {
                   <div className="mt-5 grid gap-2">
                     <NextLink href={answer.primary.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:approach" className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs font-medium text-ink hover:border-rust/45">{answer.primary.label}<ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink>
                     <NextLink href={answer.proof.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:proof" className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs text-ink/72 hover:border-rust/45"><span><span className="block text-[9px] uppercase tracking-[0.12em] text-rust">{answer.proof.kind}</span>{answer.proof.label}</span><ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink>
+                    {answerTerritory ? <NextLink href={`/dataperu/departamentos/${answerTerritory.code}`} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:answer:territory:${answerTerritory.code}`} className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs text-ink/72 hover:border-rust/45">Ver datos de {answerTerritory.name}<ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink> : null}
                   </div>
                   <NextLink href={answerContactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:contact" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Plantear un encargo concreto <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></NextLink>
-                  <a href={buildAssistantEmailUrl(askedQuestion, answer, pathname)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-3 inline-flex text-xs font-medium text-ink/68 hover:text-rust">Enviar esta consulta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
+                  <a href={buildAssistantEmailUrl(askedQuestion, answer, pathname, submittedFollowUp)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-3 inline-flex text-xs font-medium text-ink/68 hover:text-rust">Enviar esta consulta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
                 </>
               )}
               <p className="mt-4 border-t border-border pt-3 text-[10px] leading-4 text-muted">El correo se abrirá con tu pregunta. Solo se enviará si tú confirmas el envío en tu aplicación.</p>
             </div>
           ) : null}
+
+          {answer && !submittedFollowUp ? (
+            <form onSubmit={clarify} className="mt-4 border-t border-white/12 pt-4">
+              <label htmlFor="noam-navigator-follow-up" className="block text-xs font-medium text-white/72">¿En qué territorio o qué decisión necesitas precisar?</label>
+              <textarea id="noam-navigator-follow-up" value={followUp} onChange={(event) => setFollowUp(event.target.value)} minLength={5} maxLength={160} rows={2} placeholder="Ej.: En Cajamarca; tenemos registros de 2025" className="mt-3 w-full resize-y rounded-sm border border-white/14 bg-[#1b2d27] px-4 py-3 text-sm leading-6 text-white outline-none placeholder:text-white/35 focus:border-[#d9a48f]" />
+              <div className="mt-3 flex items-center justify-between gap-3"><span className="text-[10px] text-white/42">Opcional · solo en esta página; no se guarda.</span><button type="submit" disabled={followUp.trim().length < 5} data-analytics-event="cta_click" data-analytics-target="navigator:follow-up:submit" className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/20 px-4 text-xs font-medium text-white transition-colors hover:border-white/50 disabled:cursor-not-allowed disabled:opacity-45">Precisar <ArrowRight className="h-3.5 w-3.5" aria-hidden /></button></div>
+            </form>
+          ) : null}
+          {answer && submittedFollowUp ? <div className="mt-4 flex items-start justify-between gap-4 border-t border-white/12 pt-4"><p className="text-xs leading-5 text-white/62">Contexto añadido: {submittedFollowUp}</p><button type="button" onClick={() => { setFollowUp(submittedFollowUp); setSubmittedFollowUp(""); }} className="shrink-0 text-[10px] text-white/62 underline underline-offset-4 hover:text-white">Editar</button></div> : null}
 
           {!answer ? <p className="mt-6 border-t border-white/12 pt-5 text-[10px] uppercase tracking-[0.14em] text-white/42">O elige paso a paso</p> : null}
 

@@ -156,13 +156,29 @@ export function answerNavigatorQuestion(question: string): AssistantAnswer | nul
   };
 }
 
-export function buildAssistantEmailUrl(question: string, answer: AssistantAnswer | null, pathname: string) {
+export function refineNavigatorAnswer(question: string, followUp: string): AssistantAnswer | null {
+  const initial = answerNavigatorQuestion(question);
+  const added = answerNavigatorQuestion(followUp.slice(0, 160));
+  if (!added) return initial;
+  if (!initial) return added;
+
+  // A place name alone supplies context; it does not replace the original service need.
+  if (added.interest === "dataperu" && initial.interest !== "dataperu" && added.territory) {
+    return { ...initial, territory: added.territory };
+  }
+
+  return { ...added, territory: added.territory ?? initial.territory };
+}
+
+export function buildAssistantEmailUrl(question: string, answer: AssistantAnswer | null, pathname: string, followUp?: string) {
   const sourcePath = pathname.startsWith("/") && !pathname.startsWith("//") ? pathname : "/";
+  const context = followUp?.trim().slice(0, 160);
   const body = [
     "Hola, equipo NOAM:",
     "",
     "Quisiera conversar sobre esta necesidad:",
     question.trim().slice(0, 320),
+    ...(context ? ["", "Contexto adicional:", context] : []),
     "",
     `Tema orientativo: ${answer?.topic ?? "Por definir"}`,
     ...(answer?.territory ? [`Territorio: ${answer.territory}`] : []),
