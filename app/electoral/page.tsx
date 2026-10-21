@@ -101,8 +101,8 @@ export default function ElectoralPage() {
         <Container>
           <NextLink href="/electoral/erm-2026" className="group grid gap-8 py-8 sm:grid-cols-[auto_1fr_auto] sm:items-center md:py-10">
             <div className="flex h-20 w-20 flex-col justify-center rounded-full border border-ink/20 text-center">
-              <span className="text-xl font-medium tracking-[-0.04em] text-ink">04</span>
-              <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-rust">Oct 2026</span>
+              <span className="text-xl font-medium tracking-[-0.04em] text-ink">100</span>
+              <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-rust">Días</span>
             </div>
             <div>
               <Eyebrow>Especial ERM 2026</Eyebrow>

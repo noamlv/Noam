@@ -59,7 +59,7 @@ const operatingPrinciples = [
 
 const faqItems = [
   { title: "¿Trabajan con municipalidades pequeñas?", content: "Sí. El alcance puede comenzar con un perfil territorial, una agenda breve o un tablero acotado construido sobre información pública. La propuesta se ajusta a la decisión, al plazo y a la capacidad real de la entidad." },
-  { title: "¿Es necesario esperar al resultado electoral?", content: "No para ordenar información pública, definir criterios o preparar herramientas. La transferencia formal y cualquier uso institucional deben respetar las competencias, reglas y tiempos aplicables a cada entidad." },
+  { title: "¿NOAM publica resultados electorales oficiales?", content: "No. Los resultados y la proclamación corresponden a los organismos electorales. Esta página organiza datos territoriales y preguntas de gestión; cualquier transferencia formal debe respetar las competencias, reglas y tiempos aplicables a cada entidad." },
   { title: "¿Pueden trabajar con equipos políticos?", content: "Podemos realizar análisis programático, territorial o de opinión bajo reglas explícitas de independencia, confidencialidad y uso responsable. No ofrecemos manipulación, desinformación ni garantías de resultado electoral." },
   { title: "¿La entidad debe entregar una base de datos?", content: "No necesariamente. Podemos iniciar con DataPerú y otras fuentes oficiales. Si existen datos internos, primero acordamos acceso, finalidad, seguridad, calidad y responsables." },
   { title: "¿El resultado es un informe o un sistema?", content: "Puede ser una agenda ejecutiva, un diagnóstico, una encuesta, un tablero, un visor o una combinación. La forma se elige según quién debe usarla y qué decisión debe mejorar." }
@@ -84,8 +84,8 @@ export default function Erm2026Page() {
           <div className="grid gap-14 lg:grid-cols-[0.92fr_1fr] lg:items-center lg:gap-20">
             <div>
               <Eyebrow className="reveal text-[#d9a48f]">ERM 2026 · Región · Provincia · Distrito</Eyebrow>
-              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[12ch] text-white">De la elección a una gestión que pueda comenzar.</Heading>
-              <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-8 text-white/68">Datos territoriales, transferencia, prioridades y sistemas de seguimiento para equipos que necesitan llegar al primer día con mejores preguntas y una ruta operable.</p>
+              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[12ch] text-white">De las propuestas a decisiones de gestión.</Heading>
+              <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-8 text-white/68">Perfiles territoriales, preguntas de transferencia y seguimiento para equipos que necesitan definir prioridades verificables y una ruta de 100 días. Sin atribuir resultados o autoridades no confirmados.</p>
               <div className="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
                 <Button href={contactHref} analyticsEvent="cta_click" analyticsTarget="erm:hero-contact" variant="secondary" className="rounded-full border-white bg-white text-ink">Preparar una gestión</Button>
                 <Button href="/dataperu/municipios" variant="ghost" className="gap-2 !text-white/70 hover:!text-white">Explorar un territorio <ArrowRight className="h-4 w-4" aria-hidden /></Button>
@@ -102,8 +102,8 @@ export default function Erm2026Page() {
             {[
               ["1,891", "perfiles municipales", "DataPerú 2025"],
               ["25", "departamentos", "Cobertura nacional"],
-              ["04 OCT", "jornada electoral", "JNE · 2026"],
-              ["4", "momentos de decisión", "Elección → gestión"]
+              ["30·60·100", "hitos de gestión", "Agenda orientativa"],
+              ["4", "módulos de trabajo", "De la evidencia al seguimiento"]
             ].map(([value, label, note]) => (
               <div key={label} className="py-7 sm:px-6 sm:first:pl-0 md:py-9">
                 <p className="text-3xl font-medium tracking-[-0.055em] text-ink md:text-4xl">{value}</p>
@@ -175,8 +175,8 @@ export default function Erm2026Page() {
             <div>
               <Landmark className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Proceso oficial</Eyebrow>
-              <Heading size="lg">Una fuente única para el calendario electoral.</Heading>
-              <p className="mt-5 text-sm leading-7 text-ink/65">Las fechas y disposiciones pueden actualizarse. Para hitos legales consulta siempre el JNE y la normativa vigente.</p>
+              <Heading size="lg">Las fuentes oficiales siguen siendo la referencia.</Heading>
+              <p className="mt-5 text-sm leading-7 text-ink/65">NOAM no certifica resultados ni reemplaza la transferencia formal. Consulta el JNE y la normativa vigente para hitos legales, y contrasta cualquier cifra electoral con los organismos competentes.</p>
             </div>
             <div className="grid gap-3">
               <a href="https://portal.jne.gob.pe/portal/Pagina/PlataformaErm" target="_blank" rel="noreferrer" className="group flex items-center justify-between gap-5 rounded-md border border-border bg-panel p-5 text-sm font-medium text-ink transition-colors hover:border-rust/45">Portal oficial ERM 2026 del JNE <ExternalLink className="h-4 w-4 text-muted group-hover:text-rust" aria-hidden /></a>

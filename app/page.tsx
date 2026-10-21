@@ -125,13 +125,13 @@ export default async function HomePage() {
               <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full border-[52px] border-rust/18" />
               <div className="relative flex h-full min-h-[420px] flex-col">
                 <div className="flex items-center justify-between gap-4">
-                  <Eyebrow className="text-[#d9a48f]">Agenda ERM 2026</Eyebrow>
-                  <span className="rounded-full border border-white/14 px-3 py-1.5 font-mono text-[9px] text-white/52">04 OCT 2026</span>
+                  <Eyebrow className="text-[#d9a48f]">Agenda de gestión · ERM 2026</Eyebrow>
+                  <span className="rounded-full border border-white/14 px-3 py-1.5 font-mono text-[9px] text-white/52">REGIÓN · MUNICIPIO</span>
                 </div>
-                <h2 className="mt-10 max-w-[13ch] text-4xl font-medium leading-[1.02] tracking-[-0.05em] md:text-5xl">Entender la elección. Preparar la gestión.</h2>
-                <p className="mt-6 max-w-xl text-sm leading-7 text-white/62">Perfiles territoriales, propuestas, transferencia y primeros 100 días para convertir la coyuntura electoral en decisiones que puedan ejecutarse.</p>
+                <h2 className="mt-10 max-w-[13ch] text-4xl font-medium leading-[1.02] tracking-[-0.05em] md:text-5xl">De las propuestas a las prioridades de gestión.</h2>
+                <p className="mt-6 max-w-xl text-sm leading-7 text-white/62">Datos territoriales, preguntas de transferencia y una agenda de 100 días para ordenar decisiones sin confundir propuestas con resultados.</p>
                 <div className="mt-auto flex flex-wrap gap-3 pt-10">
-                  <Button href="/electoral/erm-2026" analyticsEvent="cta_click" analyticsTarget="home:erm-2026" variant="secondary" className="rounded-full border-white bg-white text-ink">Abrir especial ERM 2026</Button>
+                  <Button href="/electoral/erm-2026" analyticsEvent="cta_click" analyticsTarget="home:erm-2026" variant="secondary" className="rounded-full border-white bg-white text-ink">Explorar agenda de gestión</Button>
                   <Button href="/electoral/planometro-2026" variant="ghost" className="!text-white/64 hover:!text-white">Explorar Planómetro</Button>
                 </div>
               </div>

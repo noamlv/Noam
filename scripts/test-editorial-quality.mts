@@ -102,6 +102,14 @@ for (const section of ["What we do", "Who we work for", "Open work", "How we wor
 assert.ok(englishPage.includes('lang="en"'), "/en debe declarar el idioma del contenido");
 assert.ok(englishPage.includes('locale: "en_US"'), "/en debe declarar OpenGraph en inglés");
 
+const homePage = read("app/page.tsx");
+assert.doesNotMatch(homePage, /04 OCT 2026|Entender la elección\. Preparar la gestión\./, "La portada no debe presentar la jornada ERM como una convocatoria futura");
+assert.match(homePage, /De las propuestas a las prioridades de gestión/, "La portada debe conectar el especial electoral con decisiones de gestión");
+
+const ermPage = read("app/electoral/erm-2026/page.tsx");
+assert.match(ermPage, /NOAM publica resultados electorales oficiales/, "El especial debe separar su análisis de los resultados oficiales");
+assert.match(read("components/brand/erm-visual.tsx"), /100 DÍAS/, "El visual del especial debe dar prioridad a la transición");
+
 for (const service of serviceLines) {
   assert.match(service.imageCaption, /Escena editorial representativa/, `${service.slug} debe identificar sus imágenes representativas`);
 }
