@@ -4,7 +4,7 @@ import { ArrowRight, MessageCircle, RotateCcw, X } from "lucide-react";
 import NextLink from "next/link";
 import { usePathname } from "next/navigation";
 import { type FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { type AssistantAnswer, answerNavigatorQuestion } from "@/lib/assistant-routing";
+import { type AssistantAnswer, answerNavigatorQuestion, buildAssistantEmailUrl } from "@/lib/assistant-routing";
 import { buildWhatsAppUrl } from "@/lib/whatsapp";
 import { peruTerritories } from "@/lib/peru-territories";
 
@@ -157,6 +157,7 @@ export function NoamNavigator() {
                   <h3 className="mt-4 text-lg font-medium tracking-[-0.025em]">Necesito un poco más de contexto.</h3>
                   <p className="mt-2 text-xs leading-6 text-ink/65">¿Qué decisión quieren tomar, en qué territorio o sector y qué evidencia ya tienen? Puedes reformular la pregunta o explorar nuestras capacidades sin comprometerte a contratar.</p>
                   <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium"><NextLink href="/services" onClick={() => setOpen(false)} className="text-rust">Ver capacidades</NextLink><NextLink href="/cases" onClick={() => setOpen(false)} className="text-ink/65">Ver trabajos</NextLink></div>
+                  <a href={buildAssistantEmailUrl(askedQuestion, null, pathname)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Enviar mi pregunta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
                 </>
               ) : (
                 <>
@@ -168,8 +169,10 @@ export function NoamNavigator() {
                     <NextLink href={answer.proof.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:proof" className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs text-ink/72 hover:border-rust/45"><span><span className="block text-[9px] uppercase tracking-[0.12em] text-rust">{answer.proof.kind}</span>{answer.proof.label}</span><ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink>
                   </div>
                   <NextLink href={answerContactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:contact" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Plantear un encargo concreto <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></NextLink>
+                  <a href={buildAssistantEmailUrl(askedQuestion, answer, pathname)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-3 inline-flex text-xs font-medium text-ink/68 hover:text-rust">Enviar esta consulta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
                 </>
               )}
+              <p className="mt-4 border-t border-border pt-3 text-[10px] leading-4 text-muted">El correo se abrirá con tu pregunta. Solo se enviará si tú confirmas el envío en tu aplicación.</p>
             </div>
           ) : null}
 

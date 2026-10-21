@@ -1,5 +1,6 @@
 import { peruTerritories } from "./peru-territories.ts";
 import { normalizeSearchText } from "./search-core.ts";
+import { siteConfig } from "./site-config.ts";
 
 type AssistantLink = { label: string; href: string };
 
@@ -153,4 +154,24 @@ export function answerNavigatorQuestion(question: string): AssistantAnswer | nul
       ? { label: `Ver el perfil de ${territory.name}`, href: `/dataperu/departamentos/${territory.code}` }
       : answer.primary
   };
+}
+
+export function buildAssistantEmailUrl(question: string, answer: AssistantAnswer | null, pathname: string) {
+  const sourcePath = pathname.startsWith("/") && !pathname.startsWith("//") ? pathname : "/";
+  const body = [
+    "Hola, equipo NOAM:",
+    "",
+    "Quisiera conversar sobre esta necesidad:",
+    question.trim().slice(0, 320),
+    "",
+    `Tema orientativo: ${answer?.topic ?? "Por definir"}`,
+    ...(answer?.territory ? [`Territorio: ${answer.territory}`] : []),
+    `Página de origen: ${new URL(sourcePath, siteConfig.url)}`,
+    "",
+    "Organización y rol:",
+    "Plazo aproximado:",
+    "Datos disponibles:"
+  ].join("\n");
+
+  return `mailto:${siteConfig.email}?subject=${encodeURIComponent(`Consulta NOAM: ${answer?.topic ?? "por definir"}`)}&body=${encodeURIComponent(body)}`;
 }
