@@ -10,6 +10,15 @@ type DepartmentResearchBriefProps = {
 const dateFormat = new Intl.DateTimeFormat("es-PE", { day: "2-digit", month: "short", year: "numeric", timeZone: "UTC" });
 
 export function DepartmentResearchBrief({ research, contactHref }: DepartmentResearchBriefProps) {
+  const inquiryHref = (kind: "problem" | "opportunity", index: number) => {
+    const query = new URLSearchParams(contactHref.split("?")[1]);
+    query.set("interest", kind === "problem" ? "dataperu" : "inteligencia-territorial-inversion");
+    query.set("dept", research.code);
+    query.set("focus", kind);
+    query.set("item", String(index));
+    return `/contact?${query.toString()}`;
+  };
+
   return (
     <>
       <Section id="agenda-territorial" className="border-y border-border bg-[#f4f2ed]">
@@ -57,6 +66,7 @@ export function DepartmentResearchBrief({ research, contactHref }: DepartmentRes
                     <div className="bg-[#e8e4da] p-5">
                       <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-ink/48">Cómo ayuda NOAM</p>
                       <p className="mt-3 text-xs leading-5 text-ink/72">{problem.noamResponse}</p>
+                      <Button href={inquiryHref("problem", index)} analyticsEvent="cta_click" analyticsTarget={`department:${research.code}:problem:${index}`} variant="ghost" className="mt-5 gap-2 px-0 text-xs">Explorar un estudio <ArrowRight className="h-3.5 w-3.5" aria-hidden /></Button>
                     </div>
                   </div>
                 </article>
@@ -84,6 +94,7 @@ export function DepartmentResearchBrief({ research, contactHref }: DepartmentRes
                   <div className="mt-auto space-y-4 border-t border-border pt-5">
                     <div><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-muted">Quién puede actuar</p><p className="mt-2 text-xs leading-5 text-ink/65">{opportunity.actors}</p></div>
                     <div><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-muted">Prueba necesaria</p><p className="mt-2 text-xs leading-5 text-ink/65">{opportunity.validation}</p></div>
+                    <Button href={inquiryHref("opportunity", index)} analyticsEvent="cta_click" analyticsTarget={`department:${research.code}:opportunity:${index}`} variant="ghost" className="gap-2 px-0 text-xs">Validar esta oportunidad <ArrowRight className="h-3.5 w-3.5" aria-hidden /></Button>
                   </div>
                 </article>
               ))}

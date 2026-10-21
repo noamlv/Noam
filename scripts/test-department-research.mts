@@ -1,4 +1,5 @@
 import { departmentResearch } from "../lib/department-research.ts";
+import { getDepartmentInquiry } from "../lib/department-inquiry.ts";
 
 const expectedCodes = Array.from({ length: 25 }, (_, index) => String(index + 1).padStart(2, "0"));
 const codes = departmentResearch.map((item) => item.code);
@@ -27,6 +28,22 @@ for (const research of departmentResearch) {
   const publicText = JSON.stringify(research);
   const forbidden = forbiddenDraftPatterns.find((pattern) => pattern.test(publicText));
   if (forbidden) throw new Error(`${research.department} contiene una marca no publicable: ${forbidden}`);
+
+  for (const [kind, items] of [["problem", research.problems], ["opportunity", research.opportunities]] as const) {
+    for (const [index, item] of items.entries()) {
+      const inquiry = getDepartmentInquiry(research.code, kind, String(index));
+      if (!inquiry || inquiry.title !== item.title || inquiry.territory !== research.department || !inquiry.message.includes("requiere validación local")) {
+        throw new Error(`${research.department}: consulta ${kind} ${index} incompleta`);
+      }
+      if (kind === "opportunity" && !inquiry.message.includes("No supone un mercado garantizado")) {
+        throw new Error(`${research.department}: la oportunidad debe conservar su advertencia comercial`);
+      }
+    }
+  }
+}
+
+if (getDepartmentInquiry("01", "problem", "9") || getDepartmentInquiry("99", "opportunity", "0") || getDepartmentInquiry("01", "invalid", "0")) {
+  throw new Error("El contacto debe rechazar departamentos, tipos o elementos inexistentes.");
 }
 
 const macroregionalCodes = departmentResearch.filter((item) => item.evidenceBase?.scope === "macroregional").map((item) => item.code).sort();

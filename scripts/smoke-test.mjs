@@ -261,6 +261,29 @@ if (hasSafeFallback) {
 }
 const invalidSignal = await expectHtml("/contact?interest=dataperu&ubigeo=150101&signal=not-a-real-signal", "Comencemos por la decisión");
 assert.ok(!invalidSignal.body.includes("Señal municipal seleccionada"), "Contacto debe ignorar señales inexistentes");
+const amazonasAgenda = await expectHtml("/dataperu/departamentos/01", "Problemas que exigen decisiones conectadas.");
+const regionalProblemLink = amazonasAgenda.body.match(/href="([^\"]*focus=problem[^\"]*)"/);
+const regionalOpportunityLink = amazonasAgenda.body.match(/href="([^\"]*focus=opportunity[^\"]*)"/);
+assert.ok(regionalProblemLink && regionalOpportunityLink, "La agenda regional debe enlazar problemas públicos y oportunidades empresariales");
+const publicInquiry = await expectHtml(regionalProblemLink[1].replaceAll("&amp;", "&"), "Prioridad pública");
+const businessInquiry = await expectHtml(regionalOpportunityLink[1].replaceAll("&amp;", "&"), "Hipótesis empresarial");
+assert.ok(businessInquiry.body.includes("Inteligencia territorial para inversión"), "La oportunidad empresarial debe enlazar la solución de inteligencia territorial");
+if (hasSafeFallback) {
+  const publicMail = publicInquiry.body.match(/href="(mailto:[^\"]+)"/);
+  const businessMail = businessInquiry.body.match(/href="(mailto:[^\"]+)"/);
+  assert.ok(publicMail && decodeURIComponent(publicMail[1].replaceAll("&amp;", "&")).includes("Decisión por precisar:"), "El correo regional debe conservar la decisión pública");
+  assert.ok(businessMail && decodeURIComponent(businessMail[1].replaceAll("&amp;", "&")).includes("No supone un mercado garantizado"), "El correo empresarial debe conservar la advertencia");
+} else {
+  assert.ok(publicInquiry.body.includes("Decisión por precisar:"), "El formulario regional debe conservar la decisión pública");
+  assert.ok(businessInquiry.body.includes("No supone un mercado garantizado"), "El formulario empresarial debe conservar la advertencia");
+}
+const preliminaryInquiry = await expectHtml("/contact?interest=dataperu&dept=04&focus=problem&item=0", "Prioridad pública");
+const preliminaryContext = hasSafeFallback
+  ? decodeURIComponent(preliminaryInquiry.body.match(/href="(mailto:[^\"]+)"/)?.[1].replaceAll("&amp;", "&") ?? "")
+  : preliminaryInquiry.body;
+assert.ok(preliminaryContext.includes("base macroregional"), "La consulta de Arequipa debe advertir su base macroregional");
+const invalidRegionalInquiry = await expectHtml("/contact?interest=dataperu&dept=01&focus=problem&item=9", "Comencemos por la decisión");
+assert.ok(!invalidRegionalInquiry.body.includes("síntesis preliminar que requiere validación local"), "Contacto debe ignorar prioridades regionales inexistentes");
 if (hasPersistentForm) {
   const localEconomyContact = await expectHtml("/contact?interest=desarrollo-economico-local&from=/analisis-datos-desarrollo-economico-local", "Desarrollo económico local, empleo y MYPE");
   assert.ok(localEconomyContact.body.includes('value="desarrollo-economico-local" selected'), "Contacto debe conservar el interés económico seleccionado");
