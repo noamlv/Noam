@@ -45,7 +45,7 @@ const publicPages = [
   ["/cases", "Trabajo que se puede examinar"],
   ["/evidence", "Biblioteca NOAM"],
   ["/electoral", "Elecciones"],
-  ["/electoral/erm-2026", "De la elección a una gestión que pueda comenzar"],
+  ["/electoral/erm-2026", "De las propuestas a decisiones de gestión"],
   ["/electoral/barometro-enero-2026", "Barómetro Electoral"],
   ["/electoral/planometro-2026", "Leer miles de propuestas sin perder la fuente"],
   ["/electoral/planometro-2026/organizaciones", "Treinta y seis planes. Una lectura comparable."],
