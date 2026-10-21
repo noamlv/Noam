@@ -423,6 +423,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
                   <p className="mt-4 text-sm leading-6 text-white/60">{signal.observation}</p>
                   <p className="mt-4 border-l border-white/15 pl-4 text-sm leading-6 text-white/78">{signal.question}</p>
                   <NextLink href={signal.serviceHref} className="group mt-auto inline-flex items-center gap-2 pt-6 text-xs font-medium text-white/72 hover:text-white">{signal.serviceLabel}<ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></NextLink>
+                  <NextLink href={`${contactHref}&ubigeo=${municipality.ubigeo}&signal=${signal.id}`} data-analytics-event="cta_click" data-analytics-target={`municipality:${municipality.ubigeo}:signal:${signal.id}`} className="mt-3 inline-flex items-center gap-2 text-xs font-medium text-[#d9a48f] hover:text-white">Consultar esta señal <ArrowRight className="h-3.5 w-3.5" aria-hidden /></NextLink>
                 </article>
               ))}
             </div>

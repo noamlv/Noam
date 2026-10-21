@@ -17,6 +17,7 @@ import { getSolution } from "@/lib/solutions";
 import { aiUseCases } from "@/lib/ai-lab";
 import { buildScopeContactMessage, buildScopeRecommendation, parseScopeBuilderInput } from "@/lib/scope-builder";
 import { buildDirectEmailBody } from "@/lib/contact-handoff";
+import { getMunicipalityInquiry } from "@/lib/municipality-inquiry";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { runtimeCapabilities } from "@/lib/runtime-capabilities";
 import { siteConfig } from "@/lib/site-config";
@@ -28,7 +29,7 @@ export const metadata = buildMetadata({
 });
 
 interface ContactPageProps {
-  searchParams: Promise<{ interest?: string; error?: string; from?: string; territory?: string; case?: string; org?: string; challenge?: string; evidence?: string; horizon?: string }>;
+  searchParams: Promise<{ interest?: string; error?: string; from?: string; territory?: string; case?: string; org?: string; challenge?: string; evidence?: string; horizon?: string; ubigeo?: string; signal?: string }>;
 }
 
 const fieldClass = "mt-2 min-h-12 w-full rounded-sm border border-border bg-canvas px-4 py-3 text-sm text-ink outline-none transition-colors placeholder:text-muted/65 focus:border-rust";
@@ -39,17 +40,19 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   const selectedSolution = getSolution(defaultInterest);
   const selectedInterest = params.interest ? interestOptions.find((option) => option.value === defaultInterest) : null;
   const selectedInterestTitle = selectedSolution?.title ?? selectedInterest?.label;
+  const municipalityInquiry = getMunicipalityInquiry(params.ubigeo, params.signal);
   const safeFrom = params.from?.startsWith("/") && !params.from.startsWith("//") ? params.from.slice(0, 300) : null;
-  const defaultTerritory = params.territory?.trim().slice(0, 180) ?? "";
+  const defaultTerritory = municipalityInquiry?.territory ?? params.territory?.trim().slice(0, 180) ?? "";
   const selectedAiCase = aiUseCases.find((item) => item.id === params.case);
   const scopeInput = parseScopeBuilderInput(params);
   const scopeRecommendation = scopeInput ? buildScopeRecommendation(scopeInput) : null;
-  const defaultMessage = selectedAiCase ? `Queremos evaluar el siguiente caso de uso de IA: ${selectedAiCase.name}.\n\nContexto de la organización y decisión que buscamos mejorar:\n` : scopeInput ? buildScopeContactMessage(scopeInput) : "";
+  const defaultMessage = municipalityInquiry?.message ?? (selectedAiCase ? `Queremos evaluar el siguiente caso de uso de IA: ${selectedAiCase.name}.\n\nContexto de la organización y decisión que buscamos mejorar:\n` : scopeInput ? buildScopeContactMessage(scopeInput) : "");
   const defaultOrganizationType = scopeRecommendation?.organizationType ?? "";
   const defaultTimeline = scopeRecommendation?.timeline ?? "to-define";
-  const originPath = safeFrom ?? (selectedSolution ? `/solutions/${selectedSolution.slug}` : params.interest === "dataperu" ? "/dataperu" : params.interest === "electoral" ? "/electoral" : "/contact");
-  const emailSubject = encodeURIComponent(selectedInterestTitle ? `Consulta: ${selectedInterestTitle}` : "Consulta para NOAM");
+  const originPath = municipalityInquiry?.sourcePath ?? safeFrom ?? (selectedSolution ? `/solutions/${selectedSolution.slug}` : params.interest === "dataperu" ? "/dataperu" : params.interest === "electoral" ? "/electoral" : "/contact");
+  const emailSubject = encodeURIComponent(municipalityInquiry ? `Consulta: ${municipalityInquiry.title} en ${municipalityInquiry.territory}` : selectedInterestTitle ? `Consulta: ${selectedInterestTitle}` : "Consulta para NOAM");
   const emailBody = encodeURIComponent(buildDirectEmailBody({ topic: selectedInterestTitle, territory: defaultTerritory, context: defaultMessage }));
+  const directContactContext = municipalityInquiry ? `${municipalityInquiry.title.toLowerCase()} en ${municipalityInquiry.territory}` : selectedInterestTitle ?? "una posible consultoría";
 
   return (
     <>
@@ -69,6 +72,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                   <p className="mt-2 text-xs leading-5 text-ink/60">{runtimeCapabilities.leadIntake ? "Puedes cambiarla dentro del formulario si el desafío es distinto." : "La incluiremos como contexto inicial en el canal que elijas."}</p>
                 </div>
               ) : null}
+              {municipalityInquiry ? <div className="mt-4 rounded-md border border-border bg-panel p-5"><p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted">Señal municipal seleccionada</p><p className="mt-2 text-sm font-medium text-ink">{municipalityInquiry.title}</p><p className="mt-1 text-xs leading-5 text-muted">{municipalityInquiry.territory} · lectura descriptiva que requiere validación.</p></div> : null}
 
               <div className="mt-9 border-t border-border pt-7">
                 <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">Qué ocurre después</p>
@@ -87,7 +91,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f]">Respuesta directa</p>
                 <p className="mt-3 text-lg font-medium tracking-[-0.025em]">¿Prefieres WhatsApp?</p>
                 <p className="mt-2 text-xs leading-5 text-white/58">Escríbenos con un mensaje prellenado según la página desde la que llegaste.</p>
-                <WhatsAppLink context={selectedInterestTitle ?? "una posible consultoría"} analyticsTarget="contact:whatsapp" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-ink transition-transform hover:-translate-y-px">
+                <WhatsAppLink context={directContactContext} analyticsTarget="contact:whatsapp" className="mt-5 inline-flex min-h-11 items-center gap-2 rounded-full bg-white px-5 text-sm font-medium text-ink transition-transform hover:-translate-y-px">
                   {siteConfig.phone}
                 </WhatsAppLink>
               </div> : null}
@@ -107,12 +111,12 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                       <span className="mt-5 block text-lg font-medium tracking-[-0.025em] text-ink">Escribir por email</span>
                       <span className="mt-2 block text-xs text-muted">{siteConfig.email}</span>
                     </a>
-                    <WhatsAppLink context={selectedInterestTitle ?? "una posible consultoría"} analyticsTarget="contact:direct-whatsapp" className="group rounded-md border border-border bg-canvas p-5 transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle">
+                    <WhatsAppLink context={directContactContext} analyticsTarget="contact:direct-whatsapp" className="group rounded-md border border-border bg-canvas p-5 transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle">
                       <span className="mt-5 block text-lg font-medium tracking-[-0.025em] text-ink">Abrir WhatsApp</span>
                       <span className="mt-2 block text-xs text-muted">{siteConfig.phone}</span>
                     </WhatsAppLink>
                   </div>
-                  {scopeInput || selectedAiCase ? <p className="mt-4 text-xs leading-5 text-muted">El borrador de correo incluirá el contexto que preparaste; podrás revisarlo y editarlo antes de enviarlo.</p> : null}
+                  {scopeInput || selectedAiCase || municipalityInquiry ? <p className="mt-4 text-xs leading-5 text-muted">El borrador de correo incluirá el contexto que preparaste; podrás revisarlo y editarlo antes de enviarlo.</p> : null}
                   <div className="mt-7 rounded-sm border border-border bg-canvas p-5">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted">Para responder mejor</p>
                     <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink/68 sm:grid-cols-2">

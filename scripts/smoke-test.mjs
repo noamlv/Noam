@@ -245,6 +245,22 @@ const contactPage = await expectHtml("/contact", "Comencemos por la decisión");
 const hasPersistentForm = contactPage.body.includes("Añadir detalles del proyecto");
 const hasSafeFallback = contactPage.body.includes("Contacto directo y trazable.");
 assert.ok(hasPersistentForm || hasSafeFallback, "Contacto debe ofrecer formulario persistente o canales directos seguros");
+const signalLink = limaMunicipalProfile.body.match(/href="([^\"]*signal=[a-z-]+)"[^>]*>Consultar esta señal/);
+assert.ok(signalLink, "La ficha municipal debe permitir consultar una señal concreta");
+const signalContactPath = signalLink[1].replaceAll("&amp;", "&");
+const signalContact = await expectHtml(signalContactPath, "Señal municipal seleccionada");
+assert.ok(signalContact.body.includes("lectura descriptiva"), "La consulta no debe presentar la señal como diagnóstico concluido");
+if (hasSafeFallback) {
+  const emailLink = signalContact.body.match(/href="(mailto:[^\"]+)"/);
+  assert.ok(emailLink && decodeURIComponent(emailLink[1].replaceAll("&amp;", "&")).includes("Pregunta por investigar:"), "El correo directo debe conservar la señal municipal");
+  assert.ok(new URL(emailLink[1].replaceAll("&amp;", "&")).searchParams.get("subject")?.includes("en Lima"), "El asunto del correo debe identificar el municipio");
+  const whatsappLink = signalContact.body.match(/href="(https:\/\/wa\.me\/[^\"]+)"/);
+  assert.ok(whatsappLink && decodeURIComponent(whatsappLink[1].replaceAll("&amp;", "&")).includes("en Lima"), "WhatsApp debe conservar la señal y el municipio");
+} else {
+  assert.ok(signalContact.body.includes("Pregunta por investigar:"), "El formulario debe conservar la pregunta de la ficha");
+}
+const invalidSignal = await expectHtml("/contact?interest=dataperu&ubigeo=150101&signal=not-a-real-signal", "Comencemos por la decisión");
+assert.ok(!invalidSignal.body.includes("Señal municipal seleccionada"), "Contacto debe ignorar señales inexistentes");
 if (hasPersistentForm) {
   const localEconomyContact = await expectHtml("/contact?interest=desarrollo-economico-local&from=/analisis-datos-desarrollo-economico-local", "Desarrollo económico local, empleo y MYPE");
   assert.ok(localEconomyContact.body.includes('value="desarrollo-economico-local" selected'), "Contacto debe conservar el interés económico seleccionado");
