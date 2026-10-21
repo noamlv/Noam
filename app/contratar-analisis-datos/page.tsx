@@ -166,7 +166,7 @@ export default function ContractDataAnalysisPage() {
       <Section id="decisiones">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Cinco rutas para no contratar a ciegas.</Heading></div>
+            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Seis rutas para no contratar a ciegas.</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Una misma institución puede necesitar varias rutas, pero el primer alcance debe resolver una decisión concreta. Cada opción enlaza una guía, una muestra y una solución.</p>
           </div>
 

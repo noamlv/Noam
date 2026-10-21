@@ -16,6 +16,7 @@ import {
 import { getSolution } from "@/lib/solutions";
 import { aiUseCases } from "@/lib/ai-lab";
 import { buildScopeContactMessage, buildScopeRecommendation, parseScopeBuilderInput } from "@/lib/scope-builder";
+import { buildDirectEmailBody } from "@/lib/contact-handoff";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { runtimeCapabilities } from "@/lib/runtime-capabilities";
 import { siteConfig } from "@/lib/site-config";
@@ -48,7 +49,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
   const defaultTimeline = scopeRecommendation?.timeline ?? "to-define";
   const originPath = safeFrom ?? (selectedSolution ? `/solutions/${selectedSolution.slug}` : params.interest === "dataperu" ? "/dataperu" : params.interest === "electoral" ? "/electoral" : "/contact");
   const emailSubject = encodeURIComponent(selectedInterestTitle ? `Consulta: ${selectedInterestTitle}` : "Consulta para NOAM");
-  const emailBody = encodeURIComponent(`Hola, quisiera conversar sobre ${selectedInterestTitle ?? "un posible encargo"}${defaultTerritory ? ` en ${defaultTerritory}` : ""}.\n\nOrganización:\nDecisión o problema:\nPlazo aproximado:\n`);
+  const emailBody = encodeURIComponent(buildDirectEmailBody({ topic: selectedInterestTitle, territory: defaultTerritory, context: defaultMessage }));
 
   return (
     <>
@@ -111,6 +112,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                       <span className="mt-2 block text-xs text-muted">{siteConfig.phone}</span>
                     </WhatsAppLink>
                   </div>
+                  {scopeInput || selectedAiCase ? <p className="mt-4 text-xs leading-5 text-muted">El borrador de correo incluirá el contexto que preparaste; podrás revisarlo y editarlo antes de enviarlo.</p> : null}
                   <div className="mt-7 rounded-sm border border-border bg-canvas p-5">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted">Para responder mejor</p>
                     <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink/68 sm:grid-cols-2">

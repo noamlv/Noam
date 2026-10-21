@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import {
   buildScopeBrief,
+  buildScopeContactMessage,
   buildScopeContactHref,
   buildScopeRecommendation,
   buildScopeSampleSlug,
@@ -12,6 +13,7 @@ import {
   type ScopeBuilderInput
 } from "../lib/scope-builder.ts";
 import { deliverableSamples } from "../lib/deliverable-samples.ts";
+import { buildDirectEmailBody } from "../lib/contact-handoff.ts";
 
 let combinations = 0;
 const availableSampleSlugs = new Set(deliverableSamples.map((sample) => sample.slug));
@@ -30,6 +32,11 @@ for (const organization of scopeOrganizationOptions) {
         const brief = buildScopeBrief(input, new Date("2026-07-17T12:00:00Z"));
 
         assert.deepEqual(parsed, input, "Contacto debe reconstruir exactamente las selecciones");
+        const directEmail = buildDirectEmailBody({ topic: recommendation.title, territory: "Cusco", context: buildScopeContactMessage(input) });
+        assert.ok(directEmail.includes(recommendation.organizationLabel), "El canal directo debe conservar la organización");
+        assert.ok(directEmail.includes(recommendation.evidenceLabel), "El canal directo debe conservar la evidencia");
+        assert.ok(directEmail.includes(recommendation.timelineLabel), "El canal directo debe conservar el horizonte");
+        assert.ok(directEmail.includes("Territorio: Cusco"), "El canal directo debe conservar el territorio");
         assert.equal(url.pathname, "/contact");
         assert.equal(url.searchParams.get("from"), "/diagnostico");
         assert.ok(recommendation.title.length > 10);
@@ -50,5 +57,7 @@ for (const organization of scopeOrganizationOptions) {
 assert.equal(combinations, 400);
 assert.equal(mappedSampleSlugs.size, 8, "Las 400 combinaciones deben conservar las ocho muestras ligadas al diseñador general");
 assert.equal(parseScopeBuilderInput({ org: "invalid", challenge: "understand", evidence: "public", horizon: "medium" }), null);
+assert.ok(buildDirectEmailBody({ topic: "Evaluación", territory: "Lima" }).includes("Territorio: Lima\nOrganización:"));
+assert.ok(buildDirectEmailBody({ context: "Queremos evaluar un caso de IA.\n\nContexto:" }).includes("Queremos evaluar un caso de IA."));
 
 console.log(`Scope Builder OK: ${combinations} combinaciones y briefs verificados`);
