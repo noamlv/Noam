@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Database, ExternalLink } from "lucide-react";
 import NextLink from "next/link";
 import { notFound } from "next/navigation";
 import { SectorExplorer } from "@/components/dataperu/sector-explorer";
+import { WasteGenerationExplorer } from "@/components/dataperu/waste-generation-explorer";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import {
@@ -14,6 +15,7 @@ import {
 } from "@/lib/dataperu-sectors";
 import { breadcrumbJsonLd, buildMetadata, datasetJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
+import wasteGeneration from "@/data/processed/minam-waste-generation-2014-2024.json";
 
 interface SectorPageProps {
   params: Promise<{ slug: string }>;
@@ -60,6 +62,12 @@ export default async function SectorPage({ params }: SectorPageProps) {
         url: `${siteConfig.url}${pagePath}`,
         datePublished: sectorSource.releaseDate
       })} />
+      {topic.slug === "residuos" ? <JsonLd data={datasetJsonLd({
+        name: "NOAM: serie territorial de generación municipal de residuos 2014-2024",
+        description: "Agregados departamentales y nacionales elaborados por NOAM a partir de los datos abiertos del MINAM; generación no equivale a recolección ni disposición final.",
+        url: `${siteConfig.url}${pagePath}`,
+        datePublished: "2026-10-26"
+      })} /> : null}
 
       <section className="relative overflow-hidden bg-[#15211d] pb-20 pt-10 text-white md:pb-28 md:pt-14">
         <span className="absolute inset-x-0 bottom-0 h-1" style={{ backgroundColor: topic.accent }} />
@@ -109,6 +117,22 @@ export default async function SectorPage({ params }: SectorPageProps) {
           </div>
         </Container>
       </Section>
+
+      {topic.slug === "residuos" ? (
+        <Section className="border-y border-border bg-panel/45">
+          <Container>
+            <div className="mb-10 grid gap-8 lg:grid-cols-[0.5fr_1fr] lg:gap-20">
+              <div><Eyebrow>Serie oficial · 2014-2024</Eyebrow><Heading size="xl">Generación anual de residuos.</Heading></div>
+              <p className="max-w-2xl text-sm leading-7 text-ink/65">El MINAM estima toneladas de residuos municipales generados cada año. Explora la evolución del país o de un departamento; más abajo, RENAMU 2025 muestra capacidades y prácticas de gestión declaradas por cada municipalidad. Son medidas distintas y no deben restarse entre sí.</p>
+            </div>
+            <WasteGenerationExplorer annual={wasteGeneration.annual} departments={wasteGeneration.departments} />
+            <div className="mt-6 grid gap-4 border-t border-border pt-6 text-xs leading-6 text-muted md:grid-cols-[1fr_auto] md:items-start">
+              <p>Fuente: MINAM/SIGERSOL, generación anual estimada en toneladas, corte de datos {wasteGeneration.source.latestCut}. La cobertura va de {wasteGeneration.annual[0].districts} distritos en 2014 a {wasteGeneration.annual.at(-1)?.districts} en 2024. Las columnas parciales de 2023 no concilian con el total oficial, por lo que aquí solo se utiliza el total municipal. No es un indicador de recolección, disposición final ni calidad del servicio.</p>
+              <a href={wasteGeneration.source.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Ver datos oficiales del MINAM <ExternalLink className="h-3.5 w-3.5" aria-hidden /></a>
+            </div>
+          </Container>
+        </Section>
+      ) : null}
 
       <Section>
         <Container>
