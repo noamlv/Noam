@@ -1,6 +1,6 @@
 # Inventario de dashboards de la diplomatura
 
-Estado: inventario inicial; residuos municipales integrado como primer piloto con datos agregados.
+Estado: los cinco proyectos principales tienen landing y dashboard de agregados nativos en `/analisis`, sin publicar los archivos fuente originales. Ver `analysis-library-publication.md` para alcance y limites. El inventario siguiente documenta las condiciones de revision de cada proyecto.
 
 ## Ubicacion
 

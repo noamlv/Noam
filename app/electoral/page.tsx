@@ -45,6 +45,7 @@ const cycle = [
 ];
 
 const products = [
+  { icon: BarChart3, title: "Conteo presidencial 2026", label: "Archivo histórico", status: "Publicado", description: "Corte parcial del 15 de abril de 2026. Landing metodológica y explorador por ámbito; no es el resultado final ni un conteo en vivo.", href: "/analisis/conteo-presidencial-2026", metrics: ["84,720 mesas en la copia", "Corte parcial histórico"] },
   { icon: FileSearch, title: "Planómetro", label: "Planes de gobierno", status: "Publicado", description: "Extracción y comparación de propuestas por temas, territorios y nivel de concreción.", href: "/electoral/planometro-2026", metrics: ["36 planes", "2,742 propuestas operativas"] },
   { icon: BarChart3, title: "Barómetro electoral", label: "Opinión pública", status: "Publicado", description: "Lectura analítica de encuestas, segmentos, escenarios y señales de cambio.", href: "/electoral/barometro-enero-2026", metrics: ["1,300 entrevistas", "184 variables"] },
   { icon: Map, title: "Perfiles territoriales", label: "DataPerú", status: "Publicado", description: "Contexto demográfico, institucional, presupuestal y de inversión para cada municipalidad.", href: "/dataperu/municipios", metrics: ["1,891 municipalidades", "9,429 proyectos visibles"] },

@@ -11,6 +11,7 @@ import { planometroAxes, planometroData, planometroParties } from "@/lib/planome
 import { siteConfig } from "@/lib/site-config";
 import { deliverableSamples } from "@/lib/deliverable-samples";
 import { briefEditions } from "@/lib/brief";
+import { analysisLibrary } from "@/lib/analysis-library";
 
 export const revalidate = 3600;
 
@@ -20,6 +21,7 @@ const staticRoutes = [
   "/indicators",
   "/toolkits",
   "/products",
+  "/analisis",
   "/resources",
   "/newsletter",
   "/brief",
@@ -163,5 +165,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.72
   }));
 
-  return [...staticPages, ...briefPages, ...samplePages, ...planometroAxisPages, ...planometroOrganizationPages, ...solutionPages, ...practicePages, ...productPages, ...departmentPages, ...sectorPages, ...municipalityPages, ...contentPages];
+  const analysisPages = analysisLibrary.flatMap((entry) => ["", "/dashboard"].map((suffix): MetadataRoute.Sitemap[number] => ({
+    url: `${siteConfig.url}/analisis/${entry.slug}${suffix}`, changeFrequency: "monthly", priority: suffix ? 0.6 : 0.8
+  })));
+  return [...staticPages, ...analysisPages, ...briefPages, ...samplePages, ...planometroAxisPages, ...planometroOrganizationPages, ...solutionPages, ...practicePages, ...productPages, ...departmentPages, ...sectorPages, ...municipalityPages, ...contentPages];
 }

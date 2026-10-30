@@ -18,9 +18,9 @@ export default async function ProductsPage() {
   const [products, resources] = await Promise.all([getManagedPlatformCatalog(), getManagedPlatformResources()]);
   const resourceCounts = new Map<string, number>();
   for (const resource of resources) if (resource.productSlug) resourceCounts.set(resource.productSlug, (resourceCounts.get(resource.productSlug) ?? 0) + 1);
-  const territorialSlugs = ["dataperu", "observatorio-territorial", "observatorio-inversiones", "mapa-gestion-territorial", "visor-riesgo-georreferenciado"];
+  const territorialSlugs = ["dataperu", "observatorio-territorial", "observatorio-inversiones", "mapa-gestion-territorial", "visor-riesgo-georreferenciado", "analisis-residuos-municipales", "analisis-planes-territoriales", "analisis-registro-discapacidad", "analisis-apoyo-deportista"];
   const aiSlugs = ["ai-governance-lab"];
-  const electoralSlugs = ["planometro-electoral", "barometro-electoral-enero-2026"];
+  const electoralSlugs = ["planometro-electoral", "barometro-electoral-enero-2026", "analisis-conteo-presidencial-2026"];
   const assigned = new Set([...territorialSlugs, ...aiSlugs, ...electoralSlugs]);
   const territorial = products.filter((product) => territorialSlugs.includes(product.slug));
   const artificialIntelligence = products.filter((product) => aiSlugs.includes(product.slug));

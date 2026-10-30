@@ -1,6 +1,14 @@
 import type { PlatformProduct } from "../types/platform.ts";
+import { analysisLibrary } from "./analysis-library.ts";
 
 export const platformCatalog: PlatformProduct[] = [
+  ...analysisLibrary.map((entry): PlatformProduct => ({
+    slug: `analisis-${entry.slug}`, name: entry.title, category: "dashboard", description: entry.description,
+    outcome: entry.offer, href: `/analisis/${entry.slug}`, status: "live",
+    audience: ["Gobiernos", "Empresas", "Ciudadanía"],
+    features: ["Landing editorial", "Explorador nativo", "Agregados descargables", "Fuente y límites visibles"],
+    deliverables: ["Análisis abierto", "Dashboard", "Metodología"], demoHref: `/analisis/${entry.slug}/dashboard`, timeline: "Copia histórica identificada"
+  })),
   {
     slug: "planometro-electoral",
     name: "Planometro Electoral",

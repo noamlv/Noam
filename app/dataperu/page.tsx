@@ -47,6 +47,7 @@ const decisionPaths = [
 ];
 
 const modules = [
+  { icon: FileChartColumn, title: "Biblioteca de análisis y dashboards", description: "Residuos, planes territoriales, discapacidad, deporte y archivo electoral: landings y exploradores con fuentes visibles.", href: "/analisis", status: "Disponible" },
   { icon: Droplets, title: "Agua y saneamiento", description: `Cobertura por red pública en ${formatMetric(waterSanitationSummary.districts)} distritos según los Censos Nacionales 2025.`, href: "/dataperu/agua-saneamiento", status: "Disponible" },
   { icon: GraduationCap, title: "Educación", description: `Matrícula EBR, nivel, ámbito y gestión en ${formatMetric(educationSummary.districts)} distritos según el Minedu.`, href: "/dataperu/educacion", status: "Disponible" },
   { icon: Search, title: "Agendas territoriales", description: "100 problemas y 75 oportunidades en validación para los 25 departamentos.", href: "/dataperu/agendas-territoriales", status: "Disponible" },

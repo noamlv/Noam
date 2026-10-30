@@ -32,6 +32,13 @@ async function expectHtml(path, text, options) {
 await waitForServer();
 
 const publicPages = [
+  ["/analisis", "Datos abiertos. Preguntas concretas."],
+  ["/analisis/residuos-municipales", "Generación de residuos municipales."],
+  ["/analisis/planes-territoriales", "Planeamiento territorial, provincia por provincia."],
+  ["/analisis/registro-discapacidad", "Discapacidad y acceso al registro."],
+  ["/analisis/apoyo-deportista", "Apoyo económico al deporte."],
+  ["/analisis/conteo-presidencial-2026", "Conteo presidencial: un corte, no el resultado final."],
+  ...["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"].map((slug) => [`/analisis/${slug}/dashboard`, "Detalle del agregado"]),
   ["/", "Análisis de datos para decisiones públicas y territoriales"],
   ["/solutions", "Una decisión concreta"],
   ["/solutions/diagnostico-agenda-territorial", "Una lectura compartida del territorio"],
