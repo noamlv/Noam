@@ -148,7 +148,7 @@ export function NoamNavigator() {
         >
           <div className="flex items-start justify-between gap-6 border-b border-white/12 pb-5">
             <div>
-              <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f]">Orientador NOAM</p>
+              <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f]">Orientador</p>
               <h2 id="noam-navigator-title" className="mt-2 text-2xl font-medium tracking-[-0.035em]">¿Qué necesitas resolver?</h2>
             </div>
             <button ref={closeButtonRef} type="button" onClick={() => { setOpen(false); toggleButtonRef.current?.focus(); }} className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d9a48f]" aria-label="Cerrar orientador">
@@ -289,7 +289,7 @@ export function NoamNavigator() {
         className="ml-auto inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/15 bg-[#15211d] px-4 text-sm font-medium text-white shadow-visual transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#20372f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rust"
       >
         <MessageCircle className="h-4 w-4" aria-hidden />
-        <span>Orientador NOAM</span>
+        <span>Orientador</span>
       </button>
     </div>
   );
