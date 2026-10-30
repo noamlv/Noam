@@ -66,7 +66,7 @@ const faqItems = [
 ];
 
 export const metadata = buildMetadata({
-  title: "ERM 2026: territorio, transición y gestión",
+  title: "Agenda de gestión regional y municipal 2026",
   description: "Datos, diagnósticos, encuestas, transferencia y sistemas de seguimiento para convertir las ERM 2026 en capacidad de gobierno regional y local.",
   path: "/electoral/erm-2026",
   image: ogImagePath("electoral", "erm-2026")
@@ -83,12 +83,12 @@ export default function Erm2026Page() {
         <Container>
           <div className="grid gap-14 lg:grid-cols-[0.92fr_1fr] lg:items-center lg:gap-20">
             <div>
-              <Eyebrow className="reveal text-[#d9a48f]">ERM 2026 · Región · Provincia · Distrito</Eyebrow>
-              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[12ch] text-white">De las propuestas a decisiones de gestión.</Heading>
-              <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-8 text-white/68">Perfiles territoriales, preguntas de transferencia y seguimiento para equipos que necesitan definir prioridades verificables y una ruta de 100 días. Sin atribuir resultados o autoridades no confirmados.</p>
+              <Eyebrow className="reveal text-[#d9a48f]">Gobiernos regionales y municipalidades</Eyebrow>
+              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[12ch] text-white">¿Qué necesita tu región o municipio?</Heading>
+              <p className="reveal reveal-delay-2 mt-7 max-w-xl text-base leading-8 text-white/68">Consulta datos locales y preguntas para preparar la nueva gestión. Esta guía ayuda a funcionarios y ciudadanos a revisar prioridades, servicios y compromisos de los primeros 100 días.</p>
               <div className="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3">
-                <Button href={contactHref} analyticsEvent="cta_click" analyticsTarget="erm:hero-contact" variant="secondary" className="rounded-full border-white bg-white text-ink">Preparar una gestión</Button>
-                <Button href="/dataperu/municipios" variant="ghost" className="gap-2 !text-white/70 hover:!text-white">Explorar un territorio <ArrowRight className="h-4 w-4" aria-hidden /></Button>
+                <Button href={contactHref} analyticsEvent="cta_click" analyticsTarget="erm:hero-contact" variant="secondary" className="rounded-full border-white bg-white text-ink">Consultar con NOAM</Button>
+                <Button href="/dataperu/municipios" variant="ghost" className="gap-2 !text-white/70 hover:!text-white">Ver datos de mi municipio <ArrowRight className="h-4 w-4" aria-hidden /></Button>
               </div>
             </div>
             <ErmVisual className="reveal reveal-delay-2" />

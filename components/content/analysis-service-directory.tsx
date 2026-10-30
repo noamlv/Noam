@@ -26,8 +26,8 @@ function DirectoryGroup({ title, description, entries, targetPrefix }: { title: 
 export function AnalysisServiceDirectory() {
   return (
     <div className="grid gap-14 xl:grid-cols-2 xl:gap-16">
-      <DirectoryGroup title="Por tipo de encargo" description="Empieza por la pregunta que debe responderse, aunque todavía no sepas qué método o producto necesitas." entries={analysisNeedPaths} targetPrefix="services:need" />
-      <DirectoryGroup title="Por tema de gestión" description="Rutas sectoriales con datos abiertos, límites de lectura, soluciones y preguntas para explorar alternativas." entries={sectorAnalysisPaths} targetPrefix="services:sector" />
+      <DirectoryGroup title="Por tipo de servicio" description="Elige qué quieres conocer, evaluar o seguir con datos." entries={analysisNeedPaths} targetPrefix="services:need" />
+      <DirectoryGroup title="Por tema de gestión" description="Consulta fuentes, preguntas de análisis y servicios para cada tema." entries={sectorAnalysisPaths} targetPrefix="services:sector" />
     </div>
   );
 }

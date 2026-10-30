@@ -30,7 +30,7 @@ export default function SamplesPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.48fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="reveal text-[#d9a48f]">Biblioteca comercial</Eyebrow>
-              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[13ch] text-white">Mira la forma del trabajo antes de elegir una intervenciónlo.</Heading>
+              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[13ch] text-white">Ejemplos de informes y herramientas</Heading>
             </div>
             <div className="reveal reveal-delay-2">
               <p className="text-base leading-8 text-white/68">Nueve muestras enseñan cómo una pregunta se convierte en evidencia, un artefacto de decisión y una capacidad transferible.</p>
@@ -92,7 +92,7 @@ export default function SamplesPage() {
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><Eyebrow className="text-white/55">Tu contexto</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Ahora convierte una necesidad real en un alcance discutible.</h2></div>
-              <Button href="/diagnostico?from=/muestras" analyticsEvent="cta_click" analyticsTarget="samples:scope-builder" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Diseñar un alcance</Button>
+              <Button href="/diagnostico?from=/muestras" analyticsEvent="cta_click" analyticsTarget="samples:scope-builder" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Describir mi consulta</Button>
             </div>
           </div>
         </Container>

@@ -42,9 +42,9 @@ export default function ServicesPage() {
           <div className="grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
             <div>
               <Eyebrow className="text-rust">Servicios</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch]">De la evidencia a una capacidad que funciona.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch]">Estudios y herramientas para gobiernos y empresas.</Heading>
             </div>
-            <div><p className="text-sm leading-7 text-ink/68 md:text-base">Combinamos investigación, estrategia, datos y producto digital. Cada proyecto comienza por la decisión que debe mejorar y termina con un entregable que el equipo puede usar.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Guía para elegir y plantear un análisis <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></NextLink></div>
+            <div><p className="text-sm leading-7 text-ink/68 md:text-base">Realizamos estudios, encuestas y evaluaciones. También desarrollamos tableros y herramientas de análisis. El trabajo se adapta al problema, los datos disponibles y las necesidades de tu equipo.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Guía para elegir y plantear un análisis <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></NextLink></div>
           </div>
         </Container>
       </Section>
@@ -52,12 +52,12 @@ export default function ServicesPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-8 pb-12 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Encuentra el punto de partida</Eyebrow><Heading size="xl">Busca por decisión o por problema.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">No necesitas llegar con la metodología resuelta. Revisa una ruta, examina evidencia y utiliza sus preguntas de orientación; si tu tema no aparece, podemos delimitarlo desde cero.</p>
+            <div><Eyebrow>Encuentra el punto de partida</Eyebrow><Heading size="xl">Encuentra el servicio que necesitas.</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Consulta los servicios por tipo de estudio o por tema. Cada página explica qué podemos analizar y ofrece guías o fuentes para empezar.</p>
           </div>
           <AnalysisServiceDirectory />
           <div className="mt-12 flex flex-col gap-5 border-t border-border pt-7 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-2xl text-sm leading-6 text-ink/62">¿Tu sector o problema no está listado? La ausencia de una etiqueta no limita el alcance de un estudio.</p>
+            <p className="max-w-2xl text-sm leading-6 text-ink/62">¿No encuentras tu tema? Escríbenos para ver cómo podemos ayudarte.</p>
             <Button href="/contact?interest=other&from=/services" analyticsEvent="cta_click" analyticsTarget="services:unlisted-need" variant="ghost" className="justify-start gap-2">Plantear otro tema <ArrowRight className="h-4 w-4" /></Button>
           </div>
         </Container>
@@ -141,7 +141,7 @@ export default function ServicesPage() {
                 <Eyebrow className="text-white/55">Alcance inicial</Eyebrow>
                 <Heading size="lg" className="max-w-3xl text-white">Si el problema todavía no está bien definido, ese puede ser el primer entregable.</Heading>
               </div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico" analyticsEvent="cta_click" analyticsTarget="services:scope-builder" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="services:direct-contact" variant="ghost" className="!text-white/70 hover:!text-white">Solicitar conversación</Button></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico" analyticsEvent="cta_click" analyticsTarget="services:scope-builder" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="services:direct-contact" variant="ghost" className="!text-white/70 hover:!text-white">Solicitar conversación</Button></div>
             </div>
           </div>
         </Container>

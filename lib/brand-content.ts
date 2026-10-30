@@ -21,19 +21,19 @@ export const serviceLines: ServiceLine[] = [
     shortTitle: "Entender y priorizar",
     promise: "Comprender problemas, medir resultados y definir prioridades.",
     description:
-      "Producimos evidencia útil para decisiones públicas y empresariales: desde una lectura territorial rápida hasta una evaluación integral de programas, mercados o inversiones.",
+      "Estudiamos problemas de una localidad u organización y evaluamos programas, mercados e inversiones. El alcance puede ir desde un diagnóstico rápido hasta una evaluación completa.",
     outcomes: [
-      "Una lectura común del problema y sus causas",
-      "Prioridades sustentadas con evidencia",
-      "Decisiones defendibles ante equipos y directorios",
-      "Una ruta de acción con responsables y plazos"
+      "Una explicación del problema y sus causas",
+      "Datos que ayuden a elegir qué atender primero",
+      "Argumentos para explicar las decisiones al equipo o directorio",
+      "Un plan de trabajo con responsables y plazos"
     ],
     deliverables: [
       "Diagnóstico territorial o institucional",
-      "Línea de base e indicadores",
+      "Medición inicial e indicadores para seguir los cambios",
       "Encuesta o estudio de opinión",
       "Evaluación de programa o proyecto",
-      "Brief ejecutivo y hoja de ruta"
+      "Resumen ejecutivo y plan de trabajo"
     ],
     timeline: "Desde 3 semanas",
     image: "/images/noam-field-research.jpg",
@@ -47,45 +47,45 @@ export const serviceLines: ServiceLine[] = [
     shortTitle: "Monitorear y actuar",
     promise: "Monitorear indicadores, proyectos, presupuesto y servicios.",
     description:
-      "Diseñamos sistemas que convierten datos dispersos en señales operativas para la alta dirección, los equipos técnicos y la ciudadanía.",
+      "Reunimos datos de distintas fuentes en tableros y reportes para consultar indicadores, seguir proyectos y revisar el uso del presupuesto.",
     outcomes: [
-      "Indicadores críticos reunidos en un solo lugar",
+      "Los indicadores que necesita el equipo, reunidos en un solo lugar",
       "Alertas tempranas para intervenir a tiempo",
       "Seguimiento visible de compromisos y resultados",
       "Menos trabajo manual para producir reportes"
     ],
     deliverables: [
-      "Dashboard ejecutivo",
+      "Tablero de indicadores para la dirección",
       "Observatorio temático o territorial",
-      "Visor georreferenciado",
+      "Mapa interactivo con datos por ubicación",
       "Sistema de alertas y reportes",
-      "Pipeline, catálogo y diccionario de datos"
+      "Proceso de actualización, catálogo de datos y definición de cada campo"
     ],
     timeline: "Desde 4 semanas",
     image: "/images/noam-decision-room.jpg",
-    imageAlt: "Equipo directivo revisando un mapa territorial y señales de gestión en una sala de decisión",
-    imageCaption: "Escena editorial representativa de una rutina de decisión. No corresponde a un cliente."
+    imageAlt: "Equipo directivo revisando un mapa e indicadores de gestión en una sala de reuniones",
+    imageCaption: "Escena editorial representativa de una reunión de trabajo. No corresponde a un cliente."
   },
   {
     slug: "ia-transformacion-gestion",
     number: "03",
     title: "IA y transformación de la gestión",
-    shortTitle: "Mejorar y escalar",
-    promise: "Mejorar procesos concretos mediante datos, automatización e IA responsable.",
+    shortTitle: "Mejorar procesos",
+    promise: "Mejorar procesos con datos, automatización e inteligencia artificial (IA) bajo supervisión.",
     description:
-      "Partimos del proceso y del resultado esperado, no de la tecnología. Priorizamos casos viables, controlamos riesgos y construimos pilotos que el equipo puede operar.",
+      "Revisamos cómo trabaja el equipo y qué necesita mejorar. Elegimos usos viables, definimos controles de riesgo y probamos un piloto que el equipo pueda operar.",
     outcomes: [
-      "Casos de uso priorizados por valor y viabilidad",
+      "Usos elegidos según su utilidad y la posibilidad de implementarlos",
       "Menos tiempo en tareas documentales repetitivas",
       "Controles claros para datos, riesgos y supervisión",
-      "Un piloto medible antes de escalar inversión"
+      "Una prueba con resultados medibles antes de ampliar la inversión"
     ],
     deliverables: [
-      "Diagnóstico de preparación institucional",
-      "Portafolio de casos de uso",
-      "Marco de gobernanza y riesgos",
+      "Revisión de los datos y recursos disponibles para comenzar",
+      "Lista de usos propuestos y sus prioridades",
+      "Reglas, responsables y controles de riesgo",
       "Piloto funcional de IA o automatización",
-      "Plan de adopción y medición"
+      "Plan para incorporar la herramienta y medir su uso"
     ],
     timeline: "Desde 3 semanas",
     image: "/images/noam-ai-oversight.jpg",
@@ -99,36 +99,36 @@ export const clientSegments = [
     slug: "municipalidades",
     label: "Municipalidades",
     type: "Sector público",
-    description: "Soluciones modulares para distritos y provincias que necesitan priorizar, monitorear y mostrar resultados con recursos limitados.",
-    needs: ["Perfil territorial", "Cartera de prioridades", "Seguimiento de inversión", "Tablero de servicios"]
+    description: "Estudios y herramientas para que municipios distritales y provinciales elijan prioridades y sigan sus resultados con recursos limitados.",
+    needs: ["Perfil del municipio", "Lista de prioridades", "Seguimiento de inversión", "Tablero de servicios"]
   },
   {
     slug: "gobiernos-regionales",
     label: "Gobiernos regionales",
     type: "Sector público",
-    description: "Inteligencia para coordinar políticas, inversiones y servicios entre provincias, sectores y unidades ejecutoras.",
+    description: "Datos y análisis para coordinar políticas, inversiones y servicios entre provincias, sectores y unidades ejecutoras.",
     needs: ["Diagnóstico regional", "Observatorio de gestión", "Evaluación de programas", "Alertas territoriales"]
   },
   {
     slug: "gobierno-nacional",
     label: "Gobierno nacional",
     type: "Sector público",
-    description: "Sistemas y estudios para programas, ministerios y organismos que necesitan leer implementación y resultados en el territorio.",
-    needs: ["Monitoreo nacional", "Evaluación", "Analítica territorial", "Gobernanza de IA"]
+    description: "Sistemas y estudios para revisar cómo se implementan los programas y qué resultados tienen en distintas zonas del país.",
+    needs: ["Seguimiento nacional", "Evaluación de programas", "Análisis por territorio", "Reglas y supervisión de IA"]
   },
   {
     slug: "empresas",
     label: "Empresas",
     type: "Sector privado",
-    description: "Evidencia territorial, institucional y de mercado para expansión, inversión, relacionamiento y gestión de riesgos.",
-    needs: ["Inteligencia territorial", "Estudios de mercado", "Riesgo institucional", "Dashboards ejecutivos"]
+    description: "Estudios de mercados, instituciones y zonas de operación para planear una expansión, evaluar inversiones y gestionar riesgos y relaciones locales.",
+    needs: ["Análisis del territorio", "Estudios de mercado", "Riesgo institucional", "Tableros para la dirección"]
   },
   {
     slug: "organizaciones",
     label: "Cooperación y organizaciones",
-    type: "Ecosistema",
+    type: "Cooperación y organizaciones",
     description: "Diseño, seguimiento y evaluación para organizaciones que implementan iniciativas de desarrollo junto al Estado y las comunidades.",
-    needs: ["Línea de base", "Monitoreo de proyectos", "Evaluación de impacto", "Visualización pública"]
+    needs: ["Medición inicial", "Seguimiento de proyectos", "Evaluación de impacto", "Gráficos y mapas públicos"]
   }
 ] as const;
 
@@ -144,7 +144,7 @@ export const publicAgendas = [
 ];
 
 export const privateAgendas = [
-  "Inteligencia territorial y expansión",
+  "Estudio del territorio para la expansión",
   "Estudios de mercado y opinión",
   "Entorno público y regulatorio",
   "Localización y priorización de inversiones",
@@ -158,73 +158,73 @@ export const publicInstitutionTypes = [
   {
     slug: "municipalidades-distritales",
     label: "Municipalidades distritales",
-    description: "Soluciones modulares y sostenibles para equipos pequeños que necesitan ordenar prioridades, inversiones y servicios.",
+    description: "Estudios y herramientas para equipos pequeños que necesitan elegir prioridades y organizar inversiones y servicios.",
     entry: "Perfil territorial, diagnóstico rápido o tablero de gestión"
   },
   {
     slug: "municipalidades-provinciales",
     label: "Municipalidades provinciales",
-    description: "Lectura integrada de distritos, corredores, servicios e inversiones para coordinar decisiones de alcance provincial.",
+    description: "Analizamos los distritos, sus conexiones, servicios e inversiones para coordinar el trabajo de la provincia.",
     entry: "Agenda provincial, observatorio o sistema de seguimiento"
   },
   {
     slug: "gobiernos-regionales",
     label: "Gobiernos regionales",
-    description: "Evidencia para conducir políticas, unidades ejecutoras, proyectos y brechas entre provincias y sectores.",
+    description: "Datos para coordinar políticas y proyectos entre unidades ejecutoras, y atender diferencias en el acceso a servicios entre provincias y sectores.",
     entry: "Diagnóstico regional, cartera priorizada u observatorio"
   },
   {
     slug: "entidades-nacionales",
     label: "Entidades y programas nacionales",
-    description: "Sistemas y estudios para comprender implementación, cobertura y resultados en territorios diversos.",
+    description: "Sistemas y estudios para revisar cómo se implementa un programa, a quiénes llega y qué resultados tiene en distintos territorios.",
     entry: "Monitoreo territorial, evaluación o analítica de programas"
   }
 ] as const;
 
 export const publicManagementAreas = [
-  { title: "Planeamiento e inversión", description: "Prioridades, presupuesto, cartera de proyectos y seguimiento de ejecución." },
-  { title: "Desarrollo económico y empleo", description: "Tejido productivo, mercados, capacidades y oportunidades territoriales." },
-  { title: "Desarrollo social", description: "Población, brechas, servicios, educación, salud y protección social." },
-  { title: "Seguridad y convivencia", description: "Incidencias, percepción, factores de riesgo y respuestas territoriales." },
-  { title: "Territorio y resiliencia", description: "Infraestructura, movilidad, ambiente, riesgos y adaptación." },
-  { title: "Modernización y servicios", description: "Procesos, experiencia ciudadana, datos, automatización e IA responsable." }
+  { title: "Planeamiento e inversión", description: "Elegir prioridades, organizar el presupuesto y seguir la ejecución de proyectos." },
+  { title: "Desarrollo económico y empleo", description: "Conocer la actividad productiva, los mercados y las oportunidades de cada territorio." },
+  { title: "Desarrollo social", description: "Estudiar las necesidades de la población y su acceso a educación, salud y protección social." },
+  { title: "Seguridad y convivencia", description: "Revisar incidentes, percepción de seguridad y riesgos para orientar las respuestas locales." },
+  { title: "Territorio y resiliencia", description: "Estudiar la infraestructura, la movilidad y el ambiente para gestionar riesgos y adaptarse a ellos." },
+  { title: "Modernización y servicios", description: "Revisar la atención a la ciudadanía y mejorar procesos con datos, automatización e IA bajo supervisión." }
 ] as const;
 
 export const privateIndustries = [
   {
     slug: "infraestructura-construccion",
     title: "Infraestructura y construcción",
-    description: "Localización, inversión pública relacionada, entorno institucional y seguimiento territorial.",
+    description: "Estudiamos dónde ubicar un proyecto, qué inversión pública se relaciona con él y qué instituciones intervienen, y seguimos su entorno local.",
     decisions: ["Priorizar territorios", "Monitorear proyectos", "Anticipar restricciones"]
   },
   {
     slug: "energia-mineria",
     title: "Energía, minería y recursos",
-    description: "Contexto territorial, actores, compromisos, riesgos y evidencia para una operación informada.",
-    decisions: ["Comprender el entorno", "Gestionar señales", "Medir compromisos"]
+    description: "Estudiamos las zonas de operación, las personas e instituciones involucradas, los compromisos y los riesgos.",
+    decisions: ["Comprender el entorno", "Seguir riesgos", "Revisar compromisos"]
   },
   {
     slug: "servicios-publicos",
     title: "Servicios públicos y saneamiento",
-    description: "Cobertura, experiencia del usuario, brechas, inversiones y desempeño operativo por territorio.",
+    description: "Revisamos a quién llega el servicio, cómo lo viven los usuarios, qué falta cubrir y cómo funcionan las inversiones y la operación en cada lugar.",
     decisions: ["Diagnosticar cobertura", "Escuchar usuarios", "Seguir desempeño"]
   },
   {
     slug: "comercio-expansion",
     title: "Comercio y expansión territorial",
-    description: "Demanda, accesibilidad, competencia, condiciones institucionales y escenarios de localización.",
+    description: "Comparamos posibles ubicaciones según la demanda, el acceso, la competencia y las condiciones institucionales.",
     decisions: ["Seleccionar ciudades", "Segmentar mercados", "Validar expansión"]
   },
   {
     slug: "agroindustria",
     title: "Agroindustria y cadenas productivas",
-    description: "Corredores, productores, infraestructura, riesgos climáticos y capacidades públicas locales.",
+    description: "Estudiamos las conexiones entre productores, la infraestructura disponible, los riesgos climáticos y las capacidades de las entidades locales.",
     decisions: ["Mapear cadenas", "Priorizar zonas", "Evaluar riesgos"]
   },
   {
     slug: "desarrollo-impacto",
     title: "Cooperación, fundaciones e impacto",
-    description: "Líneas de base, diseño, monitoreo y evaluación de iniciativas junto al Estado y comunidades.",
+    description: "Medimos la situación inicial y apoyamos el diseño, seguimiento y evaluación de iniciativas junto al Estado y las comunidades.",
     decisions: ["Diseñar intervenciones", "Medir resultados", "Comunicar impacto"]
   }
 ] as const;
@@ -234,19 +234,19 @@ export const engagementScales = [
     number: "01",
     title: "Punto de partida",
     duration: "2 a 4 semanas",
-    description: "Un diagnóstico rápido, brief ejecutivo o prototipo para reducir incertidumbre antes de una inversión mayor."
+    description: "Un diagnóstico rápido, resumen ejecutivo o prototipo para aclarar dudas antes de una inversión mayor."
   },
   {
     number: "02",
     title: "Proyecto aplicado",
     duration: "4 a 12 semanas",
-    description: "Un estudio, sistema o piloto con alcance, entregables, validación y transferencia claramente definidos."
+    description: "Un estudio, sistema o piloto con acuerdos sobre qué incluye, qué se entrega, cómo se revisa y cómo se transfiere al equipo."
   },
   {
     number: "03",
-    title: "Capacidad continua",
+    title: "Apoyo continuo",
     duration: "Por ciclos",
-    description: "Actualización de datos, monitoreo, soporte analítico y mejora continua integrados a la operación."
+    description: "Actualizamos datos, seguimos indicadores y apoyamos al equipo con análisis y mejoras durante la operación."
   }
 ] as const;
 
@@ -258,24 +258,24 @@ export const deliverySteps = [
   },
   {
     number: "02",
-    title: "Construir evidencia",
+    title: "Reunir y analizar la información",
     description: "Integramos fuentes públicas, datos institucionales, trabajo de campo y conocimiento experto."
   },
   {
     number: "03",
-    title: "Entregar para usar",
-    description: "Traducimos el análisis en un informe, tablero, visor, sistema o protocolo realmente operable."
+    title: "Entregar el estudio o la herramienta",
+    description: "Preparamos un informe, tablero, mapa, sistema o protocolo que el equipo pueda usar."
   },
   {
     number: "04",
-    title: "Acompañar la acción",
-    description: "Transferimos capacidades, medimos adopción y ajustamos la solución con el equipo responsable."
+    title: "Acompañar al equipo",
+    description: "Enseñamos a usar lo entregado, revisamos su uso y hacemos ajustes con el equipo responsable."
   }
 ];
 
 export const evidencePrinciples = [
-  "Fuentes y supuestos explícitos",
-  "Métodos adecuados a la decisión",
-  "Trazabilidad de datos y resultados",
-  "Diseño comprensible para usuarios no técnicos"
+  "Indicamos las fuentes y los supuestos del análisis",
+  "Elegimos métodos adecuados a la pregunta",
+  "Documentamos de dónde viene cada dato y cómo se obtiene cada resultado",
+  "Presentamos los resultados para que puedan entenderse sin conocimientos técnicos"
 ];

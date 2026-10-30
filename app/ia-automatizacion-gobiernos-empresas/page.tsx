@@ -82,10 +82,10 @@ export default function AiAutomationPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#b8c8ce]">IA aplicada y gobernable</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[13ch] text-white">La IA no es el servicio. El servicio es un proceso mejor.</Heading>
+              <Heading as="h1" size="display" className="max-w-[13ch] text-white">¿Qué tareas podrías mejorar con IA?</Heading>
             </div>
             <div>
-              <p className="text-base leading-8 text-white/68">Seleccionamos casos, diseñamos controles y construimos pilotos medibles para gobiernos y empresas antes de comprometer una adopción mayor.</p>
+              <p className="text-base leading-8 text-white/68">Conoce usos posibles de la IA y la automatización, qué datos requieren y qué riesgos conviene revisar. Una prueba pequeña permite evaluar si la herramienta ayuda antes de ampliarla.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="#casos" variant="secondary" className="rounded-full border-white bg-white text-ink">Explorar casos</Button>
                 <Button href="/products/ai-governance-lab" variant="ghost" className="!text-white/70 hover:!text-white">Abrir laboratorio</Button>
@@ -220,7 +220,7 @@ export default function AiAutomationPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-[#475c63] px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Primera definición</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué tarea consume tiempo y qué error no puede pasar desapercibido.</h2></div>
+              <div><Eyebrow className="text-white/55">Apoyo de NOAM</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué tarea consume tiempo y qué error no puede pasar desapercibido.</h2></div>
               <div className="flex flex-wrap gap-3"><Button href="/products/ai-governance-lab" analyticsEvent="cta_click" analyticsTarget="ai-hub:lab" variant="secondary" className="rounded-full border-white bg-white text-ink">Evaluar un caso</Button><Button href="/contact?interest=ia-procesos-publicos&from=/ia-automatizacion-gobiernos-empresas" analyticsEvent="cta_click" analyticsTarget="ai-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear el piloto</Button></div>
             </div>
           </div>

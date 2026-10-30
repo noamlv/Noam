@@ -25,14 +25,14 @@ export function TerritoryEntry() {
   return (
     <div className="rounded-[1.25rem] border border-ink/12 bg-white p-6 shadow-subtle md:p-8">
       <div className="flex items-center justify-between gap-5">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rust">Tu territorio</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rust">Análisis departamental</p>
         <MapPinned className="h-5 w-5 text-rust" aria-hidden />
       </div>
       <h3 className="mt-8 text-3xl font-medium leading-[1.08] tracking-[-0.045em] text-ink">
-        Empieza por el lugar que necesitas entender.
+        Conoce los problemas de tu departamento
       </h3>
       <p className="mt-4 text-sm leading-6 text-ink/64">
-        Abre un perfil departamental con problemas, capacidades municipales, inversión y preguntas para la gestión.
+        Revisa los problemas identificados, las poblaciones afectadas y las oportunidades de cada departamento.
       </p>
 
       <label htmlFor="home-territory" className="mt-7 block text-xs font-medium text-ink">
@@ -66,7 +66,7 @@ export function TerritoryEntry() {
           </span>
         )}
         <NextLink href="/dataperu/departamentos" className="text-sm font-medium text-ink/62 transition-colors hover:text-ink">
-          Ver todo el país
+          Ver todos los departamentos
         </NextLink>
       </div>
       <p className="mt-5 text-[10px] leading-4 text-muted">La preferencia se guarda solo en este navegador. Puedes cambiarla en cualquier momento.</p>

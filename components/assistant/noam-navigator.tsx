@@ -47,12 +47,12 @@ function recommendation(audience: Audience, need: Need, territoryCode: string) {
   if (need === "territory" && territory) {
     return {
       title: `Abrir el perfil de ${territory.name}`,
-      description: "Revisa capacidades municipales, inversión, problemas priorizados y preguntas pendientes antes de definir un encargo.",
+      description: "Consulta datos de municipios, presupuesto y proyectos del departamento.",
       href: `/dataperu/departamentos/${territory.code}`
     };
   }
-  if (need === "territory") return { title: "Explorar DataPerú", description: "Busca municipios, departamentos, inversiones y señales de gestión con fuentes y periodos visibles.", href: "/dataperu" };
-  if (need === "electoral") return { title: "Entrar al especial ERM 2026", description: "Conecta territorio, competencia electoral, transferencia y agenda de los primeros 100 días.", href: "/electoral/erm-2026" };
+  if (need === "territory") return { title: "Explorar DataPerú", description: "Busca datos de municipios, departamentos y proyectos. Cada sección indica la fuente y el periodo.", href: "/dataperu" };
+  if (need === "electoral") return { title: "Entrar al especial ERM 2026", description: "Consulta información territorial y preguntas para preparar el inicio de una gestión regional o municipal.", href: "/electoral/erm-2026" };
   if (need === "system") return { title: "Revisar sistemas de decisión", description: "Conoce cómo diseñamos indicadores, dashboards, visores, alertas y rutinas de seguimiento.", href: "/services/observatorios-sistemas-decision" };
   if (need === "ai") return { title: "Evaluar un caso de IA", description: "Parte de un proceso concreto, sus datos, riesgos y criterios de éxito antes de construir un piloto.", href: "/products/ai-governance-lab" };
   if (audience === "company") return { title: "Revisar estudios para empresas", description: "Explora inteligencia territorial, estudios de mercado, evaluación y análisis para inversión u operación.", href: "/sectors/companies" };
@@ -149,7 +149,7 @@ export function NoamNavigator() {
           <div className="flex items-start justify-between gap-6 border-b border-white/12 pb-5">
             <div>
               <p className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f]">Orientador</p>
-              <h2 id="noam-navigator-title" className="mt-2 text-2xl font-medium tracking-[-0.035em]">¿Qué necesitas resolver?</h2>
+              <h2 id="noam-navigator-title" className="mt-2 text-2xl font-medium tracking-[-0.035em]">¿Qué estás buscando?</h2>
             </div>
             <button ref={closeButtonRef} type="button" onClick={() => { setOpen(false); toggleButtonRef.current?.focus(); }} className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/15 text-white/70 transition-colors hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#d9a48f]" aria-label="Cerrar orientador">
               <X className="h-4 w-4" aria-hidden />
@@ -157,11 +157,11 @@ export function NoamNavigator() {
           </div>
 
           <form onSubmit={ask} className="mt-5">
-            <label htmlFor="noam-navigator-question" className="block text-xs font-medium text-white/72">Cuéntanos la decisión, estudio o sistema que buscas.</label>
-            <textarea id="noam-navigator-question" value={question} onChange={(event) => setQuestion(event.target.value)} minLength={5} maxLength={320} rows={2} placeholder="Ej.: Necesitamos evaluar un programa regional" className="mt-3 w-full resize-y rounded-sm border border-white/14 bg-[#1b2d27] px-4 py-3 text-sm leading-6 text-white outline-none placeholder:text-white/35 focus:border-[#d9a48f]" />
+            <label htmlFor="noam-navigator-question" className="block text-xs font-medium text-white/72">Escribe el tema o la información que necesitas.</label>
+            <textarea id="noam-navigator-question" value={question} onChange={(event) => setQuestion(event.target.value)} minLength={5} maxLength={320} rows={2} placeholder="Ej.: Busco datos de residuos en Cajamarca" className="mt-3 w-full resize-y rounded-sm border border-white/14 bg-[#1b2d27] px-4 py-3 text-sm leading-6 text-white outline-none placeholder:text-white/35 focus:border-[#d9a48f]" />
             <div className="mt-3 flex items-center justify-between gap-3">
               <span className="text-[10px] leading-4 text-white/42">La pregunta se procesa aquí; no se envía ni se guarda.</span>
-              <button type="submit" data-analytics-event="cta_click" data-analytics-target="navigator:question:submit" disabled={question.trim().length < 5} className="inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full bg-white px-4 text-xs font-medium text-ink transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-45">Orientarme <ArrowRight className="h-3.5 w-3.5" aria-hidden /></button>
+              <button type="submit" data-analytics-event="cta_click" data-analytics-target="navigator:question:submit" disabled={question.trim().length < 5} className="inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full bg-white px-4 text-xs font-medium text-ink transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-45">Buscar contenido <ArrowRight className="h-3.5 w-3.5" aria-hidden /></button>
             </div>
           </form>
 
@@ -170,22 +170,22 @@ export function NoamNavigator() {
               <p className="text-[10px] leading-5 text-muted">Tu pregunta: {askedQuestion}</p>
               {answer === "unknown" ? (
                 <>
-                  <h3 className="mt-4 text-lg font-medium tracking-[-0.025em]">Necesito un poco más de contexto.</h3>
-                  <p className="mt-2 text-xs leading-6 text-ink/65">¿Qué decisión quieren tomar, en qué territorio o sector y qué evidencia ya tienen? Puedes reformular la pregunta o explorar nuestras capacidades sin comprometerte a contratar.</p>
-                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium"><NextLink href="/services" onClick={() => setOpen(false)} className="text-rust">Ver capacidades</NextLink><NextLink href="/cases" onClick={() => setOpen(false)} className="text-ink/65">Ver trabajos</NextLink></div>
+                  <h3 className="mt-4 text-lg font-medium tracking-[-0.025em]">No encontré una coincidencia.</h3>
+                  <p className="mt-2 text-xs leading-6 text-ink/65">Prueba con un tema como agua, educación o presupuesto. También puedes consultar DataPerú o ver nuestros trabajos.</p>
+                  <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium"><NextLink href="/dataperu" onClick={() => setOpen(false)} className="text-rust">Ver DataPerú</NextLink><NextLink href="/cases" onClick={() => setOpen(false)} className="text-ink/65">Ver trabajos</NextLink></div>
                   <a href={buildAssistantEmailUrl(askedQuestion, null, pathname, submittedFollowUp)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Enviar mi pregunta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
                 </>
               ) : (
                 <>
                   <p className="mt-4 text-[9px] font-semibold uppercase tracking-[0.14em] text-rust">Orientación inicial · {answer.topic}</p>
-                  <h3 className="mt-2 text-lg font-medium tracking-[-0.025em]">Un punto de partida verificable.</h3>
+                  <h3 className="mt-2 text-lg font-medium tracking-[-0.025em]">Puedes empezar aquí.</h3>
                   <p className="mt-2 text-xs leading-6 text-ink/68">{answer.response}</p>
                   <div className="mt-5 grid gap-2">
                     <NextLink href={answer.primary.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:approach" className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs font-medium text-ink hover:border-rust/45">{answer.primary.label}<ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink>
                     <NextLink href={answer.proof.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:proof" className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs text-ink/72 hover:border-rust/45"><span><span className="block text-[9px] uppercase tracking-[0.12em] text-rust">{answer.proof.kind}</span>{answer.proof.label}</span><ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink>
                     {answerTerritory ? <NextLink href={`/dataperu/departamentos/${answerTerritory.code}`} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:answer:territory:${answerTerritory.code}`} className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs text-ink/72 hover:border-rust/45">Ver datos de {answerTerritory.name}<ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink> : null}
                   </div>
-                  <NextLink href={answerContactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:contact" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Explorar cómo abordar el problema <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></NextLink>
+                  <NextLink href={answerContactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:contact" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Consultar con NOAM <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></NextLink>
                   <a href={buildAssistantEmailUrl(askedQuestion, answer, pathname, submittedFollowUp)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-3 inline-flex text-xs font-medium text-ink/68 hover:text-rust">Enviar esta consulta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
                 </>
               )}
@@ -195,9 +195,9 @@ export function NoamNavigator() {
 
           {answer && !submittedFollowUp ? (
             <form onSubmit={clarify} className="mt-4 border-t border-white/12 pt-4">
-              <label htmlFor="noam-navigator-follow-up" className="block text-xs font-medium text-white/72">¿En qué territorio o qué decisión necesitas precisar?</label>
+              <label htmlFor="noam-navigator-follow-up" className="block text-xs font-medium text-white/72">¿De qué lugar o tema quieres saber más?</label>
               <textarea id="noam-navigator-follow-up" value={followUp} onChange={(event) => setFollowUp(event.target.value)} minLength={5} maxLength={160} rows={2} placeholder="Ej.: En Cajamarca; tenemos registros de 2025" className="mt-3 w-full resize-y rounded-sm border border-white/14 bg-[#1b2d27] px-4 py-3 text-sm leading-6 text-white outline-none placeholder:text-white/35 focus:border-[#d9a48f]" />
-              <div className="mt-3 flex items-center justify-between gap-3"><span className="text-[10px] text-white/42">Opcional · solo en esta página; no se guarda.</span><button type="submit" disabled={followUp.trim().length < 5} data-analytics-event="cta_click" data-analytics-target="navigator:follow-up:submit" className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/20 px-4 text-xs font-medium text-white transition-colors hover:border-white/50 disabled:cursor-not-allowed disabled:opacity-45">Precisar <ArrowRight className="h-3.5 w-3.5" aria-hidden /></button></div>
+              <div className="mt-3 flex items-center justify-between gap-3"><span className="text-[10px] text-white/42">Opcional · solo en esta página; no se guarda.</span><button type="submit" disabled={followUp.trim().length < 5} data-analytics-event="cta_click" data-analytics-target="navigator:follow-up:submit" className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/20 px-4 text-xs font-medium text-white transition-colors hover:border-white/50 disabled:cursor-not-allowed disabled:opacity-45">Actualizar búsqueda <ArrowRight className="h-3.5 w-3.5" aria-hidden /></button></div>
             </form>
           ) : null}
           {answer && submittedFollowUp ? <div className="mt-4 flex items-start justify-between gap-4 border-t border-white/12 pt-4"><p className="text-xs leading-5 text-white/62">Contexto añadido: {submittedFollowUp}</p><button type="button" onClick={() => { setFollowUp(submittedFollowUp); setSubmittedFollowUp(""); }} className="shrink-0 text-[10px] text-white/62 underline underline-offset-4 hover:text-white">Editar</button></div> : null}
@@ -206,7 +206,7 @@ export function NoamNavigator() {
 
           {!answer && !audience ? (
             <fieldset className="mt-5">
-              <legend className="text-xs font-medium text-white/72">1. ¿Desde dónde nos visitas?</legend>
+              <legend className="text-xs font-medium text-white/72">1. ¿Qué te describe mejor?</legend>
               <div className="mt-3 grid gap-2">
                 {audiences.map((option) => (
                   <button key={option.value} type="button" onClick={() => setAudience(option.value)} data-analytics-event="cta_click" data-analytics-target={`navigator:audience:${option.value}`} className="rounded-sm border border-white/12 px-4 py-3 text-left text-sm text-white/62 transition-colors hover:border-white/28 hover:text-white">
@@ -224,7 +224,7 @@ export function NoamNavigator() {
 
           {!answer && audience && !need ? (
             <fieldset className="mt-5">
-              <legend className="text-xs font-medium text-white/72">2. ¿Qué necesitas resolver?</legend>
+              <legend className="text-xs font-medium text-white/72">2. ¿Qué estás buscando?</legend>
               <div className="mt-3 grid gap-2">
                 {needs.map((option) => (
                   <button key={option.value} type="button" onClick={() => setNeed(option.value)} data-analytics-event="cta_click" data-analytics-target={`navigator:need:${option.value}`} className="rounded-sm border border-white/12 px-4 py-3 text-left text-sm text-white/62 transition-colors hover:border-white/28 hover:text-white">
@@ -258,7 +258,7 @@ export function NoamNavigator() {
               <h3 className="mt-3 text-xl font-medium tracking-[-0.03em]">{result.title}</h3>
               <p className="mt-3 text-xs leading-5 text-ink/64">{result.description}</p>
               <NextLink href={result.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:recommendation:${need}`} className="mt-5 inline-flex min-h-10 items-center gap-2 rounded-full bg-ink px-4 text-xs font-medium text-white">
-                Abrir recomendación <ArrowRight className="h-3.5 w-3.5" aria-hidden />
+                Ver contenido <ArrowRight className="h-3.5 w-3.5" aria-hidden />
               </NextLink>
               <NextLink href={needProof[need as Need].href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:proof:${need}`} className="mt-5 flex items-center justify-between gap-3 border-t border-border pt-4 text-xs text-ink/72 hover:text-rust">
                 <span><span className="block text-[9px] uppercase tracking-[0.12em] text-rust">{needProof[need as Need].kind}</span>{needProof[need as Need].label}</span>
@@ -266,7 +266,7 @@ export function NoamNavigator() {
               </NextLink>
               <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3 border-t border-border pt-4 text-xs">
                 <NextLink href={contactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:contact:${need}`} className="font-medium text-ink hover:text-rust">Conversar con NOAM</NextLink>
-                <a href={buildWhatsAppUrl(pathname, `un posible encargo sobre ${result.title.toLowerCase()}`)} target="_blank" rel="noreferrer" data-analytics-event="cta_click" data-analytics-target={`navigator:whatsapp:${need}`} className="text-ink/58 hover:text-ink">Hablar por WhatsApp</a>
+                <a href={buildWhatsAppUrl(pathname, `una consulta sobre ${result.title.toLowerCase()}`)} target="_blank" rel="noreferrer" data-analytics-event="cta_click" data-analytics-target={`navigator:whatsapp:${need}`} className="text-ink/58 hover:text-ink">Hablar por WhatsApp</a>
               </div>
             </div>
           ) : null}

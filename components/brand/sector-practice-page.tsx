@@ -24,7 +24,7 @@ export function SectorPracticePage({ practice }: { practice: SectorPractice }) {
               <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[13ch]">{practice.title}</Heading>
               <p className="reveal reveal-delay-2 mt-7 max-w-2xl text-xl font-medium leading-8 tracking-[-0.025em] text-ink/82">{practice.promise}</p>
               <p className="reveal reveal-delay-2 mt-5 max-w-2xl text-sm leading-7 text-ink/65">{practice.description}</p>
-              <div className="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3"><Button href={`/contact?interest=${practice.slug}`} className="rounded-full">Conversar sobre esta práctica</Button><Button href="/diagnostico" variant="secondary" className="rounded-full">Diseñar un alcance</Button><Button href="/solutions" variant="ghost" className="gap-2">Ver soluciones <ArrowRight className="h-4 w-4" /></Button></div>
+              <div className="reveal reveal-delay-3 mt-8 flex flex-wrap gap-3"><Button href={`/contact?interest=${practice.slug}`} className="rounded-full">Consultar con NOAM</Button><Button href="/diagnostico" variant="secondary" className="rounded-full">Describir mi consulta</Button><Button href="/solutions" variant="ghost" className="gap-2">Ver soluciones <ArrowRight className="h-4 w-4" /></Button></div>
             </div>
             <div className="reveal reveal-delay-2 relative min-h-[420px] overflow-hidden rounded-[1.25rem] border border-border shadow-visual">
               <Image src={practice.image} alt={practice.imageAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 44vw" priority />

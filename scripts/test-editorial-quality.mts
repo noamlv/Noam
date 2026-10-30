@@ -104,7 +104,8 @@ assert.ok(englishPage.includes('locale: "en_US"'), "/en debe declarar OpenGraph 
 
 const homePage = read("app/page.tsx");
 assert.doesNotMatch(homePage, /04 OCT 2026|Entender la elección\. Preparar la gestión\./, "La portada no debe presentar la jornada ERM como una convocatoria futura");
-assert.match(homePage, /De las propuestas a las prioridades de gestión/, "La portada debe conectar el especial electoral con decisiones de gestión");
+assert.match(homePage, /Agenda de gestión 2026/, "La portada debe orientar hacia la gestión regional y municipal");
+assert.ok(!homePage.includes('/electoral/planometro-2026'), "Planómetro se encuentra en Electoral, no en el especial de gestión de portada");
 
 const ermPage = read("app/electoral/erm-2026/page.tsx");
 assert.match(ermPage, /NOAM publica resultados electorales oficiales/, "El especial debe separar su análisis de los resultados oficiales");

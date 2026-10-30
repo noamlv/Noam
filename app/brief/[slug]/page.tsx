@@ -86,7 +86,7 @@ export default async function BriefDetailPage({ params }: BriefPageProps) {
       </Section>
 
       <Section className="border-y border-border bg-[#15211d] text-white">
-        <Container><div className="grid gap-10 lg:grid-cols-[0.4fr_1fr] lg:gap-20"><div><Eyebrow className="text-[#d9a48f]">Próxima edición</Eyebrow><Heading size="xl" className="text-white">Recibe el Brief cuando exista una nueva señal útil.</Heading><div className="mt-7 flex flex-wrap gap-3"><Button href="/diagnostico" variant="ghost" className="!text-white/75 hover:!text-white">Diseñar un alcance</Button><Button href="/contact?interest=brief-noam" variant="secondary" className="rounded-full border-white bg-white text-ink">Conversar con NOAM</Button></div></div><NewsletterSignup sourcePath={path} /></div></Container>
+        <Container><div className="grid gap-10 lg:grid-cols-[0.4fr_1fr] lg:gap-20"><div><Eyebrow className="text-[#d9a48f]">Próxima edición</Eyebrow><Heading size="xl" className="text-white">Recibe el Brief cuando exista una nueva señal útil.</Heading><div className="mt-7 flex flex-wrap gap-3"><Button href="/diagnostico" variant="ghost" className="!text-white/75 hover:!text-white">Describir mi consulta</Button><Button href="/contact?interest=brief-noam" variant="secondary" className="rounded-full border-white bg-white text-ink">Conversar con NOAM</Button></div></div><NewsletterSignup sourcePath={path} /></div></Container>
       </Section>
     </>
   );

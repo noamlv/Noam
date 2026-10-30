@@ -40,7 +40,7 @@ const readinessChecks = [
 const evidence = [
   { label: "Guía", title: "Diseñar una línea de base", text: "Decisiones, indicadores y controles antes de medir.", href: "/insights/como-disenar-linea-base-programa-publico" },
   { label: "Nota metodológica", title: "Cuándo evaluar impacto", text: "Condiciones que permiten o impiden una inferencia causal defendible.", href: "/insights/cuando-evaluacion-impacto-es-viable" },
-  { label: "Guía de trabajo", title: "Contratar línea de base o evaluación", text: "Bloques, preguntas y criterios de revisión editables.", href: "/toolkits/tdr-linea-base-evaluacion-programa" },
+  { label: "Guía de trabajo", title: "Guía de línea de base y evaluación", text: "Bloques, preguntas y criterios de revisión editables.", href: "/toolkits/tdr-linea-base-evaluacion-programa" },
   { label: "Muestra", title: "Arquitectura de un entregable", text: "Forma de trabajo para una línea de base y evaluación.", href: "/muestras/linea-base-evaluacion-programa" },
   { label: "Caso real", title: "Evaluación de resultados en Cusco", text: "Consultoría regional con alcance y límites declarados.", href: "/cases/gore-cusco-evaluacion-prevencion-trata" },
   { label: "Solución", title: "Línea de base y evaluación", text: "Alcance profesional para gobiernos, empresas y organizaciones.", href: "/solutions/linea-base-evaluacion-programas" }
@@ -81,13 +81,13 @@ export default function BaselineEvaluationPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">Medición y aprendizaje</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[15ch] text-white">Línea de base, resultados o impacto: primero define qué necesitas demostrar.</Heading>
+              <Heading as="h1" size="display" className="max-w-[15ch] text-white">¿Está funcionando el programa?</Heading>
             </div>
             <div>
-              <p className="text-base leading-8 text-white/68">Una ruta práctica para programas, proyectos y políticas que necesitan medir su punto de partida, mejorar su ejecución o sustentar decisiones de continuidad y escala.</p>
+              <p className="text-base leading-8 text-white/68">Conoce cómo medir la situación inicial de una población, revisar la ejecución de un programa y evaluar sus resultados. Cada pregunta requiere datos y métodos distintos.</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Button href="#opciones" variant="secondary" className="rounded-full border-white bg-white text-ink">Elegir una evaluación</Button>
-                <Button href="/toolkits/tdr-linea-base-evaluacion-programa" variant="ghost" className="!text-white/70 hover:!text-white">Ver Guía de trabajo y plantilla</Button>
+                <Button href="#opciones" variant="secondary" className="rounded-full border-white bg-white text-ink">Ver tipos de evaluación</Button>
+                <Button href="/toolkits/tdr-linea-base-evaluacion-programa" variant="ghost" className="!text-white/70 hover:!text-white">Leer la guía</Button>
               </div>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function BaselineEvaluationPage() {
       <Section id="opciones">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Elegir bien</Eyebrow><Heading size="xl">Seis preguntas, seis alcances distintos.</Heading></div>
+            <div><Eyebrow>Elegir bien</Eyebrow><Heading size="xl">Qué puede responder cada evaluación.</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">No son etapas obligatorias ni etiquetas intercambiables. La opción adecuada depende de la decisión, el momento de la intervención y la evidencia disponible.</p>
           </div>
 
@@ -126,7 +126,7 @@ export default function BaselineEvaluationPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Evaluabilidad</Eyebrow><Heading size="xl">Antes del método, comprueba las condiciones.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Si faltan definiciones o datos, el primer producto responsable es cerrar esos vacíos, no prometer una estimación causal.</p></div>
+            <div><Eyebrow>Evaluabilidad</Eyebrow><Heading size="xl">Qué datos necesitas para evaluar.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Si faltan definiciones o datos, el primer producto responsable es cerrar esos vacíos, no prometer una estimación causal.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {readinessChecks.map((check, index) => (
                 <div key={check} className="min-h-[150px] bg-canvas p-6 md:p-8">
@@ -142,7 +142,7 @@ export default function BaselineEvaluationPage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Método conectado con decisiones y reglas vigentes.</Heading></div>
+            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Guías oficiales de seguimiento y evaluación.</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>CEPLAN ofrece guías para seguimiento, evaluación e indicadores de políticas y planes. El MEF distingue evaluaciones de diseño, proceso e impacto dentro del presupuesto público. Para una contratación concreta, el área usuaria debe confirmar además la normativa y documentación vigente con sus órganos competentes.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-rust">
@@ -158,8 +158,8 @@ export default function BaselineEvaluationPage() {
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Comprueba el enfoque antes de conversar.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Guías, una plantilla editable, una muestra y un caso real. Cada pieza cumple una función distinta y declara sus límites.</p>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Guías y ejemplos de evaluación.</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Lee las guías, descarga la plantilla o consulta un caso real de evaluación. Los ejemplos indican qué información pueden mostrar.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-black/10 bg-black/10 md:grid-cols-2 lg:grid-cols-3">
             {evidence.map((item) => (
@@ -183,8 +183,8 @@ export default function BaselineEvaluationPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Primer alcance</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Empieza por la decisión que necesitas sostener, no por la técnica que suena más sofisticada.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/linea-base-evaluacion-impacto" analyticsEvent="cta_click" analyticsTarget="baseline-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=linea-base-evaluacion-programas&from=/linea-base-evaluacion-impacto" analyticsEvent="cta_click" analyticsTarget="baseline-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar sobre el problema</Button></div>
+              <div><Eyebrow className="text-white/55">Apoyo de NOAM</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas evaluar un programa o proyecto?</h2></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/linea-base-evaluacion-impacto" analyticsEvent="cta_click" analyticsTarget="baseline-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?interest=linea-base-evaluacion-programas&from=/linea-base-evaluacion-impacto" analyticsEvent="cta_click" analyticsTarget="baseline-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar sobre el problema</Button></div>
             </div>
           </div>
         </Container>

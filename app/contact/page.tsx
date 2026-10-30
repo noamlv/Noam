@@ -65,8 +65,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           <div className="grid gap-12 lg:grid-cols-[0.62fr_1fr] lg:gap-20">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <Eyebrow className="text-rust">Contacto</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[11ch]">Comencemos por la decisión.</Heading>
-              <p className="mt-6 max-w-xl text-base leading-8 text-ink/68">Describe el problema, el territorio o el resultado que necesitas. Usaremos esta información para preparar una conversación concreta.</p>
+              <Heading as="h1" size="display" className="max-w-[11ch]">Conversemos</Heading>
+              <p className="mt-6 max-w-xl text-base leading-8 text-ink/68">Cuéntanos qué necesitas y en qué podemos ayudarte.</p>
 
               {selectedInterestTitle && params.interest ? (
                 <div className="mt-8 rounded-md border border-rust/25 bg-rust/[0.045] p-5">
@@ -82,9 +82,9 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">Qué ocurre después</p>
                 <ol className="mt-5 space-y-4">
                   {[
-                    "Revisamos el contexto y la decisión principal.",
-                    "Enviamos preguntas para delimitar alcance y fuentes.",
-                    "Si existe encaje, proponemos un punto de partida."
+                    "Leemos tu consulta.",
+                    "Te contactamos para conocer mejor el problema.",
+                    "Si podemos ayudarte, acordamos cómo empezar."
                   ].map((item, index) => (
                     <li key={item} className="grid grid-cols-[28px_1fr] gap-3 text-sm leading-6 text-ink/68"><span className="font-mono text-[10px] text-rust">0{index + 1}</span>{item}</li>
                   ))}
@@ -104,10 +104,10 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
             <div>
               {!runtimeCapabilities.leadIntake ? (
                 <div className="rounded-[1.25rem] border border-border bg-panel p-6 shadow-subtle md:p-8">
-                  <Eyebrow>Canales disponibles</Eyebrow>
-                  <Heading size="lg" className="max-w-[18ch]">Contacto directo y trazable.</Heading>
+                  <Eyebrow>Escríbenos</Eyebrow>
+                  <Heading size="lg" className="max-w-[18ch]">Por correo o WhatsApp</Heading>
                   <p className="mt-5 max-w-2xl text-sm leading-7 text-ink/65">
-                    Para no solicitar información que el sitio todavía no puede almacenar de forma persistente, atendemos las consultas por email y WhatsApp. Elige el canal que prefieras.
+                    Elige cómo prefieres conversar con nosotros.
                   </p>
                   <div className="mt-7 grid gap-3 sm:grid-cols-2">
                     <a href={`mailto:${siteConfig.email}?subject=${emailSubject}&body=${emailBody}`} className="group rounded-md border border-border bg-canvas p-5 transition-all hover:-translate-y-0.5 hover:border-border-strong hover:shadow-subtle">
@@ -124,10 +124,10 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                   <div className="mt-7 rounded-sm border border-border bg-canvas p-5">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted">Para responder mejor</p>
                     <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink/68 sm:grid-cols-2">
-                      {["La decisión o problema principal", "La entidad, empresa o territorio", "La evidencia que ya existe", "El plazo o hito más importante"].map((item) => <li key={item} className="flex items-start gap-2"><Check className="mt-1 h-3.5 w-3.5 shrink-0 text-rust" aria-hidden />{item}</li>)}
+                      {["El problema o consulta", "La entidad, empresa o territorio", "Los datos o documentos disponibles", "Para cuándo necesitas el apoyo"].map((item) => <li key={item} className="flex items-start gap-2"><Check className="mt-1 h-3.5 w-3.5 shrink-0 text-rust" aria-hidden />{item}</li>)}
                     </ul>
                   </div>
-                  <p className="mt-5 text-xs leading-5 text-muted">El formulario seguro se habilitará automáticamente cuando la infraestructura persistente esté operativa.</p>
+                  <p className="mt-5 text-xs leading-5 text-muted">No incluyas contraseñas ni información confidencial en tu primer mensaje.</p>
                 </div>
               ) : (
                 <>

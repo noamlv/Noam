@@ -93,7 +93,7 @@ export default function TerritorialAgendasPage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
             <div><Eyebrow className="text-white/56">De la señal al encargo</Eyebrow><Heading size="xl" className="mt-4 max-w-[16ch] text-white">Convierte una pregunta territorial en evidencia para decidir.</Heading></div>
-            <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/dataperu/agendas-territoriales" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=dataperu&from=/dataperu/agendas-territoriales" variant="ghost" className="!text-white/72 hover:!text-white">Plantear un análisis</Button></div>
+            <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/dataperu/agendas-territoriales" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?interest=dataperu&from=/dataperu/agendas-territoriales" variant="ghost" className="!text-white/72 hover:!text-white">Plantear un análisis</Button></div>
           </div>
         </Container>
       </Section>

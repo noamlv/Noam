@@ -60,7 +60,7 @@ const answers: Array<{ terms: string[]; answer: AnswerTemplate }> = [
     terms: ["dashboard", "tablero", "observatorio", "visor", "visores", "georreferenciado", "indicadores", "monitoreo", "alertas"],
     answer: {
       topic: "Sistema de decisión",
-      response: "Un tablero debe responder a decisiones recurrentes, con indicadores definidos, fuentes trazables y responsables de actualización. La visualización viene después de esa arquitectura.",
+      response: "Un tablero reúne indicadores para consultar y comparar datos. Aquí explicamos cómo se prepara y quién debe mantenerlo actualizado.",
       primary: { label: "Ver sistemas de decisión", href: "/services/observatorios-sistemas-decision" },
       proof: { kind: "Consultoría institucional", label: "Arquitectura estadística para el IPD", href: "/cases/ipd-sistema-estadistico-investigacion-deportiva" },
       interest: "observatorio-gestion-inversiones"
@@ -90,7 +90,7 @@ const answers: Array<{ terms: string[]; answer: AnswerTemplate }> = [
     terms: ["municipio", "municipal", "municipalidad", "distrito", "departamento", "territorio", "datos regionales", "datos locales"],
     answer: {
       topic: "Datos territoriales",
-      response: "Una ficha territorial ayuda a comenzar con población, capacidades, proyectos y vacíos de evidencia. Después podemos delimitar el estudio o sistema que necesita la entidad.",
+      response: "En DataPerú puedes consultar población, presupuesto, proyectos y datos reportados por las municipalidades. Cada sección indica las fuentes y las limitaciones de la información.",
       primary: { label: "Explorar DataPerú", href: "/dataperu" },
       proof: { kind: "Producto propio", label: "Plataforma DataPerú", href: "/cases/dataperu-platform-case" },
       interest: "dataperu"
@@ -100,7 +100,7 @@ const answers: Array<{ terms: string[]; answer: AnswerTemplate }> = [
     terms: ["diagnostico", "politica publica", "programa", "programas", "estudio", "estudios", "analisis de datos", "priorizar", "problema publico"],
     answer: {
       topic: "Estudios y diagnósticos",
-      response: "Podemos partir de una pregunta de gestión, contrastar fuentes y producir prioridades defendibles. El método concreto depende del problema, la escala y la evidencia disponible.",
+      response: "Un diagnóstico ayuda a conocer un problema y a quiénes afecta. En esta sección explicamos qué estudios podemos realizar y qué datos se necesitan.",
       primary: { label: "Ver estudios y diagnósticos", href: "/services/estudios-diagnosticos-evaluacion" },
       proof: { kind: "Consultoría institucional", label: "Priorización de CTI para CONCYTEC", href: "/cases/concytec-prioridades-cti-seguridad" },
       interest: "diagnostico-agenda-territorial"
@@ -136,9 +136,9 @@ export function answerNavigatorQuestion(question: string): AssistantAnswer | nul
   const sector = sectorTopics.find(({ terms }) => terms.some((term) => hasTerm(normalized, term)));
   const sectorAnswer: AnswerTemplate | undefined = sector ? {
     topic: sector.label,
-    response: `Para ${sector.label.toLowerCase()} conviene precisar el servicio, la escala territorial y la decisión que debe mejorar. Nuestra guía muestra preguntas, fuentes y límites antes de definir un encargo.`,
-    primary: { label: `Ver guía de ${sector.label.toLowerCase()}`, href: sector.href },
-    proof: { kind: "Muestra demostrativa", label: "Examinar formas de entregable", href: "/muestras" },
+    response: `En la sección de ${sector.label.toLowerCase()} encontrarás preguntas para analizar el tema, fuentes de información y opciones de apoyo si necesitas un estudio.`,
+    primary: { label: `Explorar ${sector.label.toLowerCase()}`, href: sector.href },
+    proof: { kind: "Muestra demostrativa", label: "Ver ejemplos de informes y herramientas", href: "/muestras" },
     interest: sector.interest
   } : undefined;
   const general = answers.find(({ terms, answer }) => answer.interest === "diagnostico-agenda-territorial" && terms.some((term) => hasTerm(normalized, term)))?.answer;

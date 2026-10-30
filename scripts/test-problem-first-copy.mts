@@ -23,9 +23,12 @@ const guides = readdirSync("content/toolkits").filter((name) => name.startsWith(
 assert.equal(guides.length, 19);
 for (const name of guides) {
   const copy = readFileSync(path.join("content/toolkits", name), "utf8");
-  assert.match(copy, /title: "Cómo orientar /);
-  assert.match(copy, /Si necesitas acompañamiento/);
-  assert.match(copy, /<CTA>[\s\S]*explorar alternativas/);
+  const title = copy.match(/^title: "(.+)"/m)?.[1];
+  assert.ok(title && title.length >= 12, `${name}: needs a descriptive title`);
+  const cta = copy.match(/<CTA>([\s\S]*?)<\/CTA>/)?.[1] ?? "";
+  assert.match(cta, /Si necesitas apoyo/, `${name}: assistance must be optional`);
+  assert.match(cta, /\]\(\/contact(?:\?|\))/, `${name}: contact link must be usable`);
+  assert.match(copy, /<Findings title="[^"]+">/, `${name}: distinguish guidance from observed findings`);
 }
 assert.match(readFileSync("content/cases/gore-cusco-evaluacion-prevencion-trata.mdx", "utf8"), /documentación contractual exige confidencialidad absoluta/);
 console.log(`Problem-first copy OK: ${files.length} public source files and 19 guides; legacy links and confidentiality preserved.`);

@@ -145,7 +145,7 @@ export default function SolutionsPage() {
                 <Eyebrow className="text-white/55">Primer paso</Eyebrow>
                 <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">No necesitas llegar con la solución. Empieza por la decisión.</h2>
               </div>
-              <Button href="/diagnostico?from=/solutions" analyticsEvent="cta_click" analyticsTarget="solutions:scope-final" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Diseñar un alcance</Button>
+              <Button href="/diagnostico?from=/solutions" analyticsEvent="cta_click" analyticsTarget="solutions:scope-final" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Describir mi consulta</Button>
             </div>
           </div>
         </Container>

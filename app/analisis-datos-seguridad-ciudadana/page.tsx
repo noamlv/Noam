@@ -22,29 +22,29 @@ export const metadata = buildMetadata({
 });
 
 const decisions = [
-  { icon: Radar, title: "Diagnosticar", question: "¿Qué hechos, percepciones, factores de riesgo y capacidades requieren atención?", use: "Diagnóstico territorial, PASC, cartera de prioridades y línea de base." },
-  { icon: MapPinned, title: "Focalizar", question: "¿Dónde coinciden incidentes, exposición, población y capacidad de respuesta?", use: "Mapas operativos, patrullaje, prevención situacional y recuperación de espacios." },
-  { icon: UsersRound, title: "Escuchar", question: "¿Qué vive, reporta y evita la población, incluso cuando no denuncia?", use: "Encuestas de victimización, percepción, confianza, experiencia y convivencia." },
-  { icon: ChartNoAxesCombined, title: "Monitorear", question: "¿Qué compromisos avanzan y qué señal exige una respuesta?", use: "Observatorios, tableros, alertas y sesiones de CODISEC, COPROSEC o CORESEC." },
-  { icon: BadgeCheck, title: "Evaluar", question: "¿La intervención se implementó y produjo el cambio esperado?", use: "Evaluación de proceso, resultados o impacto según datos y diseño disponibles." }
+  { icon: Radar, title: "Diagnóstico de seguridad", question: "¿Qué hechos, percepciones y capacidades requieren atención?", use: "Identificar prioridades territoriales y una situación inicial para orientar los planes de seguridad." },
+  { icon: MapPinned, title: "Zonas de intervención", question: "¿Dónde coinciden incidentes, población expuesta y capacidad de respuesta?", use: "Preparar mapas para orientar el patrullaje, la prevención y la recuperación de espacios." },
+  { icon: UsersRound, title: "Experiencias de la población", question: "¿Qué vive y evita la población, incluso cuando no denuncia?", use: "Estudiar victimización, percepción y confianza mediante encuestas que distingan cada experiencia." },
+  { icon: ChartNoAxesCombined, title: "Seguimiento de compromisos", question: "¿Qué acuerdos avanzan y qué señales requieren una respuesta?", use: "Organizar indicadores y alertas para las reuniones de los comités de seguridad ciudadana." },
+  { icon: BadgeCheck, title: "Evaluación de intervenciones", question: "¿La intervención se ejecutó y produjo el cambio esperado?", use: "Evaluar la ejecución, los resultados o el impacto según los datos y el diseño disponibles." }
 ];
 
 const evidenceChain = [
-  { number: "01", title: "Decisión", text: "Problema, competencia, usuario y acción que la evidencia debe sostener." },
-  { number: "02", title: "Territorio", text: "Unidad geográfica, periodo, población y horarios comparables." },
-  { number: "03", title: "Fuentes", text: "Denuncias, encuestas, llamadas, registros, capacidades y contexto." },
-  { number: "04", title: "Calidad", text: "Subregistro, duplicados, cambios de cobertura, denominadores y vigencia." },
-  { number: "05", title: "Protección", text: "Acceso por roles, agregación, trazabilidad y resguardo de datos sensibles." },
-  { number: "06", title: "Acción", text: "Indicador, umbral, responsable, respuesta, evidencia de cierre y evaluación." }
+  { number: "01", title: "Pregunta de análisis", text: "Definir qué problema se busca resolver, quién puede actuar y qué decisión necesita información." },
+  { number: "02", title: "Territorio y periodo", text: "Delimitar zonas, población y horarios que puedan compararse durante un periodo definido." },
+  { number: "03", title: "Fuentes", text: "Revisar denuncias, encuestas y llamadas junto con registros de capacidad de respuesta y contexto." },
+  { number: "04", title: "Calidad de los registros", text: "Comprobar duplicados, hechos no registrados y cambios de cobertura, además de las poblaciones de referencia y la vigencia." },
+  { number: "05", title: "Protección de datos", text: "Limitar accesos según responsabilidades, publicar datos agregados y registrar cómo se usa la información sensible." },
+  { number: "06", title: "Respuesta y seguimiento", text: "Definir qué señal activa una respuesta, quién la ejecuta y cómo se comprobará su cierre y resultado." }
 ];
 
 const evidence = [
   { label: "Datos municipales", title: "Seguridad en DataPerú", text: "Serenazgo, planes, mapas y patrullaje declarados en RENAMU 2025.", href: "/dataperu/temas/seguridad-ciudadana" },
-  { label: "Guía de trabajo", title: "Plantear el análisis", text: "Preguntas, fuentes, privacidad, productos y aceptación verificable.", href: "/toolkits/tdr-analisis-seguridad-ciudadana" },
-  { label: "Capacidad", title: "Diagnóstico territorial", text: "Problemas, población, servicios, actores, capacidades y prioridades.", href: "/diagnostico-territorial" },
-  { label: "Capacidad", title: "Encuestas y opinión", text: "Victimización, percepción, confianza y experiencia con diseño interpretable.", href: "/encuestas-estudios-opinion" },
-  { label: "Capacidad", title: "Observatorios y visores", text: "Indicadores, mapas, alertas, responsables y rutina de seguimiento.", href: "/observatorios-dashboards-visores" },
-  { label: "Producto", title: "Visor georreferenciado", text: "Prototipo para explorar capas, brechas y prioridades territoriales.", href: "/products/visor-riesgo-georreferenciado" }
+  { label: "Guía de trabajo", title: "Guía de análisis", text: "Preguntas para elegir fuentes, proteger datos y definir qué debe entregar el análisis.", href: "/toolkits/tdr-analisis-seguridad-ciudadana" },
+  { label: "Capacidad", title: "Diagnóstico territorial", text: "Cómo estudiar población, servicios y capacidades para identificar prioridades.", href: "/diagnostico-territorial" },
+  { label: "Capacidad", title: "Encuestas y opinión", text: "Cómo medir victimización, percepción y confianza, explicando los límites de la encuesta.", href: "/encuestas-estudios-opinion" },
+  { label: "Capacidad", title: "Observatorios y visores", text: "Cómo organizar indicadores, mapas y alertas con responsables de darles seguimiento.", href: "/observatorios-dashboards-visores" },
+  { label: "Producto", title: "Visor georreferenciado", text: "Prototipo para explorar mapas y prioridades territoriales.", href: "/products/visor-riesgo-georreferenciado" }
 ];
 
 const faq = [
@@ -76,13 +76,13 @@ export default function CitizenSecurityDataPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#a7c8b9]">Seguridad ciudadana y territorio</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[15ch] text-white">La seguridad no se gestiona con un solo mapa ni con una sola cifra.</Heading>
+              <Heading as="h1" size="display" className="max-w-[15ch] text-white">¿Dónde y cómo priorizar la seguridad ciudadana?</Heading>
             </div>
             <div>
-              <p className="text-base leading-8 text-white/68">Integramos capacidades, hechos, victimización, percepción y territorio para priorizar intervenciones, conducir compromisos y evaluar sin confundir actividad con resultado.</p>
+              <p className="text-base leading-8 text-white/68">Aquí encontrarás preguntas y fuentes para estudiar hechos delictivos, experiencias de la población y capacidad de respuesta municipal. Se explica qué puede aportar un diagnóstico, un mapa, una encuesta o una evaluación.</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Button href="#decisiones" variant="secondary" className="rounded-full border-white bg-white text-ink">Definir la necesidad</Button>
-                <Button href="/toolkits/tdr-analisis-seguridad-ciudadana" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
+                <Button href="/dataperu/temas/seguridad-ciudadana" variant="secondary" className="rounded-full border-white bg-white text-ink">Ver datos municipales de seguridad</Button>
+                <Button href="/toolkits/tdr-analisis-seguridad-ciudadana" variant="ghost" className="!text-white/70 hover:!text-white">Leer la guía</Button>
               </div>
             </div>
           </div>
@@ -101,8 +101,8 @@ export default function CitizenSecurityDataPage() {
       <Section id="decisiones">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Cinco encargos que no deben confundirse.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Un diagnóstico identifica prioridades; un mapa focaliza; una encuesta observa experiencias; un observatorio sostiene la conducción; una evaluación juzga una intervención.</p>
+            <div><Eyebrow>Qué podemos analizar</Eyebrow><Heading size="xl">Diagnósticos, mapas, encuestas y evaluación</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Cada herramienta responde una pregunta: dónde actuar, qué vive la población, qué compromisos avanzan o qué cambió con una intervención.</p>
           </div>
           <div className="mt-12 divide-y divide-border border-y border-border">
             {decisions.map(({ icon: Icon, title, question, use }, index) => (
@@ -119,7 +119,7 @@ export default function CitizenSecurityDataPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><ShieldCheck className="h-5 w-5 text-[#2f5c52]" aria-hidden /><Eyebrow className="mt-6">Cadena de evidencia</Eyebrow><Heading size="xl">Del registro a una respuesta institucional.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">La utilidad depende de definiciones comparables, protección de datos y una regla clara para actuar.</p></div>
+            <div><ShieldCheck className="h-5 w-5 text-[#2f5c52]" aria-hidden /><Eyebrow className="mt-6">Qué información revisar</Eyebrow><Heading size="xl">Cómo preparar un análisis de seguridad ciudadana</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Para usar los resultados hay que comparar datos equivalentes, proteger la información sensible y definir quién actuará.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {evidenceChain.map((item) => (
                 <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8">
@@ -136,7 +136,7 @@ export default function CitizenSecurityDataPage() {
       <Section className="border-b border-border bg-[#e0ebe5]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Marco y fuentes</Eyebrow><Heading size="xl">Datos distintos responden preguntas distintas.</Heading></div>
+            <div><Eyebrow>Marco y fuentes</Eyebrow><Heading size="xl">Fuentes sobre delitos, percepción y gestión municipal</Heading></div>
             <div className="max-w-3xl space-y-5 text-base leading-8 text-ink/72">
               <p>El Plan Nacional de Seguridad Ciudadana y Lucha contra la Criminalidad 2026–2028 orienta la acción articulada y su seguimiento. El Observatorio Nacional reúne bases sobre hechos delictivos, victimización, percepción, factores de riesgo y capacidades; el INEI produce estimaciones mediante ENAPRES.</p>
               <p>DataPerú añade una lectura de capacidades municipales declaradas en RENAMU 2025. No mide incidencia delictiva, victimización ni efectividad; tampoco produce un ranking de seguridad.</p>
@@ -154,8 +154,8 @@ export default function CitizenSecurityDataPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Evidencia y servicios</Eyebrow><Heading size="xl">Preguntas y recursos para explorar alternativas.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Revisa la información municipal, el método y las capacidades que pueden combinarse según la decisión.</p>
+            <div><Eyebrow>Evidencia y servicios</Eyebrow><Heading size="xl">Datos municipales, guía y herramientas de análisis</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Consulta las capacidades municipales declaradas o revisa métodos para estudiar experiencias y seguir intervenciones.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {evidence.map((item) => (
@@ -163,7 +163,7 @@ export default function CitizenSecurityDataPage() {
                 <span className="text-[10px] font-semibold uppercase tracking-[0.15em] text-[#2f5c52]">{item.label}</span>
                 <h2 className="mt-10 text-2xl font-medium tracking-[-0.035em] text-ink">{item.title}</h2>
                 <p className="mt-3 text-sm leading-6 text-ink/62">{item.text}</p>
-                <span className="mt-6 inline-flex items-center gap-2 text-xs font-medium text-ink">Abrir <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span>
+                <span className="mt-6 inline-flex items-center gap-2 text-xs font-medium text-ink">{item.href.startsWith("/toolkits/") ? "Leer la guía" : `Ver ${item.title}`} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span>
               </NextLink>
             ))}
           </div>
@@ -171,7 +171,7 @@ export default function CitizenSecurityDataPage() {
       </Section>
 
       <Section className="border-y border-border bg-panel/45">
-        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de integrar los datos.</Heading><Accordion items={faq} className="mt-8" /></Container>
+        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Preguntas sobre registros, mapas y privacidad</Heading><Accordion items={faq} className="mt-8" /></Container>
       </Section>
 
       <Section className="pb-0">
@@ -179,8 +179,8 @@ export default function CitizenSecurityDataPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-[#2f5c52] px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Primera definición</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué decisión de seguridad debe mejorar y qué territorio está en juego.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/analisis-datos-seguridad-ciudadana" analyticsEvent="cta_click" analyticsTarget="security-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=seguridad-ciudadana&from=/analisis-datos-seguridad-ciudadana" analyticsEvent="cta_click" analyticsTarget="security-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar con NOAM</Button></div>
+              <div><Eyebrow className="text-white/55">Apoyo opcional</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas apoyo con un análisis de seguridad ciudadana?</h2><p className="mt-5 max-w-2xl text-sm leading-7 text-white/75">Puedes describir tu consulta en el formulario para orientar una primera conversación.</p></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/analisis-datos-seguridad-ciudadana" analyticsEvent="cta_click" analyticsTarget="security-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?interest=seguridad-ciudadana&from=/analisis-datos-seguridad-ciudadana" analyticsEvent="cta_click" analyticsTarget="security-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar con NOAM</Button></div>
             </div>
           </div>
         </Container>

@@ -53,7 +53,7 @@ const evidence = [
   { label: "Caso de producto", title: "DataPerú", text: "Infraestructura pública para 1,891 perfiles municipales.", href: "/cases/dataperu-platform-case" },
   { label: "Insight", title: "No es solo un dashboard", text: "Cinco condiciones para que los indicadores cambien decisiones.", href: "/insights/sistema-seguimiento-municipal-no-es-dashboard" },
   { label: "Guía de trabajo", title: "Definir el sistema necesario", text: "Indicadores, datos, seguridad, pruebas, transferencia y operación.", href: "/toolkits/tdr-observatorio-dashboard-visor" },
-  { label: "Muestra", title: "Observatorio de gestión", text: "Arquitectura de un entregable antes de elegir una intervenciónlo.", href: "/muestras/observatorio-gestion-inversiones" }
+  { label: "Muestra", title: "Observatorio de gestión", text: "Ejemplo de cómo organizar indicadores y seguimiento.", href: "/muestras/observatorio-gestion-inversiones" }
 ];
 
 const faq = [
@@ -87,13 +87,13 @@ export default function ObservatoriesDashboardsViewersPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#9ec6ba]">Seguimiento y decisión</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[15ch] text-white">Un dashboard muestra datos. Un sistema de decisión hace que alguien actúe.</Heading>
+              <Heading as="h1" size="display" className="max-w-[15ch] text-white">Indicadores y mapas para seguir lo que ocurre.</Heading>
             </div>
             <div>
-              <p className="text-base leading-8 text-white/68">Diseñamos observatorios, tableros y visores para gobiernos y empresas desde las preguntas, los responsables y la operación que deben sostener.</p>
+              <p className="text-base leading-8 text-white/68">Conoce distintas formas de consultar datos, comparar resultados y seguir proyectos. Revisa ejemplos antes de elegir qué necesita tu equipo.</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Button href="#productos" variant="secondary" className="rounded-full border-white bg-white text-ink">Elegir un producto</Button>
-                <Button href="/toolkits/tdr-observatorio-dashboard-visor" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
+                <Button href="#productos" variant="secondary" className="rounded-full border-white bg-white text-ink">Comparar herramientas</Button>
+                <Button href="/toolkits/tdr-observatorio-dashboard-visor" variant="ghost" className="!text-white/70 hover:!text-white">Leer la guía</Button>
               </div>
             </div>
           </div>
@@ -112,8 +112,8 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section id="productos">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas operar</Eyebrow><Heading size="xl">Cinco productos que no son intercambiables.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Pueden compartir datos y tecnología, pero cambian el usuario, la frecuencia, la interacción y la responsabilidad institucional. El alcance debe comenzar por la decisión.</p>
+            <div><Eyebrow>Tipos de herramientas</Eyebrow><Heading size="xl">Qué puedes hacer con cada herramienta.</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Un tablero permite consultar indicadores; un mapa ayuda a ubicarlos. La elección depende de qué quieres revisar, quién lo usará y con qué frecuencia.</p>
           </div>
 
           <div className="mt-12 divide-y divide-border border-y border-border">
@@ -131,7 +131,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Arquitectura completa</Eyebrow><Heading size="xl">La interfaz es una de seis capas.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Si una capa falla, el sistema puede verse terminado y aun así producir cifras discutibles, alertas sin respuesta o dependencia del proveedor.</p></div>
+            <div><Eyebrow>Cómo funciona</Eyebrow><Heading size="xl">Qué necesita el sistema para funcionar.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Además de mostrar gráficos, hay que revisar los datos, mantenerlos actualizados y definir quién puede acceder a ellos.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {architecture.map((item) => (
                 <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8">
@@ -148,7 +148,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Aplicaciones</Eyebrow><Heading size="xl">Comenzar por el cuello de botella.</Heading></div>
+            <div><Eyebrow>Aplicaciones</Eyebrow><Heading size="xl">Ejemplos de uso.</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {useCases.map((item, index) => (
                 <article key={item.label} className="grid gap-4 py-7 sm:grid-cols-[36px_0.55fr_1fr] sm:gap-7">
@@ -165,7 +165,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section className="border-y border-border bg-[#dbe5e0]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Seguimiento, datos y operación deben diseñarse juntos.</Heading></div>
+            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Referencias para diseñar y mantener el sistema.</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>CEPLAN vincula el seguimiento con indicadores, logros esperados y evidencia para la mejora. La Estrategia Nacional de Gobierno de Datos 2026–2030 exige que las entidades articulen calidad, privacidad, interoperabilidad, infraestructura y capacidades. Un producto sostenible debe responder a ambos planos: uso institucional y gobierno del dato.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#2f5c52]">
@@ -198,8 +198,8 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Examina datos, método y entregables.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">DataPerú muestra la capacidad técnica. El insight, la muestra y el planteamiento del análisis hacen visible cómo se convierte un producto digital en una rutina de decisión.</p>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Explora ejemplos y guías.</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Prueba DataPerú, revisa un ejemplo de tablero y consulta la guía para preparar un sistema con tu equipo.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {evidence.map((item) => (
@@ -223,8 +223,8 @@ export default function ObservatoriesDashboardsViewersPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-[#2f5c52] px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Primera definición</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué señal necesitas ver y qué decisión debe ocurrir después.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/observatorios-dashboards-visores" analyticsEvent="cta_click" analyticsTarget="observatories-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=observatorio-gestion-inversiones&from=/observatorios-dashboards-visores" analyticsEvent="cta_click" analyticsTarget="observatories-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear el sistema</Button></div>
+              <div><Eyebrow className="text-white/55">Apoyo de NOAM</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas un tablero o un mapa para tu equipo?</h2></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/observatorios-dashboards-visores" analyticsEvent="cta_click" analyticsTarget="observatories-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?interest=observatorio-gestion-inversiones&from=/observatorios-dashboards-visores" analyticsEvent="cta_click" analyticsTarget="observatories-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar con NOAM</Button></div>
             </div>
           </div>
         </Container>

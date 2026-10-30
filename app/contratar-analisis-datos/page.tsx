@@ -238,7 +238,7 @@ export default function ContractDataAnalysisPage() {
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><Eyebrow className="text-white/55">Primer alcance</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Describe la decisión, el territorio y el plazo. El método viene después.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar sobre el problema</Button></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar sobre el problema</Button></div>
             </div>
           </div>
         </Container>

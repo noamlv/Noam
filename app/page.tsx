@@ -2,7 +2,6 @@ import { ArrowRight, Building2, Landmark, MoveUpRight, Users } from "lucide-reac
 import Image from "next/image";
 import NextLink from "next/link";
 import { cookies } from "next/headers";
-import { CaseProofCard } from "@/components/brand/case-proof-card";
 import { HeroVisitTracker } from "@/components/brand/hero-visit-tracker";
 import { InstitutionalCaseCard } from "@/components/brand/institutional-case-card";
 import { TerritoryEntry } from "@/components/dataperu/territory-entry";
@@ -11,14 +10,13 @@ import { Badge, Button, Container, Eyebrow, Heading, ResourceList, Section } fro
 import { serviceLines } from "@/lib/brand-content";
 import { getFeaturedContent } from "@/lib/content";
 import { getInstitutionalCases } from "@/lib/institutional-cases";
-import { productProofs } from "@/lib/product-proofs";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { homeHeroes, resolveHomeHeroIndex } from "@/lib/home-heroes";
 
 export const metadata = buildMetadata({
   title: "Análisis de datos para decisiones públicas y territoriales",
   description:
-    "NOAM desarrolla estudios, líneas de base, evaluaciones, observatorios y sistemas de datos para gobiernos y empresas en todo el Perú.",
+    "Explora datos municipales, inversión pública y análisis del Perú. Conoce también los estudios y sistemas de datos de NOAM para gobiernos y empresas.",
   path: "/"
 });
 
@@ -26,15 +24,15 @@ const entryPoints = [
   {
     icon: Landmark,
     label: "Gobiernos",
-    title: "Diseñar, priorizar y evaluar",
+    title: "Servicios para gobiernos",
     description: "Para municipalidades, gobiernos regionales, sectores, programas y entidades nacionales.",
     href: "/sectors/public-sector"
   },
   {
     icon: Building2,
     label: "Empresas",
-    title: "Invertir y operar con contexto",
-    description: "Para organizaciones que necesitan entender mercados, instituciones, actores y territorio.",
+    title: "Servicios para empresas",
+    description: "Estudios para conocer mercados, instituciones y las zonas donde opera una empresa.",
     href: "/sectors/companies"
   },
   {
@@ -46,11 +44,17 @@ const entryPoints = [
   }
 ];
 
-const proofSignals = [
-  { value: "1,891", label: "perfiles municipales", source: "DataPerú", href: "/dataperu/municipios" },
-  { value: "9,429", label: "proyectos visibles", source: "MEF 2025", href: "/dataperu/inversiones" },
-  { value: "36", label: "planes procesados", source: "Planómetro 2026", href: "/electoral/planometro-2026" },
-  { value: "1,300", label: "entrevistas analizadas", source: "Barómetro 2026", href: "/electoral/barometro-enero-2026" }
+const exploreLinks = [
+  { title: "Problemas por departamento", description: "Qué afecta a la población y qué falta atender", href: "/dataperu/agendas-territoriales" },
+  { title: "Presupuesto municipal", description: "Consulta recursos y ejecución del gasto", href: "/dataperu/municipios" },
+  { title: "Proyectos de inversión", description: "Revisa montos y avance financiero", href: "/dataperu/inversiones" },
+  { title: "Análisis por tema", description: "Explora datos, gráficos y resultados", href: "/analisis" }
+];
+
+const publications = [
+  { title: "DataPerú", label: "Datos del país", description: "Consulta información de municipios, departamentos, presupuesto y servicios públicos.", href: "/dataperu", action: "Explorar DataPerú" },
+  { title: "Barómetro ciudadano", label: "Encuestas y opinión", description: "Conoce qué dicen las encuestas y cómo interpretar sus resultados. Consulta el análisis de enero de 2026.", href: "/barometro-ciudadano", action: "Ver encuestas analizadas" },
+  { title: "Análisis por tema", label: "Gráficos interactivos", description: "Revisa nuestros análisis de residuos, planeamiento territorial, discapacidad y deporte.", href: "/analisis", action: "Elegir un análisis" }
 ];
 
 export default async function HomePage() {
@@ -74,18 +78,18 @@ export default async function HomePage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_0.4fr] lg:items-end">
             <div>
-              <Eyebrow className="reveal text-rust">Consultora peruana de datos y políticas públicas</Eyebrow>
+              <Eyebrow className="reveal text-rust">Consultoría para gobiernos y empresas</Eyebrow>
               <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[15ch]">
-                Análisis de datos para decisiones públicas y territoriales.
+                Análisis de datos para decisiones públicas y territoriales
               </Heading>
             </div>
             <div className="reveal reveal-delay-2 lg:pb-2">
               <p className="max-w-xl text-base leading-[1.72] text-ink/72">
-                Estudios, líneas de base, evaluaciones y sistemas de información para gobiernos y empresas que necesitan diseñar, priorizar o medir una intervención.
+                Estudios, encuestas y herramientas de datos para comprender problemas, evaluar resultados y mejorar la gestión.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:hero-contact" className="rounded-full px-6">Conversar sobre el problema</Button>
-                <Button href="/solutions" variant="ghost" className="gap-2">Ver soluciones <ArrowRight className="h-4 w-4" /></Button>
+                <Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:hero-contact" className="rounded-full px-6">Conversar sobre un problema</Button>
+                <Button href="/analisis" variant="ghost" className="gap-2">Ver análisis por tema <ArrowRight className="h-4 w-4" /></Button>
               </div>
             </div>
           </div>
@@ -93,25 +97,15 @@ export default async function HomePage() {
           <div className="reveal reveal-delay-3 relative mt-12 overflow-hidden rounded-[1.5rem] border border-ink/10 shadow-visual md:mt-16">
             <HeroVisitTracker currentIndex={heroIndex} total={homeHeroes.length} />
             <Image src={hero.src} alt={hero.alt} width={1672} height={941} className="aspect-[1.35/1] w-full object-cover sm:aspect-[1.8/1] lg:aspect-[2.25/1]" priority sizes="(max-width: 768px) 100vw, 1160px" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/5 to-transparent" />
-            <div className="absolute inset-x-0 bottom-0 grid gap-5 p-5 text-white sm:grid-cols-[1fr_auto] sm:items-end md:p-8">
-              <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/60">{hero.eyebrow}</p>
-                <p className="mt-2 max-w-xl text-lg font-medium leading-snug tracking-[-0.025em] md:text-2xl">{hero.caption}</p>
-              </div>
-              <div className="hidden gap-2 sm:flex">
-                {["Local", "Regional", "Nacional"].map((scale) => <span key={scale} className="rounded-full border border-white/25 bg-black/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.14em] backdrop-blur">{scale}</span>)}
-              </div>
-            </div>
           </div>
+          <p className="mt-2 text-right text-[10px] text-muted">Imagen ilustrativa</p>
 
           <div className="draw-line mt-8 h-px bg-border" />
           <div className="grid divide-y divide-border border-b border-border sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-            {proofSignals.map((signal) => (
-              <NextLink key={signal.label} href={signal.href} className="group py-6 sm:px-6 sm:first:pl-0 lg:py-8">
-                <p className="text-3xl font-medium tracking-[-0.055em] text-ink transition-colors duration-200 group-hover:text-rust md:text-4xl">{signal.value}</p>
-                <p className="mt-2 text-xs font-medium text-ink/72">{signal.label}</p>
-                <p className="mt-1 text-[9px] font-semibold uppercase tracking-[0.14em] text-muted">{signal.source}</p>
+            {exploreLinks.map((link) => (
+              <NextLink key={link.href} href={link.href} className="group py-6 sm:px-6 sm:first:pl-0 lg:py-8">
+                <h2 className="flex items-start gap-2 text-lg font-medium leading-6 tracking-tight text-ink group-hover:text-rust">{link.title}<ArrowRight className="mt-1 h-4 w-4 shrink-0" aria-hidden /></h2>
+                <p className="mt-3 text-sm leading-6 text-muted">{link.description}</p>
               </NextLink>
             ))}
           </div>
@@ -122,17 +116,12 @@ export default async function HomePage() {
         <Container>
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1fr] lg:gap-8">
             <div className="relative overflow-hidden rounded-[1.25rem] bg-[#15211d] p-7 text-white md:p-10">
-              <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full border-[52px] border-rust/18" />
               <div className="relative flex h-full min-h-[420px] flex-col">
-                <div className="flex items-center justify-between gap-4">
-                  <Eyebrow className="text-[#d9a48f]">Agenda de gestión · ERM 2026</Eyebrow>
-                  <span className="rounded-full border border-white/14 px-3 py-1.5 font-mono text-[9px] text-white/52">REGIÓN · MUNICIPIO</span>
-                </div>
-                <h2 className="mt-10 max-w-[13ch] text-4xl font-medium leading-[1.02] tracking-[-0.05em] md:text-5xl">De las propuestas a las prioridades de gestión.</h2>
-                <p className="mt-6 max-w-xl text-sm leading-7 text-white/62">Datos territoriales, preguntas de transferencia y una agenda de 100 días para ordenar decisiones sin confundir propuestas con resultados.</p>
+                <Eyebrow className="text-[#d9a48f]">Agenda de gestión 2026</Eyebrow>
+                <h2 className="mt-10 max-w-[13ch] text-4xl font-medium leading-[1.02] tracking-[-0.05em] md:text-5xl">¿Qué necesita tu región o municipio?</h2>
+                <p className="mt-6 max-w-xl text-sm leading-7 text-white/62">Información para conocer los problemas locales, preparar la nueva gestión y seguir los compromisos de las autoridades.</p>
                 <div className="mt-auto flex flex-wrap gap-3 pt-10">
-                  <Button href="/electoral/erm-2026" analyticsEvent="cta_click" analyticsTarget="home:erm-2026" variant="secondary" className="rounded-full border-white bg-white text-ink">Explorar agenda de gestión</Button>
-                  <Button href="/electoral/planometro-2026" variant="ghost" className="!text-white/64 hover:!text-white">Explorar Planómetro</Button>
+                  <Button href="/electoral/erm-2026" analyticsEvent="cta_click" analyticsTarget="home:erm-2026" variant="secondary" className="rounded-full border-white bg-white text-ink">Consultar la agenda</Button>
                 </div>
               </div>
             </div>
@@ -143,11 +132,41 @@ export default async function HomePage() {
 
       <Section>
         <Container>
+          <div className="grid gap-8 md:grid-cols-[0.62fr_1fr] md:items-end">
+            <div><Eyebrow>Nuestra experiencia</Eyebrow><Heading size="xl">Conoce el trabajo realizado</Heading></div>
+            <div className="md:justify-self-end"><p className="max-w-2xl text-sm leading-7 text-ink/68">Consultorías realizadas por Noam López para CONCYTEC, el IPD y el Gobierno Regional del Cusco.</p><Button href="/cases" variant="ghost" className="mt-4 gap-2">Ver experiencias <ArrowRight className="h-4 w-4" /></Button></div>
+          </div>
+          <div className="mt-12 grid gap-4 lg:grid-cols-3">{institutionalCases.map((item, index) => <InstitutionalCaseCard key={item.slug} item={item} index={index} compact />)}</div>
+        </Container>
+      </Section>
+
+      <Section className="border-y border-border bg-[#ded9cc]">
+        <Container>
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div><Eyebrow>Datos y publicaciones</Eyebrow><Heading size="xl" className="max-w-2xl">Consulta nuestros datos y análisis</Heading></div>
+            <Button href="/evidence" variant="ghost" className="justify-start gap-2 !text-ink">Ver más publicaciones <ArrowRight className="h-4 w-4" /></Button>
+          </div>
+          <div className="mt-12 grid gap-4 lg:grid-cols-3">
+            {publications.map((publication) => (
+              <article key={publication.href} className="flex flex-col rounded-[1.25rem] border border-border bg-white p-7 md:p-8">
+                <Eyebrow>{publication.label}</Eyebrow>
+                <h3 className="mt-8 text-3xl font-medium tracking-tight text-ink">{publication.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-muted">{publication.description}</p>
+                <NextLink href={publication.href} className="mt-auto inline-flex items-center gap-2 pt-8 text-sm font-medium text-ink hover:text-rust">{publication.action}<ArrowRight className="h-4 w-4" aria-hidden /></NextLink>
+              </article>
+            ))}
+          </div>
+          <ResourceList items={resources} variant="rows" className="mt-10" />
+        </Container>
+      </Section>
+
+      <Section>
+        <Container>
           <div className="grid gap-10 lg:grid-cols-[0.48fr_1fr] lg:gap-20">
             <div>
-              <Eyebrow>Encuentra tu entrada</Eyebrow>
-              <Heading size="xl">Una plataforma. Tres formas de usarla.</Heading>
-              <p className="mt-6 max-w-md text-sm leading-7 text-ink/68">El punto de partida cambia según la decisión, no según la herramienta.</p>
+              <Eyebrow>Si necesitas un estudio o sistema</Eyebrow>
+              <Heading size="xl">Servicios para tu organización</Heading>
+              <p className="mt-6 max-w-md text-sm leading-7 text-ink/68">Consulta los servicios para gobiernos y empresas, o sigue explorando la información abierta de DataPerú.</p>
             </div>
             <div className="divide-y divide-border border-y border-border">
               {entryPoints.map((entry) => {
@@ -172,7 +191,7 @@ export default async function HomePage() {
       <Section id="servicios" className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.65fr_1fr] md:items-end">
-            <div><Eyebrow>Servicios</Eyebrow><Heading size="xl">Tres capacidades para encargos concretos.</Heading></div>
+            <div><Eyebrow>Servicios</Eyebrow><Heading size="xl">Estudios, seguimiento y mejora de procesos</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/68 md:justify-self-end md:text-base">Podemos comenzar con datos públicos y ampliar el alcance con información institucional, trabajo de campo o desarrollo tecnológico.</p>
           </div>
           <div className="mt-12 divide-y divide-border border-y border-border">
@@ -181,35 +200,10 @@ export default async function HomePage() {
                 <span className="text-xs font-semibold text-rust">{service.number}</span>
                 <div><h2 className="text-2xl font-medium leading-tight tracking-[-0.035em] text-ink md:text-3xl">{service.title}</h2><p className="mt-3 text-sm font-medium text-ink/78">{service.promise}</p></div>
                 <div><p className="text-sm leading-6 text-ink/65">{service.description}</p><div className="mt-5 flex flex-wrap gap-2">{service.deliverables.slice(0, 3).map((item) => <Badge key={item}>{item}</Badge>)}</div></div>
-                <NextLink href={`/services/${service.slug}`} className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-ink transition-all group-hover:border-rust group-hover:bg-rust group-hover:text-white" aria-label={`Ver ${service.title}`}><ArrowRight className="h-4 w-4" /></NextLink>
+                <NextLink href={`/services/${service.slug}`} className="inline-flex min-h-11 max-w-56 items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm text-ink transition-all group-hover:border-rust group-hover:bg-rust group-hover:text-white">Ver {service.title.toLowerCase()} <ArrowRight className="h-4 w-4 shrink-0" aria-hidden /></NextLink>
               </article>
             ))}
           </div>
-        </Container>
-      </Section>
-
-      <Section>
-        <Container>
-          <div className="grid gap-8 md:grid-cols-[0.62fr_1fr] md:items-end">
-            <div><Eyebrow>Experiencia institucional</Eyebrow><Heading size="xl">Tres consultorías. Problemas y entregables verificables.</Heading></div>
-            <div className="md:justify-self-end"><p className="max-w-2xl text-sm leading-7 text-ink/68">Experiencia desarrollada para CONCYTEC, el Instituto Peruano del Deporte y el Gobierno Regional del Cusco, publicada sin información reservada.</p><Button href="/cases" variant="ghost" className="mt-4 gap-2">Ver todos los casos <ArrowRight className="h-4 w-4" /></Button></div>
-          </div>
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">{institutionalCases.map((item, index) => <InstitutionalCaseCard key={item.slug} item={item} index={index} />)}</div>
-        </Container>
-      </Section>
-
-      <Section className="border-y border-border bg-[#ded9cc]">
-        <Container>
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div><Eyebrow>Productos y evidencia</Eyebrow><Heading size="xl" className="max-w-2xl">Abre el producto antes de conversar con nosotros.</Heading></div>
-            <Button href="/evidence" variant="ghost" className="justify-start gap-2 !text-ink">Ver biblioteca completa <ArrowRight className="h-4 w-4" /></Button>
-          </div>
-          <div className="mt-12 grid gap-4 lg:grid-cols-3">
-            <CaseProofCard proof={productProofs.dataperu} />
-            <CaseProofCard proof={productProofs.planometro} />
-            <CaseProofCard proof={productProofs.barometro} />
-          </div>
-          <ResourceList items={resources} variant="rows" className="mt-10" />
         </Container>
       </Section>
 
@@ -218,8 +212,8 @@ export default async function HomePage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-6 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">Comienza por la pregunta</p><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué necesitas comprender, construir o evaluar.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico" variant="ghost" className="!text-white/90 hover:!text-white">Diseñar un alcance</Button><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Conversar sobre el problema</Button></div>
+              <div><p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">Si necesitas apoyo de NOAM</p><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué necesitas estudiar o mejorar</h2></div>
+              <div className="flex flex-wrap gap-3"><Button href="/solutions" variant="ghost" className="!text-white/90 hover:!text-white">Ver opciones de trabajo</Button><Button href="/diagnostico" variant="ghost" className="!text-white/90 hover:!text-white">Describir mi consulta</Button><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Contactar a NOAM</Button></div>
             </div>
           </div>
         </Container>

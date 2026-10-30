@@ -32,29 +32,30 @@ async function expectHtml(path, text, options) {
 await waitForServer();
 
 const publicPages = [
-  ["/analisis", "Datos abiertos. Preguntas concretas."],
+  ["/barometro-ciudadano", "Barómetro ciudadano"],
+  ["/analisis", "Explora los análisis por tema."],
   ["/analisis/residuos-municipales", "Generación de residuos municipales."],
-  ["/analisis/planes-territoriales", "Planeamiento territorial, provincia por provincia."],
+  ["/analisis/planes-territoriales", "Estado reportado de los planes territoriales."],
   ["/analisis/registro-discapacidad", "Discapacidad y acceso al registro."],
   ["/analisis/apoyo-deportista", "Apoyo económico al deporte."],
-  ["/analisis/conteo-presidencial-2026", "Conteo presidencial: un corte, no el resultado final."],
+  ["/analisis/conteo-presidencial-2026", "Conteo presidencial: archivo parcial del 15 de abril de 2026."],
   ...["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"].map((slug) => [`/analisis/${slug}/dashboard`, "Detalle del agregado"]),
   ["/", "Análisis de datos para decisiones públicas y territoriales"],
-  ["/solutions", "Una decisión concreta"],
+  ["/solutions", "Una decisión concreta. La evidencia para llevarla adelante."],
   ["/solutions/diagnostico-agenda-territorial", "Una lectura compartida del territorio"],
   ["/solutions/observatorio-gestion-inversiones", "Indicadores, proyectos y alertas reunidos"],
   ["/solutions/ia-procesos-publicos", "Un proceso concreto, un piloto controlado"],
   ["/solutions/linea-base-evaluacion-programas", "Medir el punto de partida"],
   ["/solutions/transferencia-gestion-100-dias", "Convertir información, riesgos y compromisos"],
-  ["/sectors", "Decisiones distintas"],
-  ["/services", "capacidad que funciona"],
-  ["/como-trabajamos", "Un encargo claro"],
-  ["/cases", "Trabajo que se puede examinar"],
-  ["/evidence", "Biblioteca NOAM"],
-  ["/electoral", "Elecciones"],
-  ["/electoral/erm-2026", "De las propuestas a decisiones de gestión"],
+  ["/sectors", "La misma exigencia. Decisiones distintas."],
+  ["/services", "Estudios y herramientas para gobiernos y empresas."],
+  ["/como-trabajamos", "Un encargo claro empieza antes de la propuesta."],
+  ["/cases", "Trabajo que se puede examinar."],
+  ["/evidence", "Ideas que se pueden examinar, usar y discutir."],
+  ["/electoral", "Entender la elección. Preparar la gestión."],
+  ["/electoral/erm-2026", "¿Qué necesita tu región o municipio?"],
   ["/electoral/barometro-enero-2026", "Barómetro Electoral"],
-  ["/electoral/planometro-2026", "Leer miles de propuestas sin perder la fuente"],
+  ["/electoral/planometro-2026", "Leer miles de propuestas sin perder la fuente."],
   ["/electoral/planometro-2026/organizaciones", "Treinta y seis planes. Una lectura comparable."],
   ["/electoral/planometro-2026/organizaciones/ahora-nacion", "Ahora Nación"],
   ["/electoral/planometro-2026/ejes", "Once puertas para leer la agenda."],
@@ -63,77 +64,77 @@ const publicPages = [
   ["/dataperu", "DataPerú"],
   ["/dataperu/agua-saneamiento", "Agua y saneamiento, distrito por distrito."],
   ["/dataperu/educacion", "Matrícula escolar, distrito por distrito."],
-  ["/dataperu/agendas-territoriales", "El mismo problema no se resuelve igual en todo el Perú"],
-  ["/dataperu/departamentos", "El país cambia cuando cambia la escala"],
+  ["/dataperu/agendas-territoriales", "El mismo problema no se resuelve igual en todo el Perú."],
+  ["/dataperu/departamentos", "El país cambia cuando cambia la escala."],
   ["/dataperu/panorama-municipal-2025", "El Perú municipal no cabe en un promedio."],
   ["/dataperu/departamentos/08", "Una lectura inicial de recursos"],
-  ["/dataperu/radar", "La gestión municipal, vista en contexto"],
-  ["/dataperu/inversiones", "La cartera se entiende proyecto por proyecto"],
-  ["/dataperu/mapa", "Las decisiones también tienen geografía"],
-  ["/products/ai-governance-lab", "Antes de construir IA, decide si vale la pena"],
-  ["/resources", "Bienes públicos digitales"],
+  ["/dataperu/radar", "La gestión municipal, vista en contexto."],
+  ["/dataperu/inversiones", "La cartera se entiende proyecto por proyecto."],
+  ["/dataperu/mapa", "Las decisiones también tienen geografía."],
+  ["/products/ai-governance-lab", "Antes de construir IA, decide si vale la pena."],
+  ["/resources", "Datos, métodos y herramientas para trabajar mejor."],
   ["/newsletter", "Una señal útil, no otra bandeja llena."],
   ["/newsletter/check-email", "Si la dirección requiere confirmación"],
   ["/newsletter/confirm?status=invalid", "El enlace no es válido o ya fue utilizado."],
   ["/newsletter/unsubscribe?status=invalid", "El enlace no es válido o la baja ya fue procesada."],
   ["/dataperu/municipios", "Perfiles municipales"],
   ["/dataperu/municipios/150101", "Lima"],
-  ["/contact", "Comencemos por la decisión"],
-  ["/diagnostico", "Convierte una necesidad en un punto de partida."],
-  ["/contratar-analisis-datos", "El análisis correcto empieza por la decisión"],
-  ["/diagnostico-territorial", "Un territorio no se diagnostica con una tabla"],
-  ["/encuestas-estudios-opinion", "Una encuesta útil no empieza con preguntas"],
-  ["/observatorios-dashboards-visores", "Un dashboard muestra datos"],
-  ["/ia-automatizacion-gobiernos-empresas", "La IA no es el servicio"],
-  ["/estudios-mercado-inteligencia-territorial", "Un estudio útil no describe todo"],
-  ["/analisis-datos-seguridad-ciudadana", "La seguridad no se gestiona con un solo mapa"],
-  ["/analisis-datos-residuos-limpieza-publica", "La cobertura declarada no muestra cómo funciona cada ruta"],
-  ["/analisis-datos-gestion-riesgo-desastres", "Un mapa de peligros no decide qué proteger primero"],
-  ["/analisis-datos-desarrollo-economico-local", "Una feria o una licencia emitida no demuestran desarrollo económico"],
-  ["/analisis-datos-gestion-ambiental", "Tener una política y un plan no demuestra mejora ambiental"],
-  ["/analisis-datos-agua-saneamiento", "Una conexión registrada no demuestra agua segura ni servicio continuo"],
-  ["/analisis-datos-movilidad-transporte", "Contar vehículos no explica cómo se mueve una ciudad"],
-  ["/analisis-catastro-desarrollo-urbano-territorial", "Un mapa de predios no basta para gobernar la ciudad"],
-  ["/analisis-datos-politicas-sociales", "Estar en un padrón no demuestra que una necesidad fue atendida"],
-  ["/analisis-datos-salud-territorial", "Registrar atenciones no demuestra que la población recibió cuidado oportuno"],
-  ["/analisis-datos-educacion-territorial", "Una matrícula registrada no demuestra que un estudiante aprende ni permanece"],
-  ["/analisis-inversion-publica-proyectos", "La ejecución presupuestal no demuestra avance físico ni un servicio operativo"],
-  ["/analisis-contrataciones-publicas-proveedores", "Comprar mejor exige mirar más que el procedimiento"],
-  ["/linea-base-evaluacion-impacto", "Línea de base, resultados o impacto"],
+  ["/contact", "Conversemos"],
+  ["/diagnostico", "Prepara tu consulta."],
+  ["/contratar-analisis-datos", "El análisis correcto empieza por la decisión, no por la herramienta."],
+  ["/diagnostico-territorial", "Conoce los problemas y las oportunidades de tu localidad."],
+  ["/encuestas-estudios-opinion", "Conoce las necesidades y opiniones de las personas."],
+  ["/observatorios-dashboards-visores", "Indicadores y mapas para seguir lo que ocurre."],
+  ["/ia-automatizacion-gobiernos-empresas", "¿Qué tareas podrías mejorar con IA?"],
+  ["/estudios-mercado-inteligencia-territorial", "Conoce el mercado antes de invertir."],
+  ["/analisis-datos-seguridad-ciudadana", "¿Dónde y cómo priorizar la seguridad ciudadana?"],
+  ["/analisis-datos-residuos-limpieza-publica", "¿Cómo mejorar la limpieza pública?"],
+  ["/analisis-datos-gestion-riesgo-desastres", "¿Qué población y servicios necesitan protección ante desastres?"],
+  ["/analisis-datos-desarrollo-economico-local", "¿Qué limita el empleo y los negocios en tu territorio?"],
+  ["/analisis-datos-gestion-ambiental", "¿Qué problemas ambientales requieren atención primero?"],
+  ["/analisis-datos-agua-saneamiento", "¿Dónde hace falta mejorar el agua y el saneamiento?"],
+  ["/analisis-datos-movilidad-transporte", "¿Cómo viajan las personas y qué dificulta sus recorridos?"],
+  ["/analisis-catastro-desarrollo-urbano-territorial", "¿Cómo cambia la ciudad y dónde necesita servicios?"],
+  ["/analisis-datos-politicas-sociales", "¿Quién necesita apoyo y logra acceder a los servicios?"],
+  ["/analisis-datos-salud-territorial", "¿Quién necesita atención de salud y logra recibirla?"],
+  ["/analisis-datos-educacion-territorial", "¿Quiénes acceden a la educación y cómo avanzan?"],
+  ["/analisis-inversion-publica-proyectos", "¿Qué proyectos avanzan y cuáles necesitan atención?"],
+  ["/analisis-contrataciones-publicas-proveedores", "¿Qué compra el Estado y cómo avanzan los contratos?"],
+  ["/linea-base-evaluacion-impacto", "¿Está funcionando el programa?"],
   ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
-  ["/toolkits/tdr-estudio-analisis-datos", "Cómo elaborar TDR para un estudio o servicio de análisis de datos"],
-  ["/toolkits/tdr-encuesta-estudio-territorial", "Cómo elaborar TDR para una encuesta o estudio territorial"],
-  ["/toolkits/tdr-observatorio-dashboard-visor", "Cómo elaborar TDR para un observatorio, dashboard o visor"],
-  ["/toolkits/tdr-linea-base-evaluacion-programa", "Cómo elaborar TDR para una línea de base o evaluación de programas"],
-  ["/toolkits/tdr-diagnostico-territorial-institucional", "Cómo elaborar TDR para un diagnóstico territorial e institucional"],
-  ["/toolkits/tdr-estudio-mercado-inteligencia-territorial", "Cómo elaborar TDR para un estudio de mercado e inteligencia territorial"],
-  ["/toolkits/tdr-analisis-seguridad-ciudadana", "Cómo elaborar TDR para un diagnóstico u observatorio de seguridad ciudadana"],
-  ["/toolkits/tdr-analisis-residuos-limpieza-publica", "Cómo elaborar TDR para analizar residuos sólidos y limpieza pública"],
-  ["/toolkits/tdr-analisis-gestion-riesgo-desastres", "Cómo elaborar TDR para analizar y gestionar el riesgo de desastres"],
-  ["/toolkits/tdr-analisis-desarrollo-economico-local", "Cómo elaborar TDR para analizar el desarrollo económico local"],
-  ["/toolkits/tdr-analisis-gestion-ambiental", "Cómo elaborar TDR para analizar la gestión ambiental"],
-  ["/toolkits/tdr-analisis-agua-saneamiento", "Cómo elaborar TDR para analizar agua y saneamiento"],
-  ["/toolkits/tdr-analisis-movilidad-transporte", "Cómo elaborar TDR para analizar movilidad y transporte"],
-  ["/toolkits/tdr-analisis-catastro-desarrollo-urbano", "Cómo elaborar TDR para analizar catastro y desarrollo urbano"],
-  ["/toolkits/tdr-analisis-politicas-sociales", "Cómo elaborar TDR para analizar políticas y programas sociales"],
-  ["/toolkits/tdr-analisis-salud-territorial", "Cómo elaborar TDR para analizar salud territorial"],
-  ["/toolkits/tdr-analisis-educacion-territorial", "Cómo elaborar TDR para analizar educación territorial"],
-  ["/toolkits/tdr-analisis-inversion-publica", "Cómo elaborar TDR para analizar inversión pública y proyectos"],
-  ["/toolkits/tdr-analisis-contrataciones-publicas", "Cómo elaborar TDR para analizar contrataciones públicas y proveedores"],
-  ["/muestras", "Mira la forma del trabajo antes de contratarlo."],
+  ["/toolkits/tdr-estudio-analisis-datos", "Cómo plantear un estudio de análisis de datos"],
+  ["/toolkits/tdr-encuesta-estudio-territorial", "Qué definir antes de hacer una encuesta territorial"],
+  ["/toolkits/tdr-observatorio-dashboard-visor", "Observatorio, dashboard o visor: qué necesitas y cómo mantenerlo"],
+  ["/toolkits/tdr-linea-base-evaluacion-programa", "Línea de base y evaluación: elegir qué medir y cómo"],
+  ["/toolkits/tdr-diagnostico-territorial-institucional", "Cómo preparar un diagnóstico territorial e institucional"],
+  ["/toolkits/tdr-estudio-mercado-inteligencia-territorial", "Estudios de mercado: demanda, territorio y supuestos"],
+  ["/toolkits/tdr-analisis-seguridad-ciudadana", "Seguridad ciudadana: definir el problema antes de elegir herramientas"],
+  ["/toolkits/tdr-analisis-residuos-limpieza-publica", "Cómo revisar el servicio de limpieza pública"],
+  ["/toolkits/tdr-analisis-gestion-riesgo-desastres", "Riesgo de desastres: del análisis a las medidas de prevención"],
+  ["/toolkits/tdr-analisis-desarrollo-economico-local", "Desarrollo económico local: entender las barreras y las oportunidades"],
+  ["/toolkits/tdr-analisis-gestion-ambiental", "Qué datos revisar ante un problema ambiental"],
+  ["/toolkits/tdr-analisis-agua-saneamiento", "Agua y saneamiento: qué revisar para mejorar el servicio"],
+  ["/toolkits/tdr-analisis-movilidad-transporte", "Movilidad y transporte: analizar los viajes y sus barreras"],
+  ["/toolkits/tdr-analisis-catastro-desarrollo-urbano", "Catastro y desarrollo urbano: datos para planificar"],
+  ["/toolkits/tdr-analisis-politicas-sociales", "Programas sociales: quién accede y qué resultados obtiene"],
+  ["/toolkits/tdr-analisis-salud-territorial", "Salud en el territorio: acceso, capacidad y atención"],
+  ["/toolkits/tdr-analisis-educacion-territorial", "Educación en el territorio: acceso, aprendizaje y permanencia"],
+  ["/toolkits/tdr-analisis-inversion-publica", "Cómo revisar una cartera de inversión pública"],
+  ["/toolkits/tdr-analisis-contrataciones-publicas", "Cómo analizar compras públicas y proveedores"],
+  ["/muestras", "Ejemplos de informes y herramientas"],
   ["/muestras/diagnostico-agenda-territorial", "Diagnóstico territorial y agenda priorizada"],
   ["/muestras/piloto-ia-documental", "Piloto de IA para documentos y conocimiento"],
   ["/muestras/linea-base-evaluacion-programa", "Línea de base y evaluación de un programa"],
   ["/muestras/transferencia-gestion-100-dias", "Diagnóstico de transferencia y agenda de 100 días"],
   ["/muestras/diagnostico-desempeno-servicio-publico", "Diagnóstico de acceso y desempeño de un servicio público"],
-  ["/about", "Inteligencia para instituciones que mueven el territorio"],
+  ["/about", "Inteligencia para instituciones que mueven el territorio."],
   ["/cv", "Noam López Villanes"],
-  ["/privacy", "Datos personales"],
+  ["/privacy", "Datos personales, con propósito y límites."],
   ["/terms", "Información abierta. Responsabilidades claras."],
   ["/transparency", "La confianza también se diseña."],
   ["/en", "Evidence for decisions that shape territories."],
   ["/buscar", "Encuentra una respuesta, una herramienta o un punto de partida."],
-  ["/admin/login", "Cada operador utiliza una identidad propia."]
+  ["/admin/login", "Acceso interno."]
 ];
 
 for (const [path, text] of publicPages) await expectHtml(path, text);
@@ -174,7 +175,7 @@ assert.ok(limaMunicipalProfile.body.includes("Matrícula de Educación Básica R
 assert.ok(limaMunicipalCsvBody.includes("matricula_gestion_publica_porcentaje"), "El CSV municipal debe incluir matrícula por gestión pública");
 
 const servicesDirectory = await expectHtml("/services", "Encuentra el punto de partida");
-assert.ok(servicesDirectory.body.includes("Por tipo de encargo"), "Servicios debe permitir buscar por tipo de encargo");
+assert.ok(servicesDirectory.body.includes("Por tipo de servicio"), "Servicios debe permitir buscar por tipo de encargo");
 assert.ok(servicesDirectory.body.includes("Por tema de gestión"), "Servicios debe permitir buscar por tema de gestión");
 assert.ok(servicesDirectory.body.includes('data-analytics-target="services:sector:gestion-ambiental"'), "El directorio debe medir la selección sectorial");
 
@@ -221,7 +222,7 @@ await expectHtml("/buscar?q=SISFOH+brecha+cobertura+programa+social", "Análisis
 await expectHtml("/buscar?q=REUNIS+IPRESS+sala+situacion", "Análisis de datos para salud territorial");
 await expectHtml("/buscar?q=ENLA+ESCALE+trayectoria+aprendizaje", "Análisis de datos para educación territorial");
 await expectHtml("/buscar?q=Invierte.pe+avance+fisico+cartera+proyectos", "Análisis de inversión pública, presupuesto y proyectos");
-await expectHtml("/buscar?q=contratar+analisis+datos", "Contratar estudios y servicios de análisis de datos");
+await expectHtml("/buscar?q=contratar+analisis+datos", "Cómo abordar un problema con análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
 await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
 await expectHtml("/resources?type=dataset&product=planometro-electoral", "Planómetro 2026: organizaciones");
@@ -235,10 +236,11 @@ assert.ok(!mirafloresSearch.body.includes("Aguas Verdes, Zarumilla: perfil munic
 const companiesPage = await expectHtml("/sectors/companies", "Consultoría para empresas");
 assert.ok(companiesPage.body.includes('"@type":"Service"'), "Empresas debe declarar su oferta como Service");
 
-const visualHome = await expectHtml("/", "Amazonía | Conectividad y servicios", {
+const visualHome = await expectHtml("/", "Consultoría para gobiernos y empresas", {
   headers: { cookie: "noam_hero_index=0" }
 });
 assert.ok(visualHome.body.includes("/images/editorial/hero-amazonia-conectividad.jpg"));
+assert.ok(!visualHome.body.includes("Amazonía | Conectividad y servicios"), "La imagen principal no debe mostrar lemas superpuestos");
 assert.ok(visualHome.body.includes("navigator:toggle"), "El Orientador debe medir aperturas cuando la analítica esté disponible");
 assert.ok(visualHome.body.includes('"@type":"WebSite"'), "La portada debe identificar el sitio en datos estructurados");
 
@@ -248,9 +250,9 @@ assert.ok(fieldSolution.body.includes("/images/noam-field-research.jpg"));
 const aiService = await expectHtml("/services/ia-transformacion-gestion", "Escena editorial representativa");
 assert.ok(aiService.body.includes("/images/noam-ai-oversight.jpg"));
 
-const contactPage = await expectHtml("/contact", "Comencemos por la decisión");
+const contactPage = await expectHtml("/contact", "Conversemos");
 const hasPersistentForm = contactPage.body.includes("Añadir detalles del proyecto");
-const hasSafeFallback = contactPage.body.includes("Contacto directo y trazable.");
+const hasSafeFallback = contactPage.body.includes("Por correo o WhatsApp");
 assert.ok(hasPersistentForm || hasSafeFallback, "Contacto debe ofrecer formulario persistente o canales directos seguros");
 const signalLink = limaMunicipalProfile.body.match(/href="([^\"]*signal=[a-z-]+)"[^>]*>Consultar esta señal/);
 assert.ok(signalLink, "La ficha municipal debe permitir consultar una señal concreta");
@@ -266,7 +268,7 @@ if (hasSafeFallback) {
 } else {
   assert.ok(signalContact.body.includes("Pregunta por investigar:"), "El formulario debe conservar la pregunta de la ficha");
 }
-const invalidSignal = await expectHtml("/contact?interest=dataperu&ubigeo=150101&signal=not-a-real-signal", "Comencemos por la decisión");
+const invalidSignal = await expectHtml("/contact?interest=dataperu&ubigeo=150101&signal=not-a-real-signal", "Conversemos");
 assert.ok(!invalidSignal.body.includes("Señal municipal seleccionada"), "Contacto debe ignorar señales inexistentes");
 const amazonasAgenda = await expectHtml("/dataperu/departamentos/01", "Problemas que exigen decisiones conectadas.");
 const regionalProblemLink = amazonasAgenda.body.match(/href="([^\"]*focus=problem[^\"]*)"/);
@@ -289,7 +291,7 @@ const preliminaryContext = hasSafeFallback
   ? decodeURIComponent(preliminaryInquiry.body.match(/href="(mailto:[^\"]+)"/)?.[1].replaceAll("&amp;", "&") ?? "")
   : preliminaryInquiry.body;
 assert.ok(preliminaryContext.includes("base macroregional"), "La consulta de Arequipa debe advertir su base macroregional");
-const invalidRegionalInquiry = await expectHtml("/contact?interest=dataperu&dept=01&focus=problem&item=9", "Comencemos por la decisión");
+const invalidRegionalInquiry = await expectHtml("/contact?interest=dataperu&dept=01&focus=problem&item=9", "Conversemos");
 assert.ok(!invalidRegionalInquiry.body.includes("síntesis preliminar que requiere validación local"), "Contacto debe ignorar prioridades regionales inexistentes");
 if (hasPersistentForm) {
   const localEconomyContact = await expectHtml("/contact?interest=desarrollo-economico-local&from=/analisis-datos-desarrollo-economico-local", "Desarrollo económico local, empleo y MYPE");
@@ -772,8 +774,8 @@ if (hasPersistentForm) {
   await expectHtml("/contact?interest=ia-procesos-publicos&case=document-search&from=/products/ai-governance-lab", "Búsqueda y respuesta sobre documentos internos");
   await expectHtml("/contact?interest=ia-procesos-publicos&org=company&challenge=transform&evidence=documents&horizon=extended&from=/diagnostico", "Generamos un brief inicial con el Diseñador de alcance NOAM");
 } else {
-  await expectHtml("/contact?interest=ia-procesos-publicos&case=document-search&from=/products/ai-governance-lab", "Contacto directo y trazable.");
-  await expectHtml("/contact?interest=ia-procesos-publicos&org=company&challenge=transform&evidence=documents&horizon=extended&from=/diagnostico", "Contacto directo y trazable.");
+  await expectHtml("/contact?interest=ia-procesos-publicos&case=document-search&from=/products/ai-governance-lab", "Por correo o WhatsApp");
+  await expectHtml("/contact?interest=ia-procesos-publicos&org=company&challenge=transform&evidence=documents&horizon=extended&from=/diagnostico", "Por correo o WhatsApp");
 }
 
 const missing = await get("/esta-ruta-no-existe");

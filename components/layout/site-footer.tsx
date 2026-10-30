@@ -7,15 +7,15 @@ import { Container } from "@/components/ui";
 const explore = siteConfig.nav.filter((item) => item.href !== "/");
 
 const capabilities = [
-  { label: "Diseñar un alcance", href: "/diagnostico" },
-  { label: "Orientar un problema con datos", href: "/contratar-analisis-datos" },
-  { label: "Muestras de entregables", href: "/muestras" },
+  { label: "Describir mi consulta", href: "/diagnostico" },
+  { label: "Cómo preparar un estudio", href: "/contratar-analisis-datos" },
+  { label: "Ejemplos de informes y herramientas", href: "/muestras" },
   { label: "Recursos y datos abiertos", href: "/resources" },
   { label: "Brief NOAM", href: "/brief" },
   { label: "Recibir el Brief", href: "/newsletter" },
   { label: "Panorama municipal 2025", href: "/dataperu/panorama-municipal-2025" },
   { label: "Cómo trabajamos", href: "/como-trabajamos" },
-  { label: "Todas las capacidades", href: "/services" },
+  { label: "Todos los servicios", href: "/services" },
   { label: "Estudios y evaluación", href: "/services/estudios-diagnosticos-evaluacion" },
   { label: "Sistemas de decisión", href: "/services/observatorios-sistemas-decision" },
   { label: "IA para la gestión", href: "/services/ia-transformacion-gestion" },
@@ -39,7 +39,7 @@ export function SiteFooter() {
           <div>
             <p className="text-lg font-semibold tracking-[0.16em]">NOAM</p>
             <p className="mt-6 max-w-lg text-2xl leading-tight tracking-[-0.035em] text-white/92 md:text-3xl">
-              Evidencia, sistemas e inteligencia para decisiones que importan.
+              Estudios y análisis de datos para gobiernos y empresas.
             </p>
             <a href={`mailto:${siteConfig.email}`} className="mt-8 inline-flex items-center gap-2 text-sm text-white/65 transition-colors hover:text-white">
               {siteConfig.email} <ArrowUpRight className="h-3.5 w-3.5" />

@@ -40,7 +40,7 @@ const methods = [
 const evidence = [
   { label: "Datos abiertos", title: "Explorar DataPerú", text: "Perfiles municipales, departamentos, inversión y mapas.", href: "/dataperu" },
   { label: "Muestra", title: "Screening territorial", text: "Arquitectura de una decisión de localización antes de elegir una intervención.", href: "/muestras/inteligencia-territorial-inversion" },
-  { label: "Guía de trabajo", title: "Plantear el estudio", text: "Mercado, territorio, método, productos y aceptación verificable.", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" },
+  { label: "Guía de trabajo", title: "Guía de estudios de mercado", text: "Preguntas para conocer clientes, comparar lugares y organizar el estudio.", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" },
   { label: "Insight", title: "Evaluar antes de invertir", text: "Demanda, infraestructura, instituciones, riesgos y validación.", href: "/insights/evaluar-territorio-antes-invertir" },
   { label: "Solución", title: "Inteligencia territorial", text: "Perfiles, comparadores, escenarios y recomendación ejecutiva.", href: "/solutions/inteligencia-territorial-inversion" },
   { label: "Prácticas", title: "Industrias y decisiones", text: "Infraestructura, minería, servicios, comercio, agro e impacto.", href: "/sectors/companies" }
@@ -77,13 +77,13 @@ export default function MarketTerritorialIntelligencePage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d7c687]">Mercado, territorio y decisión</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Un estudio útil no describe todo. Reduce una decisión.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Conoce el mercado antes de invertir.</Heading>
             </div>
             <div>
-              <p className="text-base leading-8 text-white/68">Integramos mercado, clientes, geografía, inversión pública y entorno institucional para decidir dónde crecer, qué validar y qué riesgo no ignorar.</p>
+              <p className="text-base leading-8 text-white/68">Revisa qué datos ayudan a conocer a los clientes, comparar ubicaciones y evaluar una oportunidad de negocio. Encontrarás fuentes públicas y ejemplos de estudios.</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Button href="#estudios" variant="secondary" className="rounded-full border-white bg-white text-ink">Elegir un estudio</Button>
-                <Button href="/toolkits/tdr-estudio-mercado-inteligencia-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
+                <Button href="#estudios" variant="secondary" className="rounded-full border-white bg-white text-ink">Ver tipos de estudio</Button>
+                <Button href="/toolkits/tdr-estudio-mercado-inteligencia-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Leer la guía</Button>
               </div>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default function MarketTerritorialIntelligencePage() {
       <Section id="estudios">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Cinco estudios que responden preguntas distintas.</Heading></div>
+            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Qué puedes investigar sobre un mercado.</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Pueden combinarse, pero no deben confundirse. Un estudio de clientes no reemplaza un análisis de localización; una base territorial no demuestra por sí sola demanda comercial.</p>
           </div>
 
@@ -121,7 +121,7 @@ export default function MarketTerritorialIntelligencePage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><ScanSearch className="h-5 w-5 text-[#8a6d21]" aria-hidden /><Eyebrow className="mt-6">Cadena de evidencia</Eyebrow><Heading size="xl">La cifra final depende de seis decisiones previas.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">La calidad no se evalúa por el número de páginas. Se evalúa por la trazabilidad de la pregunta, la comparabilidad y la capacidad de verificar la recomendación.</p></div>
+            <div><ScanSearch className="h-5 w-5 text-[#8a6d21]" aria-hidden /><Eyebrow className="mt-6">Cómo preparar el estudio</Eyebrow><Heading size="xl">Qué definir antes de buscar datos.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Define qué quieres conocer, qué lugares compararás y qué datos tienes. Las recomendaciones deben explicar en qué información se basan.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {evidenceChain.map((item) => (
                 <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8">
@@ -155,7 +155,7 @@ export default function MarketTerritorialIntelligencePage() {
       <Section className="border-y border-border bg-[#e5dfc8]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Fuentes para Perú</Eyebrow><Heading size="xl">La primera diligencia puede comenzar con evidencia pública.</Heading></div>
+            <div><Eyebrow>Fuentes para Perú</Eyebrow><Heading size="xl">Fuentes públicas para conocer el mercado.</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>INEI ofrece sistemas distritales, censales, económicos y geográficos; PRODUCE publica estadísticas empresariales, industriales, Mipyme y comercio; PROMPERÚ desarrolla inteligencia y prospectiva de mercados e inversiones; y MEF permite examinar carteras y proyectos públicos. Estas fuentes orientan la exploración, pero no reemplazan datos comerciales ni validación primaria cuando la decisión lo exige.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#735b1f]">
@@ -173,8 +173,8 @@ export default function MarketTerritorialIntelligencePage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Datos, método y muestra antes del contacto.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Explora la infraestructura territorial de NOAM, una arquitectura de entregable y una plantilla para definir alcance sin revelar información confidencial.</p>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Datos territoriales y ejemplos de estudios.</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Consulta DataPerú, mira un ejemplo de informe y usa la guía para ordenar tus preguntas. No necesitas compartir información confidencial.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {evidence.map((item) => (
@@ -198,8 +198,8 @@ export default function MarketTerritorialIntelligencePage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-[#8a6d21] px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Primera definición</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué decisión de mercado debe reducirse y qué territorio está en juego.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/estudios-mercado-inteligencia-territorial" analyticsEvent="cta_click" analyticsTarget="market-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=inteligencia-territorial-inversion&from=/estudios-mercado-inteligencia-territorial" analyticsEvent="cta_click" analyticsTarget="market-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear el estudio</Button></div>
+              <div><Eyebrow className="text-white/55">Apoyo de NOAM</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas estudiar una oportunidad de negocio?</h2></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/estudios-mercado-inteligencia-territorial" analyticsEvent="cta_click" analyticsTarget="market-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?interest=inteligencia-territorial-inversion&from=/estudios-mercado-inteligencia-territorial" analyticsEvent="cta_click" analyticsTarget="market-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar con NOAM</Button></div>
             </div>
           </div>
         </Container>

@@ -78,13 +78,13 @@ export default function SurveysOpinionPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">Población, usuarios y mercados</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Una encuesta útil no empieza con preguntas. Empieza con una decisión.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Conoce las necesidades y opiniones de las personas.</Heading>
             </div>
             <div>
-              <p className="text-base leading-8 text-white/68">Diseño, trabajo de campo y análisis para comprender satisfacción, experiencia, necesidades, opinión o mercado sin ocultar a quién representan los resultados.</p>
+              <p className="text-base leading-8 text-white/68">Encuestas y entrevistas ayudan a conocer la experiencia de vecinos, usuarios o clientes. Aquí puedes revisar qué estudio usar y cómo interpretar sus resultados.</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Button href="#tipos" variant="secondary" className="rounded-full border-white bg-white text-ink">Elegir un estudio</Button>
-                <Button href="/toolkits/tdr-encuesta-estudio-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
+                <Button href="#tipos" variant="secondary" className="rounded-full border-white bg-white text-ink">Ver tipos de estudio</Button>
+                <Button href="/toolkits/tdr-encuesta-estudio-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Leer la guía</Button>
               </div>
             </div>
           </div>
@@ -103,8 +103,8 @@ export default function SurveysOpinionPage() {
       <Section id="tipos">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas comprender</Eyebrow><Heading size="xl">Cinco estudios que no deben confundirse.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Pueden compartir técnicas, pero cambian la población, el instrumento, las comparaciones y el uso. El primer alcance debe nombrar la decisión y a quién necesita representar.</p>
+            <div><Eyebrow>Qué necesitas comprender</Eyebrow><Heading size="xl">Qué puedes investigar con una encuesta.</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">El tipo de estudio depende de lo que necesitas conocer y de a quién debes escuchar. Estos son algunos usos posibles.</p>
           </div>
 
           <div className="mt-12 divide-y divide-border border-y border-border">
@@ -122,7 +122,7 @@ export default function SurveysOpinionPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Calidad completa</Eyebrow><Heading size="xl">La muestra no es el único control.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Una cifra puede fallar por una población mal definida, preguntas ambiguas, cobertura desigual, no respuesta o una interpretación que excede el diseño.</p></div>
+            <div><Eyebrow>Calidad de la encuesta</Eyebrow><Heading size="xl">Qué revisar para confiar en los resultados.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Una cifra puede fallar por una población mal definida, preguntas ambiguas, cobertura desigual, no respuesta o una interpretación que excede el diseño.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {qualityChain.map((item) => (
                 <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8">
@@ -156,7 +156,7 @@ export default function SurveysOpinionPage() {
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Referencias públicas</Eyebrow><Heading size="xl">Medir para mejorar, no para producir otro porcentaje.</Heading></div>
+            <div><Eyebrow>Referencias públicas</Eyebrow><Heading size="xl">Guías para diseñar y revisar encuestas.</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>El INEI reúne metodologías para diseño y análisis de encuestas. La PCM utiliza mediciones de satisfacción para identificar mejoras en servicios públicos, y OSIPTEL documenta diseño muestral, cuestionarios, campo y análisis para estudios comparables de experiencia. Son referencias de calidad; cada estudio debe adaptar población, método y protección de datos a su finalidad.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-rust">
@@ -173,8 +173,8 @@ export default function SurveysOpinionPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Método, muestra y caso antes del contacto.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Examina cómo NOAM conecta pregunta, campo, análisis y uso sin convertir la encuesta en una colección de gráficos.</p>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Guías y ejemplos de encuestas.</Heading></div>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Consulta cómo se prepara una encuesta y revisa un análisis publicado.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {evidence.map((item) => (
@@ -198,8 +198,8 @@ export default function SurveysOpinionPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Primera definición</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué decisión cambiaría con una respuesta distinta.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/encuestas-estudios-opinion" analyticsEvent="cta_click" analyticsTarget="surveys-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=encuestas-escucha-ciudadana&from=/encuestas-estudios-opinion" analyticsEvent="cta_click" analyticsTarget="surveys-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear un estudio</Button></div>
+              <div><Eyebrow className="text-white/55">Apoyo de NOAM</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas conocer la opinión de vecinos, usuarios o clientes?</h2></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/encuestas-estudios-opinion" analyticsEvent="cta_click" analyticsTarget="surveys-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?interest=encuestas-escucha-ciudadana&from=/encuestas-estudios-opinion" analyticsEvent="cta_click" analyticsTarget="surveys-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar con NOAM</Button></div>
             </div>
           </div>
         </Container>

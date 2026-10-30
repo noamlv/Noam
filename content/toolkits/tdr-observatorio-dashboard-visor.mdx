@@ -1,6 +1,6 @@
 ---
-title: "Cómo orientar un observatorio, dashboard o visor"
-description: "Guía y matriz de trabajo para orientar un sistema de decisión con indicadores, datos, seguridad, pruebas, transferencia y operación."
+title: "Observatorio, dashboard o visor: qué necesitas y cómo mantenerlo"
+description: "Guía para elegir un sistema de seguimiento y definir indicadores, fuentes, responsables, seguridad, actualización y pruebas de funcionamiento."
 date: "2026-09-07"
 reviewedAt: "2026-10-29"
 author: "Noam López Villanes"
@@ -17,19 +17,19 @@ ogImage: "/og-default.png"
 ---
 
 <Problem>
-Un dashboard puede verse terminado y seguir siendo inservible: indicadores sin definición, datos que nadie actualiza, accesos inseguros o vistas que no conducen a ninguna acción. El análisis debe apoyar una capacidad de decisión, no solo pantallas.
+Un dashboard puede verse terminado y no servir para decidir: los indicadores no están definidos, nadie actualiza los datos o los accesos son inseguros. Antes de diseñar pantallas, aclara quién usará la información, qué decisiones tomará y quién mantendrá el sistema.
 
 Dashboard, observatorio y visor tampoco son sinónimos. El dashboard presenta métricas; el visor explora información geográfica; el observatorio añade reglas, responsables, análisis y una rutina institucional de seguimiento.
 </Problem>
 
 <DataSources>
-El análisis debe contrastarse con la [Ley N.° 32069 y su Reglamento actualizados](https://www.gob.pe/institucion/oece/informes-publicaciones/6444155-ley-). Para indicadores, CEPLAN publica una [guía actualizada en 2024](https://www.gob.pe/institucion/ceplan/informes-publicaciones/5614517-guia-para-la-elaboracion-de-indicadores-de-politicas-nacionales-y-planes-estrategicos-actualizada-2024).
+Si se decide contratar apoyo, la entidad debe revisar la [Ley N.° 32069 y su Reglamento actualizados](https://www.gob.pe/institucion/oece/informes-publicaciones/6444155-ley-). Para indicadores, CEPLAN publica una [guía actualizada en 2024](https://www.gob.pe/institucion/ceplan/informes-publicaciones/5614517-guia-para-la-elaboracion-de-indicadores-de-politicas-nacionales-y-planes-estrategicos-actualizada-2024).
 
 La PCM aprobó la [Estrategia Nacional de Gobierno de Datos 2026–2030](https://www.gob.pe/99097-estrategia-nacional-de-gobierno-de-datos-2026-2030) y orienta a las entidades sobre su [Plan de Acción de Gobierno de Datos](https://www.gob.pe/112167-plan-de-accion-de-gobierno-de-datos). Estos instrumentos refuerzan la necesidad de articular resultados, calidad, privacidad, responsables e iniciativas sostenibles.
 </DataSources>
 
 <Method>
-## Quince bloques para orientar capacidad operativa
+## Quince preguntas para diseñar y mantener el sistema
 
 | Bloque | Pregunta central | Evidencia para revisar |
 | --- | --- | --- |
@@ -49,7 +49,7 @@ La PCM aprobó la [Estrategia Nacional de Gobierno de Datos 2026–2030](https:/
 | 14. Transferencia | ¿Qué recibirá el equipo para administrar y modificar? | Código, documentación y capacitación. |
 | 15. Continuidad | ¿Quién mantiene datos, software y soporte después? | Plan, costos y condiciones de salida. |
 
-## Definir primero la rutina de decisión
+## Acordar quién revisa los datos y qué hace con ellos
 
 Una especificación útil describe el ciclo completo: dato que cambia, regla que lo valida, indicador que se actualiza, usuario que recibe la señal y acción que debe registrar. Si el planteamiento solo enumera gráficos, todavía no define un sistema de seguimiento.
 
@@ -64,28 +64,26 @@ Una especificación útil describe el ciclo completo: dato que cambia, regla que
 - repositorio, código, credenciales institucionales y plan de transferencia;
 - sesión de uso con responsables y evidencia de correcciones.
 
-Los términos de aceptación deben distinguir defectos del producto, problemas de la fuente y cambios de alcance. Esa separación evita que el sistema oculte datos defectuosos y que toda nueva necesidad se trate como corrección.
+Al revisar el sistema, distingue los defectos del producto, los problemas de la fuente y los cambios de alcance. Esa separación evita que el sistema oculte datos defectuosos y que toda nueva necesidad se trate como corrección.
 </Method>
 
-<Findings>
-## Aspectos que conviene revisar
-
-1. Solicita “un dashboard interactivo” sin preguntas de gestión.
-2. Define colores y gráficos, pero no fichas de indicadores.
-3. Supone acceso a bases que todavía no tienen responsable ni autorización.
-4. Omite perfiles, trazabilidad, respaldo o recuperación.
-5. No exige código, documentación ni condiciones de salida.
-6. Concluye con la entrega técnica y no instala una rutina de uso.
+<Findings title="Qué revisar">
+1. ¿El dashboard responde preguntas de gestión concretas?
+2. ¿Los indicadores tienen fichas técnicas, además de colores y gráficos definidos?
+3. ¿El acceso a las bases tiene responsables y autorización?
+4. ¿El sistema contempla perfiles, trazabilidad, respaldo y recuperación?
+5. ¿El equipo dispondrá del código, la documentación y las condiciones de salida?
+6. ¿La puesta en marcha incluye una rutina de uso, además de la entrega técnica?
 </Findings>
 
 <Implications>
-Antes de elegir una intervención, valida el alcance con área usuaria, planeamiento, tecnología, seguridad, responsables de datos, contrataciones y asesoría jurídica. Un primer producto acotado, con fuentes disponibles y decisiones reales, suele ser más sostenible que una plataforma amplia sin operación definida.
+Antes de desarrollar el sistema, revisa el alcance con el equipo que lo usará, planeamiento, tecnología, seguridad, responsables de datos y asesoría jurídica. Incluye a contrataciones si se prevé apoyo externo. Un primer producto acotado, con fuentes disponibles y decisiones reales, suele ser más sostenible que una plataforma amplia sin operación definida.
 
-Esta guía orienta el diseño técnico y funcional. No reemplaza una evaluación de seguridad, asesoría legal ni los documentos estándar aplicables al proceso concreto.
+Esta guía ayuda a definir el sistema y su funcionamiento. No reemplaza una evaluación de seguridad, asesoría legal ni los documentos estándar aplicables al proceso concreto.
 </Implications>
 
 <Downloads>
-- [Descargar matriz editable para orientar el análisis de observatorios y dashboards (CSV)](/downloads/plantilla-tdr-observatorio-dashboard-visor.csv).
+- [Descargar matriz de observatorios y dashboards (CSV)](/downloads/plantilla-tdr-observatorio-dashboard-visor.csv).
 - [Comparar observatorio, dashboard, visor y sistema de seguimiento](/observatorios-dashboards-visores).
 - [Revisar por qué un sistema de seguimiento no es solo un dashboard](/insights/sistema-seguimiento-municipal-no-es-dashboard).
 - [Descargar una ficha técnica de indicador (CSV)](/downloads/ficha-tecnica-indicador.csv).
@@ -93,5 +91,5 @@ Esta guía orienta el diseño técnico y funcional. No reemplaza una evaluación
 </Downloads>
 
 <CTA>
-Puedes usar estas preguntas con tu equipo para revisar el problema y explorar alternativas. Si necesitas acompañamiento, puedes [conversar con NOAM](/contact?interest=observatorio-gestion-inversiones&from=/toolkits/tdr-observatorio-dashboard-visor) sobre el apoyo que tendría sentido en tu contexto.
+Si necesitas apoyo para definir el sistema, puedes [contactarnos](/contact?interest=observatorio-gestion-inversiones&from=/toolkits/tdr-observatorio-dashboard-visor).
 </CTA>

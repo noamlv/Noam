@@ -1,6 +1,6 @@
 ---
-title: "Cómo orientar el análisis de residuos sólidos y limpieza pública"
-description: "Guía y matriz de trabajo para orientar diagnósticos, optimización de rutas, balances, tableros y evaluaciones del servicio municipal de limpieza pública."
+title: "Cómo revisar el servicio de limpieza pública"
+description: "Preguntas y datos para identificar fallas en la recolección, revisar los costos y conocer el destino de los residuos de tu municipio."
 date: "2026-09-08"
 reviewedAt: "2026-10-29"
 author: "Noam López Villanes"
@@ -17,9 +17,11 @@ ogImage: "/og-default.png"
 ---
 
 <Problem>
-Mejorar la limpieza pública exige comprender a quién llega el servicio, cómo se opera y qué ocurre con los residuos. Antes de elegir un estudio o un sistema de rutas, conviene revisar flujos, costos, infraestructura, responsabilidades y evidencia disponible.
+¿Hay barrios donde el camión no pasa con regularidad? ¿Se acumula basura en algunos puntos? ¿El municipio sabe cuánto recoge y dónde termina?
 
-Generación, recolección, valorización y disposición final son magnitudes distintas. Los datos reportados deben conciliarse con pesajes, rutas, registros operativos y verificaciones de campo antes de sostener una decisión.
+Esta guía ayuda a revisar esas preguntas con el equipo de limpieza pública. Puedes empezar con los registros que ya tienen y anotar qué información falta. No hace falta elegir un software ni contratar un estudio para dar ese primer paso.
+
+Es importante separar la cantidad de residuos que se genera, la que se recoge, la que se recupera y la que llega al lugar de disposición final. Son medidas distintas y deben contrastarse con pesajes y registros del servicio.
 </Problem>
 
 <DataSources>
@@ -29,52 +31,43 @@ DataPerú permite explorar [variables municipales declaradas en RENAMU 2025](/da
 </DataSources>
 
 <Method>
-## Veinte bloques para orientar un análisis operativo
+## Empieza por estas preguntas
 
-| Bloque | Pregunta central | Evidencia para revisar |
+| Tema | Qué preguntar | Qué revisar |
 | --- | --- | --- |
-| 1. Decisión | ¿Qué cambio de servicio, operación o inversión apoyará? | Caso de uso y responsable definidos. |
-| 2. Competencias | ¿Qué corresponde a municipio, operador y otras entidades? | Matriz de roles validada. |
-| 3. Estándar | ¿Qué cobertura, frecuencia y calidad se espera? | Nivel de servicio medible por zona. |
-| 4. Usuarios y territorio | ¿Qué población, predios, vías y puntos cubre? | Universo y geografía reproducibles. |
-| 5. Preguntas | ¿Qué debe describirse, optimizarse o evaluarse? | Preguntas vinculadas a decisiones. |
-| 6. Generación | ¿Cuánto residuo se produce y con qué composición? | Método, muestra y precisión documentados. |
-| 7. Recolección | ¿Cuánto se recoge, dónde, cuándo y con qué evidencia? | Registros conciliados con pesajes y rutas. |
-| 8. Rutas y turnos | ¿Cómo operan recorridos, tiempos y frecuencias? | Línea de base y escenarios reproducibles. |
-| 9. Flota y personal | ¿Qué capacidad, disponibilidad y restricción existen? | Inventario y utilización verificables. |
-| 10. Puntos críticos | ¿Dónde se acumulan residuos o falla el servicio? | Registro geográfico con regla de cierre. |
-| 11. Valorización | ¿Qué flujos se segregan y reaprovechan realmente? | Balance, trazabilidad y destino acreditados. |
-| 12. Disposición final | ¿Dónde termina lo no valorizado? | Flujo conciliado y condiciones documentadas. |
-| 13. Infraestructura | ¿Qué activos existen y qué capacidad efectiva tienen? | Estado, operación y mantenimiento verificados. |
-| 14. Costos e ingresos | ¿Cuánto cuesta cada componente y cómo se financia? | Modelo con supuestos y conciliación. |
-| 15. Calidad | ¿Cómo se tratan faltantes, diferencias y cambios? | Perfil y bitácora de datos entregados. |
-| 16. Indicadores | ¿Qué mide servicio, eficiencia y resultado? | Fichas técnicas reproducibles. |
-| 17. Alertas | ¿Qué desviación activa qué respuesta? | Flujo probado con responsable y plazo. |
-| 18. Evaluación | ¿Qué intervención o contrato se examinará? | Diseño y límites de conclusión definidos. |
-| 19. Resultados y revisión | ¿Qué recibe cada usuario y cómo se acepta? | Pruebas observables por producto. |
-| 20. Transferencia | ¿Cómo se actualizará y custodiará lo entregado? | Archivos, código, manual y capacitación. |
+| Barrios atendidos | ¿Dónde llega el servicio y dónde falta? | Rutas, horarios, población atendida y reclamos. |
+| Frecuencia | ¿El camión pasa los días previstos? | Recorridos realizados y registro de interrupciones. |
+| Vehículos y personal | ¿Con qué equipos se cuenta y en qué estado están? | Vehículos disponibles, mantenimiento, turnos y capacidad de carga. |
+| Cantidades | ¿Cuánto se recoge y cuánto llega al destino final? | Pesajes y registros de recepción. Investiga las diferencias. |
+| Acumulación de basura | ¿Dónde se repite el problema? | Ubicación, frecuencia y visitas para conocer las causas. |
+| Reciclaje | ¿Qué materiales se recuperan y a dónde van? | Cantidades, recicladores, compradores, costos y condiciones de trabajo. |
+| Destino final | ¿Dónde termina la basura que no se recupera? | Registros de entrega y condiciones del lugar que la recibe. |
+| Costos | ¿Cuánto cuesta cada parte del servicio? | Personal, combustible, mantenimiento, contratos e ingresos por arbitrios. |
+| Responsables | ¿Quién puede corregir cada falla? | Funciones del municipio, del operador y de otras entidades. |
+| Seguimiento | ¿Cómo se comprobará si el servicio mejora? | Comparación de rutas cumplidas, reclamos, costos y cantidades a lo largo del tiempo. |
 
-## Criterios mínimos de revisión
+## Contrasta los registros con lo que ocurre
 
-- universo de atención y estándar definidos por zona;
-- cantidades conciliadas entre generación, recolección, valorización y destino;
-- rutas verificadas con tiempos y restricciones representativos;
-- costos vinculados con componentes y supuestos trazables;
-- indicadores reproducidos desde la fuente para una muestra;
-- problemas de cobertura, faltantes y oportunidad visibles;
-- actualización ejecutada con un periodo nuevo;
-- datos, mapas, modelos, diccionario, código y documentación transferidos.
+Revisa algunas rutas en campo y conversa con el personal y los vecinos. Anota diferencias entre el horario previsto y el real, problemas de acceso y puntos de acumulación.
+
+Si falta un dato, indícalo: no lo reemplaces por cero ni lo presentes como una medición. Para cada cifra conserva la fuente, la fecha y la forma de cálculo.
+
+## Acuerda qué hacer y cómo revisarlo
+
+Elige las fallas que el equipo puede atender, asigna responsables y fija una fecha de revisión. Para cambios que requieren inversión o apoyo especializado, documenta primero el problema y los datos que lo sustentan.
+
+Si se desarrolla un tablero o modelo de rutas, pide los archivos editables, las instrucciones de actualización y una prueba con datos de otro periodo. El equipo debe poder seguir usándolo.
 </Method>
 
-<Findings>
-## Aspectos que conviene revisar
+<Findings title="Errores que conviene evitar">
+- Cambiar las rutas sin conocer los tiempos de viaje ni la capacidad de los camiones.
+- Dar por correctas las toneladas reportadas sin revisar los pesajes y el destino.
+- Suponer que un barrio recibe buen servicio solo porque figura como atendido.
+- Fijar metas de reciclaje sin revisar materiales, costos y posibles compradores.
+- Evaluar al operador únicamente por fotografías o listas de actividades.
+- Crear un tablero sin decidir quién lo actualizará y revisará.
 
-1. Solicita optimizar rutas sin padrón, red vial, tiempos ni capacidad de flota.
-2. Usa toneladas reportadas sin conciliar pesajes y destinos.
-3. Confunde cobertura declarada con continuidad y calidad del servicio.
-4. Fija valorización sin composición, trazabilidad, costo ni demanda.
-5. Evalúa al operador solo por actividades o fotografías.
-6. Entrega un tablero sin responsables de actualización y corrección.
+Estas son preguntas de revisión, no hallazgos sobre una municipalidad en particular.
 </Findings>
 
 <Implications>
@@ -92,5 +85,5 @@ Esta guía orienta el diseño técnico y operativo. No reemplaza la evaluación 
 </Downloads>
 
 <CTA>
-Puedes usar estas preguntas con tu equipo para revisar el problema y explorar alternativas. Si necesitas acompañamiento, puedes [conversar con NOAM](/contact?interest=residuos-limpieza-publica&from=/toolkits/tdr-analisis-residuos-limpieza-publica) sobre el apoyo que tendría sentido en tu contexto.
+Si necesitas apoyo para revisar rutas, costos o datos de tu municipio, [escríbenos](/contact?interest=residuos-limpieza-publica&from=/toolkits/tdr-analisis-residuos-limpieza-publica). Podemos conversar sobre el problema y ver cómo ayudarte.
 </CTA>

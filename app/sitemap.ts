@@ -22,6 +22,7 @@ const staticRoutes = [
   "/toolkits",
   "/products",
   "/analisis",
+  "/barometro-ciudadano",
   "/resources",
   "/newsletter",
   "/brief",

@@ -19,7 +19,7 @@ export function Problem({ children }: { children: React.ReactNode }) {
 }
 
 export function DataSources({ children }: { children: React.ReactNode }) {
-  return <BaseBlock title="Datos y Fuentes">{children}</BaseBlock>;
+  return <BaseBlock title="Datos y fuentes">{children}</BaseBlock>;
 }
 
 export function Method({ children }: { children: React.ReactNode }) {
@@ -34,22 +34,22 @@ export function Deliverables({ children }: { children: React.ReactNode }) {
   return <BaseBlock title="Productos entregados">{children}</BaseBlock>;
 }
 
-export function Findings({ children }: { children: React.ReactNode }) {
-  return <BaseBlock title="Hallazgos">{children}</BaseBlock>;
+export function Findings({ children, title = "Hallazgos" }: BlockProps) {
+  return <BaseBlock title={title}>{children}</BaseBlock>;
 }
 
 export function Implications({ children }: { children: React.ReactNode }) {
-  return <BaseBlock title="Implicancias">{children}</BaseBlock>;
+  return <BaseBlock title="Qué hacer con esta información">{children}</BaseBlock>;
 }
 
 export function Downloads({ children }: { children: React.ReactNode }) {
-  return <BaseBlock title="Aplicación y recursos">{children}</BaseBlock>;
+  return <BaseBlock title="Enlaces y descargas">{children}</BaseBlock>;
 }
 
 export function Disclosure({ children }: { children: React.ReactNode }) {
-  return <BaseBlock title="Criterio de divulgación" className="border-rust/30 bg-rust/[0.04]">{children}</BaseBlock>;
+  return <BaseBlock title="Qué podemos compartir" className="border-rust/30 bg-rust/[0.04]">{children}</BaseBlock>;
 }
 
 export function ArticleCta({ children }: { children: React.ReactNode }) {
-  return <BaseBlock title="CTA" className="border-ink bg-ink text-panel [&_*]:text-panel">{children}</BaseBlock>;
+  return <BaseBlock title="¿Necesitas apoyo?" className="border-ink bg-ink text-panel [&_*]:text-panel">{children}</BaseBlock>;
 }
