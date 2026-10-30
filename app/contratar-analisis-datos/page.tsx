@@ -15,8 +15,8 @@ import { breadcrumbJsonLd, buildMetadata, faqJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata = buildMetadata({
-  title: "Contratar estudios y servicios de análisis de datos",
-  description: "Guía para gobiernos y empresas que necesitan contratar diagnósticos, líneas de base, evaluaciones, encuestas, observatorios, dashboards o IA aplicada en el Perú.",
+  title: "Cómo abordar un problema con análisis de datos",
+  description: "Preguntas y rutas para gobiernos y empresas que buscan comprender un problema, revisar evidencia y explorar alternativas con datos.",
   path: "/contratar-analisis-datos"
 });
 
@@ -106,24 +106,24 @@ const proofLinks = [
 ];
 
 const faq = [
-  { title: "¿NOAM puede responder a TDR ya publicados?", content: "Sí. Revisamos objetivos, alcance, productos, fuentes, plazo y criterios de aceptación para confirmar el encaje y preparar una propuesta técnica coherente." },
+  { title: "¿Podemos conversar si aún no sabemos qué solución necesitamos?", content: "Sí. Podemos partir del problema, la población afectada y la decisión pendiente. Si necesitas apoyo, NOAM puede ayudarte a revisar la evidencia y explorar una ruta de trabajo adecuada a tu contexto." },
   { title: "¿Qué pasa si la entidad todavía no tiene datos ordenados?", content: "El primer encargo puede ser un inventario, diagnóstico de calidad o diseño de alcance. No conviene prometer un análisis o dashboard antes de confirmar acceso, cobertura y responsabilidad sobre las fuentes." },
   { title: "¿Trabajan con municipalidades y gobiernos fuera de Lima?", content: "Sí. El alcance puede ser distrital, provincial, regional o nacional. La combinación de trabajo remoto, fuentes administrativas y presencia territorial se define según el problema y el método." },
   { title: "¿Pueden encargarse del diseño y también de la ejecución?", content: "Sí. Un encargo puede cubrir solo el diseño metodológico, la producción completa o el acompañamiento posterior. Los límites y responsables se acuerdan antes de cotizar." },
   { title: "¿Toda evaluación debe medir impacto causal?", content: "No. Primero se revisan teoría de cambio, implementación, datos y comparación posible. Según la decisión pueden ser más útiles una evaluación de diseño, proceso, resultados o evaluabilidad." },
-  { title: "¿Se puede comenzar con un presupuesto acotado?", content: "Sí. Se puede priorizar una pregunta, un territorio o un producto mínimo útil. Reducir alcance no debe eliminar trazabilidad, protección de datos ni criterios de aceptación." }
+  { title: "¿Se puede comenzar con un presupuesto acotado?", content: "Sí. Se puede priorizar una pregunta, un territorio o un producto mínimo útil. Reducir alcance no debe eliminar trazabilidad, protección de datos ni criterios de revisión." }
 ];
 
 export default function ContractDataAnalysisPage() {
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Contratar análisis de datos", path: "/contratar-analisis-datos" }])} />
+      <JsonLd data={breadcrumbJsonLd([{ name: "Inicio", path: "/" }, { name: "Orientar un problema con datos", path: "/contratar-analisis-datos" }])} />
       <JsonLd data={faqJsonLd(faq)} />
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: "Contratar estudios y servicios de análisis de datos",
-        description: "Rutas para definir y contratar estudios, encuestas, evaluaciones, observatorios y soluciones de IA aplicada.",
+        name: "Cómo abordar un problema con análisis de datos",
+        description: "Rutas para comprender problemas, revisar evidencia y explorar estudios, evaluaciones o sistemas de decisión.",
         url: `${siteConfig.url}/contratar-analisis-datos`,
         mainEntity: {
           "@type": "ItemList",
@@ -140,14 +140,14 @@ export default function ContractDataAnalysisPage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_0.48fr] lg:items-end lg:gap-20">
             <div>
-              <Eyebrow className="text-[#d9a48f]">Guía para contratar</Eyebrow>
+              <Eyebrow className="text-[#d9a48f]">Guía para orientar decisiones</Eyebrow>
               <Heading as="h1" size="display" className="max-w-[14ch] text-white">El análisis correcto empieza por la decisión, no por la herramienta.</Heading>
             </div>
             <div>
               <p className="text-base leading-8 text-white/68">Para gobiernos y empresas que necesitan comprender un problema, formular un proyecto, medir un programa, escuchar un territorio o instalar un sistema de decisión.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="#decisiones" variant="secondary" className="rounded-full border-white bg-white text-ink">Encontrar un punto de partida</Button>
-                <Button href="/resources?type=template" variant="ghost" className="!text-white/70 hover:!text-white">Ver TDR y plantillas</Button>
+                <Button href="/resources?type=template" variant="ghost" className="!text-white/70 hover:!text-white">Ver guías y herramientas</Button>
               </div>
             </div>
           </div>
@@ -166,7 +166,7 @@ export default function ContractDataAnalysisPage() {
       <Section id="decisiones">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Seis rutas para no contratar a ciegas.</Heading></div>
+            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Seis rutas para explorar el problema.</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Una misma institución puede necesitar varias rutas, pero el primer alcance debe resolver una decisión concreta. Cada opción enlaza una guía, una muestra y una solución.</p>
           </div>
 
@@ -238,7 +238,7 @@ export default function ContractDataAnalysisPage() {
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><Eyebrow className="text-white/55">Primer alcance</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Describe la decisión, el territorio y el plazo. El método viene después.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear un encargo</Button></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar sobre el problema</Button></div>
             </div>
           </div>
         </Container>

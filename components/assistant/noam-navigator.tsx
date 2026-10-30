@@ -185,7 +185,7 @@ export function NoamNavigator() {
                     <NextLink href={answer.proof.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:proof" className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs text-ink/72 hover:border-rust/45"><span><span className="block text-[9px] uppercase tracking-[0.12em] text-rust">{answer.proof.kind}</span>{answer.proof.label}</span><ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink>
                     {answerTerritory ? <NextLink href={`/dataperu/departamentos/${answerTerritory.code}`} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:answer:territory:${answerTerritory.code}`} className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs text-ink/72 hover:border-rust/45">Ver datos de {answerTerritory.name}<ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink> : null}
                   </div>
-                  <NextLink href={answerContactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:contact" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Plantear un encargo concreto <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></NextLink>
+                  <NextLink href={answerContactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:contact" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Explorar cómo abordar el problema <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></NextLink>
                   <a href={buildAssistantEmailUrl(askedQuestion, answer, pathname, submittedFollowUp)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-3 inline-flex text-xs font-medium text-ink/68 hover:text-rust">Enviar esta consulta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
                 </>
               )}
@@ -265,7 +265,7 @@ export function NoamNavigator() {
                 <ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden />
               </NextLink>
               <div className="mt-5 flex flex-wrap gap-x-5 gap-y-3 border-t border-border pt-4 text-xs">
-                <NextLink href={contactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:contact:${need}`} className="font-medium text-ink hover:text-rust">Plantear el encargo</NextLink>
+                <NextLink href={contactHref} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target={`navigator:contact:${need}`} className="font-medium text-ink hover:text-rust">Conversar con NOAM</NextLink>
                 <a href={buildWhatsAppUrl(pathname, `un posible encargo sobre ${result.title.toLowerCase()}`)} target="_blank" rel="noreferrer" data-analytics-event="cta_click" data-analytics-target={`navigator:whatsapp:${need}`} className="text-ink/58 hover:text-ink">Hablar por WhatsApp</a>
               </div>
             </div>

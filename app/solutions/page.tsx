@@ -130,7 +130,7 @@ export default function SolutionsPage() {
       <Section>
         <Container>
           <NextLink href="/muestras" className="group grid gap-8 rounded-md border border-border bg-panel p-6 transition-all hover:border-border-strong hover:shadow-subtle md:grid-cols-[0.48fr_1fr] md:p-10">
-            <div><Eyebrow>Antes de contratar</Eyebrow><Heading size="xl">Seis entregables que puedes examinar.</Heading></div>
+            <div><Eyebrow>Antes de elegir una intervención</Eyebrow><Heading size="xl">Seis entregables que puedes examinar.</Heading></div>
             <div className="flex flex-col justify-between gap-8"><p className="max-w-2xl text-sm leading-7 text-ink/65">Mira la arquitectura, los insumos, los controles y el cronograma de cada solución sin confundir una demostración con un caso real.</p><span className="inline-flex items-center gap-2 text-sm font-medium text-rust">Abrir biblioteca de muestras <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></span></div>
           </NextLink>
         </Container>

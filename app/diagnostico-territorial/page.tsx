@@ -48,7 +48,7 @@ const readiness = [
 
 const evidence = [
   { label: "Estudio", title: "Qué debe entregar un diagnóstico", text: "Del inventario de datos a una agenda accionable.", href: "/insights/diagnostico-territorial-que-debe-entregar" },
-  { label: "TDR + plantilla", title: "Contratar un diagnóstico territorial", text: "Preguntas, productos y aceptación en una matriz editable.", href: "/toolkits/tdr-diagnostico-territorial-institucional" },
+  { label: "Guía de trabajo", title: "Comprender el territorio", text: "Preguntas, productos y aceptación en una matriz editable.", href: "/toolkits/tdr-diagnostico-territorial-institucional" },
   { label: "Muestra", title: "Diagnóstico y agenda priorizada", text: "Arquitectura demostrativa de un entregable profesional.", href: "/muestras/diagnostico-agenda-territorial" },
   { label: "Datos abiertos", title: "Perfiles municipales", text: "Punto de partida para explorar 1,891 municipalidades.", href: "/dataperu/municipios" },
   { label: "Atlas", title: "Agendas departamentales", text: "Veinticinco lecturas iniciales de problemas y oportunidades.", href: "/dataperu/departamentos" },
@@ -92,7 +92,7 @@ export default function TerritorialDiagnosisPage() {
               <p className="text-base leading-8 text-white/68">Para gobiernos y empresas que necesitan convertir brechas, capacidades, actores, riesgos y oportunidades en prioridades verificables.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="#capas" variant="secondary" className="rounded-full border-white bg-white text-ink">Ver qué debe incluir</Button>
-                <Button href="/toolkits/tdr-diagnostico-territorial-institucional" variant="ghost" className="!text-white/70 hover:!text-white">Abrir TDR y plantilla</Button>
+                <Button href="/toolkits/tdr-diagnostico-territorial-institucional" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
               </div>
             </div>
           </div>
@@ -164,7 +164,7 @@ export default function TerritorialDiagnosisPage() {
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Antes de contratar</Eyebrow><Heading size="xl">Seis definiciones evitan un informe sin uso.</Heading></div>
+            <div><Eyebrow>Antes de elegir una intervención</Eyebrow><Heading size="xl">Seis definiciones evitan un informe sin uso.</Heading></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-black/10 bg-black/10 sm:grid-cols-2">
               {readiness.map((item, index) => (
                 <div key={item} className="min-h-[145px] bg-[#e6e1d5] p-6 md:p-8">
@@ -181,7 +181,7 @@ export default function TerritorialDiagnosisPage() {
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
             <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Explora antes de solicitar una propuesta.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">NOAM conecta una guía breve, un TDR editable, una muestra de entregable, datos territoriales y una solución profesional.</p>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">NOAM conecta una guía breve, una guía de trabajo, una muestra de entregable, datos territoriales y una solución profesional.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {evidence.map((item) => (
@@ -206,7 +206,7 @@ export default function TerritorialDiagnosisPage() {
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><Eyebrow className="text-white/55">Punto de partida</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Dinos qué territorio y qué decisión necesitas entender. El alcance viene después.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/diagnostico-territorial" analyticsEvent="cta_click" analyticsTarget="territorial-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=diagnostico-agenda-territorial&from=/diagnostico-territorial" analyticsEvent="cta_click" analyticsTarget="territorial-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear un encargo</Button></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/diagnostico-territorial" analyticsEvent="cta_click" analyticsTarget="territorial-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=diagnostico-agenda-territorial&from=/diagnostico-territorial" analyticsEvent="cta_click" analyticsTarget="territorial-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar sobre el problema</Button></div>
             </div>
           </div>
         </Container>

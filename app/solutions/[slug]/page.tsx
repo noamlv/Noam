@@ -137,7 +137,7 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
       <Section className="bg-[#15211d] text-white">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow className="text-[#d9a48f]">Evidencia relacionada</Eyebrow><Heading size="xl" className="text-white">Evalúa cómo pensamos antes de contratarnos.</Heading></div>
+            <div><Eyebrow className="text-[#d9a48f]">Evidencia relacionada</Eyebrow><Heading size="xl" className="text-white">Evalúa cómo pensamos antes de elegir una intervenciónnos.</Heading></div>
             <div className="divide-y divide-white/12 border-y border-white/12">
               {solution.evidence.map((item, index) => <NextLink key={item.href} href={item.href} className="group grid grid-cols-[38px_1fr_auto] items-center gap-4 py-6"><span className="font-mono text-[10px] text-[#d9a48f]">0{index + 1}</span><span className="text-base font-medium text-white/82">{item.label}</span><MoveUpRight className="h-4 w-4 text-white/55 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /></NextLink>)}
             </div>

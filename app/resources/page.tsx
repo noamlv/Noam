@@ -50,7 +50,7 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
         <Container>
           <div className="grid gap-10 md:grid-cols-[1.25fr_0.75fr] md:items-end">
             <div><Eyebrow className="text-rust">Bienes públicos digitales</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Datos, métodos y herramientas para trabajar mejor.</Heading></div>
-            <div className="max-w-md"><p className="text-base leading-8 text-ink/68">Cada recurso declara formato, periodo y procedencia. Publicamos sólo materiales que pueden revisarse, reutilizarse o llevar a una conversación concreta.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Cómo elegir y contratar el análisis correcto <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span></NextLink></div>
+            <div className="max-w-md"><p className="text-base leading-8 text-ink/68">Cada recurso declara formato, periodo y procedencia. Publicamos sólo materiales que pueden revisarse, reutilizarse o llevar a una conversación concreta.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Cómo elegir y plantear el análisis correcto <span className="transition-transform group-hover:translate-x-1" aria-hidden>→</span></NextLink></div>
           </div>
         </Container>
       </Section>
@@ -82,7 +82,7 @@ export default async function ResourcesPage({ searchParams }: PageProps) {
       </Section>
 
       <Section className="bg-[#15211d] text-white">
-        <Container><div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><Eyebrow className="text-white/55">Aplicación institucional</Eyebrow><Heading size="lg" className="max-w-3xl text-white">Un recurso abierto puede ser el punto de partida para un sistema hecho a la medida.</Heading></div><Button href="/contact?from=/resources" analyticsEvent="cta_click" analyticsTarget="resources:contact" variant="secondary" className="rounded-full border-white bg-white text-ink">Plantear una necesidad</Button></div></Container>
+        <Container><div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><Eyebrow className="text-white/55">Aplicación institucional</Eyebrow><Heading size="lg" className="max-w-3xl text-white">Un recurso abierto puede ser el punto de partida para un sistema hecho a la medida.</Heading></div><Button href="/contact?from=/resources" analyticsEvent="cta_click" analyticsTarget="resources:contact" variant="secondary" className="rounded-full border-white bg-white text-ink">Conversar sobre una necesidad</Button></div></Container>
       </Section>
     </>
   );

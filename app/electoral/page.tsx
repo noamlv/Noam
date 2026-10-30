@@ -203,7 +203,7 @@ export default function ElectoralPage() {
           <div className="rounded-[1.5rem] bg-rust px-7 py-12 text-white md:px-12 md:py-16">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><Eyebrow className="text-white/58">Análisis a medida</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Dinos qué territorio, decisión o proceso necesitas comprender.</h2></div>
-              <Button href="/contact?interest=electoral&from=/electoral" analyticsEvent="cta_click" analyticsTarget="electoral:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Plantear una necesidad</Button>
+              <Button href="/contact?interest=electoral&from=/electoral" analyticsEvent="cta_click" analyticsTarget="electoral:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Conversar sobre una necesidad</Button>
             </div>
           </div>
         </Container>

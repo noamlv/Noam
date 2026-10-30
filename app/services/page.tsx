@@ -44,7 +44,7 @@ export default function ServicesPage() {
               <Eyebrow className="text-rust">Servicios</Eyebrow>
               <Heading as="h1" size="display" className="max-w-[14ch]">De la evidencia a una capacidad que funciona.</Heading>
             </div>
-            <div><p className="text-sm leading-7 text-ink/68 md:text-base">Combinamos investigación, estrategia, datos y producto digital. Cada proyecto comienza por la decisión que debe mejorar y termina con un entregable que el equipo puede usar.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Guía para elegir y contratar un análisis <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></NextLink></div>
+            <div><p className="text-sm leading-7 text-ink/68 md:text-base">Combinamos investigación, estrategia, datos y producto digital. Cada proyecto comienza por la decisión que debe mejorar y termina con un entregable que el equipo puede usar.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Guía para elegir y plantear un análisis <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></NextLink></div>
           </div>
         </Container>
       </Section>
@@ -53,7 +53,7 @@ export default function ServicesPage() {
         <Container>
           <div className="grid gap-8 pb-12 md:grid-cols-[0.55fr_1fr] md:items-end">
             <div><Eyebrow>Encuentra el punto de partida</Eyebrow><Heading size="xl">Busca por decisión o por problema.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">No necesitas llegar con la metodología resuelta. Revisa una ruta, examina evidencia y utiliza su TDR; si tu tema no aparece, podemos delimitarlo desde cero.</p>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">No necesitas llegar con la metodología resuelta. Revisa una ruta, examina evidencia y utiliza sus preguntas de orientación; si tu tema no aparece, podemos delimitarlo desde cero.</p>
           </div>
           <AnalysisServiceDirectory />
           <div className="mt-12 flex flex-col gap-5 border-t border-border pt-7 sm:flex-row sm:items-center sm:justify-between">

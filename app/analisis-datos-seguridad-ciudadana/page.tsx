@@ -40,7 +40,7 @@ const evidenceChain = [
 
 const evidence = [
   { label: "Datos municipales", title: "Seguridad en DataPerú", text: "Serenazgo, planes, mapas y patrullaje declarados en RENAMU 2025.", href: "/dataperu/temas/seguridad-ciudadana" },
-  { label: "TDR + plantilla", title: "Contratar el análisis", text: "Preguntas, fuentes, privacidad, productos y aceptación verificable.", href: "/toolkits/tdr-analisis-seguridad-ciudadana" },
+  { label: "Guía de trabajo", title: "Plantear el análisis", text: "Preguntas, fuentes, privacidad, productos y aceptación verificable.", href: "/toolkits/tdr-analisis-seguridad-ciudadana" },
   { label: "Capacidad", title: "Diagnóstico territorial", text: "Problemas, población, servicios, actores, capacidades y prioridades.", href: "/diagnostico-territorial" },
   { label: "Capacidad", title: "Encuestas y opinión", text: "Victimización, percepción, confianza y experiencia con diseño interpretable.", href: "/encuestas-estudios-opinion" },
   { label: "Capacidad", title: "Observatorios y visores", text: "Indicadores, mapas, alertas, responsables y rutina de seguimiento.", href: "/observatorios-dashboards-visores" },
@@ -82,7 +82,7 @@ export default function CitizenSecurityDataPage() {
               <p className="text-base leading-8 text-white/68">Integramos capacidades, hechos, victimización, percepción y territorio para priorizar intervenciones, conducir compromisos y evaluar sin confundir actividad con resultado.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="#decisiones" variant="secondary" className="rounded-full border-white bg-white text-ink">Definir la necesidad</Button>
-                <Button href="/toolkits/tdr-analisis-seguridad-ciudadana" variant="ghost" className="!text-white/70 hover:!text-white">Abrir TDR y plantilla</Button>
+                <Button href="/toolkits/tdr-analisis-seguridad-ciudadana" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
               </div>
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function CitizenSecurityDataPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Evidencia y servicios</Eyebrow><Heading size="xl">Explora antes de plantear el encargo.</Heading></div>
+            <div><Eyebrow>Evidencia y servicios</Eyebrow><Heading size="xl">Preguntas y recursos para explorar alternativas.</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Revisa la información municipal, el método y las capacidades que pueden combinarse según la decisión.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
@@ -180,7 +180,7 @@ export default function CitizenSecurityDataPage() {
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><Eyebrow className="text-white/55">Primera definición</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué decisión de seguridad debe mejorar y qué territorio está en juego.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/analisis-datos-seguridad-ciudadana" analyticsEvent="cta_click" analyticsTarget="security-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=seguridad-ciudadana&from=/analisis-datos-seguridad-ciudadana" analyticsEvent="cta_click" analyticsTarget="security-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear el encargo</Button></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/analisis-datos-seguridad-ciudadana" analyticsEvent="cta_click" analyticsTarget="security-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=seguridad-ciudadana&from=/analisis-datos-seguridad-ciudadana" analyticsEvent="cta_click" analyticsTarget="security-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar con NOAM</Button></div>
             </div>
           </div>
         </Container>

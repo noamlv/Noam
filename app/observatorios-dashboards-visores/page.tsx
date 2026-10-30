@@ -52,8 +52,8 @@ const evidence = [
   { label: "Visor", title: "Mapa territorial DataPerú", text: "Información municipal explorada desde su ubicación y contexto.", href: "/dataperu/mapa" },
   { label: "Caso de producto", title: "DataPerú", text: "Infraestructura pública para 1,891 perfiles municipales.", href: "/cases/dataperu-platform-case" },
   { label: "Insight", title: "No es solo un dashboard", text: "Cinco condiciones para que los indicadores cambien decisiones.", href: "/insights/sistema-seguimiento-municipal-no-es-dashboard" },
-  { label: "TDR + plantilla", title: "Contratar un sistema", text: "Indicadores, datos, seguridad, pruebas, transferencia y operación.", href: "/toolkits/tdr-observatorio-dashboard-visor" },
-  { label: "Muestra", title: "Observatorio de gestión", text: "Arquitectura de un entregable antes de contratarlo.", href: "/muestras/observatorio-gestion-inversiones" }
+  { label: "Guía de trabajo", title: "Definir el sistema necesario", text: "Indicadores, datos, seguridad, pruebas, transferencia y operación.", href: "/toolkits/tdr-observatorio-dashboard-visor" },
+  { label: "Muestra", title: "Observatorio de gestión", text: "Arquitectura de un entregable antes de elegir una intervenciónlo.", href: "/muestras/observatorio-gestion-inversiones" }
 ];
 
 const faq = [
@@ -93,7 +93,7 @@ export default function ObservatoriesDashboardsViewersPage() {
               <p className="text-base leading-8 text-white/68">Diseñamos observatorios, tableros y visores para gobiernos y empresas desde las preguntas, los responsables y la operación que deben sostener.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="#productos" variant="secondary" className="rounded-full border-white bg-white text-ink">Elegir un producto</Button>
-                <Button href="/toolkits/tdr-observatorio-dashboard-visor" variant="ghost" className="!text-white/70 hover:!text-white">Abrir TDR y plantilla</Button>
+                <Button href="/toolkits/tdr-observatorio-dashboard-visor" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
               </div>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function ObservatoriesDashboardsViewersPage() {
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
             <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Examina datos, método y entregables.</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">DataPerú muestra la capacidad técnica. El insight, la muestra y el TDR hacen visible cómo se convierte un producto digital en una rutina de decisión.</p>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">DataPerú muestra la capacidad técnica. El insight, la muestra y el planteamiento del análisis hacen visible cómo se convierte un producto digital en una rutina de decisión.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
             {evidence.map((item) => (

@@ -39,8 +39,8 @@ const methods = [
 
 const evidence = [
   { label: "Datos abiertos", title: "Explorar DataPerú", text: "Perfiles municipales, departamentos, inversión y mapas.", href: "/dataperu" },
-  { label: "Muestra", title: "Screening territorial", text: "Arquitectura de una decisión de localización antes de contratar.", href: "/muestras/inteligencia-territorial-inversion" },
-  { label: "TDR + plantilla", title: "Contratar el estudio", text: "Mercado, territorio, método, productos y aceptación verificable.", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" },
+  { label: "Muestra", title: "Screening territorial", text: "Arquitectura de una decisión de localización antes de elegir una intervención.", href: "/muestras/inteligencia-territorial-inversion" },
+  { label: "Guía de trabajo", title: "Plantear el estudio", text: "Mercado, territorio, método, productos y aceptación verificable.", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" },
   { label: "Insight", title: "Evaluar antes de invertir", text: "Demanda, infraestructura, instituciones, riesgos y validación.", href: "/insights/evaluar-territorio-antes-invertir" },
   { label: "Solución", title: "Inteligencia territorial", text: "Perfiles, comparadores, escenarios y recomendación ejecutiva.", href: "/solutions/inteligencia-territorial-inversion" },
   { label: "Prácticas", title: "Industrias y decisiones", text: "Infraestructura, minería, servicios, comercio, agro e impacto.", href: "/sectors/companies" }
@@ -51,7 +51,7 @@ const faq = [
   { title: "¿Las fuentes públicas bastan para decidir una inversión?", content: "Sirven para comparar, descartar alternativas y priorizar vacíos. Una decisión final suele requerir datos comerciales, validación técnica, trabajo de campo o diligencias legales, ambientales y sociales según el proyecto." },
   { title: "¿Pueden calcular el tamaño de un mercado?", content: "Sí, cuando se definen mercado, unidad, horizonte y fuentes defendibles. Presentamos supuestos y escenarios, evitando convertir una estimación incierta en una cifra exacta sin sustento." },
   { title: "¿El estudio puede incluir encuestas o entrevistas?", content: "Sí. La investigación primaria se incorpora cuando responde una hipótesis y puede cambiar la decisión. El diseño debe definir población, selección, instrumento, supervisión, privacidad y límites de inferencia." },
-  { title: "¿Entregan bases, mapas y modelos editables?", content: "El alcance puede incluir base integrada, diccionario, archivos geográficos, código o bitácora analítica, modelo de escenarios, visualizaciones y brief ejecutivo. Los formatos y criterios de aceptación se definen antes de iniciar." },
+  { title: "¿Entregan bases, mapas y modelos editables?", content: "El alcance puede incluir base integrada, diccionario, archivos geográficos, código o bitácora analítica, modelo de escenarios, visualizaciones y brief ejecutivo. Los formatos y criterios de revisión se definen antes de iniciar." },
   { title: "¿Trabajan para empresas que todavía no tienen datos propios?", content: "Sí. Podemos comenzar con una exploración basada en fuentes públicas y entrevistas internas. El primer producto debe indicar qué preguntas puede responder y qué información propia conviene generar después." }
 ];
 
@@ -83,7 +83,7 @@ export default function MarketTerritorialIntelligencePage() {
               <p className="text-base leading-8 text-white/68">Integramos mercado, clientes, geografía, inversión pública y entorno institucional para decidir dónde crecer, qué validar y qué riesgo no ignorar.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="#estudios" variant="secondary" className="rounded-full border-white bg-white text-ink">Elegir un estudio</Button>
-                <Button href="/toolkits/tdr-estudio-mercado-inteligencia-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Abrir TDR y plantilla</Button>
+                <Button href="/toolkits/tdr-estudio-mercado-inteligencia-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
               </div>
             </div>
           </div>

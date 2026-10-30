@@ -110,8 +110,8 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-estudio-analisis-datos",
-    title: "Guía y matriz para TDR de estudios y análisis de datos",
-    description: "Estructura editable para definir necesidad, objetivos, datos, productos, aceptación, roles y transferencia antes de contratar un servicio.",
+    title: "Preguntas y matriz para orientar un estudio de datos",
+    description: "Estructura editable para definir necesidad, objetivos, datos, productos, aceptación, roles y transferencia antes de elegir una ruta de trabajo.",
     kind: "template",
     url: "/toolkits/tdr-estudio-analisis-datos",
     productSlug: "dataperu",
@@ -121,7 +121,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-encuesta-estudio-territorial",
-    title: "TDR para encuestas y estudios territoriales",
+    title: "Guía para plantear encuestas y estudios territoriales",
     description: "Matriz para definir población, muestra, instrumento, campo, privacidad, análisis y criterios verificables de aceptación.",
     kind: "template",
     url: "/toolkits/tdr-encuesta-estudio-territorial",
@@ -132,7 +132,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-observatorio-dashboard-visor",
-    title: "TDR para observatorios, dashboards y visores",
+    title: "Guía para plantear observatorios, dashboards y visores",
     description: "Matriz para contratar indicadores, datos, seguridad, pruebas, transferencia y operación de un sistema de decisión.",
     kind: "template",
     url: "/toolkits/tdr-observatorio-dashboard-visor",
@@ -143,7 +143,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-linea-base-evaluacion-programa",
-    title: "TDR para línea de base y evaluación de programas",
+    title: "Guía para plantear línea de base y evaluación de programas",
     description: "Matriz para definir evaluabilidad, preguntas, indicadores, datos, comparación, productos, uso y criterios verificables de aceptación.",
     kind: "template",
     url: "/toolkits/tdr-linea-base-evaluacion-programa",
@@ -154,7 +154,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-diagnostico-territorial-institucional",
-    title: "TDR para diagnóstico territorial e institucional",
+    title: "Guía para plantear diagnóstico territorial e institucional",
     description: "Matriz para conectar población, servicios, brechas, economía, territorio, capacidad institucional y prioridades con productos verificables.",
     kind: "template",
     url: "/toolkits/tdr-diagnostico-territorial-institucional",
@@ -165,7 +165,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-estudio-mercado-inteligencia-territorial",
-    title: "TDR para estudios de mercado e inteligencia territorial",
+    title: "Guía para plantear estudios de mercado e inteligencia territorial",
     description: "Matriz para contratar demanda, segmentación, localización, análisis sectorial, escenarios y validación con fuentes y supuestos trazables.",
     kind: "template",
     url: "/toolkits/tdr-estudio-mercado-inteligencia-territorial",
@@ -176,7 +176,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-seguridad-ciudadana",
-    title: "TDR para análisis de seguridad ciudadana",
+    title: "Guía para plantear análisis de seguridad ciudadana",
     description: "Matriz para contratar diagnósticos, encuestas, mapas, observatorios o evaluaciones con fuentes, privacidad y aceptación verificable.",
     kind: "template",
     url: "/toolkits/tdr-analisis-seguridad-ciudadana",
@@ -187,7 +187,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-residuos-limpieza-publica",
-    title: "TDR para análisis de residuos y limpieza pública",
+    title: "Guía para plantear análisis de residuos y limpieza pública",
     description: "Matriz para contratar diagnósticos, optimización de rutas, balances, tableros o evaluaciones del servicio municipal.",
     kind: "template",
     url: "/toolkits/tdr-analisis-residuos-limpieza-publica",
@@ -198,7 +198,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-gestion-riesgo-desastres",
-    title: "TDR para análisis y gestión del riesgo de desastres",
+    title: "Guía para plantear análisis y gestión del riesgo de desastres",
     description: "Matriz para contratar diagnósticos, escenarios, mapas, PPRRD, COEL o sistemas de seguimiento con criterios verificables.",
     kind: "template",
     url: "/toolkits/tdr-analisis-gestion-riesgo-desastres",
@@ -209,7 +209,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-desarrollo-economico-local",
-    title: "TDR para análisis de desarrollo económico local",
+    title: "Guía para plantear análisis de desarrollo económico local",
     description: "Matriz para contratar diagnósticos productivos, empleo, cadenas de valor, mercados o sistemas de seguimiento con resultados verificables.",
     kind: "template",
     url: "/toolkits/tdr-analisis-desarrollo-economico-local",
@@ -220,7 +220,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-gestion-ambiental",
-    title: "TDR para análisis de gestión ambiental",
+    title: "Guía para plantear análisis de gestión ambiental",
     description: "Matriz para contratar diagnósticos, líneas de base, monitoreo, observatorios o seguimiento de fiscalización ambiental.",
     kind: "template",
     url: "/toolkits/tdr-analisis-gestion-ambiental",
@@ -231,7 +231,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-agua-saneamiento",
-    title: "TDR para análisis de agua y saneamiento",
+    title: "Guía para plantear análisis de agua y saneamiento",
     description: "Matriz para contratar diagnósticos, líneas de base, observatorios, priorización de inversiones o evaluación de servicios de agua y saneamiento.",
     kind: "template",
     url: "/toolkits/tdr-analisis-agua-saneamiento",
@@ -242,7 +242,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-movilidad-transporte",
-    title: "TDR para análisis de movilidad y transporte",
+    title: "Guía para plantear análisis de movilidad y transporte",
     description: "Matriz para contratar diagnósticos, encuestas, planes, observatorios, seguridad vial o evaluación de movilidad y transporte urbano.",
     kind: "template",
     url: "/toolkits/tdr-analisis-movilidad-transporte",
@@ -253,7 +253,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-politicas-sociales",
-    title: "TDR para análisis de políticas y programas sociales",
+    title: "Guía para plantear análisis de políticas y programas sociales",
     description: "Matriz para contratar diagnósticos, focalización, líneas de base, seguimiento o evaluación de políticas, programas y servicios sociales.",
     kind: "template",
     url: "/toolkits/tdr-analisis-politicas-sociales",
@@ -264,7 +264,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-salud-territorial",
-    title: "TDR para análisis de salud territorial",
+    title: "Guía para plantear análisis de salud territorial",
     description: "Matriz para contratar diagnósticos, salas de situación, análisis de acceso, capacidad, calidad o evaluación de intervenciones de salud.",
     kind: "template",
     url: "/toolkits/tdr-analisis-salud-territorial",
@@ -275,7 +275,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-educacion-territorial",
-    title: "TDR para análisis de educación territorial",
+    title: "Guía para plantear análisis de educación territorial",
     description: "Matriz para contratar diagnósticos de acceso, trayectorias, aprendizajes, condiciones del servicio, infraestructura o evaluación educativa.",
     kind: "template",
     url: "/toolkits/tdr-analisis-educacion-territorial",
@@ -286,7 +286,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-inversion-publica",
-    title: "TDR para análisis de inversión pública y proyectos",
+    title: "Guía para plantear análisis de inversión pública y proyectos",
     description: "Matriz para contratar priorización y seguimiento de carteras con presupuesto, avance físico, hitos, contratos, riesgos y operación.",
     kind: "template",
     url: "/toolkits/tdr-analisis-inversion-publica",
@@ -297,7 +297,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-contrataciones-publicas",
-    title: "TDR para análisis de contrataciones públicas y proveedores",
+    title: "Guía para plantear análisis de contrataciones públicas y proveedores",
     description: "Matriz para contratar analítica de demanda, procedimientos, competencia, mercado proveedor, plazos y ejecución contractual.",
     kind: "template",
     url: "/toolkits/tdr-analisis-contrataciones-publicas",
@@ -308,7 +308,7 @@ export const platformResourceCatalog: PlatformResource[] = [
   },
   {
     slug: "tdr-analisis-catastro-desarrollo-urbano",
-    title: "TDR para análisis de catastro y desarrollo urbano",
+    title: "Guía para plantear análisis de catastro y desarrollo urbano",
     description: "Matriz para contratar diagnóstico, levantamiento, integración geoespacial, planificación, priorización y actualización catastral y urbana.",
     kind: "template",
     url: "/toolkits/tdr-analisis-catastro-desarrollo-urbano",

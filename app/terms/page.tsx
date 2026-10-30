@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
 const terms = [
   {
     title: "Alcance del sitio",
-    body: "Estos términos regulan el acceso a NOAM.PE, sus publicaciones, visualizaciones, descargas y herramientas abiertas. Al utilizar el sitio aceptas estas condiciones. Una contratación de servicios se rige por la propuesta, orden, contrato o términos de referencia que las partes acuerden por separado."
+    body: "Estos términos regulan el acceso a NOAM.PE, sus publicaciones, visualizaciones, descargas y herramientas abiertas. Al utilizar el sitio aceptas estas condiciones. Una contratación de servicios se rige por la propuesta, orden, contrato o documentación contractual que las partes acuerden por separado."
   },
   {
     title: "Información para decidir, no decisión automática",

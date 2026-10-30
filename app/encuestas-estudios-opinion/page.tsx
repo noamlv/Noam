@@ -40,8 +40,8 @@ const methodChoices = [
 
 const evidence = [
   { label: "Método", title: "Diseñar una encuesta para decidir", text: "Preguntas, población, instrumento y plan de análisis.", href: "/toolkits/diseno-encuesta-para-decidir" },
-  { label: "TDR + plantilla", title: "Contratar una encuesta", text: "Muestra, campo, privacidad, productos y aceptación.", href: "/toolkits/tdr-encuesta-estudio-territorial" },
-  { label: "Muestra", title: "Encuesta y escucha territorial", text: "Arquitectura de un entregable antes de contratar.", href: "/muestras/encuesta-escucha-territorial" },
+  { label: "Guía de trabajo", title: "Plantear una encuesta", text: "Muestra, campo, privacidad, productos y aceptación.", href: "/toolkits/tdr-encuesta-estudio-territorial" },
+  { label: "Muestra", title: "Encuesta y escucha territorial", text: "Arquitectura de un entregable antes de elegir una intervención.", href: "/muestras/encuesta-escucha-territorial" },
   { label: "Caso real", title: "Barómetro Electoral 2026", text: "De 1,300 entrevistas a una lectura pública integrada.", href: "/cases/barometro-electoral-enero-2026" },
   { label: "Demostración", title: "Explorar el Barómetro", text: "Narrativa, segmentos, modelos y límites metodológicos.", href: "/electoral/barometro-enero-2026" },
   { label: "Solución", title: "Encuestas y escucha territorial", text: "Alcance profesional para gobiernos y empresas.", href: "/solutions/encuestas-escucha-ciudadana" }
@@ -84,7 +84,7 @@ export default function SurveysOpinionPage() {
               <p className="text-base leading-8 text-white/68">Diseño, trabajo de campo y análisis para comprender satisfacción, experiencia, necesidades, opinión o mercado sin ocultar a quién representan los resultados.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="#tipos" variant="secondary" className="rounded-full border-white bg-white text-ink">Elegir un estudio</Button>
-                <Button href="/toolkits/tdr-encuesta-estudio-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Abrir TDR y plantilla</Button>
+                <Button href="/toolkits/tdr-encuesta-estudio-territorial" variant="ghost" className="!text-white/70 hover:!text-white">Explorar preguntas y guía</Button>
               </div>
             </div>
           </div>

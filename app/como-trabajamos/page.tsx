@@ -12,7 +12,7 @@ export const metadata = buildMetadata({
 
 const startModes = [
   { number: "01", title: "Alcance breve", description: "Para ordenar un problema, revisar evidencia disponible y definir una agenda priorizada antes de comprometer una intervención mayor.", output: "Diagnóstico, brief o diseño de alcance" },
-  { number: "02", title: "Proyecto definido", description: "Para producir un estudio, evaluación, encuesta, observatorio, visor o piloto con entregables, responsables y criterios de aceptación.", output: "Producto listo para usar y transferir" },
+  { number: "02", title: "Proyecto definido", description: "Para producir un estudio, evaluación, encuesta, observatorio, visor o piloto con entregables, responsables y criterios de revisión.", output: "Producto listo para usar y transferir" },
   { number: "03", title: "Capacidad continua", description: "Para actualizar información, monitorear señales, acompañar decisiones y mejorar un sistema durante un periodo acordado.", output: "Operación, actualización y aprendizaje" }
 ];
 
@@ -24,8 +24,8 @@ const qualityPrinciples = [
 ];
 
 const faq = [
-  { title: "¿Pueden responder a términos de referencia existentes?", content: "Sí. Revisamos objetivos, productos, fuentes, plazos y criterios de aceptación para confirmar el encaje y formular una propuesta técnica coherente." },
-  { title: "¿Ayudan a definir un alcance antes de contratar?", content: "Podemos realizar una conversación inicial y proponer preguntas de delimitación. Cuando se requiere investigación o diseño sustantivo, esa etapa puede convertirse en un primer encargo independiente." },
+  { title: "¿Pueden responder a necesidades ya identificadas?", content: "Sí. Revisamos objetivos, productos, fuentes, plazos y criterios de revisión para confirmar el encaje y formular una propuesta técnica coherente." },
+  { title: "¿Ayudan a definir un alcance antes de elegir una intervención?", content: "Podemos realizar una conversación inicial y proponer preguntas de delimitación. Cuando se requiere investigación o diseño sustantivo, esa etapa puede convertirse en un primer encargo independiente." },
   { title: "¿Trabajan con equipos pequeños o presupuestos acotados?", content: "Sí. Priorizamos una decisión y un producto mínimo útil. Reducir alcance no significa eliminar trazabilidad, calidad o transferencia." },
   { title: "¿Pueden trabajar con información reservada?", content: "El tratamiento depende del tipo de información y de los controles disponibles. Antes de recibir datos revisamos necesidad, acceso, almacenamiento, responsabilidades y reglas de eliminación." },
   { title: "¿El resultado puede seguir funcionando después del proyecto?", content: "Ese es un criterio de diseño. Definimos quién actualizará, qué capacidades necesita, qué documentación queda y qué componentes requieren soporte posterior." }
@@ -41,7 +41,7 @@ export default function HowWeWorkPage() {
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_0.68fr] lg:items-end lg:gap-20">
             <div><Eyebrow className="text-[#d9a48f]">Cómo trabajamos</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch] text-white">Un encargo claro empieza antes de la propuesta.</Heading></div>
-            <div><p className="text-base leading-8 text-white/68">Definimos la decisión, el usuario, la evidencia y el uso esperado. Después elegimos el método, el producto y la tecnología.</p><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="how-we-work:hero-contact" variant="secondary" className="mt-7 rounded-full border-white bg-white text-ink">Plantear un encargo</Button></div>
+            <div><p className="text-base leading-8 text-white/68">Definimos la decisión, el usuario, la evidencia y el uso esperado. Después elegimos el método, el producto y la tecnología.</p><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="how-we-work:hero-contact" variant="secondary" className="mt-7 rounded-full border-white bg-white text-ink">Conversar sobre el problema</Button></div>
           </div>
           <div className="mt-16 grid gap-px overflow-hidden rounded-[1.25rem] border border-white/15 bg-white/15 sm:grid-cols-3">
             {["Local, regional o nacional", "Gobiernos y empresas", "Estudio, sistema o acompañamiento"].map((item, index) => <div key={item} className="bg-[#192823] p-6 md:p-8"><span className="font-mono text-[10px] text-[#d9a48f]">0{index + 1}</span><p className="mt-10 max-w-[18ch] text-lg font-medium leading-6 tracking-[-0.02em] text-white/86">{item}</p></div>)}
@@ -84,10 +84,10 @@ export default function HowWeWorkPage() {
       <Section className="bg-[#15211d] text-white">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Landmark className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Entidades públicas</Eyebrow><Heading size="xl" className="text-white">Un alcance que pueda convertirse en contratación y gestión.</Heading></div>
+            <div><Landmark className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Entidades públicas</Eyebrow><Heading size="xl" className="text-white">Comprender el problema antes de elegir la solución.</Heading></div>
             <div className="grid gap-6 sm:grid-cols-2">
-              {["Objetivo y decisión que debe mejorar", "Productos y criterios de aceptación", "Fuentes, accesos y responsabilidades", "Cronograma, hitos y transferencia"].map((item) => <p key={item} className="flex items-start gap-3 border-t border-white/15 pt-5 text-sm leading-6 text-white/68"><Check className="mt-1 h-3.5 w-3.5 shrink-0 text-[#d9a48f]" />{item}</p>)}
-              <p className="sm:col-span-2 text-sm leading-7 text-white/56">Podemos revisar términos de referencia existentes o estructurar una propuesta de alcance. La modalidad contractual y los requisitos aplicables corresponden a cada entidad y proceso.</p>
+              {["Objetivo y decisión que debe mejorar", "Productos y criterios de revisión", "Fuentes, accesos y responsabilidades", "Cronograma, hitos y transferencia"].map((item) => <p key={item} className="flex items-start gap-3 border-t border-white/15 pt-5 text-sm leading-6 text-white/68"><Check className="mt-1 h-3.5 w-3.5 shrink-0 text-[#d9a48f]" />{item}</p>)}
+              <p className="sm:col-span-2 text-sm leading-7 text-white/56">Podemos ayudarte a revisar el problema, contrastar la evidencia y explorar alternativas junto a tu equipo. Si necesitas acompañamiento de NOAM, conversamos sobre cómo apoyarte sin dar por definida la solución.</p>
             </div>
           </div>
         </Container>

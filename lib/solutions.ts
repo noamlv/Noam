@@ -70,7 +70,7 @@ export const solutions: Solution[] = [
     evidence: [
       { label: "Cómo elegir el alcance de un diagnóstico territorial", href: "/diagnostico-territorial" },
       { label: "Qué debe entregar un diagnóstico territorial", href: "/insights/diagnostico-territorial-que-debe-entregar" },
-      { label: "TDR para diagnóstico territorial e institucional", href: "/toolkits/tdr-diagnostico-territorial-institucional" },
+      { label: "Guía para plantear diagnóstico territorial e institucional", href: "/toolkits/tdr-diagnostico-territorial-institucional" },
       { label: "Análisis de catastro y desarrollo urbano", href: "/analisis-catastro-desarrollo-urbano-territorial" },
       { label: "Análisis de residuos sólidos y limpieza pública", href: "/analisis-datos-residuos-limpieza-publica" },
       { label: "Análisis y gestión del riesgo de desastres", href: "/analisis-datos-gestion-riesgo-desastres" },
@@ -117,7 +117,7 @@ export const solutions: Solution[] = [
     evidence: [
       { label: "Cómo elegir entre observatorio, dashboard y visor", href: "/observatorios-dashboards-visores" },
       { label: "Un sistema municipal no es solo un dashboard", href: "/insights/sistema-seguimiento-municipal-no-es-dashboard" },
-      { label: "TDR para observatorios, dashboards y visores", href: "/toolkits/tdr-observatorio-dashboard-visor" },
+      { label: "Guía para plantear observatorios, dashboards y visores", href: "/toolkits/tdr-observatorio-dashboard-visor" },
       { label: "Análisis y observatorios de seguridad ciudadana", href: "/analisis-datos-seguridad-ciudadana" },
       { label: "DataPerú: proyectos y ejecución municipal", href: "/dataperu/municipios" },
       { label: "Ver productos y demostraciones", href: "/products" }
@@ -163,7 +163,7 @@ export const solutions: Solution[] = [
       { label: "Barómetro electoral: demostración", href: "/electoral/barometro-enero-2026" },
       { label: "Elegir una encuesta o estudio de opinión", href: "/encuestas-estudios-opinion" },
       { label: "Guía para diseñar una encuesta que sirva para decidir", href: "/toolkits/diseno-encuesta-para-decidir" },
-      { label: "TDR para encuestas y estudios territoriales", href: "/toolkits/tdr-encuesta-estudio-territorial" },
+      { label: "Guía para plantear encuestas y estudios territoriales", href: "/toolkits/tdr-encuesta-estudio-territorial" },
       { label: "Estudios, diagnósticos y evaluación", href: "/services/estudios-diagnosticos-evaluacion" }
     ]
   },
@@ -249,7 +249,7 @@ export const solutions: Solution[] = [
     ],
     evidence: [
       { label: "Elegir un estudio de mercado e inteligencia territorial", href: "/estudios-mercado-inteligencia-territorial" },
-      { label: "TDR para estudios de mercado e inteligencia territorial", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" },
+      { label: "Guía para plantear estudios de mercado e inteligencia territorial", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" },
       { label: "Análisis de datos para desarrollo económico local", href: "/analisis-datos-desarrollo-economico-local" },
       { label: "Cómo evaluar un territorio antes de invertir", href: "/insights/evaluar-territorio-antes-invertir" },
       { label: "Ficha de decisión territorial para empresas", href: "/toolkits/ficha-decision-territorial-empresas" },
@@ -346,7 +346,7 @@ export const solutions: Solution[] = [
       { label: "Elegir línea de base, resultados o impacto", href: "/linea-base-evaluacion-impacto" },
       { label: "Cómo diseñar la línea de base de un programa público", href: "/insights/como-disenar-linea-base-programa-publico" },
       { label: "Cuándo una evaluación de impacto es viable", href: "/insights/cuando-evaluacion-impacto-es-viable" },
-      { label: "TDR para línea de base y evaluación", href: "/toolkits/tdr-linea-base-evaluacion-programa" },
+      { label: "Guía para plantear línea de base y evaluación", href: "/toolkits/tdr-linea-base-evaluacion-programa" },
       { label: "Matriz editable de línea de base", href: "/downloads/matriz-linea-base.csv" },
       { label: "Estudios, diagnósticos y evaluación", href: "/services/estudios-diagnosticos-evaluacion" }
     ]

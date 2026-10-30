@@ -195,7 +195,7 @@ export default function AiAutomationPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Prueba el criterio antes de contratar.</Heading></div>
+            <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Prueba el criterio antes de elegir una intervención.</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">El laboratorio, la muestra y las guías permiten examinar cómo NOAM prioriza, controla y mide un caso sin confundir una respuesta fluida con un sistema confiable.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">

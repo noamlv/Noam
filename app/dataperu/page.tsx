@@ -242,7 +242,7 @@ export default function DataPeruPage() {
             <div className="absolute -right-16 -top-24 h-72 w-72 rounded-full border-[54px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><Eyebrow className="text-white/58">DataPerú para tu institución</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">De una ficha pública a un sistema diseñado para decidir.</h2></div>
-              <Button href="/contact?interest=dataperu&from=/dataperu" analyticsEvent="cta_click" analyticsTarget="dataperu:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Plantear una necesidad</Button>
+              <Button href="/contact?interest=dataperu&from=/dataperu" analyticsEvent="cta_click" analyticsTarget="dataperu:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Conversar sobre una necesidad</Button>
             </div>
           </div>
         </Container>

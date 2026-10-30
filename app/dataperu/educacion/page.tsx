@@ -155,10 +155,10 @@ export default async function EducationPage({ searchParams }: { searchParams: Pr
               <Heading size="xl" className="max-w-[18ch] text-white">Diseñemos un diagnóstico educativo para tu territorio.</Heading>
               <div className="mt-6 flex flex-wrap gap-5 text-xs text-white/62">
                 <NextLink href="/analisis-datos-educacion-territorial" className="inline-flex items-center gap-2 hover:text-white">Ver capacidad NOAM <ArrowRight className="h-3.5 w-3.5" /></NextLink>
-                <NextLink href="/toolkits/tdr-analisis-educacion-territorial" className="inline-flex items-center gap-2 hover:text-white">Preparar TDR <ArrowRight className="h-3.5 w-3.5" /></NextLink>
+                <NextLink href="/toolkits/tdr-analisis-educacion-territorial" className="inline-flex items-center gap-2 hover:text-white">Plantear una solución <ArrowRight className="h-3.5 w-3.5" /></NextLink>
               </div>
             </div>
-            <Button href="/contact?interest=educacion-territorial&from=/dataperu/educacion" variant="secondary" className="rounded-full border-white bg-white text-ink">Plantear una necesidad</Button>
+            <Button href="/contact?interest=educacion-territorial&from=/dataperu/educacion" variant="secondary" className="rounded-full border-white bg-white text-ink">Conversar sobre una necesidad</Button>
           </div>
         </Container>
       </Section>

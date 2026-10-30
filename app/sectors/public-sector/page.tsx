@@ -24,8 +24,8 @@ const publicSectorFaq = [
     content: "Sí. El método, las fuentes y el equipo se ajustan a la escala territorial, la decisión institucional y el plazo del encargo."
   },
   {
-    title: "¿Pueden ayudar a preparar términos de referencia?",
-    content: "Sí. Podemos convertir una necesidad en objetivos, productos, metodología, criterios de calidad y un cronograma verificable antes de contratar."
+    title: "¿Pueden ayudarnos a entender y abordar un problema público?",
+    content: "Sí. Podemos ayudarte a delimitar el problema, revisar evidencia y explorar alternativas. No necesitas llegar con una solución definida; si buscas acompañamiento, conversamos sobre lo que tu equipo necesita."
   },
   {
     title: "¿Pueden integrar datos internos y confidenciales?",
@@ -56,7 +56,7 @@ export default async function PublicSectorPage() {
               <Heading as="h1" size="display" className="max-w-[14ch]">Análisis de datos para gestionar cada territorio.</Heading>
               <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">Ayudamos a municipalidades distritales y provinciales, gobiernos regionales y entidades nacionales a comprender problemas, priorizar recursos, monitorear ejecución y evaluar resultados.</p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <Button href="/contact?interest=sector-publico" className="rounded-full">Plantear una necesidad</Button>
+                <Button href="/contact?interest=sector-publico" className="rounded-full">Conversar sobre una necesidad</Button>
                 <Button href="/dataperu" variant="ghost" className="gap-2">Explorar DataPerú <ArrowRight className="h-4 w-4" /></Button>
               </div>
             </div>
@@ -188,7 +188,7 @@ export default async function PublicSectorPage() {
           <div className="mt-16 flex flex-col justify-between gap-6 border-t border-border pt-8 md:flex-row md:items-center">
             <p className="max-w-2xl text-2xl font-medium leading-tight tracking-[-0.035em] text-ink md:text-3xl">Describe la decisión, el territorio y el plazo.</p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact?interest=sector-publico" className="rounded-full">Plantear una necesidad</Button>
+              <Button href="/contact?interest=sector-publico" className="rounded-full">Conversar sobre una necesidad</Button>
               <Button href="/diagnostico" variant="ghost">Preparar un brief</Button>
             </div>
           </div>

@@ -40,7 +40,7 @@ const readinessChecks = [
 const evidence = [
   { label: "Guía", title: "Diseñar una línea de base", text: "Decisiones, indicadores y controles antes de medir.", href: "/insights/como-disenar-linea-base-programa-publico" },
   { label: "Nota metodológica", title: "Cuándo evaluar impacto", text: "Condiciones que permiten o impiden una inferencia causal defendible.", href: "/insights/cuando-evaluacion-impacto-es-viable" },
-  { label: "TDR + plantilla", title: "Contratar línea de base o evaluación", text: "Bloques, preguntas y criterios de aceptación editables.", href: "/toolkits/tdr-linea-base-evaluacion-programa" },
+  { label: "Guía de trabajo", title: "Contratar línea de base o evaluación", text: "Bloques, preguntas y criterios de revisión editables.", href: "/toolkits/tdr-linea-base-evaluacion-programa" },
   { label: "Muestra", title: "Arquitectura de un entregable", text: "Forma de trabajo para una línea de base y evaluación.", href: "/muestras/linea-base-evaluacion-programa" },
   { label: "Caso real", title: "Evaluación de resultados en Cusco", text: "Consultoría regional con alcance y límites declarados.", href: "/cases/gore-cusco-evaluacion-prevencion-trata" },
   { label: "Solución", title: "Línea de base y evaluación", text: "Alcance profesional para gobiernos, empresas y organizaciones.", href: "/solutions/linea-base-evaluacion-programas" }
@@ -52,7 +52,7 @@ const faq = [
   { title: "¿Se puede evaluar un programa que ya comenzó?", content: "Sí, pero primero debe revisarse qué registros, mediciones previas y comparaciones existen. La ausencia de una línea de base limita algunas preguntas, aunque no impide todo aprendizaje." },
   { title: "¿Cuándo existe una comparación válida?", content: "Depende del diseño. Puede surgir de asignación aleatoria, reglas de elegibilidad, implementación gradual u otros métodos cuasiexperimentales. Debe definirse antes de prometer atribución causal." },
   { title: "¿NOAM realiza trabajo de campo y análisis?", content: "El alcance puede incluir diseño metodológico, instrumentos, campo, procesamiento, análisis, visualización y transferencia. Cada componente se confirma según territorio, población y riesgos." },
-  { title: "¿La guía reemplaza los TDR o la revisión legal de la entidad?", content: "No. Es una orientación técnica para estructurar el requerimiento. La entidad debe confirmar la normativa, documentos estándar y reglas aplicables con sus áreas competentes." }
+  { title: "¿La guía reemplaza las preguntas de diseño o la revisión legal de la entidad?", content: "No. Es una orientación técnica para estructurar el requerimiento. La entidad debe confirmar la normativa, documentos estándar y reglas aplicables con sus áreas competentes." }
 ];
 
 export default function BaselineEvaluationPage() {
@@ -87,7 +87,7 @@ export default function BaselineEvaluationPage() {
               <p className="text-base leading-8 text-white/68">Una ruta práctica para programas, proyectos y políticas que necesitan medir su punto de partida, mejorar su ejecución o sustentar decisiones de continuidad y escala.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="#opciones" variant="secondary" className="rounded-full border-white bg-white text-ink">Elegir una evaluación</Button>
-                <Button href="/toolkits/tdr-linea-base-evaluacion-programa" variant="ghost" className="!text-white/70 hover:!text-white">Ver TDR y plantilla</Button>
+                <Button href="/toolkits/tdr-linea-base-evaluacion-programa" variant="ghost" className="!text-white/70 hover:!text-white">Ver Guía de trabajo y plantilla</Button>
               </div>
             </div>
           </div>
@@ -184,7 +184,7 @@ export default function BaselineEvaluationPage() {
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><Eyebrow className="text-white/55">Primer alcance</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Empieza por la decisión que necesitas sostener, no por la técnica que suena más sofisticada.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/linea-base-evaluacion-impacto" analyticsEvent="cta_click" analyticsTarget="baseline-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=linea-base-evaluacion-programas&from=/linea-base-evaluacion-impacto" analyticsEvent="cta_click" analyticsTarget="baseline-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear un encargo</Button></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/linea-base-evaluacion-impacto" analyticsEvent="cta_click" analyticsTarget="baseline-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Diseñar un alcance</Button><Button href="/contact?interest=linea-base-evaluacion-programas&from=/linea-base-evaluacion-impacto" analyticsEvent="cta_click" analyticsTarget="baseline-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar sobre el problema</Button></div>
             </div>
           </div>
         </Container>

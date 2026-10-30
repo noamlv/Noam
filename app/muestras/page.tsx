@@ -30,7 +30,7 @@ export default function SamplesPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.48fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="reveal text-[#d9a48f]">Biblioteca comercial</Eyebrow>
-              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[13ch] text-white">Mira la forma del trabajo antes de contratarlo.</Heading>
+              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[13ch] text-white">Mira la forma del trabajo antes de elegir una intervenciónlo.</Heading>
             </div>
             <div className="reveal reveal-delay-2">
               <p className="text-base leading-8 text-white/68">Nueve muestras enseñan cómo una pregunta se convierte en evidencia, un artefacto de decisión y una capacidad transferible.</p>

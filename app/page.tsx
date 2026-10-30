@@ -84,7 +84,7 @@ export default async function HomePage() {
                 Estudios, líneas de base, evaluaciones y sistemas de información para gobiernos y empresas que necesitan diseñar, priorizar o medir una intervención.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:hero-contact" className="rounded-full px-6">Plantear un encargo</Button>
+                <Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:hero-contact" className="rounded-full px-6">Conversar sobre el problema</Button>
                 <Button href="/solutions" variant="ghost" className="gap-2">Ver soluciones <ArrowRight className="h-4 w-4" /></Button>
               </div>
             </div>
@@ -219,7 +219,7 @@ export default async function HomePage() {
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div><p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/90">Comienza por la pregunta</p><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué necesitas comprender, construir o evaluar.</h2></div>
-              <div className="flex flex-wrap gap-3"><Button href="/diagnostico" variant="ghost" className="!text-white/90 hover:!text-white">Diseñar un alcance</Button><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Plantear un encargo</Button></div>
+              <div className="flex flex-wrap gap-3"><Button href="/diagnostico" variant="ghost" className="!text-white/90 hover:!text-white">Diseñar un alcance</Button><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Conversar sobre el problema</Button></div>
             </div>
           </div>
         </Container>

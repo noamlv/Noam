@@ -62,7 +62,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Instrumentos de gestión y cartera vigente", "Acceso a responsables y equipos técnicos", "Restricciones políticas, presupuestales y temporales", "Criterios internos de prioridad y decisión"],
     qualityControls: ["Fuentes, periodos y cobertura visibles", "Separación entre dato, inferencia e hipótesis", "Criterios de priorización reproducibles", "Validación ejecutiva y técnica documentada"],
     deliverables: ["Informe técnico navegable", "Matriz editable de prioridades", "Brief de conducción para autoridad", "Sesión de trabajo y transferencia"],
-    related: [{ type: "Guía", label: "Elegir un diagnóstico territorial", href: "/diagnostico-territorial" }, { type: "Producto", label: "Perfiles municipales DataPerú", href: "/dataperu/municipios" }, { type: "TDR", label: "TDR para diagnóstico territorial", href: "/toolkits/tdr-diagnostico-territorial-institucional" }, { type: "Solución", label: "Diagnóstico y agenda territorial", href: "/solutions/diagnostico-agenda-territorial" }]
+    related: [{ type: "Guía", label: "Elegir un diagnóstico territorial", href: "/diagnostico-territorial" }, { type: "Producto", label: "Perfiles municipales DataPerú", href: "/dataperu/municipios" }, { type: "Guía de trabajo", label: "Guía para plantear diagnóstico territorial", href: "/toolkits/tdr-diagnostico-territorial-institucional" }, { type: "Solución", label: "Diagnóstico y agenda territorial", href: "/solutions/diagnostico-agenda-territorial" }]
   },
   {
     slug: "observatorio-gestion-inversiones",
@@ -96,7 +96,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Reportes y tableros existentes", "Acceso a responsables de fuentes", "Calendario de reuniones y decisiones", "Infraestructura y restricciones de seguridad"],
     qualityControls: ["Definición y denominador por indicador", "Linaje entre fuente, transformación y vista", "Alertas probadas con escenarios", "Roles de actualización y corrección"],
     deliverables: ["Mapa de decisiones y usuarios", "Diccionario de indicadores", "Producto digital funcional", "Manual de operación y gobernanza"],
-    related: [{ type: "Guía", label: "Analizar inversión pública y proyectos", href: "/analisis-inversion-publica-proyectos" }, { type: "Demo", label: "Observatorio de inversiones DataPerú", href: "/dataperu/inversiones" }, { type: "TDR", label: "TDR para análisis de inversión pública", href: "/toolkits/tdr-analisis-inversion-publica" }, { type: "Solución", label: "Observatorio de gestión", href: "/solutions/observatorio-gestion-inversiones" }]
+    related: [{ type: "Guía", label: "Analizar inversión pública y proyectos", href: "/analisis-inversion-publica-proyectos" }, { type: "Demo", label: "Observatorio de inversiones DataPerú", href: "/dataperu/inversiones" }, { type: "Guía de trabajo", label: "Guía para plantear análisis de inversión pública", href: "/toolkits/tdr-analisis-inversion-publica" }, { type: "Solución", label: "Observatorio de gestión", href: "/solutions/observatorio-gestion-inversiones" }]
   },
   {
     slug: "encuesta-escucha-territorial",
@@ -130,7 +130,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Decisiones e hipótesis prioritarias", "Definición de población y cobertura", "Bases auxiliares o marco muestral", "Restricciones éticas, territoriales y operativas"],
     qualityControls: ["Ficha técnica y cuestionario publicados", "Trazabilidad de cambios del instrumento", "Supervisión y reglas de exclusión", "Incertidumbre y limitaciones visibles"],
     deliverables: ["Diseño metodológico e instrumento", "Base anonimizada y diccionario", "Informe analítico y visualizaciones", "Brief ejecutivo y sesión de implicancias"],
-    related: [{ type: "Guía", label: "Elegir una encuesta o estudio", href: "/encuestas-estudios-opinion" }, { type: "Caso", label: "Barómetro electoral 2026", href: "/electoral/barometro-enero-2026" }, { type: "TDR", label: "TDR para encuestas", href: "/toolkits/tdr-encuesta-estudio-territorial" }, { type: "Solución", label: "Encuestas y escucha territorial", href: "/solutions/encuestas-escucha-ciudadana" }]
+    related: [{ type: "Guía", label: "Elegir una encuesta o estudio", href: "/encuestas-estudios-opinion" }, { type: "Caso", label: "Barómetro electoral 2026", href: "/electoral/barometro-enero-2026" }, { type: "Guía de trabajo", label: "Guía para plantear encuestas", href: "/toolkits/tdr-encuesta-estudio-territorial" }, { type: "Solución", label: "Encuestas y escucha territorial", href: "/solutions/encuestas-escucha-ciudadana" }]
   },
   {
     slug: "piloto-ia-documental",
@@ -198,7 +198,7 @@ export const deliverableSamples: DeliverableSample[] = [
     clientInputs: ["Objetivo y restricciones de inversión", "Variables comerciales disponibles", "Supuestos de operación y costos", "Criterios de comité y tolerancia al riesgo"],
     qualityControls: ["Variables y ponderaciones documentadas", "Comparabilidad geográfica revisada", "Sensibilidad a supuestos críticos", "Vacíos de información convertidos en diligencias"],
     deliverables: ["Base territorial integrada", "Perfiles y comparador", "Modelo de escenarios", "Recomendación y plan de validación"],
-    related: [{ type: "Guía", label: "Elegir un estudio de mercado", href: "/estudios-mercado-inteligencia-territorial" }, { type: "Datos", label: "Explorar DataPerú", href: "/dataperu" }, { type: "TDR", label: "TDR para inteligencia territorial", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" }, { type: "Solución", label: "Inteligencia territorial para inversión", href: "/solutions/inteligencia-territorial-inversion" }]
+    related: [{ type: "Guía", label: "Elegir un estudio de mercado", href: "/estudios-mercado-inteligencia-territorial" }, { type: "Datos", label: "Explorar DataPerú", href: "/dataperu" }, { type: "Guía de trabajo", label: "Guía para plantear inteligencia territorial", href: "/toolkits/tdr-estudio-mercado-inteligencia-territorial" }, { type: "Solución", label: "Inteligencia territorial para inversión", href: "/solutions/inteligencia-territorial-inversion" }]
   },
   {
     slug: "monitoreo-entorno-impacto",
@@ -436,7 +436,7 @@ export const deliverableSamples: DeliverableSample[] = [
       { type: "Salud", label: "Análisis de salud territorial", href: "/analisis-datos-salud-territorial" },
       { type: "Educación", label: "Análisis de educación territorial", href: "/analisis-datos-educacion-territorial" },
       { type: "Social", label: "Análisis de políticas y programas sociales", href: "/analisis-datos-politicas-sociales" },
-      { type: "TDR", label: "TDR general para estudios y análisis", href: "/toolkits/tdr-estudio-analisis-datos" }
+      { type: "Guía de trabajo", label: "Guía de trabajo general para estudios y análisis", href: "/toolkits/tdr-estudio-analisis-datos" }
     ]
   }
 ];
