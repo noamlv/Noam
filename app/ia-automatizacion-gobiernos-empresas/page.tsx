@@ -39,12 +39,12 @@ const outcomes = [
 
 const contexts = [
   { eyebrow: "Gobiernos", title: "Mejorar capacidad sin delegar responsabilidad pública", text: "La IA puede asistir búsqueda, clasificación, atención y análisis. Las decisiones sobre derechos, servicios o beneficios requieren controles proporcionales, transparencia y responsables institucionales." },
-  { eyebrow: "Empresas", title: "Reducir fricción sin crear una deuda operativa invisible", text: "La evaluación debe incluir integración, seguridad, dependencia tecnológica, propiedad de datos, costo total, revisión humana y efecto real sobre clientes o equipos." }
+  { eyebrow: "Empresas", title: "Ahorrar trabajo sin descuidar el mantenimiento", text: "La evaluación debe incluir integración, seguridad, dependencia tecnológica, propiedad de datos, costo total, revisión humana y efecto real sobre clientes o equipos." }
 ];
 
 const evidence = [
   { label: "Herramienta abierta", title: "Laboratorio de casos de IA", text: "Separa oportunidad, exposición y fortaleza de controles.", href: "/products/ai-governance-lab" },
-  { label: "Muestra", title: "Piloto de IA documental", text: "Línea de base, corpus, pruebas, errores y decisión de escala.", href: "/muestras/piloto-ia-documental" },
+  { label: "Muestra", title: "Piloto de IA documental", text: "Medición inicial, documentos autorizados, pruebas y criterios para ampliar o detener el piloto.", href: "/muestras/piloto-ia-documental" },
   { label: "Guía directiva", title: "Gobernanza de IA", text: "Roles y controles proporcionales desde la selección del caso.", href: "/toolkits/ai-governance-playbook" },
   { label: "Toolkit", title: "Priorizar un caso de uso", text: "Ficha editable para comparar valor, datos, factibilidad y riesgo.", href: "/toolkits/ficha-priorizacion-caso-uso-ia" },
   { label: "Arquitectura", title: "IA documental en entidades", text: "Fuentes, permisos, recuperación, citas y supervisión.", href: "/insights/ia-documental-entidades-publicas" },
@@ -52,7 +52,7 @@ const evidence = [
 ];
 
 const faq = [
-  { title: "¿NOAM implementa chatbots y asistentes institucionales?", content: "Sí, cuando existe una finalidad clara, un corpus autorizado, reglas de acceso, rutas de derivación y métricas de calidad. Primero definimos qué puede responder, qué debe citar y cuándo debe abstenerse o transferir la consulta." },
+  { title: "¿NOAM implementa chatbots y asistentes institucionales?", content: "Sí, cuando existe una finalidad clara, documentos cuyo uso esté autorizado, reglas de acceso, rutas de derivación y métricas de calidad. Primero definimos qué puede responder, qué debe citar y cuándo debe abstenerse o transferir la consulta." },
   { title: "¿Se necesita una gran base de datos para comenzar?", content: "No siempre. Un piloto puede trabajar con una colección documental o un proceso acotado. La prioridad es que la fuente sea pertinente, autorizada, versionada y suficiente para probar el caso de uso." },
   { title: "¿Pueden automatizar una decisión completa?", content: "No es el punto de partida recomendado. Cuando una decisión afecta derechos, servicios, empleo, crédito u otros resultados relevantes, deben evaluarse la clasificación jurídica, la supervisión humana y alternativas de menor riesgo." },
   { title: "¿Cómo se evita que el sistema invente respuestas?", content: "Con fuentes controladas, recuperación verificable, instrucciones de abstención, citas, conjuntos de prueba, revisión humana y monitoreo. Ningún control elimina por sí solo el riesgo, por lo que debe medirse sobre casos reales." },
@@ -107,7 +107,7 @@ export default function AiAutomationPage() {
       <Section id="casos">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Casos de uso</Eyebrow><Heading size="xl">Cinco tareas concretas para evaluar.</Heading></div>
+            <div><Eyebrow>Casos de uso</Eyebrow><Heading size="xl">Cinco tareas concretas para evaluar</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">El nombre de una tecnología no define un proyecto. Cada caso cambia según el dato, el usuario, la consecuencia del error y la posibilidad real de supervisión.</p>
           </div>
 
@@ -126,7 +126,7 @@ export default function AiAutomationPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Workflow className="h-5 w-5 text-[#475c63]" aria-hidden /><Eyebrow className="mt-6">Piloto completo</Eyebrow><Heading size="xl">La demostración es solo una de seis etapas.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Un prototipo convincente no demuestra calidad, seguridad, ahorro ni capacidad de operación. La evaluación empieza antes de construir.</p></div>
+            <div><Workflow className="h-5 w-5 text-[#475c63]" aria-hidden /><Eyebrow className="mt-6">Piloto completo</Eyebrow><Heading size="xl">Cómo preparar, probar y mantener una herramienta de IA</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Un prototipo convincente no demuestra calidad, seguridad, ahorro ni capacidad de operación. La evaluación empieza antes de construir.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {pilotChain.map((item) => (
                 <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8">
@@ -143,7 +143,7 @@ export default function AiAutomationPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Decisión de portafolio</Eyebrow><Heading size="xl">El resultado no siempre es escalar.</Heading></div>
+            <div><Eyebrow>Decisión de portafolio</Eyebrow><Heading size="xl">Cuándo ampliar, ajustar o detener una prueba</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {outcomes.map((item, index) => (
                 <article key={item.label} className="grid gap-4 py-7 sm:grid-cols-[36px_0.55fr_1fr] sm:gap-7">
@@ -174,7 +174,7 @@ export default function AiAutomationPage() {
       <Section className="bg-[#172025] text-white">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><ShieldCheck className="h-5 w-5 text-[#b8c8ce]" aria-hidden /><Eyebrow className="mt-6 text-[#b8c8ce]">Marco vigente</Eyebrow><Heading size="xl" className="text-white">Innovación responsable, no cumplimiento por apariencia.</Heading><p className="mt-5 text-sm leading-7 text-white/58">El alcance técnico debe adaptarse al uso, la organización y las obligaciones aplicables. NOAM no sustituye la clasificación jurídica ni una auditoría especializada.</p></div>
+            <div><ShieldCheck className="h-5 w-5 text-[#b8c8ce]" aria-hidden /><Eyebrow className="mt-6 text-[#b8c8ce]">Marco vigente</Eyebrow><Heading size="xl" className="text-white">Controles de calidad, seguridad y privacidad</Heading><p className="mt-5 text-sm leading-7 text-white/58">El alcance técnico debe adaptarse al uso, la organización y las obligaciones aplicables. NOAM no sustituye la clasificación jurídica ni una auditoría especializada.</p></div>
             <div className="divide-y divide-white/14 border-y border-white/14">
               {[
                 { label: "Perú", title: "Estrategia Nacional de IA 2026–2030", text: "Marco para articular desarrollo, uso y gestión de la IA en el país.", href: "https://www.gob.pe/institucion/pcm/informes-publicaciones/8408055-estrategia-nacional-de-inteligencia-artificial-2026-2030" },
@@ -195,7 +195,7 @@ export default function AiAutomationPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Prueba el criterio antes de elegir una intervención.</Heading></div>
+            <div><Eyebrow>Evidencia abierta</Eyebrow><Heading size="xl">Evalúa un posible uso de IA</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">El laboratorio, la muestra y las guías permiten examinar cómo NOAM prioriza, controla y mide un caso sin confundir una respuesta fluida con un sistema confiable.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
@@ -212,7 +212,7 @@ export default function AiAutomationPage() {
       </Section>
 
       <Section className="border-y border-border bg-panel/45">
-        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de automatizar.</Heading><Accordion items={faq} className="mt-8" /></Container>
+        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de automatizar</Heading><Accordion items={faq} className="mt-8" /></Container>
       </Section>
 
       <Section className="pb-0">
@@ -220,7 +220,7 @@ export default function AiAutomationPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-[#475c63] px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Apoyo de NOAM</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué tarea consume tiempo y qué error no puede pasar desapercibido.</h2></div>
+              <div><Eyebrow className="text-white/55">Apoyo de NOAM</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué tarea consume tiempo y qué error no puede pasar desapercibido</h2></div>
               <div className="flex flex-wrap gap-3"><Button href="/products/ai-governance-lab" analyticsEvent="cta_click" analyticsTarget="ai-hub:lab" variant="secondary" className="rounded-full border-white bg-white text-ink">Evaluar un caso</Button><Button href="/contact?interest=ia-procesos-publicos&from=/ia-automatizacion-gobiernos-empresas" analyticsEvent="cta_click" analyticsTarget="ai-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Plantear el piloto</Button></div>
             </div>
           </div>

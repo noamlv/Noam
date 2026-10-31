@@ -37,7 +37,7 @@ export default function TerritorialAgendasPage() {
           <div className="grid gap-14 lg:grid-cols-[0.88fr_0.54fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">DataPerú · Agendas territoriales</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[13ch] text-white">El mismo problema no se resuelve igual en todo el Perú.</Heading>
+              <Heading as="h1" size="display" className="max-w-[13ch] text-white">Problemas y oportunidades por departamento</Heading>
             </div>
             <div>
               <p className="text-base leading-8 text-white/66">Busca un tema, una población o una actividad y descubre cómo cambia entre departamentos. Cada señal conecta contexto, decisión y una respuesta analítica posible.</p>
@@ -82,7 +82,7 @@ export default function TerritorialAgendasPage() {
       <Section id="explorador">
         <Container>
           <div className="mb-10 grid gap-8 lg:grid-cols-[0.48fr_1fr] lg:items-end lg:gap-20">
-            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Explorador</Eyebrow><Heading size="xl">Empieza por la pregunta que importa.</Heading></div>
+            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Explorador</Eyebrow><Heading size="xl">Elige un departamento o un tema</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 lg:justify-self-end">Los textos sintetizan investigación departamental y macroregional revisada en 2026. No publican puntuaciones ni convierten una hipótesis en hecho; cada perfil muestra confianza, procedencia y datos pendientes.</p>
           </div>
           <TerritorialAgendaExplorer research={departmentResearch} />
@@ -92,7 +92,7 @@ export default function TerritorialAgendasPage() {
       <Section className="bg-[#356775] text-white">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-            <div><Eyebrow className="text-white/56">De la señal al encargo</Eyebrow><Heading size="xl" className="mt-4 max-w-[16ch] text-white">Convierte una pregunta territorial en evidencia para decidir.</Heading></div>
+            <div><Eyebrow className="text-white/56">De la señal al encargo</Eyebrow><Heading size="xl" className="mt-4 max-w-[16ch] text-white">¿Necesitas estudiar un problema de tu localidad?</Heading></div>
             <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/dataperu/agendas-territoriales" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?interest=dataperu&from=/dataperu/agendas-territoriales" variant="ghost" className="!text-white/72 hover:!text-white">Plantear un análisis</Button></div>
           </div>
         </Container>

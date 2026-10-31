@@ -28,8 +28,8 @@ export default async function EvidencePage() {
       <Section className="pb-14 pt-14 md:pb-20 md:pt-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-            <div><Eyebrow className="reveal text-rust">Biblioteca NOAM</Eyebrow><Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[14ch]">Ideas que se pueden examinar, usar y discutir.</Heading></div>
-            <div className="reveal reveal-delay-2"><p className="text-sm leading-7 text-ink/68 md:text-base">Publicamos análisis, métodos, datos y casos para que nuestra capacidad pueda evaluarse antes de una conversación comercial.</p><p className="mt-5 font-mono text-xs text-rust">{all.length} recursos publicados</p></div>
+            <div><Eyebrow className="reveal text-rust">Biblioteca NOAM</Eyebrow><Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[14ch]">Análisis, datos y guías</Heading></div>
+            <div className="reveal reveal-delay-2"><p className="text-sm leading-7 text-ink/68 md:text-base">Consulta nuestros análisis, datos, guías y trabajos realizados. Cada publicación explica sus fuentes y cómo interpretar la información.</p><p className="mt-5 font-mono text-xs text-rust">{all.length} recursos publicados</p></div>
           </div>
           <form action="/buscar" method="get" role="search" className="mt-12 grid gap-3 rounded-[1.25rem] border border-ink/15 bg-panel p-4 shadow-subtle sm:grid-cols-[1fr_auto] sm:items-center md:p-5">
             <input type="hidden" name="type" value="evidence" />
@@ -69,15 +69,15 @@ export default async function EvidencePage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Publicaciones recientes</Eyebrow><Heading size="xl">Evidencia para decisiones públicas y territoriales.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Problemas, fuentes, métodos, hallazgos, implicancias y límites en una estructura común.</p></div>
-            <div><NextLink href="/dataperu/panorama-municipal-2025" className="group mb-8 block rounded-md border border-border bg-[#15211d] p-6 text-white transition-all hover:-translate-y-0.5 hover:shadow-subtle"><span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f]">Estudio insignia · DataPerú</span><h2 className="mt-5 text-2xl font-medium tracking-[-0.035em]">El Perú municipal no cabe en un promedio.</h2><p className="mt-3 max-w-2xl text-sm leading-6 text-white/55">1,891 municipalidades, 25 contextos departamentales y una lectura sin índice opaco.</p><span className="mt-6 inline-flex items-center gap-2 text-xs text-white/75">Abrir estudio <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span></NextLink><ResourceList items={all.slice(0, 7)} variant="rows" /></div>
+            <div><Eyebrow>Publicaciones recientes</Eyebrow><Heading size="xl">Datos y estudios sobre el Perú</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Problemas, fuentes, métodos, hallazgos, implicancias y límites en una estructura común.</p></div>
+            <div><NextLink href="/dataperu/panorama-municipal-2025" className="group mb-8 block rounded-md border border-border bg-[#15211d] p-6 text-white transition-all hover:-translate-y-0.5 hover:shadow-subtle"><span className="text-[9px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f]">Estudio insignia · DataPerú</span><h2 className="mt-5 text-2xl font-medium tracking-[-0.035em]">Diferencias entre municipalidades del Perú</h2><p className="mt-3 max-w-2xl text-sm leading-6 text-white/55">1,891 municipalidades, 25 contextos departamentales y una lectura sin índice opaco.</p><span className="mt-6 inline-flex items-center gap-2 text-xs text-white/75">Abrir estudio <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span></NextLink><ResourceList items={all.slice(0, 7)} variant="rows" /></div>
           </div>
         </Container>
       </Section>
 
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
-          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><Eyebrow>Formatos</Eyebrow><Heading size="xl">Leer, medir, aplicar y comprobar.</Heading></div><div className="flex flex-wrap gap-3"><Button href="/resources" variant="secondary">Recursos y datos abiertos</Button><Button href="/insights/rss.xml" variant="ghost" className="justify-start gap-2">RSS de estudios <ArrowRight className="h-4 w-4" /></Button></div></div>
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><Eyebrow>Formatos</Eyebrow><Heading size="xl">Busca por tipo de contenido</Heading></div><div className="flex flex-wrap gap-3"><Button href="/resources" variant="secondary">Recursos y datos abiertos</Button><Button href="/insights/rss.xml" variant="ghost" className="justify-start gap-2">RSS de estudios <ArrowRight className="h-4 w-4" /></Button></div></div>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {editorialCollections.map((collection, index) => {
               const items = { insights, indicators, toolkits, cases }[collection.type];
@@ -90,7 +90,7 @@ export default async function EvidencePage() {
       <Section className="bg-[#15211d] text-white">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.55fr_1fr] lg:gap-20">
-            <div><Eyebrow className="text-white/55">Estándar editorial</Eyebrow><Heading size="xl" className="text-white">Rigor visible, no decorativo.</Heading><p className="mt-5 max-w-md text-sm leading-7 text-white/58">No publicamos una conclusión sin mostrar de dónde proviene, cómo debe leerse y qué no permite afirmar.</p></div>
+            <div><Eyebrow className="text-white/55">Estándar editorial</Eyebrow><Heading size="xl" className="text-white">Fuentes y límites de los análisis</Heading><p className="mt-5 max-w-md text-sm leading-7 text-white/58">No publicamos una conclusión sin mostrar de dónde proviene, cómo debe leerse y qué no permite afirmar.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md bg-white/15 sm:grid-cols-2">
               {evidencePrinciples.map((principle, index) => <div key={principle} className="bg-[#15211d] p-6"><Badge className="border-white/15 text-[#d9a48f]">0{index + 1}</Badge><p className="mt-8 text-base font-medium text-white">{principle}</p></div>)}
             </div>
@@ -99,13 +99,13 @@ export default async function EvidencePage() {
       </Section>
 
       <Section>
-        <Container><div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20"><div><Eyebrow>Brief NOAM</Eyebrow><Heading size="xl">Una selección útil para volver.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Datos, métodos y preguntas para gestión pública, elecciones y decisiones apoyadas por IA.</p><Button href="/brief" variant="ghost" className="mt-6 justify-start gap-2">Ver archivo editorial <ArrowRight className="h-4 w-4" /></Button></div><div><NextLink href={`/brief/${latestBrief.slug}`} className="group mb-5 block rounded-[1.25rem] border border-border bg-[#15211d] p-7 text-white transition-all hover:-translate-y-0.5 hover:shadow-subtle"><span className="font-mono text-[10px] text-[#d9a48f]">EDICIÓN {latestBrief.issue} · {latestBrief.readingTime}</span><h2 className="mt-7 max-w-2xl text-2xl font-medium tracking-[-0.035em] md:text-3xl">{latestBrief.title}</h2><p className="mt-4 max-w-2xl text-sm leading-6 text-white/55">{latestBrief.description}</p><span className="mt-7 inline-flex items-center gap-2 text-xs text-white/75">Leer edición <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span></NextLink><NewsletterSignup sourcePath="/evidence" /></div></div></Container>
+        <Container><div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20"><div><Eyebrow>Brief NOAM</Eyebrow><Heading size="xl">Recibe nuevas publicaciones</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Datos, métodos y preguntas para gestión pública, elecciones y decisiones apoyadas por IA.</p><Button href="/brief" variant="ghost" className="mt-6 justify-start gap-2">Ver archivo editorial <ArrowRight className="h-4 w-4" /></Button></div><div><NextLink href={`/brief/${latestBrief.slug}`} className="group mb-5 block rounded-[1.25rem] border border-border bg-[#15211d] p-7 text-white transition-all hover:-translate-y-0.5 hover:shadow-subtle"><span className="font-mono text-[10px] text-[#d9a48f]">EDICIÓN {latestBrief.issue} · {latestBrief.readingTime}</span><h2 className="mt-7 max-w-2xl text-2xl font-medium tracking-[-0.035em] md:text-3xl">{latestBrief.title}</h2><p className="mt-4 max-w-2xl text-sm leading-6 text-white/55">{latestBrief.description}</p><span className="mt-7 inline-flex items-center gap-2 text-xs text-white/75">Leer edición <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" aria-hidden /></span></NextLink><NewsletterSignup sourcePath="/evidence" /></div></div></Container>
       </Section>
 
       <Section className="pb-0">
         <Container>
           <NextLink href="/muestras" className="group flex flex-col gap-8 rounded-[1.5rem] bg-rust p-8 text-white md:flex-row md:items-end md:justify-between md:p-12">
-            <div><Eyebrow className="text-white/55">Aplicación</Eyebrow><Heading size="lg" className="mt-4 max-w-3xl text-white">Examina cómo esta evidencia se convierte en un diagnóstico, sistema o piloto.</Heading></div>
+            <div><Eyebrow className="text-white/55">Aplicación</Eyebrow><Heading size="lg" className="mt-4 max-w-3xl text-white">¿Necesitas un análisis para tu organización?</Heading></div>
             <span className="inline-flex items-center gap-2 text-sm font-medium">Ver muestras <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></span>
           </NextLink>
         </Container>

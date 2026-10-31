@@ -1,5 +1,5 @@
 ---
-title: "La elección subnacional necesita una arquitectura de datos"
+title: "Cómo organizar los datos de una elección regional y municipal"
 description: "Una propuesta para integrar territorio, candidaturas, expedientes, planes y fuentes oficiales sin convertir información provisional en conclusiones definitivas."
 date: "2026-07-29"
 tags:
@@ -22,11 +22,11 @@ El núcleo oficial combina al JNE para cronograma, candidaturas, organizaciones 
 </DataSources>
 
 <Method>
-La unidad de integración debe ser el objeto electoral, no la noticia. Territorio, organización, candidatura, lista, expediente, acto jurídico, documento programático y resultado necesitan identificadores, fecha de captura, fuente y estado de consolidación. Los cambios deben conservarse como versiones, no sobrescribirse sin historial.
+Conviene organizar cada registro electoral por separado y enlazarlo con sus documentos oficiales. Territorio, organización, candidatura, lista, expediente, acto jurídico, documento programático y resultado necesitan identificadores, fecha de captura, fuente y estado de consolidación. Los cambios deben conservarse como versiones, no sobrescribirse sin historial.
 </Method>
 
-<Findings>
-Una misma capa confiable puede alimentar productos distintos: orientación ciudadana, comparación de propuestas, investigación periodística, alertas para equipos técnicos y reportes de transición. La reutilización aparece cuando ubigeos, organizaciones y documentos se normalizan una sola vez y cada producto conserva acceso a la evidencia original.
+<Findings title="Qué conviene tener en cuenta">
+Los mismos registros, una vez revisados, pueden usarse para orientación ciudadana, comparación de propuestas, investigación periodística, alertas para equipos técnicos y reportes de transición. Para reutilizarlos, los códigos territoriales, las organizaciones y los documentos deben identificarse de la misma manera en cada consulta, conservando el enlace a la fuente.
 </Findings>
 
 <Implications>
@@ -34,12 +34,12 @@ NOAM priorizará primero territorio, trazabilidad y método. Un radar de candida
 </Implications>
 
 <Downloads>
-- [Explorar la vertical Electoral](/electoral)
+- [Consultar los análisis electorales](/electoral)
 - [Consultar el especial ERM 2026](/electoral/erm-2026)
 - [Revisar los perfiles territoriales de DataPerú](/dataperu/municipios)
 - [Consultar las cifras oficiales del padrón publicadas por Reniec](https://identidad.reniec.gob.pe/b/reniec-remitio-al-jne-el-padron-electoral-de-las-elecciones-regionales-y-municipales-2026-con-mas-de-26-3-millones-de-electores)
 </Downloads>
 
 <CTA>
-Si necesitas comprender una elección, un territorio o la transición hacia una nueva gestión, [plantea el contexto y la decisión](/contact?interest=electoral&from=/insights/arquitectura-datos-electorales-subnacionales).
+Si necesitas comprender una elección, un territorio o la transición hacia una nueva gestión, [cuéntanos qué necesitas analizar](/contact?interest=electoral&from=/insights/arquitectura-datos-electorales-subnacionales).
 </CTA>

@@ -3,8 +3,8 @@ import type { DepartmentResearch } from "./department-research.ts";
 export const departmentResearch15to25: DepartmentResearch[] = [
   {
     code: "15", department: "Lima", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Síntesis curada que diferencia Lima Metropolitana de las provincias de la Región Lima." },
-    thesis: "Lima no es una sola metrópoli: conviven periferias urbanas, cuencas frágiles, ciudades intermedias, valles agroalimentarios y el nuevo corredor de Chancay. Agua, movilidad, vivienda y productividad exigen escalas de gobierno distintas.",
+    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Resumen revisado que diferencia Lima Metropolitana de las provincias de la Región Lima." },
+    thesis: "Lima incluye la metrópoli, ciudades costeras, valles agrícolas y provincias de sierra. Las necesidades de agua, vivienda y transporte deben analizarse según cada zona y nivel de gobierno.",
     problems: [
       { title: "Seguridad hídrica, tratamiento y reúso", problem: "Cuencas, redes, cisternas, agricultura e industria requieren una lectura común de oferta, pérdidas, calidad y demanda.", affected: "Periferias metropolitanas, ciudades costeras, agricultores, prestadores e industria.", governmentDecision: "Priorizar reducción de pérdidas, cobertura efectiva, tratamiento y reúso según cuenca y asequibilidad.", noamResponse: "Observatorio hídrico, mapa de continuidad y escenarios por cuenca." },
       { title: "Movilidad, vivienda y crecimiento inseguro", problem: "Largos viajes, suelo no servido y ocupación de laderas o quebradas amplifican desigualdad y riesgo.", affected: "Trabajadores, jóvenes, mujeres cuidadoras y hogares periurbanos.", governmentDecision: "Integrar accesibilidad, vivienda, transporte y riesgo antes de habilitar suelo o invertir.", noamResponse: "Atlas de acceso urbano, vivienda y exposición territorial." },
@@ -25,8 +25,8 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "16", department: "Loreto", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 46, officialSources: "total", note: "Síntesis curada con lectura fluvial, intercultural y estacional." },
-    thesis: "En Loreto, accesibilidad es una combinación de río, estación, frecuencia, tarifa y confiabilidad. Agua, salud, educación, energía y economía forestal deben diseñarse como redes móviles e interculturales.",
+    evidenceBase: { scope: "departamental", sourceCount: 46, officialSources: "total", note: "Resumen revisado con lectura fluvial, intercultural y estacional." },
+    thesis: "En Loreto, los tiempos y costos de viaje cambian según el río y la temporada. La atención de salud, la educación, el agua y la energía deben considerar esas distancias y las necesidades de las comunidades.",
     problems: [
       { title: "Agua y saneamiento adaptados al territorio", problem: "Soluciones urbanas convencionales no responden igual en barrios inundables, comunidades fluviales y localidades dispersas.", affected: "Comunidades indígenas y ribereñas, primera infancia, periferias de Iquitos y operadores comunales.", governmentDecision: "Segmentar tecnología, operación y vigilancia por fuente, densidad y ciclo hidrológico.", noamResponse: "Registro de sistemas, mapa estacional y observatorio de calidad y continuidad." },
       { title: "Conectividad fluvial, digital y energética fragmentada", problem: "Un viaje cancelado, una batería agotada o una antena sin soporte interrumpe varios servicios simultáneamente.", affected: "Datem del Marañón, Putumayo, comunidades tributarias, estudiantes, pacientes y productores.", governmentDecision: "Programar rutas esenciales, energía y conectividad como una sola infraestructura de acceso.", noamResponse: "Atlas multimodal y tablero de disponibilidad de rutas y nodos." },
@@ -47,8 +47,8 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "17", department: "Madre de Dios", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 44, officialSources: "total", note: "Síntesis curada con salvaguardas sobre seguridad, pueblos indígenas y datos sensibles." },
-    thesis: "Madre de Dios necesita separar economía legal, extracción ilícita y protección territorial. Oro, mercurio, bosque, trata y crecimiento urbano forman un sistema que exige trazabilidad, salud ambiental y alternativas productivas verificables.",
+    evidenceBase: { scope: "departamental", sourceCount: 44, officialSources: "total", note: "Resumen revisado con salvaguardas sobre seguridad, pueblos indígenas y datos sensibles." },
+    thesis: "En Madre de Dios, la minería ilegal y el uso de mercurio afectan la salud y el bosque. El análisis debe distinguir las actividades legales, los daños ambientales y las oportunidades económicas que necesitan comprobarse.",
     problems: [
       { title: "Gobernanza del oro, seguridad y trata", problem: "La extracción ilícita conecta violencia, explotación, lavado y ocupación territorial.", affected: "Comunidades, mujeres, menores, migrantes, trabajadores y operadores formales.", governmentDecision: "Integrar origen, permisos, cadena comercial, protección y debido proceso.", noamResponse: "Sistema protegido de trazabilidad y observatorio de riesgos territoriales." },
       { title: "Mercurio, agua y salud ambiental", problem: "Contaminación y exposición requieren biomonitoreo, atención y agua segura con gobernanza comunitaria.", affected: "Comunidades indígenas y ribereñas, niñez, gestantes y pescadores.", governmentDecision: "Conectar muestras, riesgo, ruta clínica y remediación sin exponer datos personales.", noamResponse: "Observatorio sanitario-ambiental y protocolo de seguimiento." },
@@ -69,12 +69,12 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "18", department: "Moquegua", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 42, officialSources: "total", note: "Síntesis curada con énfasis en balance hídrico, canon y equidad provincial." },
-    thesis: "Moquegua combina minería, puerto, pesca, agricultura y provincias altoandinas bajo un límite hídrico estricto. La prioridad es transformar canon y crecimiento en diversificación, activos confiables y equidad territorial.",
+    evidenceBase: { scope: "departamental", sourceCount: 42, officialSources: "total", note: "Resumen revisado con énfasis en balance hídrico, canon y equidad provincial." },
+    thesis: "En Moquegua, la minería, la pesca y la agricultura comparten una disponibilidad limitada de agua. Conviene revisar cómo se usa el canon y qué servicios y oportunidades llegan a las distintas provincias.",
     problems: [
       { title: "Agua: balance, calidad y legitimidad", problem: "Usuarios urbanos, agrarios y mineros necesitan datos comunes sobre oferta, derecho, consumo, calidad y contingencia.", affected: "Hogares, agricultores, comunidades, empresas y ecosistemas.", governmentDecision: "Acordar balance y reglas de priorización, eficiencia y reúso con trazabilidad pública.", noamResponse: "Gemelo hídrico y tablero de acuerdos y alertas." },
       { title: "Minería y canon con diversificación limitada", problem: "Renta y compras pueden concentrarse sin crear proveedores transferibles ni activos sostenibles.", affected: "MYPE, jóvenes, municipios, comunidades y usuarios de proyectos.", governmentDecision: "Conectar compras, formación y cartera pública con capacidades duraderas.", noamResponse: "Radar de proveedores y rastreador canon-activo-servicio." },
-      { title: "Ilo: puerto, pesca e industria desconectados", problem: "Flujos, frío, sanidad, ambiente y conectividad requieren demanda y operación coordinadas.", affected: "Pescadores, industria, trabajadores, transportistas y litoral.", governmentDecision: "Dimensionar infraestructura según carga, comprador, riesgo y costo total.", noamResponse: "Gemelo logístico de Ilo y pasaporte pesquero." },
+      { title: "Ilo: puerto, pesca e industria desconectados", problem: "Flujos, frío, sanidad, ambiente y conectividad requieren demanda y operación coordinadas.", affected: "Pescadores, industria, trabajadores, transportistas y litoral.", governmentDecision: "Dimensionar infraestructura según carga, comprador, riesgo y costo total.", noamResponse: "Modelo de transporte de carga de Ilo y pasaporte pesquero." },
       { title: "Equidad y resiliencia territorial", problem: "Provincias altas enfrentan distancia y baja escala, mientras sismos y clima amenazan activos críticos.", affected: "General Sánchez Cerro, comunidades, escuelas, salud y vías.", governmentDecision: "Priorizar continuidad y mantenimiento por criticidad y acceso.", noamResponse: "Atlas de servicios y PMO resiliente." }
     ],
     opportunities: [
@@ -85,14 +85,14 @@ export const departmentResearch15to25: DepartmentResearch[] = [
     interventions: [
       { title: "Gemelo hídrico Moquegua", outcome: "Administrar escasez con evidencia compartida.", deliverable: "Balance, calidad, derechos, demanda y escenarios." },
       { title: "Rastreador canon-diversificación", outcome: "Conectar renta con activos y capacidades sostenibles.", deliverable: "Cartera, operación, compras y resultados." },
-      { title: "Gemelo logístico Ilo", outcome: "Dimensionar puerto, pesca e industria con demanda real.", deliverable: "Flujos, costos, frío, activos y contingencias." }
+      { title: "Modelo de transporte de carga Ilo", outcome: "Dimensionar puerto, pesca e industria con demanda real.", deliverable: "Flujos, costos, frío, activos y contingencias." }
     ],
     evidenceGaps: ["Balance, calidad y demanda hídrica conciliados.", "Compras mineras, proveedores y resultados de activos financiados con canon.", "Carga, frío, sanidad y comprador en pesca y puerto.", "Acceso y condición de activos críticos en provincias altas."]
   },
   {
     code: "19", department: "Pasco", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 44, officialSources: "total", note: "Síntesis curada que diferencia Cerro de Pasco, valles andinos y selva central." },
-    thesis: "Pasco reúne una ciudad minera con pasivos históricos, provincias altoandinas y territorios amazónicos. Salud ambiental, agua, acceso y diversificación no pueden resolverse con una sola agenda departamental.",
+    evidenceBase: { scope: "departamental", sourceCount: 44, officialSources: "total", note: "Resumen revisado que diferencia Cerro de Pasco, valles andinos y selva central." },
+    thesis: "Pasco reúne zonas mineras, provincias altoandinas y territorios amazónicos. Los problemas de salud ambiental, agua y acceso a servicios necesitan respuestas distintas según la localidad.",
     problems: [
       { title: "Salud ambiental y decisión urbana", problem: "Exposición, remediación y futuro urbano requieren evidencia comparable y responsabilidades claras.", affected: "Niñez, hogares de Cerro de Pasco, trabajadores y comunidades mineras.", governmentDecision: "Priorizar reducción de riesgo, seguimiento sanitario y decisiones urbanas con línea base.", noamResponse: "Observatorio salud-ambiente y tablero de remediación." },
       { title: "Agua, saneamiento y residuos", problem: "Continuidad, calidad, Patarcocha y disposición de residuos muestran fallas de cadena completa.", affected: "Hogares urbanos y rurales, JASS, prestadores y ecosistemas.", governmentDecision: "Gestionar fuente-red-tratamiento-residuo con niveles de servicio y operador.", noamResponse: "Registro operativo y observatorio de agua y activos." },
@@ -113,13 +113,13 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "20", department: "Piura", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Síntesis curada con enfoque multirriesgo, productivo y de activos." },
-    thesis: "Piura enfrenta simultáneamente escasez, inundación y expansión urbana. Agua, drenaje, salud, agroexportación, Paita y Talara deben coordinarse como sistemas de continuidad y no como obras aisladas.",
+    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Resumen revisado con enfoque multirriesgo, productivo y de activos." },
+    thesis: "En Piura conviven la escasez de agua, las inundaciones y el crecimiento urbano. Conviene revisar el drenaje, los servicios de salud y la continuidad de la actividad económica en cada zona.",
     problems: [
       { title: "Agua, drenaje y expansión multirriesgo", problem: "Sequía, lluvias intensas, pérdidas y ocupación urbana exponen hogares y actividades a interrupciones recurrentes.", affected: "Piura metropolitana, Sullana, Bajo Piura, productores y servicios críticos.", governmentDecision: "Gestionar cuencas, redes, drenaje y suelo con niveles de servicio y mantenimiento.", noamResponse: "Gemelo hídrico-urbano y tablero de activos críticos." },
       { title: "Salud, nutrición y saneamiento territorial", problem: "Agua intermitente, dengue, acceso rural y nutrición se refuerzan durante emergencias.", affected: "Primera infancia, hogares periféricos, Ayabaca, Huancabamba y comunidades rurales.", governmentDecision: "Focalizar prevención, agua y acceso sanitario por riesgo y temporada.", noamResponse: "Observatorio sanitario territorial y rutas de servicio." },
       { title: "Agroexportación bajo presión hídrica", problem: "Mango, banano, uva y agricultura familiar dependen de riego, frío, sanidad y logística resiliente.", affected: "Productores, trabajadores, juntas, plantas y compradores.", governmentDecision: "Medir margen y productividad por agua, no solo volumen exportado.", noamResponse: "Tablero agrotech y estudio de cadenas y riesgos." },
-      { title: "Paita, Sechura y Talara: activos y ambiente", problem: "Puerto, pesca, energía y minería no metálica requieren integridad, trazabilidad y contingencia.", affected: "Pescadores, industria, transportistas, trabajadores y comunidades costeras.", governmentDecision: "Priorizar mantenimiento e inversión por demanda, seguridad y riesgo ambiental.", noamResponse: "Gemelo logístico y PMO regional de activos." }
+      { title: "Paita, Sechura y Talara: activos y ambiente", problem: "Puerto, pesca, energía y minería no metálica requieren integridad, trazabilidad y contingencia.", affected: "Pescadores, industria, transportistas, trabajadores y comunidades costeras.", governmentDecision: "Priorizar mantenimiento e inversión por demanda, seguridad y riesgo ambiental.", noamResponse: "Modelo de transporte de carga y PMO regional de activos." }
     ],
     opportunities: [
       { title: "Continuidad hídrica por desempeño", rationale: "Reducir pérdidas y estabilizar presión puede remunerarse con auditoría y salvaguarda social.", actors: "EPS, municipios, usuarios y proveedores.", validation: "Definir línea base, calidad, sector, costo, tarifa y ahorro persistente." },
@@ -135,8 +135,8 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "21", department: "Puno", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Síntesis curada con enfoque binacional, multilingüe y climático." },
-    thesis: "Puno necesita conectar la recuperación del Titicaca con agua rural, nutrición, cadenas altoandinas, frontera y ciudades. La respuesta debe ser binacional, multilingüe y resistente al frío.",
+    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Resumen revisado con enfoque binacional, multilingüe y climático." },
+    thesis: "En Puno, el cuidado del Titicaca se relaciona con el saneamiento y la salud de las poblaciones cercanas. Las zonas rurales también necesitan atención al agua, la nutrición, el frío y el acceso a mercados.",
     problems: [
       { title: "Titicaca: saneamiento y gobernanza", problem: "Fuentes, colectores, plantas, lodos y monitoreo binacional no siempre forman una cadena operativa.", affected: "Comunidades ribereñas, ciudades, pescadores, turismo y ecosistemas.", governmentDecision: "Gestionar por carga removida, continuidad y resultados comparables entre cuencas.", noamResponse: "Observatorio Titicaca y registro operativo de saneamiento." },
       { title: "Agua, nutrición y servicios bajo frío y distancia", problem: "Clima, lengua y dispersión condicionan agua, salud, educación y protección de la primera infancia.", affected: "Comunidades rurales, niñez, gestantes y personas que requieren atención en quechua o aimara.", governmentDecision: "Programar paquetes y redes por acceso, estación y pertinencia lingüística.", noamResponse: "Atlas de acceso climático y tablero intercultural." },
@@ -157,8 +157,8 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "22", department: "San Martín", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Síntesis curada con enfoque agroforestal, urbano-rural y de derechos." },
-    thesis: "San Martín puede crecer con cacao, café, palma, turismo y ciudades intermedias sin ampliar presión sobre el bosque. Para ello debe conectar derechos, productividad, trazabilidad, agua y logística.",
+    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Resumen revisado con enfoque agroforestal, urbano-rural y de derechos." },
+    thesis: "El café, el cacao, la palma y el turismo ofrecen actividades económicas en San Martín. Su desarrollo requiere revisar los derechos sobre la tierra, el agua, el transporte y la presión sobre el bosque.",
     problems: [
       { title: "Bosque, derechos y uso del suelo", problem: "Alertas, títulos, concesiones y expansión productiva no siempre se concilian antes de actuar.", affected: "Comunidades awajún y kichwa, productores, titulares, defensores y bosques.", governmentDecision: "Integrar derecho-alerta-campo-cierre con acceso gobernado y corrección.", noamResponse: "Observatorio bosque-tierra-producción." },
       { title: "Cadenas agroforestales con productividad desigual", problem: "Cacao, café y palma requieren calidad, poscosecha y cumplimiento sin excluir a pequeños productores.", affected: "Productores, cooperativas, trabajadores, compradores y comunidades.", governmentDecision: "Mejorar margen por parcela y trazabilidad antes que expandir superficie.", noamResponse: "Pasaporte agroforestal y tablero de desempeño." },
@@ -179,8 +179,8 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "23", department: "Tacna", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Síntesis curada con enfoque hídrico, fronterizo y de resiliencia." },
-    thesis: "Tacna debe administrar escasez hídrica, frontera, minería y agroalimentación con una sola arquitectura de datos. El crecimiento solo será sostenible si protege acuíferos y continuidad de servicios críticos.",
+    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Resumen revisado con enfoque hídrico, fronterizo y de resiliencia." },
+    thesis: "En Tacna, la escasez de agua afecta a hogares, agricultura y otras actividades económicas. Conviene revisar el uso de acuíferos, la continuidad de los servicios y las necesidades de las zonas de frontera.",
     problems: [
       { title: "Seguridad hídrica y reúso", problem: "Cuenca, acuífero, calidad, derechos y demanda no siempre se observan en un balance común.", affected: "Hogares, La Yarada-Los Palos, agricultores, minería y provincias altas.", governmentDecision: "Administrar extracción y reúso por aptitud con límites y monitoreo verificable.", noamResponse: "Gemelo hídrico Tacna y tablero de decisiones." },
       { title: "Frontera, salud y logística", problem: "Espera, documentos, contingencias y demanda de atención cruzan sistemas y autoridades.", affected: "Viajeros, comerciantes, transportistas, pacientes y operadores fronterizos.", governmentDecision: "Gestionar nivel de servicio e interoperabilidad protegiendo identidad y controles.", noamResponse: "Centro de desempeño fronterizo." },
@@ -201,8 +201,8 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "24", department: "Tumbes", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Síntesis curada con enfoque de cuenca, bioseguridad y frontera." },
-    thesis: "Tumbes debe tratar agua, drenaje, inundación y dengue como un sistema de resiliencia. Langostino, manglar, frontera y turismo solo crean valor sostenible si protegen salud y límites ecológicos.",
+    evidenceBase: { scope: "departamental", sourceCount: 45, officialSources: "total", note: "Resumen revisado con enfoque de cuenca, bioseguridad y frontera." },
+    thesis: "En Tumbes, las inundaciones, el drenaje y el agua se relacionan con riesgos para la salud, incluido el dengue. La producción de langostino, el turismo y el comercio también necesitan cuidar los manglares y el litoral.",
     problems: [
       { title: "Agua, saneamiento y drenaje", problem: "Continuidad, presión, tratamiento y defensa frente a inundación dependen de activos y operadores conectados.", affected: "Tumbes, Zarumilla, Contralmirante Villar, hogares y servicios críticos.", governmentDecision: "Gestionar por sector hidráulico y cuenca, con niveles de servicio y mantenimiento.", noamResponse: "Gemelo de agua y resiliencia y PMO de activos." },
       { title: "Inundación, dengue y continuidad", problem: "Lluvias y aniegos interrumpen salud, educación, movilidad y elevan riesgo vectorial.", affected: "Barrios expuestos, niñez, personas mayores, comercios y establecimientos.", governmentDecision: "Integrar alerta, drenaje, control vectorial y recuperación por evento.", noamResponse: "Observatorio estacional y protocolo de continuidad." },
@@ -223,8 +223,8 @@ export const departmentResearch15to25: DepartmentResearch[] = [
   },
   {
     code: "25", department: "Ucayali", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 48, officialSources: "total", note: "Síntesis curada con enfoque estacional, indígena y de bosque verificable." },
-    thesis: "Ucayali es ciudad amazónica, plataforma forestal, corredor agroindustrial y red fluvial indígena. Accesibilidad estacional, bosque, agua y puesta en servicio de activos ordenan casi todas las decisiones.",
+    evidenceBase: { scope: "departamental", sourceCount: 48, officialSources: "total", note: "Resumen revisado con enfoque estacional, indígena y de bosque verificable." },
+    thesis: "En Ucayali, las ciudades, la actividad forestal y las comunidades conectadas por ríos tienen necesidades distintas. El acceso estacional, el agua y el funcionamiento de la infraestructura son temas centrales para revisar.",
     problems: [
       { title: "Bosque, territorio y trazabilidad", problem: "Alertas, derechos, permisos, guías y compras no siempre comparten un identificador ni una respuesta coordinada.", affected: "Comunidades indígenas, defensores, productores, industria legal y bosques.", governmentDecision: "Unir alerta-derecho-campo-cierre sin exponer información sensible.", noamResponse: "Bosque verificable Ucayali con permisos diferenciados." },
       { title: "Accesibilidad estacional y servicios remotos", problem: "Carretera, río y aire cambian en tiempo, tarifa, frecuencia y confiabilidad durante el año.", affected: "Purús, Yurúa, Atalaya, Tahuanía, estudiantes, pacientes y productores.", governmentDecision: "Programar vuelos, rutas, brigadas y stock según acceso real y contingencia.", noamResponse: "Atlas de accesibilidad estacional." },

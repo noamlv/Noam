@@ -99,13 +99,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
           ))}
         </div>
 
-        {resources.length ? <div className="mt-16"><Eyebrow>Recursos abiertos</Eyebrow><Heading size="lg" className="mb-8 max-w-2xl">Revisa los datos y métodos detrás del producto.</Heading><PlatformResourceList resources={resources} products={[product]} /></div> : null}
+        {resources.length ? <div className="mt-16"><Eyebrow>Recursos abiertos</Eyebrow><Heading size="lg" className="mb-8 max-w-2xl">Datos, fuentes y metodología</Heading><PlatformResourceList resources={resources} products={[product]} /></div> : null}
 
         <div className="mt-16 grid gap-8 rounded-md border border-border bg-panel p-6 md:grid-cols-[0.8fr_1.2fr] md:p-8">
           <div>
             <Eyebrow>Uso comercial</Eyebrow>
             <Heading size="lg" className="max-w-xl">
-              De demo a sistema operativo para decisiones.
+              ¿Necesitas adaptar esta herramienta?
             </Heading>
           </div>
           <div className="grid gap-4 md:grid-cols-2">

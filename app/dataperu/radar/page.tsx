@@ -59,7 +59,7 @@ export default function DataPeruRadarPage() {
           <div className="grid gap-14 lg:grid-cols-[0.88fr_1fr] lg:items-center lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">DataPerú · Radar municipal</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[12ch] text-white">La gestión municipal, vista en contexto.</Heading>
+              <Heading as="h1" size="display" className="max-w-[12ch] text-white">Compara datos de gestión municipal</Heading>
               <p className="mt-7 max-w-xl text-base leading-8 text-white/66">Explora recursos, ejecución financiera y capacidades declaradas de gobiernos locales de todo el país. Compara territorios similares antes de formular una explicación.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="#explorar" variant="secondary" className="rounded-full border-white bg-white text-ink">Explorar el radar</Button>
@@ -96,7 +96,7 @@ export default function DataPeruRadarPage() {
             <div>
               <Scale className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Cómo leer</Eyebrow>
-              <Heading size="xl">Comparar sin confundir contexto con desempeño.</Heading>
+              <Heading size="xl">Qué puedes comparar y con qué límites</Heading>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-3">
               {[
@@ -118,7 +118,7 @@ export default function DataPeruRadarPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.58fr_1fr] md:items-end">
-            <div><Eyebrow>Distribuciones</Eyebrow><Heading size="xl">Dónde se concentra el avance financiero.</Heading></div>
+            <div><Eyebrow>Distribuciones</Eyebrow><Heading size="xl">Dónde se concentra el avance financiero</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Las barras muestran la proporción de municipalidades en cada intervalo. No miden calidad, oportunidad, avance físico ni resultados.</p>
           </div>
           <div className="mt-10 grid gap-4 lg:grid-cols-2">
@@ -131,7 +131,7 @@ export default function DataPeruRadarPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Comparación entre pares</Eyebrow><Heading size="xl">Dos universos municipales distintos.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Las medianas reducen el efecto de valores extremos. No representan metas y no reemplazan una comparación territorial más específica.</p></div>
+            <div><Eyebrow>Comparación entre pares</Eyebrow><Heading size="xl">Municipalidades provinciales y distritales</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Las medianas reducen el efecto de valores extremos. No representan metas y no reemplazan una comparación territorial más específica.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {radarSummary.peerMedians.map((peer) => (
                 <article key={peer.type} className="bg-canvas p-6 md:p-8">
@@ -156,7 +156,7 @@ export default function DataPeruRadarPage() {
       <Section className="bg-[#15211d] text-white">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Info className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Capacidades declaradas</Eyebrow><Heading size="xl" className="text-white">La infraestructura institucional también importa.</Heading><p className="mt-5 text-sm leading-7 text-white/58">RENAMU registra declaraciones municipales. La presencia reportada de un recurso o instrumento no acredita su calidad, vigencia o uso efectivo.</p></div>
+            <div><Info className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Capacidades declaradas</Eyebrow><Heading size="xl" className="text-white">Personal, herramientas y servicios municipales</Heading><p className="mt-5 text-sm leading-7 text-white/58">RENAMU registra declaraciones municipales. La presencia reportada de un recurso o instrumento no acredita su calidad, vigencia o uso efectivo.</p></div>
             <div className="divide-y divide-white/14 border-y border-white/14">
               {radarSummary.declaredCapacity.map((item) => (
                 <div key={item.label} className="grid grid-cols-[1fr_72px] items-center gap-5 py-5 sm:grid-cols-[220px_1fr_72px]">
@@ -173,7 +173,7 @@ export default function DataPeruRadarPage() {
       <Section id="explorar">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.58fr_1fr] md:items-end">
-            <div><SlidersHorizontal className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Explorador</Eyebrow><Heading size="xl">Encuentra y compara un territorio.</Heading></div>
+            <div><SlidersHorizontal className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Explorador</Eyebrow><Heading size="xl">Busca y compara municipalidades</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Filtra por departamento y tipo municipal. Después abre la ficha para revisar proyectos, capacidades, fuentes y preguntas de gestión.</p>
           </div>
           <div className="mt-10"><RadarExplorer items={radarMunicipalities} /></div>
@@ -183,7 +183,7 @@ export default function DataPeruRadarPage() {
       <Section className="border-y border-border bg-panel/55">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Fuentes y control</Eyebrow><Heading size="lg">Cobertura completa; interpretación limitada.</Heading></div>
+            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Fuentes y control</Eyebrow><Heading size="lg">Cobertura y límites de los indicadores</Heading></div>
             <div className="space-y-5 text-sm leading-7 text-ink/66">
               <p>Los 1,891 perfiles RENAMU tienen correspondencia con población INEI y presupuesto MEF. No existen ubigeos duplicados ni ejecuciones por encima del PIM dentro de la tolerancia validada.</p>
               <p><strong className="font-medium text-ink">Riesgos de lectura:</strong> la población es proyectada; RENAMU es autodeclarado; la ejecución financiera no mide calidad, avance físico o impacto; la cartera publicada conserva hasta cinco proyectos por municipalidad.</p>
@@ -203,7 +203,7 @@ export default function DataPeruRadarPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Observatorios por encargo</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Convierte datos dispersos en una rutina de decisión para tu institución.</h2></div>
+              <div><Eyebrow className="text-white/55">Observatorios por encargo</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas un tablero de seguimiento para tu institución?</h2></div>
               <Button href="/contact?interest=dataperu&from=/dataperu/radar" analyticsEvent="cta_click" analyticsTarget="dataperu-radar:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Plantear el observatorio</Button>
             </div>
           </div>

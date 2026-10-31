@@ -4,7 +4,7 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   {
     code: "04", department: "Arequipa", researchDate: "2026-07-31", confidence: "baja",
     evidenceBase: { scope: "macroregional", note: "Perfil preliminar construido con la síntesis macroregional; requiere investigación departamental equivalente al resto de perfiles." },
-    thesis: "Arequipa combina una gran metrópoli, valles agrícolas, costa pesquera, provincias altoandinas y corredores mineros. Agua, expansión urbana, riesgo sísmico y distribución territorial de la inversión deben decidirse como un solo sistema.",
+    thesis: "Arequipa reúne una gran ciudad, valles agrícolas, costa y provincias altoandinas. Esta revisión preliminar plantea preguntas sobre agua, expansión urbana, riesgos e inversión que requieren evidencia departamental adicional.",
     problems: [
       { title: "Escasez y competencia por el agua", problem: "Ciudades, agricultura, minería y ecosistemas dependen de fuentes limitadas y de infraestructura cuya continuidad y calidad no siempre se observan juntas.", affected: "Hogares periurbanos, agricultores, juntas de usuarios, provincias altas y actividades productivas.", governmentDecision: "Construir un balance hídrico por cuenca y priorizar eficiencia, mantenimiento, tratamiento y reúso según riesgo y demanda.", noamResponse: "Tablero hídrico, mapa de usuarios y activos, escenarios de asignación y protocolo de alertas." },
       { title: "Crecimiento urbano y vivienda expuesta", problem: "La expansión metropolitana presiona movilidad, suelo, drenaje y servicios en un territorio sísmico y con quebradas activables.", affected: "Familias en periferias, usuarios de transporte, comercios y equipamientos críticos.", governmentDecision: "Cruzar crecimiento, accesibilidad, riesgo y capacidad de servicio antes de habilitar suelo o priorizar obras.", noamResponse: "Visor urbano de riesgo, diagnóstico de accesibilidad y cartera de intervenciones por sector." },
@@ -26,7 +26,7 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   {
     code: "05", department: "Ayacucho", researchDate: "2026-07-31", confidence: "baja",
     evidenceBase: { scope: "macroregional", note: "Perfil preliminar construido con evidencia macroregional sobre el sur andino y el VRAEM; requiere una investigación departamental propia." },
-    thesis: "Ayacucho necesita conectar servicios rurales, nutrición, protección, economía agraria y acceso territorial. El promedio regional oculta diferencias entre Huamanga, provincias altoandinas y zonas vinculadas al VRAEM.",
+    thesis: "En Ayacucho, las necesidades de Huamanga, las provincias altoandinas y las zonas del VRAEM son diferentes. Esta revisión preliminar aborda servicios rurales, nutrición, protección y acceso a mercados; necesita más evidencia departamental.",
     problems: [
       { title: "Brechas infantiles y maternas superpuestas", problem: "Nutrición, agua, salud preventiva y protección frente a violencia se acumulan en hogares con barreras de distancia y lengua.", affected: "Niñas, niños, adolescentes, gestantes, mujeres rurales y hogares quechuahablantes.", governmentDecision: "Focalizar paquetes integrados por territorio y cohorte, con referencia efectiva y seguimiento de resultados.", noamResponse: "Mapa multidimensional, encuesta intercultural y tablero protegido de continuidad de atención." },
       { title: "Acceso rural a salud, educación y conectividad", problem: "La existencia de un establecimiento no garantiza personal, insumos, transporte, internet útil ni atención bilingüe.", affected: "Comunidades dispersas, docentes, pacientes, jóvenes y personas mayores.", governmentDecision: "Programar redes móviles y nodos resolutivos según tiempos reales de viaje y estacionalidad.", noamResponse: "Atlas de accesibilidad, inventario operativo y diseño de rutas de servicio." },
@@ -41,14 +41,14 @@ export const departmentResearch04to14: DepartmentResearch[] = [
     interventions: [
       { title: "Observatorio de primera infancia", outcome: "Conectar nutrición, agua, atención y protección por territorio.", deliverable: "Mapa de brechas, cohortes agregadas y alertas de continuidad." },
       { title: "Atlas de acceso rural", outcome: "Programar servicios según tiempo y confiabilidad de viaje.", deliverable: "Modelo estacional, nodos y rutas prioritarias." },
-      { title: "PMO municipal compartida", outcome: "Ayudar a municipios pequeños a cerrar proyectos y operar activos.", deliverable: "Cartera, semáforo, asistencia y brief ejecutivo." }
+      { title: "Equipo compartido de seguimiento de proyectos", outcome: "Ayudar a municipios pequeños a cerrar proyectos y operar activos.", deliverable: "Cartera, semáforo, asistencia y resumen ejecutivo." }
     ],
     evidenceGaps: ["Indicadores recientes por provincia, ruralidad y lengua.", "Tiempos estacionales hacia servicios resolutivos.", "Estado operativo y sostenibilidad de obras locales.", "Demanda, costos y compradores por cadena productiva."]
   },
   {
     code: "06", department: "Cajamarca", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 38, officialSources: "total", note: "Síntesis curada de investigación departamental con registro auditable de afirmaciones." },
-    thesis: "La alta ruralidad convierte agua, nutrición, conectividad, productividad y mantenimiento en un mismo desafío territorial. Cajamarca debe transformar recursos mineros y exportadores en servicios confiables e ingresos rurales duraderos.",
+    evidenceBase: { scope: "departamental", sourceCount: 38, officialSources: "total", note: "Resumen revisado de investigación departamental con registro de las fuentes consultadas." },
+    thesis: "En Cajamarca, la dispersión rural dificulta el acceso al agua, la salud y los mercados. Conviene revisar si los recursos mineros y la producción agropecuaria contribuyen a mejorar los servicios y los ingresos locales.",
     problems: [
       { title: "Agua y saneamiento que no completan el servicio", problem: "La red no asegura conexión interior, continuidad, cloración, tratamiento ni mantenimiento de sistemas pequeños.", affected: "Caseríos, periferias, JASS, mujeres cuidadoras y primera infancia.", governmentDecision: "Priorizar sistemas por riesgo sanitario y financiar operación, repuestos y asistencia, no solo infraestructura.", noamResponse: "Inventario operativo, tablero de continuidad y modelo de soporte a JASS." },
       { title: "Nutrición y educación con desigualdad territorial", problem: "Anemia, desnutrición, alfabetización y transición educativa se relacionan con acceso, ingresos y servicios del hogar.", affected: "Niñez rural, mujeres adultas, jóvenes y población dispersa.", governmentDecision: "Integrar intervenciones por cohorte y territorio con indicadores de permanencia y recuperación.", noamResponse: "Mapa de brechas, seguimiento de cohortes agregadas y evaluación de servicios." },
@@ -61,7 +61,7 @@ export const departmentResearch04to14: DepartmentResearch[] = [
       { title: "Agua rural y mantenimiento como servicio", rationale: "Cloración, repuestos y soporte técnico pueden agruparse para sistemas pequeños.", actors: "Municipios, JASS, salud, técnicos locales y proveedores.", validation: "Inventariar sistemas, fallas, capacidad de pago, modalidad contractual y supervisión." }
     ],
     interventions: [
-      { title: "Observatorio rural de servicios", outcome: "Saber qué sistemas funcionan y qué hogares siguen aislados.", deliverable: "Mapa, fichas operativas, alertas y brief provincial." },
+      { title: "Observatorio rural de servicios", outcome: "Saber qué sistemas funcionan y qué hogares siguen aislados.", deliverable: "Mapa, fichas operativas, alertas y reporte provincial." },
       { title: "Rastreador recurso-proyecto-servicio", outcome: "Vincular presupuesto y canon con activos efectivamente operativos.", deliverable: "Cartera conciliada, hitos, riesgos y costos de operación." },
       { title: "Laboratorio de cadenas rurales", outcome: "Validar oportunidades antes de financiar infraestructura productiva.", deliverable: "Estudio de mercado, costos, actores y piloto comercial." }
     ],
@@ -69,13 +69,13 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   },
   {
     code: "07", department: "Callao", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 48, officialSources: "total", note: "Síntesis curada para la Provincia Constitucional del Callao con evidencia oficial y registro cuantitativo." },
-    thesis: "Puerto y aeropuerto convierten al Callao en infraestructura nacional, pero empleo, seguridad, vivienda y ambiente se viven localmente. La decisión clave es distribuir valor y reducir externalidades con gobernanza metropolitana interoperable.",
+    evidenceBase: { scope: "departamental", sourceCount: 48, officialSources: "total", note: "Resumen revisado para la Provincia Constitucional del Callao con evidencia oficial y registro cuantitativo." },
+    thesis: "El puerto y el aeropuerto son centrales para la economía del Callao. Su actividad también genera presión sobre el tránsito, la vivienda y el ambiente. El análisis debe considerar a residentes, trabajadores y empresas.",
     problems: [
       { title: "Seguridad y economías ilegales", problem: "Violencia, extorsión y riesgos sobre carga afectan hogares, comercios, transportistas y competitividad.", affected: "Barrios chalacos, MYPE, trabajadores, transportistas, víctimas y operadores logísticos.", governmentDecision: "Integrar prevención focalizada, investigación, protección y análisis territorial sin depender solo de operativos o cámaras.", noamResponse: "Tablero protegido de incidentes, análisis de puntos críticos y evaluación de intervenciones." },
-      { title: "Congestión y externalidades logísticas", problem: "Carga, aeropuerto y tránsito local compiten por vías, generan espera, ruido, emisiones y accidentes.", affected: "Residentes de corredores, conductores, empresas, viajeros y usuarios del transporte urbano.", governmentDecision: "Gestionar citas, patios, rutas y horarios con métricas de tiempo, seguridad y emisión.", noamResponse: "Gemelo logístico, observatorio de nivel de servicio y simulación de flujos." },
-      { title: "Vivienda y servicios con bolsones de riesgo", problem: "El promedio urbano alto oculta sectores con agua incompleta, tenencia insegura, materiales ligeros y exposición sísmica o de tsunami.", affected: "Ventanilla, Mi Perú, periferias, personas mayores y hogares con movilidad reducida.", governmentDecision: "Cruzar tenencia, estructura, servicios y evacuación para diferenciar refuerzo, mejora o reasentamiento.", noamResponse: "Atlas de vivienda y continuidad, rutas de evacuación y cartera focalizada." },
-      { title: "Externalidades ambientales poco conciliadas", problem: "Ruido, aire, litoral, residuos y aguas requieren datos continuos y atribución responsable entre múltiples autoridades.", affected: "Pescadores, barrios portuarios y aeroportuarios, bañistas, industria y ecosistemas costeros.", governmentDecision: "Acordar indicadores, responsabilidades, cadena de custodia y protocolos de respuesta.", noamResponse: "Observatorio ambiental interoperable y tablero de compromisos." }
+      { title: "Congestión y impactos del transporte de carga", problem: "Carga, aeropuerto y tránsito local compiten por vías, generan espera, ruido, emisiones y accidentes.", affected: "Residentes de corredores, conductores, empresas, viajeros y usuarios del transporte urbano.", governmentDecision: "Gestionar citas, patios, rutas y horarios con métricas de tiempo, seguridad y emisión.", noamResponse: "Modelo de transporte de carga, observatorio de nivel de servicio y simulación de flujos." },
+      { title: "Vivienda y servicios con zonas de riesgo", problem: "El promedio urbano alto oculta sectores con agua incompleta, tenencia insegura, materiales ligeros y exposición sísmica o de tsunami.", affected: "Ventanilla, Mi Perú, periferias, personas mayores y hogares con movilidad reducida.", governmentDecision: "Cruzar tenencia, estructura, servicios y evacuación para diferenciar refuerzo, mejora o reasentamiento.", noamResponse: "Atlas de vivienda y continuidad, rutas de evacuación y cartera focalizada." },
+      { title: "Impactos ambientales que requieren seguimiento conjunto", problem: "Ruido, aire, litoral, residuos y aguas requieren datos continuos y atribución responsable entre múltiples autoridades.", affected: "Pescadores, barrios portuarios y aeroportuarios, bañistas, industria y ecosistemas costeros.", governmentDecision: "Acordar indicadores, responsabilidades, cadena de custodia y protocolos de respuesta.", noamResponse: "Observatorio que reúne datos de distintas entidades y tablero de compromisos." }
     ],
     opportunities: [
       { title: "Comunidad portuaria digital", rationale: "Citas, documentos y tiempos compartidos pueden reducir viajes vacíos y colas.", actors: "APN, terminales, aduanas, depósitos, transportistas y dueños de carga.", validation: "Medir espera base, interoperabilidad, reglas de competencia, ciberseguridad y retorno por actor." },
@@ -83,7 +83,7 @@ export const departmentResearch04to14: DepartmentResearch[] = [
       { title: "Formación dual para logística e industria", rationale: "Prácticas pagadas y módulos diseñados con empleadores pueden conectar jóvenes con demanda real.", actors: "Empresas, institutos, gobiernos, jóvenes de Ventanilla, Mi Perú y Callao.", validation: "Verificar vacantes, salarios, barreras, retención y aportes empresariales." }
     ],
     interventions: [
-      { title: "Gemelo logístico Callao", outcome: "Reducir variabilidad y externalidades en corredores críticos.", deliverable: "Modelo de flujos, tablero de espera y escenarios operativos." },
+      { title: "Modelo de transporte de carga Callao", outcome: "Reducir variabilidad y externalidades en corredores críticos.", deliverable: "Modelo de flujos, tablero de espera y escenarios operativos." },
       { title: "Observatorio de seguridad económica", outcome: "Orientar prevención y control con evidencia protegida.", deliverable: "Mapa agregado, taxonomía, alertas y evaluación." },
       { title: "Atlas de continuidad urbana", outcome: "Priorizar vivienda, servicios y evacuación por riesgo real.", deliverable: "Visor, perfiles barriales y cartera de medidas." }
     ],
@@ -91,13 +91,13 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   },
   {
     code: "08", department: "Cusco", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 39, officialSources: "total", note: "Síntesis curada de investigación departamental oficial con lectura por espacios funcionales." },
-    thesis: "Cusco es metrópoli patrimonial, Valle Sagrado, provincias altoandinas, Amazonía y corredores extractivos. Turismo, agua, canon y producción deben gobernarse sin ocultar diferencias culturales ni territoriales.",
+    evidenceBase: { scope: "departamental", sourceCount: 39, officialSources: "total", note: "Resumen revisado de investigación departamental oficial con análisis de las diferencias entre zonas." },
+    thesis: "En Cusco, el turismo y la actividad extractiva conviven con economías rurales andinas y amazónicas. El agua, el transporte y la inversión necesitan revisarse según las condiciones de cada provincia y comunidad.",
     problems: [
       { title: "Agua, saneamiento y nutrición sin continuidad", problem: "Cobertura nominal no garantiza agua diaria, cloración, tratamiento ni resultados nutricionales.", affected: "Hogares rurales, JASS, primera infancia, periferias y comunidades amazónicas.", governmentDecision: "Priorizar por riesgo sanitario, operación y acceso, integrando agua, salud y nutrición.", noamResponse: "Monitor de equidad territorial y fichas operativas de sistemas." },
       { title: "Turismo concentrado y patrimonio bajo presión", problem: "Flujos y gasto se concentran mientras suelo, residuos, movilidad y conservación soportan costos crecientes.", affected: "Residentes, comunidades, trabajadores, operadores y patrimonio del Centro Histórico y Valle Sagrado.", governmentDecision: "Gestionar capacidad, permanencia, compra local y distribución del visitante por circuito.", noamResponse: "Observatorio de distribución del valor y presión patrimonial." },
       { title: "Rentas extractivas que no siempre crean activos confiables", problem: "Canon, minería y gas pueden financiar obras sin asegurar secuencia, mantenimiento o servicio final.", affected: "Municipios, comunidades, proveedores y usuarios de infraestructura.", governmentDecision: "Rastrear cada recurso hasta el activo operativo, su resultado y costo de sostenimiento.", noamResponse: "Rastreador canon-proyecto-servicio y sala de inversiones." },
-      { title: "Producción rural expuesta a clima y logística", problem: "Café, cacao, agricultura andina y ganadería pierden valor por agua, calidad, frío, caminos y trazabilidad.", affected: "Productores, cooperativas, comunidades y negocios de La Convención y provincias altas.", governmentDecision: "Priorizar cadenas y corredores con demanda comprobada y adaptación climática.", noamResponse: "Atlas agro-bioeconómico, costos logísticos y pilotos de poscosecha." }
+      { title: "Producción rural expuesta a clima y logística", problem: "Café, cacao, agricultura andina y ganadería pierden valor por agua, calidad, frío, caminos y trazabilidad.", affected: "Productores, cooperativas, comunidades y negocios de La Convención y provincias altas.", governmentDecision: "Priorizar cadenas y corredores con demanda comprobada y adaptación climática.", noamResponse: "Mapa de producción agraria y recursos naturales, costos logísticos y pilotos de poscosecha." }
     ],
     opportunities: [
       { title: "Destinos turísticos distribuidos", rationale: "Circuitos con gobernanza, saneamiento y compras locales pueden ampliar permanencia sin saturar nodos centrales.", actors: "Comunidades, operadores, municipios, cultura, alojamientos y transportistas.", validation: "Medir capacidad, gasto, permanencia, aceptación comunitaria y presión sobre servicios." },
@@ -113,8 +113,8 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   },
   {
     code: "09", department: "Huancavelica", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 47, officialSources: "total", note: "Síntesis curada con evidencia oficial y énfasis rural, intercultural y operativo." },
-    thesis: "La dispersión, altura y mayoría quechuahablante elevan el costo de cada servicio. Huancavelica necesita redes rurales que funcionen, mantenimiento compartido y productividad adaptada al clima, no soluciones uniformes.",
+    evidenceBase: { scope: "departamental", sourceCount: 47, officialSources: "total", note: "Resumen revisado con evidencia oficial y énfasis rural, intercultural y operativo." },
+    thesis: "En Huancavelica, la altura, las distancias y las barreras de idioma dificultan el acceso a servicios. El mantenimiento de infraestructura y la atención rural necesitan adaptarse a cada localidad.",
     problems: [
       { title: "Agua, saneamiento y nutrición infantil", problem: "La conexión no asegura continuidad, cloración ni cadena sanitaria completa, y las brechas se acumulan en la primera infancia.", affected: "Niñas y niños, hogares rurales, JASS y mujeres cuidadoras.", governmentDecision: "Inventariar sistemas y focalizar paquetes de agua, salud y nutrición por riesgo.", noamResponse: "Registro operativo, mapa sanitario y seguimiento agregado de cohortes." },
       { title: "Servicios rurales sin accesibilidad ni pertinencia suficientes", problem: "Salud, educación e internet pierden efectividad cuando faltan transporte, energía, personal o atención quechua.", affected: "Comunidades dispersas, estudiantes, pacientes y personas mayores.", governmentDecision: "Diseñar nodos y rutas móviles según tiempos estacionales y capacidad resolutiva.", noamResponse: "Atlas de acceso, inventario operativo y programación de redes móviles." },
@@ -135,8 +135,8 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   },
   {
     code: "10", department: "Huánuco", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 49, officialSources: "total", note: "Síntesis curada con evidencia oficial, registro cuantitativo y comparación funcional." },
-    thesis: "Huánuco conecta Andes y Amazonía con enormes diferencias de acceso. Agua, servicios rurales, bosque, agricultura y logística requieren una lectura por corredores, no una política departamental uniforme.",
+    evidenceBase: { scope: "departamental", sourceCount: 49, officialSources: "total", note: "Resumen revisado con evidencia oficial, registro cuantitativo y comparación entre zonas." },
+    thesis: "Huánuco conecta zonas andinas y amazónicas con condiciones de acceso distintas. Conviene estudiar por separado las necesidades de agua, servicios rurales, agricultura y transporte.",
     problems: [
       { title: "Agua, salud y nutrición en hogares dispersos", problem: "Continuidad, calidad, atención y nutrición se deterioran cuando sistemas y redes operan de forma aislada.", affected: "Primera infancia, hogares rurales, JASS y comunidades amazónicas.", governmentDecision: "Focalizar territorios donde coinciden riesgo sanitario, baja accesibilidad y débil operación.", noamResponse: "Mapa multidimensional y observatorio de agua y primera infancia." },
       { title: "Red rural de servicios incompleta", problem: "Fibra, establecimientos y escuelas no garantizan energía, equipos, personal, contenido ni referencia.", affected: "Estudiantes, pacientes, docentes, personal de salud y localidades alejadas.", governmentDecision: "Definir nodos resolutivos y niveles de servicio por corredor y estación.", noamResponse: "Atlas de accesibilidad y tablero de disponibilidad operativa." },
@@ -157,13 +157,13 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   },
   {
     code: "11", department: "Ica", researchDate: "2026-07-31", confidence: "alta",
-    evidenceBase: { scope: "departamental", sourceCount: 42, officialSources: "total", note: "Síntesis curada con evidencia oficial y énfasis en seguridad hídrica y continuidad territorial." },
-    thesis: "El dinamismo agroexportador, industrial y turístico de Ica depende de un sistema hídrico tensionado y de ciudades expuestas a sismos e inundaciones. Crecer requiere medir consumo total, continuidad y distribución del valor.",
+    evidenceBase: { scope: "departamental", sourceCount: 42, officialSources: "total", note: "Resumen revisado con evidencia oficial y énfasis en seguridad hídrica y continuidad territorial." },
+    thesis: "En Ica, la agroexportación, la industria y el turismo dependen del agua y de ciudades expuestas a sismos e inundaciones. Hace falta revisar el consumo, la continuidad de los servicios y los riesgos de cada zona.",
     problems: [
       { title: "Seguridad hídrica y saneamiento", problem: "Acuíferos, redes, agricultura e industria compiten por agua mientras faltan datos conciliados de extracción, pérdidas, calidad y reúso.", affected: "Hogares, productores, agroindustria, juntas, EPS y ecosistemas.", governmentDecision: "Administrar balance y productividad hídrica con límites, calidad y protección de usuarios.", noamResponse: "Observatorio hídrico, balance por zona y alertas de continuidad." },
       { title: "Vivienda y continuidad frente a desastres", problem: "Expansión urbana, sismos, quebradas y servicios críticos frágiles elevan el riesgo de interrupción.", affected: "Periferias de Ica y Chincha, Nasca, Palpa, Marcona y usuarios de equipamientos.", governmentDecision: "Priorizar refuerzo, rutas y redundancia según exposición y criticidad.", noamResponse: "Atlas de vivienda y continuidad con cartera de mitigación." },
       { title: "Agroindustria con brechas laborales y de valor", problem: "Exportar más no asegura trabajo decente, inclusión de pequeños productores ni menor presión hídrica.", affected: "Trabajadores, mujeres, pequeños productores, empresas y ciudades receptoras.", governmentDecision: "Medir productividad por agua, empleo, merma y margen distribuido.", noamResponse: "Tablero de desempeño productivo y estudio de proveedores y trabajo." },
-      { title: "Logística e industria sin lectura integrada", problem: "Pisco, Marcona, litoral y corredores productivos requieren coordinar flujos, ambiente, frío y mantenimiento.", affected: "Pesca, minería, industria, transportistas, puertos y comunidades costeras.", governmentDecision: "Dimensionar inversiones con demanda y riesgos reales por corredor.", noamResponse: "Gemelo logístico y observatorio de activos y externalidades." }
+      { title: "Logística e industria sin lectura integrada", problem: "Pisco, Marcona, litoral y corredores productivos requieren coordinar flujos, ambiente, frío y mantenimiento.", affected: "Pesca, minería, industria, transportistas, puertos y comunidades costeras.", governmentDecision: "Dimensionar inversiones con demanda y riesgos reales por corredor.", noamResponse: "Modelo de transporte de carga y observatorio de activos y externalidades." }
     ],
     opportunities: [
       { title: "Productividad hídrica verificable", rationale: "Auditoría, sensores y operación pueden reducir consumo unitario si también disminuye extracción total.", actors: "Agroindustria, juntas, EPS, minería y proveedores.", validation: "Establecer línea base, balance, efecto rebote, costo y ahorro persistente." },
@@ -173,14 +173,14 @@ export const departmentResearch04to14: DepartmentResearch[] = [
     interventions: [
       { title: "Observatorio hídrico Ica", outcome: "Tomar decisiones con balance, continuidad y calidad comunes.", deliverable: "Tablero, zonas, activos, usuarios y escenarios." },
       { title: "Atlas de continuidad sísmica", outcome: "Reducir interrupción de vivienda y servicios críticos.", deliverable: "Visor de exposición, criticidad y medidas." },
-      { title: "Gemelo logístico productivo", outcome: "Dimensionar frío, rutas y activos con demanda verificable.", deliverable: "Modelo de flujos, costos y contingencias." }
+      { title: "Modelo de transporte de carga productivo", outcome: "Dimensionar frío, rutas y activos con demanda verificable.", deliverable: "Modelo de flujos, costos y contingencias." }
     ],
     evidenceGaps: ["Extracción, recarga, pérdidas y calidad por zona hídrica.", "Condición estructural y continuidad de activos críticos.", "Empleo, margen y acceso de pequeños productores por cadena.", "Flujos, frío y externalidades por corredor productivo."]
   },
   {
     code: "12", department: "Junín", researchDate: "2026-07-31", confidence: "media",
-    evidenceBase: { scope: "departamental", sourceCount: 40, officialSources: "total", note: "Síntesis curada con evidencia oficial; algunas relaciones causales requieren validación territorial adicional." },
-    thesis: "Junín articula Huancayo, el Mantaro, corredores minero-industriales y la selva central. Salud ambiental, conectividad y valor agroindustrial deben gestionarse entre sistemas territoriales muy distintos.",
+    evidenceBase: { scope: "departamental", sourceCount: 40, officialSources: "total", note: "Resumen revisado con evidencia oficial; algunas relaciones causales requieren validación territorial adicional." },
+    thesis: "Huancayo, el valle del Mantaro, las zonas mineras y la selva central tienen necesidades diferentes. En Junín conviene revisar la salud ambiental, el transporte y las dificultades para producir y vender.",
     problems: [
       { title: "Salud ambiental y remediación en La Oroya-Mantaro", problem: "Pasivos, emisiones y agua requieren líneas base comparables, cadena de custodia y seguimiento de salud y remediación.", affected: "Niñez, hogares, trabajadores, agricultores, ciudades y ecosistemas del corredor.", governmentDecision: "Priorizar reducción de exposición y cumplimiento verificable, no solo actividad de remediación.", noamResponse: "Observatorio ambiental-sanitario y tablero de hitos de remediación." },
       { title: "Servicios y conectividad fuera de Huancayo", problem: "Distancia, vías, clima y capacidad operativa limitan acceso efectivo en provincias andinas y amazónicas.", affected: "Comunidades rurales e indígenas, pacientes, estudiantes y productores.", governmentDecision: "Diseñar redes multimodales de servicios según tiempo y confiabilidad.", noamResponse: "Atlas de accesibilidad y programación de nodos y rutas." },
@@ -201,8 +201,8 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   },
   {
     code: "13", department: "La Libertad", researchDate: "2026-07-31", confidence: "media",
-    evidenceBase: { scope: "departamental", sourceCount: 42, officialSources: "total", note: "Síntesis curada con evidencia oficial y lectura diferenciada entre costa, Pataz y sierra." },
-    thesis: "La Libertad combina agroexportación y servicios costeros con minería, sierra rural y una crisis de seguridad económica. Agua, legalidad, movilidad y mantenimiento deben resolverse por corredores.",
+    evidenceBase: { scope: "departamental", sourceCount: 42, officialSources: "total", note: "Resumen revisado con evidencia oficial y lectura diferenciada entre costa, Pataz y sierra." },
+    thesis: "La Libertad combina agroexportación y servicios costeros con minería y agricultura en la sierra. La seguridad, el agua y el transporte afectan de manera distinta a hogares, trabajadores y empresas.",
     problems: [
       { title: "Extorsión y violencia sobre la economía", problem: "Crimen organizado afecta transporte, comercio, construcción, minería y vida cotidiana, elevando costos y cerrando negocios.", affected: "Familias, MYPE, trabajadores, transportistas, escuelas y empresas.", governmentDecision: "Integrar prevención, investigación patrimonial, protección y análisis de redes con evaluación independiente.", noamResponse: "Observatorio protegido de seguridad económica y mapa de intervención." },
       { title: "Agua y agroindustria con distribución desigual", problem: "Grandes sistemas productivos conviven con continuidad urbana y rural incompleta y competencia por el recurso.", affected: "Hogares, productores pequeños, agroindustria, juntas y valles.", governmentDecision: "Medir balance, pérdidas, calidad y distribución de beneficios por territorio.", noamResponse: "Tablero hídrico-productivo y evaluación de cadenas." },
@@ -223,8 +223,8 @@ export const departmentResearch04to14: DepartmentResearch[] = [
   },
   {
     code: "14", department: "Lambayeque", researchDate: "2026-07-31", confidence: "media",
-    evidenceBase: { scope: "departamental", sourceCount: 40, officialSources: "total", note: "Síntesis curada con evidencia oficial y énfasis en continuidad urbana, agua y cadenas regionales." },
-    thesis: "Lambayeque necesita gobernar Chiclayo, Olmos, valles rurales y patrimonio como sistemas conectados. Drenaje, saneamiento, comercio y agroindustria comparten problemas de operación, informalidad y distribución de valor.",
+    evidenceBase: { scope: "departamental", sourceCount: 40, officialSources: "total", note: "Resumen revisado con evidencia oficial y énfasis en continuidad urbana, agua y cadenas regionales." },
+    thesis: "En Lambayeque, Chiclayo, Olmos y los valles rurales comparten necesidades de agua, saneamiento y transporte. El comercio, la agroindustria y el turismo también dependen del funcionamiento de estos servicios.",
     problems: [
       { title: "Chiclayo: drenaje, saneamiento y residuos", problem: "Aniegos, redes, residuos y obras se agravan cuando mantenimiento y coordinación metropolitana fallan.", affected: "Hogares, comercios, transportistas, mercados y servicios críticos.", governmentDecision: "Gestionar por subcuenca y nivel de servicio, con activos, mantenimiento y responsables comunes.", noamResponse: "Gemelo de continuidad urbana y PMO metropolitana." },
       { title: "Agua y agroindustria en Olmos y valles", problem: "Expansión productiva y demanda urbana requieren balance, eficiencia y distribución transparente del recurso.", affected: "Productores, agroindustria, trabajadores, juntas y localidades rurales.", governmentDecision: "Medir agua, productividad, empleo y beneficio territorial antes de ampliar activos.", noamResponse: "Tablero hídrico-productivo y evaluación de impacto distributivo." },

@@ -42,7 +42,7 @@ export default function SectorTopicsPage() {
           <div className="grid gap-14 lg:grid-cols-[1fr_0.55fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">DataPerú · Lecturas sectoriales</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[13ch] text-white">Temas que una gestión necesita ver.</Heading>
+              <Heading as="h1" size="display" className="max-w-[13ch] text-white">Datos municipales por tema</Heading>
               <p className="mt-7 max-w-2xl text-base leading-8 text-white/66">Una entrada abierta para identificar preguntas, explorar capacidades declaradas y decidir dónde hace falta un diagnóstico más profundo.</p>
             </div>
             <div className="border-l border-white/15 pl-6">
@@ -59,7 +59,7 @@ export default function SectorTopicsPage() {
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Explorar por tema</Eyebrow>
-              <Heading size="xl">Del dato a una pregunta de gestión.</Heading>
+              <Heading size="xl">Elige el tema que quieres consultar</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Estas vistas no califican municipalidades ni sustituyen un estudio. Organizan señales comparables para orientar una conversación.</p>
             </div>
             <div>
@@ -135,7 +135,7 @@ export default function SectorTopicsPage() {
             <div>
               <Database className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Cómo leerlo</Eyebrow>
-              <Heading size="lg">Una línea de base, no un veredicto.</Heading>
+              <Heading size="lg">Qué puedes saber con estos indicadores</Heading>
             </div>
             <div className="grid gap-8 text-sm leading-7 text-ink/68 sm:grid-cols-2">
               <div><p className="font-medium text-ink">Qué muestra</p><p className="mt-2">Presencia de instrumentos, capacidades y acciones declaradas por cada municipalidad, según la pregunta y periodo de RENAMU.</p></div>
@@ -150,7 +150,7 @@ export default function SectorTopicsPage() {
       <Section>
         <Container>
           <div className="grid gap-8 rounded-lg bg-accent px-7 py-10 text-accent-ink md:grid-cols-[1fr_auto] md:items-end md:px-12 md:py-14">
-            <div><Eyebrow className="text-[#d9a48f]">De lectura a decisión</Eyebrow><Heading size="xl" className="max-w-[18ch] text-white">Convirtamos una señal en una agenda de trabajo.</Heading></div>
+            <div><Eyebrow className="text-[#d9a48f]">De lectura a decisión</Eyebrow><Heading size="xl" className="max-w-[18ch] text-white">¿Necesitas estudiar un servicio municipal?</Heading></div>
             <Button href="/contact?interest=diagnostico-territorial" variant="secondary" className="rounded-full border-white bg-white text-ink">Conversar sobre una institución</Button>
           </div>
         </Container>

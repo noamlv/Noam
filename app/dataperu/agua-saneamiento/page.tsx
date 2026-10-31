@@ -62,7 +62,7 @@ export default async function WaterSanitationPage({ searchParams }: { searchPara
           <div className="mt-14 grid gap-12 lg:grid-cols-[1fr_0.52fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">Censos Nacionales 2025 · INEI</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[13ch] text-white">Agua y saneamiento, distrito por distrito.</Heading>
+              <Heading as="h1" size="display" className="max-w-[13ch] text-white">Agua y saneamiento, distrito por distrito</Heading>
               <p className="mt-7 max-w-2xl text-base leading-8 text-white/66">Una lectura nacional para localizar brechas de conexión a red pública, comparar territorios y formular mejores preguntas antes de diseñar una intervención.</p>
               <a href="/dataperu/agua-saneamiento/data.csv" data-analytics-event="resource_download" data-analytics-target="water-sanitation:census-2025-csv" className="mt-7 inline-flex items-center gap-2 text-sm font-medium text-white/72 transition-colors hover:text-white"><FileDown className="h-4 w-4" aria-hidden /> Descargar datos CSV</a>
             </div>
@@ -99,7 +99,7 @@ export default async function WaterSanitationPage({ searchParams }: { searchPara
           <div className="grid gap-8 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Explorador nacional</Eyebrow>
-              <Heading size="xl">Busca un territorio y dimensiona su brecha.</Heading>
+              <Heading size="xl">Consulta los datos de tu distrito</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Filtra por departamento, cobertura o magnitud absoluta. Las tasas de cada selección se recalculan con viviendas, no con promedios simples de distritos.</p>
             </div>
             <WaterSanitationExplorer items={items} initialQuery={q?.slice(0, 100)} />
@@ -113,7 +113,7 @@ export default async function WaterSanitationPage({ searchParams }: { searchPara
             <div>
               <ShieldCheck className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Cómo interpretar</Eyebrow>
-              <Heading size="lg">Una conexión no describe todo el servicio.</Heading>
+              <Heading size="lg">Qué puedes saber con estos datos</Heading>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {[
@@ -138,7 +138,7 @@ export default async function WaterSanitationPage({ searchParams }: { searchPara
             <div>
               <Database className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Fuente y método</Eyebrow>
-              <Heading size="lg">Trazabilidad antes que apariencia.</Heading>
+              <Heading size="lg">Fuentes, fechas y metodología</Heading>
             </div>
             <div className="divide-y divide-border border-y border-border">
               <div className="grid gap-3 py-5 sm:grid-cols-[150px_1fr]"><p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">Fuente</p><p className="text-sm leading-7 text-ink/68">{waterSanitationSource.publisher}. {waterSanitationSource.name}.</p></div>
@@ -155,7 +155,7 @@ export default async function WaterSanitationPage({ searchParams }: { searchPara
           <div className="grid gap-8 rounded-lg bg-accent px-7 py-10 text-accent-ink md:grid-cols-[1fr_auto] md:items-end md:px-12 md:py-14">
             <div>
               <Eyebrow className="text-[#d9a48f]">De cobertura a gestión</Eyebrow>
-              <Heading size="xl" className="max-w-[18ch] text-white">Convierte esta señal en un diagnóstico de servicio.</Heading>
+              <Heading size="xl" className="max-w-[18ch] text-white">¿Necesitas estudiar el servicio de agua?</Heading>
               <div className="mt-6 flex flex-wrap gap-5 text-xs text-white/62">
                 <NextLink href="/analisis-datos-agua-saneamiento" className="inline-flex items-center gap-2 hover:text-white">Ver capacidad NOAM <ArrowRight className="h-3.5 w-3.5" /></NextLink>
                 <NextLink href="/toolkits/tdr-analisis-agua-saneamiento" className="inline-flex items-center gap-2 hover:text-white">Plantear una solución <ArrowRight className="h-3.5 w-3.5" /></NextLink>

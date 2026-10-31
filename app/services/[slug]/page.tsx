@@ -74,7 +74,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </ul>
             </div>
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">Entregables configurables</p>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted">Informes y herramientas que podemos preparar</p>
               <div className="mt-5 flex flex-wrap gap-2">{service.deliverables.map((item) => <Badge key={item}>{item}</Badge>)}</div>
             </div>
           </div>
@@ -93,7 +93,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <Section className="border-y border-border bg-panel/45">
           <Container>
             <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-              <div><Eyebrow>Experiencia relacionada</Eyebrow><Heading size="xl">Este enfoque ya se aplicó en encargos institucionales.</Heading></div>
+              <div><Eyebrow>Experiencia relacionada</Eyebrow><Heading size="xl">Este enfoque ya se aplicó en encargos institucionales</Heading></div>
               <p className="max-w-2xl text-sm leading-7 text-ink/68 md:justify-self-end">Casos públicos de alcance limitado: explican la arquitectura del trabajo sin divulgar entregables ni información reservada del cliente.</p>
             </div>
             <div className={`mt-12 grid gap-4 ${relatedCases.length > 1 ? "lg:grid-cols-2" : "lg:max-w-[760px]"}`}>

@@ -107,7 +107,7 @@ export default function BaselineEvaluationPage() {
       <Section id="opciones">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Elegir bien</Eyebrow><Heading size="xl">Qué puede responder cada evaluación.</Heading></div>
+            <div><Eyebrow>Elegir bien</Eyebrow><Heading size="xl">Qué puede responder cada evaluación</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">No son etapas obligatorias ni etiquetas intercambiables. La opción adecuada depende de la decisión, el momento de la intervención y la evidencia disponible.</p>
           </div>
 
@@ -126,7 +126,7 @@ export default function BaselineEvaluationPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Evaluabilidad</Eyebrow><Heading size="xl">Qué datos necesitas para evaluar.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Si faltan definiciones o datos, el primer producto responsable es cerrar esos vacíos, no prometer una estimación causal.</p></div>
+            <div><Eyebrow>Evaluabilidad</Eyebrow><Heading size="xl">Qué datos necesitas para evaluar</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Si faltan definiciones o datos, el primer producto responsable es cerrar esos vacíos, no prometer una estimación causal.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {readinessChecks.map((check, index) => (
                 <div key={check} className="min-h-[150px] bg-canvas p-6 md:p-8">
@@ -142,7 +142,7 @@ export default function BaselineEvaluationPage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Guías oficiales de seguimiento y evaluación.</Heading></div>
+            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Guías oficiales de seguimiento y evaluación</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>CEPLAN ofrece guías para seguimiento, evaluación e indicadores de políticas y planes. El MEF distingue evaluaciones de diseño, proceso e impacto dentro del presupuesto público. Para una contratación concreta, el área usuaria debe confirmar además la normativa y documentación vigente con sus órganos competentes.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-rust">
@@ -158,7 +158,7 @@ export default function BaselineEvaluationPage() {
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Guías y ejemplos de evaluación.</Heading></div>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Guías y ejemplos de evaluación</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Lee las guías, descarga la plantilla o consulta un caso real de evaluación. Los ejemplos indican qué información pueden mostrar.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-black/10 bg-black/10 md:grid-cols-2 lg:grid-cols-3">
@@ -175,7 +175,7 @@ export default function BaselineEvaluationPage() {
       </Section>
 
       <Section>
-        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de definir el alcance.</Heading><Accordion items={faq} className="mt-8" /></Container>
+        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de definir el alcance</Heading><Accordion items={faq} className="mt-8" /></Container>
       </Section>
 
       <Section className="pt-0">

@@ -50,7 +50,7 @@ export const deliverableSamples: DeliverableSample[] = [
       { title: "Línea de base", purpose: "Ordenar magnitud, distribución y evolución con fuentes trazables.", output: "Perfil territorial y nota de calidad" },
       { title: "Explicación", purpose: "Contrastar causas, actores, procesos y restricciones institucionales.", output: "Mapa de problemas e hipótesis" },
       { title: "Priorización", purpose: "Aplicar criterios explícitos y revisar sensibilidad de la decisión.", output: "Matriz multicriterio" },
-      { title: "Activación", purpose: "Asignar responsables, hitos, evidencia y primeras acciones.", output: "Agenda y brief ejecutivo" }
+      { title: "Activación", purpose: "Asignar responsables, hitos, evidencia y primeras acciones.", output: "Agenda y resumen ejecutivo" }
     ],
     preview: { title: "Matriz de prioridades · Estructura demostrativa", columns: ["Pregunta", "Evidencia mínima", "Decisión"], rows: [["Brecha territorial", "Indicadores + cobertura", "Focalizar"], ["Causa operativa", "Proceso + entrevistas", "Corregir"], ["Cartera disponible", "Madurez + costo", "Secuenciar"], ["Capacidad institucional", "Roles + recursos", "Asignar"]] },
     timeline: [
@@ -293,7 +293,7 @@ export const deliverableSamples: DeliverableSample[] = [
       "Teoría de cambio y matriz de evaluación",
       "Línea de base y fichas de indicadores",
       "Base analítica, código y nota metodológica",
-      "Informe, brief ejecutivo y agenda de aprendizaje"
+      "Informe, resumen ejecutivo y agenda de aprendizaje"
     ],
     related: [
       { type: "Insight", label: "Cómo diseñar una línea de base", href: "/insights/como-disenar-linea-base-programa-publico" },

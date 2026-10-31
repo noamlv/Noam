@@ -53,7 +53,7 @@ export default async function PublicSectorPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-center lg:gap-16">
             <div>
               <Eyebrow className="text-rust">Consultoría para el sector público</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch]">Análisis de datos para gestionar cada territorio.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch]">Estudios y datos para la gestión pública</Heading>
               <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">Ayudamos a municipalidades distritales y provinciales, gobiernos regionales y entidades nacionales a comprender problemas, priorizar recursos, monitorear ejecución y evaluar resultados.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="/contact?interest=sector-publico" className="rounded-full">Conversar sobre una necesidad</Button>
@@ -77,7 +77,7 @@ export default async function PublicSectorPage() {
           <div className="grid gap-10 lg:grid-cols-[0.5fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Escalas de gobierno</Eyebrow>
-              <Heading size="xl">Un punto de partida adecuado a cada institución.</Heading>
+              <Heading size="xl">Servicios según el tipo de entidad</Heading>
             </div>
             <div className="divide-y divide-border border-y border-border">
               {publicInstitutionTypes.map((client, index) => (
@@ -101,7 +101,7 @@ export default async function PublicSectorPage() {
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Ámbitos de gestión</Eyebrow>
-              <Heading size="xl">Rutas para una necesidad pública.</Heading>
+              <Heading size="xl">¿Qué necesita resolver tu equipo?</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Busca por ámbito de gestión. Cada ruta reúne método, evidencia, productos y una forma concreta de comenzar.</p>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
@@ -123,7 +123,7 @@ export default async function PublicSectorPage() {
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Soluciones prioritarias</Eyebrow>
-              <Heading size="xl">Puntos de partida para gestionar mejor.</Heading>
+              <Heading size="xl">Estudios y herramientas disponibles</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Cada solución parte de una decisión, define entregables configurables y deja capacidades que el equipo puede sostener.</p>
               <Button href="/solutions" variant="ghost" className="mt-6 gap-2">Ver todas las soluciones <ArrowRight className="h-4 w-4" /></Button>
             </div>
@@ -137,7 +137,7 @@ export default async function PublicSectorPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Experiencia pública</Eyebrow><Heading size="xl">Tres instituciones. Tres tipos de decisión.</Heading></div>
+            <div><Eyebrow>Experiencia pública</Eyebrow><Heading size="xl">Consultorías realizadas</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/68 md:justify-self-end">Priorización de políticas, arquitectura de información y evaluación regional muestran cómo adaptamos el método al problema y a la institución.</p>
           </div>
           <div className="mt-12 grid gap-4 lg:grid-cols-3">
@@ -149,7 +149,7 @@ export default async function PublicSectorPage() {
       <Section className="bg-[#ded9cc]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.44fr_1fr] lg:gap-20">
-            <div><Eyebrow>Demostración abierta</Eyebrow><Heading size="xl">Datos públicos antes de pedir una reunión.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">DataPerú permite evaluar nuestra forma de integrar, documentar y presentar evidencia territorial.</p><Button href="/dataperu/municipios" variant="ghost" className="mt-7 gap-2">Explorar perfiles <ArrowRight className="h-4 w-4" /></Button></div>
+            <div><Eyebrow>Demostración abierta</Eyebrow><Heading size="xl">Explora los datos disponibles</Heading><p className="mt-5 text-sm leading-7 text-ink/65">DataPerú permite evaluar nuestra forma de integrar, documentar y presentar evidencia territorial.</p><Button href="/dataperu/municipios" variant="ghost" className="mt-7 gap-2">Explorar perfiles <ArrowRight className="h-4 w-4" /></Button></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-ink/15 bg-ink/15 sm:grid-cols-3">
               {[{ value: "1,891", label: "municipalidades" }, { value: "25", label: "departamentos" }, { value: "2", label: "capas sectoriales distritales" }].map((metric) => (
                 <div key={metric.label} className="bg-[#ded9cc] p-6 md:p-8"><p className="text-4xl font-medium tracking-[-0.05em] text-ink md:text-5xl">{metric.value}</p><p className="mt-4 text-xs leading-5 text-ink/60">{metric.label}</p></div>
@@ -180,7 +180,7 @@ export default async function PublicSectorPage() {
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Antes de comenzar</Eyebrow>
-              <Heading size="xl">Una necesidad clara basta para la primera conversación.</Heading>
+              <Heading size="xl">Cuéntanos qué necesita tu institución</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">No es necesario llegar con una solución definida. Podemos ordenar la decisión, el territorio, la evidencia disponible y el resultado esperado.</p>
             </div>
             <Accordion items={publicSectorFaq} />
@@ -189,7 +189,7 @@ export default async function PublicSectorPage() {
             <p className="max-w-2xl text-2xl font-medium leading-tight tracking-[-0.035em] text-ink md:text-3xl">Describe la decisión, el territorio y el plazo.</p>
             <div className="flex flex-wrap gap-4">
               <Button href="/contact?interest=sector-publico" className="rounded-full">Conversar sobre una necesidad</Button>
-              <Button href="/diagnostico" variant="ghost">Preparar un brief</Button>
+              <Button href="/diagnostico" variant="ghost">Describir mi consulta</Button>
             </div>
           </div>
         </Container>

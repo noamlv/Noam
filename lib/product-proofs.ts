@@ -20,7 +20,7 @@ export const productProofs: Record<ProductProof["slug"], ProductProof> = {
     path: "/electoral/planometro-2026",
     eyebrow: "Planes de gobierno · Perú 2026",
     title: "Planómetro",
-    description: "Un sistema reproducible para convertir documentos programáticos extensos en propuestas comparables, trazables y explorables.",
+    description: "Consulta y compara las propuestas identificadas en los planes de gobierno, con acceso a los documentos originales.",
     externalUrl: "https://noamlv.github.io/PlanesPeru26/",
     caseHref: "/cases/planometro-electoral-product",
     metrics: [
@@ -45,7 +45,7 @@ export const productProofs: Record<ProductProof["slug"], ProductProof> = {
     path: "/electoral/barometro-enero-2026",
     eyebrow: "Opinión pública · Enero 2026",
     title: "Barómetro Electoral",
-    description: "Una experiencia narrativa para interpretar una encuesta online de cobertura nacional, sus segmentos y territorio sin reducirla a una colección de gráficos.",
+    description: "Explora el análisis de la encuesta online de IMASEN de enero de 2026, con resultados por grupo y explicación de sus límites.",
     externalUrl: "https://noamlv.github.io/peru-malestar-riesgo-electoral/",
     caseHref: "/cases/barometro-electoral-enero-2026",
     metrics: [
@@ -77,7 +77,7 @@ export const productProofs: Record<ProductProof["slug"], ProductProof> = {
     path: "/dataperu",
     eyebrow: "Gestión territorial · Perú 2025",
     title: "DataPerú",
-    description: "Infraestructura abierta de perfiles municipales, inversión y capacidades de gestión para convertir fuentes públicas dispersas en una lectura territorial usable.",
+    description: "Consulta perfiles municipales y datos de inversión, presupuesto y servicios, con las fuentes y fechas de cada indicador.",
     caseHref: "/cases/dataperu-platform-case",
     metrics: [
       { value: "1,891", label: "municipalidades", note: "Cobertura distrital y provincial" },

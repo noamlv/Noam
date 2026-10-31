@@ -18,7 +18,7 @@ export function NewsletterSignup({ sourcePath = "/newsletter" }: { sourcePath?: 
     return (
       <div className="rounded-[1.25rem] border border-border bg-panel p-6 text-ink shadow-subtle md:p-8">
         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-rust">Archivo abierto</p>
-        <h3 className="mt-4 text-2xl font-medium tracking-[-0.035em]">Lee el Brief mientras activamos la suscripción segura.</h3>
+        <h3 className="mt-4 text-2xl font-medium tracking-[-0.035em]">Lee el Brief mientras activamos la suscripción segura</h3>
         <p className="mt-4 max-w-2xl text-sm leading-7 text-ink/65">
           No solicitaremos tu email hasta que la confirmación y la baja automática estén operativas. Si deseas que te avisemos, puedes escribirnos directamente.
         </p>

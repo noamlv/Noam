@@ -37,8 +37,8 @@ export const solutions: Solution[] = [
     market: "Gobiernos",
     title: "Diagnóstico y agenda territorial",
     shortTitle: "Diagnóstico territorial",
-    promise: "Una lectura compartida del territorio y una cartera priorizada para actuar.",
-    description: "Integramos datos públicos, instrumentos de gestión, presupuesto, entrevistas y evidencia territorial para convertir problemas dispersos en prioridades verificables.",
+    promise: "Conoce los problemas de tu territorio y define qué atender primero.",
+    description: "Revisamos datos, planes, presupuesto y entrevistas para identificar problemas y proponer prioridades para el territorio.",
     duration: "4 a 8 semanas",
     serviceSlug: "estudios-diagnosticos-evaluacion",
     accent: "#b95337",
@@ -52,7 +52,7 @@ export const solutions: Solution[] = [
       "Problemas y brechas organizados por territorio y población",
       "Criterios transparentes para priorizar",
       "Cartera de acciones con responsables y horizonte",
-      "Brief ejecutivo para conducción política y técnica"
+      "Resumen de resultados para autoridades y equipos técnicos"
     ],
     deliverables: [
       "Perfil territorial y línea de base",
@@ -65,7 +65,7 @@ export const solutions: Solution[] = [
       { title: "Enfocar", description: "Definimos decisiones, usuarios, territorio y criterios de éxito." },
       { title: "Integrar", description: "Cruzamos fuentes públicas, datos internos y conocimiento local." },
       { title: "Priorizar", description: "Contrastamos causas, restricciones, riesgos y alternativas." },
-      { title: "Activar", description: "Entregamos una agenda usable y transferimos el método al equipo." }
+      { title: "Activar", description: "Entregamos las prioridades de trabajo y explicamos al equipo cómo actualizarlas." }
     ],
     evidence: [
       { label: "Cómo elegir el alcance de un diagnóstico territorial", href: "/diagnostico-territorial" },
@@ -84,7 +84,7 @@ export const solutions: Solution[] = [
     market: "Gobiernos",
     title: "Observatorio de gestión e inversiones",
     shortTitle: "Observatorio de gestión",
-    promise: "Indicadores, proyectos y alertas reunidos para conducir la gestión.",
+    promise: "Reúne indicadores y proyectos en un tablero para seguir su avance.",
     description: "Diseñamos un sistema de seguimiento que conecta presupuesto, proyectos, servicios y compromisos con responsables, reglas de actualización y reuniones de decisión.",
     duration: "6 a 12 semanas",
     serviceSlug: "observatorios-sistemas-decision",
@@ -151,7 +151,7 @@ export const solutions: Solution[] = [
       "Trabajo de campo o integración de fuentes",
       "Base anonimizada y diccionario",
       "Análisis, segmentación y visualizaciones",
-      "Informe, presentación y brief ejecutivo"
+      "Informe, presentación y resumen ejecutivo"
     ],
     phases: [
       { title: "Preguntar", description: "Traducimos la decisión en hipótesis, población y variables observables." },
@@ -281,7 +281,7 @@ export const solutions: Solution[] = [
     ],
     deliverables: [
       "Mapa de riesgos, actores y decisiones",
-      "Taxonomía de señales e indicadores",
+      "Clasificación de asuntos que requieren atención e indicadores",
       "Dashboard y fichas territoriales",
       "Alertas y protocolo de escalamiento",
       "Reporte ejecutivo y gobierno del sistema"

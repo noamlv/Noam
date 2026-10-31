@@ -36,7 +36,7 @@ export const briefEditions: BriefEdition[] = [
     issue: "01",
     date: panoramaPublicationDate,
     title: "Municipios distintos exigen decisiones distintas.",
-    description: "Tres señales para dimensionar intervenciones públicas sin convertir el promedio nacional en una receta.",
+    description: "Compara personal, inversión y transparencia para entender las diferencias entre municipalidades.",
     lead: "El mismo formato, plazo o sistema puede ser razonable para una municipalidad y desproporcionado para otra. La escala operativa, la dispersión de la inversión y la transparencia declarada ofrecen un punto de partida para diseñar mejor.",
     readingTime: "6 min",
     topic: "gobierno",
@@ -78,7 +78,7 @@ export const briefEditions: BriefEdition[] = [
     actions: [
       { title: "Definir la decisión", description: "Formula una decisión concreta que deba mejorar en los próximos 90 días, no una lista general de problemas." },
       { title: "Segmentar la operación", description: "Separa territorios o entidades por escala, capacidad y disponibilidad de datos antes de diseñar un único entregable." },
-      { title: "Abrir el cuello de botella", description: "Descompón la brecha de inversión en proyectos, hitos y restricciones que sí puedan verificarse y gestionarse." },
+      { title: "Revisar qué dificulta la ejecución", description: "Identifica los proyectos, trámites y problemas que requieren atención del equipo." },
       { title: "Acordar evidencia mínima", description: "Define fuente, responsable, periodicidad y límites de cada indicador antes de construir el tablero o informe." }
     ],
     sources: [

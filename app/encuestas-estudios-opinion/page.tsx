@@ -53,7 +53,7 @@ const faq = [
   { title: "¿Pueden medir satisfacción de un servicio municipal o regional?", content: "Sí. Primero se define quién utilizó el servicio, en qué canal y periodo, qué experiencia se medirá y cómo los resultados se conectarán con responsables y mejoras concretas." },
   { title: "¿Realizan encuestas para empresas?", content: "Sí. El alcance puede cubrir clientes, mercado, reputación, experiencia, actores territoriales o clima social. La muestra y el instrumento se adaptan a la decisión empresarial." },
   { title: "¿La encuesta puede formar parte de una línea de base o evaluación?", content: "Sí. Debe diseñarse para que sus indicadores, población, calendario e instrumentos sean comparables con mediciones posteriores y coherentes con la teoría de cambio." },
-  { title: "¿Qué recibe la organización además del informe?", content: "Según el encargo: ficha técnica, cuestionario, reporte de campo, base anonimizada, diccionario, tabulados, código o bitácora analítica, visualizaciones, brief ejecutivo y sesión de implicancias." }
+  { title: "¿Qué recibe la organización además del informe?", content: "Según el encargo: ficha técnica, cuestionario, reporte de campo, base anonimizada, diccionario, tabulados, código o bitácora analítica, visualizaciones, resumen ejecutivo y sesión de implicancias." }
 ];
 
 export default function SurveysOpinionPage() {
@@ -78,7 +78,7 @@ export default function SurveysOpinionPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">Población, usuarios y mercados</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Conoce las necesidades y opiniones de las personas.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Conoce las necesidades y opiniones de las personas</Heading>
             </div>
             <div>
               <p className="text-base leading-8 text-white/68">Encuestas y entrevistas ayudan a conocer la experiencia de vecinos, usuarios o clientes. Aquí puedes revisar qué estudio usar y cómo interpretar sus resultados.</p>
@@ -103,7 +103,7 @@ export default function SurveysOpinionPage() {
       <Section id="tipos">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas comprender</Eyebrow><Heading size="xl">Qué puedes investigar con una encuesta.</Heading></div>
+            <div><Eyebrow>Qué necesitas comprender</Eyebrow><Heading size="xl">Qué puedes investigar con una encuesta</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">El tipo de estudio depende de lo que necesitas conocer y de a quién debes escuchar. Estos son algunos usos posibles.</p>
           </div>
 
@@ -122,7 +122,7 @@ export default function SurveysOpinionPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Calidad de la encuesta</Eyebrow><Heading size="xl">Qué revisar para confiar en los resultados.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Una cifra puede fallar por una población mal definida, preguntas ambiguas, cobertura desigual, no respuesta o una interpretación que excede el diseño.</p></div>
+            <div><Eyebrow>Calidad de la encuesta</Eyebrow><Heading size="xl">Qué revisar para confiar en los resultados</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Una cifra puede fallar por una población mal definida, preguntas ambiguas, cobertura desigual, no respuesta o una interpretación que excede el diseño.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {qualityChain.map((item) => (
                 <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8">
@@ -139,7 +139,7 @@ export default function SurveysOpinionPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Elegir método</Eyebrow><Heading size="xl">Representar, escuchar o explicar.</Heading></div>
+            <div><Eyebrow>Elegir método</Eyebrow><Heading size="xl">Representar, escuchar o explicar</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {methodChoices.map((item, index) => (
                 <article key={item.label} className="grid gap-4 py-7 sm:grid-cols-[36px_0.55fr_1fr] sm:gap-7">
@@ -156,7 +156,7 @@ export default function SurveysOpinionPage() {
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Referencias públicas</Eyebrow><Heading size="xl">Guías para diseñar y revisar encuestas.</Heading></div>
+            <div><Eyebrow>Referencias públicas</Eyebrow><Heading size="xl">Guías para diseñar y revisar encuestas</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>El INEI reúne metodologías para diseño y análisis de encuestas. La PCM utiliza mediciones de satisfacción para identificar mejoras en servicios públicos, y OSIPTEL documenta diseño muestral, cuestionarios, campo y análisis para estudios comparables de experiencia. Son referencias de calidad; cada estudio debe adaptar población, método y protección de datos a su finalidad.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-rust">
@@ -173,7 +173,7 @@ export default function SurveysOpinionPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Guías y ejemplos de encuestas.</Heading></div>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Guías y ejemplos de encuestas</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Consulta cómo se prepara una encuesta y revisa un análisis publicado.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
@@ -190,7 +190,7 @@ export default function SurveysOpinionPage() {
       </Section>
 
       <Section className="border-y border-border bg-panel/45">
-        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de fijar la muestra.</Heading><Accordion items={faq} className="mt-8" /></Container>
+        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de fijar la muestra</Heading><Accordion items={faq} className="mt-8" /></Container>
       </Section>
 
       <Section className="pb-0">

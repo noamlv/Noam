@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import { readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
+import { departmentResearch } from "../lib/department-research.ts";
 
 // These checks protect specific editorial regressions, not a machine-generated readability score.
 const hubs = readdirSync("app").filter((name) => name.startsWith("analisis-")).map((name) => `app/${name}/page.tsx`);
@@ -38,3 +40,30 @@ const barometer = readFileSync("app/barometro-ciudadano/page.tsx", "utf8");
 assert.ok(barometer.includes("La encuesta es de IMASEN"));
 assert.ok(barometer.includes("no describen la opinión actual"));
 assert.ok(readFileSync("app/sitemap.ts", "utf8").includes('"/barometro-ciudadano"'));
+
+function publicFiles(directory: string): string[] {
+  return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
+    const file = join(directory, entry.name);
+    if (entry.isDirectory()) return ["admin", "api", "portal", "en"].includes(entry.name) ? [] : publicFiles(file);
+    return /\.(tsx|mdx)$/.test(file) ? [file] : [];
+  });
+}
+
+const reviewedFiles = [...publicFiles("app"), ...publicFiles("components"), ...publicFiles("content")];
+for (const file of reviewedFiles) {
+  const source = readFileSync(file, "utf8");
+  assert.doesNotMatch(source, /intervenciónnos|intervenciónlo|alcance discutible|sin fingir un cliente|capa confiable/, `${file}: avoid confusing or internal copy`);
+  assert.doesNotMatch(source, /\[\/contact(?:\?[^\]]*)?\]\(/, `${file}: contact links need a readable label`);
+}
+for (const research of departmentResearch) {
+  assert.ok(research.thesis.split(/\s+/).length <= 65, `${research.department}: keep the introduction concise`);
+  assert.equal(research.problems.length, 4, `${research.department}: preserve problem coverage`);
+  assert.equal(research.opportunities.length, 3, `${research.department}: preserve opportunity coverage`);
+}
+for (const code of ["04", "05"]) {
+  const research = departmentResearch.find((item) => item.code === code)!;
+  assert.equal(research.evidenceBase?.scope, "macroregional", "Preliminary evidence must not be presented as departmental research");
+  assert.match(research.thesis, /preliminar/, "The introduction must retain its preliminary status");
+}
+assert.match(readFileSync("components/dataperu/department-research-brief.tsx", "utf8"), /No presentamos estas oportunidades como mercados garantizados/);
+console.log(`Site language OK: ${reviewedFiles.length} public files and 25 departmental introductions checked.`);

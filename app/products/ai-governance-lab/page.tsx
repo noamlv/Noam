@@ -45,7 +45,7 @@ export default function AiGovernanceLabPage() {
           <div className="grid gap-14 lg:grid-cols-[0.9fr_1fr] lg:items-center lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">NOAM · IA responsable</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[12ch] text-white">Antes de construir IA, decide si vale la pena.</Heading>
+              <Heading as="h1" size="display" className="max-w-[12ch] text-white">Evalúa un posible uso de inteligencia artificial</Heading>
               <p className="mt-7 max-w-xl text-base leading-8 text-white/66">Explora un caso de uso, separa oportunidad de exposición y documenta los controles mínimos que una institución debería discutir antes de un piloto.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="#laboratorio" variant="secondary" className="rounded-full border-white bg-white text-ink">Evaluar un caso</Button>
@@ -76,7 +76,7 @@ export default function AiGovernanceLabPage() {
       <Section id="laboratorio">
         <Container>
           <div className="mb-10 grid gap-8 md:grid-cols-[0.62fr_1fr] md:items-end">
-            <div><Eyebrow>Herramienta abierta</Eyebrow><Heading size="xl">Evalúa la configuración, no una idea abstracta.</Heading></div>
+            <div><Eyebrow>Herramienta abierta</Eyebrow><Heading size="xl">Describe el uso que quieres evaluar</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Un mismo caso cambia de exposición según los datos, la autonomía y los controles. Prueba los ejemplos y ajusta sus supuestos.</p>
           </div>
           <AiUseCaseLab />
@@ -86,7 +86,7 @@ export default function AiGovernanceLabPage() {
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Qué produce un encargo real</Eyebrow><Heading size="xl">De una hipótesis a un piloto gobernable.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">La herramienta abre preguntas. El trabajo institucional debe convertirlas en evidencia, responsabilidades y decisiones verificables.</p></div>
+            <div><Eyebrow>Qué produce un encargo real</Eyebrow><Heading size="xl">Pasos para preparar una prueba</Heading><p className="mt-5 text-sm leading-7 text-ink/65">La herramienta abre preguntas. El trabajo institucional debe convertirlas en evidencia, responsabilidades y decisiones verificables.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-ink/15 bg-ink/15 sm:grid-cols-2">
               {[
                 ["01", "Portafolio", "Inventario comparable de casos, propietarios, usuarios y resultados esperados."],
@@ -102,7 +102,7 @@ export default function AiGovernanceLabPage() {
       <Section className="bg-[#15211d] text-white">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><ShieldCheck className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Referencias</Eyebrow><Heading size="xl" className="text-white">Un marco propio, no una norma inventada.</Heading><p className="mt-5 text-sm leading-7 text-white/58">La puntuación y las reglas de orientación pertenecen a NOAM. Se inspiran en enfoques de riesgo y supervisión, pero no sustituyen la clasificación u obligaciones aplicables en Perú.</p></div>
+            <div><ShieldCheck className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Referencias</Eyebrow><Heading size="xl" className="text-white">Cómo funciona esta evaluación orientativa</Heading><p className="mt-5 text-sm leading-7 text-white/58">La puntuación y las reglas de orientación pertenecen a NOAM. Se inspiran en enfoques de riesgo y supervisión, pero no sustituyen la clasificación u obligaciones aplicables en Perú.</p></div>
             <div className="divide-y divide-white/14 border-y border-white/14">
               {[
                 { label: "Perú", title: "Reglamento de la Ley N.° 31814", text: "Marco nacional aprobado mediante el Decreto Supremo N.° 115-2025-PCM.", href: "https://www.gob.pe/institucion/pcm/normas-legales/7133522-115-2025-pcm" },
@@ -117,7 +117,7 @@ export default function AiGovernanceLabPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container size="narrow">
           <Eyebrow>Preguntas frecuentes</Eyebrow>
-          <Heading size="xl">Qué puede y qué no puede responder.</Heading>
+          <Heading size="xl">Qué puede y qué no puede responder</Heading>
           <Accordion items={faqItems} className="mt-8" />
         </Container>
       </Section>
@@ -125,7 +125,7 @@ export default function AiGovernanceLabPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Continuar</Eyebrow><Heading size="xl">Método, evidencia y siguientes pasos.</Heading></div>
+            <div><Eyebrow>Continuar</Eyebrow><Heading size="xl">Método, evidencia y siguientes pasos</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {[
                 ["Guía", "IA y automatización para gobiernos y empresas", "/ia-automatizacion-gobiernos-empresas"],
@@ -143,7 +143,7 @@ export default function AiGovernanceLabPage() {
         <Container>
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
-            <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><Eyebrow className="text-white/55">IA para la gestión</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Comienza por un proceso, una línea de base y una decisión que pueda medirse.</h2></div><Button href="/contact?interest=ia-procesos-publicos&from=/products/ai-governance-lab" analyticsEvent="cta_click" analyticsTarget="ai-lab:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Plantear el caso</Button></div>
+            <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><Eyebrow className="text-white/55">IA para la gestión</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas evaluar un uso de IA en tu organización?</h2></div><Button href="/contact?interest=ia-procesos-publicos&from=/products/ai-governance-lab" analyticsEvent="cta_click" analyticsTarget="ai-lab:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Plantear el caso</Button></div>
           </div>
         </Container>
       </Section>

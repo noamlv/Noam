@@ -36,7 +36,7 @@ export default function CvPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.36fr_1fr] lg:gap-20">
-            <div><Eyebrow>Perfil</Eyebrow><Heading size="lg">Evidencia que entra en la decisión.</Heading></div>
+            <div><Eyebrow>Perfil</Eyebrow><Heading size="lg">Perfil profesional</Heading></div>
             <div className="max-w-3xl space-y-5 text-base leading-8 text-ink/68">
               {noamProfile.bio.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
@@ -47,7 +47,7 @@ export default function CvPage() {
       <Section className="border-t border-border">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.36fr_1fr] lg:gap-20">
-            <div><Eyebrow>Formación</Eyebrow><Heading size="lg">Base académica.</Heading></div>
+            <div><Eyebrow>Formación</Eyebrow><Heading size="lg">Base académica</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {noamProfile.credentials.map((credential, index) => (
                 <div key={credential} className="grid gap-2 py-5 sm:grid-cols-[3rem_1fr] sm:items-start">
@@ -63,7 +63,7 @@ export default function CvPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.36fr_1fr] lg:gap-20">
-            <div><Eyebrow>Trayectoria</Eyebrow><Heading size="lg">Experiencia seleccionada.</Heading><p className="mt-5 max-w-sm text-sm leading-6 text-ink/60">Una síntesis orientada a las capacidades que hoy convergen en NOAM.</p></div>
+            <div><Eyebrow>Trayectoria</Eyebrow><Heading size="lg">Experiencia seleccionada</Heading><p className="mt-5 max-w-sm text-sm leading-6 text-ink/60">Una síntesis orientada a las capacidades que hoy convergen en NOAM.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2">
               <article className="bg-canvas p-6 md:p-8">
                 <h2 className="text-lg font-medium text-ink">Investigación y proyectos recientes</h2>
@@ -81,7 +81,7 @@ export default function CvPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.36fr_1fr] lg:gap-20">
-            <div><Eyebrow>Capacidades</Eyebrow><Heading size="lg">Problemas, métodos y productos.</Heading></div>
+            <div><Eyebrow>Capacidades</Eyebrow><Heading size="lg">Áreas de experiencia</Heading></div>
             <div>
               <div className="flex flex-wrap gap-2">{noamProfile.expertise.map((item) => <span key={item} className="rounded-full border border-border bg-panel px-4 py-2 text-sm text-ink/70">{item}</span>)}</div>
               <div className="mt-10 border-t border-border pt-8">

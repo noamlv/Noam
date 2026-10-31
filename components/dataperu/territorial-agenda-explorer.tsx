@@ -166,7 +166,7 @@ export function TerritorialAgendaExplorer({ research }: { research: DepartmentRe
                   {entry.kind === "problems" ? (
                     <div className="grid gap-px border-t border-border bg-border sm:grid-cols-3">
                       <div className="bg-panel p-5"><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-muted">Población y actores</p><p className="mt-3 text-xs leading-5 text-ink/68">{entry.affected}</p></div>
-                      <div className="bg-panel p-5"><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-muted">Decisión pública</p><p className="mt-3 text-xs leading-5 text-ink/68">{entry.decision}</p></div>
+                      <div className="bg-panel p-5"><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-muted">Qué puede revisar el gobierno</p><p className="mt-3 text-xs leading-5 text-ink/68">{entry.decision}</p></div>
                       <div className="bg-[#f2efe7] p-5"><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-rust">Respuesta posible</p><p className="mt-3 text-xs leading-5 text-ink/72">{entry.response}</p></div>
                     </div>
                   ) : (

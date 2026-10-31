@@ -56,7 +56,7 @@ export default function PrivacyPage() {
       <Section className="pb-14 pt-14 md:pb-20 md:pt-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-            <div><Eyebrow className="text-rust">Privacidad</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Datos personales, con propósito y límites.</Heading></div>
+            <div><Eyebrow className="text-rust">Privacidad</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Cómo tratamos tus datos personales</Heading></div>
             <div className="border-l border-border pl-6"><LockKeyhole className="h-5 w-5 text-rust" aria-hidden /><p className="mt-4 text-sm leading-7 text-ink/68">Última actualización: 17 de julio de 2026. Este aviso describe el tratamiento de consultas y suscripciones editoriales en NOAM.PE.</p></div>
           </div>
         </Container>
@@ -74,7 +74,7 @@ export default function PrivacyPage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.3fr_1fr] lg:gap-20">
-            <div><Eyebrow>Tratamiento</Eyebrow><Heading size="xl">Información clara antes de enviar.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Este aviso se actualizará cuando cambien las finalidades, proveedores o infraestructura de producción.</p></div>
+            <div><Eyebrow>Tratamiento</Eyebrow><Heading size="xl">Qué debes saber antes de escribirnos</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Este aviso se actualizará cuando cambien las finalidades, proveedores o infraestructura de producción.</p></div>
             <div className="divide-y divide-border border-y border-border">
               {sections.map((section, index) => (
                 <article key={section.title} className="grid gap-4 py-7 sm:grid-cols-[42px_0.42fr_1fr]">
@@ -91,7 +91,7 @@ export default function PrivacyPage() {
       <Section className="border-y border-border bg-[#15211d] text-white">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow className="text-[#d9a48f]">Marco de referencia</Eyebrow><Heading size="xl" className="text-white">Protección de datos en el Perú.</Heading></div>
+            <div><Eyebrow className="text-[#d9a48f]">Marco de referencia</Eyebrow><Heading size="xl" className="text-white">Protección de datos en el Perú</Heading></div>
             <div className="space-y-5 text-sm leading-7 text-white/62">
               <p>Este aviso toma como referencia la Ley N.° 29733 y su Reglamento aprobado mediante Decreto Supremo N.° 016-2024-JUS. La versión final de producción debe revisarse junto con la configuración efectiva del banco de datos, proveedores y operación de NOAM.</p>
               <div className="flex flex-wrap gap-5">

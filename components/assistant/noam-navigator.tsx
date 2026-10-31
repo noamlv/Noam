@@ -170,7 +170,7 @@ export function NoamNavigator() {
               <p className="text-[10px] leading-5 text-muted">Tu pregunta: {askedQuestion}</p>
               {answer === "unknown" ? (
                 <>
-                  <h3 className="mt-4 text-lg font-medium tracking-[-0.025em]">No encontré una coincidencia.</h3>
+                  <h3 className="mt-4 text-lg font-medium tracking-[-0.025em]">No encontré una coincidencia</h3>
                   <p className="mt-2 text-xs leading-6 text-ink/65">Prueba con un tema como agua, educación o presupuesto. También puedes consultar DataPerú o ver nuestros trabajos.</p>
                   <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium"><NextLink href="/dataperu" onClick={() => setOpen(false)} className="text-rust">Ver DataPerú</NextLink><NextLink href="/cases" onClick={() => setOpen(false)} className="text-ink/65">Ver trabajos</NextLink></div>
                   <a href={buildAssistantEmailUrl(askedQuestion, null, pathname, submittedFollowUp)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-5 inline-flex text-xs font-medium text-rust hover:text-ink">Enviar mi pregunta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
@@ -178,7 +178,7 @@ export function NoamNavigator() {
               ) : (
                 <>
                   <p className="mt-4 text-[9px] font-semibold uppercase tracking-[0.14em] text-rust">Orientación inicial · {answer.topic}</p>
-                  <h3 className="mt-2 text-lg font-medium tracking-[-0.025em]">Puedes empezar aquí.</h3>
+                  <h3 className="mt-2 text-lg font-medium tracking-[-0.025em]">Puedes empezar aquí</h3>
                   <p className="mt-2 text-xs leading-6 text-ink/68">{answer.response}</p>
                   <div className="mt-5 grid gap-2">
                     <NextLink href={answer.primary.href} onClick={() => setOpen(false)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:approach" className="flex min-h-10 items-center justify-between gap-3 rounded-sm border border-border px-3 text-xs font-medium text-ink hover:border-rust/45">{answer.primary.label}<ArrowRight className="h-3.5 w-3.5 shrink-0" aria-hidden /></NextLink>

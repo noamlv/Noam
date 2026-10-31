@@ -42,7 +42,7 @@ export default function ServicesPage() {
           <div className="grid gap-8 lg:grid-cols-[1fr_0.42fr] lg:items-end">
             <div>
               <Eyebrow className="text-rust">Servicios</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch]">Estudios y herramientas para gobiernos y empresas.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch]">Estudios y herramientas para gobiernos y empresas</Heading>
             </div>
             <div><p className="text-sm leading-7 text-ink/68 md:text-base">Realizamos estudios, encuestas y evaluaciones. También desarrollamos tableros y herramientas de análisis. El trabajo se adapta al problema, los datos disponibles y las necesidades de tu equipo.</p><NextLink href="/contratar-analisis-datos" className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust">Guía para elegir y plantear un análisis <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></NextLink></div>
           </div>
@@ -52,7 +52,7 @@ export default function ServicesPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-8 pb-12 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Encuentra el punto de partida</Eyebrow><Heading size="xl">Encuentra el servicio que necesitas.</Heading></div>
+            <div><Eyebrow>Encuentra el punto de partida</Eyebrow><Heading size="xl">Encuentra el servicio que necesitas</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Consulta los servicios por tipo de estudio o por tema. Cada página explica qué podemos analizar y ofrece guías o fuentes para empezar.</p>
           </div>
           <AnalysisServiceDirectory />
@@ -107,7 +107,7 @@ export default function ServicesPage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Cómo empezar</Eyebrow><Heading size="xl">Soluciones que vuelven concreto el primer encargo.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Las capacidades describen cómo trabajamos. Estas soluciones muestran dónde puede comenzar una institución.</p><Button href="/solutions" variant="ghost" className="mt-6 gap-2">Explorar las soluciones <ArrowRight className="h-4 w-4" /></Button></div>
+            <div><Eyebrow>Cómo empezar</Eyebrow><Heading size="xl">Servicios que podemos adaptar a tu equipo</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Las capacidades describen cómo trabajamos. Estas soluciones muestran dónde puede comenzar una institución.</p><Button href="/solutions" variant="ghost" className="mt-6 gap-2">Explorar las soluciones <ArrowRight className="h-4 w-4" /></Button></div>
             <div className="grid gap-4 sm:grid-cols-2">{solutions.slice(0, 4).map((solution) => <SolutionCard key={solution.slug} solution={solution} />)}</div>
           </div>
         </Container>
@@ -118,7 +118,7 @@ export default function ServicesPage() {
           <div className="grid gap-10 lg:grid-cols-[0.55fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Modelo de trabajo</Eyebrow>
-              <Heading size="xl">Rigor sin burocracia innecesaria.</Heading>
+              <Heading size="xl">Cómo cuidamos la calidad del trabajo</Heading>
             </div>
             <div className="grid gap-x-8 gap-y-10 sm:grid-cols-2">
               {deliverySteps.map((step) => (
@@ -139,7 +139,7 @@ export default function ServicesPage() {
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div>
                 <Eyebrow className="text-white/55">Alcance inicial</Eyebrow>
-                <Heading size="lg" className="max-w-3xl text-white">Si el problema todavía no está bien definido, ese puede ser el primer entregable.</Heading>
+                <Heading size="lg" className="max-w-3xl text-white">También podemos ayudarte a definir el problema</Heading>
               </div>
               <div className="flex flex-wrap gap-3"><Button href="/diagnostico" analyticsEvent="cta_click" analyticsTarget="services:scope-builder" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact" analyticsEvent="cta_click" analyticsTarget="services:direct-contact" variant="ghost" className="!text-white/70 hover:!text-white">Solicitar conversación</Button></div>
             </div>

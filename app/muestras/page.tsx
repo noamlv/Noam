@@ -52,7 +52,7 @@ export default function SamplesPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.5fr_1fr] md:items-end">
-            <div><Eyebrow>Nueve puntos de partida</Eyebrow><Heading size="xl">Del diagnóstico a la operación.</Heading></div>
+            <div><Eyebrow>Nueve puntos de partida</Eyebrow><Heading size="xl">Ejemplos por tipo de servicio</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Cada ficha expone preguntas, módulos, cronograma, insumos, controles y entregables. El alcance contractual se diseña después de entender el contexto.</p>
           </div>
 
@@ -91,7 +91,7 @@ export default function SamplesPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-6 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Tu contexto</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Ahora convierte una necesidad real en un alcance discutible.</h2></div>
+              <div><Eyebrow className="text-white/55">Tu contexto</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué necesita tu equipo</h2></div>
               <Button href="/diagnostico?from=/muestras" analyticsEvent="cta_click" analyticsTarget="samples:scope-builder" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Describir mi consulta</Button>
             </div>
           </div>

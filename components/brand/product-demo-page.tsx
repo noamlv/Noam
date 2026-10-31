@@ -45,8 +45,8 @@ export function ProductDemoPage({ proof }: { proof: ProductProof }) {
             <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
               <div>
                 <Eyebrow>Ficha técnica</Eyebrow>
-                <Heading size="xl">Qué se midió y cómo leerlo.</Heading>
-                <p className="mt-5 text-sm leading-7 text-ink/65">La procedencia y el diseño de la muestra son parte del resultado, no una nota al pie.</p>
+                <Heading size="xl">Qué se midió y cómo leerlo</Heading>
+                <p className="mt-5 text-sm leading-7 text-ink/65">Revisa quién hizo el estudio, cuándo se recogieron los datos y cómo se seleccionó la muestra.</p>
               </div>
               <div>
                 <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
@@ -68,7 +68,7 @@ export function ProductDemoPage({ proof }: { proof: ProductProof }) {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Arquitectura del producto</Eyebrow><Heading size="xl">Del insumo a una experiencia de consulta.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Cada módulo responde una pregunta distinta y conserva una ruta hacia la fuente, el método o la definición utilizada.</p></div>
+            <div><Eyebrow>Qué puedes consultar</Eyebrow><Heading size="xl">Cómo está organizado el análisis</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Cada módulo responde una pregunta distinta y conserva una ruta hacia la fuente, el método o la definición utilizada.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {proof.modules.map((module) => (
                 <article key={module.number} className="min-h-[220px] bg-canvas p-6">
@@ -87,14 +87,14 @@ export function ProductDemoPage({ proof }: { proof: ProductProof }) {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
             <div>
               <Eyebrow>Método</Eyebrow>
-              <Heading size="lg">Reproducibilidad antes que caja negra.</Heading>
+              <Heading size="lg">Cómo se hizo el análisis</Heading>
               <ul className="mt-8 divide-y divide-border border-y border-border">
                 {proof.methods.map((method) => <li key={method} className="flex items-center gap-3 py-4 text-sm text-ink/72"><Check className="h-4 w-4 shrink-0 text-rust" />{method}</li>)}
               </ul>
             </div>
             <div>
               <Eyebrow>Límites de lectura</Eyebrow>
-              <Heading size="lg">Lo que el producto no afirma.</Heading>
+              <Heading size="lg">Lo que el producto no afirma</Heading>
               <ol className="mt-8 divide-y divide-border border-y border-border">
                 {proof.limits.map((limit, index) => <li key={limit} className="grid grid-cols-[34px_1fr] gap-3 py-4"><span className="font-mono text-[10px] text-rust">0{index + 1}</span><p className="text-sm leading-6 text-ink/68">{limit}</p></li>)}
               </ol>
@@ -106,7 +106,7 @@ export function ProductDemoPage({ proof }: { proof: ProductProof }) {
       <Section>
         <Container>
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div><Eyebrow>Producto interactivo</Eyebrow><Heading size="xl">Explora la versión publicada.</Heading><p className="mt-4 max-w-2xl text-sm leading-7 text-ink/65">La vista se carga desde el proyecto original. Ábrela en una pestaña nueva para usar todas sus funciones y navegar con mayor espacio.</p></div>
+            <div><Eyebrow>Producto interactivo</Eyebrow><Heading size="xl">Explora la versión publicada</Heading><p className="mt-4 max-w-2xl text-sm leading-7 text-ink/65">La vista se carga desde el proyecto original. Ábrela en una pestaña nueva para usar todas sus funciones y navegar con mayor espacio.</p></div>
             <Button href={proof.externalUrl} target="_blank" rel="noreferrer" variant="ghost" className="gap-2">Abrir aparte <ExternalLink className="h-4 w-4" /></Button>
           </div>
           <div className="mt-10 overflow-hidden rounded-[1.25rem] border border-border bg-panel shadow-visual">
@@ -120,7 +120,7 @@ export function ProductDemoPage({ proof }: { proof: ProductProof }) {
         <Container>
           <div className="rounded-[1.5rem] bg-rust px-6 py-12 text-white md:px-12 md:py-16">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Aplicación institucional</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Construyamos una lectura específica para tu decisión.</h2></div>
+              <div><Eyebrow className="text-white/55">Aplicación institucional</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas un análisis para tu organización?</h2></div>
               <Button href={`/contact?interest=${proof.slug}&origin=${encodeURIComponent(proof.path)}`} variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Solicitar análisis</Button>
             </div>
           </div>

@@ -16,7 +16,7 @@ export function getDepartmentInquiry(code?: string, kind?: string, item?: string
   const caveat = `Es una síntesis preliminar revisada el ${research.researchDate}, con confianza ${research.confidence} y base ${research.evidenceBase?.scope ?? "por precisar"}; requiere validación local antes de recomendar una intervención.`;
   const focus = kind === "problem"
     ? `Decisión por precisar: ${research.problems[index].governmentDecision}\nPosible punto de partida NOAM: ${research.problems[index].noamResponse}`
-    : `Hipótesis: ${research.opportunities[index].rationale}\nPrueba necesaria: ${research.opportunities[index].validation}\nNo supone un mercado garantizado.`;
+    : `Hipótesis: ${research.opportunities[index].rationale}\nQué falta comprobar: ${research.opportunities[index].validation}\nNo supone un mercado garantizado.`;
 
   return {
     title: selected.title,

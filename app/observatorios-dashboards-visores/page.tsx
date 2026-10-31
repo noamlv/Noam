@@ -87,7 +87,7 @@ export default function ObservatoriesDashboardsViewersPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#9ec6ba]">Seguimiento y decisión</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[15ch] text-white">Indicadores y mapas para seguir lo que ocurre.</Heading>
+              <Heading as="h1" size="display" className="max-w-[15ch] text-white">Indicadores y mapas para seguir lo que ocurre</Heading>
             </div>
             <div>
               <p className="text-base leading-8 text-white/68">Conoce distintas formas de consultar datos, comparar resultados y seguir proyectos. Revisa ejemplos antes de elegir qué necesita tu equipo.</p>
@@ -112,7 +112,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section id="productos">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Tipos de herramientas</Eyebrow><Heading size="xl">Qué puedes hacer con cada herramienta.</Heading></div>
+            <div><Eyebrow>Tipos de herramientas</Eyebrow><Heading size="xl">Qué puedes hacer con cada herramienta</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Un tablero permite consultar indicadores; un mapa ayuda a ubicarlos. La elección depende de qué quieres revisar, quién lo usará y con qué frecuencia.</p>
           </div>
 
@@ -131,7 +131,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Cómo funciona</Eyebrow><Heading size="xl">Qué necesita el sistema para funcionar.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Además de mostrar gráficos, hay que revisar los datos, mantenerlos actualizados y definir quién puede acceder a ellos.</p></div>
+            <div><Eyebrow>Cómo funciona</Eyebrow><Heading size="xl">Qué necesita el sistema para funcionar</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Además de mostrar gráficos, hay que revisar los datos, mantenerlos actualizados y definir quién puede acceder a ellos.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {architecture.map((item) => (
                 <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8">
@@ -148,7 +148,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Aplicaciones</Eyebrow><Heading size="xl">Ejemplos de uso.</Heading></div>
+            <div><Eyebrow>Aplicaciones</Eyebrow><Heading size="xl">Ejemplos de uso</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {useCases.map((item, index) => (
                 <article key={item.label} className="grid gap-4 py-7 sm:grid-cols-[36px_0.55fr_1fr] sm:gap-7">
@@ -165,7 +165,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section className="border-y border-border bg-[#dbe5e0]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Referencias para diseñar y mantener el sistema.</Heading></div>
+            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Referencias para diseñar y mantener el sistema</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>CEPLAN vincula el seguimiento con indicadores, logros esperados y evidencia para la mejora. La Estrategia Nacional de Gobierno de Datos 2026–2030 exige que las entidades articulen calidad, privacidad, interoperabilidad, infraestructura y capacidades. Un producto sostenible debe responder a ambos planos: uso institucional y gobierno del dato.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#2f5c52]">
@@ -182,7 +182,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Preparación mínima</Eyebrow><Heading size="xl">Seis preguntas antes de construir.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">No es necesario tener datos perfectos. Sí es necesario saber qué debe validarse, quién participa y cómo se sostendrá la primera versión.</p></div>
+            <div><Eyebrow>Preparación mínima</Eyebrow><Heading size="xl">Seis preguntas antes de construir</Heading><p className="mt-5 text-sm leading-7 text-ink/65">No es necesario tener datos perfectos. Sí es necesario saber qué debe validarse, quién participa y cómo se sostendrá la primera versión.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {readiness.map((item, index) => (
                 <div key={item} className="flex min-h-[126px] gap-5 bg-canvas p-6 md:p-8">
@@ -198,7 +198,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Explora ejemplos y guías.</Heading></div>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Explora ejemplos y guías</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Prueba DataPerú, revisa un ejemplo de tablero y consulta la guía para preparar un sistema con tu equipo.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
@@ -215,7 +215,7 @@ export default function ObservatoriesDashboardsViewersPage() {
       </Section>
 
       <Section>
-        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de elegir la tecnología.</Heading><Accordion items={faq} className="mt-8" /></Container>
+        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de elegir la tecnología</Heading><Accordion items={faq} className="mt-8" /></Container>
       </Section>
 
       <Section className="pb-0 pt-0">

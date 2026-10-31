@@ -27,7 +27,7 @@ export function DepartmentResearchBrief({ research, contactHref }: DepartmentRes
             <div>
               <Landmark className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Agenda territorial</Eyebrow>
-              <Heading size="xl">Problemas que exigen decisiones conectadas.</Heading>
+              <Heading size="xl">Problemas identificados y población afectada</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/66">{research.thesis}</p>
               <div className="mt-6 flex flex-wrap gap-2">
                 <Badge>En validación</Badge>
@@ -39,7 +39,7 @@ export function DepartmentResearchBrief({ research, contactHref }: DepartmentRes
                 <div className="mt-6 border-l border-border-strong pl-4">
                   <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted">
                     Base {research.evidenceBase.scope}
-                    {research.evidenceBase.officialSources ? ` · fuentes oficiales ${research.evidenceBase.officialSources === "total" ? "exclusivas" : "parciales"}` : ""}
+                    {research.evidenceBase.officialSources ? ` · ${research.evidenceBase.officialSources === "total" ? "solo fuentes oficiales" : "incluye fuentes oficiales"}` : ""}
                   </p>
                   <p className="mt-2 text-xs leading-5 text-ink/58">{research.evidenceBase.note}</p>
                 </div>
@@ -54,19 +54,19 @@ export function DepartmentResearchBrief({ research, contactHref }: DepartmentRes
                     <h2 className="text-xl font-medium tracking-[-0.03em] text-ink">{problem.title}</h2>
                     <p className="mt-3 text-sm leading-6 text-ink/64">{problem.problem}</p>
                     <div className="mt-5 border-l border-border-strong pl-4">
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted">Población y actores afectados</p>
+                      <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted">A quiénes afecta</p>
                       <p className="mt-2 text-xs leading-5 text-ink/68">{problem.affected}</p>
                     </div>
                   </div>
                   <div className="grid gap-px overflow-hidden rounded-sm bg-border sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                     <div className="bg-panel p-5">
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-rust">Decisión pública</p>
+                      <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-rust">Qué puede revisar el gobierno</p>
                       <p className="mt-3 text-xs leading-5 text-ink/72">{problem.governmentDecision}</p>
                     </div>
                     <div className="bg-[#e8e4da] p-5">
-                      <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-ink/48">Cómo ayuda NOAM</p>
+                      <p className="text-[9px] font-semibold uppercase tracking-[0.14em] text-ink/48">Si necesitas apoyo de NOAM</p>
                       <p className="mt-3 text-xs leading-5 text-ink/72">{problem.noamResponse}</p>
-                      <Button href={inquiryHref("problem", index)} analyticsEvent="cta_click" analyticsTarget={`department:${research.code}:problem:${index}`} variant="ghost" className="mt-5 gap-2 px-0 text-xs">Explorar un estudio <ArrowRight className="h-3.5 w-3.5" aria-hidden /></Button>
+                      <Button href={inquiryHref("problem", index)} analyticsEvent="cta_click" analyticsTarget={`department:${research.code}:problem:${index}`} variant="ghost" className="mt-5 gap-2 px-0 text-xs">Consultar sobre este problema <ArrowRight className="h-3.5 w-3.5" aria-hidden /></Button>
                     </div>
                   </div>
                 </article>
@@ -82,7 +82,7 @@ export function DepartmentResearchBrief({ research, contactHref }: DepartmentRes
             <div>
               <BriefcaseBusiness className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Empresas y emprendimiento</Eyebrow>
-              <Heading size="xl">Oportunidades que todavía deben probarse.</Heading>
+              <Heading size="xl">Oportunidades de negocio por investigar</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">No presentamos estas oportunidades como mercados garantizados. Son hipótesis para validar con demanda, compradores, costos, regulación y capacidad local.</p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -93,7 +93,7 @@ export function DepartmentResearchBrief({ research, contactHref }: DepartmentRes
                   <p className="mt-3 text-sm leading-6 text-ink/64">{opportunity.rationale}</p>
                   <div className="mt-auto space-y-4 border-t border-border pt-5">
                     <div><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-muted">Quién puede actuar</p><p className="mt-2 text-xs leading-5 text-ink/65">{opportunity.actors}</p></div>
-                    <div><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-muted">Prueba necesaria</p><p className="mt-2 text-xs leading-5 text-ink/65">{opportunity.validation}</p></div>
+                    <div><p className="text-[9px] font-semibold uppercase tracking-[0.13em] text-muted">Qué falta comprobar</p><p className="mt-2 text-xs leading-5 text-ink/65">{opportunity.validation}</p></div>
                     <Button href={inquiryHref("opportunity", index)} analyticsEvent="cta_click" analyticsTarget={`department:${research.code}:opportunity:${index}`} variant="ghost" className="gap-2 px-0 text-xs">Validar esta oportunidad <ArrowRight className="h-3.5 w-3.5" aria-hidden /></Button>
                   </div>
                 </article>
@@ -108,9 +108,9 @@ export function DepartmentResearchBrief({ research, contactHref }: DepartmentRes
           <div className="grid gap-10 lg:grid-cols-[0.4fr_1fr] lg:gap-20">
             <div>
               <Database className="h-5 w-5 text-[#d9a48f]" aria-hidden />
-              <Eyebrow className="mt-6 text-[#d9a48f]">Capacidad NOAM</Eyebrow>
-              <Heading size="xl" className="text-white">De la señal a una herramienta de gestión.</Heading>
-              <p className="mt-5 text-sm leading-7 text-white/62">Cada módulo puede comenzar como diagnóstico acotado y crecer hacia un sistema operado por la institución.</p>
+              <Eyebrow className="mt-6 text-[#d9a48f]">Apoyo de NOAM</Eyebrow>
+              <Heading size="xl" className="text-white">Cómo podemos apoyar el análisis</Heading>
+              <p className="mt-5 text-sm leading-7 text-white/62">Podemos empezar con un estudio y, si hace falta, preparar una herramienta que tu equipo pueda mantener.</p>
               <Button href={contactHref} variant="secondary" className="mt-7 gap-2 rounded-full border-white bg-white text-ink">Trabajar en {research.department} <ArrowRight className="h-4 w-4" aria-hidden /></Button>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md bg-white/12 md:grid-cols-3">

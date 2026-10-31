@@ -99,7 +99,7 @@ async function resolveCard(category: string, slug: string): Promise<CardData | n
   if (category === "electoral" && slug === "planometro-2026") {
     return {
       eyebrow: "Planómetro · Planes de gobierno 2026",
-      title: "Leer miles de propuestas sin perder la fuente.",
+      title: "Compara propuestas de los planes de gobierno",
       description: "36 planes · 4.084 enunciados detectados · 2.742 propuestas bajo criterio operativo.",
       accent: "#d9a48f",
       code: "PLAN26"
@@ -143,7 +143,7 @@ async function resolveCard(category: string, slug: string): Promise<CardData | n
   if (category === "dataperu" && slug === "radar") {
     return {
       eyebrow: "DataPerú · Radar municipal",
-      title: "La gestión municipal, vista en contexto.",
+      title: "Compara datos de gestión municipal",
       description: "Recursos, ejecución y capacidades declaradas de 1,891 gobiernos locales.",
       accent: "#d9a48f",
       code: "RADAR"
@@ -153,7 +153,7 @@ async function resolveCard(category: string, slug: string): Promise<CardData | n
   if (category === "dataperu" && slug === "departamentos") {
     return {
       eyebrow: "DataPerú · Escala regional",
-      title: "El país cambia cuando cambia la escala.",
+      title: "Datos y problemas por departamento",
       description: "Presupuesto, inversión y capacidades municipales agregadas en 25 departamentos.",
       accent: "#d9a48f",
       code: "ATLAS"
@@ -163,7 +163,7 @@ async function resolveCard(category: string, slug: string): Promise<CardData | n
   if (category === "dataperu" && slug === "panorama-municipal-2025") {
     return {
       eyebrow: "DataPerú · Estudio insignia 2025",
-      title: "El Perú municipal no cabe en un promedio.",
+      title: "Diferencias entre municipalidades del Perú",
       description: "Recursos, inversión y capacidades declaradas en 1,891 municipalidades y 25 departamentos.",
       accent: "#d9a48f",
       code: "PAN25"
@@ -173,7 +173,7 @@ async function resolveCard(category: string, slug: string): Promise<CardData | n
   if (category === "dataperu" && slug === "inversiones") {
     return {
       eyebrow: "DataPerú · Inversión municipal",
-      title: "La cartera se entiende proyecto por proyecto.",
+      title: "Consulta los proyectos de inversión municipal",
       description: "9,429 proyectos visibles por territorio, función, PIM y ejecución financiera.",
       accent: "#d9a48f",
       code: "INV25"
@@ -183,7 +183,7 @@ async function resolveCard(category: string, slug: string): Promise<CardData | n
   if (category === "dataperu" && slug === "mapa") {
     return {
       eyebrow: "DataPerú · Visor territorial",
-      title: "Las decisiones también tienen geografía.",
+      title: "Explora los datos en el mapa",
       description: "Ejecución, recursos, transparencia e inversión municipal sobre 25 departamentos.",
       accent: "#d9a48f",
       code: "MAP25"
@@ -193,7 +193,7 @@ async function resolveCard(category: string, slug: string): Promise<CardData | n
   if (category === "products" && slug === "ai-governance-lab") {
     return {
       eyebrow: "NOAM · IA responsable",
-      title: "Antes de construir IA, decide si vale la pena.",
+      title: "Evalúa un posible uso de inteligencia artificial",
       description: "Evalúa oportunidad, exposición y controles antes de iniciar un piloto institucional.",
       accent: "#d9a48f",
       code: "AI LAB"

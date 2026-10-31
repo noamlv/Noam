@@ -86,7 +86,7 @@ export default function TerritorialDiagnosisPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">Territorio y decisión</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Conoce los problemas y las oportunidades de tu localidad.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Conoce los problemas y las oportunidades de tu localidad</Heading>
             </div>
             <div>
               <p className="text-base leading-8 text-white/68">Revisa datos de población, servicios y economía local. Aquí encontrarás qué incluir en un diagnóstico y fuentes para empezar.</p>
@@ -112,7 +112,7 @@ export default function TerritorialDiagnosisPage() {
       <Section id="capas">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué revisar</Eyebrow><Heading size="xl">Seis temas para conocer una localidad.</Heading></div>
+            <div><Eyebrow>Qué revisar</Eyebrow><Heading size="xl">Seis temas para conocer una localidad</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">No todos los lugares tienen las mismas necesidades. Estos temas ayudan a reconocer diferencias entre zonas y decidir qué investigar con más detalle.</p>
           </div>
 
@@ -131,7 +131,7 @@ export default function TerritorialDiagnosisPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Escala correcta</Eyebrow><Heading size="xl">Qué cambia entre un distrito, una provincia y una región.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">El diagnóstico debe considerar las funciones de cada gobierno y las diferencias entre sus localidades.</p></div>
+            <div><Eyebrow>Escala correcta</Eyebrow><Heading size="xl">Qué cambia entre un distrito, una provincia y una región</Heading><p className="mt-5 text-sm leading-7 text-ink/65">El diagnóstico debe considerar las funciones de cada gobierno y las diferencias entre sus localidades.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {scopes.map((scope, index) => (
                 <article key={scope.label} className={`min-h-[215px] bg-canvas p-6 md:p-8 ${index === scopes.length - 1 ? "sm:col-span-2" : ""}`}>
@@ -148,7 +148,7 @@ export default function TerritorialDiagnosisPage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Guías oficiales para preparar un diagnóstico.</Heading></div>
+            <div><Eyebrow>Marco público</Eyebrow><Heading size="xl">Guías oficiales para preparar un diagnóstico</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>La guía de CEPLAN para planes locales conecta caracterización y diagnóstico con variables estratégicas, riesgos, oportunidades y decisiones. La guía del MEF para programación de inversiones organiza el diagnóstico de brechas subnacional desde la caracterización, la contextualización y la difusión. Son referencias para estructurar el análisis; el instrumento aplicable y sus reglas deben confirmarse en cada encargo.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-rust">
@@ -164,7 +164,7 @@ export default function TerritorialDiagnosisPage() {
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Antes de elegir una intervención</Eyebrow><Heading size="xl">Qué acordar antes de empezar.</Heading></div>
+            <div><Eyebrow>Antes de elegir una intervención</Eyebrow><Heading size="xl">Qué acordar antes de empezar</Heading></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-black/10 bg-black/10 sm:grid-cols-2">
               {readiness.map((item, index) => (
                 <div key={item} className="min-h-[145px] bg-[#e6e1d5] p-6 md:p-8">
@@ -180,7 +180,7 @@ export default function TerritorialDiagnosisPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Consulta datos y ejemplos de diagnósticos.</Heading></div>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Consulta datos y ejemplos de diagnósticos</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Revisa las guías, consulta los perfiles territoriales y mira un ejemplo de informe.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
@@ -197,7 +197,7 @@ export default function TerritorialDiagnosisPage() {
       </Section>
 
       <Section className="border-y border-border bg-panel/45">
-        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de definir el alcance.</Heading><Accordion items={faq} className="mt-8" /></Container>
+        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de definir el alcance</Heading><Accordion items={faq} className="mt-8" /></Container>
       </Section>
 
       <Section className="pb-0">

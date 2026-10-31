@@ -71,7 +71,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Lecturas recientes</Eyebrow><Heading size="xl">Un criterio que se puede examinar.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Cada publicación explicita problema, datos, método, hallazgos y límites.</p></div>
+            <div><Eyebrow>Lecturas recientes</Eyebrow><Heading size="xl">Cómo abordamos este tema</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Cada publicación explicita problema, datos, método, hallazgos y límites.</p></div>
             <ResourceList items={editorialItems.slice(0, 6)} variant="rows" />
           </div>
         </Container>
@@ -79,7 +79,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
 
       <Section className="border-y border-border bg-panel/45">
         <Container>
-          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><Eyebrow>Por formato</Eyebrow><Heading size="xl">Estudiar, aplicar y comprobar.</Heading></div><Button href="/evidence" variant="ghost" className="justify-start gap-2">Toda la biblioteca <ArrowRight className="h-4 w-4" /></Button></div>
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between"><div><Eyebrow>Por formato</Eyebrow><Heading size="xl">Análisis, datos y guías relacionados</Heading></div><Button href="/evidence" variant="ghost" className="justify-start gap-2">Toda la biblioteca <ArrowRight className="h-4 w-4" /></Button></div>
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {editorialCollections.map((collection) => {
               const collectionItems = editorialItems.filter((item) => item.type === collection.type);
@@ -92,7 +92,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Aplicación</Eyebrow><Heading size="xl">De una idea a un encargo concreto.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Estas soluciones convierten el criterio editorial en trabajo aplicable a una institución.</p></div>
+            <div><Eyebrow>Aplicación</Eyebrow><Heading size="xl">¿Necesitas apoyo con este tema?</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Estas soluciones convierten el criterio editorial en trabajo aplicable a una institución.</p></div>
             <div className="grid gap-4 sm:grid-cols-2">{relatedSolutions.map((solution) => solution ? <SolutionCard key={solution.slug} solution={solution} /> : null)}</div>
           </div>
         </Container>

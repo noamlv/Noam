@@ -47,7 +47,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <Section className="border-b border-border pb-14 pt-14 md:pb-20 md:pt-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-            <div><Eyebrow className="text-rust">Índice NOAM</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Encuentra una respuesta, una herramienta o un punto de partida.</Heading></div>
+            <div><Eyebrow className="text-rust">Índice NOAM</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Busca datos, análisis y servicios</Heading></div>
             <p className="text-sm leading-7 text-ink/68 md:text-base">Busca en {index.length} territorios, estudios, soluciones, productos y prácticas. Los resultados se ordenan por relevancia, no por popularidad.</p>
           </div>
 

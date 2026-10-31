@@ -115,7 +115,7 @@ export default function DataPeruPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.5fr_1fr] md:items-end">
-            <div><Eyebrow>Por dónde empezar</Eyebrow><Heading size="xl">Elige qué quieres consultar.</Heading></div>
+            <div><Eyebrow>Por dónde empezar</Eyebrow><Heading size="xl">Elige qué quieres consultar</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Busca un municipio, revisa proyectos de inversión o consulta los problemas y oportunidades identificados por departamento.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-3">
@@ -139,7 +139,7 @@ export default function DataPeruPage() {
           <div className="grid gap-10 lg:grid-cols-[0.48fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Datos disponibles</Eyebrow>
-              <Heading size="xl">Busca por tema o lugar.</Heading>
+              <Heading size="xl">Busca por tema o lugar</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Cada publicación indica su fuente, periodo, definiciones y límites. Antes de añadir datos, revisamos su cobertura y calidad.</p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -166,7 +166,7 @@ export default function DataPeruPage() {
             <TerritoryMap className="min-h-[430px]" />
             <div>
               <Eyebrow>Territorio y gestión</Eyebrow>
-              <Heading size="xl">Compara los datos de distintos lugares.</Heading>
+              <Heading size="xl">Compara los datos de distintos lugares</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Los mapas y las fichas permiten revisar diferencias entre municipios y departamentos que un promedio nacional puede ocultar. Estos son los temas de consulta y desarrollo:</p>
               <div className="mt-7 grid gap-3">
                 {applications.map((application) => <p key={application} className="flex items-center gap-3 text-sm text-ink/72"><Check className="h-4 w-4 text-rust" />{application}</p>)}
@@ -182,7 +182,7 @@ export default function DataPeruPage() {
             <div>
               <ShieldAlert className="h-5 w-5 text-[#d9a48f]" aria-hidden />
               <Eyebrow className="mt-6 text-[#d9a48f]">Disponibilidad de los datos</Eyebrow>
-              <Heading size="xl" className="text-white">Qué puedes consultar y qué seguimos revisando.</Heading>
+              <Heading size="xl" className="text-white">Qué puedes consultar y qué seguimos revisando</Heading>
               <p className="mt-5 text-sm leading-7 text-white/58">Los temas marcados como “Evaluación de fuentes” aún no tienen un producto publicado. Revisamos si los datos permiten comparaciones antes de incorporarlos.</p>
               <Button href="/insights/dataperu-infraestructura-decision-territorial" variant="ghost" className="mt-7 gap-2 !text-white/70 hover:!text-white">Leer cómo se construye DataPerú <ArrowRight className="h-4 w-4" aria-hidden /></Button>
             </div>
@@ -204,7 +204,7 @@ export default function DataPeruPage() {
           <div className="grid gap-10 lg:grid-cols-[0.55fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Consultas por territorio</Eyebrow>
-              <Heading size="xl">Abre una ficha, un mapa o una tabla.</Heading>
+              <Heading size="xl">Abre una ficha, un mapa o una tabla</Heading>
             </div>
             <div className="divide-y divide-border border-y border-border">
               {[
@@ -233,7 +233,7 @@ export default function DataPeruPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-16 -top-24 h-72 w-72 rounded-full border-[54px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/58">Si necesitas apoyo para tu institución</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Un estudio o sistema con los datos que necesitas.</h2><p className="mt-5 max-w-2xl text-sm leading-7 text-white/70">Podemos adaptar un diagnóstico o un sistema de seguimiento a tu municipalidad, región u organización.</p><div className="mt-6 flex flex-wrap gap-x-6 gap-y-4 text-sm"><NextLink href="/services/estudios-diagnosticos-evaluacion" className="underline underline-offset-4">Ver servicios de diagnóstico</NextLink><NextLink href="/diagnostico" className="underline underline-offset-4">Preparar un encargo</NextLink><NextLink href="/contact?interest=dataperu" className="underline underline-offset-4">Consultar por un módulo de DataPerú</NextLink></div></div>
+              <div><Eyebrow className="text-white/58">Si necesitas apoyo para tu institución</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Un estudio o sistema con los datos que necesitas</h2><p className="mt-5 max-w-2xl text-sm leading-7 text-white/70">Podemos adaptar un diagnóstico o un sistema de seguimiento a tu municipalidad, región u organización.</p><div className="mt-6 flex flex-wrap gap-x-6 gap-y-4 text-sm"><NextLink href="/services/estudios-diagnosticos-evaluacion" className="underline underline-offset-4">Ver servicios de diagnóstico</NextLink><NextLink href="/diagnostico" className="underline underline-offset-4">Describir mi consulta</NextLink><NextLink href="/contact?interest=dataperu" className="underline underline-offset-4">Consultar por un módulo de DataPerú</NextLink></div></div>
               <Button href="/contact?interest=dataperu&from=/dataperu" analyticsEvent="cta_click" analyticsTarget="dataperu:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Contactar a NOAM</Button>
             </div>
           </div>

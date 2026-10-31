@@ -51,7 +51,7 @@ const faq = [
   { title: "¿Las fuentes públicas bastan para decidir una inversión?", content: "Sirven para comparar, descartar alternativas y priorizar vacíos. Una decisión final suele requerir datos comerciales, validación técnica, trabajo de campo o diligencias legales, ambientales y sociales según el proyecto." },
   { title: "¿Pueden calcular el tamaño de un mercado?", content: "Sí, cuando se definen mercado, unidad, horizonte y fuentes defendibles. Presentamos supuestos y escenarios, evitando convertir una estimación incierta en una cifra exacta sin sustento." },
   { title: "¿El estudio puede incluir encuestas o entrevistas?", content: "Sí. La investigación primaria se incorpora cuando responde una hipótesis y puede cambiar la decisión. El diseño debe definir población, selección, instrumento, supervisión, privacidad y límites de inferencia." },
-  { title: "¿Entregan bases, mapas y modelos editables?", content: "El alcance puede incluir base integrada, diccionario, archivos geográficos, código o bitácora analítica, modelo de escenarios, visualizaciones y brief ejecutivo. Los formatos y criterios de revisión se definen antes de iniciar." },
+  { title: "¿Entregan bases, mapas y modelos editables?", content: "El alcance puede incluir base integrada, diccionario, archivos geográficos, código o bitácora analítica, modelo de escenarios, visualizaciones y resumen ejecutivo. Los formatos y criterios de revisión se definen antes de iniciar." },
   { title: "¿Trabajan para empresas que todavía no tienen datos propios?", content: "Sí. Podemos comenzar con una exploración basada en fuentes públicas y entrevistas internas. El primer producto debe indicar qué preguntas puede responder y qué información propia conviene generar después." }
 ];
 
@@ -77,7 +77,7 @@ export default function MarketTerritorialIntelligencePage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.46fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d7c687]">Mercado, territorio y decisión</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Conoce el mercado antes de invertir.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch] text-white">Conoce el mercado antes de invertir</Heading>
             </div>
             <div>
               <p className="text-base leading-8 text-white/68">Revisa qué datos ayudan a conocer a los clientes, comparar ubicaciones y evaluar una oportunidad de negocio. Encontrarás fuentes públicas y ejemplos de estudios.</p>
@@ -102,7 +102,7 @@ export default function MarketTerritorialIntelligencePage() {
       <Section id="estudios">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Qué puedes investigar sobre un mercado.</Heading></div>
+            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Qué puedes investigar sobre un mercado</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Pueden combinarse, pero no deben confundirse. Un estudio de clientes no reemplaza un análisis de localización; una base territorial no demuestra por sí sola demanda comercial.</p>
           </div>
 
@@ -121,7 +121,7 @@ export default function MarketTerritorialIntelligencePage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><ScanSearch className="h-5 w-5 text-[#8a6d21]" aria-hidden /><Eyebrow className="mt-6">Cómo preparar el estudio</Eyebrow><Heading size="xl">Qué definir antes de buscar datos.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Define qué quieres conocer, qué lugares compararás y qué datos tienes. Las recomendaciones deben explicar en qué información se basan.</p></div>
+            <div><ScanSearch className="h-5 w-5 text-[#8a6d21]" aria-hidden /><Eyebrow className="mt-6">Cómo preparar el estudio</Eyebrow><Heading size="xl">Qué definir antes de buscar datos</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Define qué quieres conocer, qué lugares compararás y qué datos tienes. Las recomendaciones deben explicar en qué información se basan.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {evidenceChain.map((item) => (
                 <article key={item.number} className="min-h-[190px] bg-canvas p-6 md:p-8">
@@ -138,7 +138,7 @@ export default function MarketTerritorialIntelligencePage() {
       <Section>
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Métodos complementarios</Eyebrow><Heading size="xl">Explorar, medir, validar y comparar.</Heading></div>
+            <div><Eyebrow>Métodos complementarios</Eyebrow><Heading size="xl">Explorar, medir, validar y comparar</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {methods.map((item, index) => (
                 <article key={item.label} className="grid gap-4 py-7 sm:grid-cols-[36px_0.55fr_1fr] sm:gap-7">
@@ -155,7 +155,7 @@ export default function MarketTerritorialIntelligencePage() {
       <Section className="border-y border-border bg-[#e5dfc8]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
-            <div><Eyebrow>Fuentes para Perú</Eyebrow><Heading size="xl">Fuentes públicas para conocer el mercado.</Heading></div>
+            <div><Eyebrow>Fuentes para Perú</Eyebrow><Heading size="xl">Fuentes públicas para conocer el mercado</Heading></div>
             <div className="max-w-3xl text-base leading-8 text-ink/72">
               <p>INEI ofrece sistemas distritales, censales, económicos y geográficos; PRODUCE publica estadísticas empresariales, industriales, Mipyme y comercio; PROMPERÚ desarrolla inteligencia y prospectiva de mercados e inversiones; y MEF permite examinar carteras y proyectos públicos. Estas fuentes orientan la exploración, pero no reemplazan datos comerciales ni validación primaria cuando la decisión lo exige.</p>
               <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium text-[#735b1f]">
@@ -173,7 +173,7 @@ export default function MarketTerritorialIntelligencePage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Datos territoriales y ejemplos de estudios.</Heading></div>
+            <div><Eyebrow>Datos y recursos</Eyebrow><Heading size="xl">Datos territoriales y ejemplos de estudios</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Consulta DataPerú, mira un ejemplo de informe y usa la guía para ordenar tus preguntas. No necesitas compartir información confidencial.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
@@ -190,7 +190,7 @@ export default function MarketTerritorialIntelligencePage() {
       </Section>
 
       <Section className="border-y border-border bg-panel/45">
-        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de estimar el mercado.</Heading><Accordion items={faq} className="mt-8" /></Container>
+        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de estimar el mercado</Heading><Accordion items={faq} className="mt-8" /></Container>
       </Section>
 
       <Section className="pb-0">

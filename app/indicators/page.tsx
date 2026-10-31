@@ -24,8 +24,8 @@ export default async function IndicatorsPage() {
       />
       <ResourceIndex
         eyebrow="Indicadores"
-        title="Medir mejor para interpretar con cuidado."
-        description="Arquitecturas de indicadores, definiciones y criterios de lectura para comparar sin perder contexto."
+        title="Indicadores y cómo interpretarlos"
+        description="Consulta qué mide cada indicador, cómo se calcula y qué debes tener en cuenta al comparar resultados."
         items={items}
       />
     </>

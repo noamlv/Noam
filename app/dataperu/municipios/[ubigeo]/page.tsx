@@ -220,7 +220,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Inversión pública</Eyebrow>
-              <Heading size="xl">Proyectos con mayor presupuesto.</Heading>
+              <Heading size="xl">Proyectos con mayor presupuesto</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Hasta cinco proyectos ordenados por PIM. Esta selección muestra escala financiera; no establece prioridad, calidad ni avance físico.</p>
               <a href={projectSource.resourceUrl} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-xs font-medium text-rust hover:text-ink">Consultar recurso MEF <ExternalLink className="h-3.5 w-3.5" /></a>
             </div>
@@ -313,7 +313,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
               <div>
                 <Droplets className="h-5 w-5 text-rust" aria-hidden />
                 <Eyebrow className="mt-6">Agua y saneamiento</Eyebrow>
-                <Heading size="xl">Conexión a red pública en viviendas.</Heading>
+                <Heading size="xl">Conexión a red pública en viviendas</Heading>
                 <p className="mt-5 text-sm leading-7 text-ink/65">Resultados de los Censos Nacionales 2025. No demuestran continuidad, potabilidad, presión ni tratamiento de aguas residuales.</p>
               </div>
               <div>
@@ -346,7 +346,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
               <div>
                 <GraduationCap className="h-5 w-5 text-rust" aria-hidden />
                 <Eyebrow className="mt-6">Educación</Eyebrow>
-                <Heading size="xl">Matrícula de Educación Básica Regular.</Heading>
+                <Heading size="xl">Matrícula de Educación Básica Regular</Heading>
                 <p className="mt-5 text-sm leading-7 text-ink/65">Censo Educativo 2025. La matrícula registrada no demuestra asistencia, permanencia, aprendizaje ni calidad del servicio.</p>
               </div>
               <div>
@@ -383,7 +383,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
             <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
               <div>
                 <Eyebrow>Lecturas sectoriales</Eyebrow>
-                <Heading size="xl">Cinco entradas a la gestión local.</Heading>
+                <Heading size="xl">Datos por tema</Heading>
                 <p className="mt-5 text-sm leading-7 text-ink/65">Variables declaradas que ayudan a formular preguntas. No califican desempeño ni reemplazan evidencia territorial.</p>
               </div>
               <div className="divide-y divide-border border-y border-border">
@@ -412,7 +412,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">Lectura inicial</Eyebrow>
-              <Heading size="xl" className="text-white">Señales para profundizar.</Heading>
+              <Heading size="xl" className="text-white">Preguntas que conviene investigar</Heading>
               <p className="mt-5 text-sm leading-7 text-white/60">Reglas descriptivas convierten datos públicos en preguntas de gestión. No son hallazgos concluyentes ni sustituyen el análisis institucional.</p>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md border border-white/12 bg-white/12 sm:grid-cols-2">
@@ -436,7 +436,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
           <div className="grid gap-10 lg:grid-cols-[0.62fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>De la ficha a la decisión</Eyebrow>
-              <Heading size="xl">Los datos abren preguntas. El trabajo empieza al responderlas.</Heading>
+              <Heading size="xl">¿Necesitas conocer mejor un problema de este municipio?</Heading>
             </div>
             <div>
               <p className="text-base leading-8 text-ink/68">NOAM puede ampliar esta línea de base con servicios, encuestas, trabajo territorial, cartera de inversiones y datos internos para construir un diagnóstico o sistema de seguimiento útil para la gestión.</p>

@@ -60,7 +60,7 @@ export default function MunicipalityIndexPage() {
           <div className="mb-10 grid gap-8 lg:grid-cols-[0.58fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Explorar</Eyebrow>
-              <Heading size="xl">Encuentra una gestión local.</Heading>
+              <Heading size="xl">Busca una municipalidad</Heading>
             </div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65">Busca por distrito, provincia, departamento o ubigeo. La ficha no califica el desempeño: organiza información oficial para formular mejores preguntas.</p>
           </div>
@@ -74,7 +74,7 @@ export default function MunicipalityIndexPage() {
             <div>
               <Database className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Fuente y límites</Eyebrow>
-              <Heading size="lg">Trazabilidad antes que apariencia de precisión.</Heading>
+              <Heading size="lg">Fuentes y límites de los datos</Heading>
             </div>
             <div className="space-y-5 text-sm leading-7 text-ink/68">
               <p><strong className="font-medium text-ink">Fuentes:</strong> INEI para población, agua y saneamiento; Minedu para matrícula EBR; MEF para presupuesto y ejecución; y RENAMU para capacidades institucionales.</p>

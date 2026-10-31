@@ -99,7 +99,7 @@ export async function ResourceDetail({ item, body, parentLabel, parentHref }: Re
         <Section className="border-y border-border bg-panel/45">
           <Container>
             <div className="grid gap-10 lg:grid-cols-[0.36fr_1fr] lg:gap-20">
-              <div><Eyebrow>Continuar</Eyebrow><Heading size="lg">Más evidencia sobre {topicLabels[item.topic].toLowerCase()}.</Heading></div>
+              <div><Eyebrow>Continuar</Eyebrow><Heading size="lg">Más análisis sobre {topicLabels[item.topic].toLowerCase()}</Heading></div>
               <ResourceList items={related} variant="rows" />
             </div>
           </Container>

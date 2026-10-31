@@ -1,6 +1,6 @@
 ---
-title: "IA documental en entidades públicas: la arquitectura mínima"
-description: "Fuentes, permisos, recuperación, citas, supervisión y métricas para un asistente institucional controlable."
+title: "Cómo preparar un asistente de IA para documentos públicos"
+description: "Qué documentos incluir, quién puede consultarlos y cómo comprobar que las respuestas tengan fuentes y supervisión."
 date: "2026-07-16"
 tags:
   - inteligencia artificial
@@ -13,17 +13,17 @@ ogImage: "/og-default.png"
 ---
 
 <Problem>
-Un asistente puede redactar respuestas convincentes y aun así citar una versión derogada, revelar información restringida o inventar un antecedente. En un entorno institucional, la experiencia conversacional es solo la superficie de un sistema documental.
+Un asistente puede redactar respuestas convincentes y aun así citar una versión derogada, revelar información restringida o inventar un antecedente. Por eso, el sistema debe revisar las fuentes y aplicar permisos antes de responder.
 </Problem>
 
 <DataSources>
 El punto de partida es un inventario de colecciones: normas, directivas, informes, expedientes, manuales y preguntas frecuentes. Para cada colección se documentan propietario, vigencia, nivel de acceso, formato, frecuencia de actualización y tratamiento de datos sensibles.
 
-No todo documento disponible debe ingresar. La calidad del corpus y la gobernanza de acceso suelen importar más que el volumen.
+No es necesario incluir todos los documentos. Primero hay que comprobar su calidad, vigencia y permisos de acceso.
 </DataSources>
 
 <Method>
-La arquitectura mínima contiene seis capas:
+El sistema necesita seis componentes:
 
 1. **Fuente controlada:** documentos identificados, versionados y con metadatos.
 2. **Acceso:** permisos aplicados antes de recuperar contenido.
@@ -35,7 +35,7 @@ La arquitectura mínima contiene seis capas:
 El sistema debe poder abstenerse. Una respuesta incompleta con fuentes es preferible a una conclusión segura sin respaldo.
 </Method>
 
-<Findings>
+<Findings title="Qué conviene tener en cuenta">
 La primera métrica no debería ser cuántas personas usaron el asistente. Conviene medir recuperación de la fuente correcta, fidelidad de la cita, tasa de respuestas no respaldadas, tiempo ahorrado y proporción de casos que requieren revisión.
 </Findings>
 
@@ -48,7 +48,7 @@ La IA no elimina la responsabilidad institucional sobre la respuesta. Cambia la 
 <Downloads>
 - [Descargar ficha para priorizar casos de uso](/downloads/ficha-caso-uso-ia.csv).
 - Revisar los [cinco casos viables para gobiernos locales](/insights/ia-gobiernos-locales-casos-viables).
-- Consultar el [playbook de gobernanza](/toolkits/ai-governance-playbook).
+- Consultar el [guía de gobernanza](/toolkits/ai-governance-playbook).
 </Downloads>
 
 <CTA>

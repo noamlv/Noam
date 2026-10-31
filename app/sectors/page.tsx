@@ -44,7 +44,7 @@ export default function SectorsPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_0.48fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="reveal text-rust">Gobiernos y empresas</Eyebrow>
-              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[14ch]">La misma exigencia. Decisiones distintas.</Heading>
+              <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[14ch]">Servicios para gobiernos y empresas</Heading>
             </div>
             <div className="reveal reveal-delay-2">
               <p className="text-base leading-8 text-ink/68">Trabajamos donde se cruzan territorio, instituciones y datos. Adaptamos el alcance a una municipalidad pequeña, una región o una operación nacional.</p>
@@ -89,7 +89,7 @@ export default function SectorsPage() {
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Escalas públicas</Eyebrow>
-              <Heading size="xl">Desde el distrito hasta la política nacional.</Heading>
+              <Heading size="xl">Entidades públicas con las que podemos trabajar</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">No reducimos el alcance pequeño a una versión inferior. Diseñamos una intervención que el equipo pueda usar y sostener.</p>
               <Button href="/sectors/public-sector" variant="ghost" className="mt-7 gap-2">Ver gobiernos <ArrowRight className="h-4 w-4" /></Button>
             </div>
@@ -112,7 +112,7 @@ export default function SectorsPage() {
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Prácticas empresariales</Eyebrow>
-              <Heading size="xl">Industrias donde territorio e instituciones importan.</Heading>
+              <Heading size="xl">Sectores empresariales</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">El repertorio crecerá con evidencia sectorial, no con etiquetas vacías. Estas son las decisiones para las que ya existe una base metodológica común.</p>
               <Button href="/sectors/companies" variant="ghost" className="mt-7 gap-2">Ver empresas <ArrowRight className="h-4 w-4" /></Button>
             </div>
@@ -133,7 +133,7 @@ export default function SectorsPage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Capacidades transversales</Eyebrow><Heading size="xl">Tres formas de convertir contexto en acción.</Heading></div>
+            <div><Eyebrow>Capacidades transversales</Eyebrow><Heading size="xl">Nuestros servicios</Heading></div>
             <div className="divide-y divide-border border-y border-border">
               {serviceLines.map((service) => (
                 <NextLink key={service.slug} href={`/services/${service.slug}`} className="group grid gap-4 py-6 sm:grid-cols-[44px_0.7fr_1fr_auto] sm:items-center">
@@ -152,7 +152,7 @@ export default function SectorsPage() {
         <Container>
           <div className="rounded-[1.5rem] bg-[#15211d] px-6 py-12 text-white md:px-12 md:py-16">
             <div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-[#d9a48f]">Una consulta, no un formulario genérico</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Descríbenos la decisión, el territorio y el plazo.</h2></div>
+              <div><Eyebrow className="text-[#d9a48f]">Una consulta, no un formulario genérico</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué necesitas y para cuándo</h2></div>
               <Button href="/contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Iniciar conversación</Button>
             </div>
           </div>

@@ -33,60 +33,60 @@ await waitForServer();
 
 const publicPages = [
   ["/barometro-ciudadano", "Barómetro ciudadano"],
-  ["/analisis", "Explora los análisis por tema."],
-  ["/analisis/residuos-municipales", "Generación de residuos municipales."],
-  ["/analisis/planes-territoriales", "Estado reportado de los planes territoriales."],
-  ["/analisis/registro-discapacidad", "Discapacidad y acceso al registro."],
-  ["/analisis/apoyo-deportista", "Apoyo económico al deporte."],
-  ["/analisis/conteo-presidencial-2026", "Conteo presidencial: archivo parcial del 15 de abril de 2026."],
+  ["/analisis", "Explora los análisis por tema"],
+  ["/analisis/residuos-municipales", "Generación de residuos municipales"],
+  ["/analisis/planes-territoriales", "Estado reportado de los planes territoriales"],
+  ["/analisis/registro-discapacidad", "Discapacidad y acceso al registro"],
+  ["/analisis/apoyo-deportista", "Apoyo económico al deporte"],
+  ["/analisis/conteo-presidencial-2026", "Conteo presidencial: archivo parcial del 15 de abril de 2026"],
   ...["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"].map((slug) => [`/analisis/${slug}/dashboard`, "Detalle del agregado"]),
   ["/", "Análisis de datos para decisiones públicas y territoriales"],
-  ["/solutions", "Una decisión concreta. La evidencia para llevarla adelante."],
-  ["/solutions/diagnostico-agenda-territorial", "Una lectura compartida del territorio"],
-  ["/solutions/observatorio-gestion-inversiones", "Indicadores, proyectos y alertas reunidos"],
+  ["/solutions", "Servicios para estudiar problemas y mejorar la gestión"],
+  ["/solutions/diagnostico-agenda-territorial", "Conoce los problemas de tu territorio"],
+  ["/solutions/observatorio-gestion-inversiones", "Reúne indicadores y proyectos"],
   ["/solutions/ia-procesos-publicos", "Un proceso concreto, un piloto controlado"],
   ["/solutions/linea-base-evaluacion-programas", "Medir el punto de partida"],
   ["/solutions/transferencia-gestion-100-dias", "Convertir información, riesgos y compromisos"],
-  ["/sectors", "La misma exigencia. Decisiones distintas."],
-  ["/services", "Estudios y herramientas para gobiernos y empresas."],
-  ["/como-trabajamos", "Un encargo claro empieza antes de la propuesta."],
-  ["/cases", "Trabajo que se puede examinar."],
-  ["/evidence", "Ideas que se pueden examinar, usar y discutir."],
-  ["/electoral", "Entender la elección. Preparar la gestión."],
+  ["/sectors", "Servicios para gobiernos y empresas"],
+  ["/services", "Estudios y herramientas para gobiernos y empresas"],
+  ["/como-trabajamos", "Cómo trabajamos contigo"],
+  ["/cases", "Nuestra experiencia y productos"],
+  ["/evidence", "Análisis, datos y guías"],
+  ["/electoral", "Análisis electoral y planes de gobierno"],
   ["/electoral/erm-2026", "¿Qué necesita tu región o municipio?"],
   ["/electoral/barometro-enero-2026", "Barómetro Electoral"],
-  ["/electoral/planometro-2026", "Leer miles de propuestas sin perder la fuente."],
-  ["/electoral/planometro-2026/organizaciones", "Treinta y seis planes. Una lectura comparable."],
+  ["/electoral/planometro-2026", "Compara propuestas de los planes de gobierno"],
+  ["/electoral/planometro-2026/organizaciones", "Consulta los planes de gobierno"],
   ["/electoral/planometro-2026/organizaciones/ahora-nacion", "Ahora Nación"],
-  ["/electoral/planometro-2026/ejes", "Once puertas para leer la agenda."],
+  ["/electoral/planometro-2026/ejes", "Compara las propuestas por tema"],
   ["/electoral/planometro-2026/ejes/institucionalidad", "Institucionalidad"],
   ["/electoral/erm-2026/territorios/150122", "Brief territorial de preparación de gestión"],
   ["/dataperu", "DataPerú"],
-  ["/dataperu/agua-saneamiento", "Agua y saneamiento, distrito por distrito."],
-  ["/dataperu/educacion", "Matrícula escolar, distrito por distrito."],
-  ["/dataperu/agendas-territoriales", "El mismo problema no se resuelve igual en todo el Perú."],
-  ["/dataperu/departamentos", "El país cambia cuando cambia la escala."],
-  ["/dataperu/panorama-municipal-2025", "El Perú municipal no cabe en un promedio."],
-  ["/dataperu/departamentos/08", "Una lectura inicial de recursos"],
-  ["/dataperu/radar", "La gestión municipal, vista en contexto."],
-  ["/dataperu/inversiones", "La cartera se entiende proyecto por proyecto."],
-  ["/dataperu/mapa", "Las decisiones también tienen geografía."],
-  ["/products/ai-governance-lab", "Antes de construir IA, decide si vale la pena."],
-  ["/resources", "Datos, métodos y herramientas para trabajar mejor."],
-  ["/newsletter", "Una señal útil, no otra bandeja llena."],
+  ["/dataperu/agua-saneamiento", "Agua y saneamiento, distrito por distrito"],
+  ["/dataperu/educacion", "Matrícula escolar, distrito por distrito"],
+  ["/dataperu/agendas-territoriales", "Problemas y oportunidades por departamento"],
+  ["/dataperu/departamentos", "Datos y problemas por departamento"],
+  ["/dataperu/panorama-municipal-2025", "Diferencias entre municipalidades del Perú"],
+  ["/dataperu/departamentos/08", "Consulta datos de presupuesto"],
+  ["/dataperu/radar", "Compara datos de gestión municipal"],
+  ["/dataperu/inversiones", "Consulta los proyectos de inversión municipal"],
+  ["/dataperu/mapa", "Explora los datos en el mapa"],
+  ["/products/ai-governance-lab", "Evalúa un posible uso de inteligencia artificial"],
+  ["/resources", "Datos, métodos y herramientas para trabajar mejor"],
+  ["/newsletter", "Recibe las publicaciones de NOAM"],
   ["/newsletter/check-email", "Si la dirección requiere confirmación"],
-  ["/newsletter/confirm?status=invalid", "El enlace no es válido o ya fue utilizado."],
-  ["/newsletter/unsubscribe?status=invalid", "El enlace no es válido o la baja ya fue procesada."],
+  ["/newsletter/confirm?status=invalid", "El enlace no es válido o ya fue utilizado"],
+  ["/newsletter/unsubscribe?status=invalid", "El enlace no es válido o la baja ya fue procesada"],
   ["/dataperu/municipios", "Perfiles municipales"],
   ["/dataperu/municipios/150101", "Lima"],
   ["/contact", "Conversemos"],
-  ["/diagnostico", "Prepara tu consulta."],
-  ["/contratar-analisis-datos", "El análisis correcto empieza por la decisión, no por la herramienta."],
-  ["/diagnostico-territorial", "Conoce los problemas y las oportunidades de tu localidad."],
-  ["/encuestas-estudios-opinion", "Conoce las necesidades y opiniones de las personas."],
-  ["/observatorios-dashboards-visores", "Indicadores y mapas para seguir lo que ocurre."],
+  ["/diagnostico", "Prepara tu consulta"],
+  ["/contratar-analisis-datos", "¿Qué tipo de análisis necesitas?"],
+  ["/diagnostico-territorial", "Conoce los problemas y las oportunidades de tu localidad"],
+  ["/encuestas-estudios-opinion", "Conoce las necesidades y opiniones de las personas"],
+  ["/observatorios-dashboards-visores", "Indicadores y mapas para seguir lo que ocurre"],
   ["/ia-automatizacion-gobiernos-empresas", "¿Qué tareas podrías mejorar con IA?"],
-  ["/estudios-mercado-inteligencia-territorial", "Conoce el mercado antes de invertir."],
+  ["/estudios-mercado-inteligencia-territorial", "Conoce el mercado antes de invertir"],
   ["/analisis-datos-seguridad-ciudadana", "¿Dónde y cómo priorizar la seguridad ciudadana?"],
   ["/analisis-datos-residuos-limpieza-publica", "¿Cómo mejorar la limpieza pública?"],
   ["/analisis-datos-gestion-riesgo-desastres", "¿Qué población y servicios necesitan protección ante desastres?"],
@@ -101,7 +101,7 @@ const publicPages = [
   ["/analisis-inversion-publica-proyectos", "¿Qué proyectos avanzan y cuáles necesitan atención?"],
   ["/analisis-contrataciones-publicas-proveedores", "¿Qué compra el Estado y cómo avanzan los contratos?"],
   ["/linea-base-evaluacion-impacto", "¿Está funcionando el programa?"],
-  ["/insights/panorama-municipal-peru-2025", "El Perú municipal no cabe en un promedio"],
+  ["/insights/panorama-municipal-peru-2025", "Diferencias entre municipalidades del Perú"],
   ["/toolkits/tdr-estudio-analisis-datos", "Cómo plantear un estudio de análisis de datos"],
   ["/toolkits/tdr-encuesta-estudio-territorial", "Qué definir antes de hacer una encuesta territorial"],
   ["/toolkits/tdr-observatorio-dashboard-visor", "Observatorio, dashboard o visor: qué necesitas y cómo mantenerlo"],
@@ -127,14 +127,14 @@ const publicPages = [
   ["/muestras/linea-base-evaluacion-programa", "Línea de base y evaluación de un programa"],
   ["/muestras/transferencia-gestion-100-dias", "Diagnóstico de transferencia y agenda de 100 días"],
   ["/muestras/diagnostico-desempeno-servicio-publico", "Diagnóstico de acceso y desempeño de un servicio público"],
-  ["/about", "Inteligencia para instituciones que mueven el territorio."],
+  ["/about", "Conoce NOAM"],
   ["/cv", "Noam López Villanes"],
-  ["/privacy", "Datos personales, con propósito y límites."],
-  ["/terms", "Información abierta. Responsabilidades claras."],
-  ["/transparency", "La confianza también se diseña."],
-  ["/en", "Evidence for decisions that shape territories."],
-  ["/buscar", "Encuentra una respuesta, una herramienta o un punto de partida."],
-  ["/admin/login", "Acceso interno."]
+  ["/privacy", "Cómo tratamos tus datos personales"],
+  ["/terms", "Condiciones de uso del sitio"],
+  ["/transparency", "Fuentes, métodos y límites de NOAM"],
+  ["/en", "Evidence for decisions that shape territories"],
+  ["/buscar", "Busca datos, análisis y servicios"],
+  ["/admin/login", "Acceso interno"]
 ];
 
 for (const [path, text] of publicPages) await expectHtml(path, text);
@@ -149,7 +149,7 @@ assert.match(waterSanitationCsv.headers.get("content-type") ?? "", /^text\/csv/)
 const waterSanitationCsvBody = await waterSanitationCsv.text();
 assert.equal(waterSanitationCsvBody.trim().split(/\r?\n/).length, 1_893, "El CSV debe contener cabecera y 1,892 distritos");
 assert.ok(waterSanitationCsvBody.includes("160405,Loreto,Mariscal Ramón Castilla,Santa Rosa de Loreto"), "El CSV debe conservar el distrito censal adicional");
-const filteredWaterPage = await expectHtml("/dataperu/agua-saneamiento?q=150101", "Agua y saneamiento, distrito por distrito.");
+const filteredWaterPage = await expectHtml("/dataperu/agua-saneamiento?q=150101", "Agua y saneamiento, distrito por distrito");
 assert.ok(filteredWaterPage.body.includes('value="150101"'), "El explorador debe admitir una consulta precargada por ubigeo");
 const limaMunicipalProfile = await expectHtml("/dataperu/municipios/150101", "Agua por red pública");
 assert.ok(limaMunicipalProfile.body.includes("Saneamiento por red pública"), "La ficha municipal debe integrar ambos indicadores censales");
@@ -159,9 +159,9 @@ const limaMunicipalCsvBody = await limaMunicipalCsv.text();
 assert.ok(limaMunicipalCsvBody.includes("agua_red_publica_porcentaje"), "El CSV municipal debe incluir agua por red pública");
 assert.ok(limaMunicipalCsvBody.includes("saneamiento_red_publica_porcentaje"), "El CSV municipal debe incluir saneamiento por red pública");
 
-const educationPage = await expectHtml("/dataperu/educacion", "Matrícula no equivale a aprendizaje.");
+const educationPage = await expectHtml("/dataperu/educacion", "Qué muestran y qué no muestran los datos");
 assert.ok(educationPage.body.includes('"@type":"Dataset"'), "Educación debe publicar schema Dataset");
-assert.ok(educationPage.body.includes("Matrícula no equivale a aprendizaje"), "La capa educativa debe explicar sus límites de interpretación");
+assert.ok(educationPage.body.includes("No mide asistencia, permanencia, aprendizaje"), "La capa educativa debe explicar sus límites de interpretación");
 assert.ok(educationPage.body.includes("/dataperu/educacion/data.csv"), "La capa educativa debe ofrecer el dataset nacional");
 const educationCsv = await get("/dataperu/educacion/data.csv");
 assert.equal(educationCsv.status, 200, "El dataset educativo nacional debe ser descargable");
@@ -169,7 +169,7 @@ assert.match(educationCsv.headers.get("content-type") ?? "", /^text\/csv/);
 const educationCsvBody = await educationCsv.text();
 assert.equal(educationCsvBody.trim().split(/\r?\n/).length, 1_893, "El CSV educativo debe contener cabecera y 1,892 distritos");
 assert.ok(educationCsvBody.includes("160405,Loreto,Mariscal Ramón Castilla,Santa Rosa de Loreto"), "El CSV educativo debe conservar el distrito adicional del Minedu");
-const filteredEducationPage = await expectHtml("/dataperu/educacion?q=150101", "Matrícula escolar, distrito por distrito.");
+const filteredEducationPage = await expectHtml("/dataperu/educacion?q=150101", "Matrícula escolar, distrito por distrito");
 assert.ok(filteredEducationPage.body.includes('value="150101"'), "El explorador educativo debe admitir una consulta precargada por ubigeo");
 assert.ok(limaMunicipalProfile.body.includes("Matrícula de Educación Básica Regular"), "La ficha municipal debe integrar la capa educativa");
 assert.ok(limaMunicipalCsvBody.includes("matricula_gestion_publica_porcentaje"), "El CSV municipal debe incluir matrícula por gestión pública");
@@ -179,7 +179,7 @@ assert.ok(servicesDirectory.body.includes("Por tipo de servicio"), "Servicios de
 assert.ok(servicesDirectory.body.includes("Por tema de gestión"), "Servicios debe permitir buscar por tema de gestión");
 assert.ok(servicesDirectory.body.includes('data-analytics-target="services:sector:gestion-ambiental"'), "El directorio debe medir la selección sectorial");
 
-const publicSectorDirectory = await expectHtml("/sectors/public-sector", "Rutas para una necesidad pública");
+const publicSectorDirectory = await expectHtml("/sectors/public-sector", "¿Qué necesita resolver tu equipo?");
 assert.ok(publicSectorDirectory.body.includes('"@type":"Service"'), "Sector público debe declarar su oferta como Service");
 assert.ok(publicSectorDirectory.body.includes('"@type":"FAQPage"'), "Sector público debe publicar las preguntas frecuentes estructuradas");
 assert.ok(publicSectorDirectory.body.includes("municipalidades distritales y provinciales"), "Sector público debe explicitar todas las escalas subnacionales");
@@ -224,7 +224,7 @@ await expectHtml("/buscar?q=ENLA+ESCALE+trayectoria+aprendizaje", "Análisis de 
 await expectHtml("/buscar?q=Invierte.pe+avance+fisico+cartera+proyectos", "Análisis de inversión pública, presupuesto y proyectos");
 await expectHtml("/buscar?q=contratar+analisis+datos", "Cómo abordar un problema con análisis de datos");
 await expectHtml("/buscar?q=transferencia+gestion+100+dias", "Transferencia de gestión y primeros 100 días");
-await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa.");
+await expectHtml("/buscar?q=consulta-sin-coincidencia-xyz", "No encontramos una coincidencia precisa");
 await expectHtml("/resources?type=dataset&product=planometro-electoral", "Planómetro 2026: organizaciones");
 await expectHtml("/buscar?q=limites+departamentales&type=evidence", "Límites departamentales referenciales");
 await expectHtml("/buscar?q=boletin", "Brief NOAM");
@@ -270,7 +270,7 @@ if (hasSafeFallback) {
 }
 const invalidSignal = await expectHtml("/contact?interest=dataperu&ubigeo=150101&signal=not-a-real-signal", "Conversemos");
 assert.ok(!invalidSignal.body.includes("Señal municipal seleccionada"), "Contacto debe ignorar señales inexistentes");
-const amazonasAgenda = await expectHtml("/dataperu/departamentos/01", "Problemas que exigen decisiones conectadas.");
+const amazonasAgenda = await expectHtml("/dataperu/departamentos/01", "Problemas identificados y población afectada");
 const regionalProblemLink = amazonasAgenda.body.match(/href="([^\"]*focus=problem[^\"]*)"/);
 const regionalOpportunityLink = amazonasAgenda.body.match(/href="([^\"]*focus=opportunity[^\"]*)"/);
 assert.ok(regionalProblemLink && regionalOpportunityLink, "La agenda regional debe enlazar problemas públicos y oportunidades empresariales");
@@ -328,7 +328,7 @@ assert.equal(home.headers.get("x-content-type-options"), "nosniff");
 assert.equal(home.headers.get("x-frame-options"), "DENY");
 assert.equal(home.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
 
-const aboutPage = await expectHtml("/about", "Dirección pública seleccionada");
+const aboutPage = await expectHtml("/about", "Experiencia en dirección pública");
 assert.ok(aboutPage.body.includes("Noam López Villanes"), "Sobre NOAM debe identificar al fundador");
 assert.ok(aboutPage.body.includes("linkedin.com/in/noamlv"), "Sobre NOAM debe publicar el perfil profesional");
 assert.ok(aboutPage.body.includes('"@type":"Person"'), "Sobre NOAM debe publicar schema Person");
@@ -350,7 +350,7 @@ const admin = await get("/admin");
 assert.ok([307, 308].includes(admin.status), "Admin debe permanecer cerrado sin sesión");
 assert.equal(new URL(admin.headers.get("location"), baseUrl).pathname, "/admin/login");
 
-const adminLogin = await expectHtml("/admin/login", "Cada operador utiliza una identidad propia.");
+const adminLogin = await expectHtml("/admin/login", "Cada operador utiliza una identidad propia");
 assert.ok(!adminLogin.body.includes("NOAM_ADMIN_TOKEN"), "El login principal no debe instruir compartir el secreto heredado");
 const adminSecurity = await get("/admin/security");
 assert.ok([307, 308].includes(adminSecurity.status), "Seguridad administrativa debe requerir sesión");
@@ -742,7 +742,7 @@ assert.equal(rss.status, 200);
 assert.match(rss.headers.get("content-type") ?? "", /^application\/rss\+xml/);
 assert.ok((rssBody.match(/<item>/g) ?? []).length >= 10, "RSS debe publicar la biblioteca de estudios");
 
-const briefArchive = await expectHtml("/brief", "Una señal útil para decidir");
+const briefArchive = await expectHtml("/brief", "Brief NOAM: datos y análisis");
 assert.ok(briefArchive.body.includes("municipios-distintos-decisiones-distintas"), "El archivo debe enlazar la edición piloto");
 const briefEdition = await expectHtml("/brief/municipios-distintos-decisiones-distintas", "Municipios distintos exigen decisiones distintas");
 assert.ok(briefEdition.body.includes("Límite de lectura"), "La edición debe publicar límites explícitos");
@@ -764,10 +764,10 @@ const manifestBody = await manifest.json();
 assert.equal(manifestBody.short_name, "NOAM");
 assert.equal(manifestBody.start_url, "/");
 
-const article = await expectHtml("/insights/mapa-riesgos-territoriales-inversion", "Un mapa de riesgos territoriales no es una lista de amenazas");
+const article = await expectHtml("/insights/mapa-riesgos-territoriales-inversion", "Cómo preparar un mapa de riesgos territoriales");
 assert.ok(article.body.includes("https://noam.pe/og/insights/mapa-riesgos-territoriales-inversion"), "Artículo debe usar OG dinámico");
 
-const aiLab = await expectHtml("/products/ai-governance-lab", "Antes de construir IA, decide si vale la pena");
+const aiLab = await expectHtml("/products/ai-governance-lab", "Evalúa un posible uso de inteligencia artificial");
 assert.ok(aiLab.body.includes("https://noam.pe/og/products/ai-governance-lab"), "Laboratorio de IA debe usar OG dinámico");
 
 if (hasPersistentForm) {

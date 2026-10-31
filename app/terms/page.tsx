@@ -61,7 +61,7 @@ export default function TermsPage() {
       <Section className="pb-14 pt-14 md:pb-20 md:pt-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-            <div><Eyebrow className="text-rust">Términos de uso</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Información abierta. Responsabilidades claras.</Heading></div>
+            <div><Eyebrow className="text-rust">Términos de uso</Eyebrow><Heading as="h1" size="display" className="max-w-[13ch]">Condiciones de uso del sitio</Heading></div>
             <div className="border-l border-border pl-6"><Scale className="h-5 w-5 text-rust" aria-hidden /><p className="mt-4 text-sm leading-7 text-ink/68">Última actualización: 17 de julio de 2026. Versión inicial para el lanzamiento público de NOAM.PE.</p></div>
           </div>
         </Container>
@@ -74,7 +74,7 @@ export default function TermsPage() {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.3fr_1fr] lg:gap-20">
-            <div><FileText className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Condiciones</Eyebrow><Heading size="xl">Lee el alcance antes de reutilizar.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Un producto abierto puede orientar una pregunta. Una decisión material requiere revisar la evidencia y su contexto.</p></div>
+            <div><FileText className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Condiciones</Eyebrow><Heading size="xl">Lee el alcance antes de reutilizar</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Un producto abierto puede orientar una pregunta. Una decisión material requiere revisar la evidencia y su contexto.</p></div>
             <div className="divide-y divide-border border-y border-border">
               {terms.map((term, index) => <article key={term.title} className="grid gap-4 py-7 sm:grid-cols-[42px_0.38fr_1fr]"><span className="font-mono text-[10px] text-rust">{String(index + 1).padStart(2, "0")}</span><h2 className="text-lg font-medium leading-6 tracking-[-0.02em] text-ink">{term.title}</h2><p className="text-sm leading-7 text-ink/66">{term.body}</p></article>)}
             </div>
@@ -83,7 +83,7 @@ export default function TermsPage() {
       </Section>
 
       <Section className="border-y border-border bg-[#15211d] text-white">
-        <Container><div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20"><div><ShieldCheck className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Referencias</Eyebrow><Heading size="xl" className="text-white">Derechos y tratamiento responsable.</Heading></div><div className="space-y-5 text-sm leading-7 text-white/62"><p>La publicación toma como referencia el marco peruano sobre derecho de autor y protección de datos. Estos términos necesitan revisión profesional antes de operaciones contractuales de mayor complejidad.</p><div className="flex flex-wrap gap-5"><a href="https://www.gob.pe/institucion/pcm/normas-legales/1670023-822" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-white/80 hover:text-white">Decreto Legislativo N.° 822 <ExternalLink className="h-3.5 w-3.5" /></a><NextLink href="/privacy" className="font-medium text-white/80 hover:text-white">Aviso de privacidad</NextLink><NextLink href="/transparency" className="font-medium text-white/80 hover:text-white">Estándar de transparencia</NextLink></div></div></div></Container>
+        <Container><div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20"><div><ShieldCheck className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Referencias</Eyebrow><Heading size="xl" className="text-white">Derechos y tratamiento responsable</Heading></div><div className="space-y-5 text-sm leading-7 text-white/62"><p>La publicación toma como referencia el marco peruano sobre derecho de autor y protección de datos. Estos términos necesitan revisión profesional antes de operaciones contractuales de mayor complejidad.</p><div className="flex flex-wrap gap-5"><a href="https://www.gob.pe/institucion/pcm/normas-legales/1670023-822" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-white/80 hover:text-white">Decreto Legislativo N.° 822 <ExternalLink className="h-3.5 w-3.5" /></a><NextLink href="/privacy" className="font-medium text-white/80 hover:text-white">Aviso de privacidad</NextLink><NextLink href="/transparency" className="font-medium text-white/80 hover:text-white">Estándar de transparencia</NextLink></div></div></div></Container>
       </Section>
     </>
   );

@@ -29,7 +29,7 @@ export default function CompaniesPage() {
           <div className="grid gap-10 lg:grid-cols-[1fr_0.82fr] lg:items-center lg:gap-16">
             <div>
               <Eyebrow className="text-rust">Consultoría para empresas</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch]">Inteligencia para invertir, operar y crecer en el territorio.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch]">Estudios y análisis para empresas</Heading>
               <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">
                 Combinamos datos públicos, investigación y conocimiento institucional para decisiones donde el mercado, el Estado y el territorio se encuentran.
               </p>
@@ -54,7 +54,7 @@ export default function CompaniesPage() {
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Soluciones prioritarias</Eyebrow>
-              <Heading size="xl">El contexto público también es información de negocio.</Heading>
+              <Heading size="xl">Datos para conocer dónde opera tu empresa</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Puntos de partida para comparar territorios, escuchar mercados y anticipar cambios relevantes.</p>
               <Button href="/solutions" variant="ghost" className="mt-6 gap-2">Ver todas las soluciones <ArrowRight className="h-4 w-4" /></Button>
             </div>
@@ -68,7 +68,7 @@ export default function CompaniesPage() {
       <Section className="border-b border-border bg-[#e8ebe3]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.46fr_1fr] lg:items-end lg:gap-20">
-            <div><Eyebrow>Mercado público</Eyebrow><Heading size="xl">Comprender la demanda antes de competir.</Heading></div>
+            <div><Eyebrow>Mercado público</Eyebrow><Heading size="xl">Conoce a tus clientes y el mercado</Heading></div>
             <div><p className="max-w-2xl text-sm leading-7 text-ink/68">Analizamos entidades compradoras, categorías, estacionalidad, participación y condiciones observables para que una empresa evalúe oportunidades compatibles con sus capacidades. No prometemos adjudicaciones ni sustituimos los canales oficiales.</p><Button href="/analisis-contrataciones-publicas-proveedores" analyticsEvent="cta_click" analyticsTarget="companies:public-procurement" variant="ghost" className="mt-6 gap-2">Explorar contrataciones y proveedores <ArrowRight className="h-4 w-4" /></Button></div>
           </div>
         </Container>
@@ -79,7 +79,7 @@ export default function CompaniesPage() {
           <div className="grid gap-10 lg:grid-cols-[0.55fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Prácticas iniciales</Eyebrow>
-              <Heading size="xl">Industrias donde el territorio cambia la decisión.</Heading>
+              <Heading size="xl">Servicios por sector empresarial</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">No ofrecemos una receta genérica. Construimos cada práctica a partir de decisiones, fuentes, regulación y evidencia sectorial.</p>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
@@ -102,7 +102,7 @@ export default function CompaniesPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Decisiones frecuentes</Eyebrow><Heading size="xl">Una pregunta empresarial, múltiples capas de contexto.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Integramos mercado, Estado, infraestructura, población y entorno social sin ocultar supuestos ni vacíos de información.</p></div>
+            <div><Eyebrow>Decisiones frecuentes</Eyebrow><Heading size="xl">¿Qué necesitas investigar sobre tu negocio?</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Integramos mercado, Estado, infraestructura, población y entorno social sin ocultar supuestos ni vacíos de información.</p></div>
             <div className="divide-y divide-border border-y border-border">
               {["¿En qué territorio conviene invertir o expandirse?", "¿Qué actores, riesgos y cambios debemos monitorear?", "¿Cómo medir percepción, experiencia o impacto?", "¿Qué información necesita el directorio para decidir?", "¿Qué proceso puede mejorar con automatización o IA?"].map((question, index) => (
                 <div key={question} className="grid grid-cols-[38px_1fr] gap-4 py-6"><span className="font-mono text-[10px] text-rust">0{index + 1}</span><p className="text-lg font-medium leading-snug tracking-[-0.02em] text-ink">{question}</p></div>
@@ -128,7 +128,7 @@ export default function CompaniesPage() {
             <p className="max-w-2xl text-2xl font-medium leading-tight tracking-[-0.035em] text-white md:text-3xl">Convierte una pregunta de mercado o territorio en un encargo verificable.</p>
             <div className="flex flex-wrap gap-4">
               <Button href="/contact?interest=empresas" className="rounded-full">Conversar sobre un proyecto</Button>
-              <Button href="/diagnostico" variant="ghost" className="text-white/75 hover:text-white">Preparar un brief</Button>
+              <Button href="/diagnostico" variant="ghost" className="text-white/75 hover:text-white">Describir mi consulta</Button>
             </div>
           </div>
         </Container>

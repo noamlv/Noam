@@ -27,7 +27,7 @@ export default function SolutionsPage() {
             <div>
               <Eyebrow className="reveal text-[#d9a48f]">Soluciones NOAM</Eyebrow>
               <Heading as="h1" size="display" className="reveal reveal-delay-1 max-w-[13ch] text-white">
-                Una decisión concreta. La evidencia para llevarla adelante.
+                Servicios para estudiar problemas y mejorar la gestión
               </Heading>
             </div>
             <div className="reveal reveal-delay-2">
@@ -92,7 +92,7 @@ export default function SolutionsPage() {
                   <div className="mt-12 flex items-end justify-between gap-5 border-b border-border pb-5">
                     <div>
                       <Eyebrow>Puntos de partida</Eyebrow>
-                      <h3 className="mt-2 text-2xl font-medium tracking-[-0.035em] text-ink">Encargos configurables, resultados definidos.</h3>
+                      <h3 className="mt-2 text-2xl font-medium tracking-[-0.035em] text-ink">Qué puede incluir cada servicio</h3>
                     </div>
                     <span className="hidden text-xs text-muted sm:block">{packages.length} {packages.length === 1 ? "solución" : "soluciones"}</span>
                   </div>
@@ -111,7 +111,7 @@ export default function SolutionsPage() {
           <div className="grid gap-10 lg:grid-cols-[0.45fr_1fr] lg:gap-20">
             <div>
               <Eyebrow>Cómo empezar</Eyebrow>
-              <Heading size="xl">Una escala adecuada a la decisión.</Heading>
+              <Heading size="xl">Elige cómo empezar</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">Podemos validar una necesidad con rapidez, ejecutar un proyecto completo o dejar una capacidad funcionando por ciclos.</p>
             </div>
             <div className="divide-y divide-ink/15 border-y border-ink/15">
@@ -130,7 +130,7 @@ export default function SolutionsPage() {
       <Section>
         <Container>
           <NextLink href="/muestras" className="group grid gap-8 rounded-md border border-border bg-panel p-6 transition-all hover:border-border-strong hover:shadow-subtle md:grid-cols-[0.48fr_1fr] md:p-10">
-            <div><Eyebrow>Antes de elegir una intervención</Eyebrow><Heading size="xl">Seis entregables que puedes examinar.</Heading></div>
+            <div><Eyebrow>Antes de elegir una intervención</Eyebrow><Heading size="xl">Ejemplos de lo que podemos preparar</Heading></div>
             <div className="flex flex-col justify-between gap-8"><p className="max-w-2xl text-sm leading-7 text-ink/65">Mira la arquitectura, los insumos, los controles y el cronograma de cada solución sin confundir una demostración con un caso real.</p><span className="inline-flex items-center gap-2 text-sm font-medium text-rust">Abrir biblioteca de muestras <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden /></span></div>
           </NextLink>
         </Container>
@@ -143,7 +143,7 @@ export default function SolutionsPage() {
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
               <div>
                 <Eyebrow className="text-white/55">Primer paso</Eyebrow>
-                <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">No necesitas llegar con la solución. Empieza por la decisión.</h2>
+                <h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos el problema que necesitas resolver</h2>
               </div>
               <Button href="/diagnostico?from=/solutions" analyticsEvent="cta_click" analyticsTarget="solutions:scope-final" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Describir mi consulta</Button>
             </div>

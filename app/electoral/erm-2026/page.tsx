@@ -118,7 +118,7 @@ export default function Erm2026Page() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.62fr_1fr] md:items-end">
-            <div><Eyebrow>Oferta para gobiernos y equipos</Eyebrow><Heading size="xl">Cuatro módulos. Una secuencia de gestión.</Heading></div>
+            <div><Eyebrow>Oferta para gobiernos y equipos</Eyebrow><Heading size="xl">Datos y herramientas para preparar la gestión</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/68 md:justify-self-end">Cada módulo puede contratarse por separado o integrarse en una ruta que comienza con el territorio y termina en una capacidad de seguimiento.</p>
           </div>
 
@@ -144,7 +144,7 @@ export default function Erm2026Page() {
       <Section className="border-y border-border bg-[#ded9cc]">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Disponible ahora</Eyebrow><Heading size="xl">Valor antes de una contratación.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">La capa abierta permite conocer el enfoque, probar herramientas y formular mejor una necesidad institucional.</p></div>
+            <div><Eyebrow>Disponible ahora</Eyebrow><Heading size="xl">Información que puedes consultar</Heading><p className="mt-5 text-sm leading-7 text-ink/65">La capa abierta permite conocer el enfoque, probar herramientas y formular mejor una necesidad institucional.</p></div>
             <div className="divide-y divide-ink/15 border-y border-ink/15">
               {openResources.map((resource, index) => (
                 <NextLink key={resource.href} href={resource.href} className="group grid grid-cols-[38px_1fr_auto] items-center gap-4 py-6">
@@ -161,7 +161,7 @@ export default function Erm2026Page() {
       <Section className="bg-[#15211d] text-white">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><ShieldCheck className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Independencia y rigor</Eyebrow><Heading size="xl" className="text-white">Análisis electoral sin atajos.</Heading><p className="mt-5 text-sm leading-7 text-white/58">La utilidad pública y la confianza importan más que una afirmación llamativa.</p></div>
+            <div><ShieldCheck className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Independencia y rigor</Eyebrow><Heading size="xl" className="text-white">Límites del análisis electoral</Heading><p className="mt-5 text-sm leading-7 text-white/58">La utilidad pública y la confianza importan más que una afirmación llamativa.</p></div>
             <ul className="divide-y divide-white/14 border-y border-white/14">
               {operatingPrinciples.map((principle, index) => <li key={principle} className="grid grid-cols-[36px_1fr] gap-4 py-5"><span className="font-mono text-[10px] text-[#d9a48f]">0{index + 1}</span><p className="text-sm leading-6 text-white/68">{principle}</p></li>)}
             </ul>
@@ -175,7 +175,7 @@ export default function Erm2026Page() {
             <div>
               <Landmark className="h-5 w-5 text-rust" aria-hidden />
               <Eyebrow className="mt-6">Proceso oficial</Eyebrow>
-              <Heading size="lg">Las fuentes oficiales siguen siendo la referencia.</Heading>
+              <Heading size="lg">Las fuentes oficiales siguen siendo la referencia</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">NOAM no certifica resultados ni reemplaza la transferencia formal. Consulta el JNE y la normativa vigente para hitos legales, y contrasta cualquier cifra electoral con los organismos competentes.</p>
             </div>
             <div className="grid gap-3">
@@ -191,7 +191,7 @@ export default function Erm2026Page() {
       <Section className="border-y border-border bg-panel/45">
         <Container size="narrow">
           <Eyebrow>Preguntas frecuentes</Eyebrow>
-          <Heading size="xl">Antes de preparar el alcance.</Heading>
+          <Heading size="xl">Antes de preparar el alcance</Heading>
           <Accordion items={faqItems} className="mt-8" />
         </Container>
       </Section>
@@ -201,7 +201,7 @@ export default function Erm2026Page() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">ERM 2026</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Llega al primer día con una lectura del territorio y una agenda que pueda ejecutarse.</h2></div>
+              <div><Eyebrow className="text-white/55">ERM 2026</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">¿Necesitas preparar el inicio de gestión?</h2></div>
               <Button href={contactHref} analyticsEvent="cta_click" analyticsTarget="erm:final-contact" variant="secondary" className="rounded-full border-white bg-white px-6 text-ink">Plantear el contexto</Button>
             </div>
           </div>

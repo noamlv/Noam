@@ -51,7 +51,7 @@ export const departmentResearch: DepartmentResearch[] = [
     researchDate: "2026-07-30",
     confidence: "media",
     evidenceBase: { scope: "departamental", sourceCount: 2, officialSources: "total", note: "Investigación departamental inicial con cobertura de fuentes todavía limitada." },
-    thesis: "La dispersión territorial hace que conectividad, servicios básicos y acceso a mercados deban planificarse como un mismo problema. La prioridad no es sumar proyectos aislados, sino decidir qué corredores y poblaciones deben conectarse primero.",
+    thesis: "En Amazonas, las distancias dificultan llegar a servicios públicos y vender la producción local. Conviene revisar qué poblaciones necesitan mejores caminos, conectividad y servicios básicos.",
     problems: [
       {
         title: "Conectividad que condiciona servicios y mercados",
@@ -69,7 +69,7 @@ export const departmentResearch: DepartmentResearch[] = [
       },
       {
         title: "Cadenas agroforestales con poco valor capturado localmente",
-        problem: "Café, cacao y otros productos enfrentan fricciones de calidad, poscosecha, asociatividad, logística y acceso a compradores.",
+        problem: "Café, cacao y otros productos enfrentan dificultades de calidad, poscosecha, asociatividad, logística y acceso a compradores.",
         affected: "Productores pequeños, cooperativas, mujeres emprendedoras, transportistas y negocios de transformación local.",
         governmentDecision: "Concentrar asistencia e infraestructura productiva en cuellos de botella demostrables y cadenas con compradores identificables.",
         noamResponse: "Estudio de cadena de valor, segmentación de productores, análisis de demanda y diseño de pilotos de poscosecha o articulación comercial."
@@ -120,7 +120,7 @@ export const departmentResearch: DepartmentResearch[] = [
     researchDate: "2026-07-30",
     confidence: "media",
     evidenceBase: { scope: "departamental", sourceCount: 4, officialSources: "parcial", note: "Investigación departamental inicial; requiere ampliar fuentes oficiales y actualizar varias líneas base." },
-    thesis: "Áncash reúne al menos tres sistemas territoriales distintos: costa industrial y pesquera, Callejón de Huaylas y provincias altoandinas. Gobernar con el promedio departamental oculta diferencias en agua, riesgo, logística, inversión y oportunidades productivas.",
+    thesis: "La costa, el Callejón de Huaylas y las provincias altoandinas de Áncash tienen necesidades distintas. Los datos de agua, riesgos e inversión deben revisarse por localidad, no solo con el promedio departamental.",
     problems: [
       {
         title: "Seguridad hídrica y riesgo climático",
@@ -134,7 +134,7 @@ export const departmentResearch: DepartmentResearch[] = [
         problem: "La disponibilidad de recursos no asegura que proyectos complementarios se ejecuten en secuencia, resuelvan cuellos de botella o puedan operar después de la obra.",
         affected: "Gobiernos locales, población usuaria, proveedores, productores y territorios que dependen de inversiones viales, hídricas o sociales.",
         governmentDecision: "Ordenar la cartera por problema, madurez, riesgo, dependencia entre proyectos y resultado esperado, no solo por monto.",
-        noamResponse: "Observatorio de inversiones, alertas contractuales, sala de seguimiento y brief periódico para autoridades."
+        noamResponse: "Observatorio de inversiones, alertas contractuales, sala de seguimiento y reporte periódico para autoridades."
       },
       {
         title: "Presiones ambientales que afectan licencia y competitividad",
@@ -172,7 +172,7 @@ export const departmentResearch: DepartmentResearch[] = [
       }
     ],
     interventions: [
-      { title: "Observatorio de inversión y canon", outcome: "Conectar recursos, proyectos, riesgos y resultados territoriales.", deliverable: "Tablero de cartera, alertas, fichas de proyectos y brief de decisión." },
+      { title: "Observatorio de inversión y canon", outcome: "Conectar recursos, proyectos, riesgos y resultados territoriales.", deliverable: "Tablero de cartera, alertas, fichas de proyectos y resumen para decidir." },
       { title: "Sistema de riesgo hídrico", outcome: "Anticipar impactos sobre población, producción e infraestructura crítica.", deliverable: "Visor georreferenciado, reglas de alerta y protocolo de actualización." },
       { title: "Mapa de oportunidades y proveedores", outcome: "Identificar demanda empresarial verificable y capacidades locales aprovechables.", deliverable: "Analítica de compras, segmentación empresarial y agenda de desarrollo de proveedores." }
     ],
@@ -188,8 +188,8 @@ export const departmentResearch: DepartmentResearch[] = [
     department: "Apurímac",
     researchDate: "2026-07-31",
     confidence: "media",
-    evidenceBase: { scope: "departamental", sourceCount: 8, officialSources: "parcial", note: "Investigación departamental inicial curada para excluir inconsistencias y cifras no suficientemente verificadas." },
-    thesis: "El crecimiento asociado a la minería convive con brechas rurales de servicios, nutrición, conectividad y empleo. La pregunta central es cómo convertir recursos y actividad económica en capacidades duraderas para provincias y comunidades distintas.",
+    evidenceBase: { scope: "departamental", sourceCount: 8, officialSources: "parcial", note: "Investigación departamental inicial revisada para excluir inconsistencias y cifras no suficientemente verificadas." },
+    thesis: "En Apurímac, la actividad minera convive con carencias de agua, nutrición, transporte y empleo rural. El análisis debe revisar cómo se usan los recursos y qué servicios llegan a las comunidades.",
     problems: [
       {
         title: "Brechas sociales que se superponen en hogares rurales",

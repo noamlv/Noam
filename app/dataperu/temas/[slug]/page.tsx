@@ -105,7 +105,7 @@ export default async function SectorPage({ params }: SectorPageProps) {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Para decidir mejor</Eyebrow><Heading size="xl">Tres preguntas antes de intervenir.</Heading></div>
+            <div><Eyebrow>Para decidir mejor</Eyebrow><Heading size="xl">Qué conviene investigar</Heading></div>
             <ol className="divide-y divide-border border-y border-border">
               {topic.decisionQuestions.map((question, index) => (
                 <li key={question} className="grid gap-4 py-6 sm:grid-cols-[44px_1fr] sm:items-start">
@@ -122,7 +122,7 @@ export default async function SectorPage({ params }: SectorPageProps) {
         <Section className="border-y border-border bg-panel/45">
           <Container>
             <div className="mb-10 grid gap-8 lg:grid-cols-[0.5fr_1fr] lg:gap-20">
-              <div><Eyebrow>Serie oficial · 2014-2024</Eyebrow><Heading size="xl">Generación anual de residuos.</Heading></div>
+              <div><Eyebrow>Serie oficial · 2014-2024</Eyebrow><Heading size="xl">Generación anual de residuos</Heading></div>
               <p className="max-w-2xl text-sm leading-7 text-ink/65">El MINAM estima toneladas de residuos municipales generados cada año. Explora la evolución del país o de un departamento; más abajo, RENAMU 2025 muestra capacidades y prácticas de gestión declaradas por cada municipalidad. Son medidas distintas y no deben restarse entre sí.</p>
             </div>
             <WasteGenerationExplorer annual={wasteGeneration.annual} departments={wasteGeneration.departments} />
@@ -137,7 +137,7 @@ export default async function SectorPage({ params }: SectorPageProps) {
       <Section>
         <Container>
           <div className="mb-10 grid gap-8 lg:grid-cols-[0.55fr_1fr] lg:gap-20">
-            <div><Eyebrow>Exploración municipal</Eyebrow><Heading size="xl">Busca una gestión local.</Heading></div>
+            <div><Eyebrow>Exploración municipal</Eyebrow><Heading size="xl">Busca una municipalidad</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65">Consulta las variables seleccionadas para cada municipalidad. Abre el perfil completo para cruzarlas con población, presupuesto, inversión y capacidad institucional.</p>
           </div>
           <SectorExplorer items={searchItems} />
@@ -147,7 +147,7 @@ export default async function SectorPage({ params }: SectorPageProps) {
       <Section className="border-y border-border bg-panel/55">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Fuente y límites</Eyebrow><Heading size="lg">La declaración abre preguntas; no las cierra.</Heading></div>
+            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Fuente y límites</Eyebrow><Heading size="lg">Cómo interpretar lo que reporta cada municipio</Heading></div>
             <div className="space-y-5 text-sm leading-7 text-ink/68">
               <p><strong className="font-medium text-ink">Fuente:</strong> {sectorSource.name}, {sectorSource.publisher}. Periodo de referencia: {sectorSource.referencePeriod}.</p>
               <p>{sectorSource.notes} La presencia de un instrumento o una acción no demuestra vigencia, calidad, cobertura efectiva ni resultados.</p>
@@ -160,7 +160,7 @@ export default async function SectorPage({ params }: SectorPageProps) {
       <Section>
         <Container>
           <div className="grid gap-8 rounded-lg bg-accent px-7 py-10 text-accent-ink md:grid-cols-[1fr_auto] md:items-end md:px-12 md:py-14">
-            <div><Eyebrow className="text-[#d9a48f]">Aplicación institucional</Eyebrow><Heading size="xl" className="max-w-[19ch] text-white">Pasemos de una ficha abierta a evidencia para actuar.</Heading><p className="mt-4 max-w-xl text-sm leading-7 text-white/58">NOAM puede ampliar esta lectura con datos locales, trabajo de campo, análisis territorial y un sistema de seguimiento.</p></div>
+            <div><Eyebrow className="text-[#d9a48f]">Aplicación institucional</Eyebrow><Heading size="xl" className="max-w-[19ch] text-white">¿Necesitas profundizar en este tema?</Heading><p className="mt-4 max-w-xl text-sm leading-7 text-white/58">NOAM puede ampliar esta lectura con datos locales, trabajo de campo, análisis territorial y un sistema de seguimiento.</p></div>
             <div className="flex flex-wrap items-center gap-5"><Button href={`${topic.serviceHref}?from=${topic.slug}`} variant="secondary" className="rounded-full border-white bg-white text-ink">{topic.serviceLabel}</Button><NextLink href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-white/65 hover:text-white">Conversar <ArrowRight className="h-3.5 w-3.5" /></NextLink></div>
           </div>
         </Container>

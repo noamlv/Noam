@@ -38,6 +38,20 @@ Portada, DataPeru, biblioteca de analisis y sus cinco fichas, 13 paginas sectori
 
 Las sintesis departamentales, articulos historicos, matrices CSV y textos largos de productos deben leerse por separado. No se consideran revisados completamente por cambiar sus enlaces o los encabezados compartidos. Al revisar evidencia nueva, contrastar las afirmaciones con la fuente antes de publicar.
 
+### Extension editorial del 31 de octubre de 2026
+
+Se extiende el lenguaje claro a las paginas publicas en espanol: NOAM y trayectoria, sectores, soluciones, metodologia, casos, biblioteca, productos, newsletter, Brief, Electoral y vistas de DataPeru. Se revisan tambien las plantillas compartidas que muestran perfiles municipales y departamentales, y las introducciones de los 25 departamentos.
+
+- Los encabezados nombran el contenido y no llevan punto final. Los botones explican su destino.
+- Se quitan las tarjetas repetitivas de presentacion en Casos y la agenda interna de desarrollo de Electoral. Los productos publicados conservan sus estados y limites.
+- Las imagenes de sectores y soluciones conservan la indicacion de escena ilustrativa, sin esloganes repetidos.
+- Los articulos metodologicos distinguen recomendaciones de hallazgos empiricos. El panorama municipal mantiene una seccion de resultados observados.
+- Las introducciones regionales se acortan sin cambiar problemas, poblaciones, oportunidades ni vacios de evidencia. Arequipa y Ayacucho mantienen su condicion preliminar y base macroregional.
+- Se conservan cifras, calculos, fechas de los estudios, fuentes externas y enlaces. Esta revision de redaccion no actualiza la evidencia ni certifica su vigencia normativa.
+- No se reescriben textos legales, interfaces administrativas, el portal privado, archivos originales de investigacion ni datos descargables. Solo se aclaran los titulos publicos de privacidad y condiciones de uso. La traduccion al ingles queda para otra etapa.
+
+El control de lenguaje claro recorre los archivos publicos y detecta errores y etiquetas concretas; no reemplaza una revision humana de cada afirmacion. La fecha original de cada estudio se conserva para no presentarlo como investigacion nueva.
+
 ### Pruebas
 
 `npm run test:plain-language` detecta regresiones concretas en etiquetas, destinos y titulos del catalogo. No mide automaticamente la naturalidad de un texto ni sustituye la lectura editorial.

@@ -22,7 +22,7 @@ export default function PlanometroOrganizationsPage() {
       <section className="border-b border-border pb-16 pt-14 md:pb-24 md:pt-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[1fr_0.42fr] lg:items-end">
-            <div><Eyebrow className="text-rust">Planómetro 2026 · Directorio</Eyebrow><Heading as="h1" size="display" className="max-w-[14ch]">Treinta y seis planes. Una lectura comparable.</Heading></div>
+            <div><Eyebrow className="text-rust">Planómetro 2026 · Directorio</Eyebrow><Heading as="h1" size="display" className="max-w-[14ch]">Consulta los planes de gobierno</Heading></div>
             <div><p className="text-sm leading-7 text-ink/68 md:text-base">Cada perfil resume lo que el pipeline detectó en el documento procesado. No certifica candidaturas, no estima intención de voto y no convierte extensión textual en calidad política.</p><Button href="/electoral/planometro-2026#explorar" variant="ghost" className="mt-6 gap-2 px-0">Usar el explorador <ArrowRight className="h-4 w-4" aria-hidden /></Button></div>
           </div>
         </Container>
@@ -36,7 +36,7 @@ export default function PlanometroOrganizationsPage() {
 
       <Section>
         <Container>
-          <div className="grid gap-8 md:grid-cols-[0.42fr_1fr] md:items-end"><div><FileText className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Perfiles programáticos</Eyebrow><Heading size="xl">Abrir el documento desde sus señales.</Heading></div><p className="max-w-2xl text-sm leading-7 text-ink/65">Las tarjetas se ordenan alfabéticamente. Los ejes destacados corresponden a la mayor participación dentro de cada extracción, no a prioridades oficialmente declaradas.</p></div>
+          <div className="grid gap-8 md:grid-cols-[0.42fr_1fr] md:items-end"><div><FileText className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Perfiles programáticos</Eyebrow><Heading size="xl">Elige una organización política</Heading></div><p className="max-w-2xl text-sm leading-7 text-ink/65">Las tarjetas se ordenan alfabéticamente. Los ejes destacados corresponden a la mayor participación dentro de cada extracción, no a prioridades oficialmente declaradas.</p></div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 xl:grid-cols-3">
             {planometroParties.map((party, index) => (
               <NextLink key={party.slug} href={`${path}/${party.slug}`} className="group flex min-h-[300px] flex-col bg-panel p-6 transition-colors hover:bg-canvas focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rust">
@@ -50,7 +50,7 @@ export default function PlanometroOrganizationsPage() {
         </Container>
       </Section>
 
-      <Section className="border-y border-border bg-[#15211d] text-white"><Container><div className="grid gap-10 md:grid-cols-[0.42fr_1fr] md:items-end"><div><ShieldCheck className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Lectura responsable</Eyebrow><Heading size="xl" className="text-white">Comparar texto no equivale a evaluar gobierno.</Heading></div><div><p className="max-w-2xl text-base leading-8 text-white/60">Los perfiles sirven para formular preguntas, localizar temas y revisar señales explícitas. La viabilidad exige competencias, costos, normas, capacidades, territorio y contraste documental adicional.</p><Button href="/electoral/planometro-2026/ejes" variant="secondary" className="mt-7 rounded-full border-white bg-white text-ink">Explorar los 11 ejes</Button></div></div></Container></Section>
+      <Section className="border-y border-border bg-[#15211d] text-white"><Container><div className="grid gap-10 md:grid-cols-[0.42fr_1fr] md:items-end"><div><ShieldCheck className="h-5 w-5 text-[#d9a48f]" aria-hidden /><Eyebrow className="mt-6 text-[#d9a48f]">Lectura responsable</Eyebrow><Heading size="xl" className="text-white">Qué permite esta comparación y qué no</Heading></div><div><p className="max-w-2xl text-base leading-8 text-white/60">Los perfiles sirven para formular preguntas, localizar temas y revisar señales explícitas. La viabilidad exige competencias, costos, normas, capacidades, territorio y contraste documental adicional.</p><Button href="/electoral/planometro-2026/ejes" variant="secondary" className="mt-7 rounded-full border-white bg-white text-ink">Explorar los 11 ejes</Button></div></div></Container></Section>
     </>
   );
 }

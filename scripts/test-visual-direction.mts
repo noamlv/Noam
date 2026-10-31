@@ -39,7 +39,7 @@ for (const practice of practices) {
   assert.ok(size >= 250_000 && size <= 750_000, `${practice.image} debe conservar detalle con un peso razonable`);
 }
 const practicePage = fs.readFileSync(path.join(root, "components/brand/sector-practice-page.tsx"), "utf8");
-assert.match(practicePage, /Imagen editorial/);
-assert.match(practicePage, /no corresponde a un cliente/);
+assert.match(practicePage, /Imagen ilustrativa/);
+assert.match(practicePage, /no muestra un trabajo para un cliente/);
 
 console.log(`Dirección visual OK: ${practiceImages.size + images.size} escenas originales cubren capacidades, soluciones y prácticas sectoriales`);

@@ -24,8 +24,8 @@ export default async function ToolkitsPage() {
       />
       <ResourceIndex
         eyebrow="Métodos y guías"
-        title="Herramientas para pasar de la pregunta al trabajo."
-        description="Checklists, marcos y plantillas que hacen visibles nuestros criterios y facilitan una mejor implementación."
+        title="Guías y plantillas de trabajo"
+        description="Encuentra preguntas, listas de revisión y plantillas para preparar un estudio o una herramienta de datos."
         items={items}
       />
     </>

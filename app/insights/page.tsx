@@ -24,8 +24,8 @@ export default async function InsightsPage() {
       />
       <ResourceIndex
         eyebrow="Estudios y análisis"
-        title="Preguntas públicas examinadas con método y contexto."
-        description="Notas, estudios y marcos de decisión para comprender problemas institucionales, territoriales y tecnológicos."
+        title="Estudios y análisis"
+        description="Lee nuestros análisis sobre gestión pública, territorio e inteligencia artificial, con sus fuentes y límites."
         items={items}
       />
     </>

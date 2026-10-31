@@ -78,7 +78,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
         <Section className="print:py-10">
           <Container>
             <div className="grid gap-10 lg:grid-cols-[0.38fr_1fr] lg:gap-20">
-              <div><Eyebrow>Decisión central</Eyebrow><Heading size="xl">Qué debe quedar más claro.</Heading></div>
+              <div><Eyebrow>Decisión central</Eyebrow><Heading size="xl">Qué busca resolver este ejemplo</Heading></div>
               <div><p className="max-w-3xl text-2xl font-medium leading-[1.35] tracking-[-0.025em] text-ink md:text-3xl">{sample.decision}</p><p className="mt-6 max-w-2xl text-sm leading-7 text-ink/62">{sample.description}</p></div>
             </div>
           </Container>
@@ -87,7 +87,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
         <Section className="bg-[#15211d] text-white print:border-y print:border-neutral-300 print:bg-white print:text-black">
           <Container>
             <div className="grid gap-12 lg:grid-cols-[0.38fr_1fr] lg:gap-20">
-              <div><Eyebrow className="text-[#d9a48f] print:text-neutral-600">Preguntas de trabajo</Eyebrow><Heading size="xl" className="text-white print:text-black">Antes del tablero, el informe o la IA.</Heading></div>
+              <div><Eyebrow className="text-[#d9a48f] print:text-neutral-600">Preguntas de trabajo</Eyebrow><Heading size="xl" className="text-white print:text-black">Información necesaria para empezar</Heading></div>
               <ol className="divide-y divide-white/14 border-y border-white/14 print:divide-neutral-300 print:border-neutral-300">
                 {sample.questions.map((question, index) => <li key={question} className="grid grid-cols-[40px_1fr] gap-4 py-6"><span className="font-mono text-[10px] text-[#d9a48f] print:text-neutral-600">0{index + 1}</span><p className="text-lg font-medium leading-7 text-white/82 print:text-black">{question}</p></li>)}
               </ol>
@@ -97,7 +97,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
 
         <Section>
           <Container>
-            <div><Eyebrow>Arquitectura</Eyebrow><Heading size="xl">Cuatro módulos, un hilo de decisión.</Heading></div>
+            <div><Eyebrow>Arquitectura</Eyebrow><Heading size="xl">Partes del trabajo</Heading></div>
             <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2">
               {sample.modules.map((module, index) => <section key={module.title} className="min-h-[270px] bg-canvas p-6 md:p-8"><div className="flex items-center justify-between"><span className="font-mono text-[10px] text-rust">0{index + 1}</span><FileText className="h-4 w-4 text-ink/25" aria-hidden /></div><h3 className="mt-14 text-2xl font-medium tracking-[-0.035em] text-ink">{module.title}</h3><p className="mt-4 text-sm leading-7 text-ink/62">{module.purpose}</p><p className="mt-7 border-t border-border pt-4 text-xs font-medium text-rust">Salida · {module.output}</p></section>)}
             </div>
@@ -107,7 +107,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
         <Section className="border-y border-border bg-[#ded9cc]">
           <Container>
             <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-              <div><Eyebrow>Artefacto central</Eyebrow><Heading size="xl">Una estructura que obliga a conectar evidencia y acción.</Heading><p className="mt-5 text-sm leading-7 text-ink/62">Los textos son demostrativos. La ficha muestra la lógica del artefacto, no datos ni conclusiones de un cliente.</p></div>
+              <div><Eyebrow>Artefacto central</Eyebrow><Heading size="xl">Contenido del informe o herramienta</Heading><p className="mt-5 text-sm leading-7 text-ink/62">Los textos son demostrativos. La ficha muestra la lógica del artefacto, no datos ni conclusiones de un cliente.</p></div>
               <div className="overflow-hidden rounded-md border border-ink/15 bg-canvas">
                 <div className="flex items-center justify-between border-b border-border p-5"><h3 className="text-sm font-medium text-ink">{sample.preview.title}</h3><span className="h-2 w-2 rounded-full" style={{ backgroundColor: sample.accent }} /></div>
                 <div className="grid grid-cols-3 bg-ink px-5 py-3 text-[9px] uppercase tracking-[0.11em] text-white/52">{sample.preview.columns.map((column) => <span key={column}>{column}</span>)}</div>
@@ -120,7 +120,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
         <Section>
           <Container>
             <div className="grid gap-12 lg:grid-cols-[0.38fr_1fr] lg:gap-20">
-              <div><Eyebrow>Secuencia</Eyebrow><Heading size="xl">Un ritmo visible para conducir el encargo.</Heading></div>
+              <div><Eyebrow>Secuencia</Eyebrow><Heading size="xl">Etapas y plazos de referencia</Heading></div>
               <div className="divide-y divide-border border-y border-border">
                 {sample.timeline.map((step, index) => <article key={step.period} className="grid gap-3 py-6 sm:grid-cols-[48px_0.35fr_1fr]"><span className="font-mono text-[10px] text-rust">0{index + 1}</span><div><p className="text-base font-medium text-ink">{step.title}</p><p className="mt-1 text-xs text-muted"><Clock3 className="mr-1.5 inline h-3 w-3" aria-hidden />{step.period}</p></div><p className="text-sm leading-6 text-ink/65">{step.description}</p></article>)}
               </div>
@@ -131,8 +131,8 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
         <Section className="border-y border-border bg-panel/45">
           <Container>
             <div className="grid gap-5 lg:grid-cols-2">
-              <article className="rounded-md border border-border bg-canvas p-6 md:p-8"><Eyebrow>Requiere del cliente</Eyebrow><h2 className="mt-4 text-3xl font-medium tracking-[-0.04em] text-ink">Acceso y contexto.</h2><ul className="mt-8 divide-y divide-border border-y border-border">{sample.clientInputs.map((item) => <li key={item} className="flex gap-3 py-4 text-sm leading-6 text-ink/68"><Check className="mt-1 h-4 w-4 shrink-0 text-rust" aria-hidden />{item}</li>)}</ul></article>
-              <article className="rounded-md border border-border bg-canvas p-6 md:p-8"><Eyebrow>Estándar NOAM</Eyebrow><h2 className="mt-4 text-3xl font-medium tracking-[-0.04em] text-ink">Control y trazabilidad.</h2><ul className="mt-8 divide-y divide-border border-y border-border">{sample.qualityControls.map((item) => <li key={item} className="flex gap-3 py-4 text-sm leading-6 text-ink/68"><ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-rust" aria-hidden />{item}</li>)}</ul></article>
+              <article className="rounded-md border border-border bg-canvas p-6 md:p-8"><Eyebrow>Requiere del cliente</Eyebrow><h2 className="mt-4 text-3xl font-medium tracking-[-0.04em] text-ink">Acceso y contexto</h2><ul className="mt-8 divide-y divide-border border-y border-border">{sample.clientInputs.map((item) => <li key={item} className="flex gap-3 py-4 text-sm leading-6 text-ink/68"><Check className="mt-1 h-4 w-4 shrink-0 text-rust" aria-hidden />{item}</li>)}</ul></article>
+              <article className="rounded-md border border-border bg-canvas p-6 md:p-8"><Eyebrow>Estándar NOAM</Eyebrow><h2 className="mt-4 text-3xl font-medium tracking-[-0.04em] text-ink">Revisión, fuentes y responsables</h2><ul className="mt-8 divide-y divide-border border-y border-border">{sample.qualityControls.map((item) => <li key={item} className="flex gap-3 py-4 text-sm leading-6 text-ink/68"><ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-rust" aria-hidden />{item}</li>)}</ul></article>
             </div>
           </Container>
         </Section>
@@ -140,7 +140,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
         <Section>
           <Container>
             <div className="grid gap-12 lg:grid-cols-[0.38fr_1fr] lg:gap-20">
-              <div><Eyebrow>Paquete de salida</Eyebrow><Heading size="xl">Entregables que pueden usarse.</Heading></div>
+              <div><Eyebrow>Paquete de salida</Eyebrow><Heading size="xl">Qué recibe el equipo</Heading></div>
               <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">{sample.deliverables.map((item, index) => <div key={item} className="min-h-[150px] bg-canvas p-6"><span className="font-mono text-[10px] text-rust">0{index + 1}</span><p className="mt-8 text-base font-medium leading-6 text-ink">{item}</p></div>)}</div>
             </div>
           </Container>
@@ -149,7 +149,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
         <Section className="border-y border-border bg-[#ded9cc] print:hidden">
           <Container>
             <div className="grid gap-10 lg:grid-cols-[0.38fr_1fr] lg:gap-20">
-              <div><Eyebrow>Seguir examinando</Eyebrow><Heading size="xl">Método, producto y solución.</Heading></div>
+              <div><Eyebrow>Seguir examinando</Eyebrow><Heading size="xl">Guías y herramientas relacionadas</Heading></div>
               <div className="divide-y divide-ink/15 border-y border-ink/15">{sample.related.map((item) => <NextLink key={item.href} href={item.href} className="group grid gap-3 py-5 sm:grid-cols-[110px_1fr_auto] sm:items-center"><span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-rust">{item.type}</span><span className="text-base font-medium text-ink">{item.label}</span><ArrowRight className="h-4 w-4 text-ink/35 transition-transform group-hover:translate-x-1 group-hover:text-rust" aria-hidden /></NextLink>)}</div>
             </div>
           </Container>
@@ -157,7 +157,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
       </article>
 
       <Section className="pb-0 print:hidden">
-        <Container><div className="rounded-[1.5rem] bg-rust p-8 text-white md:p-12"><div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><Eyebrow className="text-white/55">Aplicación real</Eyebrow><Heading size="lg" className="mt-4 max-w-3xl text-white">La estructura es un punto de partida. El encargo se diseña alrededor de tu decisión.</Heading></div><Button href={contactHref} analyticsEvent="cta_click" analyticsTarget={`sample:${sample.slug}:final-contact`} variant="secondary" className="rounded-full border-white bg-white text-ink">Plantear el contexto</Button></div></div></Container>
+        <Container><div className="rounded-[1.5rem] bg-rust p-8 text-white md:p-12"><div className="grid gap-8 md:grid-cols-[1fr_auto] md:items-end"><div><Eyebrow className="text-white/55">Aplicación real</Eyebrow><Heading size="lg" className="mt-4 max-w-3xl text-white">¿Necesitas adaptar este ejemplo a tu organización?</Heading></div><Button href={contactHref} analyticsEvent="cta_click" analyticsTarget={`sample:${sample.slug}:final-contact`} variant="secondary" className="rounded-full border-white bg-white text-ink">Plantear el contexto</Button></div></div></Container>
       </Section>
     </>
   );

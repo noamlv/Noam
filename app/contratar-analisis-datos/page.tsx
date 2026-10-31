@@ -141,7 +141,7 @@ export default function ContractDataAnalysisPage() {
           <div className="grid gap-12 lg:grid-cols-[1fr_0.48fr] lg:items-end lg:gap-20">
             <div>
               <Eyebrow className="text-[#d9a48f]">Guía para orientar decisiones</Eyebrow>
-              <Heading as="h1" size="display" className="max-w-[14ch] text-white">El análisis correcto empieza por la decisión, no por la herramienta.</Heading>
+              <Heading as="h1" size="display" className="max-w-[14ch] text-white">¿Qué tipo de análisis necesitas?</Heading>
             </div>
             <div>
               <p className="text-base leading-8 text-white/68">Para gobiernos y empresas que necesitan comprender un problema, formular un proyecto, medir un programa, escuchar un territorio o instalar un sistema de decisión.</p>
@@ -166,7 +166,7 @@ export default function ContractDataAnalysisPage() {
       <Section id="decisiones">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Seis rutas para explorar el problema.</Heading></div>
+            <div><Eyebrow>Qué necesitas decidir</Eyebrow><Heading size="xl">Estudios y herramientas según tu necesidad</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Una misma institución puede necesitar varias rutas, pero el primer alcance debe resolver una decisión concreta. Cada opción enlaza una guía, una muestra y una solución.</p>
           </div>
 
@@ -195,7 +195,7 @@ export default function ContractDataAnalysisPage() {
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Antes de cotizar</Eyebrow><Heading size="xl">Cuatro definiciones que protegen el encargo.</Heading><p className="mt-5 text-sm leading-7 text-ink/65">No importa si el producto final es un informe, una base, un tablero o un piloto: estos controles deben poder verificarse.</p></div>
+            <div><Eyebrow>Antes de cotizar</Eyebrow><Heading size="xl">Qué conviene definir antes de empezar</Heading><p className="mt-5 text-sm leading-7 text-ink/65">No importa si el producto final es un informe, una base, un tablero o un piloto: estos controles deben poder verificarse.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {commonControls.map((control, index) => (
                 <article key={control.title} className="min-h-[220px] bg-canvas p-6 md:p-8">
@@ -212,7 +212,7 @@ export default function ContractDataAnalysisPage() {
       <Section>
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.55fr_1fr] md:items-end">
-            <div><Eyebrow>Antes de confiar</Eyebrow><Heading size="xl">Experiencia y productos que puedes examinar.</Heading></div>
+            <div><Eyebrow>Antes de confiar</Eyebrow><Heading size="xl">Conoce nuestros trabajos y análisis</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Separamos consultorías institucionales, productos propios y análisis aplicados. Cada ficha declara alcance, método y límites de divulgación.</p>
           </div>
           <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-2 lg:grid-cols-3">
@@ -229,7 +229,7 @@ export default function ContractDataAnalysisPage() {
       </Section>
 
       <Section className="border-y border-border bg-[#ded9cc]">
-        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de solicitar una propuesta.</Heading><Accordion items={faq} className="mt-8 bg-[#e6e1d5]" /></Container>
+        <Container size="narrow"><Eyebrow>Preguntas frecuentes</Eyebrow><Heading size="xl">Antes de solicitar una propuesta</Heading><Accordion items={faq} className="mt-8 bg-[#e6e1d5]" /></Container>
       </Section>
 
       <Section className="pb-0">
@@ -237,7 +237,7 @@ export default function ContractDataAnalysisPage() {
           <div className="relative overflow-hidden rounded-[1.5rem] bg-rust px-7 py-12 text-white md:px-12 md:py-16">
             <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full border-[56px] border-white/10" />
             <div className="relative grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
-              <div><Eyebrow className="text-white/55">Primer alcance</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Describe la decisión, el territorio y el plazo. El método viene después.</h2></div>
+              <div><Eyebrow className="text-white/55">Primer alcance</Eyebrow><h2 className="mt-4 max-w-3xl text-3xl font-medium leading-tight tracking-[-0.045em] md:text-5xl">Cuéntanos qué necesitas investigar</h2></div>
               <div className="flex flex-wrap gap-3"><Button href="/diagnostico?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:scope" variant="secondary" className="rounded-full border-white bg-white text-ink">Describir mi consulta</Button><Button href="/contact?from=/contratar-analisis-datos" analyticsEvent="cta_click" analyticsTarget="contract-hub:contact" variant="ghost" className="!text-white/70 hover:!text-white">Conversar sobre el problema</Button></div>
             </div>
           </div>

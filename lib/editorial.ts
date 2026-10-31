@@ -18,9 +18,9 @@ export const editorialPillars: Record<Topic, EditorialPillar> = {
   gobierno: {
     topic: "gobierno",
     eyebrow: "Gobierno y gestión pública",
-    title: "Decidir, ejecutar y aprender en el territorio",
-    description: "Evidencia para priorizar problemas, conducir inversiones, mejorar servicios y convertir compromisos en sistemas de gestión.",
-    thesis: "Una institución no necesita más indicadores aislados. Necesita una arquitectura que conecte problemas, responsables, recursos, señales y decisiones.",
+    title: "Estudios y datos para mejorar la gestión pública",
+    description: "Análisis para conocer problemas, revisar inversiones y servicios, y dar seguimiento al trabajo de una entidad pública.",
+    thesis: "Para usar los datos en la gestión hace falta definir qué problema se revisará, quién es responsable y qué recursos y plazos están disponibles.",
     accent: "#b95337",
     questions: ["¿Qué debe priorizar una nueva gestión?", "¿Cómo seguir inversión y servicios?", "¿Qué cambia entre territorios?"],
     solutionSlugs: ["diagnostico-agenda-territorial", "linea-base-evaluacion-programas", "observatorio-gestion-inversiones", "encuestas-escucha-ciudadana"],
@@ -30,9 +30,9 @@ export const editorialPillars: Record<Topic, EditorialPillar> = {
   inversion: {
     topic: "inversion",
     eyebrow: "Inversión y territorio",
-    title: "Contexto para invertir, operar y crecer",
-    description: "Métodos para comparar territorios, documentar supuestos, monitorear entorno y tomar decisiones donde mercado, Estado y sociedad se encuentran.",
-    thesis: "Un territorio atractivo en una tabla puede ser inviable en operación. La decisión mejora cuando demanda, infraestructura, instituciones y riesgo se leen como sistema.",
+    title: "Estudios para conocer mercados y territorios",
+    description: "Métodos para comparar ubicaciones, estudiar la demanda y revisar los riesgos de una inversión.",
+    thesis: "Antes de invertir conviene comprobar la demanda, el acceso, los costos, los servicios y los riesgos de cada ubicación. Los datos públicos son un punto de partida que debe contrastarse en campo.",
     accent: "#a17a24",
     questions: ["¿Dónde conviene invertir?", "¿Qué riesgos deben validarse?", "¿Qué cambia la viabilidad operativa?"],
     solutionSlugs: ["inteligencia-territorial-inversion", "monitoreo-entorno-impacto", "encuestas-escucha-ciudadana"],
@@ -42,9 +42,9 @@ export const editorialPillars: Record<Topic, EditorialPillar> = {
   ia: {
     topic: "ia",
     eyebrow: "IA y transformación",
-    title: "Procesos mejores antes que tecnología más llamativa",
-    description: "Criterios, controles y pilotos para aplicar automatización e inteligencia artificial a problemas institucionales verificables.",
-    thesis: "La unidad correcta de adopción no es el modelo: es el proceso. El valor aparece cuando datos, riesgo, supervisión y medición se diseñan desde el inicio.",
+    title: "IA y automatización para tareas concretas",
+    description: "Guías para elegir una tarea, revisar los datos y probar la inteligencia artificial con controles y supervisión.",
+    thesis: "Empieza por una tarea que necesite mejorar. Antes de probar la IA, define los datos que puede usar, cómo revisar las respuestas y qué resultados permitirían continuar o detener la prueba.",
     accent: "#475c63",
     questions: ["¿Qué proceso vale la pena intervenir?", "¿Qué datos y controles hacen falta?", "¿Cómo medir antes de escalar?"],
     solutionSlugs: ["ia-procesos-publicos"],
@@ -54,8 +54,8 @@ export const editorialPillars: Record<Topic, EditorialPillar> = {
 };
 
 export const editorialCollections = [
-  { type: "insights" as const, label: "Estudios", description: "Análisis que estructuran problemas, métodos y decisiones.", href: "/insights" },
-  { type: "indicators" as const, label: "Indicadores", description: "Definiciones y arquitecturas de medición interpretables.", href: "/indicators" },
-  { type: "toolkits" as const, label: "Métodos y guías", description: "Herramientas breves para aplicar criterios en un equipo.", href: "/toolkits" },
-  { type: "cases" as const, label: "Casos", description: "Productos y capacidades documentados con límites explícitos.", href: "/cases" }
+  { type: "insights" as const, label: "Estudios", description: "Análisis de problemas y métodos para investigarlos.", href: "/insights" },
+  { type: "indicators" as const, label: "Indicadores", description: "Qué mide cada indicador y cómo interpretar sus resultados.", href: "/indicators" },
+  { type: "toolkits" as const, label: "Métodos y guías", description: "Preguntas, listas de revisión y plantillas para tu equipo.", href: "/toolkits" },
+  { type: "cases" as const, label: "Casos", description: "Consultorías realizadas, productos propios y demostraciones.", href: "/cases" }
 ];

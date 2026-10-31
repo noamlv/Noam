@@ -9,7 +9,7 @@ export default function NotFound() {
           <div>
             <Eyebrow className="text-rust">Error 404</Eyebrow>
             <Heading as="h1" size="display" className="max-w-[12ch]">
-              Esta ruta ya no conduce a una página.
+              Esta ruta ya no conduce a una página
             </Heading>
           </div>
           <div className="border-t border-border pt-7">

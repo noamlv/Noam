@@ -125,7 +125,7 @@ export default async function ErmTerritoryBriefPage({ params }: ErmTerritoryBrie
 
               <section className="py-10">
                 <div className="grid gap-5 md:grid-cols-[0.42fr_1fr] md:gap-12">
-                  <div><p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a44631]">01 · Lectura inicial</p><h2 className="mt-3 text-2xl font-medium tracking-[-0.035em]">Tres frentes para verificar.</h2><p className="mt-4 text-xs leading-5 text-neutral-500">Se ordenan por reglas descriptivas. No constituyen un ranking ni una conclusión cerrada.</p></div>
+                  <div><p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a44631]">01 · Lectura inicial</p><h2 className="mt-3 text-2xl font-medium tracking-[-0.035em]">Qué revisar durante la transferencia</h2><p className="mt-4 text-xs leading-5 text-neutral-500">Se ordenan por reglas descriptivas. No constituyen un ranking ni una conclusión cerrada.</p></div>
                   <div className="divide-y divide-neutral-200 border-y border-neutral-200">
                     {workstreams.map((item, index) => (
                       <article key={item.id} className="break-inside-avoid py-6">
@@ -143,7 +143,7 @@ export default async function ErmTerritoryBriefPage({ params }: ErmTerritoryBrie
 
               <section className="break-before-page border-y border-neutral-200 py-10 print:break-before-page">
                 <div className="flex items-end justify-between gap-6">
-                  <div><p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a44631]">02 · Secuencia</p><h2 className="mt-3 text-2xl font-medium tracking-[-0.035em]">Del inventario a una rutina de gestión.</h2></div>
+                  <div><p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a44631]">02 · Secuencia</p><h2 className="mt-3 text-2xl font-medium tracking-[-0.035em]">Cómo organizar el seguimiento</h2></div>
                   <MapPinned className="hidden h-5 w-5 text-[#a44631] sm:block" aria-hidden />
                 </div>
                 <div className="mt-7 grid gap-px overflow-hidden rounded-sm border border-neutral-200 bg-neutral-200 md:grid-cols-3">
@@ -160,7 +160,7 @@ export default async function ErmTerritoryBriefPage({ params }: ErmTerritoryBrie
 
               <section className="py-10">
                 <div className="grid gap-5 md:grid-cols-[0.42fr_1fr] md:gap-12">
-                  <div><p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a44631]">03 · Hoja de ruta</p><h2 className="mt-3 text-2xl font-medium tracking-[-0.035em]">Primer hito por frente.</h2><p className="mt-4 text-xs leading-5 text-neutral-500">Una agenda operable asigna evidencia, decisión, responsable, fecha e indicador.</p></div>
+                  <div><p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a44631]">03 · Hoja de ruta</p><h2 className="mt-3 text-2xl font-medium tracking-[-0.035em]">Primeras tareas por tema</h2><p className="mt-4 text-xs leading-5 text-neutral-500">Una agenda operable asigna evidencia, decisión, responsable, fecha e indicador.</p></div>
                   <div className="divide-y divide-neutral-200 border-y border-neutral-200">
                     {workstreams.map((item) => (
                       <article key={item.id} className="break-inside-avoid py-5">
@@ -181,7 +181,7 @@ export default async function ErmTerritoryBriefPage({ params }: ErmTerritoryBrie
 
               {projects.length > 0 ? (
                 <section className="break-inside-avoid border-t border-neutral-200 pt-9">
-                  <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a44631]">04 · Cartera visible</p><h2 className="mt-3 text-2xl font-medium tracking-[-0.035em]">Proyectos con mayor PIM.</h2></div><p className="text-[8px] uppercase tracking-[0.12em] text-neutral-400">Selección financiera · No es prioridad</p></div>
+                  <div className="flex flex-wrap items-end justify-between gap-4"><div><p className="text-[9px] font-semibold uppercase tracking-[0.15em] text-[#a44631]">04 · Cartera visible</p><h2 className="mt-3 text-2xl font-medium tracking-[-0.035em]">Proyectos con mayor PIM</h2></div><p className="text-[8px] uppercase tracking-[0.12em] text-neutral-400">Selección financiera · No es prioridad</p></div>
                   <div className="mt-6 grid gap-x-7 md:grid-cols-2">
                     {projects.slice(0, 4).map((project) => (
                       <div key={project.code} className="grid grid-cols-[1fr_auto] gap-4 border-t border-neutral-200 py-4">

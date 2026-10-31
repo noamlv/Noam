@@ -31,9 +31,9 @@ export default async function ProductsPage() {
     <>
       <Section className="pb-14 pt-14 md:pb-20 md:pt-20">
         <Container>
-          <Eyebrow className="text-rust">Laboratorio de producto</Eyebrow>
-          <Heading as="h1" size="display" className="max-w-[14ch]">Herramientas para ver, comparar y decidir.</Heading>
-          <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">Productos públicos y prototipos que demuestran capacidades de datos, territorio e inteligencia artificial. Su estado se identifica de forma explícita.</p>
+          <Eyebrow className="text-rust">Herramientas de NOAM</Eyebrow>
+          <Heading as="h1" size="display" className="max-w-[14ch]">Herramientas y análisis disponibles</Heading>
+          <p className="mt-7 max-w-2xl text-base leading-8 text-ink/68">Explora los análisis y herramientas publicados. Las etiquetas indican cuáles están disponibles y cuáles son prototipos o proyectos en preparación.</p>
         </Container>
       </Section>
 
@@ -43,7 +43,7 @@ export default async function ProductsPage() {
             { title: "DataPerú y gestión territorial", description: "Infraestructura, observatorios y visores para decisiones públicas y organizacionales.", items: territorial },
             { title: "IA responsable", description: "Herramientas para evaluar casos, gobernar riesgos y medir pilotos antes de escalar inteligencia artificial.", items: artificialIntelligence },
             { title: "Electoral", description: "Herramientas para comprender planes, opinión pública, territorio y transición de gobierno.", items: electoral },
-            { title: "Otros productos", description: "Nuevas fichas publicadas desde el catálogo operativo de NOAM.", items: additional }
+            { title: "Otros productos", description: "Otras herramientas y análisis disponibles en el sitio.", items: additional }
           ].filter((group) => group.items.length).map((group, groupIndex) => (
             <div key={group.title} className={`py-14 md:py-20 ${groupIndex ? "border-t border-border" : ""}`}>
               <div className="grid gap-4 md:grid-cols-[0.55fr_1fr]"><Heading size="lg">{group.title}</Heading><p className="text-sm leading-7 text-ink/65">{group.description}</p></div>
