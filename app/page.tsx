@@ -48,13 +48,13 @@ const exploreLinks = [
   { title: "Problemas por departamento", description: "Qué afecta a la población y qué falta atender", href: "/dataperu/agendas-territoriales" },
   { title: "Presupuesto municipal", description: "Consulta recursos y ejecución del gasto", href: "/dataperu/municipios" },
   { title: "Proyectos de inversión", description: "Revisa montos y avance financiero", href: "/dataperu/inversiones" },
-  { title: "Análisis por tema", description: "Explora datos, gráficos y resultados", href: "/analisis" }
+  { title: "Análisis por tema", description: "Explora datos, gráficos y resultados", href: "/dataperu/analisis" }
 ];
 
 const publications = [
   { title: "DataPerú", label: "Datos del país", description: "Consulta información de municipios, departamentos, presupuesto y servicios públicos.", href: "/dataperu", action: "Explorar DataPerú" },
   { title: "Barómetro ciudadano", label: "Encuestas y opinión", description: "Conoce qué dicen las encuestas y cómo interpretar sus resultados. Consulta el análisis de enero de 2026.", href: "/barometro-ciudadano", action: "Ver encuestas analizadas" },
-  { title: "Análisis por tema", label: "Gráficos interactivos", description: "Revisa nuestros análisis de residuos, planeamiento territorial, discapacidad y deporte.", href: "/analisis", action: "Elegir un análisis" }
+  { title: "Análisis por tema", label: "Gráficos interactivos", description: "Revisa nuestros análisis de residuos, planeamiento territorial, discapacidad y deporte.", href: "/dataperu/analisis", action: "Elegir un análisis" }
 ];
 
 export default async function HomePage() {
@@ -89,7 +89,7 @@ export default async function HomePage() {
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Button href="/contact" analyticsEvent="cta_click" analyticsTarget="home:hero-contact" className="rounded-full px-6">Conversar sobre un problema</Button>
-                <Button href="/analisis" variant="ghost" className="gap-2">Ver análisis por tema <ArrowRight className="h-4 w-4" /></Button>
+                <Button href="/dataperu/analisis" variant="ghost" className="gap-2">Ver análisis por tema <ArrowRight className="h-4 w-4" /></Button>
               </div>
             </div>
           </div>

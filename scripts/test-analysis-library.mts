@@ -45,3 +45,34 @@ for (const group of onpe.slices[0].groups) assert.equal(group.value, onpe.slices
 assert.equal(onpe.slices[0].groups.reduce((sum, group) => sum + group.value, 0), 15_444_537);
 assert.equal(getAnalysisSnapshot("not-a-product"), undefined);
 console.log("Analysis library OK: 5 products, aggregate reconciliation, privacy allowlist and historical coverage.");
+
+const { analysisPresentation, getAnalysisOverview } = await import("../lib/analysis-presentation.ts");
+const { existsSync, readFileSync } = await import("node:fs");
+assert.equal(analysisLibrary.filter((entry) => analysisPresentation[entry.slug].area === "dataperu").length, 4);
+assert.equal(analysisPresentation["conteo-presidencial-2026"].area, "electoral");
+for (const entry of analysisLibrary) {
+  const snapshot = getAnalysisSnapshot(entry.slug)!;
+  const original = JSON.stringify(snapshot);
+  const overview = getAnalysisOverview(snapshot);
+  const presentation = analysisPresentation[entry.slug];
+  assert.ok(existsSync(`public${presentation.image}`), "Editorial illustration must exist locally");
+  assert.match(presentation.accent, /^#[0-9a-f]{6}$/i);
+  assert.equal(overview.total, overview.selected.groups.reduce((sum, group) => sum + group.value, 0));
+  assert.equal(overview.groups.length, overview.selected.groups.length);
+  assert.equal(JSON.stringify(snapshot), original, "Chart sorting must not mutate the source");
+  if (presentation.originalDashboardUrl) assert.ok(new URL(presentation.originalDashboardUrl).protocol === "https:");
+}
+const partialHistory = getAnalysisOverview(conadis);
+assert.equal(partialHistory.history.find((point) => point.period === "2015")!.missing, 25);
+assert.equal(partialHistory.history.find((point) => point.period === "2015")!.total, conadis.slices.find((slice) => slice.period === "2015")!.groups.reduce((sum, group) => sum + group.value, 0), "Sum only reported values without filling missing rows");
+assert.ok(partialHistory.partial, "The 2025 default must retain its partial-period warning");
+assert.equal(getAnalysisOverview(onpe).total, 15_444_537, "Do not sum national votes twice across overlapping slices");
+assert.equal(getAnalysisOverview(onpe).history.length, 0, "Geographic slices are not a time series");
+assert.equal(getAnalysisOverview(pat).history.length, 0, "PAT department slices are not a time series");
+const landing = readFileSync("app/analisis/[slug]/page.tsx", "utf8");
+assert.ok(landing.includes('<Section id="datos">') && landing.includes("<AnalysisOverview"), "The landing must contain its own data and figures");
+assert.match(landing, /originalDashboardUrl/, "Keep original dashboards distinct from the native explorer");
+assert.ok(landing.includes("<AnalysisDashboard"), "Filtering must remain inside the landing when no original is published");
+assert.ok(!landing.includes('href={`/analisis/${entry.slug}/dashboard`}'), "Do not send readers to the legacy explorer as if it were an original dashboard");
+assert.ok(readFileSync("app/sitemap.ts", "utf8").includes('"/dataperu/analisis"'));
+console.log("Analysis presentation OK: 4 DataPerú analyses, electoral archive, partial periods, safe aggregates and inline figures.");

@@ -32,6 +32,7 @@ async function expectHtml(path, text, options) {
 await waitForServer();
 
 const publicPages = [
+  ["/dataperu/analisis", "Análisis por tema"],
   ["/barometro-ciudadano", "Barómetro ciudadano"],
   ["/analisis", "Explora los análisis por tema"],
   ["/analisis/residuos-municipales", "Generación de residuos municipales"],
@@ -138,6 +139,15 @@ const publicPages = [
 ];
 
 for (const [path, text] of publicPages) await expectHtml(path, text);
+
+for (const slug of ["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"]) {
+  const landing = await expectHtml(`/analisis/${slug}`, "Ver datos y gráficos");
+  assert.ok(landing.body.includes(`id="overview-${slug}-composition"`), "Each landing must contain a rendered data figure");
+  assert.ok(landing.body.includes("Filtrar y explorar todos los datos"), "The landing must allow data exploration without navigation");
+}
+const dataPeruAnalyses = await expectHtml("/dataperu/analisis", "Residuos municipales");
+assert.ok(dataPeruAnalyses.body.includes("/analisis/apoyo-deportista"));
+assert.ok(!dataPeruAnalyses.body.includes("/analisis/conteo-presidencial-2026"), "Keep the electoral archive outside DataPerú's thematic cards");
 
 const waterSanitationPage = await expectHtml("/dataperu/agua-saneamiento", "1,892 distritos");
 assert.ok(waterSanitationPage.body.includes('"@type":"Dataset"'), "Agua y saneamiento debe publicar schema Dataset");

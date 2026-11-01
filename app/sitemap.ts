@@ -27,6 +27,7 @@ const staticRoutes = [
   "/newsletter",
   "/brief",
   "/dataperu",
+  "/dataperu/analisis",
   "/dataperu/agua-saneamiento",
   "/dataperu/educacion",
   "/dataperu/agendas-territoriales",

@@ -2,7 +2,7 @@
 
 ## Alcance
 
-Cinco landings en `/analisis/[slug]` y cinco exploradores nativos en `/analisis/[slug]/dashboard`, abiertos en otra pestana del mismo dominio. Se reutilizan las preguntas y los datos de los cinco proyectos principales de `08 Dashboards`; no los trabajos de alumnos, las presentaciones ni los entornos virtuales. No se ejecuta codigo original Shiny, Dash o Streamlit en Vercel.
+Cinco landings en `/analisis/[slug]` con figuras y exploracion de agregados dentro de la pagina. Las cinco rutas anteriores `/analisis/[slug]/dashboard` se conservan por compatibilidad. DataPeru agrupa cuatro analisis en `/dataperu/analisis`; el archivo presidencial corresponde a Electoral. Se reutilizan las preguntas y los datos de los cinco proyectos principales de `08 Dashboards`; no los trabajos de alumnos, las presentaciones ni los entornos virtuales. No se ejecuta codigo original Shiny, Dash o Streamlit en Vercel. Ver `analysis-experience.md` para la distincion entre landings, exploradores y originales publicados.
 
 Las vistas nativas incluyen composicion, periodos disponibles, tabla accesible y exportacion de agregados. No se afirma que reproduzcan todos los filtros, mapas y modelos de los originales. Una futura aplicacion Python/R puede incorporarse sin cambiar la URL editorial.
 

@@ -17,6 +17,13 @@ export const metadata = buildMetadata({
 
 const decisionPaths = [
   {
+    icon: FileChartColumn,
+    title: "Leer un análisis por tema",
+    description: "Residuos, planeamiento, discapacidad y deporte: explicación, datos y gráficos en una misma página.",
+    href: "/dataperu/analisis",
+    action: "Elegir un tema"
+  },
+  {
     icon: MapPinned,
     title: "Explorar una agenda territorial",
     description: "Consulta problemas públicos, poblaciones afectadas y oportunidades por validar en los 25 departamentos.",
@@ -40,7 +47,7 @@ const decisionPaths = [
 ];
 
 const modules = [
-  { icon: FileChartColumn, title: "Análisis por tema", description: "Consulta análisis y gráficos de residuos, planes territoriales, discapacidad, deporte y archivo electoral, con sus fuentes.", href: "/analisis", status: "Disponible" },
+  { icon: FileChartColumn, title: "Análisis por tema", description: "Consulta análisis y gráficos de residuos, planes territoriales, discapacidad y deporte, con sus fuentes.", href: "/dataperu/analisis", status: "Disponible" },
   { icon: Droplets, title: "Agua y saneamiento", description: `Cobertura por red pública en ${formatMetric(waterSanitationSummary.districts)} distritos según los Censos Nacionales 2025.`, href: "/dataperu/agua-saneamiento", status: "Disponible" },
   { icon: GraduationCap, title: "Educación", description: `Matrícula en educación básica regular (EBR) por nivel, ámbito y tipo de gestión en ${formatMetric(educationSummary.districts)} distritos según el Minedu.`, href: "/dataperu/educacion", status: "Disponible" },
   { icon: Search, title: "Agendas territoriales", description: "100 problemas y 75 oportunidades en validación para los 25 departamentos.", href: "/dataperu/agendas-territoriales", status: "Disponible" },
@@ -118,7 +125,7 @@ export default function DataPeruPage() {
             <div><Eyebrow>Por dónde empezar</Eyebrow><Heading size="xl">Elige qué quieres consultar</Heading></div>
             <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Busca un municipio, revisa proyectos de inversión o consulta los problemas y oportunidades identificados por departamento.</p>
           </div>
-          <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-3">
+          <div className="mt-12 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-4">
             {decisionPaths.map((path) => {
               const Icon = path.icon;
               return (
