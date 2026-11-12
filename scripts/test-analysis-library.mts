@@ -50,6 +50,10 @@ console.log("Analysis library OK: 5 products, aggregate reconciliation, privacy 
 const { analysisPresentation, getAnalysisOverview } = await import("../lib/analysis-presentation.ts");
 const { existsSync, readFileSync } = await import("node:fs");
 assert.equal(analysisLibrary.filter((entry) => analysisPresentation[entry.slug].area === "dataperu").length, 4);
+const dataPeruCovers = Object.values(analysisPresentation).filter(({ area }) => area === "dataperu");
+assert.equal(new Set(dataPeruCovers.map(({ image }) => image)).size, 4);
+assert.ok(dataPeruCovers.every(({ image }) => image.endsWith(".webp")));
+assert.equal(analysisPresentation["residuos-municipales"].photoCredit?.license, "CC BY-SA 4.0");
 assert.equal(analysisPresentation["conteo-presidencial-2026"].area, "electoral");
 for (const entry of analysisLibrary) {
   const snapshot = getAnalysisSnapshot(entry.slug)!;

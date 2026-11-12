@@ -3,6 +3,7 @@ import NextLink from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { AnalysisDashboard } from "@/components/dataperu/analysis-dashboard";
+import { AnalysisImageCredit } from "@/components/dataperu/analysis-image-credit";
 import { AnalysisReport } from "@/components/dataperu/analysis-report";
 import { AnalysisOverview } from "@/components/dataperu/analysis-overview";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -35,7 +36,10 @@ export default async function AnalysisPage({ params }: Props) {
       <p className="mt-10 border-t border-white/15 pt-5 text-xs leading-6 text-white/65"><a href={entry.sourceUrl} target="_blank" rel="noreferrer" className="underline underline-offset-4 hover:text-white">{entry.source} <ArrowUpRight className="inline h-3 w-3" aria-hidden /></a> · {entry.period}</p>
     </Container></section>
     <Section className="pb-0"><Container><figure>
-      <Image src={presentation.image} alt={presentation.imageAlt} width={1672} height={941} sizes="(max-width: 768px) 100vw, 1160px" className={`aspect-[2/1] w-full rounded-[1.25rem] object-cover ${entry.slug === "apoyo-deportista" ? "md:aspect-[2.4/1]" : "md:aspect-[3.4/1]"}`} />
+      <div className={`relative aspect-[2/1] overflow-hidden rounded-[1.25rem] ${isElectoral ? "md:aspect-[3.4/1]" : "md:aspect-[2.4/1]"}`}>
+        <Image src={presentation.image} alt={presentation.imageAlt} fill sizes="(max-width: 768px) 100vw, 1160px" className="object-cover" style={{ objectPosition: presentation.imagePosition }} />
+      </div>
+      {presentation.photoCredit && <figcaption className="mt-2 text-right"><AnalysisImageCredit credit={presentation.photoCredit} /></figcaption>}
       {isElectoral ? <figcaption className="mt-2 text-right text-[10px] leading-5 text-muted">Imagen ilustrativa; no es una fotografía del estudio.</figcaption> : null}
     </figure></Container></Section>
     <Section id="datos"><Container>
