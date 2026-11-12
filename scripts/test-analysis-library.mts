@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import padBreakdowns from "../data/processed/pad-breakdowns.json" with { type: "json" };
 import { analysisLibrary, getAnalysisSnapshot } from "../lib/analysis-library.ts";
 import { platformCatalog } from "../lib/platform-catalog.ts";
 import { annualObservations, athleteRelationshipRows, completeSegments, matchedChanges, reportCsv, sliceTotal } from "../lib/analysis-report.ts";
@@ -11,7 +12,6 @@ for (const entry of analysisLibrary) {
   assert.match(snapshot.sha256, /^[a-f0-9]{64}$/);
   assert.equal(entry.findings.length, 3);
   assert.equal(entry.questions.length, 3);
-  assert.ok(entry.limits.length >= 3);
   assert.ok(entry.sourceUrl.startsWith("https://"));
   assert.ok(platformCatalog.some((product) => product.href === `/analisis/${entry.slug}`));
   assert.equal(new Set(snapshot.slices.map((slice) => slice.period)).size, snapshot.slices.length);
@@ -80,6 +80,16 @@ const athleteYears = annualObservations(pad);
 assert.equal(athleteYears.find((point) => point.year === 2024)?.value, 8_450_350);
 assert.equal(athleteYears.at(-1)?.partial, true);
 assert.equal(athleteYears.reduce((sum, point) => sum + point.records, 0), 68_938);
+assert.equal(padBreakdowns.sha256, pad.sha256);
+const amountCents = athleteYears.reduce((sum, point) => sum + Math.round(point.value * 100), 0);
+for (const groups of [padBreakdowns.federation, padBreakdowns.birthplace]) {
+  assert.equal(groups.reduce((sum, group) => sum + group.records, 0), pad.sourceRows);
+  assert.equal(groups.reduce((sum, group) => sum + Math.round(group.value * 100), 0), amountCents);
+  assert.equal(new Set(groups.map((group) => group.label)).size, groups.length);
+  for (const group of groups) assert.deepEqual(Object.keys(group).sort(), ["label", "records", "value"]);
+}
+assert.equal(padBreakdowns.federation[0].label, "ATLETISMO");
+assert.equal(padBreakdowns.birthplace.find(({ label }) => label === "Exterior")?.records, 1_770);
 const padRelationships = athleteRelationshipRows(pad);
 assert.equal(padRelationships.length, 32);
 assert.equal(padRelationships.filter(({ partial }) => partial).length, 3);

@@ -10,7 +10,17 @@ export function generateStaticParams() { return analysisLibrary.map(({ slug }) =
 export async function generateMetadata({ params }: Props) { const entry = getAnalysis((await params).slug); return entry ? buildMetadata({ title: `${entry.title}: dashboard`, description: entry.description, path: `/analisis/${entry.slug}/dashboard` }) : {}; }
 
 export default async function DashboardPage({ params }: Props) {
-  const { slug } = await params; const entry = getAnalysis(slug); const snapshot = getAnalysisSnapshot(slug);
+  const { slug } = await params;
+  const entry = getAnalysis(slug);
+  const snapshot = getAnalysisSnapshot(slug);
   if (!entry || !snapshot) notFound();
-  return <><Section className="pb-10"><Container><NextLink href={`/analisis/${slug}`} className="text-xs text-rust">← Volver al análisis y metodología</NextLink><Eyebrow className="mt-10">Explorador NOAM · {entry.category}</Eyebrow><Heading as="h1" size="xl">{entry.title}</Heading><p className="mt-5 max-w-3xl text-sm leading-7 text-muted">{entry.period}. Filtra los datos y descarga los valores agrupados. Este explorador de noam.pe no reproduce todas las funciones del dashboard original.</p><p className="mt-5 border-l-2 border-rust pl-4 text-sm leading-7 text-ink/75">{entry.limits[0]}</p></Container></Section><Section className="pt-0"><Container><AnalysisDashboard snapshot={snapshot} /><div className="mt-12 grid gap-8 border-t border-border pt-8 md:grid-cols-2"><div><h2 className="text-lg font-medium">Fuente y trazabilidad</h2><p className="mt-3 text-xs leading-6 text-muted">{entry.source}. {snapshot.sourceRows.toLocaleString("es-PE")} filas en la copia de origen. Extracción analítica NOAM del 29 de octubre de 2026; no es una actualización del registro oficial.</p><p className="mt-3 break-all font-mono text-[10px] leading-5 text-muted">SHA-256: {snapshot.sha256}</p><a href={entry.sourceUrl} target="_blank" rel="noreferrer" className="mt-4 inline-block text-sm text-rust">Consultar la fuente oficial ↗</a></div><div><h2 className="text-lg font-medium">Límites de uso</h2><ul className="mt-3 space-y-3 text-xs leading-6 text-muted">{entry.limits.map((limit) => <li key={limit}>{limit}</li>)}</ul></div></div></Container></Section></>;
+  return <>
+    <Section className="pb-10"><Container>
+      <NextLink href={`/analisis/${slug}`} className="text-xs text-rust">← Volver al análisis</NextLink>
+      <Eyebrow className="mt-10">Explorador NOAM · {entry.category}</Eyebrow>
+      <Heading as="h1" size="xl">{entry.title}</Heading>
+      <p className="mt-5 text-sm leading-7 text-muted"><a href={entry.sourceUrl} target="_blank" rel="noreferrer" className="text-rust underline underline-offset-4">{entry.source}</a> · {entry.period}</p>
+    </Container></Section>
+    <Section className="pt-0"><Container><AnalysisDashboard snapshot={snapshot} /></Container></Section>
+  </>;
 }

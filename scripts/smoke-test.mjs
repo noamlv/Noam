@@ -142,6 +142,7 @@ for (const [path, text] of publicPages) await expectHtml(path, text);
 
 for (const slug of ["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"]) {
   const landing = await expectHtml(`/analisis/${slug}`, "Ver datos y gráficos");
+  assert.doesNotMatch(landing.body, /en esta copia|Cómo interpretar los datos|>Cobertura<|Sin faltantes en la medida/);
   if (slug === "conteo-presidencial-2026") {
     assert.ok(landing.body.includes(`id="overview-${slug}-composition"`));
     continue;
@@ -154,6 +155,8 @@ for (const slug of ["residuos-municipales", "planes-territoriales", "registro-di
   if (slug === "apoyo-deportista") {
     assert.ok(landing.body.includes('id="cruces-pad"'));
     assert.ok(landing.body.includes("Mapa de calor del monto medio"));
+    assert.ok(landing.body.includes('id="federaciones-pad"'));
+    assert.ok(landing.body.includes('id="territorio-pad"'));
   }
   const csv = await get(`/analisis/${slug}/data.csv`);
   assert.equal(csv.status, 200);

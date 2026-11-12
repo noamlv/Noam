@@ -22,8 +22,7 @@ export function annualObservations(snapshot: AnalysisSnapshot) {
     year: Number(slice.period),
     value: sliceTotal(slice),
     records: sliceRecords(slice),
-    partial: slice.period === "2025" || slice.missing > 0,
-    coverage: slice.period === "2025" ? "Enero a septiembre" : slice.missing > 0 ? `${slice.missing} filas sin valor` : "Sin faltantes en la medida"
+    partial: slice.period === "2025" || slice.missing > 0
   })).sort((a, b) => a.year - b.year);
 }
 

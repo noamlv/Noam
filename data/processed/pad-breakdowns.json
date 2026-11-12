@@ -1,0 +1,327 @@
+{
+  "sha256": "dcff65946c76a91bae416750fdca1146c014d3d298fe0a9981e79e4c04941844",
+  "federation": [
+    {
+      "label": "ATLETISMO",
+      "value": 10352867.6,
+      "records": 6909
+    },
+    {
+      "label": "BÁDMINTON",
+      "value": 7260820.0,
+      "records": 4676
+    },
+    {
+      "label": "KARATE",
+      "value": 7010317.9,
+      "records": 4726
+    },
+    {
+      "label": "TABLA",
+      "value": 5306876.7,
+      "records": 2856
+    },
+    {
+      "label": "LUCHA AMATEUR",
+      "value": 4641120.3,
+      "records": 3615
+    },
+    {
+      "label": "JUDO",
+      "value": 4622774.4,
+      "records": 3382
+    },
+    {
+      "label": "AJEDREZ",
+      "value": 4459351.5,
+      "records": 3162
+    },
+    {
+      "label": "TIRO",
+      "value": 4371308.0,
+      "records": 2593
+    },
+    {
+      "label": "VELA",
+      "value": 4283059.7,
+      "records": 2207
+    },
+    {
+      "label": "ANPPERÚ",
+      "value": 3929673.5,
+      "records": 1851
+    },
+    {
+      "label": "TAEKWONDO",
+      "value": 3872479.7,
+      "records": 2716
+    },
+    {
+      "label": "NATACIÓN",
+      "value": 3393611.7,
+      "records": 2898
+    },
+    {
+      "label": "VOLEIBOL",
+      "value": 3391343.8,
+      "records": 3046
+    },
+    {
+      "label": "LEVANTAMIENTO DE PESAS",
+      "value": 2823208.0,
+      "records": 2173
+    },
+    {
+      "label": "TENIS",
+      "value": 2801914.9,
+      "records": 2299
+    },
+    {
+      "label": "GIMNASIA",
+      "value": 2714228.2,
+      "records": 2089
+    },
+    {
+      "label": "Otras federaciones",
+      "value": 2300141.9,
+      "records": 1501
+    },
+    {
+      "label": "REMO",
+      "value": 2103715.5,
+      "records": 1336
+    },
+    {
+      "label": "MUAY THAI",
+      "value": 1991778.6,
+      "records": 1062
+    },
+    {
+      "label": "TENIS DE MESA",
+      "value": 1895111.3,
+      "records": 1797
+    },
+    {
+      "label": "CICLISMO",
+      "value": 1764783.4,
+      "records": 1445
+    },
+    {
+      "label": "BILLAR",
+      "value": 1527559.5,
+      "records": 1100
+    },
+    {
+      "label": "KUNG FU",
+      "value": 1348912.0,
+      "records": 1136
+    },
+    {
+      "label": "SQUASH RACKET",
+      "value": 1322077.0,
+      "records": 779
+    },
+    {
+      "label": "ESGRIMA",
+      "value": 1300668.5,
+      "records": 1126
+    },
+    {
+      "label": "BOWLING",
+      "value": 1240659.0,
+      "records": 1048
+    },
+    {
+      "label": "PALETA FRONTÓN",
+      "value": 965945.0,
+      "records": 654
+    },
+    {
+      "label": "BOXEO",
+      "value": 951173.8,
+      "records": 816
+    },
+    {
+      "label": "BOCHAS",
+      "value": 856631.5,
+      "records": 656
+    },
+    {
+      "label": "SOFTBOL",
+      "value": 711850.0,
+      "records": 531
+    },
+    {
+      "label": "GOLF",
+      "value": 460628.5,
+      "records": 424
+    },
+    {
+      "label": "CANOTAJE",
+      "value": 390950.0,
+      "records": 307
+    },
+    {
+      "label": "KICK BOXING",
+      "value": 349732.5,
+      "records": 305
+    },
+    {
+      "label": "TRIATLÓN",
+      "value": 318250.0,
+      "records": 420
+    },
+    {
+      "label": "PATINAJE",
+      "value": 287600.0,
+      "records": 153
+    },
+    {
+      "label": "FISICOCULTURISMO",
+      "value": 255850.0,
+      "records": 288
+    },
+    {
+      "label": "BÉISBOL",
+      "value": 228550.0,
+      "records": 343
+    },
+    {
+      "label": "HOCKEY",
+      "value": 188000.0,
+      "records": 80
+    },
+    {
+      "label": "BASKETBALL",
+      "value": 186200.0,
+      "records": 197
+    },
+    {
+      "label": "RUGBY",
+      "value": 164550.0,
+      "records": 186
+    },
+    {
+      "label": "FEDENADIF",
+      "value": 125520.0,
+      "records": 50
+    }
+  ],
+  "birthplace": [
+    {
+      "label": "Lima",
+      "value": 69967005.6,
+      "records": 48580
+    },
+    {
+      "label": "Arequipa",
+      "value": 3245519.9,
+      "records": 2406
+    },
+    {
+      "label": "Junín",
+      "value": 3004860.2,
+      "records": 1774
+    },
+    {
+      "label": "Exterior",
+      "value": 2740908.9,
+      "records": 1770
+    },
+    {
+      "label": "Piura",
+      "value": 2471948.4,
+      "records": 1827
+    },
+    {
+      "label": "Cusco",
+      "value": 2004322.9,
+      "records": 1424
+    },
+    {
+      "label": "Callao",
+      "value": 1987910.2,
+      "records": 1487
+    },
+    {
+      "label": "La Libertad",
+      "value": 1885434.8,
+      "records": 1579
+    },
+    {
+      "label": "Otros departamentos",
+      "value": 1234693.1,
+      "records": 787
+    },
+    {
+      "label": "Huancavelica",
+      "value": 1233108.0,
+      "records": 554
+    },
+    {
+      "label": "Huánuco",
+      "value": 993751.2,
+      "records": 623
+    },
+    {
+      "label": "Ayacucho",
+      "value": 940563.0,
+      "records": 647
+    },
+    {
+      "label": "Puno",
+      "value": 924556.0,
+      "records": 653
+    },
+    {
+      "label": "Cajamarca",
+      "value": 841208.0,
+      "records": 477
+    },
+    {
+      "label": "San Martín",
+      "value": 828384.9,
+      "records": 658
+    },
+    {
+      "label": "Lambayeque",
+      "value": 715752.0,
+      "records": 546
+    },
+    {
+      "label": "Ucayali",
+      "value": 698320.4,
+      "records": 563
+    },
+    {
+      "label": "Loreto",
+      "value": 631310.9,
+      "records": 559
+    },
+    {
+      "label": "Ica",
+      "value": 596818.6,
+      "records": 606
+    },
+    {
+      "label": "Áncash",
+      "value": 536941.6,
+      "records": 423
+    },
+    {
+      "label": "Madre de Dios",
+      "value": 401834.0,
+      "records": 382
+    },
+    {
+      "label": "Tumbes",
+      "value": 314813.3,
+      "records": 305
+    },
+    {
+      "label": "Tacna",
+      "value": 271828.0,
+      "records": 308
+    }
+  ]
+}

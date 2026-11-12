@@ -2,6 +2,8 @@ import type { CSSProperties, ReactNode } from "react";
 import type { AnalysisSlice, AnalysisSnapshot } from "@/lib/analysis-library";
 import { annualObservations, athleteRelationshipRows, completeSegments, matchedChanges, sliceTotal, type AnnualObservation } from "@/lib/analysis-report";
 import { AthleteRelationships } from "./athlete-relationships";
+import { AthleteBreakdown } from "./athlete-breakdown";
+import padBreakdowns from "@/data/processed/pad-breakdowns.json";
 
 const number = new Intl.NumberFormat("es-PE", { maximumFractionDigits: 2 });
 const percent = new Intl.NumberFormat("es-PE", { style: "percent", maximumFractionDigits: 1 });
@@ -55,7 +57,7 @@ function Timeline({ points, accent, label, display = number.format }: { points: 
           </g>;
         })}
       </svg>
-      {points.map((point) => <span key={point.year} title={`${point.year}: ${display(point.value)} · ${point.coverage}`} className={`absolute size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 ${point.partial ? "border-[#a2462c] bg-white" : "border-white"}`} style={{ left: `${x(point.year)}%`, top: `${y(point.value)}%`, backgroundColor: point.partial ? undefined : accent }} />)}
+      {points.map((point) => <span key={point.year} title={`${point.year}: ${display(point.value)}${point.partial ? " (parcial)" : ""}`} className={`absolute size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 ${point.partial ? "border-[#a2462c] bg-white" : "border-white"}`} style={{ left: `${x(point.year)}%`, top: `${y(point.value)}%`, backgroundColor: point.partial ? undefined : accent }} />)}
       {points.map((point, index) => <span key={point.year} className={`absolute top-full mt-2 -translate-x-1/2 font-mono text-[11px] text-ink/80 sm:text-xs ${index === 0 || index === points.length - 1 || (index % 4 === 0 && index < points.length - 2) ? "" : "hidden sm:block"}`} style={{ left: `${x(point.year)}%` }}>{point.year}</span>)}
     </div>
     <p className="mt-9 text-xs leading-6 text-ink/75">Año{hasPartial ? " · Los puntos abiertos indican cortes parciales o filas faltantes. No se unen a la línea." : ""}</p>
@@ -100,22 +102,25 @@ function Composition({ slices, labels, title }: { slices: AnalysisSlice[]; label
         const parts = labels.map((label) => ({ label, value: slice.groups.find((group) => group.label === label)?.value ?? 0 }));
         const description = parts.filter((part) => part.value > 0).map((part) => `${part.label}: ${percent.format(part.value / total)}`).join("; ");
         return <div key={slice.period} className="grid grid-cols-[minmax(5rem,8rem)_1fr] items-center gap-3 text-xs">
-          <span>{slice.period === "2025" ? "2025 (parcial)" : slice.label}</span>
+          <span>{slice.period === "2025" ? "2025*" : /^\d{4}$/.test(slice.period) ? slice.period : slice.label}</span>
           <div className="flex h-4 overflow-hidden rounded-sm bg-[#edf1ee]" role="img" aria-label={`${slice.label}, ${description}`}>
             {parts.map((part, i) => part.value > 0 && <div key={part.label} className="h-full" title={`${part.label}: ${number.format(part.value)} (${percent.format(part.value / total)})`} style={{ width: `${part.value / total * 100}%`, backgroundColor: palette[i % palette.length] }} />)}
           </div>
         </div>;
       })}
     </div>
-    <p className="mt-4 text-xs leading-6 text-muted">Cada barra suma 100 % dentro de su fila. El largo de la barra no representa el volumen total.</p>
+    <p className="mt-4 text-xs leading-6 text-muted">Cada barra representa el 100 % de su fila.{slices.some(({ period }) => period === "2025") ? " * Datos parciales." : ""}</p>
   </figure>;
 }
 
 function AnnualTable({ points, unit, recordLabel }: { points: AnnualObservation[]; unit: string; recordLabel?: string }) {
-  return <DataTable title="Valores y cobertura por año" columns={["Año", unit, ...(recordLabel ? [recordLabel] : []), "Cobertura"]} rows={points.map((point) => ({
-    label: String(point.year),
-    values: [number.format(point.value), ...(recordLabel ? [number.format(point.records)] : []), point.coverage]
-  }))} />;
+  return <>
+    <DataTable title="Valores por año" columns={["Año", unit, ...(recordLabel ? [recordLabel] : [])]} rows={points.map((point) => ({
+      label: `${point.year}${point.partial ? "*" : ""}`,
+      values: [number.format(point.value), ...(recordLabel ? [number.format(point.records)] : [])]
+    }))} />
+    {points.some((point) => point.partial) && <p className="mt-2 text-xs text-muted">* Datos parciales.</p>}
+  </>;
 }
 
 function ChangeBars({ rows, title }: { rows: ReturnType<typeof matchedChanges>; title: string }) {
@@ -153,14 +158,21 @@ function AthleteReport({ snapshot, accent }: { snapshot: AnalysisSnapshot; accen
   const relationships = athleteRelationshipRows(snapshot);
   const padTwoBefore = relationships.find((row) => row.year === previous.year && row.modality === "PAD II");
   const padTwoAfter = relationships.find((row) => row.year === last.year && row.modality === "PAD II");
+  const federations = padBreakdowns.federation;
+  const federationTotal = federations.reduce((sum, group) => sum + group.value, 0);
+  const topThree = federations.filter((group) => group.label !== "Otras federaciones").slice(0, 3);
+  const domestic = padBreakdowns.birthplace.filter((group) => group.label !== "Exterior");
+  const domesticTotal = domestic.reduce((sum, group) => sum + group.value, 0);
+  const lima = domestic.find((group) => group.label === "Lima")!;
+  const exterior = padBreakdowns.birthplace.find((group) => group.label === "Exterior");
   return <>
     <Metrics items={[
       { value: `S/ ${millions(last.value)} millones`, label: `Monto reportado en ${last.year}, último año completo` },
       { value: change(previous.value, last.value), label: `Variación nominal entre ${previous.year} y ${last.year}` },
-      { value: `S/ ${millions(latest.value)} millones`, label: `Monto reportado entre enero y septiembre de ${latest.year}` }
+      { value: `S/ ${millions(latest.value)} millones`, label: `Monto reportado en ${latest.year} (parcial)` }
     ]} />
     <StoryBlock index="01 · EVOLUCIÓN" title="Cómo cambiaron los montos de apoyo">
-      <Reading>El mayor monto anual de la copia fue S/ {millions(peak.value)} millones en {peak.year}. En {last.year} el total fue {percent.format(Math.abs(last.value - previous.value) / previous.value)} {last.value < previous.value ? "menor" : "mayor"} que en {previous.year}. Los montos son nominales; no reflejan cambios en el poder de compra.</Reading>
+      <Reading>El monto anual más alto fue de S/ {millions(peak.value)} millones en {peak.year}. En {last.year} el total fue {percent.format(Math.abs(last.value - previous.value) / previous.value)} {last.value < previous.value ? "menor" : "mayor"} que en {previous.year}.</Reading>
       <Timeline points={points} accent={accent} label="Monto reportado (millones de soles nominales)" display={millions} />
     </StoryBlock>
     <StoryBlock id="cruces-pad" index="02 · CRUCES INTERACTIVOS" title="¿Más registros o un mayor monto por registro?">
@@ -169,16 +181,25 @@ function AthleteReport({ snapshot, accent }: { snapshot: AnalysisSnapshot; accen
     </StoryBlock>
     <StoryBlock index="03 · MODALIDADES" title="Cómo se distribuye el apoyo entre modalidades">
       <Composition slices={snapshot.slices} labels={categories} title="Participación de cada modalidad en el monto anual" />
-      <Reading>En {last.year}, PAD I reunió {percent.format((lastSlice.groups.find((group) => group.label === "PAD I")?.value ?? 0) / last.value)} del monto reportado. En 2025, la composición describe solo nueve meses: no permite estimar el cierre del año.</Reading>
+      <Reading>En {last.year}, PAD I reunió {percent.format((lastSlice.groups.find((group) => group.label === "PAD I")?.value ?? 0) / last.value)} del monto reportado.</Reading>
       <ChangeBars rows={changes} title={`Diferencia del monto por modalidad, ${previous.year}–${last.year} (S/)`} />
       <Reading>El monto de PAD I cayó en S/ {millions(Math.abs(changes.find((row) => row.label === "PAD I")!.delta))} millones, mientras aumentó el de PAD II. El total anual por sí solo no muestra esos movimientos en direcciones distintas.</Reading>
       <DataTable title="Montos por modalidad (S/)" columns={["Año", ...categories]} rows={snapshot.slices.map((slice) => ({
-        label: slice.period === "2025" ? "2025 (parcial)" : slice.label,
+        label: slice.period === "2025" ? "2025*" : slice.period,
         values: categories.map((label) => { const value = slice.groups.find((group) => group.label === label)?.value; return value === undefined ? "—" : number.format(value); })
       }))} />
-      <p className="mt-3 text-xs text-muted">Un guion indica que no hay registros de esa modalidad en el año dentro de esta copia.</p>
+      <p className="mt-3 text-xs text-muted">— Sin registros. * Datos parciales.</p>
     </StoryBlock>
-    <StoryBlock index="04 · REGISTROS" title="Cuántos registros de apoyo aparecen en el archivo">
+    <StoryBlock id="federaciones-pad" index="04 · DEPORTES" title="¿Qué federaciones concentran más apoyo?">
+      <Reading>Atletismo encabeza el total con S/ {millions(topThree[0].value)} millones. Junto con bádminton y karate reúne {percent.format(topThree.reduce((sum, group) => sum + group.value, 0) / federationTotal)} del monto reportado. El IPD clasifica los registros por federación o asociación deportiva.</Reading>
+      <AthleteBreakdown groups={federations} label="Apoyo por federación o asociación" accent="#287477" />
+    </StoryBlock>
+    <StoryBlock id="territorio-pad" index="05 · TERRITORIO" title="¿Dónde nacieron quienes recibieron el apoyo?">
+      <Reading>Lima concentra {percent.format(lima.value / domesticTotal)} del monto asociado a personas nacidas en Perú. Fuera de Lima, los montos más altos corresponden a Arequipa y Junín. La distribución se organiza por departamento de nacimiento.</Reading>
+      <AthleteBreakdown groups={domestic} label="Apoyo por departamento de nacimiento en Perú" accent="#55749e" />
+      {exterior && <p className="mt-4 text-sm text-ink/75">Nacidos en el exterior: S/ {millions(exterior.value)} millones en {number.format(exterior.records)} registros, fuera del gráfico.</p>}
+    </StoryBlock>
+    <StoryBlock index="06 · REGISTROS" title="Cuántos registros de apoyo aparecen en el archivo">
       <Timeline points={points.map((point) => ({ ...point, value: point.records }))} accent="#55749e" label="Registros de beneficios reportados" />
       <Reading>El archivo suma {number.format(snapshot.sourceRows)} filas. Una persona puede figurar en varios registros, por lo que el gráfico no mide cuántos deportistas distintos recibieron apoyo ni sus resultados deportivos.</Reading>
       <AnnualTable points={points} unit="Monto (S/)" recordLabel="Registros" />
@@ -194,7 +215,7 @@ function TerritoryReport({ snapshot, accent }: { snapshot: AnalysisSnapshot; acc
   const regions = snapshot.slices.slice(1);
   return <>
     <Metrics items={[
-      { value: number.format(total), label: "Provincias incluidas en la copia histórica" },
+      { value: number.format(total), label: "Provincias analizadas" },
       { value: percent.format(noRecord / total), label: "Provincias con la etiqueta «Sin Registro»" },
       { value: number.format(states.length), label: "Estados reportados por la fuente" }
     ]} />
@@ -227,7 +248,7 @@ function RegionalReport({ snapshot, accent }: { snapshot: AnalysisSnapshot; acce
     <Metrics items={[
       { value: waste ? `${millions(latest.value)} millones` : number.format(latest.value), label: waste ? `Toneladas estimadas en ${latest.year}` : `Inscripciones reportadas en ${latest.year}, último año completo` },
       { value: change(waste ? first.value : previous.value, latest.value), label: `Cambio del total informado entre ${waste ? first.year : previous.year} y ${latest.year}` },
-      { value: number.format(waste ? latest.records : points.at(-1)!.value), label: waste ? `Distritos incluidos en ${latest.year}` : "Inscripciones entre enero y septiembre de 2025" }
+      { value: number.format(waste ? latest.records : points.at(-1)!.value), label: waste ? `Distritos incluidos en ${latest.year}` : "Inscripciones en 2025 (parcial)" }
     ]} />
     <StoryBlock index="01 · EVOLUCIÓN" title={waste ? "Cómo cambió la generación estimada de residuos" : "Cómo cambiaron las inscripciones reportadas"}>
       <Reading>{waste ? <>La estimación total pasó de {millions(first.value)} a {millions(latest.value)} millones de toneladas entre {first.year} y {latest.year}. La cobertura también cambió: de {number.format(first.records)} a {number.format(latest.records)} distritos. La variación no corresponde a un panel fijo de distritos.</> : <>El total informado pasó de {number.format(previous.value)} inscripciones en {previous.year} a {number.format(latest.value)} en {latest.year}. Un aumento del registro no indica por sí solo un aumento en la prevalencia de discapacidad.</>}</Reading>
@@ -242,9 +263,9 @@ function RegionalReport({ snapshot, accent }: { snapshot: AnalysisSnapshot; acce
       <Reading>El mayor aumento informado fue en {changes[0].label}: {number.format(changes[0].delta)} {waste ? "toneladas estimadas" : "inscripciones"} adicionales. {waste ? "La diferencia se calcula sobre los totales departamentales del archivo, no sobre un panel fijo de distritos." : "Se comparan los ámbitos con la misma etiqueta en ambos años. Los cambios pueden reflejar diferencias de cobertura o registro, no de prevalencia."}</Reading>
       <ChangeBars rows={changes} title={`Diferencia entre ${latest.year} y ${previous.year} (${waste ? "toneladas" : "inscripciones"})`} />
     </StoryBlock>
-    {!waste && <StoryBlock index="04 · CORTE PARCIAL" title="Qué muestran los datos de enero a septiembre de 2025">
-      <Reading>Este corte no debe compararse como año completo con 2024. Los ámbitos de 2025 se presentan con los nombres de la fuente; no se equipara Lima con Lima Metropolitana.</Reading>
-      <Ranking slice={snapshot.slices.at(-1)!} title="Inscripciones por ámbito en el corte parcial" accent="#55749e" />
+    {!waste && <StoryBlock index="04 · CORTE PARCIAL" title="Distribución territorial en 2025">
+      <Reading>La fuente agrupa Lima de forma distinta en 2025: «Lima» no equivale a «Lima Metropolitana» en el gráfico anterior.</Reading>
+      <Ranking slice={snapshot.slices.at(-1)!} title="Inscripciones por ámbito (periodo parcial)" accent="#55749e" />
     </StoryBlock>}
   </>;
 }

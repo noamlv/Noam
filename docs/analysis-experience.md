@@ -38,3 +38,9 @@ Estos temas pertenecen a DataPeru. Antes de construir cada pagina, acordar la pr
 ## Siguiente revision de contenido
 
 Preparar el mapa del sitio con tres estados separados: publicado, requiere mejora y propuesto. Identificar para cada tema la pagina de lectura, el explorador, las fuentes y el servicio relacionado. No usar el numero de URLs municipales como equivalente al numero de analisis originales.
+
+## Desgloses de apoyo deportivo
+
+`scripts/build-pad-breakdowns.py` genera dos agregados independientes del archivo PAD, uno por federacion/asociacion deportiva y otro por departamento de nacimiento. Ambos se reconcilian con los montos y registros de la serie anual. Las etiquetas con menos de diez cadenas de nombre normalizadas se agrupan; no se exportan nombres, ubicaciones extranjeras detalladas ni cruces entre federacion y lugar. La vista departamental usa como denominador el total de nacidos en Peru y presenta el agregado exterior aparte. Los nombres no se utilizan para contar beneficiarios unicos.
+
+La fuente y el periodo aparecen en el encabezado de cada pagina. Las tablas anuales no muestran una columna de cobertura; los valores parciales conservan una marca breve.

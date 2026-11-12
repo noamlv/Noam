@@ -13,7 +13,7 @@ const number = new Intl.NumberFormat("es-PE", { maximumFractionDigits: 2 });
 const money = (value: number) => `S/ ${number.format(value)}`;
 const pointId = ({ year, modality }: AthleteRelationshipRow) => `${year}:${modality}`;
 const pointLabel = (row: AthleteRelationshipRow) =>
-  `${row.modality}, ${row.year}${row.partial ? " (enero–septiembre)" : ""}: ${integer.format(row.records)} registros, ${money(row.amount)} en total, ${money(row.mean)} por registro`;
+  `${row.modality}, ${row.year}${row.partial ? " (parcial)" : ""}: ${integer.format(row.records)} registros, ${money(row.amount)} en total, ${money(row.mean)} por registro`;
 
 function axisStep(maximum: number) {
   const scale = 10 ** Math.floor(Math.log10(maximum / 4));
@@ -22,7 +22,7 @@ function axisStep(maximum: number) {
 
 function PointDetail({ row, announced = false }: { row: AthleteRelationshipRow; announced?: boolean }) {
   return <div className="mt-6 rounded-lg border border-[#dce8e3] bg-[#edf6f1] p-4" aria-live={announced ? "polite" : undefined}>
-    <p className="text-sm font-semibold">{row.modality} · {row.year}{row.partial ? " (enero–septiembre)" : ""}</p>
+    <p className="text-sm font-semibold">{row.modality} · {row.year}{row.partial ? " (parcial)" : ""}</p>
     <dl className="mt-3 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-3">
       {[
         ["Registros", integer.format(row.records)],
@@ -94,7 +94,7 @@ export function AthleteRelationships({ rows }: { rows: AthleteRelationshipRow[] 
           })}
         </div>
         <p className="mt-8 text-center text-xs font-medium">Número de registros</p>
-        {includePartial && <p className="mt-2 text-xs text-ink/75">Los puntos huecos son de enero a septiembre de 2025.</p>}
+        {includePartial && <p className="mt-2 text-xs text-ink/75">Puntos huecos: datos parciales.</p>}
         <PointDetail row={active} announced={active === chosen} />
       </div>
 
@@ -108,7 +108,7 @@ export function AthleteRelationships({ rows }: { rows: AthleteRelationshipRow[] 
             <th scope="row" className="whitespace-nowrap pr-1 text-left font-medium">{year}{rows.some((row) => row.year === year && row.partial) ? "*" : ""}</th>
             {columns.map((column) => {
               const row = visibleById.get(`${year}:${column}`);
-              if (!row) return <td key={column} className="rounded bg-[#edf1ee] text-center" aria-label="Sin registros en la copia">—</td>;
+              if (!row) return <td key={column} className="rounded bg-[#edf1ee] text-center" aria-label="Sin registros">—</td>;
               return <td key={column} className="p-0"><button type="button" aria-label={pointLabel(row)} aria-pressed={pointId(row) === pointId(chosen)}
                 onMouseEnter={() => setPreview(pointId(row))} onFocus={() => setPreview(pointId(row))} onBlur={() => setPreview(null)} onClick={() => select(row)}
                 className={`min-h-8 w-full rounded px-1 text-center font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#155950] ${pointId(row) === pointId(active) ? "ring-2 ring-[#155950] ring-inset" : ""}`}
@@ -116,9 +116,9 @@ export function AthleteRelationships({ rows }: { rows: AthleteRelationshipRow[] 
             })}
           </tr>)}</tbody>
         </table>
-        <p className="mt-3 text-xs leading-6 text-ink/75">— Sin registros de la modalidad en la copia.{includePartial ? " * 2025 solo incluye enero a septiembre." : ""}</p>
+        <p className="mt-3 text-xs leading-6 text-ink/75">— Sin registros.{includePartial ? " * Datos parciales." : ""}</p>
       </div>
     </div>
-    <p className="mt-6 border-t border-border pt-4 text-xs leading-6 text-ink/75">Monto total = registros × monto medio por registro. La relación es descriptiva: un registro no equivale a un deportista único y el promedio no mide impacto ni refleja ajustes por inflación.</p>
+    <p className="mt-6 border-t border-border pt-4 text-xs leading-6 text-ink/75">Monto total = registros × monto medio por registro. Montos nominales por registro, no por deportista.</p>
   </div>;
 }
