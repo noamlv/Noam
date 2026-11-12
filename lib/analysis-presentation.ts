@@ -11,7 +11,7 @@ export const analysisPresentation: Record<string, {
   "residuos-municipales": { area: "dataperu", image: "/images/noam-urban-services.jpg", imageAlt: "Escena ilustrativa de servicios en una ciudad", accent: "#3d6857" },
   "planes-territoriales": { area: "dataperu", image: "/images/noam-regional-planning.jpg", imageAlt: "Escena ilustrativa de planificación territorial", accent: "#a85b3f" },
   "registro-discapacidad": { area: "dataperu", image: "/images/noam-public-sector.jpg", imageAlt: "Escena ilustrativa de trabajo en una entidad pública", accent: "#496b80" },
-  "apoyo-deportista": { area: "dataperu", image: "/images/noam-field-research.jpg", imageAlt: "Escena ilustrativa de trabajo de campo", accent: "#786438" },
+  "apoyo-deportista": { area: "dataperu", image: "/images/noam-athlete-support.webp", imageAlt: "Ilustración de atletas corriendo en una pista con montañas al fondo", accent: "#287477" },
   "conteo-presidencial-2026": { area: "electoral", image: "/images/noam-decision-room.jpg", imageAlt: "Escena ilustrativa de revisión de información", accent: "#5d6661" }
 };
 

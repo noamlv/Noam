@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { analysisLibrary, getAnalysisSnapshot } from "../lib/analysis-library.ts";
 import { platformCatalog } from "../lib/platform-catalog.ts";
+import { annualObservations, athleteRelationshipRows, completeSegments, matchedChanges, reportCsv, sliceTotal } from "../lib/analysis-report.ts";
 
 assert.equal(analysisLibrary.length, 5);
 assert.equal(new Set(analysisLibrary.map((entry) => entry.slug)).size, 5);
@@ -69,10 +70,34 @@ assert.ok(partialHistory.partial, "The 2025 default must retain its partial-peri
 assert.equal(getAnalysisOverview(onpe).total, 15_444_537, "Do not sum national votes twice across overlapping slices");
 assert.equal(getAnalysisOverview(onpe).history.length, 0, "Geographic slices are not a time series");
 assert.equal(getAnalysisOverview(pat).history.length, 0, "PAT department slices are not a time series");
+assert.deepEqual(annualObservations(pat), []);
+assert.deepEqual(annualObservations(onpe), []);
+assert.deepEqual(completeSegments(annualObservations(conadis)).map((segment) => segment.map((point) => point.year)), [
+  [2014], [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]
+], "Do not draw lines through incomplete years");
+assert.deepEqual(completeSegments([{ year: 2020, partial: false }, { year: 2022, partial: false }]).map((segment) => segment.length), [1, 1]);
+const athleteYears = annualObservations(pad);
+assert.equal(athleteYears.find((point) => point.year === 2024)?.value, 8_450_350);
+assert.equal(athleteYears.at(-1)?.partial, true);
+assert.equal(athleteYears.reduce((sum, point) => sum + point.records, 0), 68_938);
+const padRelationships = athleteRelationshipRows(pad);
+assert.equal(padRelationships.length, 32);
+assert.equal(padRelationships.filter(({ partial }) => partial).length, 3);
+assert.equal(padRelationships.reduce((sum, row) => sum + row.records, 0), pad.sourceRows);
+assert.ok(!padRelationships.some((row) => row.year < 2020 && row.modality === "PNM"));
+const padTwo2024 = padRelationships.find(({ year, modality }) => year === 2024 && modality === "PAD II")!;
+assert.equal(padTwo2024.mean, 2_661_450 / 590);
+assert.deepEqual(athleteRelationshipRows(conadis), []);
+const padChanges = matchedChanges(pad.slices.at(-3)!, pad.slices.at(-2)!);
+assert.equal(padChanges.find((row) => row.label === "PAD I")?.delta, -4_264_100);
+assert.equal(padChanges.reduce((sum, row) => sum + row.delta, 0), 8_450_350 - 11_235_470);
+assert.equal(annualObservations(conadis).find((point) => point.year === 2024)?.value, 69_940);
+assert.equal(pat.slices.slice(1).reduce((sum, slice) => sum + sliceTotal(slice), 0), 196);
+assert.ok(!reportCsv(pat).includes('"Perú",'), "Exclude the overlapping national row from PAT exports");
+assert.ok(reportCsv(pad).includes('"PAD I","4478212.5"'));
 const landing = readFileSync("app/analisis/[slug]/page.tsx", "utf8");
-assert.ok(landing.includes('<Section id="datos">') && landing.includes("<AnalysisOverview"), "The landing must contain its own data and figures");
+assert.ok(landing.includes('<Section id="datos">') && landing.includes("<AnalysisReport"), "The landing must contain its own data and figures");
 assert.match(landing, /originalDashboardUrl/, "Keep original dashboards distinct from the native explorer");
-assert.ok(landing.includes("<AnalysisDashboard"), "Filtering must remain inside the landing when no original is published");
 assert.ok(!landing.includes('href={`/analisis/${entry.slug}/dashboard`}'), "Do not send readers to the legacy explorer as if it were an original dashboard");
 assert.ok(readFileSync("app/sitemap.ts", "utf8").includes('"/dataperu/analisis"'));
 console.log("Analysis presentation OK: 4 DataPerú analyses, electoral archive, partial periods, safe aggregates and inline figures.");

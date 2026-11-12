@@ -142,8 +142,23 @@ for (const [path, text] of publicPages) await expectHtml(path, text);
 
 for (const slug of ["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"]) {
   const landing = await expectHtml(`/analisis/${slug}`, "Ver datos y gráficos");
-  assert.ok(landing.body.includes(`id="overview-${slug}-composition"`), "Each landing must contain a rendered data figure");
-  assert.ok(landing.body.includes("Filtrar y explorar todos los datos"), "The landing must allow data exploration without navigation");
+  if (slug === "conteo-presidencial-2026") {
+    assert.ok(landing.body.includes(`id="overview-${slug}-composition"`));
+    continue;
+  }
+  assert.ok(landing.body.includes("<figcaption"), "Each DataPerú landing must contain a rendered data figure");
+  assert.ok(landing.body.includes("<table"), "Exact values must be rendered without interacting");
+  assert.ok(!landing.body.includes("Filtrar y explorar todos los datos"));
+  assert.ok(!landing.body.includes("Imagen ilustrativa; no es una fotografía del estudio."));
+  assert.ok(landing.body.includes(`/analisis/${slug}/data.csv`));
+  if (slug === "apoyo-deportista") {
+    assert.ok(landing.body.includes('id="cruces-pad"'));
+    assert.ok(landing.body.includes("Mapa de calor del monto medio"));
+  }
+  const csv = await get(`/analisis/${slug}/data.csv`);
+  assert.equal(csv.status, 200);
+  assert.match(csv.headers.get("content-type") ?? "", /^text\/csv/);
+  assert.ok((await csv.text()).includes('"Filas faltantes en el ámbito"'));
 }
 const dataPeruAnalyses = await expectHtml("/dataperu/analisis", "Residuos municipales");
 assert.ok(dataPeruAnalyses.body.includes("/analisis/apoyo-deportista"));

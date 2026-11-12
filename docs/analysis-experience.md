@@ -2,11 +2,11 @@
 
 ## Recorrido publico
 
-DataPeru -> Analisis por tema -> Pagina con lectura, graficos y filtros.
+DataPeru -> Analisis por tema -> Pagina con lectura continua, graficos y tablas.
 
 - `/dataperu/analisis` agrupa residuos, planes territoriales, registro de discapacidad y apoyo al deporte.
 - `/analisis/[slug]` conserva las URLs editoriales existentes. Cada pagina incluye explicacion, fuente, periodo, graficos, preguntas pendientes y apoyo opcional de NOAM.
-- Los filtros y descargas se despliegan dentro de cada landing. `/analisis/[slug]/dashboard` conserva el explorador nativo anterior para no romper enlaces, pero no se promociona como un dashboard original.
+- Las cuatro landings de DataPeru muestran sus comparaciones, interpretaciones y tablas sin desplegar filtros. Cada una ofrece un CSV de los agregados publicados. `/analisis/[slug]/dashboard` conserva el explorador nativo anterior para no romper enlaces, pero no se promociona como un dashboard original.
 - `/analisis` conserva la biblioteca general y distingue DataPeru del archivo electoral.
 - El conteo presidencial parcial mantiene sus advertencias historicas y su pertenencia a Electoral. No se convierte en un resultado actual por cambiar el diseno.
 - Sectores explica problemas y servicios por tipo de entidad o actividad. No duplica la biblioteca de datos ni presenta servicios propuestos como consultorias realizadas.
@@ -15,7 +15,9 @@ DataPeru -> Analisis por tema -> Pagina con lectura, graficos y filtros.
 
 Las figuras de las landings reutilizan los agregados validados. No se incorporan microdatos, dimensiones personales ni bases nuevas. Los periodos parciales y faltantes se indican junto al grafico; la tabla anual conserva los valores exactos. Las vistas geograficas superpuestas no se suman como si fueran una serie temporal. La ordenacion no modifica los datos fuente.
 
-Las imagenes son ilustrativas, tomadas de los recursos editoriales ya existentes, no fotografias de los estudios.
+Las portadas de DataPeru son recursos editoriales, no fotografias de los estudios. Apoyo al deportista usa una ilustracion original de atletas en pista. Los anos incompletos se dibujan con puntos abiertos y no se conectan a las series. En el CSV de planes territoriales se excluye el total nacional para evitar sumar dos veces las provincias.
+
+Apoyo al deportista incluye dispersion de monto total frente a numero de registros y un mapa de calor de monto medio por registro. Comparten seleccion de ano y modalidad. El promedio divide la suma por el numero de registros del mismo grupo, no por personas unicas. 2025 se excluye por defecto; al incluirlo se identifica como corte parcial. Se usan unicamente los agregados de ano y modalidad ya disponibles; no se exportan las trayectorias individuales del original de Streamlit.
 
 ## Originales
 
