@@ -188,9 +188,9 @@ const limaMunicipalCsvBody = await limaMunicipalCsv.text();
 assert.ok(limaMunicipalCsvBody.includes("agua_red_publica_porcentaje"), "El CSV municipal debe incluir agua por red pública");
 assert.ok(limaMunicipalCsvBody.includes("saneamiento_red_publica_porcentaje"), "El CSV municipal debe incluir saneamiento por red pública");
 
-const educationPage = await expectHtml("/dataperu/educacion", "Qué muestran y qué no muestran los datos");
+const educationPage = await expectHtml("/dataperu/educacion", "Matrícula escolar, distrito por distrito");
 assert.ok(educationPage.body.includes('"@type":"Dataset"'), "Educación debe publicar schema Dataset");
-assert.ok(educationPage.body.includes("No mide asistencia, permanencia, aprendizaje"), "La capa educativa debe explicar sus límites de interpretación");
+assert.ok(educationPage.body.includes("no mide asistencia ni aprendizaje"), "La capa educativa debe explicar sus límites de interpretación");
 assert.ok(educationPage.body.includes("/dataperu/educacion/data.csv"), "La capa educativa debe ofrecer el dataset nacional");
 const educationCsv = await get("/dataperu/educacion/data.csv");
 assert.equal(educationCsv.status, 200, "El dataset educativo nacional debe ser descargable");

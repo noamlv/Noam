@@ -32,7 +32,7 @@ export default function DepartmentAtlasPage() {
 
       <section className="border-b border-border"><Container><div className="grid divide-y divide-border sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">{[
         [formatMetric(departmentProfiles.length), "departamentos", "incluye Callao como departamento estadístico"],
-        [formatMetric(departmentSummary.municipalities), "municipalidades", "universo publicado en RENAMU 2025"],
+        [formatMetric(departmentSummary.municipalities), "municipalidades", "incluidas en RENAMU 2025"],
         [formatCurrency(departmentSummary.pim, true), "PIM municipal agregado", "suma de presupuestos 2025"],
         [formatPercent(departmentSummary.investmentExecutionPercent), "ejecución de inversión", "devengado agregado / PIM agregado"]
       ].map(([value, label, note]) => <div key={label} className="min-w-0 py-7 sm:px-6 sm:first:pl-0 md:py-9"><p className="break-words text-3xl font-medium tracking-[-0.05em] text-ink">{value}</p><p className="mt-2 text-xs font-medium text-ink/72">{label}</p><p className="mt-1 text-[9px] leading-4 text-muted">{note}</p></div>)}</div></Container></section>

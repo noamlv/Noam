@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { ProductProofVisual } from "@/components/brand/product-proof-visual";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
 import type { ProductProof } from "@/lib/product-proofs";
@@ -45,7 +45,7 @@ export function ProductDemoPage({ proof }: { proof: ProductProof }) {
             <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
               <div>
                 <Eyebrow>Ficha técnica</Eyebrow>
-                <Heading size="xl">Qué se midió y cómo leerlo</Heading>
+                <Heading size="xl">Cómo se hizo la encuesta</Heading>
                 <p className="mt-5 text-sm leading-7 text-ink/65">Revisa quién hizo el estudio, cuándo se recogieron los datos y cómo se seleccionó la muestra.</p>
               </div>
               <div>
@@ -68,7 +68,7 @@ export function ProductDemoPage({ proof }: { proof: ProductProof }) {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Eyebrow>Qué puedes consultar</Eyebrow><Heading size="xl">Cómo está organizado el análisis</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Cada módulo responde una pregunta distinta y conserva una ruta hacia la fuente, el método o la definición utilizada.</p></div>
+            <div><Eyebrow>Qué puedes consultar</Eyebrow><Heading size="xl">Cómo está organizado el análisis</Heading><p className="mt-5 text-sm leading-7 text-ink/65">Consulta los resultados por tema o zona del país.</p></div>
             <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2">
               {proof.modules.map((module) => (
                 <article key={module.number} className="min-h-[220px] bg-canvas p-6">
@@ -82,26 +82,7 @@ export function ProductDemoPage({ proof }: { proof: ProductProof }) {
         </Container>
       </Section>
 
-      <Section className="border-y border-border bg-panel/45">
-        <Container>
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
-            <div>
-              <Eyebrow>Método</Eyebrow>
-              <Heading size="lg">Cómo se hizo el análisis</Heading>
-              <ul className="mt-8 divide-y divide-border border-y border-border">
-                {proof.methods.map((method) => <li key={method} className="flex items-center gap-3 py-4 text-sm text-ink/72"><Check className="h-4 w-4 shrink-0 text-rust" />{method}</li>)}
-              </ul>
-            </div>
-            <div>
-              <Eyebrow>Límites de lectura</Eyebrow>
-              <Heading size="lg">Lo que el producto no afirma</Heading>
-              <ol className="mt-8 divide-y divide-border border-y border-border">
-                {proof.limits.map((limit, index) => <li key={limit} className="grid grid-cols-[34px_1fr] gap-3 py-4"><span className="font-mono text-[10px] text-rust">0{index + 1}</span><p className="text-sm leading-6 text-ink/68">{limit}</p></li>)}
-              </ol>
-            </div>
-          </div>
-        </Container>
-      </Section>
+
 
       <Section>
         <Container>

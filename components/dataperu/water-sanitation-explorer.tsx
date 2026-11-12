@@ -151,7 +151,7 @@ export function WaterSanitationExplorer({ items, initialQuery = "" }: { items: W
           </div>
         ))}
       </div>
-      <p className="mt-3 text-[11px] leading-5 text-muted">Las tasas de la selección se recalculan con los numeradores y denominadores agregados; no son promedios simples de porcentajes distritales.</p>
+      <p className="mt-3 text-[11px] leading-5 text-muted">El porcentaje se calcula sobre todas las viviendas de los distritos seleccionados.</p>
 
       <div className="mt-7 flex items-center justify-between gap-4 text-xs text-muted">
         <p aria-live="polite">{formatNumber(results.length)} {results.length === 1 ? "distrito encontrado" : "distritos encontrados"}</p>

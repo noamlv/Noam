@@ -1,4 +1,4 @@
-import { ArrowRight, Building2, Database, Droplets, GraduationCap, Leaf, Recycle, ShieldCheck, Siren, Store } from "lucide-react";
+import { ArrowRight, Building2, Droplets, GraduationCap, Leaf, Recycle, ShieldCheck, Siren, Store } from "lucide-react";
 import NextLink from "next/link";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
@@ -129,23 +129,7 @@ export default function SectorTopicsPage() {
         </Container>
       </Section>
 
-      <Section className="border-y border-border bg-panel/55">
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.45fr_1fr] lg:gap-20">
-            <div>
-              <Database className="h-5 w-5 text-rust" aria-hidden />
-              <Eyebrow className="mt-6">Cómo leerlo</Eyebrow>
-              <Heading size="lg">Qué puedes saber con estos indicadores</Heading>
-            </div>
-            <div className="grid gap-8 text-sm leading-7 text-ink/68 sm:grid-cols-2">
-              <div><p className="font-medium text-ink">Qué muestra</p><p className="mt-2">Presencia de instrumentos, capacidades y acciones declaradas por cada municipalidad, según la pregunta y periodo de RENAMU.</p></div>
-              <div><p className="font-medium text-ink">Qué no demuestra</p><p className="mt-2">Calidad del servicio, cumplimiento efectivo, resultados para la población ni causalidad entre una capacidad y un resultado.</p></div>
-              <div><p className="font-medium text-ink">Cómo usarlo</p><p className="mt-2">Como punto de partida para contrastar evidencia, formular hipótesis y diseñar un diagnóstico o sistema de seguimiento.</p></div>
-              <div><p className="font-medium text-ink">Fuente</p><p className="mt-2">{sectorSource.publisher}. {sectorSource.referencePeriod}.</p></div>
-            </div>
-          </div>
-        </Container>
-      </Section>
+      <Section><Container><p className="text-sm leading-7 text-muted">Los indicadores de gestión reúnen las respuestas de las municipalidades. <a href={sectorSource.datasetUrl} target="_blank" rel="noreferrer" className="text-rust underline">Consultar RENAMU 2025</a>.</p></Container></Section>
 
       <Section>
         <Container>

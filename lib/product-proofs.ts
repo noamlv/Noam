@@ -43,34 +43,33 @@ export const productProofs: Record<ProductProof["slug"], ProductProof> = {
   barometro: {
     slug: "barometro",
     path: "/electoral/barometro-enero-2026",
-    eyebrow: "Opinión pública · Enero 2026",
+    eyebrow: "Encuesta IMASEN · 27–31 de enero de 2026",
     title: "Barómetro Electoral",
-    description: "Explora el análisis de la encuesta online de IMASEN de enero de 2026, con resultados por grupo y explicación de sus límites.",
+    description: "Consulta qué respondieron las personas encuestadas sobre el país y la política. La encuesta se hizo por internet y con cuotas.",
     externalUrl: "https://noamlv.github.io/peru-malestar-riesgo-electoral/",
     caseHref: "/cases/barometro-electoral-enero-2026",
     metrics: [
-      { value: "1,300", label: "entrevistas", note: "Casos analizados y ponderados" },
+      { value: "1,300", label: "entrevistas", note: "Encuesta por internet" },
       { value: "184", label: "variables", note: "Dimensiones políticas y sociodemográficas" },
       { value: "5 + 1", label: "lecturas territoriales", note: "Cinco macrozonas y total nacional" },
       { value: "4", label: "familias analíticas", note: "Descripción, modelos, segmentos y territorio" }
     ],
     modules: [
-      { number: "01", title: "Contexto político", description: "Toplines ponderados y comparación por macrozona." },
+      { number: "01", title: "Contexto político", description: "Respuestas principales y diferencias por zona del país." },
       { number: "02", title: "Índices analíticos", description: "Malestar, conocimiento y señales de riesgo con definiciones explícitas." },
-      { number: "03", title: "Modelos explicativos", description: "Elastic Net y XGBoost para explorar asociaciones y variables relevantes." },
-      { number: "04", title: "Segmentación", description: "Perfiles de grupos y paisaje de decisión mediante métodos no supervisados." },
-      { number: "05", title: "Hipótesis", description: "Contrastes ponderados y estimaciones cuasi-causales presentadas con cautela." },
+      { number: "03", title: "Modelos explicativos", description: "Qué características aparecen asociadas con distintas respuestas." },
+      { number: "04", title: "Segmentación", description: "Grupos de personas con respuestas parecidas." },
+      { number: "05", title: "Hipótesis", description: "Comparaciones entre grupos de personas encuestadas." },
       { number: "06", title: "Territorio", description: "Mapas, escenarios y una lectura integrada por macrozonas." }
     ],
     methods: ["Análisis ponderado con el factor provisto en la base", "PCA y redes de co-mención", "Elastic Net, XGBoost y clustering", "Pruebas de hipótesis ponderadas", "Estimaciones IPW/AIPW de alcance exploratorio"],
     limits: ["La captación fue online y por cuotas; los resultados describen el estudio ponderado y no deben leerse como un censo ni una medición vigente.", "Los modelos identifican patrones y asociaciones, no predicciones electorales garantizadas ni efectos causales definitivos.", "La versión pública presenta resultados agregados y no expone microdatos de entrevistados ni reproduce las láminas restringidas del informe fuente."],
     technicalProfile: [
-      { label: "Trabajo de campo", value: "27–31 ene 2026", note: "Fotografía temporal; no representa cambios posteriores." },
       { label: "Captación", value: "Online por cuotas", note: "Cuotas territoriales, de sexo y edad documentadas por la fuente." },
       { label: "Cobertura", value: "Urbana y rural", note: "Cinco macrozonas y agregado nacional." },
-      { label: "Ponderación", value: "factor1", note: "Suma ponderada aproximada de 1.300 casos." }
+      { label: "Ponderación", value: "Resultados ajustados", note: "Se usaron los pesos entregados con la encuesta." }
     ],
-    sourceNote: "Fuente del estudio: IMASEN, enero de 2026. Análisis y experiencia narrativa: Noam López Villanes. El informe fuente indica reproducción restringida; esta página no copia sus láminas ni distribuye la base individual."
+    sourceNote: "Encuesta: IMASEN. Análisis: Noam López Villanes."
   },
   dataperu: {
     slug: "dataperu",

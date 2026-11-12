@@ -73,12 +73,12 @@ export default function MunicipalityIndexPage() {
           <div className="grid gap-10 lg:grid-cols-[0.58fr_1fr] lg:gap-20">
             <div>
               <Database className="h-5 w-5 text-rust" aria-hidden />
-              <Eyebrow className="mt-6">Fuente y límites</Eyebrow>
-              <Heading size="lg">Fuentes y límites de los datos</Heading>
+              <Eyebrow className="mt-6">Datos oficiales</Eyebrow>
+              <Heading size="lg">Fuentes</Heading>
             </div>
             <div className="space-y-5 text-sm leading-7 text-ink/68">
               <p><strong className="font-medium text-ink">Fuentes:</strong> INEI para población, agua y saneamiento; Minedu para matrícula EBR; MEF para presupuesto y ejecución; y RENAMU para capacidades institucionales.</p>
-              <p>{dataperuSources.population.notes} {renamuSource.notes}</p>
+              <p>La población es una proyección del INEI y los datos sobre recursos y servicios provienen de lo que declara cada municipalidad.</p>
               <div className="flex flex-wrap gap-5 pt-2">
                 <a href={dataperuSources.budget.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Datos del MEF <ExternalLink className="h-3.5 w-3.5" /></a>
                 <a href={dataperuSources.population.pageUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Población del INEI <ExternalLink className="h-3.5 w-3.5" /></a>

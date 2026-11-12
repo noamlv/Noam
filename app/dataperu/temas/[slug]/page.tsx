@@ -98,7 +98,7 @@ export default async function SectorPage({ params }: SectorPageProps) {
               </article>
             ))}
           </div>
-          <p className="mt-4 text-[11px] leading-5 text-muted">Porcentajes calculados sobre respuestas informadas en RENAMU 2025. Los denominadores varían según la pregunta y no se imputan valores faltantes.</p>
+          <p className="mt-4 text-[11px] leading-5 text-muted">Cada porcentaje incluye solo a las municipalidades que respondieron esa pregunta.</p>
         </Container>
       </Section>
 
@@ -123,11 +123,11 @@ export default async function SectorPage({ params }: SectorPageProps) {
           <Container>
             <div className="mb-10 grid gap-8 lg:grid-cols-[0.5fr_1fr] lg:gap-20">
               <div><Eyebrow>Serie oficial · 2014-2024</Eyebrow><Heading size="xl">Generación anual de residuos</Heading></div>
-              <p className="max-w-2xl text-sm leading-7 text-ink/65">El MINAM estima toneladas de residuos municipales generados cada año. Explora la evolución del país o de un departamento; más abajo, RENAMU 2025 muestra capacidades y prácticas de gestión declaradas por cada municipalidad. Son medidas distintas y no deben restarse entre sí.</p>
+              <p className="max-w-2xl text-sm leading-7 text-ink/65">Compara cuántas toneladas de residuos municipales se estima que se generan cada año. La serie mide generación, no recolección.</p>
             </div>
             <WasteGenerationExplorer annual={wasteGeneration.annual} departments={wasteGeneration.departments} />
             <div className="mt-6 grid gap-4 border-t border-border pt-6 text-xs leading-6 text-muted md:grid-cols-[1fr_auto] md:items-start">
-              <p>Fuente: MINAM/SIGERSOL, generación anual estimada en toneladas, corte de datos {wasteGeneration.source.latestCut}. La cobertura va de {wasteGeneration.annual[0].districts} distritos en 2014 a {wasteGeneration.annual.at(-1)?.districts} en 2024. Las columnas parciales de 2023 no concilian con el total oficial, por lo que aquí solo se utiliza el total municipal. No es un indicador de recolección, disposición final ni calidad del servicio.</p>
+              <p>El número de distritos incluidos pasó de {wasteGeneration.annual[0].districts} en 2014 a {wasteGeneration.annual.at(-1)?.districts} en 2024.</p>
               <a href={wasteGeneration.source.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Ver datos oficiales del MINAM <ExternalLink className="h-3.5 w-3.5" aria-hidden /></a>
             </div>
           </Container>
@@ -147,10 +147,10 @@ export default async function SectorPage({ params }: SectorPageProps) {
       <Section className="border-y border-border bg-panel/55">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Fuente y límites</Eyebrow><Heading size="lg">Cómo interpretar lo que reporta cada municipio</Heading></div>
+            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Datos oficiales</Eyebrow><Heading size="lg">Fuente</Heading></div>
             <div className="space-y-5 text-sm leading-7 text-ink/68">
               <p><strong className="font-medium text-ink">Fuente:</strong> {sectorSource.name}, {sectorSource.publisher}. Periodo de referencia: {sectorSource.referencePeriod}.</p>
-              <p>{sectorSource.notes} La presencia de un instrumento o una acción no demuestra vigencia, calidad, cobertura efectiva ni resultados.</p>
+              <p>La encuesta reúne lo que declara cada municipalidad.</p>
               <a href={sectorSource.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 font-medium text-rust hover:text-ink">Consultar fuente oficial <ExternalLink className="h-3.5 w-3.5" aria-hidden /></a>
             </div>
           </div>

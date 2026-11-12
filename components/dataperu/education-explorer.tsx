@@ -116,7 +116,7 @@ export function EducationExplorer({ items, initialQuery = "" }: { items: Educati
               <option value="all">Todos los distritos</option>
               <option value="rural">Mayoría de matrícula rural</option>
               <option value="private">Mayoría de matrícula privada</option>
-              <option value="imputation">Con registros imputados</option>
+              <option value="imputation">Con datos estimados</option>
               <option value="large">10,000 estudiantes o más</option>
             </select>
           </label>
@@ -127,7 +127,7 @@ export function EducationExplorer({ items, initialQuery = "" }: { items: Educati
               <option value="enrollment">Mayor matrícula</option>
               <option value="rural">Mayor proporción rural</option>
               <option value="private">Mayor proporción privada</option>
-              <option value="provenance">Menor proporción de informante</option>
+              <option value="provenance">Menos datos declarados directamente</option>
             </select>
           </label>
         </div>
@@ -138,7 +138,7 @@ export function EducationExplorer({ items, initialQuery = "" }: { items: Educati
           { label: "Distritos", value: formatNumber(results.length) },
           { label: "Matrícula EBR", value: formatNumber(aggregate.students) },
           { label: "Matrícula rural", value: formatPercent(rate(aggregate.rural, aggregate.students)) },
-          { label: "Registros de informante", value: formatPercent(rate(aggregate.informantRecords, aggregate.records)) }
+          { label: "Datos declarados directamente", value: formatPercent(rate(aggregate.informantRecords, aggregate.records)) }
         ].map((item) => (
           <div key={item.label} className="bg-panel px-5 py-5">
             <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-muted">{item.label}</p>
@@ -146,7 +146,7 @@ export function EducationExplorer({ items, initialQuery = "" }: { items: Educati
           </div>
         ))}
       </div>
-      <p className="mt-3 text-[11px] leading-5 text-muted">Las proporciones de la selección se recalculan con estudiantes o registros agregados. No son promedios simples de distritos.</p>
+      <p className="mt-3 text-[11px] leading-5 text-muted">Los porcentajes usan el total de estudiantes o registros de los distritos seleccionados.</p>
 
       <div className="mt-7 flex items-center justify-between gap-4 text-xs text-muted">
         <p aria-live="polite">{formatNumber(results.length)} {results.length === 1 ? "distrito encontrado" : "distritos encontrados"}</p>
@@ -187,9 +187,9 @@ export function EducationExplorer({ items, initialQuery = "" }: { items: Educati
                     <dl className="mt-4 grid grid-cols-3 gap-4 text-xs">
                       <div><dt className="text-muted">Rural</dt><dd className="mt-1 font-medium text-ink">{formatPercent(ruralPercent)}</dd></div>
                       <div><dt className="text-muted">Gestión pública</dt><dd className="mt-1 font-medium text-ink">{formatPercent(publicPercent)}</dd></div>
-                      <div><dt className="text-muted">Datos de informante</dt><dd className="mt-1 font-medium text-ink">{formatPercent(informantPercent)}</dd></div>
+                      <div><dt className="text-muted">Datos declarados directamente</dt><dd className="mt-1 font-medium text-ink">{formatPercent(informantPercent)}</dd></div>
                     </dl>
-                    {imputedRecords > 0 ? <p className="mt-3 text-[11px] leading-5 text-muted">{formatNumber(imputedRecords)} {imputedRecords === 1 ? "registro tiene" : "registros tienen"} imputación parcial o total.</p> : null}
+                    {imputedRecords > 0 ? <p className="mt-3 text-[11px] leading-5 text-muted">{formatNumber(imputedRecords)} {imputedRecords === 1 ? "registro tiene" : "registros tienen"} datos estimados en parte o en su totalidad.</p> : null}
                   </div>
                   <div className="flex flex-wrap gap-x-4 gap-y-2 md:flex-col md:items-end">
                     {item.hasMunicipalProfile ? (

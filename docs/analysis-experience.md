@@ -44,3 +44,7 @@ Preparar el mapa del sitio con tres estados separados: publicado, requiere mejor
 `scripts/build-pad-breakdowns.py` genera dos agregados independientes del archivo PAD, uno por federacion/asociacion deportiva y otro por departamento de nacimiento. Ambos se reconcilian con los montos y registros de la serie anual. Las etiquetas con menos de diez cadenas de nombre normalizadas se agrupan; no se exportan nombres, ubicaciones extranjeras detalladas ni cruces entre federacion y lugar. La vista departamental usa como denominador el total de nacidos en Peru y presenta el agregado exterior aparte. Los nombres no se utilizan para contar beneficiarios unicos.
 
 La fuente y el periodo aparecen en el encabezado de cada pagina. Las tablas anuales no muestran una columna de cobertura; los valores parciales conservan una marca breve.
+
+## Criterio editorial para tableros
+
+Encabezar con la pregunta que responde el tablero y mostrar la fuente y el periodo una sola vez. Describir las cifras, no el archivo ni el procesamiento: presupuesto, gasto registrado, viviendas conectadas, matricula y propuestas. Mantener al lado de cada grafico la distincion indispensable para interpretar la cifra. Dejar el detalle tecnico disponible aparte cuando aporte a la verificacion.

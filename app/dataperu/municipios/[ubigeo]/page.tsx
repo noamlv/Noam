@@ -269,7 +269,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
                 <DetailRow label="Locación u orden de servicios"><strong className="text-sm font-medium text-ink">{formatMetric(municipality.workforce.serviceContractorsMarch2025)}</strong></DetailRow>
                 <DetailRow label="Total de ambas categorías"><strong className="text-sm font-medium text-ink">{formatMetric(municipality.workforce.reportedWorkforceTotal)}</strong></DetailRow>
               </div>
-              <p className="mt-5 text-xs leading-5 text-muted">El total es una suma descriptiva de las dos categorías publicadas y no representa necesariamente la totalidad de vínculos laborales.</p>
+              <p className="mt-5 text-xs leading-5 text-muted">El total reúne solo las dos categorías que se muestran.</p>
             </article>
           </div>
         </Container>
@@ -330,7 +330,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
                     </div>
                   ))}
                 </div>
-                <p className="mt-4 text-xs leading-5 text-muted">Brecha descriptiva: {formatMetric(getCoverageGap(waterSanitation, "waterNetwork"))} viviendas sin agua por red y {formatMetric(getCoverageGap(waterSanitation, "sanitationNetwork"))} sin saneamiento por red dentro del universo censal.</p>
+                <p className="mt-4 text-xs leading-5 text-muted">Viviendas sin conexión: {formatMetric(getCoverageGap(waterSanitation, "waterNetwork"))} viviendas sin agua por red y {formatMetric(getCoverageGap(waterSanitation, "sanitationNetwork"))} sin saneamiento por red dentro del universo censal.</p>
                 <NextLink href={`/dataperu/agua-saneamiento?q=${municipality.ubigeo}`} className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-rust hover:text-ink">Comparar con otros distritos <ArrowRight className="h-3.5 w-3.5" aria-hidden /></NextLink>
                 <p className="mt-3 text-[11px] leading-5 text-muted">Fuente: {waterSanitationSource.publisher}.</p>
               </div>
@@ -413,7 +413,7 @@ export default async function MunicipalityPage({ params }: MunicipalityPageProps
             <div>
               <Eyebrow className="text-[#d9a48f]">Lectura inicial</Eyebrow>
               <Heading size="xl" className="text-white">Preguntas que conviene investigar</Heading>
-              <p className="mt-5 text-sm leading-7 text-white/60">Reglas descriptivas convierten datos públicos en preguntas de gestión. No son hallazgos concluyentes ni sustituyen el análisis institucional.</p>
+              <p className="mt-5 text-sm leading-7 text-white/60">Estas preguntas ayudan a revisar los datos con el equipo municipal.</p>
             </div>
             <div className="grid gap-px overflow-hidden rounded-md border border-white/12 bg-white/12 sm:grid-cols-2">
               {signals.map((signal) => (

@@ -14,7 +14,7 @@ const formatPercent = (value: number | null) => value === null ? "No informada" 
 const sortOptions = [
   { value: "name", label: "Nombre A–Z" },
   { value: "population-desc", label: "Mayor población" },
-  { value: "pim-desc", label: "Mayor PIM" },
+  { value: "pim-desc", label: "Mayor presupuesto" },
   { value: "budget-desc", label: "Mayor ejecución total" },
   { value: "budget-asc", label: "Menor ejecución total" },
   { value: "investment-desc", label: "Mayor ejecución de inversión" },
@@ -81,7 +81,7 @@ export function RadarExplorer({ items }: { items: RadarMunicipality[] }) {
       {visibleResults.length > 0 ? (
         <div className="mt-5 overflow-hidden rounded-md border border-border">
           <div className="hidden grid-cols-[1.35fr_0.75fr_0.75fr_0.75fr_0.55fr] gap-4 border-b border-border bg-panel px-5 py-3 text-[9px] font-semibold uppercase tracking-[0.13em] text-muted lg:grid">
-            <span>Municipalidad</span><span>Población / PIM</span><span>Ejecución total</span><span>Inversión</span><span>Acciones</span>
+            <span>Municipalidad</span><span>Población / presupuesto</span><span>Ejecución total</span><span>Inversión</span><span>Acciones</span>
           </div>
           <div className="divide-y divide-border bg-canvas">
             {visibleResults.map((item) => (
@@ -92,7 +92,7 @@ export function RadarExplorer({ items }: { items: RadarMunicipality[] }) {
                 </div>
                 <div className="grid grid-cols-2 gap-4 lg:block">
                   <p className="text-sm font-medium text-ink">{formatNumber(item.population2025)}</p>
-                  <p className="mt-1 text-[10px] text-muted">{formatMoney(item.pim)} PIM</p>
+                  <p className="mt-1 text-[10px] text-muted">{formatMoney(item.pim)} de presupuesto</p>
                 </div>
                 <div>
                   <p className="text-sm font-medium text-ink">{formatPercent(item.budgetExecutionPercent)}</p>

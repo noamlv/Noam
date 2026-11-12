@@ -47,7 +47,7 @@ const openResources = [
   { type: "Plataforma", title: "Perfiles de 1,891 municipalidades", description: "Población, presupuesto, inversión, proyectos y capacidades declaradas.", href: "/dataperu/municipios" },
   { type: "Guía", title: "Protocolo mínimo de transferencia", description: "Una estructura para ordenar evidencia, riesgos, responsables y plazos.", href: "/toolkits/protocolo-transferencia-gestion" },
   { type: "Plantilla", title: "Matriz de prioridades de 100 días", description: "Seis criterios para pasar de una lista política a una agenda operable.", href: "/toolkits/matriz-prioridades-100-dias" },
-  { type: "Demostración", title: "Planómetro 2026", description: "Arquitectura reproducible para comparar planes y conservar trazabilidad documental.", href: "/electoral/planometro-2026" }
+  { type: "Demostración", title: "Planómetro 2026", description: "Compara propuestas por tema y consulta los planes originales.", href: "/electoral/planometro-2026" }
 ];
 
 const operatingPrinciples = [

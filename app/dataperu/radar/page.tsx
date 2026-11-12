@@ -1,4 +1,4 @@
-import { ArrowRight, Database, ExternalLink, Info, Scale, SlidersHorizontal } from "lucide-react";
+import { ArrowRight, Database, ExternalLink, Info, SlidersHorizontal } from "lucide-react";
 import { RadarVisual } from "@/components/brand/radar-visual";
 import { RadarExplorer } from "@/components/dataperu/radar-explorer";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -60,7 +60,7 @@ export default function DataPeruRadarPage() {
             <div>
               <Eyebrow className="text-[#d9a48f]">DataPerú · Radar municipal</Eyebrow>
               <Heading as="h1" size="display" className="max-w-[12ch] text-white">Compara datos de gestión municipal</Heading>
-              <p className="mt-7 max-w-xl text-base leading-8 text-white/66">Explora recursos, ejecución financiera y capacidades declaradas de gobiernos locales de todo el país. Compara territorios similares antes de formular una explicación.</p>
+              <p className="mt-7 max-w-xl text-base leading-8 text-white/66">Compara el presupuesto, el gasto y los recursos que declaran las municipalidades del país.</p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Button href="#explorar" variant="secondary" className="rounded-full border-white bg-white text-ink">Explorar el radar</Button>
                 <Button href="/contact?interest=dataperu&from=/dataperu/radar" variant="ghost" className="gap-2 !text-white/68 hover:!text-white">Diseñar un observatorio <ArrowRight className="h-4 w-4" aria-hidden /></Button>
@@ -77,8 +77,8 @@ export default function DataPeruRadarPage() {
             {[
               { value: formatMetric(radarSummary.municipalities), label: "municipalidades", note: "cobertura completa del universo publicado" },
               { value: formatCurrency(radarSummary.totalPim, true), label: "PIM municipal 2025", note: "suma de montos, no promedio" },
-              { value: formatPercent(radarSummary.totalExecutionPercent), label: "ejecución total", note: "devengado agregado / PIM agregado" },
-              { value: formatPercent(radarSummary.totalInvestmentExecutionPercent), label: "ejecución de inversión", note: "avance financiero agregado" }
+              { value: formatPercent(radarSummary.totalExecutionPercent), label: "ejecución total", note: "gasto registrado respecto del presupuesto" },
+              { value: formatPercent(radarSummary.totalInvestmentExecutionPercent), label: "ejecución de inversión", note: "parte del presupuesto de inversión registrada como gasto" }
             ].map((metric) => (
               <div key={metric.label} className="min-w-0 py-7 sm:px-6 sm:first:pl-0 md:py-9">
                 <p className="break-words text-3xl font-medium tracking-[-0.05em] text-ink">{metric.value}</p>
@@ -90,36 +90,13 @@ export default function DataPeruRadarPage() {
         </Container>
       </section>
 
-      <Section>
-        <Container>
-          <div className="grid gap-10 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div>
-              <Scale className="h-5 w-5 text-rust" aria-hidden />
-              <Eyebrow className="mt-6">Cómo leer</Eyebrow>
-              <Heading size="xl">Qué puedes comparar y con qué límites</Heading>
-            </div>
-            <div className="grid gap-px overflow-hidden rounded-md border border-border bg-border md:grid-cols-3">
-              {[
-                ["01", "Mismo tipo municipal", "Las medianas separan municipalidades provinciales y distritales; aun así, no controlan todas las diferencias de escala y territorio."],
-                ["02", "Montos y porcentajes", "Los agregados nacionales ponderan montos. Las medianas describen a una municipalidad típica dentro de cada grupo."],
-                ["03", "Señal, no veredicto", "Una diferencia ayuda a formular preguntas. No acredita capacidad, calidad del gasto, avance físico ni impacto en la población."]
-              ].map(([number, title, text]) => (
-                <article key={number} className="min-h-[260px] bg-panel p-6">
-                  <span className="font-mono text-[10px] text-rust">{number}</span>
-                  <h2 className="mt-12 text-xl font-medium tracking-[-0.025em] text-ink">{title}</h2>
-                  <p className="mt-3 text-sm leading-6 text-ink/62">{text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </Container>
-      </Section>
+
 
       <Section className="border-y border-border bg-panel/45">
         <Container>
           <div className="grid gap-8 md:grid-cols-[0.58fr_1fr] md:items-end">
             <div><Eyebrow>Distribuciones</Eyebrow><Heading size="xl">Dónde se concentra el avance financiero</Heading></div>
-            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Las barras muestran la proporción de municipalidades en cada intervalo. No miden calidad, oportunidad, avance físico ni resultados.</p>
+            <p className="max-w-2xl text-sm leading-7 text-ink/65 md:justify-self-end">Las barras muestran qué proporción de municipalidades se ubica en cada tramo de gasto. El gasto registrado no indica el avance de las obras.</p>
           </div>
           <div className="mt-10 grid gap-4 lg:grid-cols-2">
             <Distribution title="Ejecución presupuestal total" description="Devengado total dividido entre PIM para cada municipalidad durante 2025." {...radarDistributions.budgetExecution} color="#5f796e" />
@@ -183,10 +160,10 @@ export default function DataPeruRadarPage() {
       <Section className="border-y border-border bg-panel/55">
         <Container>
           <div className="grid gap-12 lg:grid-cols-[0.42fr_1fr] lg:gap-20">
-            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Fuentes y control</Eyebrow><Heading size="lg">Cobertura y límites de los indicadores</Heading></div>
+            <div><Database className="h-5 w-5 text-rust" aria-hidden /><Eyebrow className="mt-6">Datos oficiales</Eyebrow><Heading size="lg">Fuentes</Heading></div>
             <div className="space-y-5 text-sm leading-7 text-ink/66">
-              <p>Los 1,891 perfiles RENAMU tienen correspondencia con población INEI y presupuesto MEF. No existen ubigeos duplicados ni ejecuciones por encima del PIM dentro de la tolerancia validada.</p>
-              <p><strong className="font-medium text-ink">Riesgos de lectura:</strong> la población es proyectada; RENAMU es autodeclarado; la ejecución financiera no mide calidad, avance físico o impacto; la cartera publicada conserva hasta cinco proyectos por municipalidad.</p>
+
+
               <div className="flex flex-wrap gap-5 pt-2">
                 <a href={dataperuSources.population.pageUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-xs font-medium text-rust hover:text-ink">Fuente INEI <ExternalLink className="h-3.5 w-3.5" aria-hidden /></a>
                 <a href={dataperuSources.budget.datasetUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-xs font-medium text-rust hover:text-ink">Fuente MEF <ExternalLink className="h-3.5 w-3.5" aria-hidden /></a>
