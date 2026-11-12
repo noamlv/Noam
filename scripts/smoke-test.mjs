@@ -39,7 +39,7 @@ const publicPages = [
   ["/analisis/planes-territoriales", "Estado reportado de los planes territoriales"],
   ["/analisis/registro-discapacidad", "Discapacidad y acceso al registro"],
   ["/analisis/apoyo-deportista", "Apoyo económico al deporte"],
-  ["/analisis/conteo-presidencial-2026", "Conteo presidencial: archivo parcial del 15 de abril de 2026"],
+  ["/analisis/conteo-presidencial-2026", "Conteo presidencial: corte parcial del 15 de abril de 2026"],
   ...["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"].map((slug) => [`/analisis/${slug}/dashboard`, "Detalle del agregado"]),
   ["/", "Análisis de datos para decisiones públicas y territoriales"],
   ["/solutions", "Servicios para estudiar problemas y mejorar la gestión"],
@@ -142,7 +142,7 @@ for (const [path, text] of publicPages) await expectHtml(path, text);
 
 for (const slug of ["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"]) {
   const landing = await expectHtml(`/analisis/${slug}`, "Ver datos y gráficos");
-  assert.doesNotMatch(landing.body, /en (?:esta|la) copia|Cómo interpretar los datos|>Cobertura<|Sin faltantes en la medida/);
+  assert.doesNotMatch(landing.body, /en (?:esta|la) copia|Cómo interpretar los datos|>Cobertura<|Sin faltantes en la medida|No se unen a la línea|en el archivo/);
   if (slug === "conteo-presidencial-2026") {
     assert.ok(landing.body.includes(`id="overview-${slug}-composition"`));
     continue;
@@ -157,6 +157,7 @@ for (const slug of ["residuos-municipales", "planes-territoriales", "registro-di
     assert.ok(landing.body.includes("Mapa de calor del monto medio"));
     assert.ok(landing.body.includes('id="federaciones-pad"'));
     assert.ok(landing.body.includes('id="territorio-pad"'));
+    assert.ok(landing.body.includes("¿Cuántos registros de apoyo se han publicado?"));
   }
   const csv = await get(`/analisis/${slug}/data.csv`);
   assert.equal(csv.status, 200);

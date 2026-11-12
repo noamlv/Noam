@@ -83,9 +83,9 @@ def build(root):
     assert len({r["NÚMERO DE MESA"] for r in rows}) == len(rows)
     assert all(r["ESTADO DEL ACTA"] == "Contabilizada" for r in rows)
     slices = []
-    scopes = ["Todo el archivo", "PERÚ", "EXTRANJERO"]
+    scopes = ["Total del corte", "PERÚ", "EXTRANJERO"]
     for scope in scopes:
-        selected = rows if scope == "Todo el archivo" else [r for r in rows if r["ÁMBITO"] == scope]
+        selected = rows if scope == "Total del corte" else [r for r in rows if r["ÁMBITO"] == scope]
         groups = []
         for party in parties:
             values = [number(r[party]) for r in selected]

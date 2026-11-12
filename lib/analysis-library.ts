@@ -27,7 +27,7 @@ export const analysisLibrary: AnalysisEntry[] = [
     description: "Consulta cuántas provincias tienen planes de acondicionamiento territorial (PAT) en cada estado reportado, agrupadas por departamento. Para conocer la vigencia de un plan en particular, hace falta revisar sus documentos.",
     period: "Referencias RENAMU 2024 y DGPRVU 2025 · sin fecha única de corte",
     source: "MVCS · INEI / RENAMU", sourceUrl: "https://www.datosabiertos.gob.pe/dataset/estado-de-planes-de-acondicionamiento-territorial", scope: "196 provincias",
-    findings: ["El archivo de trabajo cubre 196 provincias.", "Contiene seis etiquetas de estado, conservadas tal como las reporta la fuente. La vigencia actual de cada plan requiere revisión documental.", "Si una provincia figura como «Sin Registro», hace falta consultar sus documentos para saber si cuenta con un plan."],
+    findings: ["Se analizaron 196 provincias.", "Contiene seis etiquetas de estado, conservadas tal como las reporta la fuente. La vigencia actual de cada plan requiere revisión documental.", "Si una provincia figura como «Sin Registro», hace falta consultar sus documentos para saber si cuenta con un plan."],
     questions: ["¿Qué instrumentos requieren verificación documental?", "¿Qué provincias necesitan asistencia técnica o actualización?", "¿Cómo vincular el planeamiento con inversión y servicios?"],
     serviceHref: "/analisis-catastro-desarrollo-urbano-territorial", offer: "Revisión de instrumentos, diagnóstico territorial y agenda de actualización."
   },
@@ -52,14 +52,14 @@ export const analysisLibrary: AnalysisEntry[] = [
     serviceHref: "/services/estudios-diagnosticos-evaluacion", offer: "Sistema de información, seguimiento de beneficios y evaluación de programas deportivos."
   },
   {
-    slug: "conteo-presidencial-2026", title: "Conteo presidencial 2026", category: "Electoral · archivo histórico",
-    headline: "Conteo presidencial: archivo parcial del 15 de abril de 2026.",
+    slug: "conteo-presidencial-2026", title: "Conteo presidencial 2026", category: "Electoral · corte histórico",
+    headline: "Conteo presidencial: corte parcial del 15 de abril de 2026.",
     description: "Consulta los votos por organización política, en Perú y en el extranjero. Este corte histórico no es el resultado final.",
     period: "15 de abril de 2026 · 11:58 a. m. · corte parcial histórico",
     source: "ONPE", sourceUrl: "https://www.onpe.gob.pe/", scope: "84.720 filas de mesas contabilizadas",
     findings: ["El corte incluye 84.720 mesas contabilizadas.", "Distingue Perú y extranjero y 36 organizaciones políticas.", "Los porcentajes se calculan sobre los votos válidos del corte, sin blancos ni nulos."],
-    questions: ["¿Cómo se distribuyen los votos en Perú y en el extranjero en este corte?", "¿Sobre qué total se calcula cada porcentaje?", "¿Qué archivos y fechas debe guardar un sistema de seguimiento electoral para que sus resultados puedan revisarse?"],
-    serviceHref: "/electoral", offer: "Observatorios electorales con archivos fechados y análisis por territorio."
+    questions: ["¿Cómo se distribuyen los votos en Perú y en el extranjero en este corte?", "¿Sobre qué total se calcula cada porcentaje?", "¿Cómo conservar un historial que permita comparar los resultados de cada corte?"],
+    serviceHref: "/electoral", offer: "Observatorios electorales con resultados por fecha y territorio."
   }
 ];
 

@@ -26,7 +26,7 @@ export function AnalysisDashboard({ snapshot }: { snapshot: AnalysisSnapshot }) 
 
   return <div className="space-y-10">
     <div className="flex flex-col gap-6 rounded-md border border-border bg-panel p-6 sm:flex-row sm:items-end sm:justify-between">
-      <label className="text-xs font-medium text-muted">{temporal ? "Periodo del archivo" : "Ámbito de análisis"}
+      <label className="text-xs font-medium text-muted">{temporal ? "Periodo" : "Ámbito de análisis"}
         <select value={period} onChange={(event) => setPeriod(event.target.value)} className="mt-2 block min-h-12 w-full rounded-sm border border-border bg-canvas px-4 text-sm text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-rust sm:min-w-64">
           {snapshot.slices.map((slice) => <option key={slice.period} value={slice.period}>{slice.label}</option>)}
         </select>

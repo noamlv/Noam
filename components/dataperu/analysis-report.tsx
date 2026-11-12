@@ -42,8 +42,11 @@ function Timeline({ points, accent, label, display = number.format }: { points: 
   const y = (value: number) => 100 - (value / top) * 100;
   const hasPartial = points.some((point) => point.partial);
 
-  return <figure className="mt-6 rounded-xl border border-border bg-[#f8faf9] px-4 pb-5 pt-6 sm:px-7">
-    <figcaption className="text-sm font-medium text-ink">{label}</figcaption>
+  return <figure className="mt-6 rounded-xl border border-border bg-[#f8faf9] px-4 pb-11 pt-6 sm:px-7">
+    <figcaption className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 text-sm font-medium text-ink">
+      <span>{label}</span>
+      {hasPartial && <span className="inline-flex items-center gap-2 text-xs font-normal text-muted"><span aria-hidden="true" className="size-2.5 rounded-full border-2 border-[#a2462c]" />Datos parciales</span>}
+    </figcaption>
     <div className="relative mt-6 ml-[3.5rem] mr-2 h-48 sm:ml-[4.5rem] sm:h-64" aria-hidden="true">
       {[0, 1, 2, 3, 4].map((tick) => <div key={tick} className="absolute inset-x-0 border-t border-[#d9e4df]" style={{ top: `${y(tick * step)}%` }}>
         <span className="absolute right-full mr-2 -translate-y-1/2 whitespace-nowrap font-mono text-[11px] text-ink/75 sm:mr-3">{display(tick * step)}</span>
@@ -60,7 +63,6 @@ function Timeline({ points, accent, label, display = number.format }: { points: 
       {points.map((point) => <span key={point.year} title={`${point.year}: ${display(point.value)}${point.partial ? " (parcial)" : ""}`} className={`absolute size-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full border-2 ${point.partial ? "border-[#a2462c] bg-white" : "border-white"}`} style={{ left: `${x(point.year)}%`, top: `${y(point.value)}%`, backgroundColor: point.partial ? undefined : accent }} />)}
       {points.map((point, index) => <span key={point.year} className={`absolute top-full mt-2 -translate-x-1/2 font-mono text-[11px] text-ink/80 sm:text-xs ${index === 0 || index === points.length - 1 || (index % 4 === 0 && index < points.length - 2) ? "" : "hidden sm:block"}`} style={{ left: `${x(point.year)}%` }}>{point.year}</span>)}
     </div>
-    <p className="mt-9 text-xs leading-6 text-ink/75">Año{hasPartial ? " · Los puntos abiertos indican cortes parciales o filas faltantes. No se unen a la línea." : ""}</p>
   </figure>;
 }
 
@@ -199,9 +201,9 @@ function AthleteReport({ snapshot, accent }: { snapshot: AnalysisSnapshot; accen
       <AthleteBreakdown groups={domestic} label="Apoyo por departamento de nacimiento en Perú" accent="#55749e" />
       {exterior && <p className="mt-4 text-sm text-ink/75">Nacidos en el exterior: S/ {millions(exterior.value)} millones en {number.format(exterior.records)} registros, fuera del gráfico.</p>}
     </StoryBlock>
-    <StoryBlock index="06 · REGISTROS" title="Cuántos registros de apoyo aparecen en el archivo">
+    <StoryBlock index="06 · REGISTROS" title="¿Cuántos registros de apoyo se han publicado?">
       <Timeline points={points.map((point) => ({ ...point, value: point.records }))} accent="#55749e" label="Registros de beneficios reportados" />
-      <Reading>El archivo suma {number.format(snapshot.sourceRows)} filas. Una persona puede figurar en varios registros, por lo que el gráfico no mide cuántos deportistas distintos recibieron apoyo ni sus resultados deportivos.</Reading>
+      <Reading>El IPD publicó {number.format(snapshot.sourceRows)} registros de apoyo en el periodo analizado. Un mismo deportista puede aparecer más de una vez.</Reading>
       <AnnualTable points={points} unit="Monto (S/)" recordLabel="Registros" />
     </StoryBlock>
   </>;
@@ -251,7 +253,7 @@ function RegionalReport({ snapshot, accent }: { snapshot: AnalysisSnapshot; acce
       { value: number.format(waste ? latest.records : points.at(-1)!.value), label: waste ? `Distritos incluidos en ${latest.year}` : "Inscripciones en 2025 (parcial)" }
     ]} />
     <StoryBlock index="01 · EVOLUCIÓN" title={waste ? "Cómo cambió la generación estimada de residuos" : "Cómo cambiaron las inscripciones reportadas"}>
-      <Reading>{waste ? <>La estimación total pasó de {millions(first.value)} a {millions(latest.value)} millones de toneladas entre {first.year} y {latest.year}. La cobertura también cambió: de {number.format(first.records)} a {number.format(latest.records)} distritos. La variación no corresponde a un panel fijo de distritos.</> : <>El total informado pasó de {number.format(previous.value)} inscripciones en {previous.year} a {number.format(latest.value)} en {latest.year}. Un aumento del registro no indica por sí solo un aumento en la prevalencia de discapacidad.</>}</Reading>
+      <Reading>{waste ? <>La estimación total pasó de {millions(first.value)} a {millions(latest.value)} millones de toneladas entre {first.year} y {latest.year}. En ese mismo periodo, los distritos incluidos pasaron de {number.format(first.records)} a {number.format(latest.records)}.</> : <>El total informado pasó de {number.format(previous.value)} inscripciones en {previous.year} a {number.format(latest.value)} en {latest.year}. Más inscripciones no significan necesariamente que haya más personas con discapacidad.</>}</Reading>
       <Timeline points={points} accent={accent} label={waste ? "Generación municipal estimada (millones de toneladas)" : "Inscripciones reportadas"} display={waste ? millions : number.format} />
       <AnnualTable points={points} unit={waste ? "Toneladas estimadas" : "Inscripciones"} recordLabel={waste ? "Distritos incluidos" : undefined} />
     </StoryBlock>
@@ -260,7 +262,7 @@ function RegionalReport({ snapshot, accent }: { snapshot: AnalysisSnapshot; acce
       <Ranking slice={selected} title={waste ? "Toneladas estimadas por departamento" : "Inscripciones por ámbito reportado"} accent={accent} />
     </StoryBlock>
     <StoryBlock index="03 · CAMBIOS" title={`Dónde cambió más el total entre ${previous.year} y ${latest.year}`}>
-      <Reading>El mayor aumento informado fue en {changes[0].label}: {number.format(changes[0].delta)} {waste ? "toneladas estimadas" : "inscripciones"} adicionales. {waste ? "La diferencia se calcula sobre los totales departamentales del archivo, no sobre un panel fijo de distritos." : "Se comparan los ámbitos con la misma etiqueta en ambos años. Los cambios pueden reflejar diferencias de cobertura o registro, no de prevalencia."}</Reading>
+      <Reading>El mayor aumento informado fue en {changes[0].label}: {number.format(changes[0].delta)} {waste ? "toneladas estimadas" : "inscripciones"} adicionales.</Reading>
       <ChangeBars rows={changes} title={`Diferencia entre ${latest.year} y ${previous.year} (${waste ? "toneladas" : "inscripciones"})`} />
     </StoryBlock>
     {!waste && <StoryBlock index="04 · CORTE PARCIAL" title="Distribución territorial en 2025">
