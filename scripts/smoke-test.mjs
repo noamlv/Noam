@@ -142,7 +142,7 @@ for (const [path, text] of publicPages) await expectHtml(path, text);
 
 for (const slug of ["residuos-municipales", "planes-territoriales", "registro-discapacidad", "apoyo-deportista", "conteo-presidencial-2026"]) {
   const landing = await expectHtml(`/analisis/${slug}`, "Ver datos y gráficos");
-  assert.doesNotMatch(landing.body, /en esta copia|Cómo interpretar los datos|>Cobertura<|Sin faltantes en la medida/);
+  assert.doesNotMatch(landing.body, /en (?:esta|la) copia|Cómo interpretar los datos|>Cobertura<|Sin faltantes en la medida/);
   if (slug === "conteo-presidencial-2026") {
     assert.ok(landing.body.includes(`id="overview-${slug}-composition"`));
     continue;

@@ -74,7 +74,7 @@ def build(root):
         selected = rows if department == "Perú" else [r for r in rows if r["NOMB_DEP"] == department]
         groups, missing = group_rows(selected, lambda r: r["ESTADO"], lambda _: Decimal(1))
         slices.append({"period": department, "label": department, "groups": groups, "missing": missing})
-    snapshots.append({"slug": "planes-territoriales", "sourceRows": len(rows), "sha256": digest, "unit": "provincias en la copia", "slices": slices})
+    snapshots.append({"slug": "planes-territoriales", "sourceRows": len(rows), "sha256": digest, "unit": "provincias analizadas", "slices": slices})
 
     rows, digest = load(root, "Dashboard_ONPE_final/PR-ESP_Presidencial_2026-04-15_11-58-AM_91.322 (1).csv", "utf-8-sig", ",")
     keys = list(rows[0])
