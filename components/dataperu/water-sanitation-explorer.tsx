@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, Search } from "lucide-react";
 import NextLink from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export type WaterSanitationSearchItem = {
   ubigeo: string;
@@ -39,6 +39,10 @@ const matchesBand = (value: number | null, band: string) => {
 
 export function WaterSanitationExplorer({ items, initialQuery = "" }: { items: WaterSanitationSearchItem[]; initialQuery?: string }) {
   const [query, setQuery] = useState(initialQuery);
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("q")?.slice(0, 100);
+    if (requested) setQuery(requested);
+  }, []);
   const [department, setDepartment] = useState("Todos");
   const [metric, setMetric] = useState<MetricKey>("waterNetwork");
   const [band, setBand] = useState("all");

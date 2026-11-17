@@ -36,9 +36,3 @@ export const homeHeroes = [
     caption: "Comprender juntos es el primer paso para actuar mejor."
   }
 ] as const;
-
-export function resolveHomeHeroIndex(value?: string) {
-  const parsed = Number.parseInt(value ?? "", 10);
-  if (Number.isInteger(parsed) && parsed >= 0 && parsed < homeHeroes.length) return parsed;
-  return Math.floor(Math.random() * homeHeroes.length);
-}

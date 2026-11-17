@@ -21,7 +21,6 @@ interface SectorPageProps {
   params: Promise<{ slug: string }>;
 }
 
-export const revalidate = 86400;
 
 export function generateStaticParams() {
   return sectorSlugs.map((slug) => ({ slug }));

@@ -9,7 +9,7 @@ import {
 import { educationRate, educationSource, getEducationDistrict } from "@/lib/dataperu-education";
 import { getWaterSanitationDistrict, waterSanitationSource } from "@/lib/dataperu-water-sanitation";
 
-export const revalidate = 86400;
+export const dynamic = "force-static";
 
 type CsvRow = {
   section: string;

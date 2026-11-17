@@ -32,7 +32,8 @@ interface MunicipalityPageProps {
   params: Promise<{ ubigeo: string }>;
 }
 
-export const revalidate = 86400;
+// The 2025 source tables only change with a new deployment.
+export const dynamic = "force-static";
 
 const featuredUbigeos = ["010101", "040101", "050101", "080101", "130101", "150101", "150122", "150132", "160101", "200101"];
 

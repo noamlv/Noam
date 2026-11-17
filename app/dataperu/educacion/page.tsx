@@ -8,8 +8,6 @@ import { educationDefinitions, educationDistricts, educationSource, educationSum
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
-export const revalidate = 86400;
-
 export const metadata = buildMetadata({
   title: "Matrícula escolar por distrito en Perú",
   description: "Explora matrícula de Educación Básica Regular, nivel, área, gestión y procedencia del dato en 1,892 distritos del Perú con información oficial del Minedu 2025.",
@@ -18,8 +16,7 @@ export const metadata = buildMetadata({
 
 const percent = (value: number | null) => value == null ? "No disponible" : `${value.toLocaleString("es-PE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%`;
 
-export default async function EducationPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
-  const { q } = await searchParams;
+export default function EducationPage() {
   const municipalProfiles = new Set(municipalities.map((municipality) => municipality.ubigeo));
   const items: EducationSearchItem[] = educationDistricts.map((district) => ({
     ...district,
@@ -97,7 +94,7 @@ export default async function EducationPage({ searchParams }: { searchParams: Pr
               <Heading size="xl">Consulta la matrícula de tu distrito</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">La matrícula indica cuántos estudiantes se inscribieron; no mide asistencia ni aprendizaje.</p>
             </div>
-            <EducationExplorer items={items} initialQuery={q?.slice(0, 100)} />
+            <EducationExplorer items={items} />
           </div>
         </Container>
       </Section>

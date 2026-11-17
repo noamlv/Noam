@@ -14,7 +14,6 @@ import { departmentMapMetrics } from "@/lib/dataperu-map-metrics";
 import { breadcrumbJsonLd, buildMetadata, datasetJsonLd, ogImagePath } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
-export const revalidate = 86_400;
 
 export const metadata = buildMetadata({
   title: "Mapa de gestión e inversión municipal",

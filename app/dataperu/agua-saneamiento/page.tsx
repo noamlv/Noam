@@ -8,8 +8,6 @@ import { waterSanitationDefinitions, waterSanitationDistricts, waterSanitationSo
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
-export const revalidate = 86400;
-
 export const metadata = buildMetadata({
   title: "Agua y saneamiento por distrito en Perú",
   description: "Explora la cobertura de agua y saneamiento por red pública en 1,892 distritos del Perú con resultados oficiales de los Censos Nacionales 2025 del INEI.",
@@ -18,8 +16,7 @@ export const metadata = buildMetadata({
 
 const percent = (value: number | null) => value == null ? "No disponible" : `${value.toLocaleString("es-PE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%`;
 
-export default async function WaterSanitationPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
-  const { q } = await searchParams;
+export default function WaterSanitationPage() {
   const municipalProfiles = new Set(municipalities.map((municipality) => municipality.ubigeo));
   const items: WaterSanitationSearchItem[] = waterSanitationDistricts.map((district) => ({
     ubigeo: district.ubigeo,
@@ -102,7 +99,7 @@ export default async function WaterSanitationPage({ searchParams }: { searchPara
               <Heading size="xl">Consulta los datos de tu distrito</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">El censo cuenta viviendas conectadas; no mide continuidad, presión, potabilidad ni calidad del servicio.</p>
             </div>
-            <WaterSanitationExplorer items={items} initialQuery={q?.slice(0, 100)} />
+            <WaterSanitationExplorer items={items} />
           </div>
         </Container>
       </Section>

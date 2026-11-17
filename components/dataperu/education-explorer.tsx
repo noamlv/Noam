@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, Search } from "lucide-react";
 import NextLink from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 export type EducationSearchItem = {
   ubigeo: string;
@@ -51,6 +51,10 @@ const matchesFocus = (item: EducationSearchItem, focus: string) => {
 
 export function EducationExplorer({ items, initialQuery = "" }: { items: EducationSearchItem[]; initialQuery?: string }) {
   const [query, setQuery] = useState(initialQuery);
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("q")?.slice(0, 100);
+    if (requested) setQuery(requested);
+  }, []);
   const [department, setDepartment] = useState("Todos");
   const [focus, setFocus] = useState("all");
   const [sort, setSort] = useState("name");

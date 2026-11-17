@@ -1,8 +1,6 @@
 import { ArrowRight, Building2, Landmark, MoveUpRight, Users } from "lucide-react";
-import Image from "next/image";
 import NextLink from "next/link";
-import { cookies } from "next/headers";
-import { HeroVisitTracker } from "@/components/brand/hero-visit-tracker";
+import { RotatingHomeHero } from "@/components/brand/rotating-home-hero";
 import { InstitutionalCaseCard } from "@/components/brand/institutional-case-card";
 import { TerritoryEntry } from "@/components/dataperu/territory-entry";
 import { JsonLd } from "@/components/seo/json-ld";
@@ -11,7 +9,6 @@ import { serviceLines } from "@/lib/brand-content";
 import { getFeaturedContent } from "@/lib/content";
 import { getInstitutionalCases } from "@/lib/institutional-cases";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
-import { homeHeroes, resolveHomeHeroIndex } from "@/lib/home-heroes";
 
 export const metadata = buildMetadata({
   title: "Análisis de datos para decisiones públicas y territoriales",
@@ -58,9 +55,6 @@ const publications = [
 ];
 
 export default async function HomePage() {
-  const cookieStore = await cookies();
-  const heroIndex = resolveHomeHeroIndex(cookieStore.get("noam_hero_index")?.value);
-  const hero = homeHeroes[heroIndex];
   const [insights, indicators, institutionalCases] = await Promise.all([
     getFeaturedContent("insights", 2),
     getFeaturedContent("indicators", 1),
@@ -95,8 +89,7 @@ export default async function HomePage() {
           </div>
 
           <div className="reveal reveal-delay-3 relative mt-12 overflow-hidden rounded-[1.5rem] border border-ink/10 shadow-visual md:mt-16">
-            <HeroVisitTracker currentIndex={heroIndex} total={homeHeroes.length} />
-            <Image src={hero.src} alt={hero.alt} width={1672} height={941} className="aspect-[1.35/1] w-full object-cover sm:aspect-[1.8/1] lg:aspect-[2.25/1]" priority sizes="(max-width: 768px) 100vw, 1160px" />
+            <RotatingHomeHero />
           </div>
           <p className="mt-2 text-right text-[10px] text-muted">Imagen ilustrativa</p>
 

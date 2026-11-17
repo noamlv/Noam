@@ -1,6 +1,6 @@
 import { educationDistricts, educationRate, educationSource } from "@/lib/dataperu-education";
 
-export const revalidate = 86400;
+export const dynamic = "force-static";
 
 function escapeCsv(value: string | number | null) {
   const text = value == null ? "" : String(value);

@@ -27,7 +27,8 @@ interface ErmTerritoryBriefPageProps {
   params: Promise<{ ubigeo: string }>;
 }
 
-export const revalidate = 86400;
+// This brief is based on versioned 2025/2026 snapshots.
+export const dynamic = "force-static";
 
 export async function generateMetadata({ params }: ErmTerritoryBriefPageProps): Promise<Metadata> {
   const { ubigeo } = await params;

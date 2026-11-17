@@ -4,7 +4,6 @@ import { productProofs } from "@/lib/product-proofs";
 import { breadcrumbJsonLd, buildMetadata, datasetJsonLd, ogImagePath } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
-export const revalidate = 86_400;
 
 export const metadata = buildMetadata({
   title: "Barómetro Electoral, enero 2026",

@@ -23,7 +23,6 @@ interface AxisPageProps {
 }
 
 export const dynamicParams = false;
-export const revalidate = 86_400;
 
 export function generateStaticParams() {
   return planometroAxes.map((axis) => ({ slug: axis.key }));
