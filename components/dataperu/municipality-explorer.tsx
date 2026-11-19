@@ -78,6 +78,7 @@ export function MunicipalityExplorer({ items }: { items: MunicipalitySearchItem[
           {visibleResults.map((item) => (
             <NextLink
               key={item.ubigeo}
+              prefetch={false}
               href={`/dataperu/municipios/${item.ubigeo}`}
               className="group grid gap-3 py-5 transition-colors hover:bg-panel/55 md:grid-cols-[1fr_120px_140px_100px_auto] md:items-center md:px-4"
             >

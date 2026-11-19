@@ -47,4 +47,13 @@ La fuente y el periodo aparecen en el encabezado de cada pagina. Las tablas anua
 
 ## Criterio editorial para tableros
 
+### Demos públicas nuevas: tablas primero
+
+- Procesar los datos fuera de las solicitudes web. Versionar solo los agregados aptos para publicación; no copiar microdatos, carpetas de trabajo ni servidores de notebooks.
+- Usar `PublicDataTable` desde un Server Component para mostrar una tabla HTML con los resultados principales, fuente y periodo. No agregar motores de gráficos ni consultas al servidor para una demo pública de prueba.
+- Si hay muchas filas, mostrar una muestra identificada y ofrecer el agregado completo como CSV estático. Cuando haga falta un buscador, cargar un recurso estático bajo demanda y filtrar en el navegador.
+- Revisar que la ruta sea estática, que su HTML no incluya todo el padrón y que las descargas no alteren las cifras. Actualizar los datos mediante un despliegue revisado, no por regeneraciones periódicas de cortes cerrados.
+
+Este criterio es para demos nuevas. Los análisis editoriales ya publicados conservan sus gráficos, interpretaciones y enlaces.
+
 Encabezar con la pregunta que responde el tablero y mostrar la fuente y el periodo una sola vez. Describir las cifras, no el archivo ni el procesamiento: presupuesto, gasto registrado, viviendas conectadas, matricula y propuestas. Mantener al lado de cada grafico la distincion indispensable para interpretar la cifra. Dejar el detalle tecnico disponible aparte cuando aporte a la verificacion.

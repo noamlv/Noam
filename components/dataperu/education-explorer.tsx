@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, Search } from "lucide-react";
 import NextLink from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
 export type EducationSearchItem = {
   ubigeo: string;
@@ -51,10 +51,6 @@ const matchesFocus = (item: EducationSearchItem, focus: string) => {
 
 export function EducationExplorer({ items, initialQuery = "" }: { items: EducationSearchItem[]; initialQuery?: string }) {
   const [query, setQuery] = useState(initialQuery);
-  useEffect(() => {
-    const requested = new URLSearchParams(window.location.search).get("q")?.slice(0, 100);
-    if (requested) setQuery(requested);
-  }, []);
   const [department, setDepartment] = useState("Todos");
   const [focus, setFocus] = useState("all");
   const [sort, setSort] = useState("name");
@@ -197,7 +193,7 @@ export function EducationExplorer({ items, initialQuery = "" }: { items: Educati
                   </div>
                   <div className="flex flex-wrap gap-x-4 gap-y-2 md:flex-col md:items-end">
                     {item.hasMunicipalProfile ? (
-                      <NextLink href={`/dataperu/municipios/${item.ubigeo}`} className="inline-flex items-center gap-2 text-sm font-medium text-rust hover:text-ink">
+                      <NextLink prefetch={false} href={`/dataperu/municipios/${item.ubigeo}`} className="inline-flex items-center gap-2 text-sm font-medium text-rust hover:text-ink">
                         Perfil municipal <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
                       </NextLink>
                     ) : <span className="text-xs text-muted">Perfil municipal pendiente</span>}

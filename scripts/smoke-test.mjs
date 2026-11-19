@@ -179,7 +179,7 @@ const waterSanitationCsvBody = await waterSanitationCsv.text();
 assert.equal(waterSanitationCsvBody.trim().split(/\r?\n/).length, 1_893, "El CSV debe contener cabecera y 1,892 distritos");
 assert.ok(waterSanitationCsvBody.includes("160405,Loreto,Mariscal Ramón Castilla,Santa Rosa de Loreto"), "El CSV debe conservar el distrito censal adicional");
 const filteredWaterPage = await expectHtml("/dataperu/agua-saneamiento?q=150101", "Agua y saneamiento, distrito por distrito");
-assert.ok(filteredWaterPage.body.includes('value="150101"'), "El explorador debe admitir una consulta precargada por ubigeo");
+assert.equal(filteredWaterPage.body, waterSanitationPage.body, "El filtro de agua no debe generar HTML diferente");
 const limaMunicipalProfile = await expectHtml("/dataperu/municipios/150101", "Agua por red pública");
 assert.ok(limaMunicipalProfile.body.includes("Saneamiento por red pública"), "La ficha municipal debe integrar ambos indicadores censales");
 const limaMunicipalCsv = await get("/dataperu/municipios/150101/data.csv");
@@ -199,7 +199,20 @@ const educationCsvBody = await educationCsv.text();
 assert.equal(educationCsvBody.trim().split(/\r?\n/).length, 1_893, "El CSV educativo debe contener cabecera y 1,892 distritos");
 assert.ok(educationCsvBody.includes("160405,Loreto,Mariscal Ramón Castilla,Santa Rosa de Loreto"), "El CSV educativo debe conservar el distrito adicional del Minedu");
 const filteredEducationPage = await expectHtml("/dataperu/educacion?q=150101", "Matrícula escolar, distrito por distrito");
-assert.ok(filteredEducationPage.body.includes('value="150101"'), "El explorador educativo debe admitir una consulta precargada por ubigeo");
+assert.equal(filteredEducationPage.body, educationPage.body, "El filtro de educación no debe generar HTML diferente");
+for (const [path, page] of [["educacion", educationPage], ["agua-saneamiento", waterSanitationPage]]) {
+  assert.ok(page.body.includes("Buscar distritos"), "El explorador debe cargarse a petición");
+  assert.ok(Buffer.byteLength(page.body) < 200_000, "El HTML no debe transportar el padrón de distritos");
+  assert.doesNotMatch(page.response.headers.get("cache-control") ?? "", /private|no-store/);
+  const dataset = await get(`/dataperu/${path}/distritos.json`);
+  assert.equal(dataset.status, 200);
+  assert.match(dataset.headers.get("content-type") ?? "", /^application\/json/);
+  assert.doesNotMatch(dataset.headers.get("cache-control") ?? "", /private|no-store/);
+  const rows = await dataset.json();
+  assert.equal(rows.length, 1_892);
+  assert.equal(rows.find((row) => row.ubigeo === "150101")?.hasMunicipalProfile, true);
+  assert.equal(rows.find((row) => row.ubigeo === "160405")?.hasMunicipalProfile, false);
+}
 assert.ok(limaMunicipalProfile.body.includes("Matrícula de Educación Básica Regular"), "La ficha municipal debe integrar la capa educativa");
 assert.ok(limaMunicipalCsvBody.includes("matricula_gestion_publica_porcentaje"), "El CSV municipal debe incluir matrícula por gestión pública");
 

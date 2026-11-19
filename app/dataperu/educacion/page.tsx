@@ -1,10 +1,10 @@
 import { ArrowRight, BookOpenCheck, FileDown, GraduationCap } from "lucide-react";
 import NextLink from "next/link";
-import { EducationExplorer, type EducationSearchItem } from "@/components/dataperu/education-explorer";
+import { OnDemandEducationExplorer } from "@/components/dataperu/on-demand-explorers";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
-import { formatMetric, municipalities } from "@/lib/dataperu";
-import { educationDefinitions, educationDistricts, educationSource, educationSummary } from "@/lib/dataperu-education";
+import { formatMetric } from "@/lib/dataperu";
+import { educationDefinitions, educationSource, educationSummary } from "@/lib/dataperu-education";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -17,11 +17,6 @@ export const metadata = buildMetadata({
 const percent = (value: number | null) => value == null ? "No disponible" : `${value.toLocaleString("es-PE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%`;
 
 export default function EducationPage() {
-  const municipalProfiles = new Set(municipalities.map((municipality) => municipality.ubigeo));
-  const items: EducationSearchItem[] = educationDistricts.map((district) => ({
-    ...district,
-    hasMunicipalProfile: municipalProfiles.has(district.ubigeo)
-  }));
   const pageUrl = `${siteConfig.url}/dataperu/educacion`;
 
   return (
@@ -94,7 +89,7 @@ export default function EducationPage() {
               <Heading size="xl">Consulta la matrícula de tu distrito</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">La matrícula indica cuántos estudiantes se inscribieron; no mide asistencia ni aprendizaje.</p>
             </div>
-            <EducationExplorer items={items} />
+            <OnDemandEducationExplorer />
           </div>
         </Container>
       </Section>

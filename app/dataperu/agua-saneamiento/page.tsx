@@ -1,10 +1,10 @@
 import { ArrowRight, Droplets, FileDown } from "lucide-react";
 import NextLink from "next/link";
-import { WaterSanitationExplorer, type WaterSanitationSearchItem } from "@/components/dataperu/water-sanitation-explorer";
+import { OnDemandWaterSanitationExplorer } from "@/components/dataperu/on-demand-explorers";
 import { JsonLd } from "@/components/seo/json-ld";
 import { Button, Container, Eyebrow, Heading, Section } from "@/components/ui";
-import { formatMetric, municipalities } from "@/lib/dataperu";
-import { waterSanitationDefinitions, waterSanitationDistricts, waterSanitationSource, waterSanitationSummary } from "@/lib/dataperu-water-sanitation";
+import { formatMetric } from "@/lib/dataperu";
+import { waterSanitationDefinitions, waterSanitationSource, waterSanitationSummary } from "@/lib/dataperu-water-sanitation";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site-config";
 
@@ -17,17 +17,6 @@ export const metadata = buildMetadata({
 const percent = (value: number | null) => value == null ? "No disponible" : `${value.toLocaleString("es-PE", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%`;
 
 export default function WaterSanitationPage() {
-  const municipalProfiles = new Set(municipalities.map((municipality) => municipality.ubigeo));
-  const items: WaterSanitationSearchItem[] = waterSanitationDistricts.map((district) => ({
-    ubigeo: district.ubigeo,
-    department: district.department,
-    province: district.province,
-    district: district.district,
-    occupiedHousing: district.occupiedHousing,
-    waterNetwork: district.waterNetwork,
-    sanitationNetwork: district.sanitationNetwork,
-    hasMunicipalProfile: municipalProfiles.has(district.ubigeo)
-  }));
   const pageUrl = `${siteConfig.url}/dataperu/agua-saneamiento`;
 
   return (
@@ -99,7 +88,7 @@ export default function WaterSanitationPage() {
               <Heading size="xl">Consulta los datos de tu distrito</Heading>
               <p className="mt-5 text-sm leading-7 text-ink/65">El censo cuenta viviendas conectadas; no mide continuidad, presión, potabilidad ni calidad del servicio.</p>
             </div>
-            <WaterSanitationExplorer items={items} />
+            <OnDemandWaterSanitationExplorer />
           </div>
         </Container>
       </Section>
