@@ -65,7 +65,7 @@ export function SiteSearchDialog({ id, onClose }: { id: string; onClose: () => v
     if (motion.matches) return;
     const timer = window.setInterval(() => {
       if (!motion.matches) setSuggestion((current) => (current + 1) % SUGGESTIONS.length);
-    }, 3200);
+    }, 4000);
     return () => window.clearInterval(timer);
   }, [fieldEmpty]);
 
@@ -123,9 +123,13 @@ export function SiteSearchDialog({ id, onClose }: { id: string; onClose: () => v
             <input ref={input} type="search" enterKeyHint="search" autoComplete="off" maxLength={120}
               value={draft} onChange={(event) => setDraft(event.target.value)}
               className="block w-full appearance-none bg-transparent py-3 text-[clamp(1.12rem,4.8vw,1.75rem)] leading-tight tracking-tight text-ink !outline-none [&::-webkit-search-cancel-button]:hidden" />
-            {fieldEmpty ? <span key={suggestion} aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 truncate text-[clamp(1.12rem,4.8vw,1.75rem)] leading-tight tracking-tight text-muted motion-safe:animate-[search-suggestion-in_200ms_ease-out]">
-              {SUGGESTIONS[suggestion]}
+            {fieldEmpty ? <span aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 top-1/2 grid -translate-y-1/2 text-[clamp(1.12rem,4.8vw,1.75rem)] leading-tight tracking-tight text-muted">
+              {SUGGESTIONS.map((phrase, index) => (
+                <span key={phrase} className={`min-w-0 truncate [grid-area:1/1] transition-opacity duration-[240ms] ease-in-out motion-reduce:transition-none ${index === suggestion ? "opacity-100" : "opacity-0"}`}>
+                  {phrase}
+                </span>
+              ))}
             </span> : null}
           </label>
           <button type="submit" disabled={!canSubmit} aria-label="Buscar"

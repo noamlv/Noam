@@ -83,11 +83,6 @@ button {
   outline-offset: 2px;
 }
 
-@keyframes search-suggestion-in {
-  from { opacity: .45; }
-  to { opacity: 1; }
-}
-
 @keyframes reveal-up {
   from {
     opacity: .3;
