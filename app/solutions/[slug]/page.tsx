@@ -65,10 +65,6 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
           {visual ? (
             <figure className="group relative mt-14 overflow-hidden rounded-[1.25rem] border border-white/12 bg-[#1b2d27] shadow-visual md:mt-20">
               <Image src={visual.image} alt={visual.imageAlt} width={1672} height={941} sizes="(max-width: 768px) 100vw, 1160px" className="aspect-[1.15/1] w-full object-cover opacity-90 transition-transform duration-700 ease-out group-hover:scale-[1.018] sm:aspect-[2/1] lg:aspect-[2.7/1]" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#15211d]/90 via-transparent to-[#15211d]/10" />
-              <figcaption className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-5 text-white md:flex-row md:items-end md:justify-between md:p-7">
-                <span className="max-w-sm text-[9px] leading-4 text-white/55 md:text-right">{visual.imageCaption}</span>
-              </figcaption>
             </figure>
           ) : null}
         </Container>

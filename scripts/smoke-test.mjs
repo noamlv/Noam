@@ -278,21 +278,23 @@ assert.ok(!mirafloresSearch.body.includes("Aguas Verdes, Zarumilla: perfil munic
 const companiesPage = await expectHtml("/sectors/companies", "Consultoría para empresas");
 assert.ok(companiesPage.body.includes('"@type":"Service"'), "Empresas debe declarar su oferta como Service");
 
-const visualHome = await expectHtml("/", "Consultoría para gobiernos y empresas", {
-  headers: { cookie: "noam_hero_index=0" }
-});
-assert.ok(visualHome.body.includes("/images/editorial/hero-amazonia-conectividad.jpg"));
+const visualHome = await expectHtml("/", "Consultoría para gobiernos y empresas");
+assert.match(visualHome.body, /<img\b[^>]*\balt="Vista aérea de una ciudad amazónica[^"]*"/, "La portada estática debe mostrar la primera imagen con texto alternativo");
 assert.ok(!visualHome.body.includes("Amazonía | Conectividad y servicios"), "La imagen principal no debe mostrar lemas superpuestos");
+assert.doesNotMatch(visualHome.body, /Imagen ilustrativa|La preferencia se guarda solo en este navegador/);
 assert.ok(visualHome.body.includes("navigator:toggle"), "El Orientador debe medir aperturas cuando la analítica esté disponible");
 assert.ok(visualHome.body.includes('"@type":"WebSite"'), "La portada debe identificar el sitio en datos estructurados");
 
-const fieldSolution = await expectHtml("/solutions/diagnostico-agenda-territorial", "Escena editorial representativa");
-assert.ok(fieldSolution.body.includes("/images/noam-field-research.jpg"));
+const fieldSolution = await expectHtml("/solutions/diagnostico-agenda-territorial", "Diagnóstico y agenda territorial");
+assert.match(fieldSolution.body, /noam-field-research\.jpg/);
+assert.doesNotMatch(fieldSolution.body, /Escena editorial representativa/);
 
-const aiService = await expectHtml("/services/ia-transformacion-gestion", "Escena editorial representativa");
-assert.ok(aiService.body.includes("/images/noam-ai-oversight.jpg"));
+const aiService = await expectHtml("/services/ia-transformacion-gestion", "IA y transformación de la gestión");
+assert.match(aiService.body, /noam-ai-oversight\.jpg/);
+assert.doesNotMatch(aiService.body, /Escena editorial representativa/);
 
 const contactPage = await expectHtml("/contact", "Conversemos");
+assert.doesNotMatch(contactPage.body, /No incluyas contraseñas ni información confidencial/);
 const hasPersistentForm = contactPage.body.includes("Añadir detalles del proyecto");
 const hasSafeFallback = contactPage.body.includes("Por correo o WhatsApp");
 assert.ok(hasPersistentForm || hasSafeFallback, "Contacto debe ofrecer formulario persistente o canales directos seguros");

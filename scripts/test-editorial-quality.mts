@@ -2,7 +2,6 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
-import { serviceLines } from "../lib/brand-content.ts";
 import { siteConfig } from "../lib/site-config.ts";
 
 const root = process.cwd();
@@ -110,10 +109,6 @@ assert.ok(!homePage.includes('/electoral/planometro-2026'), "Planómetro se encu
 const ermPage = read("app/electoral/erm-2026/page.tsx");
 assert.match(ermPage, /NOAM publica resultados electorales oficiales/, "El especial debe separar su análisis de los resultados oficiales");
 assert.match(read("components/brand/erm-visual.tsx"), /100 DÍAS/, "El visual del especial debe dar prioridad a la transición");
-
-for (const service of serviceLines) {
-  assert.match(service.imageCaption, /Escena editorial representativa/, `${service.slug} debe identificar sus imágenes representativas`);
-}
 
 const sitemap = read("app/sitemap.ts");
 assert.ok(sitemap.includes('"/en"'), "El sitemap debe publicar la portada internacional");

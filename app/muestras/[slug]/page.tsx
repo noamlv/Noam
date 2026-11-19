@@ -53,7 +53,7 @@ export default async function SamplePage({ params }: { params: Promise<{ slug: s
 
             <div className="grid gap-12 lg:grid-cols-[0.86fr_1fr] lg:items-end lg:gap-20">
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f] print:text-neutral-600">Muestra demostrativa · No corresponde a cliente real</p>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#d9a48f] print:text-neutral-600">Ejemplo de entregable</p>
                 <h1 className="mt-6 max-w-[12ch] text-[2.75rem] font-medium leading-[0.99] tracking-[-0.052em] text-white sm:text-5xl md:text-6xl print:text-5xl print:text-black">{sample.title}</h1>
                 <p className="mt-7 max-w-xl text-base leading-8 text-white/65 print:text-neutral-700">{sample.promise}</p>
                 <div className="mt-8 flex flex-wrap gap-3 print:hidden">

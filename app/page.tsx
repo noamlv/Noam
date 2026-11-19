@@ -91,8 +91,6 @@ export default async function HomePage() {
           <div className="reveal reveal-delay-3 relative mt-12 overflow-hidden rounded-[1.5rem] border border-ink/10 shadow-visual md:mt-16">
             <RotatingHomeHero />
           </div>
-          <p className="mt-2 text-right text-[10px] text-muted">Imagen ilustrativa</p>
-
           <div className="draw-line mt-8 h-px bg-border" />
           <div className="grid divide-y divide-border border-b border-border sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
             {exploreLinks.map((link) => (

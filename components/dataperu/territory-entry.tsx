@@ -69,7 +69,6 @@ export function TerritoryEntry() {
           Ver todos los departamentos
         </NextLink>
       </div>
-      <p className="mt-5 text-[10px] leading-4 text-muted">La preferencia se guarda solo en este navegador. Puedes cambiarla en cualquier momento.</p>
     </div>
   );
 }

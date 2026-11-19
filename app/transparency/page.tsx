@@ -15,7 +15,7 @@ const evidenceLevels = [
   { code: "02", title: "Indicador derivado", text: "Cálculo producido a partir de una fuente. Debe incluir definición, denominador, tratamiento de faltantes y transformación." },
   { code: "03", title: "Modelo o estimación", text: "Resultado que depende de supuestos, reglas o entrenamiento. Se presenta con alcance, validación y error conocido." },
   { code: "04", title: "Demostración ilustrativa", text: "Interfaz o escenario diseñado para explicar una capacidad. Se identifica como demo y no se confunde con evidencia real." },
-  { code: "05", title: "Escena editorial", text: "Imagen creada para representar un tipo de trabajo o contexto. No documenta un cliente, un encargo ni un resultado real y se identifica como representación." }
+  { code: "05", title: "Escena editorial", text: "Imagen creada para representar un tipo de trabajo o contexto. No documenta un cliente, un encargo ni un resultado real." }
 ];
 
 const protocol = [

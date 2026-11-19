@@ -10,7 +10,6 @@ export type ServiceLine = {
   timeline: string;
   image: string;
   imageAlt: string;
-  imageCaption: string;
 };
 
 export const serviceLines: ServiceLine[] = [
@@ -37,8 +36,7 @@ export const serviceLines: ServiceLine[] = [
     ],
     timeline: "Desde 3 semanas",
     image: "/images/noam-field-research.jpg",
-    imageAlt: "Equipo de investigación conversando con residentes durante trabajo de campo en una ciudad peruana",
-    imageCaption: "Escena editorial representativa de investigación territorial. No corresponde a un cliente."
+    imageAlt: "Equipo de investigación conversando con residentes durante trabajo de campo en una ciudad peruana"
   },
   {
     slug: "observatorios-sistemas-decision",
@@ -63,8 +61,7 @@ export const serviceLines: ServiceLine[] = [
     ],
     timeline: "Desde 4 semanas",
     image: "/images/noam-decision-room.jpg",
-    imageAlt: "Equipo directivo revisando un mapa e indicadores de gestión en una sala de reuniones",
-    imageCaption: "Escena editorial representativa de una reunión de trabajo. No corresponde a un cliente."
+    imageAlt: "Equipo directivo revisando un mapa e indicadores de gestión en una sala de reuniones"
   },
   {
     slug: "ia-transformacion-gestion",
@@ -89,8 +86,7 @@ export const serviceLines: ServiceLine[] = [
     ],
     timeline: "Desde 3 semanas",
     image: "/images/noam-ai-oversight.jpg",
-    imageAlt: "Especialistas revisando documentos y un flujo digital con supervisión humana",
-    imageCaption: "Escena editorial representativa de un piloto con supervisión humana. No corresponde a un cliente."
+    imageAlt: "Especialistas revisando documentos y un flujo digital con supervisión humana"
   }
 ];
 

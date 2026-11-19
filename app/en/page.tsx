@@ -66,8 +66,6 @@ export default function EnglishLandingPage() {
           </div>
           <figure className="group relative mt-14 overflow-hidden rounded-[1.5rem] border border-ink/10 shadow-visual md:mt-20">
             <Image src="/images/noam-decision-room.jpg" alt="A decision team reviewing a territorial map and management indicators" width={1672} height={941} priority sizes="(max-width: 768px) 100vw, 1160px" className="aspect-[1.15/1] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018] sm:aspect-[1.9/1] lg:aspect-[2.35/1]" />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/86 via-transparent to-transparent" />
-            <figcaption className="absolute inset-x-0 bottom-0 grid gap-3 p-5 text-white sm:grid-cols-[1fr_auto] sm:items-end md:p-8"><span className="max-w-xl text-lg font-medium tracking-[-0.025em] md:text-2xl">Territory is not background. It is part of the decision.</span><span className="text-[8px] uppercase tracking-[0.14em] text-white/46">Representative editorial scene</span></figcaption>
           </figure>
 
           <div className="mt-8 grid divide-y divide-border border-y border-border sm:grid-cols-4 sm:divide-x sm:divide-y-0">

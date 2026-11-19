@@ -28,8 +28,6 @@ export function SectorPracticePage({ practice }: { practice: SectorPractice }) {
             </div>
             <div className="reveal reveal-delay-2 relative min-h-[420px] overflow-hidden rounded-[1.25rem] border border-border shadow-visual">
               <Image src={practice.image} alt={practice.imageAlt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 44vw" priority />
-              <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/10 to-transparent" />
-              <p className="absolute inset-x-0 bottom-0 p-6 text-[10px] leading-4 text-white/80 md:p-8">Imagen ilustrativa; no muestra un trabajo para un cliente.</p>
             </div>
           </div>
         </Container>

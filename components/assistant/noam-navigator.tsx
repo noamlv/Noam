@@ -159,8 +159,7 @@ export function NoamNavigator() {
           <form onSubmit={ask} className="mt-5">
             <label htmlFor="noam-navigator-question" className="block text-xs font-medium text-white/72">Escribe el tema o la información que necesitas.</label>
             <textarea id="noam-navigator-question" value={question} onChange={(event) => setQuestion(event.target.value)} minLength={5} maxLength={320} rows={2} placeholder="Ej.: Busco datos de residuos en Cajamarca" className="mt-3 w-full resize-y rounded-sm border border-white/14 bg-[#1b2d27] px-4 py-3 text-sm leading-6 text-white outline-none placeholder:text-white/35 focus:border-[#d9a48f]" />
-            <div className="mt-3 flex items-center justify-between gap-3">
-              <span className="text-[10px] leading-4 text-white/42">La pregunta se procesa aquí; no se envía ni se guarda.</span>
+            <div className="mt-3 flex justify-end">
               <button type="submit" data-analytics-event="cta_click" data-analytics-target="navigator:question:submit" disabled={question.trim().length < 5} className="inline-flex min-h-10 shrink-0 items-center gap-2 rounded-full bg-white px-4 text-xs font-medium text-ink transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-45">Buscar contenido <ArrowRight className="h-3.5 w-3.5" aria-hidden /></button>
             </div>
           </form>
@@ -189,7 +188,6 @@ export function NoamNavigator() {
                   <a href={buildAssistantEmailUrl(askedQuestion, answer, pathname, submittedFollowUp)} data-analytics-event="cta_click" data-analytics-target="navigator:answer:email" className="mt-3 inline-flex text-xs font-medium text-ink/68 hover:text-rust">Enviar esta consulta por correo <ArrowRight className="ml-1 h-3.5 w-3.5" aria-hidden /></a>
                 </>
               )}
-              <p className="mt-4 border-t border-border pt-3 text-[10px] leading-4 text-muted">El correo se abrirá con tu pregunta. Solo se enviará si tú confirmas el envío en tu aplicación.</p>
             </div>
           ) : null}
 
@@ -197,7 +195,7 @@ export function NoamNavigator() {
             <form onSubmit={clarify} className="mt-4 border-t border-white/12 pt-4">
               <label htmlFor="noam-navigator-follow-up" className="block text-xs font-medium text-white/72">¿De qué lugar o tema quieres saber más?</label>
               <textarea id="noam-navigator-follow-up" value={followUp} onChange={(event) => setFollowUp(event.target.value)} minLength={5} maxLength={160} rows={2} placeholder="Ej.: En Cajamarca; tenemos registros de 2025" className="mt-3 w-full resize-y rounded-sm border border-white/14 bg-[#1b2d27] px-4 py-3 text-sm leading-6 text-white outline-none placeholder:text-white/35 focus:border-[#d9a48f]" />
-              <div className="mt-3 flex items-center justify-between gap-3"><span className="text-[10px] text-white/42">Opcional · solo en esta página; no se guarda.</span><button type="submit" disabled={followUp.trim().length < 5} data-analytics-event="cta_click" data-analytics-target="navigator:follow-up:submit" className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/20 px-4 text-xs font-medium text-white transition-colors hover:border-white/50 disabled:cursor-not-allowed disabled:opacity-45">Actualizar búsqueda <ArrowRight className="h-3.5 w-3.5" aria-hidden /></button></div>
+              <div className="mt-3 flex justify-end"><button type="submit" disabled={followUp.trim().length < 5} data-analytics-event="cta_click" data-analytics-target="navigator:follow-up:submit" className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/20 px-4 text-xs font-medium text-white transition-colors hover:border-white/50 disabled:cursor-not-allowed disabled:opacity-45">Actualizar búsqueda <ArrowRight className="h-3.5 w-3.5" aria-hidden /></button></div>
             </form>
           ) : null}
           {answer && submittedFollowUp ? <div className="mt-4 flex items-start justify-between gap-4 border-t border-white/12 pt-4"><p className="text-xs leading-5 text-white/62">Contexto añadido: {submittedFollowUp}</p><button type="button" onClick={() => { setFollowUp(submittedFollowUp); setSubmittedFollowUp(""); }} className="shrink-0 text-[10px] text-white/62 underline underline-offset-4 hover:text-white">Editar</button></div> : null}
@@ -271,10 +269,11 @@ export function NoamNavigator() {
             </div>
           ) : null}
 
-          <div className="mt-5 flex items-center justify-between gap-4">
-            <p className="max-w-[15rem] text-[9px] leading-4 text-white/38">No transmite ni guarda tu pregunta. Es orientación automática inicial, no una propuesta ni asesoría definitiva.</p>
-            {(audience || need || answer) ? <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-[10px] text-white/55 hover:text-white"><RotateCcw className="h-3 w-3" aria-hidden /> Reiniciar</button> : null}
-          </div>
+          {(audience || need || answer) ? (
+            <div className="mt-5 flex justify-end">
+              <button type="button" onClick={reset} className="inline-flex items-center gap-1.5 text-[10px] text-white/55 hover:text-white"><RotateCcw className="h-3 w-3" aria-hidden /> Reiniciar</button>
+            </div>
+          ) : null}
         </section>
       ) : null}
 

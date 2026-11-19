@@ -40,7 +40,6 @@ export default async function AnalysisPage({ params }: Props) {
         <Image src={presentation.image} alt={presentation.imageAlt} fill sizes="(max-width: 768px) 100vw, 1160px" className="object-cover" style={{ objectPosition: presentation.imagePosition }} />
       </div>
       {presentation.photoCredit && <figcaption className="mt-2 text-right"><AnalysisImageCredit credit={presentation.photoCredit} /></figcaption>}
-      {isElectoral ? <figcaption className="mt-2 text-right text-[10px] leading-5 text-muted">Imagen ilustrativa; no es una fotografía del estudio.</figcaption> : null}
     </figure></Container></Section>
     <Section id="datos"><Container>
       <div className="mb-8 grid gap-6 md:grid-cols-[0.65fr_1fr] md:items-end">

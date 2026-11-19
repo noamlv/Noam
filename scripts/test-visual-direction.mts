@@ -17,8 +17,6 @@ for (const service of serviceLines) {
   const size = fs.statSync(filePath).size;
   assert.ok(size > 100_000 && size < 1_000_000, `${service.image} debe conservar detalle sin exceder 1 MB`);
   assert.ok(service.imageAlt.length >= 40, `${service.slug} debe tener alt descriptivo`);
-  assert.match(service.imageCaption, /Escena editorial representativa/);
-  assert.match(service.imageCaption, /No corresponde a un cliente/);
 }
 
 for (const solution of solutions) {
@@ -39,7 +37,11 @@ for (const practice of practices) {
   assert.ok(size >= 250_000 && size <= 750_000, `${practice.image} debe conservar detalle con un peso razonable`);
 }
 const practicePage = fs.readFileSync(path.join(root, "components/brand/sector-practice-page.tsx"), "utf8");
-assert.match(practicePage, /Imagen ilustrativa/);
-assert.match(practicePage, /no muestra un trabajo para un cliente/);
+assert.match(practicePage, /alt=\{practice\.imageAlt\}/);
+
+for (const file of ["app/page.tsx", "app/en/page.tsx", "app/analisis/[slug]/page.tsx", "app/services/[slug]/page.tsx", "app/solutions/[slug]/page.tsx", "components/brand/sector-practice-page.tsx"]) {
+  const source = fs.readFileSync(path.join(root, file), "utf8");
+  assert.doesNotMatch(source, /Imagen ilustrativa|Representative editorial scene|imageCaption/, `${file} no debe volver a mostrar la leyenda genérica`);
+}
 
 console.log(`Dirección visual OK: ${practiceImages.size + images.size} escenas originales cubren capacidades, soluciones y prácticas sectoriales`);

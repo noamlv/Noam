@@ -34,7 +34,6 @@ export default function SamplesPage() {
             </div>
             <div className="reveal reveal-delay-2">
               <p className="text-base leading-8 text-white/68">Nueve muestras enseñan cómo una pregunta se convierte en evidencia, un artefacto de decisión y una capacidad transferible.</p>
-              <p className="mt-5 border-l border-[#d9a48f]/50 pl-4 text-xs leading-6 text-white/48">Muestras demostrativas. No corresponden a clientes ni encargos reales.</p>
             </div>
           </div>
 
@@ -42,7 +41,6 @@ export default function SamplesPage() {
             <Image src="/images/noam-public-sector.jpg" alt="Equipo técnico público trabajando con evidencia territorial" fill priority sizes="(max-width: 768px) 100vw, 1180px" className="object-cover object-center opacity-70" />
             <div className="absolute inset-0 bg-gradient-to-r from-[#15211d] via-[#15211d]/68 to-transparent" />
             <div className="relative flex min-h-[390px] max-w-xl flex-col justify-end p-7 md:min-h-[440px] md:p-12">
-              <span className="font-mono text-[10px] text-[#d9a48f]">MUESTRA · NO PROMESA VACÍA</span>
               <p className="mt-5 text-3xl font-medium leading-[1.08] tracking-[-0.04em] text-white md:text-5xl">El entregable comienza por la decisión que debe mejorar.</p>
             </div>
           </div>

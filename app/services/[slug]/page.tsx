@@ -58,8 +58,6 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           </div>
           <figure className="group relative mt-12 overflow-hidden rounded-[1.25rem] border border-ink/10 shadow-visual md:mt-16">
             <Image src={service.image} alt={service.imageAlt} width={1672} height={941} sizes="(max-width: 768px) 100vw, 1160px" className="aspect-[1.2/1] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.018] sm:aspect-[2/1] lg:aspect-[2.45/1]" priority />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink/82 via-transparent to-transparent" />
-            <figcaption className="absolute inset-x-0 bottom-0 p-5 text-[10px] leading-5 text-white/62 md:p-7">{service.imageCaption}</figcaption>
           </figure>
         </Container>
       </Section>

@@ -120,14 +120,12 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                       <span className="mt-2 block text-xs text-muted">{siteConfig.phone}</span>
                     </WhatsAppLink>
                   </div>
-                  {scopeInput || selectedAiCase || contextualInquiry ? <p className="mt-4 text-xs leading-5 text-muted">El borrador de correo incluirá el contexto que preparaste; podrás revisarlo y editarlo antes de enviarlo.</p> : null}
                   <div className="mt-7 rounded-sm border border-border bg-canvas p-5">
                     <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-muted">Para responder mejor</p>
                     <ul className="mt-4 grid gap-3 text-sm leading-6 text-ink/68 sm:grid-cols-2">
                       {["El problema o consulta", "La entidad, empresa o territorio", "Los datos o documentos disponibles", "Para cuándo necesitas el apoyo"].map((item) => <li key={item} className="flex items-start gap-2"><Check className="mt-1 h-3.5 w-3.5 shrink-0 text-rust" aria-hidden />{item}</li>)}
                     </ul>
                   </div>
-                  <p className="mt-5 text-xs leading-5 text-muted">No incluyas contraseñas ni información confidencial en tu primer mensaje.</p>
                 </div>
               ) : (
                 <>
