@@ -74,7 +74,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <Section>
         <Container>
           <div className="grid gap-10 lg:grid-cols-[0.3fr_1fr] lg:gap-16">
-            <div><Eyebrow>Resultados</Eyebrow><Heading size="lg">{hasFilters ? `${results.length} coincidencias` : "Explora el índice"}</Heading><p className="mt-4 text-sm leading-6 text-ink/62">Refina por tipo o tema. La consulta no se almacena en nuestra analítica.</p>{hasFilters ? <Button href="/buscar" variant="ghost" className="mt-6 justify-start">Limpiar filtros</Button> : null}</div>
+            <div><Eyebrow>Resultados</Eyebrow><Heading size="lg">{hasFilters ? `${results.length} coincidencias` : "Explora el índice"}</Heading>{hasFilters ? <Button href="/buscar" variant="ghost" className="mt-6 justify-start">Limpiar filtros</Button> : null}</div>
             <div className="divide-y divide-border border-y border-border">
               {results.length ? results.map((result) => (
                 <NextLink key={result.id} href={result.href} className="group grid gap-4 py-7 transition-colors hover:bg-panel/45 sm:grid-cols-[140px_1fr_auto] sm:px-4">

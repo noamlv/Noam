@@ -1,7 +1,8 @@
-import { Menu, Search } from "lucide-react";
+import { Menu } from "lucide-react";
 import NextLink from "next/link";
 import { siteConfig } from "@/lib/site-config";
 import { Container } from "@/components/ui";
+import { SiteSearchTrigger } from "@/components/search/site-search-trigger";
 
 export function SiteHeader() {
   const primaryNav = siteConfig.nav.filter((item) => item.href !== "/");
@@ -28,9 +29,7 @@ export function SiteHeader() {
               </li>
             ))}
           </ul>
-          <NextLink href="/buscar" className="inline-flex h-10 w-10 items-center justify-center rounded-full text-muted transition-colors hover:bg-panel hover:text-ink" aria-label="Buscar en NOAM">
-            <Search className="h-4 w-4" aria-hidden />
-          </NextLink>
+          <SiteSearchTrigger />
           <NextLink href="/en" className="text-[10px] font-semibold uppercase tracking-[0.16em] text-muted transition-colors hover:text-ink" aria-label="English overview">EN</NextLink>
           <NextLink
             href="/contact"
@@ -42,7 +41,9 @@ export function SiteHeader() {
           </NextLink>
         </div>
 
-        <details className="group relative lg:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
+          <SiteSearchTrigger />
+        <details className="group relative">
           <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-full border border-border bg-panel text-ink marker:content-none">
             <Menu className="h-4 w-4" aria-hidden />
             <span className="sr-only">Abrir menú</span>
@@ -57,13 +58,13 @@ export function SiteHeader() {
                 </li>
               ))}
             </ul>
-            <NextLink href="/buscar" className="mt-2 flex items-center gap-2 border-b border-border px-3 py-3 text-sm font-medium text-ink"><Search className="h-4 w-4" aria-hidden /> Buscar</NextLink>
             <NextLink href="/en" className="mt-2 block border-b border-border px-3 py-3 text-sm font-medium text-ink">English overview</NextLink>
             <NextLink href="/contact" className="mt-3 flex min-h-11 items-center justify-center rounded-sm bg-accent px-4 text-sm font-medium text-accent-ink">
               Conversemos
             </NextLink>
           </div>
         </details>
+        </div>
       </Container>
     </header>
   );

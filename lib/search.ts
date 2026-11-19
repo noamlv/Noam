@@ -9,6 +9,14 @@ import { solutions } from "@/lib/solutions";
 import { searchEntries, type SearchEntry, type SearchFilters } from "@/lib/search-core";
 import { briefEditions } from "@/lib/brief";
 import { buildTerritorySearchEntries } from "@/lib/territory-search";
+import { platformCatalog } from "@/lib/platform-catalog";
+import { platformResourceCatalog } from "@/lib/platform-resource-catalog";
+import { analysisLibrary } from "@/lib/analysis-library";
+import { deliverableSamples } from "@/lib/deliverable-samples";
+import { sectorTopics } from "@/lib/dataperu-sectors";
+import { planometroAxes, planometroParties } from "@/lib/planometro";
+import { departmentResearch } from "@/lib/department-research";
+import { publicSearchPages } from "@/lib/public-search-pages";
 
 const curatedEntries: SearchEntry[] = [
   { id: "product:dataperu-analysis", title: "DataPerú: análisis por tema", description: "Páginas con datos, gráficos y fuentes de residuos, planeamiento, discapacidad y deporte. Consulta y filtra los datos en cada página.", href: "/dataperu/analisis", kind: "product", label: "Análisis de DataPerú", topic: "gobierno", featured: true, keywords: ["análisis", "dashboard", "gráficos", "residuos", "discapacidad", "deporte", "planeamiento"] },
@@ -78,15 +86,15 @@ function aliasesForSolution(serviceSlug: string) {
   return [];
 }
 
-export async function getSearchIndex(): Promise<SearchEntry[]> {
+export async function getSearchIndex({ repositoryOnly = false } = {}): Promise<SearchEntry[]> {
   const [insights, indicators, toolkits, services, cases, managedProducts, managedResources] = await Promise.all([
     getAllContent("insights"),
     getAllContent("indicators"),
     getAllContent("toolkits"),
     getAllContent("services"),
     getAllContent("cases"),
-    getManagedPlatformCatalog(),
-    getManagedPlatformResources()
+    repositoryOnly ? platformCatalog : getManagedPlatformCatalog(),
+    repositoryOnly ? platformResourceCatalog : getManagedPlatformResources()
   ]);
 
   const contentEntries: SearchEntry[] = [...insights, ...indicators, ...toolkits, ...services, ...cases].map((item) => ({
@@ -162,9 +170,42 @@ export async function getSearchIndex(): Promise<SearchEntry[]> {
   }));
 
   const { departmentEntries, municipalityEntries } = buildTerritorySearchEntries(municipalities, departmentProfiles, peruTerritories);
+  const researchByCode = new Map(departmentResearch.map((research) => [research.code, research]));
+  for (const entry of departmentEntries) {
+    const research = researchByCode.get(entry.href.slice(-2));
+    if (research) entry.keywords.push(...research.problems.map((problem) => problem.title), ...research.opportunities.map((opportunity) => opportunity.title));
+  }
+
+  const thematicEntries: SearchEntry[] = [
+    ...analysisLibrary.map((entry): SearchEntry => ({
+      id: `analysis:${entry.slug}`, href: `/analisis/${entry.slug}`, title: entry.title,
+      description: entry.description, kind: "evidence", label: "Análisis", topic: "gobierno", featured: true,
+      keywords: [entry.headline, entry.category, entry.source, entry.period, ...entry.questions, ...entry.findings]
+    })),
+    ...deliverableSamples.map((entry): SearchEntry => ({
+      id: `sample:${entry.slug}`, href: `/muestras/${entry.slug}`, title: entry.title,
+      description: entry.promise, kind: "evidence", label: "Ejemplo de entregable",
+      keywords: [...entry.deliverables, ...entry.questions, entry.eyebrow]
+    })),
+    ...sectorTopics.map((entry): SearchEntry => ({
+      id: `dataperu:topic:${entry.slug}`, href: `/dataperu/temas/${entry.slug}`, title: entry.title,
+      description: entry.description, kind: "product", label: "Indicadores de DataPerú", topic: "gobierno",
+      keywords: [...entry.decisionQuestions, entry.question, entry.shortTitle]
+    })),
+    ...planometroParties.map((party): SearchEntry => ({
+      id: `planometro:party:${party.slug}`, href: `/electoral/planometro-2026/organizaciones/${party.slug}`, title: party.name,
+      description: "Propuestas y ejes del plan de gobierno 2026.", kind: "product", label: "Planómetro", topic: "gobierno",
+      keywords: ["plan de gobierno", "partido", ...party.topAxes.map((axis) => axis.label)]
+    })),
+    ...planometroAxes.map((axis): SearchEntry => ({
+      id: `planometro:axis:${axis.key}`, href: `/electoral/planometro-2026/ejes/${axis.key}`, title: axis.label,
+      description: "Compara propuestas de los planes de gobierno para este eje.", kind: "product", label: "Planómetro", topic: "gobierno",
+      keywords: ["plan de gobierno", "propuestas", axis.key]
+    }))
+  ];
 
   const unique = new Map<string, SearchEntry>();
-  for (const entry of [...curatedEntries, ...briefEntries, ...contentEntries, ...resourceEntries, ...solutionEntries, ...productEntries, ...sectorEntries, ...departmentEntries, ...municipalityEntries]) {
+  for (const entry of [...curatedEntries, ...briefEntries, ...contentEntries, ...resourceEntries, ...solutionEntries, ...thematicEntries, ...productEntries, ...sectorEntries, ...departmentEntries, ...municipalityEntries, ...publicSearchPages]) {
     if (!unique.has(entry.href)) unique.set(entry.href, entry);
   }
   return [...unique.values()];

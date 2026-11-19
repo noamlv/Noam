@@ -20,6 +20,12 @@ export type SearchFilters = {
   limit?: number;
 };
 
+export function isPublicSearchPath(path: string) {
+  return /^\/(?:[a-z0-9][a-z0-9./_-]*)?$/i.test(path)
+    && !path.split("/").some((segment) => segment === "." || segment === "..")
+    && !/^\/(?:admin|portal|api|buscar)(?:\/|$)/i.test(path);
+}
+
 const SEARCH_STOPWORDS = new Set([
   "con", "del", "desde", "distrital", "distritales", "el", "en", "gobierno", "gobiernos", "la", "las", "los", "municipalidad", "municipalidades", "para", "por", "provincial", "provinciales", "que", "regional", "regionales", "sin", "una", "uno", "unos", "unas"
 ]);

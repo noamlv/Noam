@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { normalizeSearchText, searchEntries, type SearchEntry } from "../lib/search-core.ts";
+import { isPublicSearchPath, normalizeSearchText, searchEntries, type SearchEntry } from "../lib/search-core.ts";
 import { buildTerritorySearchEntries } from "../lib/territory-search.ts";
 
 const entries: SearchEntry[] = [
@@ -10,6 +10,8 @@ const entries: SearchEntry[] = [
 ];
 
 assert.equal(normalizeSearchText("Inversión pública"), "inversion publica");
+for (const path of ["/", "/dataperu/municipios/150122", "/downloads/data.csv", "/analisis/apoyo-deportista"]) assert.ok(isPublicSearchPath(path), path);
+for (const path of ["//otro.example", "/\\otro.example", "/admin", "/portal/token", "/api/leads", "/buscar", "/x/../portal/token", "/%2F%2Fotro.example", "mailto:nadie@example.com"]) assert.ok(!isPublicSearchPath(path), path);
 assert.equal(searchEntries(entries, { query: "inversion municipal" })[0]?.id, "municipal", "El título exacto debe dominar el ranking");
 assert.equal(searchEntries(entries, { query: "automatizacion" })[0]?.id, "ai", "La búsqueda debe ignorar tildes en palabras clave");
 assert.deepEqual(searchEntries(entries, { kind: "solution", topic: "gobierno" }).map((entry) => entry.id), ["survey"], "Los filtros deben combinar tipo y tema");

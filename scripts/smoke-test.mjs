@@ -279,6 +279,18 @@ const companiesPage = await expectHtml("/sectors/companies", "Consultoría para 
 assert.ok(companiesPage.body.includes('"@type":"Service"'), "Empresas debe declarar su oferta como Service");
 
 const visualHome = await expectHtml("/", "Consultoría para gobiernos y empresas");
+assert.match(visualHome.body, /aria-haspopup="dialog"[^>]*aria-label="Buscar en NOAM"/, "La cabecera debe ofrecer la búsqueda flotante");
+assert.ok(!visualHome.body.includes("territory:municipality:"), "El índice no se debe serializar con la portada");
+const publicIndex = await get("/buscar/indice.json");
+assert.equal(publicIndex.status, 200);
+assert.match(publicIndex.headers.get("x-robots-tag") ?? "", /noindex/);
+assert.doesNotMatch(publicIndex.headers.get("cache-control") ?? "", /private|no-store/);
+const indexEntries = await publicIndex.json();
+assert.equal(indexEntries.length, new Set(indexEntries.map((entry) => entry.href)).size, "El índice debe evitar URLs duplicadas");
+assert.ok(!indexEntries.some(({ href }) => /^\/(admin|portal|api)(\/|$)/.test(href)), "El índice solo debe mostrar rutas públicas");
+for (const href of ["/cv", "/analisis/apoyo-deportista", "/muestras/diagnostico-agenda-territorial", "/dataperu/departamentos/06", "/dataperu/municipios/150122"]) {
+  assert.ok(indexEntries.some((entry) => entry.href === href), `El índice debe cubrir ${href}`);
+}
 assert.match(visualHome.body, /<img\b[^>]*\balt="Vista aérea de una ciudad amazónica[^"]*"/, "La portada estática debe mostrar la primera imagen con texto alternativo");
 assert.ok(!visualHome.body.includes("Amazonía | Conectividad y servicios"), "La imagen principal no debe mostrar lemas superpuestos");
 assert.doesNotMatch(visualHome.body, /Imagen ilustrativa|La preferencia se guarda solo en este navegador/);
@@ -697,6 +709,10 @@ assert.equal(sitemap.status, 200);
 assert.ok((sitemapBody.match(/<loc>/g) ?? []).length >= 1900, "Sitemap debe incluir los perfiles municipales");
 const sitemapLocations = [...sitemapBody.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
 assert.equal(new Set(sitemapLocations).size, sitemapLocations.length, "Sitemap no debe contener URLs duplicadas");
+const searchablePaths = new Set(indexEntries.map((entry) => entry.href));
+const missingFromSearch = sitemapLocations.map((url) => new URL(url).pathname)
+  .filter((path) => !/^\/analisis\/[^/]+\/dashboard$/.test(path) && !searchablePaths.has(path));
+assert.deepEqual(missingFromSearch, [], "Cada página canónica del sitemap debe encontrarse en la búsqueda pública");
 const sitemapDates = [...sitemapBody.matchAll(/<lastmod>(.*?)<\/lastmod>/g)].map((match) => Date.parse(match[1]));
 assert.ok(sitemapDates.every((date) => Number.isFinite(date) && date <= Date.now()), "Sitemap solo debe publicar fechas válidas y no futuras");
 assert.ok(sitemapBody.includes("https://noam.pe/como-trabajamos"));
